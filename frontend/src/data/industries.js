@@ -1,5 +1,15 @@
 import { ShoppingCart, Heart, DollarSign, GraduationCap, Landmark, Gamepad2, Building2 } from "lucide-react";
 
+const industryImages = [
+  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=500&fit=crop",
+  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop",
+];
+
 const industries = [
   {
     slug: "retail",
@@ -8,6 +18,7 @@ const industries = [
     shortDesc: "Predictive AI that forecasts demand, optimizes supply chains, and personalizes shopping experiences.",
     heroTitle: "AI Solutions for Retail & E-Commerce",
     heroDesc: "Transform your retail operations with AI-powered demand forecasting, personalized shopping experiences, and intelligent supply chain optimization that cuts waste by 30% and increases margins.",
+    heroImage: industryImages[0],
     overview: "The retail industry is undergoing a fundamental transformation driven by AI. NeuralTrix AI helps retailers harness artificial intelligence to predict demand, optimize inventory, personalize customer experiences, and automate operations. Our solutions are designed for omnichannel retailers who need to compete with digital-first brands while maintaining the personal touch that sets them apart.",
     features: [
       { title: "Demand Forecasting", desc: "AI models that predict product demand with 95%+ accuracy, considering seasonality, trends, and external factors." },
@@ -39,6 +50,7 @@ const industries = [
     shortDesc: "HIPAA-compliant AI that automates triage and supports clinicians.",
     heroTitle: "AI Solutions for Healthcare",
     heroDesc: "Speed up patient care without compromising privacy. Our HIPAA-compliant AI solutions automate administrative tasks, support clinical decision-making, and improve hospital throughput by up to 45%.",
+    heroImage: industryImages[1],
     overview: "Healthcare faces unprecedented challenges: clinician burnout, administrative burden, rising costs, and growing patient volumes. NeuralTrix AI builds AI solutions purpose-designed for healthcare that automate documentation, assist with triage and diagnosis, optimize operations, and improve patient outcomes—all while maintaining strict HIPAA compliance and patient data privacy.",
     features: [
       { title: "Clinical Documentation AI", desc: "Automated medical note generation from physician-patient conversations with structured output." },
@@ -70,6 +82,7 @@ const industries = [
     shortDesc: "Real-time anomaly detection to catch fraud 50% faster than the competition.",
     heroTitle: "AI Solutions for Fintech & Financial Services",
     heroDesc: "In finance, seconds save millions. Our AI solutions provide real-time fraud detection, automated compliance, intelligent risk scoring, and personalized financial experiences that give you a decisive competitive edge.",
+    heroImage: industryImages[2],
     overview: "Financial services are being transformed by AI—from fraud detection and risk management to personalized banking and automated compliance. NeuralTrix AI builds AI solutions for fintech companies that need to process millions of transactions in real-time, detect fraud before it happens, comply with evolving regulations, and deliver personalized financial experiences that build customer loyalty.",
     features: [
       { title: "Fraud Detection", desc: "Real-time transaction monitoring with ML models that detect fraud patterns 50% faster than traditional systems." },
@@ -101,6 +114,7 @@ const industries = [
     shortDesc: "AI-powered curriculum engines for 2x engagement and 3x personalization.",
     heroTitle: "AI Solutions for Education",
     heroDesc: "Scale your teaching impact without losing the personal touch. Our AI solutions enable personalized learning at scale, automate administrative tasks, and provide actionable insights for educators and administrators.",
+    heroImage: industryImages[3],
     overview: "Education is ripe for AI transformation. NeuralTrix AI builds AI solutions that help educational institutions personalize learning for every student, automate teacher administrative burden, improve student outcomes, and optimize institutional operations. Our solutions work across K-12, higher education, corporate training, and EdTech platforms.",
     features: [
       { title: "Adaptive Learning", desc: "AI that adjusts content difficulty, pace, and style based on each student's performance and learning patterns." },
@@ -132,6 +146,7 @@ const industries = [
     shortDesc: "Safe automation that protects legacy systems while saving millions through compliance.",
     heroTitle: "AI Solutions for Banking, Financial Services & Insurance",
     heroDesc: "Safe automation is the new gold standard for BFSI. Our AI solutions protect legacy systems while saving millions through automated compliance, intelligent underwriting, and personalized customer experiences.",
+    heroImage: industryImages[4],
     overview: "The BFSI sector faces unique challenges: legacy system complexity, strict regulatory requirements, and rising customer expectations. NeuralTrix AI specializes in building AI solutions that work within these constraints, modernizing operations incrementally while maintaining compliance and system stability. Our solutions help banks, insurance companies, and financial institutions automate processes that were previously thought to be too complex or risky for automation.",
     features: [
       { title: "Intelligent Underwriting", desc: "AI-powered risk assessment that processes applications 10x faster with improved accuracy and consistency." },
@@ -163,6 +178,7 @@ const industries = [
     shortDesc: "Real-time intelligence that turns game data into personalized experiences.",
     heroTitle: "AI Solutions for Sports & Gaming",
     heroDesc: "Win the battle for fan attention with real-time AI intelligence. Turn game data into personalized experiences, predict player performance, and drive 2x higher audience retention with our specialized sports and gaming AI solutions.",
+    heroImage: industryImages[5],
     overview: "The sports and gaming industries generate massive amounts of data that most organizations barely utilize. NeuralTrix AI helps sports teams, leagues, gaming companies, and fantasy platforms transform this data into competitive advantages—from real-time performance analytics and player health monitoring to personalized fan experiences and predictive gaming features.",
     features: [
       { title: "Performance Analytics", desc: "AI-powered player and team performance analysis using computer vision and sensor data." },
@@ -194,6 +210,7 @@ const industries = [
     shortDesc: "AI-automated valuations and market predictions driving 70% improvement in lead conversion.",
     heroTitle: "AI Solutions for Real Estate",
     heroDesc: "Stop guessing and start closing more deals. Our AI solutions automate property valuations, predict market trends, qualify leads intelligently, and deliver virtual experiences that transform how properties are bought and sold.",
+    heroImage: industryImages[6],
     overview: "Real estate is a data-rich industry that's historically been slow to adopt AI. NeuralTrix AI changes that by building AI solutions that help real estate companies, brokerages, and PropTech platforms automate property valuations, predict market movements, generate and qualify leads, and create immersive virtual experiences that close deals faster.",
     features: [
       { title: "Automated Valuation", desc: "AI-powered property valuation models that provide instant, accurate estimates based on comprehensive market data." },

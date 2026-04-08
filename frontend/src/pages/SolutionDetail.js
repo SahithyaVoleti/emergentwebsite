@@ -23,7 +23,7 @@ export default function SolutionDetail() {
 
   return (
     <div>
-      <PageHero label="Solutions" title={solution.heroTitle} description={solution.heroDesc} primaryCTA={{ text: "Request a Demo", href: "#page-contact" }} secondaryCTA={{ text: "All Solutions", href: "/solutions" }} />
+      <PageHero label="Solutions" title={solution.heroTitle} description={solution.heroDesc} primaryCTA={{ text: "Request a Demo", href: "#page-contact" }} secondaryCTA={{ text: "All Solutions", href: "/solutions" }} image={solution.heroImage} />
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
           <Link to="/solutions" data-testid="back-to-solutions" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors">

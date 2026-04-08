@@ -16,7 +16,7 @@ export default function CaseStudyDetail() {
 
   return (
     <div>
-      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Start Similar Project", href: "#page-contact" }} secondaryCTA={{ text: "All Case Studies", href: "/case-studies" }} />
+      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Start Similar Project", href: "#page-contact" }} secondaryCTA={{ text: "All Case Studies", href: "/case-studies" }} image={cs.heroImage} />
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
           <Link to="/case-studies" data-testid="back-to-case-studies" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Case Studies</Link>
