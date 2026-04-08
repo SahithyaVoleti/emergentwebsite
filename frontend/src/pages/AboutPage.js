@@ -5,6 +5,7 @@ import ImpactStats from "../components/ImpactStats";
 import TestimonialsSection from "../components/TestimonialsSection";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
+import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 
 const timeline = [
   { year: "2018", title: "Founded", desc: "NeuralTrix AI was founded in San Francisco with a mission to make enterprise AI accessible." },
@@ -46,11 +47,11 @@ export default function AboutPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="About Us" title="Engineering the Future of Enterprise AI" description="NeuralTrix AI brings battle-tested engineering talent to turn ambitious ideas into high-performance AI systems that move fast, scale hard, and deliver real business results." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image="https://images.unsplash.com/photo-1758876203420-1ed6db481d4f?w=800&h=500&fit=crop" />
+      <PageHero label="About Us" title="Engineering the Future of Enterprise AI" description="NeuralTrix AI brings battle-tested engineering talent to turn ambitious ideas into high-performance AI systems that move fast, scale hard, and deliver real business results." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
       {/* 2. Mission & Vision */}
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <StaggerItem>
               <div className="border border-slate-200 rounded-sm p-10">
@@ -80,8 +81,8 @@ export default function AboutPage() {
       ]} />
 
       {/* 4. Core Values */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Core Values</h2>
           </AnimatedSection>
@@ -100,8 +101,8 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Timeline */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-diag-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Journey</h2>
           </AnimatedSection>
@@ -123,8 +124,8 @@ export default function AboutPage() {
       <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
 
       {/* 7. Team */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Leadership Team</h2>
             <p className="text-base text-slate-600 mb-12 max-w-2xl">Meet the leaders driving NeuralTrix AI's mission.</p>
@@ -147,7 +148,7 @@ export default function AboutPage() {
 
       {/* 8. Partners */}
       <section className="py-16 bg-[#F8FAFC] border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-6 text-center">Technology Partners</p>
             <div className="flex flex-wrap justify-center items-center gap-8">
@@ -159,7 +160,7 @@ export default function AboutPage() {
 
       {/* 9. Offices */}
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Offices</h2>
           </AnimatedSection>

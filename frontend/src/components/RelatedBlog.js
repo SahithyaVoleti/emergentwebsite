@@ -5,8 +5,8 @@ import blogArticles from "../data/blog";
 
 export default function RelatedBlog({ title }) {
   return (
-    <section data-testid="related-blog-section" className="py-20 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section data-testid="related-blog-section" className="py-20 sm:py-24 corp-pat-dots">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="flex items-end justify-between mb-12">
             <div>

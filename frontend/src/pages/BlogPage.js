@@ -3,13 +3,21 @@ import { ArrowRight, Clock } from "lucide-react";
 import PageHero from "../components/PageHero";
 import PageContactForm from "../components/PageContactForm";
 import blogArticles from "../data/blog";
+import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 export default function BlogPage() {
   return (
     <div>
-      <PageHero label="Blog & Resources" title="AI Development Insights & Trends" description="From emerging technologies to real-world solutions, track what's shaping the AI landscape. Expert insights from our engineering team." primaryCTA={{ text: "Subscribe to Updates", href: "#page-contact" }} bgDark={true} />
+      <PageHero
+        label="Blog & Resources"
+        title="AI Development Insights & Trends"
+        description="From emerging technologies to real-world solutions, track what's shaping the AI landscape. Expert insights from our engineering team."
+        primaryCTA={{ text: "Subscribe to Updates", href: "#page-contact" }}
+        bgDark={true}
+        image={LISTING_PAGE_HERO_IMAGES.blog}
+      />
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogArticles.map((a) => (
               <Link key={a.slug} to={`/blog/${a.slug}`} data-testid={`blog-link-${a.slug}`} className="group bg-white border border-slate-200 rounded-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">

@@ -1,3 +1,5 @@
+import { CASE_STUDY_HERO_IMAGES as caseStudyHeroes } from "../lib/heroImageThemes";
+
 const caseStudies = [
   {
     slug: "ai-video-creation",
@@ -6,7 +8,7 @@ const caseStudies = [
     industry: "Media & Content",
     heroTitle: "AI Video Creation — Human-like Avatars, Unlimited Creativity",
     heroDesc: "How we built a platform that lets creators, educators, and businesses produce professional-quality videos with realistic AI avatars, voice cloning, and multilingual script-to-video conversion.",
-    heroImage: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=500&fit=crop",
+    heroImage: caseStudyHeroes[0],
     challenge: "YOU B2C needed a platform that could democratize video production. Traditional video creation requires expensive equipment, studio time, and skilled editors. The client wanted to enable anyone to create professional-quality videos using AI-generated avatars with natural speech, emotions, and culturally relevant appearances—supporting Arabic dialects and 50+ languages.",
     solution: "NeuralTrix AI designed and built a comprehensive AI video creation platform featuring hyper-realistic avatar generation, voice cloning with emotional nuance, and an intelligent script-to-video pipeline. The platform integrates HeyGen for avatar generation, ElevenLabs for voice synthesis, and custom RAG systems for content assistance. We built a scalable cloud architecture on Azure that handles concurrent video rendering for thousands of users.",
     results: [
@@ -38,7 +40,7 @@ const caseStudies = [
     industry: "Education",
     heroTitle: "Smart Teaching, Effortless Learning — AI Tools for Modern Classrooms",
     heroDesc: "How we built nine AI-powered tools that streamline educators' administrative tasks while enhancing learning outcomes for students of all levels.",
-    heroImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop",
+    heroImage: caseStudyHeroes[1],
     challenge: "Teachers spend an average of 7 hours per week on administrative tasks—lesson planning, quiz creation, grading, and documentation. Teach Better AI wanted to give teachers their time back by automating these tasks with AI while simultaneously improving the quality and personalization of educational content delivered to students.",
     solution: "NeuralTrix AI developed a comprehensive education platform with nine AI-powered tools: Lesson Planner, Content Explainer, Quiz Generator, Activity Creator, Project Builder, Report Writer, Rubric Designer, Parent Communication, and Student Feedback Analyzer. Each tool uses GPT-4o with custom fine-tuning for educational contexts, integrated with LangChain for complex multi-step reasoning.",
     results: [
@@ -70,7 +72,7 @@ const caseStudies = [
     industry: "Consumer Tech",
     heroTitle: "Fortuna — AI-Powered Astrology & Personalized Cosmic Insights",
     heroDesc: "How we built an AI-based horoscope app that delivers personalized daily forecasts, detailed predictions, and tailored guidance using advanced AI analysis of birth data.",
-    heroImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=500&fit=crop",
+    heroImage: caseStudyHeroes[2],
     challenge: "Fortuna wanted to create a premium astrology experience that goes far beyond generic horoscopes. They needed an app that could analyze individual birth charts, planetary transits, and user preferences to deliver truly personalized cosmic insights—combined with beautiful AI-generated artwork for each reading.",
     solution: "NeuralTrix AI built a cross-platform mobile application using Flutter, powered by GPT-4 for personalized readings and DALL-E 3 for unique visual content. The backend uses Django with sophisticated astronomical calculation libraries to compute precise planetary positions and aspects. A custom fine-tuned model generates readings that blend traditional astrological wisdom with modern psychological insights.",
     results: [
@@ -102,7 +104,7 @@ const caseStudies = [
     industry: "Travel",
     heroTitle: "Plan Smarter, Travel Better — AI-Powered Itineraries Tailored to You",
     heroDesc: "How we built an intelligent travel companion that creates personalized itineraries from user preferences, replacing fragmented research with a single AI-powered planning platform.",
-    heroImage: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop",
+    heroImage: caseStudyHeroes[3],
     challenge: "Travel planning is fragmented across dozens of websites and apps. TravelAI wanted to create a single platform where travelers can describe their preferences and receive complete, personalized itineraries with real-time pricing, local recommendations, and smart navigation—all in one conversation.",
     solution: "NeuralTrix AI built a cross-platform travel planning application using Flutter for the mobile experience and Node.js for the backend. The AI layer combines GPT-4o for conversational planning with Gemini API for real-time information and Google Maps API for navigation and place details. The system learns from user feedback to improve recommendations over time.",
     results: [

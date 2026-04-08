@@ -1,3 +1,5 @@
+import { BLOG_ARTICLE_HERO_IMAGES } from "../lib/heroImageThemes";
+
 const blogArticles = [
   {
     slug: "augment-code-vs-cursor",
@@ -5,7 +7,7 @@ const blogArticles = [
     title: "Augment Code vs Cursor: Best AI Tool for Developers?",
     date: "March 2, 2026",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    image: BLOG_ARTICLE_HERO_IMAGES["augment-code-vs-cursor"],
     excerpt: "Pick the one that matches your criteria, repository size, and workflow preferences for maximum productivity.",
     content: [
       { type: "paragraph", text: "The landscape of AI-powered development tools has evolved rapidly. Two standout contenders—Augment Code and Cursor—have emerged as favorites among developers looking to supercharge their productivity. But which one is right for you? In this comprehensive comparison, we break down every aspect that matters." },
@@ -29,7 +31,7 @@ const blogArticles = [
     title: "Claude vs ChatGPT for Coding: Features & Use Cases",
     date: "March 2, 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    image: BLOG_ARTICLE_HERO_IMAGES["claude-vs-chatgpt-coding"],
     excerpt: "A deep comparison of the leading AI assistants for software development and code generation tasks.",
     content: [
       { type: "paragraph", text: "As AI-powered coding assistants become essential tools in every developer's toolkit, the question of which model to use has become increasingly important. Claude (by Anthropic) and ChatGPT (by OpenAI) represent two different philosophies in AI development, and their strengths in coding reflect these differences." },
@@ -53,7 +55,7 @@ const blogArticles = [
     title: "Top 10 Vibe Coding Tools for Faster AI App Development",
     date: "February 23, 2026",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
+    image: BLOG_ARTICLE_HERO_IMAGES["top-vibe-coding-tools"],
     excerpt: "The way developers build software is changing, and these tools are responsible for the transformation.",
     content: [
       { type: "paragraph", text: "Vibe coding—the practice of using AI to generate code from natural language descriptions—has gone from novelty to necessity in just two years. The best tools in this space don't just generate code; they understand context, maintain consistency, and help developers think at a higher level of abstraction. Here are the top 10 tools that are defining this new era." },

@@ -1,15 +1,5 @@
 import { Brain, Bot, Code2, Smartphone, Users, Database, GitBranch, BarChart3 } from "lucide-react";
-
-const heroImages = [
-  "https://images.unsplash.com/photo-1518980120692-3cfe64c152d0?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1556081842-fbd4f51c6e8b?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1654367339087-2f384d47a6e4?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1657894825744-1da6d5fbf24d?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-];
+import { SERVICES_HERO_IMAGES as heroImages } from "../lib/heroImageThemes";
 
 const services = [
   {

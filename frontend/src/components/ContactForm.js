@@ -45,7 +45,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact" data-testid="contact-section" className="py-20 sm:py-24 md:py-32 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           {/* Left side - Info */}
           <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>
@@ -69,7 +69,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500">Email</p>
-                  <p className="text-sm text-white font-medium">hello@neuraltrix.ai</p>
+                  <p className="text-sm text-white font-medium">neuraltrixai@yahoo.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -78,7 +78,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500">Phone</p>
-                  <p className="text-sm text-white font-medium">+1 (555) 123-4567</p>
+                  <p className="text-sm text-white font-medium">+91 81424 38759</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -87,7 +87,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500">Office</p>
-                  <p className="text-sm text-white font-medium">San Francisco, CA</p>
+                  <p className="text-sm text-white font-medium">N-Block, Vignan University, Guntur</p>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function ContactForm() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 81424 38759"
                     className="rounded-sm border-slate-200 focus:border-[#2563EB] focus:ring-[#2563EB]"
                   />
                 </div>

@@ -7,3 +7,10 @@
   background-color: #2563EB;
   color: white;
 }
+
+/* Hide Emergent badge if re-injected by dev/preview tooling */
+#emergent-badge {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

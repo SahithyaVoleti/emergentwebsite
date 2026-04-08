@@ -11,8 +11,8 @@ const stats = [
 export default function ImpactStats({ title, customStats }) {
   const displayStats = customStats || stats;
   return (
-    <section data-testid="impact-stats-section" className="py-16 sm:py-20 bg-white border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section data-testid="impact-stats-section" className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-slate-200">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {title && (
           <AnimatedSection>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1B3D] mb-10 text-center" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>

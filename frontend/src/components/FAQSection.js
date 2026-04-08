@@ -9,7 +9,7 @@ export default function FAQSection({ faqs, title }) {
   if (!faqs || faqs.length === 0) return null;
   return (
     <section data-testid="faq-section" className="py-20 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-3xl mx-auto">
           <h2
             data-testid="faq-title"

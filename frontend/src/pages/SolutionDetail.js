@@ -25,14 +25,14 @@ export default function SolutionDetail() {
 
       {/* 2. Breadcrumb */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
           <Link to="/solutions" data-testid="back-to-solutions" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Solutions</Link>
         </div>
       </div>
 
       {/* 3. Overview + Sidebar */}
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             <AnimatedSection className="lg:col-span-2">
               <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Overview</h2>
@@ -64,8 +64,8 @@ export default function SolutionDetail() {
       ]} />
 
       {/* 5. Features */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Key Features</h2>
           </AnimatedSection>
@@ -89,8 +89,8 @@ export default function SolutionDetail() {
       <CTASection title={`Transform Your Operations with ${solution.title}`} description="Schedule a demo to see how this solution addresses your specific business challenges." />
 
       {/* 7. How It Works */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">How It Works</p>

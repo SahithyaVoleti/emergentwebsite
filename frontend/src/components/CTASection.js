@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection({ title, description, buttonText, buttonHref }) {
   return (
-    <section data-testid="cta-section" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 text-center">
+    <section data-testid="cta-section" className="py-20 sm:py-24 bg-[#0B1B3D]">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 text-center">
         <h2
           data-testid="cta-title"
           className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4"

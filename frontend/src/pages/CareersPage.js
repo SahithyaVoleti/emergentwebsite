@@ -8,6 +8,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import careers from "../data/careers";
+import { CAREERS_HERO_IMAGE } from "../lib/heroImageThemes";
 
 function JobCard({ job }) {
   const [open, setOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function CareersPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="Careers" title="Build the Future of AI With Us" description="Join 400+ AI specialists who are shaping the future of enterprise AI. We offer challenging work, competitive compensation, and a culture that values innovation." primaryCTA={{ text: "View Open Positions", href: "#positions" }} image="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=500&fit=crop" />
+      <PageHero label="Careers" title="Build the Future of AI With Us" description="Join 400+ AI specialists who are shaping the future of enterprise AI. We offer challenging work, competitive compensation, and a culture that values innovation." primaryCTA={{ text: "View Open Positions", href: "#positions" }} image={CAREERS_HERO_IMAGE} />
 
       {/* 2. Stats */}
       <ImpactStats customStats={[
@@ -77,7 +78,7 @@ export default function CareersPage() {
 
       {/* 3. Why Join Us */}
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why NeuralTrix AI?</h2>
           </AnimatedSection>
@@ -96,8 +97,8 @@ export default function CareersPage() {
       </section>
 
       {/* 4. Hiring Process */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Hiring Process</h2>
           </AnimatedSection>
@@ -120,7 +121,7 @@ export default function CareersPage() {
 
       {/* 6. Open Positions */}
       <section id="positions" className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Open Positions</h2>
             <p className="text-base text-slate-600 mb-8">{careers.length} open roles across {departments.length} departments</p>
@@ -134,8 +135,8 @@ export default function CareersPage() {
       </section>
 
       {/* 7. Locations */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-diag-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection><h2 className="text-3xl font-bold text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Locations</h2></AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[

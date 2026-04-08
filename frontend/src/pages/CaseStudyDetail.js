@@ -22,14 +22,14 @@ export default function CaseStudyDetail() {
       <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Start Similar Project", href: "#page-contact" }} secondaryCTA={{ text: "All Case Studies", href: "/case-studies" }} image={cs.heroImage} />
 
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
           <Link to="/case-studies" data-testid="back-to-case-studies" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Case Studies</Link>
         </div>
       </div>
 
       {/* Results */}
       <section className="py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {cs.results.map((r, i) => (
               <StaggerItem key={i}>
@@ -45,8 +45,8 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Challenge & Solution */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
               <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>The Challenge</h2>
@@ -61,8 +61,8 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Features & Tech */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
               <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Key Features Delivered</h2>

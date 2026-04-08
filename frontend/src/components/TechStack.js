@@ -23,7 +23,7 @@ const categories = [
     techs: [
       { name: "Python", icon: SiPython },
       { name: "Node.js", icon: SiNodedotjs },
-      { name: "Kafka", icon: SiApachekafka },
+      { name: "Redis", icon: SiRedis },
       { name: "Elasticsearch", icon: SiElasticsearch },
     ],
   },
@@ -83,45 +83,65 @@ const categories = [
   },
 ];
 
-export default function TechStack() {
+const ribbonItems = categories.flatMap((cat) =>
+  cat.techs.map((t) => ({
+    key: `${cat.name}-${t.name}`,
+    name: t.name,
+    Icon: t.icon,
+  }))
+);
+
+function RibbonItem({ name, Icon }) {
   return (
-    <section id="tech-stack" data-testid="tech-stack-section" className="py-20 sm:py-24 md:py-32" style={{ backgroundColor: "#0B1B3D" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-            Platforms & Partners
-          </p>
+    <div
+      className="flex shrink-0 items-center gap-4 rounded-sm border border-slate-200 bg-slate-50/80 px-5 py-4 sm:gap-5 sm:px-6 sm:py-4"
+      data-testid={`tech-ribbon-${name.toLowerCase().replace(/\s+/g, "-")}`}
+    >
+      <Icon className="h-9 w-9 shrink-0 text-[#0B1B3D] sm:h-10 sm:w-10" aria-hidden />
+      <span className="text-base font-semibold tracking-tight text-[#0B1B3D] sm:text-lg">{name}</span>
+    </div>
+  );
+}
+
+export default function TechStack() {
+  const loop = [...ribbonItems, ...ribbonItems];
+
+  return (
+    <section id="tech-stack" data-testid="tech-stack-section" className="bg-[#F8FAFC] py-20 sm:py-24 md:py-32">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2563EB]">Platforms & Partners</p>
           <h2
             data-testid="tech-stack-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
+            className="mb-4 text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
             Leveraging Best-in-Class Tech Foundations
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
+          <p className="text-base leading-relaxed text-slate-600">
             We leverage best-in-class technologies and strategic platform partnerships to deliver scalable, secure, and production-ready systems.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat) => (
+
+        <div className="rounded-sm border border-slate-200 bg-white py-6 shadow-sm sm:py-8">
+          <div className="relative">
             <div
-              key={cat.name}
-              data-testid={`tech-category-${cat.name.toLowerCase().replace(/[\s&]/g, "-")}`}
-              className="border border-white/10 rounded-sm p-6"
-            >
-              <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-6">
-                {cat.name}
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {cat.techs.map((t) => (
-                  <div key={t.name} className="flex flex-col items-center gap-2 py-3">
-                    <t.icon className="text-2xl text-slate-400 hover:text-[#2563EB] transition-colors" />
-                    <span className="text-xs text-slate-500 text-center">{t.name}</span>
-                  </div>
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-white to-transparent sm:w-24"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-white to-transparent sm:w-24"
+              aria-hidden
+            />
+
+            <div className="overflow-hidden px-1">
+              <div className="tech-marquee-track">
+                {loop.map((item, i) => (
+                  <RibbonItem key={`${item.key}-${i}`} name={item.name} Icon={item.Icon} />
                 ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

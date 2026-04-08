@@ -4,6 +4,7 @@ import CTASection from "../components/CTASection";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection from "../components/AnimatedSection";
 import blogArticles from "../data/blog";
+import HeroAnimatedBackdrop from "../components/HeroAnimatedBackdrop";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -17,27 +18,33 @@ export default function BlogDetail() {
 
   return (
     <div>
-      {/* 1. Article Hero */}
-      <section className="py-20 sm:py-28" style={{ backgroundColor: "#0B1B3D" }}>
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 md:px-12">
-          <Link to="/blog" data-testid="back-to-blog" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-8"><ArrowLeft size={14} /> Back to Blog</Link>
-          <span className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest block mb-4">{article.category}</span>
-          <h1 data-testid="blog-article-title" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif", letterSpacing: "-0.03em" }}>{article.title}</h1>
-          <div className="flex items-center gap-6 text-sm text-slate-400">
-            <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
-            <span className="flex items-center gap-1"><Clock size={14} /> {article.readTime}</span>
+      {/* 1. Article Hero — full-bleed image (same treatment as site heroes) */}
+      <section className="relative isolate overflow-hidden bg-[#0B1B3D]">
+        <div className="relative flex min-h-[min(72vh,780px)] flex-col justify-end">
+          <HeroAnimatedBackdrop image={article.image} bgDark />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 pb-16 pt-28 sm:pb-20 sm:pt-32">
+            <Link to="/blog" data-testid="back-to-blog" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors mb-8 drop-shadow-sm">
+              <ArrowLeft size={14} /> Back to Blog
+            </Link>
+            <span className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest block mb-4">{article.category}</span>
+            <h1
+              data-testid="blog-article-title"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6 max-w-4xl drop-shadow-sm"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", letterSpacing: "-0.03em" }}
+            >
+              {article.title}
+            </h1>
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-300">
+              <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
+              <span className="flex items-center gap-1"><Clock size={14} /> {article.readTime}</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Featured Image */}
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 md:px-12 -mt-8">
-        <img src={article.image} alt={article.title} className="w-full h-64 sm:h-80 object-cover rounded-sm border border-slate-200" />
-      </div>
-
-      {/* 3. Content with Sidebar TOC */}
+      {/* 2. Content with Sidebar TOC */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Table of Contents */}
             <div className="hidden lg:block">
@@ -99,8 +106,8 @@ export default function BlogDetail() {
       <CTASection title="Want Expert AI Insights?" description="Subscribe to our newsletter for the latest AI development trends and insights from our engineering team." buttonText="Get in Touch" />
 
       {/* 5. Related Articles */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-2xl font-bold text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>More Articles</h2>
           </AnimatedSection>

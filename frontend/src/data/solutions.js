@@ -1,3 +1,5 @@
+import { SOLUTION_HERO_IMAGES } from "../lib/heroImageThemes";
+
 const solutions = [
   {
     slug: "databrain-ai",
@@ -5,7 +7,7 @@ const solutions = [
     shortDesc: "Summarize, transcribe, and convert complicated multi-format data into easy-to-follow chats.",
     heroTitle: "DataBrain AI — Chat With Your Documents",
     heroDesc: "Transform how your team interacts with data. DataBrain AI lets you upload PDFs, spreadsheets, transcripts, and more, then ask questions in plain language and receive accurate, cited answers in seconds.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
     overview: "DataBrain AI is NeuralTrix AI's flagship document intelligence platform. It uses advanced RAG (Retrieval-Augmented Generation) technology to ingest documents in any format—PDF, DOCX, CSV, audio transcripts, and more—and create a conversational interface where users can ask complex questions and receive grounded, accurate answers with source citations. Built for enterprises that need to unlock insights from vast document repositories.",
     features: [
       { title: "Multi-Format Ingestion", desc: "Upload PDFs, Word docs, spreadsheets, presentations, audio files, and images. DataBrain processes them all." },
@@ -30,7 +32,7 @@ const solutions = [
     shortDesc: "Digitalize your healthcare system with a generative AI solution for the health industry.",
     heroTitle: "MediMind AI — AI-Powered Healthcare Intelligence",
     heroDesc: "Streamline clinical workflows, automate documentation, and improve patient outcomes with a HIPAA-compliant AI platform designed specifically for healthcare providers and health systems.",
-    heroImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop",
+    heroImage: SOLUTION_HERO_IMAGES["medimind-ai"],
     overview: "MediMind AI is a comprehensive healthcare AI platform built in collaboration with medical professionals. It helps hospitals, clinics, and health systems automate clinical documentation, assist with diagnostic insights, streamline patient communications, and optimize administrative workflows—all while maintaining strict HIPAA compliance and patient data privacy.",
     features: [
       { title: "Clinical Documentation", desc: "AI-assisted note-taking that generates structured clinical documentation from physician-patient conversations." },
@@ -55,7 +57,7 @@ const solutions = [
     shortDesc: "Simplify finding opportunities and connect job seekers with recruiters using Gen AI.",
     heroTitle: "Talentify AI — Intelligent Recruitment Platform",
     heroDesc: "Revolutionize your hiring process with AI-powered candidate matching, automated screening, and intelligent job recommendations that connect the right talent with the right opportunities 10x faster.",
-    heroImage: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=500&fit=crop",
+    heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
     overview: "Talentify AI transforms the recruitment landscape by using advanced AI to match candidates with opportunities based on skills, experience, culture fit, and career aspirations. For recruiters, it automates resume screening, generates interview questions, and provides predictive analytics on candidate success. For job seekers, it offers personalized job recommendations and AI-powered career guidance.",
     features: [
       { title: "AI Resume Screening", desc: "Automatically parse, score, and rank resumes against job requirements with bias-free AI evaluation." },
@@ -80,7 +82,7 @@ const solutions = [
     shortDesc: "AI chatbot for improving engagement through context-driven interactions.",
     heroTitle: "QuikBiz AI — Conversational Commerce Platform",
     heroDesc: "Deploy intelligent AI chatbots that understand your business, engage visitors naturally, qualify leads, answer questions, and drive conversions—all without human intervention. Available 24/7 across all your digital channels.",
-    heroImage: "https://images.unsplash.com/photo-1531746790095-e5995bdb47f0?w=800&h=500&fit=crop",
+    heroImage: SOLUTION_HERO_IMAGES["quikbiz-ai"],
     overview: "QuikBiz AI is a conversational AI platform designed for businesses that want to scale customer engagement without scaling headcount. It goes beyond scripted chatbots by using RAG technology to understand your products, services, and FAQs, then engage visitors in natural, context-aware conversations that drive sales and satisfaction.",
     features: [
       { title: "Contextual Conversations", desc: "AI that understands your business context and provides relevant, accurate responses to any customer query." },
@@ -105,7 +107,7 @@ const solutions = [
     shortDesc: "Automate query resolution via an AI chatbot that vectorizes data from multiple sources.",
     heroTitle: "IntelliBot AI — Enterprise Knowledge Assistant",
     heroDesc: "Unify your organization's knowledge across systems and make it instantly accessible through an intelligent AI assistant that employees and customers can query in natural language.",
-    heroImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
+    heroImage: SOLUTION_HERO_IMAGES["intellibot-ai"],
     overview: "IntelliBot AI is an enterprise-grade knowledge management platform that centralizes information from Confluence, SharePoint, Google Drive, Notion, Slack, and other sources into a unified AI-powered search and Q&A interface. It eliminates information silos, reduces support tickets, and helps every team member find answers in seconds instead of hours.",
     features: [
       { title: "Multi-Source Ingestion", desc: "Connect to Confluence, SharePoint, Google Drive, Notion, Slack, Jira, and 50+ other data sources." },

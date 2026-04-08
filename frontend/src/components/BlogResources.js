@@ -28,7 +28,7 @@ const articles = [
 export default function BlogResources() {
   return (
     <section id="blog" data-testid="blog-section" className="py-20 sm:py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-2xl mb-16">
           <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
             Resources

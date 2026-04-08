@@ -37,8 +37,8 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" data-testid="case-studies-section" className="py-20 sm:py-24 md:py-32" style={{ backgroundColor: "#0B1B3D" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section id="case-studies" data-testid="case-studies-section" className="py-20 sm:py-24 md:py-32 bg-[#0B1B3D]">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-2xl mb-16">
           <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
             Case Studies

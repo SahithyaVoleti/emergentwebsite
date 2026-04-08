@@ -37,7 +37,7 @@ export default function PageContactForm({ context }) {
 
   return (
     <section id="page-contact" data-testid="page-contact-form" className="py-20 sm:py-24 md:py-32 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Get in Touch</p>
@@ -50,15 +50,15 @@ export default function PageContactForm({ context }) {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-sm"><Mail size={18} className="text-[#2563EB]" /></div>
-                <div><p className="text-xs text-slate-500">Email</p><p className="text-sm text-white font-medium">hello@neuraltrix.ai</p></div>
+                <div><p className="text-xs text-slate-500">Email</p><p className="text-sm text-white font-medium">neuraltrixai@yahoo.com</p></div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-sm"><Phone size={18} className="text-[#2563EB]" /></div>
-                <div><p className="text-xs text-slate-500">Phone</p><p className="text-sm text-white font-medium">+1 (555) 123-4567</p></div>
+                <div><p className="text-xs text-slate-500">Phone</p><p className="text-sm text-white font-medium">+91 81424 38759</p></div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-sm"><MapPin size={18} className="text-[#2563EB]" /></div>
-                <div><p className="text-xs text-slate-500">Office</p><p className="text-sm text-white font-medium">San Francisco, CA</p></div>
+                <div><p className="text-xs text-slate-500">Office</p><p className="text-sm text-white font-medium">N-Block, Vignan University, Guntur</p></div>
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function PageContactForm({ context }) {
                 </div>
                 <div>
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">Phone Number</label>
-                  <Input data-testid="page-contact-phone" name="phone" value={form.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" className="rounded-sm border-slate-200" />
+                  <Input data-testid="page-contact-phone" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 81424 38759" className="rounded-sm border-slate-200" />
                 </div>
                 <div>
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">Project Description *</label>

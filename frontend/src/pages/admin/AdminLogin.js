@@ -4,6 +4,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock } from "lucide-react";
+import { DEFAULT_PAGE_HERO_IMAGE } from "@/lib/heroImageThemes";
 
 export default function AdminLogin() {
   const { user, loading, login } = useAuth();
@@ -33,16 +34,24 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
-      <div className="w-full max-w-sm">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-12">
+      <div className="absolute inset-0 z-0">
+        <img
+          src={DEFAULT_PAGE_HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0B1B3D]/88" />
+      </div>
+      <div className="relative z-10 w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 bg-[#0B1B3D] rounded-sm flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 bg-white/10 border border-white/20 rounded-sm flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <Lock size={20} className="text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Admin Login</h1>
-          <p className="text-sm text-slate-500 mt-1">NeuralTrix AI Content Management</p>
+          <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Admin Login</h1>
+          <p className="text-sm text-slate-300 mt-1">NeuralTrix AI Content Management</p>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-sm p-8 space-y-4">
+        <form onSubmit={handleSubmit} className="bg-white border border-slate-200/80 rounded-sm p-8 space-y-4 shadow-xl shadow-black/20">
           <div>
             <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">Email</label>
             <Input data-testid="admin-email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="admin@neuraltrix.ai" className="rounded-sm" />

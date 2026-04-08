@@ -1,18 +1,18 @@
 import { Button } from "../components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import HeroAnimatedBackdrop from "./HeroAnimatedBackdrop";
+import { HOME_HERO_IMAGE } from "../lib/heroImageThemes";
 
 export default function HeroSection() {
   return (
-    <section
-      id="hero"
-      data-testid="hero-section"
-      className="relative overflow-hidden"
-      style={{ backgroundColor: "#0B1B3D" }}
-    >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-20 sm:py-28 md:py-36">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 rounded-sm">
+    <section id="hero" data-testid="hero-section" className="relative overflow-hidden bg-[#0B1B3D]">
+      {/* Full-bleed hero: image covers entire area above client logos */}
+      <div className="relative isolate flex min-h-[min(88vh,920px)] flex-col justify-center">
+        <HeroAnimatedBackdrop image={HOME_HERO_IMAGE} bgDark />
+
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-20 sm:py-28 md:py-36">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 rounded-sm backdrop-blur-sm bg-white/5">
               <Sparkles size={14} className="text-[#2563EB]" />
               <span className="text-xs font-semibold text-white/80 uppercase tracking-widest">
                 AI-First Engineering
@@ -20,14 +20,14 @@ export default function HeroSection() {
             </div>
             <h1
               data-testid="hero-heading"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] drop-shadow-sm"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif", letterSpacing: "-0.04em" }}
             >
               Engineering the
               <br />
               <span className="text-[#2563EB]">AI-First</span> Enterprise
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-lg drop-shadow-sm">
               NeuralTrix AI engineers high-performance digital systems that push businesses beyond average.
               We combine software architecture, data pipelines, cloud, and custom AI development to deliver
               production-ready solutions that launch <strong className="text-white">3x faster</strong>.
@@ -36,7 +36,7 @@ export default function HeroSection() {
               <Button
                 data-testid="hero-cta-primary"
                 asChild
-                className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-6 py-3 font-semibold text-sm"
+                className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-6 py-3 font-semibold text-sm shadow-lg shadow-black/20"
               >
                 <a href="#contact">
                   Talk to Our AI Experts <ArrowRight size={16} className="ml-2" />
@@ -46,41 +46,34 @@ export default function HeroSection() {
                 data-testid="hero-cta-secondary"
                 asChild
                 variant="outline"
-                className="bg-transparent text-white border-white/30 hover:bg-white/10 rounded-sm px-6 py-3 font-semibold text-sm"
+                className="bg-white/5 text-white border-white/35 hover:bg-white/15 backdrop-blur-sm rounded-sm px-6 py-3 font-semibold text-sm"
               >
                 <a href="#solutions">Explore Solutions</a>
               </Button>
             </div>
-            <div className="flex items-center gap-8 pt-4">
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-4">
               <div>
                 <span className="text-2xl font-bold text-white" style={{ fontFamily: "'JetBrains Mono', monospace" }}>150+</span>
-                <p className="text-xs text-slate-400 mt-1">AI Systems Deployed</p>
+                <p className="text-xs text-slate-300 mt-1">AI Systems Deployed</p>
               </div>
-              <div className="w-px h-10 bg-white/20" />
+              <div className="w-px h-10 bg-white/25 hidden sm:block" />
               <div>
                 <span className="text-2xl font-bold text-white" style={{ fontFamily: "'JetBrains Mono', monospace" }}>99.9%</span>
-                <p className="text-xs text-slate-400 mt-1">Uptime Guarantee</p>
+                <p className="text-xs text-slate-300 mt-1">Uptime Guarantee</p>
               </div>
-              <div className="w-px h-10 bg-white/20" />
+              <div className="w-px h-10 bg-white/25 hidden sm:block" />
               <div>
                 <span className="text-2xl font-bold text-white" style={{ fontFamily: "'JetBrains Mono', monospace" }}>3x</span>
-                <p className="text-xs text-slate-400 mt-1">Faster Delivery</p>
+                <p className="text-xs text-slate-300 mt-1">Faster Delivery</p>
               </div>
             </div>
           </div>
-          <div className="hidden lg:block relative">
-            <img
-              src="https://images.unsplash.com/photo-1762279389083-abf71f22d338?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBkYXRhJTIwYW5hbHl0aWNzfGVufDB8fHx8MTc3NTQ4Mjk1MXww&ixlib=rb-4.1.0&q=85"
-              alt="AI Analytics"
-              className="w-full h-auto rounded-sm opacity-80 mix-blend-lighten"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0B1B3D]/60" />
-          </div>
         </div>
       </div>
+
       {/* Client logos bar */}
-      <div className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="relative z-10 border-t border-white/10 bg-[#0B1B3D] py-8">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <p className="text-xs uppercase tracking-widest text-slate-500 mb-6 text-center">
             Trusted by industry leaders
           </p>

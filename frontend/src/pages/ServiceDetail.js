@@ -59,7 +59,7 @@ export default function ServiceDetail() {
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
           <Link to="/services" data-testid="back-to-services" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors"><ArrowLeft size={14} /> Back to All Services</Link>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function ServiceDetail() {
 
       {/* 3. Overview */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-base text-slate-600 leading-relaxed text-lg">{service.overview}</p>
@@ -79,8 +79,8 @@ export default function ServiceDetail() {
       </section>
 
       {/* 4. Subservices (expandable cards) */}
-      <section data-testid="subservices-section" className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section data-testid="subservices-section" className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">What We Deliver</p>
@@ -101,8 +101,8 @@ export default function ServiceDetail() {
       </section>
 
       {/* 5. Tech Stack */}
-      <section data-testid="service-tech-stack" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section data-testid="service-tech-stack" className="py-20 sm:py-24 bg-[#0B1B3D]">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>
@@ -131,8 +131,8 @@ export default function ServiceDetail() {
       </section>
 
       {/* 6. Process Roadmap */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
@@ -170,7 +170,7 @@ export default function ServiceDetail() {
 
       {/* 9. Why Choose Us + Stats */}
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
               <div>

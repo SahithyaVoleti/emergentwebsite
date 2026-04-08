@@ -25,21 +25,21 @@ export default function IndustryDetail() {
       <PageHero label="Industries" title={industry.heroTitle} description={industry.heroDesc} primaryCTA={{ text: "Get Industry Assessment", href: "#page-contact" }} secondaryCTA={{ text: "All Industries", href: "/industries" }} image={industry.heroImage} />
 
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
           <Link to="/industries" data-testid="back-to-industries" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Industries</Link>
         </div>
       </div>
 
       {/* Overview */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection><p className="text-base text-slate-600 leading-relaxed max-w-3xl text-lg">{industry.overview}</p></AnimatedSection>
         </div>
       </section>
 
       {/* AI Capabilities */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Capabilities</p>
@@ -72,8 +72,8 @@ export default function IndustryDetail() {
       <CTASection title={`Ready to Transform ${industry.title}?`} description="Schedule a consultation to discuss how AI can drive measurable results." />
 
       {/* Process Roadmap */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
@@ -101,7 +101,7 @@ export default function IndustryDetail() {
 
       {/* Services We Offer for this Industry */}
       <section data-testid="industry-services-section" className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Services</p>
@@ -125,8 +125,8 @@ export default function IndustryDetail() {
       </section>
 
       {/* Tech Stack for Industry */}
-      <section data-testid="industry-tech-stack" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section data-testid="industry-tech-stack" className="py-20 sm:py-24 bg-[#0B1B3D]">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>

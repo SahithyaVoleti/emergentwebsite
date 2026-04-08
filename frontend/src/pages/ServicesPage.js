@@ -4,6 +4,7 @@ import PageHero from "../components/PageHero";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
+import { SERVICES_LANDING_HERO_IMAGE } from "../lib/heroImageThemes";
 
 export default function ServicesPage() {
   return (
@@ -13,22 +14,44 @@ export default function ServicesPage() {
         title="AI Development Services for Real-World Impact"
         description="Navigate through the current tech-driven landscape and foster long-term growth with custom AI solutions tailored to your unique business challenges."
         primaryCTA={{ text: "Talk to Our Experts", href: "#page-contact" }}
-        image="https://images.unsplash.com/photo-1518980120692-3cfe64c152d0?w=800&h=500&fit=crop"
+        image={SERVICES_LANDING_HERO_IMAGE}
       />
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
               <StaggerItem key={s.slug}>
                 <Link
                   to={`/services/${s.slug}`}
                   data-testid={`service-link-${s.slug}`}
-                  className="group bg-white border border-slate-200 rounded-sm p-8 hover:bg-[#0B1B3D] transition-all duration-300 block h-full"
+                  className="group relative isolate min-h-[320px] overflow-hidden rounded-sm border border-slate-200/80 shadow-sm hover:border-slate-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 block h-full flex flex-col"
                 >
-                  <s.icon size={28} className="text-[#2563EB] group-hover:text-white transition-colors mb-5" />
-                  <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-white mb-3 transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{s.title}</h3>
-                  <p className="text-sm text-slate-500 group-hover:text-slate-300 leading-relaxed transition-colors mb-4">{s.shortDesc}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2563EB] group-hover:text-white transition-colors">Learn More <ArrowRight size={14} /></span>
+                  <img
+                    src={s.heroImage}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-black/[0.92] via-black/50 to-black/15"
+                    aria-hidden
+                  />
+                  <div
+                    className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"
+                    aria-hidden
+                  />
+                  <div className="relative z-10 flex min-h-[320px] flex-col justify-between p-6 sm:p-8">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/30 bg-black/25 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 group-hover:border-white/45 group-hover:bg-black/35">
+                      <s.icon size={26} className="text-white drop-shadow-sm" strokeWidth={1.75} />
+                    </div>
+                    <div className="pt-8">
+                      <h3 className="text-lg font-bold text-white mb-3 tracking-tight drop-shadow-md" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{s.title}</h3>
+                      <p className="text-sm text-white/95 leading-relaxed mb-5 [text-shadow:0_2px_20px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.9)]">{s.shortDesc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/95 underline underline-offset-4 decoration-white/35 group-hover:decoration-white transition-colors">
+                        Learn More <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               </StaggerItem>
             ))}

@@ -1,14 +1,5 @@
 import { ShoppingCart, Heart, DollarSign, GraduationCap, Landmark, Gamepad2, Building2 } from "lucide-react";
-
-const industryImages = [
-  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=500&fit=crop",
-  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop",
-];
+import { INDUSTRY_HERO_IMAGES as industryImages } from "../lib/heroImageThemes";
 
 const industries = [
   {

@@ -7,8 +7,8 @@ export default function CoreTechnologies({ categories, title, description }) {
   if (!categories || categories.length === 0) return null;
 
   return (
-    <section data-testid="core-technologies-section" className="py-20 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section data-testid="core-technologies-section" className="py-20 sm:py-24 corp-pat-cross-dash">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="max-w-2xl mb-10">
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Technologies We Use</p>

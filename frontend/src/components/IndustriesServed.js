@@ -18,8 +18,8 @@ export default function IndustriesServed({ title }) {
   const displayIndustries = industries.slice(0, 6);
 
   return (
-    <section data-testid="industries-served-section" className="py-20 sm:py-24 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section data-testid="industries-served-section" className="py-20 sm:py-24 corp-pat-diag-dash">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="max-w-2xl mb-12">
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Industries</p>

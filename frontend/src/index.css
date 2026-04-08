@@ -91,3 +91,129 @@ code {
 html {
     scroll-behavior: smooth;
 }
+
+/* Hero: subtle “AI showcase” motion on full-bleed images (disabled when user prefers reduced motion) */
+@layer components {
+    @keyframes hero-ken-burns {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+            transform: translate(-48%, -49%) scale(1.08);
+        }
+    }
+
+    @keyframes hero-ai-pulse {
+        0%,
+        100% {
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 0.42;
+        }
+    }
+
+    @keyframes hero-ai-sweep {
+        0% {
+            background-position: 0% 40%, 100% 60%, 0% 50%;
+        }
+        100% {
+            background-position: 0% 40%, 100% 60%, 100% 50%;
+        }
+    }
+
+    .hero-anim-img {
+        animation: hero-ken-burns 34s ease-in-out infinite alternate;
+        will-change: transform;
+    }
+
+    .hero-ai-pulse {
+        background:
+            radial-gradient(ellipse 85% 65% at 72% 38%, rgba(37, 99, 235, 0.38), transparent 55%),
+            radial-gradient(ellipse 55% 45% at 18% 78%, rgba(96, 165, 250, 0.22), transparent 52%),
+            linear-gradient(118deg, transparent 35%, rgba(147, 197, 253, 0.12) 48%, transparent 62%);
+        background-size: 100% 100%, 100% 100%, 220% 220%;
+        animation: hero-ai-pulse 11s ease-in-out infinite, hero-ai-sweep 22s linear infinite;
+        mix-blend-mode: screen;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hero-anim-img,
+        .hero-ai-pulse {
+            animation: none !important;
+        }
+    }
+
+    /**
+     * Section patterns — only three light styles (dots, orthogonal dashes, diagonal dashes).
+     * Use on alternating bands; other sections stay solid (bg-white / bg-[#F8FAFC] / navy).
+     * No ruled “notebook” lines.
+     */
+    .corp-pat-dots {
+        background-color: #f8fafc;
+        background-image: radial-gradient(rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+        background-size: 18px 18px;
+    }
+
+    .corp-pat-cross-dash {
+        background-color: #ffffff;
+        background-image:
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 5px,
+                rgba(148, 163, 184, 0.1) 5px,
+                rgba(148, 163, 184, 0.1) 6px,
+                transparent 6px,
+                transparent 13px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 5px,
+                rgba(148, 163, 184, 0.1) 5px,
+                rgba(148, 163, 184, 0.1) 6px,
+                transparent 6px,
+                transparent 13px
+            );
+    }
+
+    .corp-pat-diag-dash {
+        background-color: #fafbfc;
+        background-image: repeating-linear-gradient(
+            -36deg,
+            transparent,
+            transparent 11px,
+            rgba(148, 163, 184, 0.065) 11px,
+            rgba(148, 163, 184, 0.065) 12px
+        );
+    }
+
+    /* Tech stack: infinite horizontal ribbon */
+    @keyframes tech-marquee {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+
+    .tech-marquee-track {
+        display: flex;
+        width: max-content;
+        gap: 1rem;
+        animation: tech-marquee 70s linear infinite;
+        will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .tech-marquee-track {
+            animation: none;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            row-gap: 0.75rem;
+        }
+    }
+}

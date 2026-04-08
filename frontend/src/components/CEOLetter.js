@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 export default function CEOLetter() {
   return (
     <section id="about" data-testid="ceo-letter-section" className="py-20 sm:py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
