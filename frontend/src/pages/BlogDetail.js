@@ -92,7 +92,7 @@ export default function BlogDetail() {
                   <div>
                     <p className="text-sm font-bold text-[#0B1B3D]">NeuralTrix AI Engineering Team</p>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      Insights from our team of 400+ AI specialists building production-grade AI solutions for enterprises worldwide.
+                      Editorial notes from delivery teams translating enterprise AI field experience into practical implementation guidance.
                     </p>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function BlogDetail() {
       </section>
 
       {/* 4. CTA */}
-      <CTASection title="Want Expert AI Insights?" description="Subscribe to our newsletter for the latest AI development trends and insights from our engineering team." buttonText="Get in Touch" />
+      <CTASection title="Need Guidance for a Similar Challenge?" description="Share your scenario and we can point you to the right implementation approach, trade-offs, and next decisions." buttonText="Get in Touch" />
 
       {/* 5. Related Articles */}
       <section className="py-20 sm:py-24 corp-pat-dots">

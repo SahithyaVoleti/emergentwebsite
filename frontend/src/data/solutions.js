@@ -4,11 +4,11 @@ const solutions = [
   {
     slug: "databrain-ai",
     title: "DataBrain AI",
-    shortDesc: "Summarize, transcribe, and convert complicated multi-format data into easy-to-follow chats.",
+    shortDesc: "Convert large document collections into searchable, conversational knowledge with source-grounded answers.",
     heroTitle: "DataBrain AI — Chat With Your Documents",
     heroDesc: "Transform how your team interacts with data. DataBrain AI lets you upload PDFs, spreadsheets, transcripts, and more, then ask questions in plain language and receive accurate, cited answers in seconds.",
     heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
-    overview: "DataBrain AI is NeuralTrix AI's flagship document intelligence platform. It uses advanced RAG (Retrieval-Augmented Generation) technology to ingest documents in any format—PDF, DOCX, CSV, audio transcripts, and more—and create a conversational interface where users can ask complex questions and receive grounded, accurate answers with source citations. Built for enterprises that need to unlock insights from vast document repositories.",
+    overview: "DataBrain AI is a document intelligence platform that ingests multi-format content and exposes it through reliable conversational search with citations and confidence-aware responses.",
     features: [
       { title: "Multi-Format Ingestion", desc: "Upload PDFs, Word docs, spreadsheets, presentations, audio files, and images. DataBrain processes them all." },
       { title: "Natural Language Q&A", desc: "Ask complex questions in plain English and receive accurate answers with source citations and confidence scores." },
@@ -29,7 +29,7 @@ const solutions = [
   {
     slug: "medimind-ai",
     title: "MediMind AI",
-    shortDesc: "Digitalize your healthcare system with a generative AI solution for the health industry.",
+    shortDesc: "Support clinical and operational teams with healthcare AI built for safety, privacy, and workflow fit.",
     heroTitle: "MediMind AI — AI-Powered Healthcare Intelligence",
     heroDesc: "Streamline clinical workflows, automate documentation, and improve patient outcomes with a HIPAA-compliant AI platform designed specifically for healthcare providers and health systems.",
     heroImage: SOLUTION_HERO_IMAGES["medimind-ai"],
@@ -54,7 +54,7 @@ const solutions = [
   {
     slug: "talentify-ai",
     title: "Talentify AI",
-    shortDesc: "Simplify finding opportunities and connect job seekers with recruiters using Gen AI.",
+    shortDesc: "Improve hiring outcomes with AI-assisted matching, screening workflows, and recruiter decision support.",
     heroTitle: "Talentify AI — Intelligent Recruitment Platform",
     heroDesc: "Revolutionize your hiring process with AI-powered candidate matching, automated screening, and intelligent job recommendations that connect the right talent with the right opportunities 10x faster.",
     heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
@@ -79,7 +79,7 @@ const solutions = [
   {
     slug: "quikbiz-ai",
     title: "QuikBiz AI",
-    shortDesc: "AI chatbot for improving engagement through context-driven interactions.",
+    shortDesc: "Increase conversion and support quality with context-aware conversational engagement across channels.",
     heroTitle: "QuikBiz AI — Conversational Commerce Platform",
     heroDesc: "Deploy intelligent AI chatbots that understand your business, engage visitors naturally, qualify leads, answer questions, and drive conversions—all without human intervention. Available 24/7 across all your digital channels.",
     heroImage: SOLUTION_HERO_IMAGES["quikbiz-ai"],
@@ -104,7 +104,7 @@ const solutions = [
   {
     slug: "intellibot-ai",
     title: "IntelliBot AI",
-    shortDesc: "Automate query resolution via an AI chatbot that vectorizes data from multiple sources.",
+    shortDesc: "Unify enterprise knowledge sources and resolve internal queries through permission-aware AI assistance.",
     heroTitle: "IntelliBot AI — Enterprise Knowledge Assistant",
     heroDesc: "Unify your organization's knowledge across systems and make it instantly accessible through an intelligent AI assistant that employees and customers can query in natural language.",
     heroImage: SOLUTION_HERO_IMAGES["intellibot-ai"],

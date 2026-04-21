@@ -19,7 +19,7 @@ export default function CaseStudyDetail() {
 
   return (
     <div>
-      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Start Similar Project", href: "#page-contact" }} secondaryCTA={{ text: "All Case Studies", href: "/case-studies" }} image={cs.heroImage} />
+      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Discuss a Similar Initiative", href: "#page-contact" }} secondaryCTA={{ text: "All Case Studies", href: "/case-studies" }} image={cs.heroImage} />
 
       <div className="bg-white border-b border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
@@ -87,8 +87,8 @@ export default function CaseStudyDetail() {
         </div>
       </section>
 
-      <CTASection title="Want Similar Results?" description="Let's discuss how we can replicate and exceed these results for your business." />
-      <TestimonialsSection title="What Our Clients Say" />
+      <CTASection title="Looking for Comparable Outcomes?" description="We can assess whether this delivery pattern fits your constraints, team setup, and KPI expectations." />
+      <TestimonialsSection title="Additional Client Perspectives" />
       <FAQSection faqs={cs.faqs} />
       <RelatedBlog />
       <PageContactForm context={`Case Study: ${cs.title}`} />

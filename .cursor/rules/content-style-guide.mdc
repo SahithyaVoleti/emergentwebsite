@@ -1,0 +1,52 @@
+---
+description: Enforce website content style and section taxonomy
+alwaysApply: true
+---
+
+# Website Content Style Rule
+
+Follow `frontend/CONTENT_STYLE_GUIDE.md` for all content/page updates.
+
+## Required Section Labels
+
+Use these labels consistently:
+
+- `Methodology`
+- `Outcomes`
+- `Assurance`
+- `Coverage`
+- `Next Step`
+
+Do not introduce alternate labels when intent is the same.
+
+## Heading Pattern
+
+Prefer these sentence patterns:
+
+- `Methodology for ...`
+- `Outcomes for ...` or `Outcomes Across ...`
+- `Assurance for ...` or `Assurance Through ...`
+- `Coverage Across ...`
+- `Next Step for ...`
+
+## Supporting Copy Pattern
+
+Use one concise supporting sentence under headings:
+
+- `This methodology ...`
+- `This assurance model ...`
+- `This next step ...`
+
+Tone must be practical, enterprise-focused, and outcome-oriented.
+
+## Page Flow Preference
+
+For top-level pages, default to:
+
+1. Hero
+2. Core content
+3. Methodology
+4. Outcomes/Coverage
+5. Assurance
+6. Next Step (pre-contact CTA band)
+7. Contact

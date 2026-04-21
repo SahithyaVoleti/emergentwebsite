@@ -65,7 +65,7 @@ export default function ServiceDetail() {
       </div>
 
       {/* 2. Impact Stats */}
-      <ImpactStats title={`Impact of Enterprise AI`} />
+      <ImpactStats title={`Service Performance Snapshot`} />
 
       {/* 3. Overview */}
       <section className="py-16 sm:py-20 bg-white">
@@ -83,11 +83,11 @@ export default function ServiceDetail() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">What We Deliver</p>
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Scope of Delivery</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
                 Our {service.title} Services
               </h2>
-              <p className="text-base text-slate-600">Comprehensive capabilities designed to deliver measurable business impact.</p>
+              <p className="text-base text-slate-600">Service modules are structured to shorten time-to-value while keeping architecture and operations maintainable.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 lg:grid-cols-2 gap-4" stagger={0.06}>
@@ -106,8 +106,8 @@ export default function ServiceDetail() {
           <AnimatedSection>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Enterprise-Grade Tools That Power Results</h2>
-              <p className="text-base text-slate-400">We deploy what works — proven technologies for AI that surpasses expectations.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Technology Foundation Behind This Service</h2>
+              <p className="text-base text-slate-400">Tooling choices prioritize reliability, integration fit, and lifecycle maintainability over short-term novelty.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -136,8 +136,8 @@ export default function ServiceDetail() {
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>From Vision to Victory</h2>
-              <p className="text-base text-slate-600 mt-4">Our battle-tested roadmap designed to reduce risk, validate impact early, and scale with confidence.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Execution Path from Discovery to Rollout</h2>
+              <p className="text-base text-slate-600 mt-4">Each stage is sequenced to validate assumptions early and maintain predictable delivery quality.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,14 +157,14 @@ export default function ServiceDetail() {
       </section>
 
       {/* 7. Mid-page CTA */}
-      <CTASection title="Ready to Get Started?" description={`Let's discuss how our ${service.title} services can transform your business operations and deliver measurable ROI.`} />
+      <CTASection title="Discuss Delivery Fit" description={`We can map ${service.title} to your current systems, priorities, and timeline to define a practical starting scope.`} />
 
       {/* 8. Core Technologies (Tabbed) */}
       {coreTechData[service.slug] && (
         <CoreTechnologies
           categories={coreTechData[service.slug]}
           title={`Technologies Powering Our ${service.title} Solutions`}
-          description="We deploy proven, enterprise-grade technologies to build AI that surpasses expectations."
+          description="Reference architectures and platform components selected for stable, enterprise-scale implementation."
         />
       )}
 
@@ -175,7 +175,7 @@ export default function ServiceDetail() {
             <AnimatedSection>
               <div>
                 <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Why NeuralTrix AI?</p>
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Leaders Choose Us</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Teams Retain Us Across Phases</h2>
                 <div className="space-y-8">
                   {service.whyChooseUs.map((w, i) => (
                     <div key={i} className="border-l-2 border-[#2563EB] pl-6">

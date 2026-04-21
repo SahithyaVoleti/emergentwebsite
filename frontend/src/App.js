@@ -14,6 +14,11 @@ import CaseStudyDetail from "@/pages/CaseStudyDetail";
 import IndustriesPage from "@/pages/IndustriesPage";
 import IndustryDetail from "@/pages/IndustryDetail";
 import AboutPage from "@/pages/AboutPage";
+import TeamPage from "@/pages/TeamPage";
+import TestimonialsPage from "@/pages/TestimonialsPage";
+import PartnersPage from "@/pages/PartnersPage";
+import SecurityPage from "@/pages/SecurityPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogDetail from "@/pages/BlogDetail";
 import CareersPage from "@/pages/CareersPage";
@@ -53,6 +58,11 @@ function App() {
             <Route path="/industries" element={<PublicLayout><IndustriesPage /></PublicLayout>} />
             <Route path="/industries/:slug" element={<PublicLayout><IndustryDetail /></PublicLayout>} />
             <Route path="/about" element={<PublicLayout><AboutPage /></PublicLayout>} />
+            <Route path="/team" element={<PublicLayout><TeamPage /></PublicLayout>} />
+            <Route path="/testimonials" element={<PublicLayout><TestimonialsPage /></PublicLayout>} />
+            <Route path="/partners" element={<PublicLayout><PartnersPage /></PublicLayout>} />
+            <Route path="/security" element={<PublicLayout><SecurityPage /></PublicLayout>} />
+            <Route path="/privacy-policy" element={<PublicLayout><PrivacyPolicyPage /></PublicLayout>} />
             <Route path="/blog" element={<PublicLayout><BlogPage /></PublicLayout>} />
             <Route path="/blog/:slug" element={<PublicLayout><BlogDetail /></PublicLayout>} />
             <Route path="/careers" element={<PublicLayout><CareersPage /></PublicLayout>} />

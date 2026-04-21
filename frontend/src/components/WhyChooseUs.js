@@ -17,7 +17,7 @@ const points = [
   },
   {
     title: "Engineering-Led Execution",
-    desc: "Battle-tested engineering talent that turns ambitious ideas into high-performance AI systems moving fast, scaling hard, and delivering real business results.",
+    desc: "Experienced engineering teams that convert complex ideas into reliable AI systems with measurable business outcomes.",
   },
   {
     title: "End-to-End Ownership",
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
               Your Trusted AI Engineering Partner
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
-              NeuralTrix AI brings battle-tested engineering talent to turn ambitious ideas into
+              NeuralTrix AI brings experienced engineering talent to turn ambitious ideas into
               high-performance AI systems that move fast, scale hard, and deliver real business results.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">

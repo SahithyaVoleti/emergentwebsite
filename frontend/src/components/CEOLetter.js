@@ -42,7 +42,7 @@ export default function CEOLetter() {
               and enterprise-grade risk reduction for our partners.
             </p>
             <p className="text-base text-slate-600 leading-relaxed">
-              The future won't reward size alone. It will reward speed, intelligence, and flawless
+              The future will not reward size alone. It will reward speed, intelligence, and consistent
               execution. We are ready to build that future with you.
             </p>
             <div className="pt-4">

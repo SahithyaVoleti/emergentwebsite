@@ -65,7 +65,7 @@ export default function CareersPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="Careers" title="Build the Future of AI With Us" description="Join 400+ AI specialists who are shaping the future of enterprise AI. We offer challenging work, competitive compensation, and a culture that values innovation." primaryCTA={{ text: "View Open Positions", href: "#positions" }} image={CAREERS_HERO_IMAGE} />
+      <PageHero label="Careers" title="Grow Your AI Career Through Real Enterprise Challenges" description="Work on systems used in production, collaborate with experienced operators, and build durable skills across research, engineering, and delivery." primaryCTA={{ text: "View Open Positions", href: "#positions" }} image={CAREERS_HERO_IMAGE} />
 
       {/* 2. Stats */}
       <ImpactStats customStats={[
@@ -80,7 +80,7 @@ export default function CareersPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why NeuralTrix AI?</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Professionals Build Here</h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {perks.map((p) => (
@@ -157,10 +157,83 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* 7.5 Career Growth Paths */}
+      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Methodology for Career Growth and Advancement
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Engineering Track", desc: "Progress from individual contributor roles to staff/principal technical leadership." },
+              { title: "Product & Delivery Track", desc: "Grow from execution roles into program and portfolio leadership functions." },
+              { title: "People Leadership Track", desc: "Lead teams, shape culture, and mentor high-performing AI specialists." },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* 7.6 Work Culture Commitments */}
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Assurance Through Culture and Team Standards
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              "High ownership with low bureaucracy",
+              "Learning budget and mentorship support",
+              "Outcome-focused remote collaboration",
+              "Respectful feedback and transparent communication",
+            ].map((item) => (
+              <StaggerItem key={item}>
+                <div className="h-full rounded-sm border border-slate-200 bg-white p-6 text-sm text-slate-600 leading-relaxed">
+                  {item}
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
       {/* 8. Testimonials */}
       <TestimonialsSection title="Life at NeuralTrix AI" />
 
-      {/* 9. Contact */}
+      {/* 9. Career CTA */}
+      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
+              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Find the Role That Matches Your Growth Direction
+              </h2>
+              <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
+                This next step maps your expertise and goals to opportunities aligned with your growth path.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 10. Contact */}
       <PageContactForm context="Careers - Job Application" />
     </div>
   );

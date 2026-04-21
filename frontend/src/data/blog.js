@@ -8,7 +8,7 @@ const blogArticles = [
     date: "March 2, 2026",
     readTime: "8 min read",
     image: BLOG_ARTICLE_HERO_IMAGES["augment-code-vs-cursor"],
-    excerpt: "Pick the one that matches your criteria, repository size, and workflow preferences for maximum productivity.",
+    excerpt: "A practical comparison to choose the right AI coding tool based on team workflow, codebase complexity, and integration needs.",
     content: [
       { type: "paragraph", text: "The landscape of AI-powered development tools has evolved rapidly. Two standout contenders—Augment Code and Cursor—have emerged as favorites among developers looking to supercharge their productivity. But which one is right for you? In this comprehensive comparison, we break down every aspect that matters." },
       { type: "heading", text: "What is Augment Code?" },
@@ -32,7 +32,7 @@ const blogArticles = [
     date: "March 2, 2026",
     readTime: "10 min read",
     image: BLOG_ARTICLE_HERO_IMAGES["claude-vs-chatgpt-coding"],
-    excerpt: "A deep comparison of the leading AI assistants for software development and code generation tasks.",
+    excerpt: "A side-by-side analysis of where each model performs better in coding, review, debugging, and enterprise adoption scenarios.",
     content: [
       { type: "paragraph", text: "As AI-powered coding assistants become essential tools in every developer's toolkit, the question of which model to use has become increasingly important. Claude (by Anthropic) and ChatGPT (by OpenAI) represent two different philosophies in AI development, and their strengths in coding reflect these differences." },
       { type: "heading", text: "Claude's Approach to Code" },
@@ -56,11 +56,11 @@ const blogArticles = [
     date: "February 23, 2026",
     readTime: "12 min read",
     image: BLOG_ARTICLE_HERO_IMAGES["top-vibe-coding-tools"],
-    excerpt: "The way developers build software is changing, and these tools are responsible for the transformation.",
+    excerpt: "An actionable list of AI development tools that accelerate prototyping, coding, and team delivery without sacrificing quality.",
     content: [
       { type: "paragraph", text: "Vibe coding—the practice of using AI to generate code from natural language descriptions—has gone from novelty to necessity in just two years. The best tools in this space don't just generate code; they understand context, maintain consistency, and help developers think at a higher level of abstraction. Here are the top 10 tools that are defining this new era." },
       { type: "heading", text: "1. Cursor" },
-      { type: "paragraph", text: "Cursor has become the gold standard for AI-native development. Built on VS Code's foundation but with AI woven into every feature, it offers intelligent code completion, multi-file editing, and natural language commands that feel natural rather than bolted on." },
+      { type: "paragraph", text: "Cursor is widely adopted for AI-native development. Built on VS Code's foundation with integrated AI workflows, it offers intelligent completion, multi-file editing, and natural language-driven actions." },
       { type: "heading", text: "2. GitHub Copilot" },
       { type: "paragraph", text: "The pioneer of AI coding assistants continues to evolve. Copilot's latest versions offer workspace-aware suggestions, multi-file context understanding, and integration with GitHub's pull request and issue tracking features." },
       { type: "heading", text: "3. Windsurf" },

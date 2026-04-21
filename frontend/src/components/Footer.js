@@ -21,10 +21,13 @@ const footerLinks = {
   ],
   Company: [
     { label: "About Us", href: "/about" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Our Team", href: "/team" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Technology Partners", href: "/partners" },
+    { label: "Security", href: "/security" },
     { label: "Careers", href: "/careers" },
     { label: "Blog", href: "/blog" },
-    { label: "Industries", href: "/industries" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   Industries: [
     { label: "Healthcare", href: "/industries/healthcare" },
@@ -77,9 +80,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} NeuralTrix AI. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
               Privacy Policy
-            </span>
+            </Link>
             <span className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
               Terms of Service
             </span>

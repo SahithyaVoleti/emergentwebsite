@@ -1,0 +1,95 @@
+import PageHero from "../components/PageHero";
+import PageContactForm from "../components/PageContactForm";
+import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
+import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+
+const partners = ["AWS", "Google Cloud", "Microsoft Azure", "OpenAI", "Anthropic", "Meta AI", "NVIDIA", "Snowflake", "Databricks", "MongoDB"];
+
+export default function PartnersPage() {
+  return (
+    <div>
+      <PageHero
+        label="Technology Partners"
+        title="Technology Partnerships that Strengthen Delivery"
+        description="We combine proven platform partners with practical architecture choices to reduce implementation risk and accelerate enterprise outcomes."
+        primaryCTA={{ text: "Discuss Architecture", href: "#page-contact" }}
+        image={LISTING_PAGE_HERO_IMAGES.solutions}
+      />
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-12">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Partner Network</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Platforms We Leverage for Reliable Enterprise Outcomes
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            {partners.map((partner) => (
+              <StaggerItem key={partner}>
+                <div className="h-20 rounded-sm border border-slate-200 bg-[#F8FAFC] flex items-center justify-center px-4 text-center">
+                  <span className="text-sm font-semibold text-slate-700 tracking-wide">{partner}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                How We Select and Apply Partner Capabilities
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Cloud Foundation", desc: "Designing secure and scalable architectures across public cloud environments." },
+              { title: "Model Layer", desc: "Selecting and integrating AI models best suited to business context and controls." },
+              { title: "Data Platform", desc: "Building analytics-ready pipelines and governed data foundations for AI use." },
+              { title: "Application Enablement", desc: "Connecting model intelligence with enterprise workflows and user interfaces." },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+      <section className="py-20 sm:py-24 corp-pat-dots">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Outcomes</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Outcomes of Our Partner-Backed Delivery Approach
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Faster Implementation", desc: "Accelerated delivery using proven patterns and partner-native capabilities." },
+              { title: "Lower Risk", desc: "Validated architecture decisions backed by established technology ecosystems." },
+              { title: "Future Flexibility", desc: "Composable platform choices designed for long-term modernization paths." },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+      <PageContactForm context="Partners Page" />
+    </div>
+  );
+}

@@ -1,42 +1,6 @@
-import { ArrowRight, ShoppingCart, Heart, DollarSign, GraduationCap, Landmark, Gamepad2, Building2 } from "lucide-react";
-
-const industries = [
-  {
-    icon: ShoppingCart,
-    name: "Retail",
-    desc: "Predictive AI that forecasts demand, optimizes supply chains, and personalizes shopping experiences, cutting waste by 30% and increasing margins.",
-  },
-  {
-    icon: Heart,
-    name: "Healthcare",
-    desc: "HIPAA-compliant AI that automates administrative triage and securely supports clinicians, improving hospital throughput by up to 45%.",
-  },
-  {
-    icon: DollarSign,
-    name: "Fintech",
-    desc: "Real-time anomaly detection to catch fraud 50% faster, with intelligent risk scoring and automated compliance monitoring.",
-  },
-  {
-    icon: GraduationCap,
-    name: "Education",
-    desc: "AI-powered curriculum engines for 2x student engagement and 3x personalization efficiency without losing the personal touch.",
-  },
-  {
-    icon: Landmark,
-    name: "BFSI",
-    desc: "Safe automation that protects legacy banking systems while saving millions through automated compliance and risk management.",
-  },
-  {
-    icon: Gamepad2,
-    name: "Sports & Gaming",
-    desc: "Real-time intelligence that turns game data into personalized experiences driving 2x higher audience retention.",
-  },
-  {
-    icon: Building2,
-    name: "Real Estate",
-    desc: "AI-automated asset valuations and market trend predictions driving a 70% improvement in lead conversion.",
-  },
-];
+import { StaggerChildren, StaggerItem } from "./AnimatedSection";
+import ListingImageCard from "./ListingImageCard";
+import industries from "../data/industries";
 
 export default function Industries() {
   return (
@@ -57,33 +21,25 @@ export default function Industries() {
             We engineer industry-ready AI systems built for regulatory compliance, total data security, and measurable financial impact.
           </p>
         </div>
-        <div className="space-y-0">
+        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind) => (
-            <div
-              key={ind.name}
-              data-testid={`industry-${ind.name.toLowerCase().replace(/[\s&]/g, "-")}`}
-              className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-slate-200 hover:bg-white transition-colors px-4 -mx-4 cursor-pointer"
-            >
-              <div className="md:col-span-1 flex items-center">
-                <ind.icon size={22} className="text-slate-400 group-hover:text-[#2563EB] transition-colors" />
-              </div>
-              <div className="md:col-span-3">
-                <h3
-                  className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#2563EB] transition-colors"
-                  style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                >
-                  {ind.name}
-                </h3>
-              </div>
-              <div className="md:col-span-7">
-                <p className="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
-              </div>
-              <div className="md:col-span-1 flex items-center justify-end">
-                <ArrowRight size={16} className="text-slate-300 group-hover:text-[#2563EB] transition-colors" />
-              </div>
-            </div>
+            <StaggerItem key={ind.slug}>
+              <ListingImageCard
+                to={`/industries/${ind.slug}`}
+                data-testid={`industry-${ind.slug}`}
+                image={ind.heroImage}
+                title={ind.title}
+                description={ind.shortDesc}
+                icon={ind.icon}
+                ctaText="Explore"
+                variant="industryMinimal"
+                minHeightClass="min-h-[300px] sm:min-h-[320px]"
+                contentMinHeightClass="min-h-[300px] sm:min-h-[320px]"
+                contentPaddingClass="p-8"
+              />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

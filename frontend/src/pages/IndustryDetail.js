@@ -61,7 +61,7 @@ export default function IndustryDetail() {
       </section>
 
       {/* Impact Stats */}
-      <ImpactStats title={`${industry.title} AI Impact`} customStats={[
+      <ImpactStats title={`${industry.title} Performance Benchmarks`} customStats={[
         { value: "45%", label: "Average efficiency improvement" },
         { value: "3x", label: "Faster decision making" },
         { value: "60%", label: "Cost reduction potential" },
@@ -69,7 +69,7 @@ export default function IndustryDetail() {
         { value: "2x", label: "Revenue growth acceleration" },
       ]} />
 
-      <CTASection title={`Ready to Transform ${industry.title}?`} description="Schedule a consultation to discuss how AI can drive measurable results." />
+      <CTASection title={`Plan a Practical ${industry.title} Rollout`} description="Schedule a consultation to align use cases, controls, and execution milestones for your operating context." />
 
       {/* Process Roadmap */}
       <section className="py-20 sm:py-24 corp-pat-cross-dash">
@@ -77,7 +77,7 @@ export default function IndustryDetail() {
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Implementation Roadmap</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Industry Implementation Sequence</h2>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -133,7 +133,7 @@ export default function IndustryDetail() {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
                 Technologies for {industry.title}
               </h2>
-              <p className="text-base text-slate-400">Enterprise-grade tools powering our {industry.title.toLowerCase()} solutions.</p>
+              <p className="text-base text-slate-400">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

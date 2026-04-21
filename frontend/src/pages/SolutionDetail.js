@@ -55,7 +55,7 @@ export default function SolutionDetail() {
       </section>
 
       {/* 4. Impact Stats */}
-      <ImpactStats title="Platform Impact" customStats={[
+      <ImpactStats title="Solution Value Indicators" customStats={[
         { value: "10x", label: "Faster information retrieval" },
         { value: "95%", label: "Response accuracy rate" },
         { value: "70%", label: "Reduction in manual work" },
@@ -67,7 +67,7 @@ export default function SolutionDetail() {
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Key Features</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Functional Capabilities</h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {solution.features.map((f, i) => (
@@ -86,7 +86,7 @@ export default function SolutionDetail() {
       </section>
 
       {/* 6. CTA */}
-      <CTASection title={`Transform Your Operations with ${solution.title}`} description="Schedule a demo to see how this solution addresses your specific business challenges." />
+      <CTASection title={`Evaluate ${solution.title} for Your Environment`} description="Schedule a walkthrough to assess integration effort, governance fit, and likely operational impact." />
 
       {/* 7. How It Works */}
       <section className="py-20 sm:py-24 corp-pat-cross-dash">
@@ -94,7 +94,7 @@ export default function SolutionDetail() {
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">How It Works</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Getting Started is Simple</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Adoption Path for Implementation Teams</h2>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -119,7 +119,7 @@ export default function SolutionDetail() {
       </section>
 
       {/* 8. Testimonials */}
-      <TestimonialsSection title="Trusted by Industry Leaders" />
+      <TestimonialsSection title="Feedback from Teams Running Similar Solutions" />
 
       {/* 9. FAQ */}
       <FAQSection faqs={solution.faqs} />

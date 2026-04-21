@@ -1,21 +1,68 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "../components/ui/button";
+import services from "../data/services";
+import solutions from "../data/solutions";
+import industries from "../data/industries";
 
 const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Industries", href: "/industries" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Careers", href: "/careers" },
+  { label: "Home", href: "/" },
+];
+
+const servicesLinks = services.map((s) => ({ label: s.title, href: `/services/${s.slug}` }));
+
+const solutionsLinks = solutions.map((s) => ({ label: s.title, href: `/solutions/${s.slug}` }));
+
+const industriesLinks = industries.map((i) => ({ label: i.title, href: `/industries/${i.slug}` }));
+
+const aboutLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Team", href: "/team" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Technology Partners", href: "/partners" },
+  { label: "Security", href: "/security" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Career", href: "/careers" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const renderDesktopDropdown = (label, links, basePath) => {
+    const isActive = location.pathname.startsWith(basePath);
+
+    return (
+      <div className="relative group">
+        <button
+          type="button"
+          data-testid={`nav-link-${label.toLowerCase()}`}
+          className={`inline-flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
+            isActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
+          }`}
+        >
+          {label}
+          <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+        </button>
+        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-64 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50 max-h-[70vh] overflow-y-auto">
+          {links.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
+              data-testid={`${label.toLowerCase()}-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+              className={`block rounded-sm px-3 py-2 text-sm transition-colors ${
+                location.pathname === link.href
+                  ? "text-[#2563EB] bg-blue-50"
+                  : "text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-50"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <header
@@ -38,19 +85,77 @@ export default function Header() {
         >
           <div className="pointer-events-auto flex items-center gap-4 xl:gap-6">
             {navLinks.map((l) => (
+              (() => {
+                const isActive = l.href === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(l.href);
+
+                return (
               <Link
                 key={l.label}
                 to={l.href}
                 data-testid={`nav-link-${l.label.toLowerCase().replace(/\s/g, "-")}`}
                 className={`text-sm font-medium transition-colors whitespace-nowrap ${
-                  location.pathname.startsWith(l.href)
+                  isActive
                     ? "text-[#2563EB]"
                     : "text-slate-600 hover:text-[#0B1B3D]"
                 }`}
               >
                 {l.label}
               </Link>
+                );
+              })()
             ))}
+            {renderDesktopDropdown("Services", servicesLinks, "/services")}
+            {renderDesktopDropdown("Solutions", solutionsLinks, "/solutions")}
+            {renderDesktopDropdown("Industries", industriesLinks, "/industries")}
+            {(() => {
+              const aboutActive = aboutLinks.some((l) => location.pathname.startsWith(l.href));
+              return (
+                <div className="relative group">
+                  <button
+                    type="button"
+                    data-testid="nav-link-about"
+                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
+                      aboutActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
+                    }`}
+                  >
+                    About
+                    <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+                  </button>
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-56 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50">
+                    {aboutLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        to={link.href}
+                        data-testid={`about-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                        className={`block rounded-sm px-3 py-2 text-sm transition-colors ${
+                          location.pathname.startsWith(link.href)
+                            ? "text-[#2563EB] bg-blue-50"
+                            : "text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-50"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+            {(() => {
+              const isActive = location.pathname.startsWith("/blog");
+              return (
+                <Link
+                  to="/blog"
+                  data-testid="nav-link-blog"
+                  className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                    isActive ? "text-[#2563EB]" : "text-slate-600 hover:text-[#0B1B3D]"
+                  }`}
+                >
+                  Blog
+                </Link>
+              );
+            })()}
           </div>
         </nav>
 
@@ -87,6 +192,65 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
+          <div className="pt-2">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Services</p>
+            {servicesLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 pl-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="pt-2">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Solutions</p>
+            {solutionsLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 pl-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="pt-2">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Industries</p>
+            {industriesLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 pl-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="pt-2">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">About</p>
+            {aboutLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 pl-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/blog"
+            onClick={() => setMobileOpen(false)}
+            className="block py-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
+          >
+            Blog
+          </Link>
           <Button
             data-testid="mobile-cta-button"
             asChild

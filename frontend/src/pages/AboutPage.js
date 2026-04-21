@@ -8,14 +8,14 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/Ani
 import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 
 const timeline = [
-  { year: "2018", title: "Founded", desc: "NeuralTrix AI was founded in San Francisco with a mission to make enterprise AI accessible." },
-  { year: "2019", title: "First Enterprise Client", desc: "Secured our first Fortune 500 client and delivered an AI-powered fraud detection system." },
-  { year: "2020", title: "Remote-First", desc: "Expanded globally with a remote-first culture, growing to 50+ engineers across 8 countries." },
-  { year: "2021", title: "100 Clients", desc: "Reached 100 enterprise clients and launched our first AI product suite." },
-  { year: "2022", title: "GenAI Pioneer", desc: "Early adopter of LLMs for enterprise, launching RAG-based solutions before the mainstream." },
-  { year: "2023", title: "400+ Specialists", desc: "Grew to 400+ AI specialists and opened offices in London and Singapore." },
-  { year: "2024", title: "Agent Platform", desc: "Launched autonomous AI agent platform enabling enterprises to deploy intelligent agents at scale." },
-  { year: "2025", title: "1500+ Projects", desc: "Surpassed 1500 successful AI projects with 95% client retention rate." },
+  { year: "2018", title: "Founded", desc: "NeuralTrix AI was founded in San Francisco with a mission to make enterprise AI accessible.", icon: Target },
+  { year: "2019", title: "First Enterprise Client", desc: "Secured our first Fortune 500 client and delivered an AI-powered fraud detection system.", icon: Shield },
+  { year: "2020", title: "Remote-First", desc: "Expanded globally with a remote-first culture, growing to 50+ engineers across 8 countries.", icon: Globe },
+  { year: "2021", title: "100 Clients", desc: "Reached 100 enterprise clients and launched our first AI product suite.", icon: Users },
+  { year: "2022", title: "GenAI Pioneer", desc: "Early adopter of LLMs for enterprise, launching RAG-based solutions before the mainstream.", icon: Zap },
+  { year: "2023", title: "400+ Specialists", desc: "Grew to 400+ AI specialists and opened offices in London and Singapore.", icon: Heart },
+  { year: "2024", title: "Agent Platform", desc: "Launched autonomous AI agent platform enabling enterprises to deploy intelligent agents at scale.", icon: Eye },
+  { year: "2025", title: "1500+ Projects", desc: "Surpassed 1500 successful AI projects with 95% client retention rate.", icon: Target },
 ];
 
 const team = [
@@ -47,7 +47,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="About Us" title="Engineering the Future of Enterprise AI" description="NeuralTrix AI brings battle-tested engineering talent to turn ambitious ideas into high-performance AI systems that move fast, scale hard, and deliver real business results." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
+      <PageHero label="About Us" title="The Team and Principles Behind Our AI Delivery" description="Learn how our leadership model, delivery culture, and governance standards help enterprises move from AI ambition to sustained operational value." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
       {/* 2. Mission & Vision */}
       <section className="py-20 sm:py-24 bg-white">
@@ -106,13 +106,77 @@ export default function AboutPage() {
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Journey</h2>
           </AnimatedSection>
+          <div className="relative max-w-6xl mx-auto">
+            <div className="absolute top-0 bottom-0 left-[148px] md:left-[188px] w-1.5 bg-[#FFC200]" />
+            <StaggerChildren className="space-y-8 sm:space-y-9">
+              {timeline.map((t, idx) => (
+                <StaggerItem key={t.year}>
+                  <div data-testid={`timeline-${t.year}`} className="group relative grid grid-cols-[110px_44px_1fr] md:grid-cols-[140px_48px_1fr] items-start gap-4 md:gap-6">
+                    <div className="pt-1 text-right">
+                      <span className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        {t.year}
+                      </span>
+                    </div>
+                    <div className="relative z-10">
+                      <div
+                        className={`h-11 w-11 md:h-12 md:w-12 mx-auto rounded-full border-4 border-[#FFC200] flex items-center justify-center transition-all duration-300 ${
+                          idx === 0
+                            ? "bg-[#FFC200] shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
+                            : "bg-white group-hover:bg-[#FFC200] group-hover:shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
+                        }`}
+                      >
+                        <t.icon
+                          size={18}
+                          className={`transition-colors duration-300 ${
+                            idx === 0 ? "text-[#0B1B3D]" : "text-[#1E293B] group-hover:text-[#0B1B3D]"
+                          }`}
+                        />
+                      </div>
+                    </div>
+                    <div className="pt-1 md:pt-0.5">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B3D] inline mr-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                        {t.title}
+                      </h3>
+                      <p className="text-base sm:text-lg leading-relaxed inline text-slate-600">
+                        {t.desc}
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerChildren>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. CTA */}
+      <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
+
+      {/* 6.5 Governance Model */}
+      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Assurance for Enterprise-Grade Delivery Quality
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed">
+                This assurance model combines architecture reviews, milestone controls, and measurable outcome tracking.
+              </p>
+            </div>
+          </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {timeline.map((t) => (
-              <StaggerItem key={t.year}>
-                <div data-testid={`timeline-${t.year}`} className="bg-[#F8FAFC] border border-slate-200 rounded-sm p-6">
-                  <span className="text-2xl font-extrabold text-[#2563EB] block mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{t.year}</span>
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2">{t.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{t.desc}</p>
+            {[
+              { title: "Architecture Review", desc: "Design checkpoints before major implementation phases." },
+              { title: "Security Gates", desc: "Control validation across build, release, and operations." },
+              { title: "KPI Monitoring", desc: "Business and technical indicators tracked continuously." },
+              { title: "Executive Reporting", desc: "Clear communication cadence with stakeholder visibility." },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -120,15 +184,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. CTA */}
-      <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
-
       {/* 7. Team */}
       <section className="py-20 sm:py-24 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Leadership Team</h2>
-            <p className="text-base text-slate-600 mb-12 max-w-2xl">Meet the leaders driving NeuralTrix AI's mission.</p>
+            <p className="text-base text-slate-600 mb-12 max-w-2xl">Meet the people accountable for strategy, engineering quality, and client outcomes.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((m) => (
@@ -180,7 +241,24 @@ export default function AboutPage() {
       {/* 10. Testimonials */}
       <TestimonialsSection title="What Our Clients Say" />
 
-      {/* 11. Contact */}
+      {/* 11. Strategic CTA */}
+      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+          <AnimatedSection>
+            <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
+              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Start with a Conversation About Your Delivery Context
+              </h2>
+              <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
+                This next step helps define the most practical path whether you are evaluating use-cases or scaling production systems.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 12. Contact */}
       <PageContactForm context="About Page" />
     </div>
   );

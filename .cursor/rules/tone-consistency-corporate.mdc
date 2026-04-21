@@ -1,0 +1,35 @@
+---
+description: Enforce formal corporate tone and non-duplicative copy
+alwaysApply: true
+---
+
+# Corporate Tone Consistency Rule
+
+Apply this to all content and UX copy updates.
+
+## Tone Standard
+
+- Use formal, concise, enterprise language.
+- Prefer practical and measurable phrasing over hype.
+- Keep claims realistic, specific, and verifiable.
+- Write in active voice with clear business intent.
+
+## Avoid
+
+- Promotional exaggeration (for example: "unmatched", "magical", "flawless", "gold standard").
+- Aggressive marketing phrasing (for example: "crush", "dominate", "stop guessing").
+- Repetitive sentence templates reused across multiple pages.
+- Vague statements without operational meaning.
+
+## Prefer
+
+- Outcome-focused language tied to delivery, governance, reliability, adoption, or ROI.
+- Context-specific phrasing by page purpose (services, solutions, industries, trust, careers, legal).
+- Clear verbs such as "design", "implement", "measure", "optimize", and "govern".
+
+## Consistency Checks Before Finalizing
+
+- Ensure similar sections across pages do not repeat identical wording.
+- Ensure hero copy reflects each page's specific intent.
+- Ensure CTAs are direct, professional, and context-relevant.
+- Ensure FAQs use clear and factual answers without marketing tone.
