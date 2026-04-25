@@ -49,25 +49,66 @@ export default function AboutPage() {
       {/* 1. Hero */}
       <PageHero label="About Us" title="The Team and Principles Behind Our AI Delivery" description="Learn how our leadership model, delivery culture, and governance standards help enterprises move from AI ambition to sustained operational value." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
-      {/* 2. Mission & Vision */}
-      <section className="py-20 sm:py-24 bg-white">
+      {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
+      <section className="py-12 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <StaggerItem>
-              <div className="border border-slate-200 rounded-sm p-10">
-                <Target size={28} className="text-[#2563EB] mb-5" />
-                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" >Our Mission</h2>
-                <p className="text-base text-slate-600 leading-relaxed">To democratize enterprise AI by building production-ready, compliant, and measurably impactful AI solutions that help businesses of all sizes compete in the AI-first economy.</p>
+          <div className="relative rounded-[2.5rem] bg-[#0B1B3D] p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
+            {/* Background Texture/Glow - Subtle */}
+            <div className="absolute top-0 right-0 w-[40%] h-full bg-gradient-to-l from-blue-600/10 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 relative z-10">
+              {/* Left Column: Context & Branding */}
+              <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 pb-10 lg:pb-0 lg:pr-12">
+                <AnimatedSection>
+                  <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.4em] mb-6">The NeuralTrix Blueprint</p>
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black tracking-tighter text-white mb-6 leading-[1.1]">
+                    Engineering Trust in <br className="hidden xl:block" /> <span className="text-blue-500">Every Neuron.</span>
+                  </h2>
+                  <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
+                    We bridge the gap between raw AI power and predictable enterprise value. Our focus remains on technical rigor and ethical transparency.
+                  </p>
+                </AnimatedSection>
               </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="border border-slate-200 rounded-sm p-10">
-                <Eye size={28} className="text-[#2563EB] mb-5" />
-                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" >Our Vision</h2>
-                <p className="text-base text-slate-600 leading-relaxed">To be the world's most trusted AI engineering partner—known for technical excellence, ethical AI practices, and measurable business outcomes across every industry.</p>
+
+              {/* Right Column: Values */}
+              <div className="lg:col-span-7 space-y-12">
+                <StaggerChildren className="space-y-12 lg:space-y-14">
+                  <StaggerItem>
+                    <div className="group flex items-start gap-6 sm:gap-8">
+                      <div className="flex-shrink-0 pt-1">
+                         <div className="w-10 h-10 rounded-sm bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500">
+                           <Target size={20} />
+                         </div>
+                      </div>
+                      <div>
+                        <span className="block text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-3">Our Mission</span>
+                        <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug max-w-xl">
+                          To democratize enterprise AI by building production-ready, compliant, and measurably impactful solutions.
+                        </p>
+                      </div>
+                    </div>
+                  </StaggerItem>
+
+                  <StaggerItem>
+                    <div className="group flex items-start gap-6 sm:gap-8">
+                      <div className="flex-shrink-0 pt-1">
+                         <div className="w-10 h-10 rounded-sm bg-white/10 border border-white/10 flex items-center justify-center text-white/40 group-hover:scale-110 transition-transform duration-500">
+                           <Eye size={20} />
+                         </div>
+                      </div>
+                      <div>
+                        <span className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em] mb-3">Our Vision</span>
+                        <p className="text-xl sm:text-2xl font-bold text-white/70 tracking-tight leading-snug max-w-xl">
+                          To be the world's most trusted AI engineering partner, known for technical excellence and ethical practices.
+                        </p>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                </StaggerChildren>
               </div>
-            </StaggerItem>
-          </StaggerChildren>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -81,7 +122,7 @@ export default function AboutPage() {
       ]} />
 
       {/* 4. Core Values */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-12 sm:py-16 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Core Values</h2>
@@ -101,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Timeline */}
-      <section className="py-20 sm:py-24 corp-pat-diag-dash">
+      <section className="py-12 sm:py-16 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Journey</h2>
@@ -119,17 +160,15 @@ export default function AboutPage() {
                     </div>
                     <div className="relative z-10">
                       <div
-                        className={`h-11 w-11 md:h-12 md:w-12 mx-auto rounded-full border-4 border-[#FFC200] flex items-center justify-center transition-all duration-300 ${
-                          idx === 0
+                        className={`h-11 w-11 md:h-12 md:w-12 mx-auto rounded-full border-4 border-[#FFC200] flex items-center justify-center transition-all duration-300 ${idx === 0
                             ? "bg-[#FFC200] shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
                             : "bg-white group-hover:bg-[#FFC200] group-hover:shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
-                        }`}
+                          }`}
                       >
                         <t.icon
                           size={18}
-                          className={`transition-colors duration-300 ${
-                            idx === 0 ? "text-[#0B1B3D]" : "text-[#1E293B] group-hover:text-[#0B1B3D]"
-                          }`}
+                          className={`transition-colors duration-300 ${idx === 0 ? "text-[#0B1B3D]" : "text-[#1E293B] group-hover:text-[#0B1B3D]"
+                            }`}
                         />
                       </div>
                     </div>
@@ -153,7 +192,7 @@ export default function AboutPage() {
       <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
 
       {/* 6.5 Governance Model */}
-      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+      <section className="py-12 sm:py-16 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
@@ -185,7 +224,7 @@ export default function AboutPage() {
       </section>
 
       {/* 7. Team */}
-      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+      <section className="py-12 sm:py-16 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">The Experts</p>
@@ -211,19 +250,40 @@ export default function AboutPage() {
       </section>
 
       {/* 8. Partners */}
-      <section className="py-16 bg-[#F8FAFC] border-y border-slate-200">
+      <section className="py-16 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-6 text-left">Technology Partners</p>
-            <div className="flex flex-wrap justify-start items-center gap-8">
-              {partners.map((p) => (<span key={p} className="text-sm font-semibold text-slate-400 tracking-wide">{p}</span>))}
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-8 text-left">Technology Partners</p>
+            <div className="relative">
+              {/* Fade masks */}
+              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10" />
+              
+              <div className="flex animate-marquee whitespace-nowrap">
+                {/* First set */}
+                <div className="flex items-center gap-12 sm:gap-16 pr-12 sm:pr-16">
+                  {partners.map((p) => (
+                    <span key={`p1-${p}`} className="text-sm font-semibold text-slate-400 tracking-wide hover:text-[#2563EB] transition-colors cursor-default uppercase">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+                {/* Second set for seamless loop */}
+                <div className="flex items-center gap-12 sm:gap-16 pr-12 sm:pr-16">
+                  {partners.map((p) => (
+                    <span key={`p2-${p}`} className="text-sm font-semibold text-slate-400 tracking-wide hover:text-[#2563EB] transition-colors cursor-default uppercase">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* 9. Offices */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >

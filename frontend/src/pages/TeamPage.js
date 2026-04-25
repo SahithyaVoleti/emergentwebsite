@@ -1,4 +1,4 @@
-import { Users, Linkedin, Twitter } from "lucide-react";
+import { Users, Linkedin, Twitter, Shield, Zap, Heart, Target, Eye } from "lucide-react";
 import PageHero from "../components/PageHero";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
@@ -23,7 +23,7 @@ export default function TeamPage() {
         primaryCTA={{ text: "Join Our Team", href: "/careers" }}
         image={ABOUT_HERO_IMAGE}
       />
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
@@ -53,56 +53,69 @@ export default function TeamPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
+      {/* 2. Methodology Section - ENHANCED DESIGN */}
+      <section className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-slate-200/60">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
-                Methodology for Cross-Functional Team Delivery
+            <div className="max-w-3xl mb-16">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Methodology</p>
+              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6 leading-none">
+                Methodology for <span className="text-[#0B1B3D]/30 text-nowrap">Cross-Functional</span> Delivery
               </h2>
-              <p className="text-base text-slate-600 leading-relaxed">
-                This methodology aligns product, engineering, AI research, and client success under one execution model.
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl font-medium">
+                This execution model aligns product, engineering, AI research, and client success under a single, high-performance framework.
               </p>
             </div>
           </AnimatedSection>
+          
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Strategy Leadership", desc: "Roadmap alignment, value definition, and stakeholder governance." },
-              { title: "AI Engineering", desc: "Architecture, model integration, and scalable implementation." },
-              { title: "Delivery Management", desc: "Program orchestration, sprint execution, and quality gates." },
-              { title: "Client Success", desc: "Adoption enablement, KPI tracking, and continuous optimization." },
+              { id: "01", title: "Strategy Leadership", desc: "Roadmap alignment, value definition, and stakeholder governance." },
+              { id: "02", title: "AI Engineering", desc: "Architecture, model integration, and scalable implementation." },
+              { id: "03", title: "Delivery Management", desc: "Program orchestration, sprint execution, and quality gates." },
+              { id: "04", title: "Client Success", desc: "Adoption enablement, KPI tracking, and continuous optimization." },
             ].map((item) => (
               <StaggerItem key={item.title}>
-                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                <div className="group relative h-full bg-white border border-slate-200 rounded-sm p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200">
+                  <div className="flex flex-col h-full">
+                    <div className="text-[10px] font-black text-blue-500/30 group-hover:text-blue-500 transition-colors duration-500 mb-6">
+                      {item.id}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#0B1B3D] mb-3 tracking-tight">{item.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                    <div className="mt-auto pt-8">
+                      <div className="h-[1px] w-8 bg-slate-200 group-hover:w-16 group-hover:bg-blue-500 transition-all duration-500" />
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-16 sm:py-20 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                Assurance Through Team Collaboration Standards
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Assurance</p>
+              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]" >
+                Assurance Through <span className="text-[#0B1B3D]/30">Collaboration</span>
               </h2>
             </div>
           </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Ownership Mindset", desc: "Every team member is accountable for outcomes, not only outputs." },
-              { title: "Transparent Communication", desc: "Clear updates, early risk visibility, and practical decision-making." },
-              { title: "Continuous Improvement", desc: "Retrospectives and performance insights inform each delivery cycle." },
+              { icon: Shield, title: "Ownership Mindset", desc: "Every team member is accountable for outcomes, not only outputs." },
+              { icon: Zap, title: "Transparent Communication", desc: "Clear updates, early risk visibility, and practical decision-making." },
+              { icon: Heart, title: "Continuous Improvement", desc: "Retrospectives and performance insights inform each delivery cycle." },
             ].map((item) => (
               <StaggerItem key={item.title}>
-                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                <div className="h-full bg-white border border-slate-200 rounded-sm p-10 transition-all duration-500 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 group">
+                  <item.icon size={24} className="text-blue-500 mb-6 group-hover:scale-110 transition-transform duration-500" />
+                  <h3 className="text-xl font-bold text-[#0B1B3D] mb-4 tracking-tight" >{item.title}</h3>
+                  <p className="text-base text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}

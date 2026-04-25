@@ -16,7 +16,7 @@ const solutionsLinks = solutions.map((s) => ({ label: s.title, href: `/solutions
 
 const industriesLinks = industries.map((i) => ({ label: i.title, href: `/industries/${i.slug}` }));
 
-const aboutLinks = [
+const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/team" },
   { label: "Testimonials", href: "/testimonials" },
@@ -110,25 +110,25 @@ export default function Header() {
             {renderDesktopDropdown("Solutions", solutionsLinks, "/solutions")}
             {renderDesktopDropdown("Industries", industriesLinks, "/industries")}
             {(() => {
-              const aboutActive = aboutLinks.some((l) => location.pathname.startsWith(l.href));
+              const companyActive = companyLinks.some((l) => location.pathname.startsWith(l.href));
               return (
                 <div className="relative group">
                   <button
                     type="button"
-                    data-testid="nav-link-about"
+                    data-testid="nav-link-company"
                     className={`inline-flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
-                      aboutActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
+                      companyActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
                     }`}
                   >
-                    About
+                    Company
                     <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-56 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50">
-                    {aboutLinks.map((link) => (
+                    {companyLinks.map((link) => (
                       <Link
                         key={link.label}
                         to={link.href}
-                        data-testid={`about-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                        data-testid={`company-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
                         className={`block rounded-sm px-3 py-2 text-sm transition-colors ${
                           location.pathname.startsWith(link.href)
                             ? "text-[#2563EB] bg-blue-50"
@@ -232,8 +232,8 @@ export default function Header() {
             ))}
           </div>
           <div className="pt-2">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">About</p>
-            {aboutLinks.map((link) => (
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Company</p>
+            {companyLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.href}
