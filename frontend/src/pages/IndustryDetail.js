@@ -52,14 +52,14 @@ export default function IndustryDetail() {
         </div>
 
       {/* 2. Overview Section (Split Layout) */}
-      <section className="py-24 lg:py-32 bg-white border-b border-slate-100">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-b border-slate-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
             {/* Left: Strategic Content */}
             <div className="lg:col-span-6 xl:col-span-5">
               <AnimatedSection>
                 <div className="max-w-2xl">
-                  <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Strategic Thesis</span>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                   <h2 className="text-4xl lg:text-5xl font-black text-[#0B1B3D] tracking-tighter mb-8 leading-[0.95]">
                     Sector <span className="text-slate-300">Transformation</span> <br /> Architecture
                   </h2>
@@ -107,11 +107,11 @@ export default function IndustryDetail() {
       </section>
 
       {/* AI Capabilities */}
-      <section id="capabilities" className="py-20 sm:py-24 corp-pat-dots">
+      <section id="capabilities" className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <span className="premium-label">Capabilities</span>
+            <div className="max-w-2xl mb-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]">AI Solutions for {industry.title}</h2>
             </div>
           </AnimatedSection>
@@ -158,11 +158,11 @@ export default function IndustryDetail() {
       ]} />
 
       {/* 3. Industry Implementation Workflow - Linear Technical Model */}
-      <section className="py-24 sm:py-32 bg-white relative overflow-hidden border-y border-slate-100">
+      <section className="py-10 sm:py-12 md:py-14 bg-white relative overflow-hidden border-y border-slate-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-          <div className="max-w-2xl mb-16 lg:mb-24">
+          <div className="max-w-2xl mb-10 lg:mb-12">
             <AnimatedSection>
-              <span className="premium-label mb-6">Execution Methodology</span>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-8 leading-none">
                 Implementation <br/><span className="text-blue-600">Model</span>
               </h2>
@@ -209,13 +209,13 @@ export default function IndustryDetail() {
       <RelatedCaseStudies industryFilter={industry.title} title={`AI Success Stories in ${industry.title}`} />
 
       {/* 4. Strategic Modules - Condensed Capability Matrix */}
-      <section data-testid="industry-services-section" className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-slate-100">
+      <section data-testid="industry-services-section" className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             {/* Left Column - Tighter summary */}
             <div className="lg:col-span-3 lg:sticky lg:top-24 h-fit">
               <AnimatedSection>
-                <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4 block">Strategic Modules</span>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="text-3xl lg:text-4xl font-black tracking-tighter text-[#0B1B3D] mb-6 leading-tight">
                   {industry.title} <br/>Operational <span className="text-blue-600">Fit</span>
                 </h2>
@@ -268,13 +268,13 @@ export default function IndustryDetail() {
       </section>
 
       {/* Compliance & Security Section (Domain Requirement) */}
-      <section className="py-24 sm:py-32 bg-[#0B1B3D] text-white relative overflow-hidden">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5">
               <AnimatedSection>
-                <span className="premium-label !border-white/20 !text-blue-300" style={{ marginBottom: '1.5rem' }}>Security Protocol</span>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Assurance</p>
                 <h2 className="text-4xl lg:text-6xl font-black tracking-tighter mb-8 leading-none">
                   Hardened <br/><span className="text-blue-400">Security Layers</span>
                 </h2>
@@ -314,11 +314,11 @@ export default function IndustryDetail() {
       </section>
 
       {/* Tech Stack for Industry */}
-      <section data-testid="industry-tech-stack" className="py-20 sm:py-24 bg-white relative">
+      <section data-testid="industry-tech-stack" className="py-10 sm:py-12 md:py-14 bg-white relative">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <span className="premium-label">Tech Foundation</span>
+            <div className="max-w-2xl mb-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                 Technologies for {industry.title}
               </h2>
@@ -326,7 +326,7 @@ export default function IndustryDetail() {
             </div>
           </AnimatedSection>
 
-          <div className="space-y-12 lg:space-y-24 relative">
+          <div className="space-y-8 lg:space-y-14 relative">
             {[
               { cat: "AI & ML MODELS", desc: "Core intelligence layers focused on inference quality and prompt performance.", techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"] },
               { cat: "LANGUAGE & FRAMEWORKS", desc: "Stable application foundations for high-concurrency enterprise workloads.", techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"] },

@@ -50,7 +50,7 @@ export default function AboutPage() {
       <PageHero label="About Us" title="The Team and Principles Behind Our AI Delivery" description="Learn how our leadership model, delivery culture, and governance standards help enterprises move from AI ambition to sustained operational value." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
       {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
-      <section className="py-12 bg-white overflow-hidden">
+      <section className="py-10 sm:py-12 md:py-14 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="relative rounded-[2.5rem] bg-[#0B1B3D] p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
             {/* Background Texture/Glow - Subtle */}
@@ -82,7 +82,7 @@ export default function AboutPage() {
                          </div>
                       </div>
                       <div>
-                        <span className="block text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-3">Our Mission</span>
+                        <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Our Mission</span>
                         <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug max-w-xl">
                           To democratize enterprise AI by building production-ready, compliant, and measurably impactful solutions.
                         </p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                          </div>
                       </div>
                       <div>
-                        <span className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em] mb-3">Our Vision</span>
+                        <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Our Vision</span>
                         <p className="text-xl sm:text-2xl font-bold text-white/70 tracking-tight leading-snug max-w-xl">
                           To be the world's most trusted AI engineering partner, known for technical excellence and ethical practices.
                         </p>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       ]} />
 
       {/* 4. Core Values */}
-      <section className="py-12 sm:py-16 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Core Values</h2>
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Timeline */}
-      <section className="py-12 sm:py-16 corp-pat-diag-dash">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Journey</h2>
@@ -192,11 +192,11 @@ export default function AboutPage() {
       <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
 
       {/* 6.5 Governance Model */}
-      <section className="py-12 sm:py-16 bg-white border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Assurance</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Assurance for <span className="text-[#0B1B3D]/30">Quality Delivery</span>
               </h2>
@@ -224,10 +224,10 @@ export default function AboutPage() {
       </section>
 
       {/* 7. Team */}
-      <section className="py-12 sm:py-16 corp-pat-cross-dash">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">The Experts</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
               Leadership <span className="text-[#0B1B3D]/30">Team</span>
             </h2>
@@ -250,10 +250,10 @@ export default function AboutPage() {
       </section>
 
       {/* 8. Partners */}
-      <section className="py-16 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-8 text-left">Technology Partners</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600 text-left">Coverage</p>
             <div className="relative">
               {/* Fade masks */}
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10" />
@@ -283,7 +283,7 @@ export default function AboutPage() {
       </section>
 
       {/* 9. Offices */}
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
@@ -307,11 +307,11 @@ export default function AboutPage() {
       <TestimonialsSection title="What Our Clients Say" />
 
       {/* 11. Strategic CTA */}
-      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">Next Step</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
                 Start with <span className="text-white/30">a Conversation</span>
               </h2>

@@ -14,11 +14,11 @@ const testimonials = [
 
 export default function TestimonialsSection({ title }) {
   return (
-    <section data-testid="page-testimonials" className="py-12 sm:py-16 bg-white">
+    <section data-testid="page-testimonials" className="bg-white py-10 sm:py-12 md:py-14">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
-          <div className="text-left max-w-2xl mb-10">
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Testimonials</p>
+          <div className="mb-8 max-w-2xl text-left">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">References</p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
               {title || "Here's What Our Clients Say"}
             </h2>

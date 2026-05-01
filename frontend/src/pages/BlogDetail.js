@@ -22,7 +22,7 @@ export default function BlogDetail() {
       <section className="relative isolate overflow-hidden bg-[#0B1B3D]">
         <div className="relative flex min-h-[min(72vh,780px)] flex-col justify-end">
           <HeroAnimatedBackdrop image={article.image} bgDark />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 pb-16 pt-28 sm:pb-20 sm:pt-32">
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 pb-12 pt-20 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
             <Link to="/blog" data-testid="back-to-blog" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors mb-8 drop-shadow-sm">
               <ArrowLeft size={14} /> Back to Blog
             </Link>
@@ -43,7 +43,7 @@ export default function BlogDetail() {
       </section>
 
       {/* 2. Content with Sidebar TOC */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Table of Contents */}
@@ -106,7 +106,7 @@ export default function BlogDetail() {
       <CTASection title="Need Guidance for a Similar Challenge?" description="Share your scenario and we can point you to the right implementation approach, trade-offs, and next decisions." buttonText="Get in Touch" />
 
       {/* 5. Related Articles */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="text-2xl font-bold text-[#0B1B3D] mb-8" >More Articles</h2>

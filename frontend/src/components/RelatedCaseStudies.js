@@ -15,12 +15,12 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
   const display = filtered.slice(0, limit);
 
   return (
-    <section data-testid="related-case-studies" className="py-20 sm:py-24 bg-[#F8FAFC]">
+    <section data-testid="related-case-studies" className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Case Studies</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 {title || "Real Stories of AI Wins That Deliver Impact"}
               </h2>

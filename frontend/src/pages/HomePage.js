@@ -9,6 +9,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import BlogResources from "../components/BlogResources";
 import ContactForm from "../components/ContactForm";
+import NextStepCTA from "../components/NextStepCTA";
 import { motion } from "framer-motion";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 
@@ -25,14 +26,14 @@ export default function HomePage() {
       <AnimatedSection><WhyChooseUs /></AnimatedSection>
       <AnimatedSection><Testimonials /></AnimatedSection>
       <AnimatedSection><BlogResources /></AnimatedSection>
-      <section className="py-12 sm:py-16 bg-white border-y border-slate-100 overflow-hidden">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-100 overflow-hidden">
         <div className="w-full px-6 lg:px-24">
           <AnimatedSection>
-            <div className="max-w-3xl mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em]">Methodology</span>
+            <div className="max-w-3xl mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Our Enterprise <br />
                 <span className="text-[#0B1B3D]/40">Delivery Approach</span>
               </h2>
@@ -63,7 +64,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative z-10">
               {[
                 { step: "01", title: "Discover", desc: "Prioritize use cases by ROI, feasibility, and operational readiness." },
                 { step: "02", title: "Architect", desc: "Design secure, scalable systems aligned to your enterprise stack." },
@@ -132,11 +133,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="py-12 sm:py-16 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Coverage</p>
+            <div className="max-w-3xl mb-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Teams We <span className="text-[#0B1B3D]/30">Commonly Support</span>
               </h2>
@@ -158,21 +159,9 @@ export default function HomePage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 bg-[#0B1B3D]">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.4em] mb-4">Next Step</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
-                Discuss Your <span className="text-white/30">Highest-Value Point</span>
-              </h2>
-              <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                This next step maps your priorities and constraints into the best-fit delivery path and first milestone.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <AnimatedSection>
+        <NextStepCTA />
+      </AnimatedSection>
       <ContactForm />
     </>
   );

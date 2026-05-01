@@ -16,7 +16,7 @@ export default function CaseStudiesPage() {
         primaryCTA={{ text: "Start Your Project", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {caseStudies.map((cs) => (
@@ -53,11 +53,11 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Results Snapshot</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
                 Program <span className="text-[#0B1B3D]/30">Outcomes</span>
               </h2>
@@ -80,7 +80,7 @@ export default function CaseStudiesPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 corp-pat-cross-dash">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
@@ -107,11 +107,11 @@ export default function CaseStudiesPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Delivery Methodology</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
                 Execution <span className="text-[#0B1B3D]/30">Pattern</span>
               </h2>

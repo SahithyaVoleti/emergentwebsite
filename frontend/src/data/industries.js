@@ -1,4 +1,4 @@
-import { ShoppingCart, Heart, DollarSign, GraduationCap, Landmark, Gamepad2, Building2 } from "lucide-react";
+import { ShoppingCart, Heart, DollarSign, GraduationCap, Factory, Gamepad2, Building2 } from "lucide-react";
 import { INDUSTRY_HERO_IMAGES as industryImages } from "../lib/heroImageThemes";
 
 const industries = [
@@ -131,35 +131,38 @@ const industries = [
     ],
   },
   {
-    slug: "bfsi",
-    icon: Landmark,
-    title: "BFSI Solutions",
-    shortDesc: "Modernize BFSI operations safely with controlled automation and compliance-first AI implementation.",
-    heroTitle: "AI Solutions for Banking, Financial Services & Insurance",
-    heroDesc: "Our BFSI solutions introduce controlled automation across legacy environments while improving compliance efficiency, underwriting quality, and customer experience.",
-    heroImage: industryImages[4],
-    overview: "The BFSI sector faces unique challenges: legacy system complexity, strict regulatory requirements, and rising customer expectations. NeuralTrix AI specializes in building AI solutions that work within these constraints, modernizing operations incrementally while maintaining compliance and system stability. Our solutions help banks, insurance companies, and financial institutions automate processes that were previously thought to be too complex or risky for automation.",
+    slug: "manufacturing",
+    icon: Factory,
+    title: "Manufacturing",
+    shortDesc:
+      "Increase yield and reduce downtime with predictive maintenance, vision-based quality control, and shop-floor analytics tied to production KPIs.",
+    heroTitle: "AI Solutions for Manufacturing & Industrial Operations",
+    heroDesc:
+      "Deploy AI on the plant floor for defect detection, demand-aligned scheduling, and equipment health monitoring—integrated with MES, ERP, and IoT telemetry.",
+    heroImage: industryImages[6],
+    overview:
+      "Manufacturers operate under constant pressure to improve quality, throughput, and safety while controlling cost. NeuralTrix AI delivers industrial AI that connects OT and IT data: computer vision for inspection, time-series models for predictive maintenance, digital twins for scenario planning, and workflow automation that supervisors can govern with clear thresholds and escalation paths.",
     features: [
-      { title: "Intelligent Underwriting", desc: "AI-powered risk assessment that processes applications 10x faster with improved accuracy and consistency." },
-      { title: "Claims Processing", desc: "Automated claims intake, verification, and routing that reduces processing time by 60%." },
-      { title: "Compliance Automation", desc: "Automated regulatory reporting, AML monitoring, and policy compliance checking across all operations." },
-      { title: "Legacy System AI Layer", desc: "Add AI capabilities to existing core banking and insurance systems without replacement." },
-      { title: "Customer 360", desc: "Unified customer view with AI-driven insights for cross-selling, retention, and personalized service." },
-      { title: "Process Mining", desc: "AI-powered process discovery and optimization that identifies automation opportunities across your organization." },
+      { title: "Predictive Maintenance", desc: "Sensor-driven models that estimate remaining useful life and recommend maintenance windows before unplanned stops." },
+      { title: "Visual Quality Inspection", desc: "Automated defect detection on lines where manual inspection is inconsistent or too slow for throughput targets." },
+      { title: "Production Scheduling", desc: "Optimization under constraints—capacity, materials, labor, and customer priorities—with explainable trade-offs." },
+      { title: "Yield & Scrap Analytics", desc: "Root-cause analysis across batches, equipment, and shifts to reduce scrap and rework." },
+      { title: "Safety Monitoring", desc: "Vision and sensor assists for PPE, zone control, and incident prevention reporting aligned with site policies." },
+      { title: "Supplier & Inventory Signals", desc: "Forecast inputs and risk signals linked to procurement so production plans reflect realistic availability." },
     ],
     process: [
-      { step: "System Assessment", desc: "Map your legacy systems, data flows, and regulatory requirements to identify safe AI implementation paths." },
-      { step: "Compliance Design", desc: "Design AI solutions that meet banking regulations, insurance requirements, and data governance standards." },
-      { step: "API Layer Development", desc: "Build modern API layers over legacy systems to enable AI integration without core system changes." },
-      { step: "Model Validation", desc: "Rigorous model validation following SR 11-7 and other regulatory guidance for model risk management." },
-      { step: "Controlled Rollout", desc: "Phased deployment with extensive parallel running and comparison against existing processes." },
-      { step: "Regulatory Reporting", desc: "Implement model monitoring, documentation, and reporting required by financial regulators." },
+      { step: "Operations Assessment", desc: "Map lines, data sources, latency requirements, and governance constraints for AI near production systems." },
+      { step: "Data Integration", desc: "Unify SCADA, MES, ERP, and historian feeds into a governed pipeline suitable for training and online inference." },
+      { step: "Pilot Line", desc: "Deploy models on a bounded scope with parallel measurement against baseline KPIs." },
+      { step: "HMI & Alerts", desc: "Integrate outputs into operator workflows with thresholds, acknowledgements, and audit trails." },
+      { step: "Scale Out", desc: "Roll across plants with standardized monitoring and model lifecycle controls." },
+      { step: "Continuous Improvement", desc: "Retrain on new SKUs, seasonal mixes, and equipment changes with documented releases." },
     ],
     faqs: [
-      { q: "Can AI work with our legacy core systems?", a: "Yes. We specialize in adding AI layers over legacy systems using API wrappers and event-driven architectures, preserving your existing investment while adding intelligence." },
-      { q: "How do you handle model risk management?", a: "We follow SR 11-7 guidelines for model risk management, including independent validation, ongoing monitoring, and comprehensive documentation for regulatory review." },
-      { q: "What about data residency requirements?", a: "We support on-premise, private cloud, and hybrid deployments to meet data residency and sovereignty requirements in any jurisdiction." },
-      { q: "Can AI help with regulatory changes?", a: "Yes. Our compliance AI systems can be rapidly updated to accommodate new regulations, reducing the time and cost of regulatory change management." },
+      { q: "Can models run on-premise or at the edge?", a: "Yes. We deploy on-premise, private cloud, or edge appliances where latency and data residency require it." },
+      { q: "How do you validate accuracy before changing the line?", a: "We run shadow mode and controlled pilots with agreed acceptance metrics before any automated control actions." },
+      { q: "Which systems do you integrate with?", a: "Common integrations include major MES and ERP platforms, historians, and IoT gateways via OPC-UA, MQTT, and REST APIs." },
+      { q: "How do you handle model governance?", a: "Versioned releases, drift monitoring, rollback paths, and documentation suitable for operational and internal audit review." },
     ],
   },
   {
@@ -169,7 +172,7 @@ const industries = [
     shortDesc: "Transform live performance and audience data into intelligent fan and player experiences.",
     heroTitle: "AI Solutions for Sports & Gaming",
     heroDesc: "Win the battle for fan attention with real-time AI intelligence. Turn game data into personalized experiences, predict player performance, and drive 2x higher audience retention with our specialized sports and gaming AI solutions.",
-    heroImage: industryImages[5],
+    heroImage: industryImages[4],
     overview: "The sports and gaming industries generate massive amounts of data that most organizations barely utilize. NeuralTrix AI helps sports teams, leagues, gaming companies, and fantasy platforms transform this data into competitive advantages—from real-time performance analytics and player health monitoring to personalized fan experiences and predictive gaming features.",
     features: [
       { title: "Performance Analytics", desc: "AI-powered player and team performance analysis using computer vision and sensor data." },
@@ -201,7 +204,7 @@ const industries = [
     shortDesc: "Improve valuation accuracy, lead quality, and market planning with AI-driven real estate intelligence.",
     heroTitle: "AI Solutions for Real Estate",
     heroDesc: "Our real estate AI solutions automate property valuation, market trend analysis, lead qualification, and virtual engagement workflows to improve conversion outcomes.",
-    heroImage: industryImages[6],
+    heroImage: industryImages[5],
     overview: "Real estate is a data-rich industry that's historically been slow to adopt AI. NeuralTrix AI changes that by building AI solutions that help real estate companies, brokerages, and PropTech platforms automate property valuations, predict market movements, generate and qualify leads, and create immersive virtual experiences that close deals faster.",
     features: [
       { title: "Automated Valuation", desc: "AI-powered property valuation models that provide instant, accurate estimates based on comprehensive market data." },

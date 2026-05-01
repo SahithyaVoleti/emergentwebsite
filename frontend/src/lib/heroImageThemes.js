@@ -40,16 +40,16 @@ export const SOLUTION_HERO_IMAGES = {
 };
 
 /**
- * Industry verticals — order matches `industries` array (retail → real estate)
+ * Industry verticals — indices referenced by `industries` data (not strictly display order)
  */
 export const INDUSTRY_HERO_IMAGES = [
   hq("photo-1556742049-0cfed4f6a45d"),
   hq("photo-1576091160399-112ba8d25d1d"),
   hq("photo-1563013544-824ae1b704d3"),
   hq("photo-1503676260728-1c00da094a0b"),
-  hq("photo-1501167786227-4cba60f6d58f"),
   hq("photo-1511512578047-dfb367046420"),
   hq("photo-1560518883-ce09059eeffa"),
+  hq("photo-1581091226825-a6a2a5aee158"),
 ];
 
 /** Case study detail — order matches `caseStudies` */

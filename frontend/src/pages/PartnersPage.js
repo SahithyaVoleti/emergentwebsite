@@ -15,11 +15,11 @@ export default function PartnersPage() {
         primaryCTA={{ text: "Discuss Architecture", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-12 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Partner Network</p>
+            <div className="max-w-3xl mb-8 text-left">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
                 Platforms We <span className="text-[#0B1B3D]/30">Leverage</span>
               </h2>
@@ -36,11 +36,11 @@ export default function PartnersPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Methodology</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Partner <span className="text-[#0B1B3D]/30">Capabilities</span>
               </h2>
@@ -63,7 +63,7 @@ export default function PartnersPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">

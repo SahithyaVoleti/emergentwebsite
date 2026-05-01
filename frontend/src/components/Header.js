@@ -165,7 +165,15 @@ export default function Header() {
             asChild
             className="hidden lg:inline-flex bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-4 xl:px-5 py-2 text-sm font-semibold"
           >
-            <Link to={location.pathname === "/" ? "/#contact" : "/contact"}>Talk to AI Experts</Link>
+            <Link
+              to={
+                location.pathname === "/"
+                  ? "/#page-contact"
+                  : `${location.pathname}#page-contact`
+              }
+            >
+              Talk to AI Experts
+            </Link>
           </Button>
           <button
             data-testid="mobile-menu-toggle"
@@ -256,7 +264,9 @@ export default function Header() {
             asChild
             className="w-full mt-4 bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm text-sm font-semibold"
           >
-            <Link to="/" onClick={() => setMobileOpen(false)}>Talk to AI Experts</Link>
+            <Link to="/#page-contact" onClick={() => setMobileOpen(false)}>
+              Talk to AI Experts
+            </Link>
           </Button>
         </div>
       )}

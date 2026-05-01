@@ -23,11 +23,11 @@ export default function TeamPage() {
         primaryCTA={{ text: "Join Our Team", href: "/careers" }}
         image={ABOUT_HERO_IMAGE}
       />
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Leadership</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 The Team Behind High-Performance Delivery
               </h2>
@@ -54,11 +54,11 @@ export default function TeamPage() {
         </div>
       </section>
       {/* 2. Methodology Section - ENHANCED DESIGN */}
-      <section className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-slate-200/60">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/60">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-16">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Methodology</p>
+            <div className="max-w-3xl mb-10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6 leading-none">
                 Methodology for <span className="text-[#0B1B3D]/30 text-nowrap">Cross-Functional</span> Delivery
               </h2>
@@ -95,11 +95,11 @@ export default function TeamPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-16 sm:py-20 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Assurance</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]" >
                 Assurance Through <span className="text-[#0B1B3D]/30">Collaboration</span>
               </h2>

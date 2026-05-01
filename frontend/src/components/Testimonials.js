@@ -37,11 +37,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section data-testid="testimonials-section" className="py-12 sm:py-16 md:py-20 corp-pat-diag-dash">
+    <section data-testid="testimonials-section" className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="text-left max-w-2xl mb-10">
-          <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
-            Testimonials
+        <div className="text-left max-w-2xl mb-8">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
+            References
           </p>
           <h2
             data-testid="testimonials-heading"

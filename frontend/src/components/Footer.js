@@ -45,8 +45,8 @@ export default function Footer() {
 
   return (
     <footer data-testid="footer" className="bg-[#0B1B3D]">
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-16 sm:py-20 md:py-24">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-10 sm:py-12 md:py-14">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-10 mb-10">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
             <span
               className="text-2xl font-extrabold text-white tracking-tighter block mb-4"

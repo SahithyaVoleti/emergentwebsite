@@ -1,110 +1,105 @@
-import { Cpu, ShieldCheck, Zap, Layers, Globe, Workflow } from "lucide-react";
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Plus } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
-export default function NeuralCoreSection() {
-  const pillars = [
-    {
-      icon: <Zap size={18} className="text-blue-600" />,
-      title: "PROVEN ARCHITECTURES",
-      desc: "Our systems move beyond experimental AI. We deploy hardened, production-ready neural networks built for real-world enterprise load."
-    },
-    {
-      icon: <ShieldCheck size={18} className="text-blue-600" />,
-      title: "SECURITY AS CODE",
-      desc: "Governance isn't an afterthought. We embed security protocols directly into the model's decision-making logic for absolute compliance."
-    },
-    {
-      icon: <Workflow size={18} className="text-blue-600" />,
-      title: "AUTONOMOUS OPERATIONS",
-      desc: "Eliminate manual bottlenecks with self-correcting workflows that adapt to business changes in real-time."
-    }
-  ];
+const AVATAR_SRC = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=128&h=128&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=128&h=128&q=80",
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=128&h=128&q=80",
+];
 
+/** Staggered heights / offsets to mirror masonry-style collage */
+const COLLAGE = [
+  {
+    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+    alt: "Team member collaborating at a laptop",
+    wrapperClass: "mt-10 w-[30%] max-w-[200px]",
+    imgClass: "h-[260px] w-full object-cover sm:h-[280px]",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
+    alt: "Team discussion in an office setting",
+    wrapperClass: "w-[38%] max-w-[240px] -mt-2",
+    imgClass: "h-[340px] w-full object-cover sm:h-[380px]",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+    alt: "Professional at work",
+    wrapperClass: "mt-14 w-[30%] max-w-[200px]",
+    imgClass: "h-[290px] w-full object-cover sm:h-[310px]",
+  },
+];
+
+export default function CEOLetter() {
   return (
-    <section id="philosophy" className="py-12 sm:py-16 bg-white relative overflow-hidden">
-      {/* Background Subtle Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0B1B3D 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-      
-      <div className="relative w-full px-6 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-          
-          <div className="space-y-10">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.5em]">The Emergent Standard</span>
-              </div>
-              <h2
-                className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0B1B3D] leading-tight mb-8"
-                
-              >
-                Engineering <br />
-                <span className="text-blue-600">Pure Intelligence.</span>
+    <section id="philosophy" data-testid="ceo-letter-section" className="relative overflow-hidden bg-white py-10 sm:py-12 md:py-14">
+      <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
+          <AnimatedSection>
+            <div className="max-w-xl lg:max-w-none">
+              <h2 className="mb-6 text-4xl font-black tracking-tighter text-[#0B1B3D] sm:text-5xl lg:text-[2.75rem] lg:leading-[1.12]">
+                About Our Company
               </h2>
-              <p className="text-base text-slate-700 leading-relaxed max-w-xl font-medium">
-                At Emergent, we bridge the gap between AI hype and enterprise reality. We don't just "implement" AI—we architect the cognitive backbone of modern industries.
+              <p className="mb-8 text-base font-medium leading-relaxed text-slate-600">
+                We are a multidisciplinary team of engineers, architects, and delivery leads who design and ship production AI systems for regulated and high-scale environments. Our work emphasizes integration discipline, measurable outcomes, and governance-ready implementations—not prototypes that stall after pilot.
               </p>
-            </div>
 
-            <div className="space-y-10">
-              {pillars.map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 0.15} direction="up">
-                  <div className="flex gap-6 group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center transition-all duration-500 group-hover:bg-[#0B1B3D] group-hover:border-[#0B1B3D] group-hover:text-white">
-                      {item.icon}
-                    </div>
-                    <div className="pt-2">
-                      <h3 className="text-sm font-black text-[#0B1B3D] mb-2 tracking-[0.1em] uppercase">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed max-w-md">
-                        {item.desc}
-                      </p>
-                    </div>
+              <p
+                className="mb-10 text-4xl text-[#0B1B3D] sm:text-[2.75rem]"
+                style={{ fontFamily: "'Great Vibes', cursive" }}
+              >
+                Michael James
+              </p>
+
+              <div className="mb-10 flex flex-wrap items-center gap-5">
+                <div className="flex items-center">
+                  <div className="flex -space-x-3">
+                    {AVATAR_SRC.map((src, i) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt=""
+                        className="h-11 w-11 rounded-full border-2 border-white object-cover ring-1 ring-slate-100 sm:h-12 sm:w-12"
+                        loading="lazy"
+                      />
+                    ))}
                   </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
-          <AnimatedSection direction="left" className="relative">
-            <div className="relative group">
-              {/* Image Frame Decor */}
-              <div className="absolute -inset-4 border border-[#0B1B3D]/10 rounded-2xl transform translate-x-2 translate-y-2 transition-transform duration-700 group-hover:translate-x-0 group-hover:translate-y-0" />
-              
-              <div className="relative rounded-xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(11,27,61,0.2)]">
-                <img
-                  src={require("../assets/ai_neural_core_concept_1776919120851.png")}
-                  alt="Neural Infrastructure"
-                  className="w-full h-[450px] lg:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[#0B1B3D]/10 group-hover:bg-transparent transition-colors duration-500" />
+                  <button
+                    type="button"
+                    className="relative z-[1] ml-2 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white shadow-md transition-colors hover:bg-blue-700 sm:h-12 sm:w-12"
+                    aria-label="Join client community"
+                  >
+                    <Plus className="h-5 w-5" strokeWidth={2.5} aria-hidden />
+                  </button>
+                </div>
+                <p className="max-w-[220px] text-sm font-bold leading-snug text-[#0B1B3D] sm:max-w-none">
+                  <span className="text-base sm:text-lg">2.5k+</span> client engagements connected with our company
+                </p>
               </div>
 
-              {/* Data Floating Card */}
-              <div className="absolute -bottom-10 -right-5 lg:-right-10 w-64 p-6 bg-[#0B1B3D] text-white shadow-2xl rounded-lg hidden sm:block">
-                <div className="flex items-center gap-3 mb-4">
-                  <Globe size={18} className="text-blue-400" />
-                  <span className="text-[10px] font-bold text-blue-300 uppercase tracking-widest">Global Ops</span>
-                </div>
-                <div className="space-y-4">
-                  <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                    <motion.div 
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="h-full w-1/2 bg-blue-500" 
-                    />
-                  </div>
-                  <p className="text-sm font-bold">Optimizing 48M+ Neural Connections</p>
-                  <p className="text-[10px] text-white/50 leading-tight uppercase font-medium">Real-time inference tracking enabled via Neural Core API v4.0</p>
-                </div>
-              </div>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-[#0B1B3D] underline decoration-[#0B1B3D] underline-offset-4 transition-colors hover:text-blue-600 hover:decoration-blue-600"
+              >
+                About Us
+                <span aria-hidden className="text-base">
+                  ›
+                </span>
+              </Link>
             </div>
           </AnimatedSection>
 
+          <AnimatedSection delay={0.12}>
+            <div className="flex justify-center gap-2 sm:gap-3 lg:justify-end lg:pr-4">
+              {COLLAGE.map((item) => (
+                <div key={item.src} className={`flex-shrink-0 ${item.wrapperClass}`}>
+                  <img src={item.src} alt={item.alt} className={item.imgClass} loading="lazy" draggable={false} />
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>
   );
 }
-

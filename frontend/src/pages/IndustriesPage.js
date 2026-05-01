@@ -31,11 +31,11 @@ export default function IndustriesPage() {
 
       {/* 2. Main Industry Listing (Surface Layer) */}
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section id="verticals" className="py-24 sm:py-32 corp-pat-dots">
+        <section id="verticals" className="py-10 sm:py-12 md:py-14 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-16 lg:mb-24">
-                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Sector Expertise</span>
+              <div className="max-w-3xl mb-10 lg:mb-12">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#0B1B3D] mb-6">
                   Select Your <span className="text-slate-300">Industry Vertical</span>
                 </h2>
@@ -63,12 +63,12 @@ export default function IndustriesPage() {
         </section>
 
         {/* 3. Industry Outcomes Grid */}
-        <section className="py-24 sm:py-32 bg-slate-50/50 border-y border-slate-100">
+        <section className="py-10 sm:py-12 md:py-14 bg-slate-50/50 border-y border-slate-100">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               <div className="lg:col-span-5">
                 <AnimatedSection>
-                  <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Sector Performance</span>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                   <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-8 leading-[0.95]">
                     Outcome-Focused AI <br/><span className="text-slate-300">Benchmarks</span>
                   </h2>
@@ -124,11 +124,11 @@ export default function IndustriesPage() {
       {/* 5. Final Layers (Surface) */}
       <div className="relative z-30 bg-white shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
         {/* Capability Matrix */}
-        <section className="py-24 sm:py-32">
+        <section className="py-10 sm:py-12 md:py-14">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-16">
-                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Capability Matrix</span>
+              <div className="max-w-3xl mb-10">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6">
                   Cross-Vertical <span className="text-slate-300">Feature Parity</span>
                 </h2>
@@ -159,11 +159,11 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        <section className="py-24 sm:py-32 bg-[#F8FAFC] border-y border-slate-100">
+        <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-100">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-16">
-                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Methodology</span>
+              <div className="max-w-3xl mb-10">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                   Program Delivery Workflow
                 </h2>

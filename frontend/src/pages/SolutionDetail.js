@@ -43,14 +43,14 @@ export default function SolutionDetail() {
       </div>
 
       {/* 3. Overview + Sidebar */}
-      <section className="py-12 sm:py-16 bg-white relative">
+      <section className="py-10 sm:py-12 md:py-14 bg-white relative">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-20">
             <div className="lg:col-span-12 xl:col-span-8">
               <AnimatedSection>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
                   <div>
-                    <span className="premium-label" style={{ marginBottom: '1rem' }}>Overview</span>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
                     <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]">Strategic Overview</h2>
                   </div>
                   <div className="flex items-center gap-4 border-l-2 border-blue-500 pl-6 py-1">
@@ -132,10 +132,10 @@ export default function SolutionDetail() {
       ]} />
 
       {/* 5. Features */}
-      <section id="features" className="py-16 sm:py-20 bg-white relative">
+      <section id="features" className="py-10 sm:py-12 md:py-14 bg-white relative">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Capabilities</span>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-10 sm:mb-14">
               Functional <span className="text-slate-300">Capabilities</span>
             </h2>
@@ -183,13 +183,13 @@ export default function SolutionDetail() {
     {/* 7. Surface Layer 2 */}
     <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
       {/* 7. How It Works - High-Density Compact Sequence */}
-      <section className="py-24 sm:py-32 border-y border-slate-100 relative">
+      <section className="py-10 sm:py-12 md:py-14 border-y border-slate-100 relative">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-20">
             {/* Header Column */}
             <div className="lg:w-1/3">
               <AnimatedSection>
-                <span className="premium-label" style={{ marginBottom: '1rem' }}>Governance Fit</span>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                   Adoption <span className="text-slate-300">Path</span>
                 </h2>

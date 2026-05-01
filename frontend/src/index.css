@@ -238,6 +238,47 @@ html {
         }
     }
 
+    /* Platforms & partners: vertical marquee columns (3D grid) */
+    @keyframes partner-marquee-v {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(0, -50%, 0);
+        }
+    }
+
+    .partner-marquee-v {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        animation: partner-marquee-v 42s linear infinite;
+        will-change: transform;
+    }
+
+    .partner-marquee-v-slow {
+        animation-duration: 56s;
+    }
+
+    .partner-marquee-v-fast {
+        animation-duration: 30s;
+    }
+
+    .partner-marquee-v-reverse {
+        animation-direction: reverse;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .partner-marquee-v,
+        .partner-marquee-v-slow,
+        .partner-marquee-v-fast,
+        .partner-marquee-v-reverse {
+            animation: none;
+        }
+    }
+
     /* ═══════════════════════════════════════════════════════
        Premium SaaS Arc Carousel — Industries Section
        ═══════════════════════════════════════════════════════ */

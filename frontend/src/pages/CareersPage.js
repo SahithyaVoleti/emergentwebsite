@@ -77,10 +77,10 @@ export default function CareersPage() {
       ]} />
 
       {/* 3. Why Join Us */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Culture</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
               Why Professionals <span className="text-[#0B1B3D]/30">Build Here</span>
             </h2>
@@ -100,11 +100,11 @@ export default function CareersPage() {
       </section>
 
       {/* 4. Hiring Process */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">The Journey</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-8" >
               Our Hiring <span className="text-[#0B1B3D]/30">Workflow</span>
             </h2>
           </AnimatedSection>
@@ -126,10 +126,10 @@ export default function CareersPage() {
       <CTASection title="Don't See Your Role?" description="We're always looking for talented people. Send us your resume and we'll reach out when there's a fit." />
 
       {/* 6. Open Positions */}
-      <section id="positions" className="py-20 sm:py-24 bg-white">
+      <section id="positions" className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Current Roles</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
               Open <span className="text-[#0B1B3D]/30">Positions</span>
             </h2>
@@ -144,10 +144,10 @@ export default function CareersPage() {
       </section>
 
       {/* 7. Locations */}
-      <section className="py-20 sm:py-24 corp-pat-diag-dash">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Global Reach</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
               Our <span className="text-[#0B1B3D]/30">Locations</span>
             </h2>
@@ -172,11 +172,11 @@ export default function CareersPage() {
       </section>
 
       {/* 7.5 Career Growth Paths */}
-      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Pathways</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Growth <span className="text-[#0B1B3D]/30">Methodology</span>
               </h2>
@@ -200,11 +200,11 @@ export default function CareersPage() {
       </section>
 
       {/* 7.6 Commitments */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Commitments</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
                 Engineering <span className="text-[#0B1B3D]/30">Frontier</span>
               </h2>
@@ -231,11 +231,11 @@ export default function CareersPage() {
       <TestimonialsSection title="Life at NeuralTrix AI" />
 
       {/* 9. Career CTA */}
-      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">Next Step</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
                 Find Your <span className="text-white/30">Growth Direction</span>
               </h2>

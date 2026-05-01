@@ -1,109 +1,251 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import solutions from "../data/solutions";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function SolutionsSection() {
-  const [isPaused, setIsPaused] = useState(false);
+const DISPLAY = solutions.slice(0, 3);
+
+const TAB_LABELS = ["Delivery scope", "Integrations", "Architecture"];
+
+const ALT_IMAGES = [
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=960&q=80",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=960&q=80",
+];
+
+function tabBullets(solution, tabIdx) {
+  const features = solution.features || [];
+  const tech = solution.tech || [];
+  const useCases = solution.useCases || [];
+  if (tabIdx === 0) {
+    return features.slice(0, 5).map((x) => x.title);
+  }
+  if (tabIdx === 1) {
+    return tech.slice(0, 6);
+  }
+  return useCases.slice(0, 5);
+}
+
+function tabImage(solution, tabIdx) {
+  if (tabIdx === 0) return solution.heroImage;
+  return ALT_IMAGES[(tabIdx - 1) % ALT_IMAGES.length];
+}
+
+function SolutionCard({ solution }) {
+  const [tab, setTab] = useState(0);
+  const bullets = tabBullets(solution, tab);
 
   return (
-    <section
-      id="solutions"
-      className="py-12 sm:py-16 bg-white overflow-hidden"
-    >
-      <div className="w-full">
-        <div className="px-6 sm:px-12 lg:px-24 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-3xl">
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
-              Our Core Solutions
-            </p>
-            <h2
-              className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D]"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", lineHeight: 1.1 }}
-            >
-              Engineering What's Next with <br />
-              <span className="text-[#0B1B3D]/30">AI-Driven Solutions</span>
-            </h2>
+    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1224] shadow-[0_24px_80px_-32px_rgba(0,0,0,0.65)]">
+      <div className="grid min-h-0 flex-1 grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-0">
+        <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10">
+          <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-visible">
+            <h3 className="mb-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">{solution.title}</h3>
+            <p className="mb-6 text-sm leading-snug text-slate-400 sm:text-base">{solution.shortDesc}</p>
+            <ul className="space-y-3">
+              {bullets.map((line) => (
+                <li key={line} className="flex gap-3 text-sm text-slate-200">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Check className="h-3 w-3 text-blue-400" strokeWidth={3} aria-hidden />
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        <div className="relative w-full">
-          <div className="relative py-12">
-            <div className="flex overflow-hidden">
-              <div 
-                className={`flex gap-10 animate-marquee ${isPaused ? 'pause-animation' : ''}`}
-                style={{ 
-                  width: 'fit-content',
-                  animationDuration: '50s',
-                  animationTimingFunction: 'linear',
-                  animationIterationCount: 'infinite'
-                }}
-              >
-                {[...solutions, ...solutions].map((s, idx) => (
-                  <div
-                    key={`${s.slug}-${idx}`}
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                    className="sol-card-compact flex-shrink-0 w-[350px] sm:w-[420px] lg:w-[400px]"
-                  >
-                    <div className="relative bg-white border border-slate-100 rounded-2xl overflow-hidden flex flex-col h-full shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                      <div className="relative aspect-[16/7] overflow-hidden bg-slate-50">
-                        <img
-                          src={s.heroImage}
-                          alt=""
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/30 via-transparent to-transparent opacity-40" />
-                      </div>
-                      
-                      <div className="p-6 flex flex-col flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{s.slug.replace('-', ' ')}</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-[#0B1B3D] mb-2" >
-                          {s.title}
-                        </h3>
-                        <p className="text-sm text-slate-500 leading-relaxed line-clamp-2">
-                          {s.shortDesc || s.heroDesc}
-                        </p>
-                        
-                        <div className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-[#0B1B3D] uppercase tracking-widest group-hover:text-blue-600 transition-colors">View Details</span>
-                          <ChevronRight size={16} className="text-slate-300" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="mt-8 shrink-0 border-t border-white/[0.08] pt-6">
+            <div className="flex flex-wrap gap-2" role="tablist" aria-label={`${solution.title} focus areas`}>
+              {TAB_LABELS.map((label, idx) => (
+                <button
+                  key={label}
+                  type="button"
+                  role="tab"
+                  aria-selected={tab === idx}
+                  onClick={() => setTab(idx)}
+                  className={`rounded-sm px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors sm:text-[13px] ${
+                    tab === idx ? "bg-white text-[#050816]" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
-
-            <div className="absolute inset-y-0 left-0 w-32 sm:w-64 bg-gradient-to-r from-white via-white/50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-32 sm:w-64 bg-gradient-to-l from-white via-white/50 to-transparent z-10 pointer-events-none" />
+            <Link
+              to={`/solutions/${solution.slug}`}
+              className="mt-6 inline-flex text-sm font-semibold text-blue-400 underline-offset-4 transition-colors hover:text-blue-300"
+            >
+              View solution details →
+            </Link>
           </div>
         </div>
 
-        <div className="flex justify-center mt-8 opacity-50">
-          <div className="px-6 py-2 bg-slate-50 rounded-full border border-slate-100 shadow-sm">
-            <p className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.4em]">
-              Automated Intelligence <span className="mx-2 text-blue-600">•</span> Global Scale <span className="mx-2 text-blue-600">•</span> Neural Ops
-            </p>
-          </div>
+        <div className="relative min-h-[220px] shrink-0 bg-[#070b14] sm:min-h-[260px] lg:min-h-0 lg:h-full">
+          <img
+            key={`${solution.slug}-${tab}`}
+            src={tabImage(solution, tab)}
+            alt=""
+            className="h-full min-h-[220px] w-full object-cover sm:min-h-[260px] lg:absolute lg:inset-0 lg:min-h-0"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050816]/40 to-transparent" aria-hidden />
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 50s linear infinite;
-        }
-        .pause-animation {
-          animation-play-state: paused;
-        }
-      `}</style>
-    </section>
+    </article>
   );
 }
 
+export default function SolutionsSection() {
+  const [active, setActive] = useState(0);
+  const [slideHeight, setSlideHeight] = useState(620);
+  const [pauseHover, setPauseHover] = useState(false);
+  const trackRef = useRef(null);
+  const touchStartY = useRef(null);
+
+  const count = DISPLAY.length;
+
+  const measure = useCallback(() => {
+    const first = trackRef.current?.children?.[0];
+    if (!first) return;
+    const h = first.getBoundingClientRect().height;
+    if (h > 0) setSlideHeight(Math.round(h));
+  }, []);
+
+  useLayoutEffect(() => {
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [measure]);
+
+  const go = useCallback(
+    (dir) => {
+      setActive((i) => {
+        const next = i + dir;
+        if (next < 0) return count - 1;
+        if (next >= count) return 0;
+        return next;
+      });
+    },
+    [count]
+  );
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || pauseHover) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % count);
+    }, 7000);
+    return () => window.clearInterval(id);
+  }, [pauseHover, count]);
+
+  const onTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const onTouchEnd = (e) => {
+    if (touchStartY.current == null) return;
+    const dy = touchStartY.current - e.changedTouches[0].clientY;
+    touchStartY.current = null;
+    if (Math.abs(dy) < 48) return;
+    if (dy > 0) go(1);
+    else go(-1);
+  };
+
+  return (
+    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-10 sm:py-12 md:py-14">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+        <header className="mb-8 max-w-3xl text-left sm:mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Solutions</p>
+          <h2
+            className="text-3xl font-black tracking-tighter text-white sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
+            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+          >
+            Accelerators Built for Business Challenges
+          </h2>
+        </header>
+
+        <div
+          className="relative mx-auto max-w-6xl"
+          onMouseEnter={() => setPauseHover(true)}
+          onMouseLeave={() => setPauseHover(false)}
+        >
+          <div
+            className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#070b14] shadow-[0_32px_90px_-40px_rgba(0,0,0,0.75)]"
+            style={{ height: slideHeight }}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
+            <div
+              ref={trackRef}
+              className="flex flex-col transition-transform duration-500 ease-out motion-reduce:transition-none"
+              style={{ transform: `translateY(-${active * slideHeight}px)` }}
+            >
+              {DISPLAY.map((s) => (
+                <div
+                  key={s.slug}
+                  className="w-full shrink-0 overflow-hidden px-0 pb-0"
+                  style={{ height: slideHeight }}
+                >
+                  <SolutionCard solution={s} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-14 flex-col items-center justify-center gap-3 pr-1 sm:flex">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224]/90 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-white/30 hover:bg-[#0c1224]"
+              aria-label="Previous solution"
+            >
+              <ChevronUp className="h-5 w-5" aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224]/90 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-white/30 hover:bg-[#0c1224]"
+              aria-label="Next solution"
+            >
+              <ChevronDown className="h-5 w-5" aria-hidden />
+            </button>
+          </div>
+
+          <div className="mt-6 flex flex-col items-center gap-4">
+            <div className="flex justify-center gap-2">
+              {DISPLAY.map((s, i) => (
+                <button
+                  key={s.slug}
+                  type="button"
+                  aria-label={`Show ${s.title}`}
+                  aria-current={active === i}
+                  onClick={() => setActive(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    active === i ? "w-8 bg-blue-400" : "w-2.5 bg-white/25 hover:bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex items-center gap-4 sm:hidden">
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224] text-white"
+                aria-label="Previous solution"
+              >
+                <ChevronUp className="h-5 w-5" aria-hidden />
+              </button>
+              <button
+                type="button"
+                onClick={() => go(1)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224] text-white"
+                aria-label="Next solution"
+              >
+                <ChevronDown className="h-5 w-5" aria-hidden />
+              </button>
+            </div>
+            <p className="text-center text-[11px] text-slate-500 sm:hidden">Swipe up or down to change slide</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

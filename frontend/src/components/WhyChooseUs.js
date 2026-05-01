@@ -36,12 +36,12 @@ const metrics = [
 
 export default function WhyChooseUs() {
   return (
-    <section data-testid="why-choose-us-section" className="py-12 sm:py-16 md:py-20 bg-white">
+    <section data-testid="why-choose-us-section" className="py-10 sm:py-12 md:py-14 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
-              Why NeuralTrix AI?
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
+              Assurance
             </p>
             <h2
               data-testid="why-choose-heading"

@@ -54,17 +54,17 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-24 bg-[#0B1B3D] relative overflow-hidden">
+    <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D] relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
 
       <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Cinematic Header */}
-        <div className="mb-16 border-l border-white/10 pl-8">
+        <div className="mb-10 border-l border-white/10 pl-8">
           <div className="flex items-center gap-4 mb-6">
-            <span className="premium-label" style={{ color: '#93C5FD', background: 'transparent', padding: 0 }}>
-              Measurable Value
+            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">
+              Operating model
             </span>
             <div className="h-px w-24 bg-gradient-to-r from-blue-500/50 to-transparent" />
           </div>
@@ -118,7 +118,10 @@ export default function StatsSection() {
                 </div>
 
                 {/* Interactive Scanline Effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-[1.5s] pointer-events-none" />
+                <div
+                  className="pointer-events-none absolute inset-0 -translate-y-full bg-gradient-to-b from-transparent via-white/[0.02] to-transparent transition-transform group-hover:translate-y-full"
+                  style={{ transitionDuration: "1.5s" }}
+                />
               </div>
             );
           })}

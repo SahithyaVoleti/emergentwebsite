@@ -14,13 +14,13 @@ export default function PageHero({ label, title, description, primaryCTA, second
     >
       <div className="relative isolate flex min-h-[min(75vh,820px)] flex-col justify-center">
         <HeroAnimatedBackdrop image={resolvedImage} bgDark={bgDark} />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-20 sm:py-28">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-14 sm:py-16 md:py-20">
           <div className="max-w-3xl">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#2563EB]"
+              className={`mb-3 text-xs font-semibold uppercase tracking-[0.12em] ${bgDark ? "text-[#93C5FD]" : "text-slate-600"}`}
             >
               {label}
             </motion.p>

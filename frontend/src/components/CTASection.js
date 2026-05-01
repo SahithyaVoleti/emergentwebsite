@@ -3,15 +3,15 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection({ title, description, buttonText, buttonHref, compact = false }) {
   return (
-    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-16 sm:py-20'} bg-[#0B1B3D] relative overflow-hidden`}>
+    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-10 sm:py-12 md:py-14'} bg-[#0B1B3D] relative overflow-hidden`}>
       {/* Premium Background Accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-4">Strategic Next Step</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Next Step</p>
             <h2
               data-testid="cta-title"
               className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight"

@@ -5,13 +5,13 @@ import blogArticles from "../data/blog";
 
 export default function RelatedBlog({ title }) {
   return (
-    <section data-testid="related-blog-section" className="py-12 sm:py-16 corp-pat-dots">
+    <section data-testid="related-blog-section" className="corp-pat-dots py-10 sm:py-12 md:py-14">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold text-blue-500 uppercase tracking-widest mb-4">Resources</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Resources</p>
+              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl">
                 {title || "Latest AI Insights"}
               </h2>
             </div>
@@ -20,7 +20,7 @@ export default function RelatedBlog({ title }) {
             </Link>
           </div>
         </AnimatedSection>
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <StaggerChildren className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-6 lg:gap-8">
           {blogArticles.slice(0, 3).map((a) => (
             <StaggerItem key={a.slug}>
               <Link to={`/blog/${a.slug}`} className="group bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-xl hover:border-blue-100 transition-all duration-500 block h-full">

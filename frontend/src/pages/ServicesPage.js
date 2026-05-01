@@ -1,8 +1,9 @@
 import PageHero from "../components/PageHero";
 import PageContactForm from "../components/PageContactForm";
+import CTASection from "../components/CTASection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import FAQSection from "../components/FAQSection";
-import ListingImageCard from "../components/ListingImageCard";
+import ServicesShowcaseTabs from "../components/ServicesShowcaseTabs";
 import services from "../data/services";
 import { SERVICES_LANDING_HERO_IMAGE } from "../lib/heroImageThemes";
 
@@ -43,31 +44,20 @@ export default function ServicesPage() {
       </div>
 
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section className="py-20 sm:py-28 corp-pat-dots">
+        <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.map((s) => (
-                <StaggerItem key={s.slug}>
-                  <ListingImageCard
-                    to={`/services/${s.slug}`}
-                    data-testid={`service-link-${s.slug}`}
-                    image={s.heroImage}
-                    title={s.title}
-                    description={s.shortDesc}
-                    icon={s.icon}
-                    ctaText="Explore Service"
-                    variant="service"
-                  />
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
+            <ServicesShowcaseTabs
+              services={services}
+              title="Transformative IT Solutions: Services"
+              description="Explore core delivery tracks and navigate through service lines that solve real business problems with production-ready AI engineering."
+            />
           </div>
         </section>
-        <section className="py-12 sm:py-16 bg-white border-y border-slate-200/70">
+        <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-2xl mb-10">
-                <span className="premium-label">Delivery Method</span>
+              <div className="max-w-2xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                   Operational Reality
                 </h2>
@@ -98,11 +88,11 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-12 sm:py-16 corp-pat-cross-dash">
+        <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-2xl mb-10">
-                <span className="premium-label">Service Lifecycle</span>
+              <div className="max-w-2xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                   Strategy to Scaled Ops
                 </h2>
@@ -136,11 +126,11 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-12 sm:py-16 bg-white">
+        <section className="py-10 sm:py-12 md:py-14 bg-white">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-10">
-                <span className="premium-label">Engagement Options</span>
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
                   Delivery Models
                 </h2>
@@ -179,11 +169,11 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-12 sm:py-16 corp-pat-diag-dash">
+        <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-10">
-                <span className="premium-label">Industry Alignment</span>
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
                   Services Adapted to Real Industry Constraints
                 </h2>
@@ -208,24 +198,24 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section data-testid="technology-coverage-section" className="py-24 sm:py-32 bg-white relative">
+        <section data-testid="technology-coverage-section" className="py-10 sm:py-12 md:py-14 bg-white relative">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-16">
-                <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-                  Technology Coverage
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
+                  Coverage
                 </p>
                 <h2
-                  className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#0B1B3D] mb-8"
+                  className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#0B1B3D] mb-6"
 
                 >
                   Platforms and Capabilities <br />Across the AI Stack
                 </h2>
-                <p className="text-lg text-slate-500 max-w-2xl font-medium">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
+                <p className="text-base text-slate-500 max-w-2xl font-medium">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
               </div>
             </AnimatedSection>
 
-            <div className="space-y-12 lg:space-y-24 relative">
+            <div className="space-y-8 lg:space-y-14 relative">
               {[
                 {
                   title: "Data & Pipelines",
@@ -289,11 +279,11 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="py-12 sm:py-16 bg-[#F8FAFC]">
+        <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-10">
-                <span className="premium-label">Assurance</span>
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
                   Governance, Security, and Quality Built Into Delivery
                 </h2>
@@ -334,11 +324,11 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-12 sm:py-16 bg-white border-y border-slate-200/70">
+        <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-10">
-                <span className="premium-label">Client Outcomes</span>
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
                   What Teams Typically Improve After Engagement
                 </h2>
@@ -386,11 +376,11 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-12 sm:py-16 corp-pat-dots">
+        <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-10">
-                <span className="premium-label">Operating Model</span>
+              <div className="max-w-3xl mb-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
                   Execution Rhythm Options
                 </h2>
@@ -443,11 +433,11 @@ export default function ServicesPage() {
 
     {/* Surface Layer 2 */}
     <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-      <section className="py-24 sm:py-32 bg-white border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="text-left mb-8">
-                <span className="premium-label">Trusted Delivery Standards</span>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <p className="text-sm text-slate-500">
                   Service engagements aligned with enterprise expectations for reliability and governance
                 </p>

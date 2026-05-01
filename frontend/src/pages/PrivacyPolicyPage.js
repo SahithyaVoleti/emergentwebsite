@@ -123,19 +123,19 @@ export default function PrivacyPolicyPage() {
       />
       
       {/* Privacy Content */}
-      <section id="privacy-content" className="py-20 sm:py-24 bg-white">
+      <section id="privacy-content" className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
-              <div className="mb-16">
-                <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Core Principles</p>
+              <div className="mb-10">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]" >
                   Data Privacy <span className="text-[#0B1B3D]/30">Architecture</span>
                 </h2>
               </div>
             </AnimatedSection>
 
-            <div className="space-y-20">
+            <div className="space-y-14">
               {sections.map((section, idx) => (
                 <AnimatedSection key={section.title}>
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -158,11 +158,11 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-16 sm:py-20 bg-[#F8FAFC] border-t border-slate-200">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-t border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Assurance</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-[#0B1B3D]" >
                 Privacy Request <span className="text-[#0B1B3D]/30 text-nowrap">Resolution</span>
               </h2>

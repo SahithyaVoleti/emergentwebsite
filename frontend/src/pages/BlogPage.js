@@ -17,7 +17,7 @@ export default function BlogPage() {
         bgDark={true}
         image={LISTING_PAGE_HERO_IMAGES.blog}
       />
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogArticles.map((a) => (
@@ -39,11 +39,11 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Editorial Tracks</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Read by Decision Context, Not Just Topic
               </h2>
@@ -66,11 +66,11 @@ export default function BlogPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Featured Insight</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Featured Analysis from Recent Client Patterns
               </h2>
@@ -95,11 +95,11 @@ export default function BlogPage() {
           )}
         </div>
       </section>
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Learning Paths</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Curated Reading Tracks by Role
               </h2>
@@ -134,11 +134,11 @@ export default function BlogPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
                 Methodology for Turning Insights into Delivery
               </h2>
@@ -161,11 +161,11 @@ export default function BlogPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" >
                 Apply These Insights to Your Current Priorities
               </h2>

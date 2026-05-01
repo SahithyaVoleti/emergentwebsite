@@ -28,7 +28,7 @@ export default function CaseStudyDetail() {
       </div>
 
       {/* Results */}
-      <section className="py-16 bg-white border-b border-slate-200">
+      <section className="py-10 sm:py-12 md:py-14 bg-white border-b border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {cs.results.map((r, i) => (
@@ -45,18 +45,18 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Challenge & Solution */}
-      <section className="py-20 sm:py-24 bg-[#F8FAFC]">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Context</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
                 The <span className="text-[#0B1B3D]/30">Challenge</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.challenge}</p>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Delivery</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
                 Our <span className="text-[#0B1B3D]/30">Solution</span>
               </h2>
@@ -67,7 +67,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Features & Tech */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>

@@ -2,31 +2,22 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 import industries from "../data/industries";
-
-const industryUseCases = {
-  "Healthcare": ["Health Monitoring & Alerts", "Virtual Health Support", "Improved Drug Development", "Enhanced Treatment Plans"],
-  "Fintech": ["Credit Assessment & Management", "Market Trend Analysis", "Personalized Customer Support", "Safeguarding Against Fraud"],
-  "Retail": ["Dynamic Pricing", "Personalized Recommendations", "Inventory Optimization", "Customer Sentiment Analysis"],
-  "Education": ["Adaptive Learning Paths", "Automated Assessment", "Content Generation", "Student Analytics"],
-  "Real Estate": ["Virtual Tours", "AI Bots For Data Collection", "Property Evaluation", "Secure Transactions"],
-  "BFSI Solutions": ["Intelligent Underwriting", "Claims Processing", "Compliance Automation", "Customer 360"],
-  "Sports & Gaming": ["Performance Analytics", "Fan Engagement", "Predictive Modeling", "Content Generation"],
-};
+import industryTabUseCases from "../data/industryTabUseCases";
 
 export default function IndustriesServed({ title }) {
   const [activeTab, setActiveTab] = useState(0);
   const displayIndustries = industries.slice(0, 6);
 
   return (
-    <section data-testid="industries-served-section" className="py-16 sm:py-24 bg-[#F8FAFC]/50 relative overflow-hidden">
+    <section data-testid="industries-served-section" className="relative overflow-hidden bg-[#F8FAFC]/50 py-10 sm:py-12 md:py-14">
       {/* Background Decorative Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/10 rounded-full blur-[100px] -mr-64 -mt-64" />
       
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         <AnimatedSection>
-          <div className="max-w-3xl mb-12">
-            <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Industry Expertise</span>
-            <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl">
               {title || "Tailored AI Solutions for Your Industry"}
             </h2>
           </div>
@@ -34,7 +25,7 @@ export default function IndustriesServed({ title }) {
 
         {/* Dynamic Navigation Tabs */}
         <AnimatedSection delay={0.15}>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="mb-8 flex flex-wrap gap-2">
             {displayIndustries.map((ind, i) => (
               <button
                 key={ind.slug}
@@ -81,7 +72,7 @@ export default function IndustriesServed({ title }) {
 
             {/* Sub-Capabilities Grid */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-              {(industryUseCases[displayIndustries[activeTab].title] || displayIndustries[activeTab].features.slice(0, 4).map(f => f.title)).map((uc, i) => (
+              {(industryTabUseCases[displayIndustries[activeTab].title] || displayIndustries[activeTab].features.slice(0, 4).map(f => f.title)).map((uc, i) => (
                 <div 
                   key={i} 
                   className="bg-white border border-slate-100 rounded-sm p-8 flex flex-col justify-center min-h-[140px] hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 group"

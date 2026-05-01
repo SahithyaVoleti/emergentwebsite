@@ -44,7 +44,11 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" data-testid="contact-section" className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC]">
+    <section
+      id="page-contact"
+      data-testid="contact-section"
+      className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] scroll-mt-[88px]"
+    >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           {/* Left side - Info */}

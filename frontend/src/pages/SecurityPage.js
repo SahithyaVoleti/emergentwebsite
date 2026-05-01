@@ -21,11 +21,11 @@ export default function SecurityPage() {
         primaryCTA={{ text: "Talk Security Requirements", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.industries}
       />
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-10 sm:py-12 md:py-14 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Security Pillars</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Controls Designed for Production Environments
               </h2>
@@ -44,7 +44,7 @@ export default function SecurityPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
+      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
@@ -74,11 +74,11 @@ export default function SecurityPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Assurance Through Operational Security Safeguards
               </h2>

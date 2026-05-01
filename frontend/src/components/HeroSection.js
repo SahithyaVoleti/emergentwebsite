@@ -10,11 +10,10 @@ export default function HeroSection() {
       <div className="relative isolate flex min-h-[88vh] flex-col items-start justify-center text-left">
         <HeroAnimatedBackdrop video="/hero/Untitled.mp4" bgDark />
 
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-12">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-10 sm:py-12 md:py-14">
           <div className="max-w-4xl flex flex-col items-start space-y-8">
-            {/* Minimalist Label - Case Study Style */}
             <div className="relative">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#93C5FD]">
                 Future-Scale Solution Engineering
               </p>
             </div>
@@ -41,7 +40,7 @@ export default function HeroSection() {
                 asChild
                 className="bg-blue-600/80 hover:bg-blue-600 text-white backdrop-blur-sm rounded-full px-8 py-6 font-bold text-sm shadow-xl shadow-blue-500/10 transition-all hover:scale-105"
               >
-                <a href="#contact">
+                <a href="#page-contact">
                   Talk to Our AI Experts <ArrowRight size={18} className="ml-2" />
                 </a>
               </Button>

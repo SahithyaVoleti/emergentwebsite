@@ -5,18 +5,18 @@ export default function ServiceCaseStudies({ cases, title }) {
   if (!cases || cases.length === 0) return null;
 
   return (
-    <section data-testid="service-case-studies" className="py-16 sm:py-20 bg-white">
+    <section data-testid="service-case-studies" className="bg-white py-10 sm:py-12 md:py-14">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
-          <div className="max-w-2xl mb-12">
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Case Studies</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3D]" >
+          <div className="mb-8 max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Outcomes</p>
+            <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl lg:text-4xl">
               {title || "Real-World Impact"}
             </h2>
           </div>
         </AnimatedSection>
         
-        <div className="space-y-12 lg:space-y-24 relative">
+        <div className="relative space-y-10 lg:space-y-16">
           {cases.map((cs, i) => (
             <div 
               key={i} 

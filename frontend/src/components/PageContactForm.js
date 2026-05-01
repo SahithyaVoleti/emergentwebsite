@@ -36,11 +36,11 @@ export default function PageContactForm({ context }) {
   };
 
   return (
-    <section id="page-contact" data-testid="page-contact-form" className="py-20 sm:py-24 md:py-32 bg-[#F8FAFC]">
+    <section id="page-contact" data-testid="page-contact-form" className="bg-[#F8FAFC] py-10 sm:py-12 md:py-14">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Get in Touch</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Next Step</p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6" >
               Let's Discuss Your Project
             </h2>
