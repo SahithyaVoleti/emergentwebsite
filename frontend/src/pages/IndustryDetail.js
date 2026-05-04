@@ -346,9 +346,9 @@ export default function IndustryDetail() {
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
                     {/* Left: Category Label */}
-                    <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.02]">
+                    <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.02] text-white">
                       <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-6">Module 0{i + 1}</span>
-                      <h3 className="mb-6" >{c.cat}</h3>
+                      <h3 className="mb-6 text-white font-black tracking-tight uppercase">{c.cat}</h3>
                       <p className="text-sm text-blue-100/40 leading-relaxed font-medium">{c.desc}</p>
                     </div>
 
