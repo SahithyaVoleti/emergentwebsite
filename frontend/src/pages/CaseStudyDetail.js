@@ -9,6 +9,7 @@ import RelatedBlog from "../components/RelatedBlog";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import caseStudies from "../data/caseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function CaseStudyDetail() {
@@ -91,8 +92,17 @@ export default function CaseStudyDetail() {
               </ul>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <h2 className="mb-6" >Technology Stack</h2>
-              <TechStackLogoGrid items={cs.techStack} gridClassName="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3" />
+              <FlatTechStackPanel
+                title="Technology stack"
+                intro="Tools referenced in this delivery pattern for planning and estimation."
+              >
+                <TechStackLogoGrid
+                  items={cs.techStack}
+                  marqueeColumnCap={3}
+                  marqueeColumnHeightClassName="h-40 sm:h-44 min-h-[10rem]"
+                  className="w-full"
+                />
+              </FlatTechStackPanel>
             </AnimatedSection>
           </div>
         </div>

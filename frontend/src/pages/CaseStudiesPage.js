@@ -6,6 +6,7 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/Ani
 import caseStudies from "../data/caseStudies";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import { TechStackLogoInset } from "../components/CategorizedTechStackSection";
 import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function CaseStudiesPage() {
@@ -46,12 +47,15 @@ export default function CaseStudiesPage() {
                     <ArrowUpRight size={20} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                   </div>
                   <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">{cs.challenge.substring(0, 150)}...</p>
-                  <TechStackLogoGrid
-                    items={cs.techStack.slice(0, 4)}
-                    compact
-                    gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
-                    className="mt-auto"
-                  />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-2">Pattern tools</p>
+                  <TechStackLogoInset className="mt-auto">
+                    <TechStackLogoGrid
+                      items={cs.techStack.slice(0, 4)}
+                      compact
+                      marquee={false}
+                      gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
+                    />
+                  </TechStackLogoInset>
                 </div>
               </Link>
             ))}

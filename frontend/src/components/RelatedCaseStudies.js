@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "./AnimatedSection";
 import caseStudies from "../data/caseStudies";
 import TechStackLogoGrid from "./TechStackLogoGrid";
+import { TechStackLogoInset } from "./CategorizedTechStackSection";
 
 export default function RelatedCaseStudies({ industryFilter, limit = 4, title, showLabel = true }) {
   let filtered = caseStudies;
@@ -46,12 +47,15 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title, s
                   <ArrowUpRight size={18} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-5">{cs.challenge.substring(0, 120)}...</p>
-                <TechStackLogoGrid
-                  items={cs.techStack.slice(0, 4)}
-                  compact
-                  gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
-                  className="mt-1"
-                />
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-2">Pattern tools</p>
+                <TechStackLogoInset>
+                  <TechStackLogoGrid
+                    items={cs.techStack.slice(0, 4)}
+                    compact
+                    marquee={false}
+                    gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
+                  />
+                </TechStackLogoInset>
               </Link>
             </StaggerItem>
           ))}

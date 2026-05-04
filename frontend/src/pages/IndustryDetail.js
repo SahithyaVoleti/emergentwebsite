@@ -9,7 +9,7 @@ import ImpactStats from "../components/ImpactStats";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
-import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import CategorizedTechStackSection from "../components/CategorizedTechStackSection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import industries from "../data/industries";
 import services from "../data/services";
@@ -298,56 +298,37 @@ export default function IndustryDetail() {
           </div>
         </section>
 
-        {/* Tech Stack for Industry */}
-        <section data-testid="industry-tech-stack" className="relative bg-[#F8FAFC] py-6 sm:py-8 md:py-10">
-          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-            <AnimatedSection>
-              <div className="mb-10 max-w-2xl">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
-                <h2 className="mb-4 text-[#0B1B3D]">
-                  Reference <span className="corp-heading-secondary">technology stack</span> for {industry.title}
-                </h2>
-                <p className="max-w-2xl text-base text-slate-600">
-                  Category groupings and example tools for planning sessions. Selection depends on your constraints and procurement landscape.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <div className="space-y-12">
-              {[
-                {
-                  cat: "AI & ML MODELS",
-                  desc: "Core intelligence layers focused on inference quality and prompt performance.",
-                  techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"],
-                },
-                {
-                  cat: "LANGUAGE & FRAMEWORKS",
-                  desc: "Stable application foundations for high-concurrency enterprise workloads.",
-                  techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"],
-                },
-                {
-                  cat: "DATA & PIPELINES",
-                  desc: "Robust data orchestration and warehousing for real-time AI context.",
-                  techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"],
-                },
-                {
-                  cat: "CLOUD & DEPLOYMENT",
-                  desc: "Scalable infrastructure with hardened security and compliance wrappers.",
-                  techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Labs", "Serverless"],
-                },
-              ].map((c) => (
-                <div
-                  key={c.cat}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.06)] sm:p-8"
-                >
-                  <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-[#0B1B3D]">{c.cat}</h3>
-                  <p className="mb-6 text-sm text-slate-600">{c.desc}</p>
-                  <TechStackLogoGrid items={c.techs} gridClassName="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <CategorizedTechStackSection
+          dataTestId="industry-tech-stack"
+          title={`Reference technology stack for ${industry.title}`}
+          intro="Example groupings for planning and architecture discussions. Final selection follows your constraints, procurement rules, and operational requirements."
+          categories={[
+            {
+              title: "AI & ML models",
+              description:
+                "Inference quality, evaluation harnesses, and retrieval patterns aligned to production risk.",
+              techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"],
+            },
+            {
+              title: "Languages & frameworks",
+              description:
+                "Application foundations suited to throughput, observability, and change control.",
+              techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"],
+            },
+            {
+              title: "Data & pipelines",
+              description:
+                "Orchestration, storage, and streaming interfaces that support governed AI workloads.",
+              techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"],
+            },
+            {
+              title: "Cloud & deployment",
+              description:
+                "Infrastructure patterns with security boundaries, automation, and operational visibility.",
+              techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Labs", "Serverless"],
+            },
+          ]}
+        />
       </div>
 
       {/* 4. Strategic CTA (Pinned Layer) */}

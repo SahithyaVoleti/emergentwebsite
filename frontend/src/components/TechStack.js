@@ -19,6 +19,7 @@ import {
 } from "react-icons/si";
 import { FaAws, FaMicrosoft } from "react-icons/fa";
 import TechStackLogoGrid from "./TechStackLogoGrid";
+import { FlatTechStackPanel } from "./CategorizedTechStackSection";
 
 const COLUMN_A = [
   { name: "AWS", Icon: FaAws },
@@ -77,11 +78,17 @@ export default function TechStack({ showLabel = true }) {
               className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue-50/80 via-transparent to-slate-50/50 blur-2xl lg:-inset-10"
               aria-hidden
             />
-            <div className="relative [perspective:1100px] lg:[perspective:1300px]">
-              <div className="mx-auto origin-center transform-gpu [transform-style:preserve-3d] transition-transform duration-300 max-lg:[transform:rotateX(5deg)_rotateY(-5deg)] lg:[transform:rotateX(10deg)_rotateY(-9deg)_rotateZ(-1deg)]">
-                <TechStackLogoGrid items={ALL_TECH_NAMES} />
+            <FlatTechStackPanel
+              title="Representative tooling"
+              intro="Examples commonly referenced in architecture and governance reviews; your approved catalog governs production choices."
+              className="relative z-10"
+            >
+              <div className="relative [perspective:1100px] lg:[perspective:1300px]">
+                <div className="mx-auto origin-center transform-gpu [transform-style:preserve-3d] transition-transform duration-300 max-lg:[transform:rotateX(5deg)_rotateY(-5deg)] lg:[transform:rotateX(10deg)_rotateY(-9deg)_rotateZ(-1deg)]">
+                  <TechStackLogoGrid items={ALL_TECH_NAMES} marqueeColumnCap={4} />
+                </div>
               </div>
-            </div>
+            </FlatTechStackPanel>
           </div>
         </div>
       </div>

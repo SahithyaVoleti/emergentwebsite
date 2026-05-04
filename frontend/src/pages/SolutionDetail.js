@@ -10,6 +10,7 @@ import ImpactStats from "../components/ImpactStats";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import solutions from "../data/solutions";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -95,23 +96,28 @@ export default function SolutionDetail() {
 
               <div className="lg:col-span-12 xl:col-span-4">
                 <AnimatedSection delay={0.2}>
-                  <div className="bg-[#F1F5F9]/50 border border-slate-200 rounded-3xl p-8 sm:p-10 sticky top-24 shadow-sm">
-                    <div className="mb-10">
-                      <h3 className="uppercase tracking-[0.3em] mb-6">Technology Stack</h3>
+                  <div className="sticky top-24 rounded-3xl border border-slate-200 bg-[#F8FAFC]/90 p-6 shadow-sm backdrop-blur-sm sm:p-8">
+                    <FlatTechStackPanel
+                      title="Technology stack"
+                      intro="Representative tools for this accelerator; your environment and procurement rules define the final catalog."
+                      className="border-slate-200/90 shadow-none"
+                      bodyClassName="bg-transparent px-0 py-0"
+                      insetClassName="bg-white p-2.5 sm:p-3"
+                    >
                       <TechStackLogoGrid
                         items={solution.tech}
                         compact
-                        gridClassName="grid grid-cols-2 gap-2"
+                        marqueeColumnCap={3}
+                        marqueeColumnHeightClassName="h-36 sm:h-40 min-h-[9rem]"
                         className="w-full"
                       />
-                    </div>
-
-                    <div>
-                      <h3 className="uppercase tracking-[0.3em] mb-6">Primary Use Cases</h3>
+                    </FlatTechStackPanel>
+                    <div className="mt-10">
+                      <h3 className="mb-6 uppercase tracking-[0.3em]">Primary Use Cases</h3>
                       <ul className="space-y-4">
                         {solution.useCases.slice(0, 5).map((u) => (
-                          <li key={u} className="text-[13px] text-slate-600 flex items-start gap-4 font-bold group text-left">
-                            <div className="w-5 h-5 rounded-lg bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#0B1B3D] group-hover:border-[#0B1B3D] transition-all duration-300">
+                          <li key={u} className="group flex items-start gap-4 text-left text-[13px] font-bold text-slate-600">
+                            <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white transition-colors group-hover:border-[#0B1B3D] group-hover:bg-[#0B1B3D]">
                               <CheckCircle2 size={10} className="text-[#2563EB] group-hover:text-white" />
                             </div>
                             <span className="group-hover:text-[#0B1B3D] transition-colors">{u}</span>

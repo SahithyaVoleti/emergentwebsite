@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
+import { cn } from "../lib/utils";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "./AnimatedSection";
 import TechStackLogoGrid from "./TechStackLogoGrid";
+import { TechStackLogoInset } from "./CategorizedTechStackSection";
 import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function ServiceCaseStudies({ cases, title }) {
@@ -79,13 +81,30 @@ export default function ServiceCaseStudies({ cases, title }) {
                       </div>
                       <div>
                         <h4 className={`text-[11px] font-bold uppercase tracking-widest mb-4 ${i % 2 === 0 ? 'text-[#0B1B3D]' : 'text-white'}`}>Core Tech</h4>
-                        <div className={i % 2 === 0 ? "" : "opacity-95"}>
-                          <TechStackLogoGrid
-                            items={cs.tech}
-                            compact
-                            gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-2"
-                            className="max-w-md"
-                          />
+                        <div className={cn(i % 2 === 0 ? "" : "opacity-95", "max-w-md")}>
+                          {i % 2 === 0 ? (
+                            <TechStackLogoInset>
+                              <TechStackLogoGrid
+                                items={cs.tech}
+                                compact
+                                marqueeColumnCap={2}
+                                marqueeColumnHeightClassName="h-40 sm:h-44 min-h-[10rem]"
+                                className="w-full"
+                              />
+                            </TechStackLogoInset>
+                          ) : (
+                            <div className="rounded-md border border-white/10 bg-white/[0.04] p-2.5 sm:p-3">
+                              <div className="overflow-hidden rounded-md border border-white/5 bg-slate-950/45 p-2 shadow-inner sm:p-3">
+                                <TechStackLogoGrid
+                                  items={cs.tech}
+                                  compact
+                                  marqueeColumnCap={2}
+                                  marqueeColumnHeightClassName="h-40 sm:h-44 min-h-[10rem]"
+                                  className="w-full"
+                                />
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

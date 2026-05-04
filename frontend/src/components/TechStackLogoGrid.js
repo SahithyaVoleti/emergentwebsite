@@ -84,6 +84,10 @@ export default function TechStackLogoGrid({
   className,
   gridClassName,
   marquee = true,
+  /** Cap column count so dense panels (e.g. industry cards) avoid overly thin strips */
+  marqueeColumnCap,
+  /** Override default marquee column strip height (Tailwind classes) */
+  marqueeColumnHeightClassName,
 }) {
   const unique = useMemo(
     () => [...new Set(items.map((x) => String(x).trim()).filter(Boolean))],
@@ -93,9 +97,13 @@ export default function TechStackLogoGrid({
 
   const columns = useMemo(() => {
     if (unique.length === 0) return [];
-    const effective = Math.min(responsiveCols, unique.length);
+    const cap =
+      typeof marqueeColumnCap === "number" && marqueeColumnCap > 0
+        ? marqueeColumnCap
+        : Number.POSITIVE_INFINITY;
+    const effective = Math.min(responsiveCols, unique.length, cap);
     return splitIntoColumns(unique, effective);
-  }, [unique, responsiveCols]);
+  }, [unique, responsiveCols, marqueeColumnCap]);
 
   if (unique.length === 0) return null;
 
@@ -116,9 +124,11 @@ export default function TechStackLogoGrid({
   }
 
   const gapClass = compact ? "gap-2" : "gap-3";
-  const colHeight = compact
+  const colHeightDefault = compact
     ? "h-44 sm:h-52 min-h-[11rem]"
     : "h-[min(26rem,56vh)] sm:h-[28rem] min-h-[18rem]";
+  const colHeight =
+    marqueeColumnHeightClassName?.trim() || colHeightDefault;
 
   return (
     <div

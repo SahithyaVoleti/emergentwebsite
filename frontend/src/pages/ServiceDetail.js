@@ -49,13 +49,13 @@ export default function ServiceDetail() {
       </div>
 
       {/* 3. Coverage: approved platforms & integration surfaces */}
-      <div className="sticky top-0 z-0 flex min-h-[600px] flex-col justify-center overflow-hidden bg-white lg:h-[650px]">
+        <div className="sticky top-0 z-0 flex min-h-[600px] flex-col justify-center overflow-hidden bg-[#EFF3F8] lg:min-h-[min(100%,720px)] lg:py-8">
         <TechnologyFoundationSection
           dataTestId="service-technology-foundation"
           label="Coverage"
           description="Tooling choices prioritize reliability, integration fit, and lifecycle maintainability over short-term novelty."
           categories={service.techStack.map((c) => ({
-            category: String(c.category).toUpperCase(),
+            category: c.category,
             techs: c.techs,
           }))}
         />
