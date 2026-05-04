@@ -140,7 +140,7 @@ export default function IndustriesPage() {
 
             <div className="border border-slate-100 overflow-hidden">
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-slate-50 border-b border-slate-100">
-                {["Capability", "Healthcare", "Finance", "Retail", "Education", "Real Estate"].map((h) => (
+                {["Capability", "Health", "Finance", "Commerce", "EdTech", "PropTech"].map((h) => (
                   <div key={h} className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-[#0B1B3D] border-r border-slate-100 last:border-r-0">{h}</div>
                 ))}
               </div>

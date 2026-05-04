@@ -4,21 +4,21 @@ import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const footerLinks = {
   Services: [
-    { label: "Applied AI & ML Engineering", href: "/services/artificial-intelligence" },
-    { label: "Generative AI & Enterprise Copilots", href: "/services/generative-ai" },
-    { label: "Custom Software & Platform Engineering", href: "/services/custom-software" },
-    { label: "Mobile Product Engineering", href: "/services/mobile-apps" },
-    { label: "Intelligent Agents & Workflow Automation", href: "/services/ai-agents" },
-    { label: "LLM Engineering & Model Lifecycle", href: "/services/llm-development" },
-    { label: "DevOps & Platform Reliability", href: "/services/devops" },
-    { label: "Data Engineering & Analytics Foundations", href: "/services/data-engineering" },
+    { label: "Applied ML", href: "/services/artificial-intelligence" },
+    { label: "GenAI & Copilots", href: "/services/generative-ai" },
+    { label: "Platform Engineering", href: "/services/custom-software" },
+    { label: "Mobile Engineering", href: "/services/mobile-apps" },
+    { label: "AI Agents", href: "/services/ai-agents" },
+    { label: "LLM Lifecycle", href: "/services/llm-development" },
+    { label: "DevOps & Reliability", href: "/services/devops" },
+    { label: "Data Platform", href: "/services/data-engineering" },
   ],
   Solutions: [
-    { label: "DataBrain AI", href: "/solutions/databrain-ai" },
-    { label: "MediMind AI", href: "/solutions/medimind-ai" },
-    { label: "Talentify AI", href: "/solutions/talentify-ai" },
-    { label: "QuikBiz AI", href: "/solutions/quikbiz-ai" },
-    { label: "IntelliBot AI", href: "/solutions/intellibot-ai" },
+    { label: "Corpus", href: "/solutions/databrain-ai" },
+    { label: "ClinIQ", href: "/solutions/medimind-ai" },
+    { label: "Arc", href: "/solutions/talentify-ai" },
+    { label: "Reach", href: "/solutions/quikbiz-ai" },
+    { label: "Nexus", href: "/solutions/intellibot-ai" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
@@ -31,11 +31,13 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   Industries: [
-    { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "Fintech", href: "/industries/fintech" },
-    { label: "Retail", href: "/industries/retail" },
-    { label: "Education", href: "/industries/education" },
-    { label: "Real Estate", href: "/industries/real-estate" },
+    { label: "Commerce", href: "/industries/retail" },
+    { label: "Health", href: "/industries/healthcare" },
+    { label: "Finance", href: "/industries/fintech" },
+    { label: "EdTech", href: "/industries/education" },
+    { label: "Industrial", href: "/industries/manufacturing" },
+    { label: "Sports", href: "/industries/sports-gaming" },
+    { label: "PropTech", href: "/industries/real-estate" },
   ],
 };
 

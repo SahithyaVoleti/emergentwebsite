@@ -1,42 +1,42 @@
 /** Labels for industry tabs; keys must match `industries[].title`. */
 const industryTabUseCases = {
-  Healthcare: [
+  Health: [
     "Health Monitoring & Alerts",
     "Virtual Health Support",
     "Improved Drug Development",
     "Enhanced Treatment Plans",
   ],
-  Fintech: [
+  Finance: [
     "Credit Assessment & Management",
     "Market Trend Analysis",
     "Personalized Customer Support",
     "Safeguarding Against Fraud",
   ],
-  Retail: [
+  Commerce: [
     "Dynamic Pricing",
     "Personalized Recommendations",
     "Inventory Optimization",
     "Customer Sentiment Analysis",
   ],
-  Education: [
+  EdTech: [
     "Adaptive Learning Paths",
     "Automated Assessment",
     "Content Generation",
     "Student Analytics",
   ],
-  "Real Estate": [
+  PropTech: [
     "Virtual Tours",
     "AI Bots For Data Collection",
     "Property Evaluation",
     "Secure Transactions",
   ],
-  "Sports & Gaming": [
+  Sports: [
     "Performance Analytics",
     "Fan Engagement",
     "Predictive Modeling",
     "Content Generation",
   ],
-  Manufacturing: [
+  Industrial: [
     "Predictive Maintenance",
     "Visual Quality Control",
     "Production Scheduling",

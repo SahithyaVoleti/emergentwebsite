@@ -7,7 +7,7 @@ const serviceCaseStudies = {
     {
       title: "Streaming fraud and anomaly signals",
       archetype: "Payments and high-volume transactions",
-      industry: "Fintech",
+      industry: "Finance",
       desc: "Design batch and near-real-time scoring with explainability, threshold governance, and feedback loops for investigators, scoped to your fraud and compliance policies.",
       tech: ["Python", "Kafka", "AWS", "PostgreSQL"],
       highlight: "Governed risk scoring",
@@ -15,7 +15,7 @@ const serviceCaseStudies = {
     {
       title: "Demand and inventory forecasting",
       archetype: "Retail and supply chain planning",
-      industry: "Retail",
+      industry: "Commerce",
       desc: "Connect POS and ERP signals into reproducible forecasts with segment-level evaluation and scheduled model reviews, not one-off notebooks.",
       tech: ["Python", "Snowflake", "dbt", "Azure"],
       highlight: "Forecast accountability",
@@ -23,7 +23,7 @@ const serviceCaseStudies = {
     {
       title: "Equipment health signals",
       archetype: "Manufacturing and asset-heavy operations",
-      industry: "Manufacturing",
+      industry: "Industrial",
       desc: "Time-series models with maintenance playbooks, alert routing, and documented failure modes tied to your CMMS or historian.",
       tech: ["PyTorch", "Azure IoT", "PostgreSQL"],
       highlight: "Operational reliability",
@@ -59,7 +59,7 @@ const serviceCaseStudies = {
     {
       title: "Core system modernization",
       archetype: "Mid-market ERP and operations platforms",
-      industry: "Manufacturing",
+      industry: "Industrial",
       desc: "Strangler patterns, bounded contexts, and cutover plans that respect uptime windows and data migration validation.",
       tech: ["React", "Node.js", "PostgreSQL", "Kubernetes"],
       highlight: "Controlled migration",
@@ -67,7 +67,7 @@ const serviceCaseStudies = {
     {
       title: "Low-latency transactional services",
       archetype: "Trading and booking engines",
-      industry: "Fintech",
+      industry: "Finance",
       desc: "Performance budgets, back-pressure, and observability first, aligned to your SLOs and regulatory logging needs.",
       tech: ["Go", "Redis", "Kafka", "AWS"],
       highlight: "Latency discipline",
@@ -75,7 +75,7 @@ const serviceCaseStudies = {
     {
       title: "Regulated patient or citizen portals",
       archetype: "Healthcare and public sector",
-      industry: "Healthcare",
+      industry: "Health",
       desc: "HIPAA-style controls, identity integration, and explicit data residency choices documented for your security office.",
       tech: ["React", "Python", "FHIR", "Azure"],
       highlight: "Compliance-ready design",
@@ -137,7 +137,7 @@ const serviceCaseStudies = {
     {
       title: "Domain-tuned assistants",
       archetype: "Healthcare and scientific teams",
-      industry: "Healthcare",
+      industry: "Health",
       desc: "Fine-tuning and evaluation harnesses with clinician or SME review loops, not accuracy claims without your validation set.",
       tech: ["Llama 3", "PyTorch", "Azure"],
       highlight: "Evaluation-first tuning",
@@ -197,7 +197,7 @@ const serviceCaseStudies = {
     {
       title: "Healthcare lakehouse patterns",
       archetype: "Providers and payers",
-      industry: "Healthcare",
+      industry: "Health",
       desc: "PHI boundaries, encryption, and least-privilege access patterns documented for audits.",
       tech: ["Delta Lake", "Spark", "AWS"],
       highlight: "Governed data zones",
@@ -205,7 +205,7 @@ const serviceCaseStudies = {
     {
       title: "Customer 360 consolidation",
       archetype: "Retail and loyalty programs",
-      industry: "Retail",
+      industry: "Commerce",
       desc: "Identity resolution, lineage, and reconciliation jobs with business-owner sign-off criteria.",
       tech: ["Snowflake", "Fivetran", "dbt"],
       highlight: "Unified identities",
