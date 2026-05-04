@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export default function CTASection({ title, description, buttonText, buttonHref, compact = false }) {
+export default function CTASection({ title, description, buttonText, buttonHref, compact = false, hideLabel = false }) {
   return (
     <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-6 sm:py-8 md:py-10'} bg-[#0B1B3D] text-white relative overflow-hidden`}>
       {/* Premium Background Accent */}
@@ -11,15 +11,18 @@ export default function CTASection({ title, description, buttonText, buttonHref,
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Next Step</p>
+            {!hideLabel && (
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Next Step</p>
+            )}
             <h2
               data-testid="cta-title"
               className="mb-6"
             >
-              {title || "Ready to Transform Your Business?"}
+              {title || "Next Step for Your AI and Software Initiative"}
             </h2>
             <p className="text-lg text-blue-100/60 leading-relaxed max-w-2xl mb-10 font-medium">
-              {description || "Contact us today to learn more about how NeuralTrix AI can help you achieve your goals with cutting-edge AI solutions."}
+              {description ||
+                "Contact us to discuss scope, timeline, and fit. We respond with a structured view of options, dependencies, and governance considerations for your environment."}
             </p>
             <Button
               data-testid="cta-button"
@@ -40,7 +43,7 @@ export default function CTASection({ title, description, buttonText, buttonHref,
                   }
                 }}
               >
-                {buttonText || "Get Started Today"} <ArrowRight size={18} className="ml-2" />
+                {buttonText || "Contact us"} <ArrowRight size={18} className="ml-2" />
               </a>
             </Button>
           </div>
@@ -50,10 +53,10 @@ export default function CTASection({ title, description, buttonText, buttonHref,
               <h3 className="mb-6 uppercase tracking-widest">What to Expect</h3>
               <ul className="space-y-4">
                 {[
-                  "Consultation with a subject matter expert",
-                  "Initial data & systems readiness audit",
-                  "High-level implementation roadmap",
-                  "Estimated ROI and timeline projection"
+                  "Discovery session with a delivery lead",
+                  "Initial data and systems readiness review",
+                  "Implementation roadmap with milestones and risks",
+                  "Indicative timeline and success metrics aligned to your KPIs"
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">

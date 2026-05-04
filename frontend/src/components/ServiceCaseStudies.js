@@ -9,10 +9,13 @@ export default function ServiceCaseStudies({ cases, title }) {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="mb-8 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Outcomes</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
             <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl lg:text-4xl">
-              {title || "Real-World Impact"}
+              {title || "Illustrative delivery patterns"}
             </h2>
+            <p className="mt-3 text-sm text-slate-600 max-w-2xl leading-relaxed">
+              Examples of problem classes and how we would structure an engagement—not references to specific completed client programs unless separately agreed.
+            </p>
           </div>
         </AnimatedSection>
         
@@ -52,7 +55,7 @@ export default function ServiceCaseStudies({ cases, title }) {
                 {/* Right: Detailed Content */}
                 <div className="lg:col-span-8 p-8 lg:p-14 flex flex-col">
                   <div className="mb-auto">
-                    <span className="text-[10px] font-bold text-[#2563EB] mb-4 uppercase tracking-[0.3em] block">Case Study // {cs.client}</span>
+                    <span className="text-[10px] font-bold text-[#2563EB] mb-4 uppercase tracking-[0.3em] block">Scenario // {cs.archetype}</span>
                     <h3 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight tracking-tight max-w-2xl" >
                       {cs.title}
                     </h3>
@@ -62,9 +65,9 @@ export default function ServiceCaseStudies({ cases, title }) {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                       <div>
-                        <h4 className={`text-[11px] font-bold uppercase tracking-widest mb-4 ${i % 2 === 0 ? 'text-[#0B1B3D]' : 'text-white'}`}>Key Outcomes</h4>
+                        <h4 className={`text-[11px] font-bold uppercase tracking-widest mb-4 ${i % 2 === 0 ? 'text-[#0B1B3D]' : 'text-white'}`}>Typical pilot focus</h4>
                         <ul className="space-y-3">
-                          {["Direct operational cost reduction", "Accelerated processing time", "Improved decision accuracy"].map(outcome => (
+                          {["Measurable KPIs for the pilot window", "Documentation suitable for security review", "Handover paths for your teams"].map(outcome => (
                             <li key={outcome} className="flex items-center gap-3">
                               <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                               <span className={`text-[13px] font-medium ${i % 2 === 0 ? 'text-slate-500' : 'text-blue-100/50'}`}>{outcome}</span>

@@ -1,7 +1,7 @@
 /** Shared full-bleed hero image overlays (match homepage HeroSection). */
 export const FULL_BLEED_DARK_OVERLAY_STYLE = {
   background:
-    "radial-gradient(circle at center, rgba(11,27,61,0.3) 0%, rgba(11,27,61,0.5) 100%), linear-gradient(180deg, rgba(11,27,61,0.4) 0%, transparent 40%, rgba(11,27,61,0.6) 100%)",
+    "radial-gradient(circle at center, rgba(11,27,61,0.42) 0%, rgba(11,27,61,0.58) 100%), linear-gradient(180deg, rgba(11,27,61,0.52) 0%, transparent 42%, rgba(11,27,61,0.72) 100%)",
 };
 
 /** Lighter wash when hero uses bgDark=false but still shows a photo */

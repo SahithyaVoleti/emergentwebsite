@@ -26,8 +26,8 @@ export default function SolutionDetail() {
           label="Solutions"
           title={solution.heroTitle}
           description={solution.heroDesc}
-          primaryCTA={{ text: "Request a Demo", href: "#page-contact" }}
-          secondaryCTA={{ text: "View Capabilities", href: "#features" }}
+          primaryCTA={{ text: "Request a briefing", href: "#page-contact" }}
+          secondaryCTA={{ text: "View capabilities", href: "#features" }}
           image={solution.heroImage}
         />
       </div>
@@ -50,12 +50,16 @@ export default function SolutionDetail() {
                 <AnimatedSection>
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
                     <div>
-                      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
-                      <h2 className="">Strategic Overview</h2>
+                      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
+                      <h2 className="">Methodology for <span className="opacity-40">this solution</span></h2>
                     </div>
                     <div className="flex items-center gap-4 border-l-2 border-blue-500 pl-6 py-1">
-                      <span className="text-3xl font-black text-[#0B1B3D] tracking-tighter">98.5%</span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">Response<br />Accuracy</span>
+                      <span className="text-lg font-bold text-[#0B1B3D] tracking-tight leading-snug max-w-[14rem]">
+                        Grounded outputs
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">
+                        Citations &amp;<br />evaluation
+                      </span>
                     </div>
                   </div>
 
@@ -69,9 +73,9 @@ export default function SolutionDetail() {
                         <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#0B1B3D] group-hover:text-white transition-all duration-500">
                           <Brain size={20} />
                         </div>
-                        <h4 className="uppercase tracking-widest mb-3">Core Value Proposition</h4>
+                        <h4 className="uppercase tracking-widest mb-3">Core value</h4>
                         <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
-                          Engineered to eliminate information silos and accelerate decision velocity through high-concurrency AI processing.
+                          Consolidates dispersed documents and systems into governed retrieval and answer workflows aligned to access policy.
                         </p>
                       </div>
                       <div className="group">
@@ -123,12 +127,12 @@ export default function SolutionDetail() {
         </section>
 
         {/* 4. Impact Stats */}
-        <ImpactStats title="Solution Value Indicators" customStats={[
-          { value: "10x", label: "Faster information retrieval" },
-          { value: "95%", label: "Response accuracy rate" },
-          { value: "70%", label: "Reduction in manual work" },
-          { value: "24/7", label: "Always-on availability" },
-          { value: "50+", label: "Integration connectors" },
+        <ImpactStats title="Outcomes for Similar Programs" customStats={[
+          { value: "Scoped", label: "Pilot definitions with KPI gates" },
+          { value: "Measured", label: "Evaluation harnesses per release" },
+          { value: "Governed", label: "Access control and audit trails" },
+          { value: "Integrated", label: "APIs aligned to existing systems" },
+          { value: "Iterative", label: "Roadmap tied to production feedback" },
         ]} />
 
         {/* 5. Features */}
@@ -169,7 +173,7 @@ export default function SolutionDetail() {
 
       {/* 6. Pinned CTA Layer */}
       <div className="sticky top-0 z-0 h-[55vh] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
-        <CTASection title={`Evaluate ${solution.title} for Your Environment`} description="Assess integration effort, governance fit, and likely operational impact." />
+        <CTASection title={`Next Step for ${solution.title}`} description="Assess integration effort, governance fit, and operational impact for your environment and stakeholder model." />
       </div>
 
       {/* 7. Surface Layer 2 */}
@@ -186,7 +190,7 @@ export default function SolutionDetail() {
                     Adoption <span className="opacity-30">Path</span>
                   </h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-medium">
-                    Our structured integration workflow ensures zero-friction deployment and rapid proof-of-value.
+                    This adoption path sequences connectivity, configuration, validation, and rollout with explicit checkpoints.
                   </p>
                 </AnimatedSection>
               </div>
@@ -219,7 +223,7 @@ export default function SolutionDetail() {
         </section>
 
         {/* 8. Testimonials */}
-        <TestimonialsSection title="Feedback from Teams Running Similar Solutions" />
+        <TestimonialsSection title="How we engage new partners" />
 
         {/* 9. FAQ */}
         <FAQSection faqs={solution.faqs} />

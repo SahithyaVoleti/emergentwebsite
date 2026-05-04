@@ -35,10 +35,10 @@ export default function ServicesPage() {
     <div>
       <div className="sticky top-0 z-0 h-[min(70vh,700px)] overflow-hidden">
         <PageHero
-          label="Our Services"
-          title="Enterprise AI Services Built Around Business Outcomes"
-          description="From advisory to managed delivery, each service line is designed to solve a specific operational problem with measurable impact and clear accountability."
-          primaryCTA={{ text: "Talk to Our Experts", href: "#page-contact" }}
+          label="Services"
+          title="AI and Software Engineering Services for Defined Outcomes"
+          description="From discovery through production: scoped engagements, direct access to delivery leadership, and milestones tied to acceptance criteria and operational metrics."
+          primaryCTA={{ text: "Contact us", href: "#page-contact" }}
           image={SERVICES_LANDING_HERO_IMAGE}
         />
       </div>
@@ -48,8 +48,8 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <ServicesShowcaseTabs
               services={services}
-              title="Transformative IT Solutions: Services"
-              description="Explore core delivery tracks and navigate through service lines that solve real business problems with production-ready AI engineering."
+              title="Methodology for service delivery"
+              description="Explore delivery tracks aligned to priority workflows; each track maintains engineering rigor proportionate to production risk."
             />
           </div>
         </section>
@@ -57,12 +57,12 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
-                  Operational Reality
+                  Methodology for <span className="opacity-40">delivery cadence</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  We combine engineering discipline, change management, and governance controls so projects move beyond pilots and stay reliable in production.
+                  This methodology sets discovery length, pilot windows, and operational commitments so scope stays proportionate to production risk.
                 </p>
               </div>
             </AnimatedSection>
@@ -70,7 +70,7 @@ export default function ServicesPage() {
               {[
                 { value: "2-4 weeks", label: "Discovery and architecture planning" },
                 { value: "< 12 weeks", label: "Typical pilot to production timeline" },
-                { value: "99.9%", label: "Target uptime for critical workflows" },
+                { value: "SLOs", label: "Uptime targets defined per workflow" },
                 { value: "ROI-first", label: "Every engagement tied to business KPIs" },
               ].map((item) => (
                 <StaggerItem key={item.label}>
@@ -92,10 +92,12 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
-                  Strategy to Scaled Ops
+                  Methodology for <span className="opacity-40">strategy through scaled operations</span>
                 </h2>
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                  This methodology sequences assessment, design, build, and scale so each gate has clear inputs and exit criteria.
+                </p>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -126,10 +128,10 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-5">
-                  Delivery Models
+                  Coverage Across <span className="opacity-40">collaboration models</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Choose a collaboration model based on your timeline, internal capability, and transformation goals.
+                  This coverage compares ways to engage NeuralTrix—advisory, pilot-to-production, or managed delivery—mapped to your internal capacity.
                 </p>
               </div>
             </AnimatedSection>
@@ -141,7 +143,7 @@ export default function ServicesPage() {
                 },
                 {
                   title: "Pilot to Production",
-                  desc: "Launch one high-impact workflow quickly, validate ROI, and harden for enterprise rollout.",
+                  desc: "Launch one high-impact workflow, prove ROI, then expand when the numbers justify it.",
                 },
                 {
                   title: "Managed AI Delivery",
@@ -167,12 +169,11 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-5">
-                  Services Adapted to Real Industry Constraints
+                  Coverage Across <span className="opacity-40">industry constraints</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  We tailor delivery for regulated, data-sensitive, and high-throughput environments with practical implementation plans.
+                  This coverage highlights sectors where we routinely align controls, data practices, and throughput expectations before expanding scope.
                 </p>
               </div>
             </AnimatedSection>
@@ -196,16 +197,13 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-                  Coverage
-                </p>
                 <h2
                   className="mb-6"
 
                 >
-                  Platforms and Capabilities <br />Across the AI Stack
+                  Coverage Across <span className="opacity-40">the AI stack</span>
                 </h2>
-                <p className="text-base text-slate-500 max-w-2xl font-medium">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
+                <p className="text-base text-slate-500 max-w-2xl font-medium">This coverage names stack layers and example concerns—so technical reviews start from shared vocabulary, not slide-level abstraction.</p>
               </div>
             </AnimatedSection>
 
@@ -279,10 +277,10 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="mb-5">
-                  Governance, Security, and Quality Built Into Delivery
+                  Assurance for <span className="opacity-40">governance and quality</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Every service engagement includes technical guardrails to protect reliability, compliance posture, and long-term maintainability.
+                  This assurance model embeds security, observability, and release discipline into delivery milestones—not a separate paperwork phase.
                 </p>
               </div>
             </AnimatedSection>
@@ -324,29 +322,29 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                 <h2 className="mb-5">
-                  What Teams Typically Improve After Engagement
+                  Outcomes for <span className="opacity-40">service engagements</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  We structure each service line around quantifiable operational and financial improvements.
+                  These outcomes are discussion ranges from comparable programs—your baselines and acceptance tests still define what counts as success.
                 </p>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Operational Efficiency",
-                  metric: "35-70%",
-                  desc: "Reduction in repetitive workflows through automation and AI-assisted execution.",
+                  title: "Operational efficiency",
+                  metric: "Scoped",
+                  desc: "Target relief on repetitive work once workflows are instrumented and acceptance criteria are explicit.",
                 },
                 {
-                  title: "Decision Velocity",
-                  metric: "2-5x",
-                  desc: "Faster analysis and response cycles using real-time intelligence layers.",
+                  title: "Decision velocity",
+                  metric: "Measured",
+                  desc: "Faster cycles when intelligence layers sit on governed data with clear escalation paths.",
                 },
                 {
-                  title: "Quality & Consistency",
-                  metric: "Up to 90%",
-                  desc: "Lower variance in outputs through standardized workflows and governance controls.",
+                  title: "Quality consistency",
+                  metric: "Governed",
+                  desc: "Lower variance when workflows, prompts, and evaluations are versioned with ownership.",
                 },
               ].map((item) => (
                 <StaggerItem key={item.title}>
@@ -374,10 +372,12 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-5">
-                  Execution Rhythm Options
+                  Methodology for <span className="opacity-40">commercial engagement models</span>
                 </h2>
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                  This methodology matches funding and staffing reality—project, embedded pod, or multi-workstream program—with cadence and governance spelled out up front.
+                </p>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -431,9 +431,9 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="text-left mb-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
+                <h2 className="text-xl font-bold text-[#0B1B3D] mb-2">Assurance for <span className="opacity-40">enterprise expectations</span></h2>
                 <p className="text-sm text-slate-500">
-                  Service engagements aligned with enterprise expectations for reliability and governance
+                  This assurance summary lists practices buyers commonly verify during procurement—not claims of certification unless separately contracted.
                 </p>
               </div>
             </AnimatedSection>

@@ -40,8 +40,8 @@ const services = [
       { step: "Monitoring & Scale", desc: "Ongoing evolution keeps your AI ahead of the curve, maximizing ROI." },
     ],
     whyChooseUs: [
-      { title: "Cut AI Costs. Multiply ROI", desc: "Reduce AI project costs by up to 10x with expert-led consulting. We uncover performance gaps and deliver actionable guidance that accelerates ROI." },
-      { title: "Built for Real-World Execution", desc: "We design, deploy, and operate AI systems that withstand real-world data, users, and pressure—delivering consistent performance and measurable results." },
+      { title: "Cost-aware delivery", desc: "Structured assessments surface inefficiencies in existing AI initiatives; recommendations prioritize measurable impact and capital discipline." },
+      { title: "Production execution", desc: "Systems are designed for operational conditions—data drift, user variability, and reliability targets—with monitoring aligned to your SLOs." },
     ],
     faqs: [
       { q: "How long does it take to build an AI solution?", a: "A proof-of-concept typically takes 4-6 weeks, while a full production system can take 3-6 months. We follow an agile approach with regular milestones." },
@@ -325,8 +325,8 @@ const services = [
       { step: "Team Enablement", desc: "Train your team on new tools and establish DevOps culture." },
     ],
     whyChooseUs: [
-      { title: "10x Faster Deployments", desc: "Our automated pipelines accelerate deployment cycles, enabling feature launches in days, not months." },
-      { title: "99.9% Uptime Guarantee", desc: "AI-driven predictive maintenance and automated failovers guarantee operational stability." },
+      { title: "Accelerated release cadence", desc: "Automated pipelines and release gates shorten cycle time while preserving verification steps appropriate to risk." },
+      { title: "Resilience by design", desc: "Observability, incident response, and failover patterns aligned to your availability targets—not generic uptime slogans." },
     ],
     faqs: [
       { q: "Which cloud providers do you support?", a: "AWS, Google Cloud, Microsoft Azure, plus multi-cloud and hybrid deployments." },

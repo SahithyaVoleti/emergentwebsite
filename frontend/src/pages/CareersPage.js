@@ -4,7 +4,6 @@ import { Button } from "../components/ui/button";
 import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
 import ImpactStats from "../components/ImpactStats";
-import TestimonialsSection from "../components/TestimonialsSection";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import careers from "../data/careers";
@@ -41,12 +40,12 @@ function JobCard({ job }) {
 }
 
 const perks = [
-  { icon: Coffee, title: "Cutting-Edge Work", desc: "Work with the latest AI technologies on real enterprise problems." },
-  { icon: Globe, title: "Remote-First", desc: "Work from anywhere. Team across 8+ countries. Flexible hours." },
-  { icon: BookOpen, title: "Growth Culture", desc: "Annual learning budget, conference attendance, and mentorship." },
-  { icon: Heart, title: "Competitive Package", desc: "Top-of-market compensation, equity, health benefits, generous PTO." },
-  { icon: Users, title: "Amazing Team", desc: "Collaborate with 400+ brilliant AI specialists from diverse backgrounds." },
-  { icon: Award, title: "Impact at Scale", desc: "Your work powers AI systems used by Fortune 500 companies." },
+  { icon: Coffee, title: "Modern stack", desc: "Hands-on work with current AI and cloud tooling on production-oriented programs." },
+  { icon: Globe, title: "Remote-first", desc: "Distributed team with coordinated hours and clear communication norms." },
+  { icon: BookOpen, title: "Professional development", desc: "Learning allocation for certifications, conferences, and structured mentorship." },
+  { icon: Heart, title: "Compensation and benefits", desc: "Market-informed packages with health benefits and paid time off; equity where applicable." },
+  { icon: Users, title: "Senior peers", desc: "Collaborate directly with experienced engineers, scientists, and delivery leads." },
+  { icon: Award, title: "Measurable impact", desc: "Contributions tied to shipped releases, client milestones, and operational outcomes." },
 ];
 
 const hiringProcess = [
@@ -65,24 +64,23 @@ export default function CareersPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="Careers" title="Grow Your AI Career Through Real Enterprise Challenges" description="Work on systems used in production, collaborate with experienced operators, and build durable skills across research, engineering, and delivery." primaryCTA={{ text: "View Open Positions", href: "#positions" }} image={CAREERS_HERO_IMAGE} />
+      <PageHero label="Careers" title="Build Your Practice in Enterprise AI Delivery" description="Join delivery programs that emphasize production discipline, stakeholder communication, and accountable outcomes across research, engineering, and operations." primaryCTA={{ text: "View open positions", href: "#positions" }} image={CAREERS_HERO_IMAGE} />
 
       {/* 2. Stats */}
-      <ImpactStats customStats={[
-        { value: "400+", label: "AI specialists on the team" },
-        { value: "8", label: "Countries with team members" },
-        { value: "95%", label: "Employee satisfaction rate" },
-        { value: "4.8/5", label: "Glassdoor rating" },
-        { value: "30%", label: "Promoted within first year" },
+      <ImpactStats label="Assurance" title="Assurance for Candidates" customStats={[
+        { value: "2026", label: "Founded Jan 12" },
+        { value: "Remote-first", label: "Distributed hiring and collaboration" },
+        { value: "Senior-led", label: "Small core team; direct technical leadership" },
+        { value: "Pilot-based", label: "Customer work scoped to milestones" },
+        { value: "Measured", label: "Performance tied to delivery artifacts" },
       ]} />
 
       {/* 3. Why Join Us */}
       <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
             <h2 className="mb-12" >
-              Why Professionals <span className="opacity-30">Build Here</span>
+              Assurance for <span className="opacity-30">your career here</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,7 +120,7 @@ export default function CareersPage() {
       </section>
 
       {/* 5. CTA */}
-      <CTASection title="Don't See Your Role?" description="We're always looking for talented people. Send us your resume and we'll reach out when there's a fit." />
+      <CTASection title="Next Step if Your Role Is Not Listed" description="Submit your profile and focus areas; we review submissions against upcoming hiring plans and pilot workload." />
 
       {/* 6. Open Positions */}
       <section id="positions" className="py-6 sm:py-8 md:py-10 bg-white">
@@ -146,10 +144,12 @@ export default function CareersPage() {
       <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="mb-12" >
-              Our <span className="opacity-30">Locations</span>
+              Coverage Across <span className="opacity-30">presence</span>
             </h2>
+            <p className="text-sm text-slate-600 max-w-2xl mb-8">
+              Remote-first delivery with anchor regions below; specific roles note location expectations in the listing.
+            </p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -175,9 +175,8 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="mb-4" >
-                Growth <span className="opacity-30">Methodology</span>
+                Methodology for <span className="opacity-30">career growth paths</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -203,9 +202,8 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="mb-4" >
-                Engineering <span className="opacity-30">Frontier</span>
+                Assurance for <span className="opacity-30">culture</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -226,10 +224,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 8. Testimonials */}
-      <TestimonialsSection title="Life at NeuralTrix AI" />
-
-      {/* 9. Career CTA */}
+      {/* 8. Career CTA */}
       <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ServicesShowcaseTabs({
   services = [],
-  title = "Transformative IT Solutions: Services",
+  title = "Engineering services overview",
   description = "Explore delivery tracks tailored to real operational challenges and measurable business outcomes.",
 }) {
   const safeServices = useMemo(() => services.filter(Boolean), [services]);

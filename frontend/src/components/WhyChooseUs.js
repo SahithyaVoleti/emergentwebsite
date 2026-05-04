@@ -5,53 +5,56 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../components/ui/accordion";
+import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const points = [
   {
-    title: "Hallucination Control",
-    desc: "We build AI systems with RAG pipelines, governed data layers, and validation frameworks that turn AI from a liability into a trusted business engine.",
+    title: "Stable execution team",
+    desc: "Core engineers remain accountable on your workstream, reducing context loss and handoff noise across milestones.",
   },
   {
-    title: "Compliance-First, Future-Ready AI",
-    desc: "AI solutions aligned with GDPR, HIPAA, and audit-ready governance from day one, so you can move fast, stay compliant, and scale without regulatory surprises.",
+    title: "Production-oriented AI",
+    desc: "Retrieval, evaluation, and guardrails are planned from the first slice so features meet operational expectations under real usage.",
   },
   {
-    title: "Engineering-Led Execution",
-    desc: "Experienced engineering teams that convert complex ideas into reliable AI systems with measurable business outcomes.",
+    title: "Measured iteration",
+    desc: "Regular demonstrations, a shared roadmap, and indicators both sides can review to steer scope and investment.",
   },
   {
-    title: "End-to-End Ownership",
-    desc: "From architecture design to deployment and monitoring, we own the full lifecycle ensuring consistency, reliability, and continuous optimization.",
+    title: "Operational ownership",
+    desc: "Documentation, repositories, and runbooks structured so your staff can run systems independently or extend the engagement as needed.",
   },
 ];
 
 const metrics = [
-  { value: "15+", label: "Years of Excellence" },
-  { value: "1000+", label: "Happy Clients" },
-  { value: "400+", label: "AI Specialists" },
-  { value: "1500+", label: "Successful Projects" },
-  { value: "95%", label: "Client Retention" },
-  { value: "20%", label: "Faster Delivery" },
+  { value: "2026", label: "Founded Jan 12" },
+  { value: "Startup", label: "Lean core team" },
+  { value: "Weekly", label: "Typical ship cadence in pilots" },
+  { value: "AI-native", label: "Modern LLM + product stack" },
+  { value: "Remote-first", label: "Global talent, one Slack" },
+  { value: "Pilot-ready", label: "Scoped first engagements" },
 ];
 
-export default function WhyChooseUs() {
+export default function WhyChooseUs({ showLabel = true }) {
   return (
     <section data-testid="why-choose-us-section" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
+            {showLabel && (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
               Assurance
             </p>
+            )}
             <h2
               data-testid="why-choose-heading"
               className="mb-6"
             >
-              Your Trusted <span className="opacity-30">AI Engineering Partner</span>
+              Assurance for <span className="opacity-30">Delivery Discipline</span>
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
-              NeuralTrix AI brings experienced engineering talent to turn ambitious ideas into
-              high-performance AI systems that move fast, scale hard, and deliver real business results.
+              This assurance model reflects a lean operating structure (formed {COMPANY_FOUNDED_LABEL}) with emphasis on
+              production outcomes, explicit scope, and software your organization can maintain and extend.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {metrics.map((m) => (

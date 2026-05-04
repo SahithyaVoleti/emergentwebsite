@@ -10,7 +10,7 @@ const slides = caseStudiesData.map((cs) => ({
   image: cs.heroImage,
 }));
 
-export default function CaseStudies() {
+export default function CaseStudies({ showLabel = true }) {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
 
@@ -37,18 +37,20 @@ export default function CaseStudies() {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="mb-8 grid grid-cols-1 gap-8 lg:mb-10 lg:grid-cols-2 lg:items-end lg:gap-10 xl:gap-14">
           <div className="max-w-xl lg:max-w-none">
+            {showLabel && (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-              Outcomes
+              Coverage
             </p>
+            )}
             <h2 className="text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
-              Transforming Businesses
+              Coverage Across
               <br />
-              <span className="text-[#0B1B3D]">with IT Solutions</span>
+              <span className="text-[#0B1B3D]">illustrative scenarios</span>
             </h2>
           </div>
           <div className="max-w-md lg:ml-auto lg:text-right">
             <p className="mb-5 text-sm leading-relaxed text-slate-600 lg:text-base">
-              Our case studies explain the constraints clients faced, the implementation choices made, and the operational outcomes measured after delivery.
+              Illustrative patterns—not completed client projects. Use them to see how we think about problems like yours, then contact us to scope something concrete.
             </p>
             <Link
               to="/case-studies"

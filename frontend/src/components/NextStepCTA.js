@@ -38,12 +38,11 @@ export default function NextStepCTA() {
             Next Step
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
-            <span className="text-white">Discuss Your </span>
-            <span className="text-white/45">Highest-Value Point</span>
+            <span className="text-white">Next Step for </span>
+            <span className="text-white/45">Your Initiative</span>
           </h2>
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-white sm:text-lg">
-            This next step maps your priorities and constraints into the
-            best-fit delivery path and first milestone.
+            This next step is a working discussion of objectives, constraints, timeline, and fit—so both sides can decide on a proportionate pilot or engagement model.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <Button

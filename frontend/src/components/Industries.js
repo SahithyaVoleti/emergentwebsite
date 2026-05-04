@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 import industries from "../data/industries";
 import industryTabUseCases from "../data/industryTabUseCases";
 
-export default function Industries() {
+export default function Industries({ showLabel = true }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -22,19 +22,20 @@ export default function Industries() {
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="mb-8 max-w-3xl lg:mb-10">
+            {showLabel && (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-              Industries
+              Coverage
             </p>
+            )}
             <h2
               data-testid="industries-heading"
               className="mb-4"
             >
-              Purpose-built AI for{" "}
-              <span className="opacity-30">Industry Excellence</span>
+              Industry programs with{" "}
+              <span className="opacity-30">governed delivery</span>
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-slate-500">
-              We engineer industry-ready AI systems built for regulatory compliance,
-              total data security, and measurable financial impact.
+              Solutions are shaped to sector controls, data handling requirements, and KPIs your leadership team can review.
             </p>
           </div>
         </AnimatedSection>

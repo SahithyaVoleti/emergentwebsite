@@ -18,7 +18,7 @@ export default function SecurityPage() {
         label="Security"
         title="Security Practices for Enterprise AI Environments"
         description="Our security model integrates technical controls, governance checkpoints, and operational safeguards across the full delivery lifecycle."
-        primaryCTA={{ text: "Talk Security Requirements", href: "#page-contact" }}
+        primaryCTA={{ text: "Discuss security requirements", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.industries}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-white">
@@ -75,7 +75,6 @@ export default function SecurityPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="" >
                 Assurance Through Operational Security Safeguards
               </h2>

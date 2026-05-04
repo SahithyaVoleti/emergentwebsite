@@ -162,9 +162,9 @@ export default function PrivacyPolicyPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="" >
-                Privacy Request <span className="opacity-30 text-nowrap">Resolution</span>
+                Methodology for <span className="opacity-30 text-nowrap">privacy request resolution</span>
               </h2>
             </div>
           </AnimatedSection>

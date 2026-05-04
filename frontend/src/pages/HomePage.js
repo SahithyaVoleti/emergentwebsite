@@ -19,14 +19,14 @@ export default function HomePage() {
     <>
       <HeroSection />
       <AnimatedSection><CEOLetter /></AnimatedSection>
-      <AnimatedSection><ServicesSection /></AnimatedSection>
-      <AnimatedSection><SolutionsSection /></AnimatedSection>
-      <CaseStudies />
-      <TechStack />
-      <AnimatedSection><Industries /></AnimatedSection>
-      <AnimatedSection><WhyChooseUs /></AnimatedSection>
-      <AnimatedSection><Testimonials /></AnimatedSection>
-      <AnimatedSection><BlogResources /></AnimatedSection>
+      <AnimatedSection><ServicesSection showLabel={false} /></AnimatedSection>
+      <AnimatedSection><SolutionsSection showLabel={false} /></AnimatedSection>
+      <CaseStudies showLabel={false} />
+      <TechStack showLabel={false} />
+      <AnimatedSection><Industries showLabel={false} /></AnimatedSection>
+      <AnimatedSection><WhyChooseUs showLabel={false} /></AnimatedSection>
+      <AnimatedSection><Testimonials showLabel={false} /></AnimatedSection>
+      <AnimatedSection><BlogResources showLabel={false} /></AnimatedSection>
       <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-100 overflow-hidden">
         <div className="w-full px-6 lg:px-24">
           <AnimatedSection>
@@ -35,11 +35,11 @@ export default function HomePage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</span>
               </div>
               <h2 className="mb-4" >
-                Our Enterprise <br />
-                <span className="opacity-40">Delivery Approach</span>
+                Methodology for <br />
+                <span className="opacity-40">Enterprise AI Delivery</span>
               </h2>
               <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl">
-                This architecture combines engineering rigor, advisory, and governance into a singular, high-velocity delivery model.
+                This methodology keeps scope controlled, releases on a predictable cadence, and places decisions with the delivery team so working software is visible early.
               </p>
             </div>
           </AnimatedSection>
@@ -67,10 +67,10 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative z-10">
               {[
-                { title: "Discover", desc: "Prioritize use cases by ROI, feasibility, and operational readiness." },
-                { title: "Architect", desc: "Design secure, scalable systems aligned to your enterprise stack." },
-                { title: "Deploy", desc: "Launch rapidly with quality gates and measurable outcome tracking." },
-                { title: "Scale", desc: "Expand adoption across teams with governance and optimization loops." },
+                { title: "Discover", desc: "Confirm the problem statement, data availability, and success metrics within a short discovery window." },
+                { title: "Build", desc: "Ship a thin vertical slice your team can actually use, then harden from real feedback." },
+                { title: "Ship", desc: "Release on a steady cadence with monitoring, not a one-off handover." },
+                { title: "Learn", desc: "Measure usage and outcomes, then stack the next high-leverage iteration." },
               ].map((item, idx) => (
                 <div key={item.title} className="flex flex-col items-start text-left group">
                   <motion.div
@@ -140,15 +140,18 @@ export default function HomePage() {
             <div className="max-w-3xl mb-8">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-4" >
-                Teams We <span className="opacity-30">Commonly Support</span>
+                Coverage Across <span className="opacity-30">organizations we engage</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
+                This coverage clarifies stakeholder mixes where our delivery model fits today—product and engineering, leadership and operations, or innovation and IT—and how engagements are typically structured.
+              </p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Enterprise IT Teams", desc: "Modernizing legacy systems with scalable AI-first architectures." },
-              { title: "Digital Product Organizations", desc: "Embedding intelligent features and automation into customer-facing products." },
-              { title: "Operations & Process Leaders", desc: "Driving measurable efficiency gains through governed AI workflows." },
+              { title: "Product and engineering", desc: "Teams integrating AI into product roadmaps and needing delivery aligned to release milestones." },
+              { title: "Leadership and operations", desc: "Executives and operators who require transparent tradeoffs between scope, risk, and timeline." },
+              { title: "Innovation and IT", desc: "Functions modernizing workflows and seeking measurable validation before broader funding." },
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">

@@ -10,9 +10,9 @@ export default function RelatedBlog({ title }) {
         <AnimatedSection>
           <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div className="max-w-2xl">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Resources</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
               <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl">
-                {title || "Latest AI Insights"}
+                {title || "Coverage across related articles"}
               </h2>
             </div>
             <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#2563EB] hover:text-[#0B1B3D] transition-colors border-b-2 border-blue-500/10 hover:border-blue-500 pb-1 w-fit">

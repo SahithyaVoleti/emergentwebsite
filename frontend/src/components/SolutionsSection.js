@@ -92,7 +92,7 @@ function SolutionCard({ solution }) {
   );
 }
 
-export default function SolutionsSection() {
+export default function SolutionsSection({ showLabel = true }) {
   const [active, setActive] = useState(0);
   const [slideHeight, setSlideHeight] = useState(620);
   const [pauseHover, setPauseHover] = useState(false);
@@ -152,12 +152,17 @@ export default function SolutionsSection() {
     <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-6 sm:py-8 md:py-10 text-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Solutions</p>
+          {showLabel && (
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Coverage</p>
+          )}
           <h2
-            className="mb-8"
+            className="mb-4"
           >
-            Accelerators Built for Business Challenges
+            Coverage Across <span className="opacity-40">solution accelerators</span>
           </h2>
+          <p className="mb-8 max-w-2xl text-sm leading-relaxed text-slate-400">
+            These accelerators package repeatable integration and governance patterns for prioritized domains; scope and roadmap align with each customer program.
+          </p>
         </header>
 
         <div

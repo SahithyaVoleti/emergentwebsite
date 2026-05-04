@@ -10,10 +10,10 @@ export default function BlogPage() {
   return (
     <div>
       <PageHero
-        label="Blog & Resources"
-        title="Practical AI Insights for Technology and Business Leaders"
-        description="Read implementation lessons, architecture decisions, and operating guidance drawn from real enterprise AI delivery programs."
-        primaryCTA={{ text: "Subscribe to Updates", href: "#page-contact" }}
+        label="Blog and resources"
+        title="Technical and Operational Notes from Enterprise AI Delivery"
+        description="Practical articles on tools, models, and delivery discipline—useful whether you engage NeuralTrix next month or are still building an internal business case."
+        primaryCTA={{ text: "Request information", href: "#page-contact" }}
         bgDark={true}
         image={LISTING_PAGE_HERO_IMAGES.blog}
       />
@@ -45,8 +45,9 @@ export default function BlogPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-5" >
-                Read by Decision Context, Not Just Topic
+                Coverage Across <span className="opacity-40">decision contexts</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mb-6">Choose articles by the decisions you are facing—strategy, build, run, or govern—rather than browsing titles alone.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -70,10 +71,11 @@ export default function BlogPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="mb-5" >
-                Featured Analysis from Recent Client Patterns
+                Methodology for <span className="opacity-40">this month&apos;s deep dive</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mb-6">A single featured piece—tools, models, or delivery practice—with enough depth to inform your next technical or vendor discussion.</p>
             </div>
           </AnimatedSection>
           {blogArticles[0] && (
@@ -99,10 +101,10 @@ export default function BlogPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="mb-5" >
-                Curated Reading Tracks by Role
+                Coverage Across <span className="opacity-40">reading by role</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mb-6">This coverage maps articles to the responsibilities you hold today—so navigation matches real meeting agendas, not generic categories.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -138,10 +140,11 @@ export default function BlogPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="mb-4" >
-                Methodology for Turning Insights into Delivery
+                Assurance for <span className="opacity-40">editorial standards</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mb-8">This assurance model keeps content decision-useful, technically grounded, and free of vendor hype—aligned to how delivery teams actually work.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -167,10 +170,10 @@ export default function BlogPage() {
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
               <h2 className="mb-4" >
-                Apply These Insights to Your Current Priorities
+                Next Step for <span className="opacity-40">your priorities</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                This next step applies these insights to your organization through a practical implementation roadmap.
+                Move from reading to action: share your stack and goals so we can suggest a proportionate pilot or proof path—not generic advice.
               </p>
             </div>
           </AnimatedSection>

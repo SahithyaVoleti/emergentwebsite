@@ -103,7 +103,7 @@ export default function BlogDetail() {
       </section>
 
       {/* 4. CTA */}
-      <CTASection title="Need Guidance for a Similar Challenge?" description="Share your scenario and we can point you to the right implementation approach, trade-offs, and next decisions." buttonText="Get in Touch" />
+      <CTASection title="Next Step for Related Questions" description="Share your scenario for orientation on implementation options, tradeoffs, and sequencing decisions appropriate to your environment." buttonText="Contact us" />
 
       {/* 5. Related Articles */}
       <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">

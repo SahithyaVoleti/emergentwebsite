@@ -172,7 +172,7 @@ export default function Header() {
                   : `${location.pathname}#page-contact`
               }
             >
-              Talk to AI Experts
+              Contact us
             </Link>
           </Button>
           <button
@@ -265,7 +265,7 @@ export default function Header() {
             className="w-full mt-4 bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm text-sm font-semibold"
           >
             <Link to="/#page-contact" onClick={() => setMobileOpen(false)}>
-              Talk to AI Experts
+              Contact us
             </Link>
           </Button>
         </div>

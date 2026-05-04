@@ -40,10 +40,10 @@ export default function SolutionsPage() {
   return (
     <div className="bg-[#F8FAFC]">
       <PageHero
-        label="Our Solutions"
-        title="Production-Ready AI Accelerators"
-        description="Engineered for high-velocity adoption and safe integration, our accelerator systems deliver sustained value across critical enterprise workstreams."
-        primaryCTA={{ text: "Explore Accelerators", href: "#solutions-list" }}
+        label="Solutions"
+        title="Solution Accelerators for Structured AI Rollouts"
+        description="Pre-architected modules for document intelligence, regulated workflows, talent operations, and adjacent domains—maintained with customer programs and internal delivery feedback."
+        primaryCTA={{ text: "Review accelerators", href: "#solutions-list" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
@@ -51,6 +51,15 @@ export default function SolutionsPage() {
         id="solutions-list"
         className="py-6 sm:py-8 md:py-10"
       >
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 mb-8 max-w-4xl">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1B3D] mb-3">
+            Coverage Across <span className="opacity-40">solution accelerators</span>
+          </h2>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            This coverage lists pre-architected modules you can brief against—each links to a full overview with scope boundaries and integration assumptions.
+          </p>
+        </div>
         <div className="w-full">
           <div className="relative">
             <Carousel

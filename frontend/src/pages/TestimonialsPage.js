@@ -9,19 +9,19 @@ export default function TestimonialsPage() {
   return (
     <div>
       <PageHero
-        label="Testimonials"
-        title="What Clients Say After Working with Our Teams"
-        description="These testimonials reflect delivery experience, decision support quality, and measurable outcomes achieved through long-term collaboration."
-        primaryCTA={{ text: "Start Your Engagement", href: "#page-contact" }}
+        label="Engagement"
+        title="How We Work With Prospective Partners"
+        description="NeuralTrix is building its client base: this page explains what you can expect in discovery and pilot—transparency, engineering access, and explicit success measures—instead of third-party quotes."
+        primaryCTA={{ text: "Start a conversation", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
       <ImpactStats
-        title="Trust Signals"
+        title="Assurance for early programs"
         customStats={[
-          { value: "95%", label: "Client retention rate" },
-          { value: "1000+", label: "Clients served" },
-          { value: "1500+", label: "Projects delivered" },
-          { value: "400+", label: "AI specialists" },
+          { value: "2026", label: "Founded Jan 12" },
+          { value: "Senior-led", label: "Accountable delivery leads" },
+          { value: "Defined", label: "Milestones and acceptance criteria" },
+          { value: "Documented", label: "Handover and operational artifacts" },
         ]}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
@@ -30,8 +30,9 @@ export default function TestimonialsPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
-                Experience Principles Behind Client Trust
+                Assurance for <span className="opacity-40">professional delivery</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl">This assurance model states what you can expect in working sessions, documentation, and escalation paths before a contract is signed.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -56,8 +57,9 @@ export default function TestimonialsPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                Outcomes Across Long-Term Client Engagements
+                Outcomes for <span className="opacity-40">structured pilots</span>
               </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mt-4">This outcomes framing describes what we jointly optimize in early programs—speed to clarity, visible decisions, and accountable ownership—not vanity demos.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,8 +79,8 @@ export default function TestimonialsPage() {
           </StaggerChildren>
         </div>
       </section>
-      <TestimonialsSection title="What Clients Say About Working With Us" />
-      <PageContactForm context="Testimonials Page" />
+      <TestimonialsSection title="Principles in detail" />
+      <PageContactForm context="Engagement / prospective partner" />
     </div>
   );
 }

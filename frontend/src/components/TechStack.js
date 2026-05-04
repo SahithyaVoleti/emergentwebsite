@@ -73,7 +73,7 @@ function MarqueeColumn({ tiles, animationClass }) {
   );
 }
 
-export default function TechStack() {
+export default function TechStack({ showLabel = true }) {
   const columns = [COLUMN_A, COLUMN_B, COLUMN_C];
 
   return (
@@ -81,21 +81,23 @@ export default function TechStack() {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="max-w-xl lg:max-w-none lg:pt-4">
+            {showLabel && (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
+            )}
             <h2
               data-testid="tech-stack-heading"
               className="mb-5"
             >
-              Empowering Innovation <span className="opacity-35">Through Advanced Platforms</span>
+              Coverage Across <span className="opacity-35">Platforms</span>
             </h2>
             <p className="mb-8 text-base leading-relaxed text-slate-600">
-              We align delivery with approved cloud foundations, model services, and integration surfaces—including AWS, Microsoft Azure, Google Cloud, and modern AI tooling—so implementations stay observable, governable, and cost-aware.
+              Delivery aligns with approved cloud foundations, model APIs, and integration surfaces—including AWS, Azure, Google Cloud, and common AI tooling—so implementations remain observable, governable, and cost-accountable.
             </p>
             <Link
               to="/partners"
               className="inline-flex items-center justify-center rounded-sm bg-[#2563eb] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
             >
-              See all integrations
+              View technology partners
             </Link>
           </div>
 

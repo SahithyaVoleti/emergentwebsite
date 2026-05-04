@@ -30,8 +30,8 @@ export default function ServiceDetail() {
           label="Services"
           title={service.heroTitle}
           description={service.heroDesc}
-          primaryCTA={{ text: "Speak To Our Experts", href: "#page-contact" }}
-          secondaryCTA={{ text: "View Capabilities", href: "#capabilities" }}
+          primaryCTA={{ text: "Contact us", href: "#page-contact" }}
+          secondaryCTA={{ text: "View capabilities", href: "#capabilities" }}
           image={service.heroImage}
         />
       </div>
@@ -43,7 +43,7 @@ export default function ServiceDetail() {
             <Link to="/services" data-testid="back-to-services" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors"><ArrowLeft size={14} /> Back to All Services</Link>
           </div>
         </div>
-        <ImpactStats variant="split" label="Operating model" title="The NeuralTrix AI Delivery Difference" />
+        <ImpactStats variant="split" label="Assurance" title="Assurance for Accountable Delivery" />
         <ScopeOfDeliverySection service={service} />
       </div>
 
@@ -68,10 +68,10 @@ export default function ServiceDetail() {
               <div className="mb-8 max-w-2xl text-left sm:mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Methodology</p>
                 <h2 className="mb-8 max-w-2xl text-left sm:mb-10">
-                  Execution Roadmap
+                  Methodology for {service.title} Engagements
                 </h2>
                 <p className="mt-3 text-sm leading-snug text-slate-600">
-                  Staged delivery from alignment through deployment, with explicit checkpoints and ownership.
+                  This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage.
                 </p>
               </div>
             </AnimatedSection>
@@ -105,7 +105,7 @@ export default function ServiceDetail() {
 
       {/* 5. Next step: conversation CTA */}
       <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
-        <CTASection title="Discuss Delivery Fit" description={`We can map ${service.title} to your current systems, priorities, and timeline to define a practical starting scope.`} />
+        <CTASection title="Next Step for Scoping" description={`We can align ${service.title} to your systems, priorities, and timeline to define an actionable starting scope and governance boundary.`} />
       </div>
 
       {/* 6. Assurance & outcomes: rationale + proof metrics */}
@@ -118,7 +118,7 @@ export default function ServiceDetail() {
                   <div className="mb-6">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Assurance</p>
                     <h2 className="">
-                      Why Teams Retain Us Across Phases
+                      Outcomes for Continued Engagement
                     </h2>
                   </div>
                   <div className="space-y-6">
@@ -135,7 +135,7 @@ export default function ServiceDetail() {
               <div className="lg:col-span-6 xl:col-span-7 lg:pt-0">
                 <AnimatedSection delay={0.2}>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 content-start">
-                    {[{ value: "15+", label: "Years of Innovation" }, { value: "1000+", label: "Global Success Stories" }, { value: "400+", label: "AI Experts" }, { value: "1500+", label: "Projects Delivered" }, { value: "95%", label: "Client Retention" }, { value: "20%", label: "Faster to Market" }].map((m) => (
+                    {[{ value: "2026", label: "Founded Jan 12" }, { value: "Senior-led", label: "Core delivery team" }, { value: "Weekly", label: "Typical milestone cadence" }, { value: "Pilot-ready", label: "Scoped first engagements" }, { value: "Remote-first", label: "Distributed delivery model" }, { value: "Measured", label: "KPI-linked acceptance gates" }].map((m) => (
                       <div key={m.label} className="group border border-slate-100 rounded-xl p-6 bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
                         <div className="w-8 h-1 bg-[#2563EB]/10 group-hover:bg-[#2563EB] transition-colors mb-4 rounded-full" />
                         <span className="text-2xl font-bold text-[#0B1B3D] block tracking-tighter" >{m.value}</span>
@@ -149,10 +149,10 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        <ServiceCaseStudies cases={serviceCaseStudies[service.slug]} title={`Our ${service.title} Success Stories`} />
-        <IndustriesServed title="Tailored Solutions for Your Industry" />
-        <TestimonialsSection title="Here's What Our Clients Say About Us" />
-        <RelatedBlog title="Stay Ahead with AI Intelligence" />
+        <ServiceCaseStudies cases={serviceCaseStudies[service.slug]} title={`Illustrative scenarios: ${service.title}`} />
+        <IndustriesServed title="Coverage across industries" />
+        <TestimonialsSection title="How we engage new partners" />
+        <RelatedBlog title="Related technical articles" />
         <div id="page-contact">
           <PageContactForm context={service.title} />
         </div>

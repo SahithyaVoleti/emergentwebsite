@@ -6,39 +6,32 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
+import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const timeline = [
-  { year: "2018", title: "Founded", desc: "NeuralTrix AI was founded in San Francisco with a mission to make enterprise AI accessible.", icon: Target },
-  { year: "2019", title: "First Enterprise Client", desc: "Secured our first Fortune 500 client and delivered an AI-powered fraud detection system.", icon: Shield },
-  { year: "2020", title: "Remote-First", desc: "Expanded globally with a remote-first culture, growing to 50+ engineers across 8 countries.", icon: Globe },
-  { year: "2021", title: "100 Clients", desc: "Reached 100 enterprise clients and launched our first AI product suite.", icon: Users },
-  { year: "2022", title: "GenAI Pioneer", desc: "Early adopter of LLMs for enterprise, launching RAG-based solutions before the mainstream.", icon: Zap },
-  { year: "2023", title: "400+ Specialists", desc: "Grew to 400+ AI specialists and opened offices in London and Singapore.", icon: Heart },
-  { year: "2024", title: "Agent Platform", desc: "Launched autonomous AI agent platform enabling enterprises to deploy intelligent agents at scale.", icon: Eye },
-  { year: "2025", title: "1500+ Projects", desc: "Surpassed 1500 successful AI projects with 95% client retention rate.", icon: Target },
+  { year: "2026", title: "NeuralTrix AI launches", desc: `Founded ${COMPANY_FOUNDED_LABEL} as an applied AI engineering firm—focused on shipped software alongside customer product and engineering leadership.`, icon: Target },
+  { year: "Now", title: "Design partners", desc: "Early customer programs with controlled scope, weekly releases, and shared channels for timely decisions.", icon: Shield },
+  { year: "Next", title: "Scale what works", desc: "Expand capacity and accelerators based on production usage, acceptance metrics, and repeatability—not roadmap projections alone.", icon: Zap },
 ];
 
 const team = [
-  { name: "Arjun Mehta", role: "CEO & Co-founder", bio: "15+ years in enterprise software. Previously VP Engineering at a Fortune 100 tech company." },
-  { name: "Sarah Chen", role: "CTO", bio: "PhD in Machine Learning from Stanford. Led AI research at a major cloud provider." },
-  { name: "David Okafor", role: "VP of Engineering", bio: "Former principal engineer at a leading AI startup. Expert in distributed systems." },
-  { name: "Lisa Park", role: "VP of Product", bio: "10+ years in product management. Led AI product strategy at a top SaaS company." },
-  { name: "Raj Patel", role: "Head of AI Research", bio: "PhD in NLP. Published 30+ papers in top AI conferences." },
-  { name: "Maria Santos", role: "VP of Client Success", bio: "15+ years in consulting. Ensures every client achieves measurable ROI." },
+  { name: "Arjun Mehta", role: "CEO & Co-founder", bio: "Product-minded operator focused on shipping AI systems customers actually run." },
+  { name: "Sarah Chen", role: "CTO & Co-founder", bio: "Hands-on ML lead—architecture through evaluation harnesses and production monitoring." },
+  { name: "David Okafor", role: "Principal Engineer", bio: "Distributed systems and shipping discipline from high-growth platform teams." },
+  { name: "Lisa Park", role: "Head of Product", bio: "Turns ambiguous AI ideas into scoped milestones teams can execute." },
+  { name: "Raj Patel", role: "Lead Applied Scientist", bio: "LLMs, retrieval, and evaluation—making models behave in the wild." },
+  { name: "Maria Santos", role: "Customer Programs", bio: "Keeps pilots honest on outcomes, timelines, and handover clarity." },
 ];
 
 const offices = [
-  { city: "San Francisco", country: "USA", type: "Headquarters", address: "525 Market Street, Suite 3000" },
-  { city: "London", country: "UK", type: "European Office", address: "30 St Mary Axe, Floor 12" },
-  { city: "Singapore", country: "Singapore", type: "Asia-Pacific", address: "1 Raffles Place, Tower 2" },
-  { city: "Bangalore", country: "India", type: "Engineering Center", address: "Prestige Tech Park, Sarjapur Road" },
+  { city: "San Francisco Bay Area", country: "USA", type: "HQ (remote-first)", address: "Distributed team—meet where the work is" },
 ];
 
 const values = [
-  { icon: Zap, title: "Engineering Excellence", desc: "We write code that lasts decades. Clean architecture, comprehensive testing, and relentless quality." },
-  { icon: Heart, title: "Client Obsession", desc: "Your success is our success. We measure ourselves by your ROI, not our billable hours." },
-  { icon: Shield, title: "Trust & Transparency", desc: "No hidden agendas. Clear communication, honest timelines, and full code ownership." },
-  { icon: Globe, title: "Global Mindset", desc: "Diverse team across 8 countries bringing different perspectives to every challenge." },
+  { icon: Zap, title: "Delivery priority", desc: "Scope decisions favor executable increments and visible progress over narrative-only milestones." },
+  { icon: Heart, title: "Joint accountability", desc: "Shared communication channels, documented tradeoffs, and alignment to your roadmap while engaged." },
+  { icon: Shield, title: "Transparent execution", desc: "Timelines, repositories, and decisions expressed in materials suitable for internal review." },
+  { icon: Globe, title: "Remote-first", desc: "Engineering and delivery talent recruited globally with disciplined scheduling and handovers." },
 ];
 
 const partners = ["AWS", "Google Cloud", "Microsoft Azure", "OpenAI", "Anthropic", "Meta AI", "NVIDIA", "Snowflake", "Databricks", "MongoDB"];
@@ -47,7 +40,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <PageHero label="About Us" title="The Team and Principles Behind Our AI Delivery" description="Learn how our leadership model, delivery culture, and governance standards help enterprises move from AI ambition to sustained operational value." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
+      <PageHero label="About Us" title="Applied AI Engineering with Disciplined Delivery" description={`NeuralTrix AI began operations on ${COMPANY_FOUNDED_LABEL}. We are a compact, senior-led team focused on production AI and software outcomes for early customer programs.`} primaryCTA={{ text: "Contact us", href: "#page-contact" }} secondaryCTA={{ text: "Careers", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
       {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
       <section className="py-6 sm:py-8 md:py-10 bg-white overflow-hidden">
@@ -61,12 +54,11 @@ export default function AboutPage() {
               {/* Left Column: Context & Branding */}
               <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 pb-10 lg:pb-0 lg:pr-12">
                 <AnimatedSection>
-                  <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.4em] mb-6">The NeuralTrix Blueprint</p>
                   <h2 className="mb-6">
-                    Engineering Trust in <br className="hidden xl:block" /> <span className="text-blue-500">Every Neuron.</span>
+                    Assurance for <br className="hidden xl:block" /> <span className="text-blue-500">execution clarity</span>
                   </h2>
                   <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
-                    We bridge the gap between raw AI power and predictable enterprise value. Our focus remains on technical rigor and ethical transparency.
+                    We operate as a focused engineering partner—not a broad legacy integrator—helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
                   </p>
                 </AnimatedSection>
               </div>
@@ -84,7 +76,7 @@ export default function AboutPage() {
                       <div>
                         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Our Mission</span>
                         <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug max-w-xl">
-                          To democratize enterprise AI by building production-ready, compliant, and measurably impactful solutions.
+                          To deliver production-grade AI and software with transparent scope, contemporary tooling, and deliverables your organization can operate and extend.
                         </p>
                       </div>
                     </div>
@@ -100,7 +92,7 @@ export default function AboutPage() {
                       <div>
                         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Our Vision</span>
                         <p className="text-xl sm:text-2xl font-bold text-white/70 tracking-tight leading-snug max-w-xl">
-                          To be the world's most trusted AI engineering partner, known for technical excellence and ethical practices.
+                          A trusted partner for applied AI delivery—measured by shipped capability, governance fit, and durable client relationships.
                         </p>
                       </div>
                     </div>
@@ -113,19 +105,21 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Impact Stats */}
-      <ImpactStats title="Our Impact in Numbers" customStats={[
-        { value: "15+", label: "Years of delivering quality solutions" },
-        { value: "1000+", label: "Happy clients across industries" },
-        { value: "400+", label: "AI specialists on our team" },
-        { value: "1500+", label: "Successful projects delivered" },
-        { value: "95%", label: "Client retention rate" },
+      <ImpactStats label={false} title="Outcomes for Early-Stage Operations" customStats={[
+        { value: "2026", label: `Founded ${COMPANY_FOUNDED_LABEL}` },
+        { value: "Startup", label: "Lean core team, senior builders" },
+        { value: "Weekly", label: "Typical iteration cadence in pilots" },
+        { value: "Remote-first", label: "Global talent, one operating rhythm" },
+        { value: "Product + services", label: "Accelerator IP plus custom builds" },
       ]} />
 
       {/* 4. Core Values */}
       <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="mb-12" >Our Core Values</h2>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
+            <h2 className="mb-4" >Outcomes for <span className="opacity-30">operating priorities</span></h2>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This outcomes framing states the tradeoffs we hold in delivery—progress you can observe, accountability you can audit, and scope that stays proportionate to risk.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
@@ -145,7 +139,9 @@ export default function AboutPage() {
       <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="mb-12" >Our Journey</h2>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
+            <h2 className="mb-4" >Methodology for <span className="opacity-30">our operating timeline</span></h2>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This methodology sequences launch, early programs, and scale decisions against shipped evidence—not vanity milestones.</p>
           </AnimatedSection>
           <div className="relative max-w-6xl mx-auto">
             <div className="absolute top-0 bottom-0 left-[148px] md:left-[188px] w-1.5 bg-[#FFC200]" />
@@ -189,7 +185,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. CTA */}
-      <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
+      <CTASection hideLabel title="Next Step for Candidates and Partners" description="We hire engineers and operators who take ownership of outcomes; review open roles or reach out with your background." buttonText="View open positions" buttonHref="/careers" />
 
       {/* 6.5 Governance Model */}
       <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
@@ -229,9 +225,9 @@ export default function AboutPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="mb-4" >
-              Leadership <span className="opacity-30">Team</span>
+              Coverage Across <span className="opacity-30">our core team</span>
             </h2>
-            <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Meet the people accountable for strategy, engineering quality, and client outcomes.</p>
+            <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Small, senior group—accountable for what we sell and what we ship.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((m) => (
@@ -253,7 +249,10 @@ export default function AboutPage() {
       <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600 text-left">Coverage</p>
+            <div className="mb-8 text-left max-w-3xl">
+              <h2 className="mb-2">Coverage Across <span className="opacity-30">ecosystem platforms</span></h2>
+              <p className="text-sm text-slate-500">Reference vendors and clouds we integrate with in customer programs—not an exhaustive partnership list.</p>
+            </div>
             <div className="relative">
               {/* Fade masks */}
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10" />
@@ -286,11 +285,12 @@ export default function AboutPage() {
       <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="mb-12" >
-              Our <span className="opacity-30">Offices</span>
+            <h2 className="mb-4" >
+              Coverage Across <span className="opacity-30">where we operate</span>
             </h2>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">Remote-first delivery with in-person working sessions when milestones require it.</p>
           </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl">
             {offices.map((o) => (
               <StaggerItem key={o.city}>
                 <div data-testid={`office-${o.city.toLowerCase().replace(/\s/g, "-")}`} className="bg-[#F8FAFC] border border-slate-200 rounded-sm p-6">
@@ -304,19 +304,18 @@ export default function AboutPage() {
       </section>
 
       {/* 10. Testimonials */}
-      <TestimonialsSection title="What Our Clients Say" />
+      <TestimonialsSection showLabel={false} title="How we engage new partners" />
 
       {/* 11. Strategic CTA */}
       <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
               <h2 className="mb-4" >
-                Start with <span className="opacity-30">a Conversation</span>
+                Next Step for <span className="opacity-30">a conversation</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                This next step helps define the most practical path whether you are evaluating use-cases or scaling production systems.
+                Tell us what you are building—if there is a fit, we will propose a lean pilot and a path to scale.
               </p>
             </div>
           </AnimatedSection>

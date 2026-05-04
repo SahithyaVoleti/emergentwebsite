@@ -10,10 +10,10 @@ const stats = [
 ];
 
 const DEFAULT_SPLIT_HIGHLIGHTS = [
-  { icon: Users, title: "Cross-functional teams aligned to your domain and systems" },
-  { icon: Handshake, title: "Delivery standards that match enterprise governance expectations" },
-  { icon: Star, title: "Outcomes defined with measurable acceptance criteria" },
-  { icon: Headset, title: "Ongoing support through adoption, handover, and optimization" },
+  { icon: Users, title: "Stable delivery team aligned to your stack, with continuity across releases" },
+  { icon: Handshake, title: "Security and review practices proportionate to stage and regulatory context" },
+  { icon: Star, title: "Acceptance criteria tied to observable behavior and defined test evidence" },
+  { icon: Headset, title: "Structured handover and enablement as internal teams assume operations" },
 ];
 
 const DEFAULT_SPLIT_IMAGES = [
@@ -28,7 +28,7 @@ export default function ImpactStats({
   title,
   customStats,
   variant = "stats",
-  label = "Operating model",
+  label = "Methodology",
   description,
   highlights = DEFAULT_SPLIT_HIGHLIGHTS,
   splitImages = DEFAULT_SPLIT_IMAGES,
@@ -36,11 +36,11 @@ export default function ImpactStats({
   const displayStats = customStats || stats;
   const intro =
     description ||
-    "We structure delivery around your operating constraints, data posture, and adoption path—so solutions reach production with clear accountability.";
+    "We scope work to demonstrate value on a clear cadence, document deliverables and interfaces, and adjust the engagement as priorities and evidence warrant.";
 
   if (variant === "split") {
     const heading =
-      title || "The NeuralTrix AI Delivery Difference";
+      title || "Assurance for accountable delivery";
 
     return (
       <section
@@ -51,7 +51,9 @@ export default function ImpactStats({
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
             <AnimatedSection>
               <div className="max-w-xl text-left lg:max-w-none">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{label}</p>
+                {label != null && label !== false && (
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{label}</p>
+                )}
                 <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl lg:text-[2.15rem] lg:leading-[1.18]">
                   {heading}
                 </h2>
@@ -114,15 +116,16 @@ export default function ImpactStats({
           <div className="lg:col-span-4 xl:col-span-3">
             <AnimatedSection>
               <div className="max-w-md text-left lg:pt-4">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-                  {label}
-                </p>
+                {label != null && label !== false && (
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
+                    {label}
+                  </p>
+                )}
                 <h2 className="mb-6 text-3xl font-black leading-none tracking-tighter text-[#0B1B3D] lg:text-4xl">
-                  {title}
+                  {title || "Market context for AI adoption"}
                 </h2>
                 <p className="text-[13px] font-medium leading-relaxed text-slate-500">
-                  Validated performance benchmarks across heterogeneous infrastructure and
-                  multi-tenant deployments.
+                  Third-party market indicators for context; delivery decisions remain grounded in your constraints and measured outcomes.
                 </p>
 
                 <div className="mt-8 flex items-center gap-4">

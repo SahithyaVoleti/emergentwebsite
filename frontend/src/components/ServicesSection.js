@@ -1,7 +1,7 @@
 import services from "../data/services";
 import ServicesShowcaseTabs from "./ServicesShowcaseTabs";
 
-export default function ServicesSection() {
+export default function ServicesSection({ showLabel = true }) {
   return (
     <section
       id="services"
@@ -10,17 +10,19 @@ export default function ServicesSection() {
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-2xl mb-6">
+          {showLabel && (
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-            Services
+            Coverage
           </p>
+          )}
           <h2
             data-testid="services-heading"
             className="mb-4"
           >
-            AI Development <span className="opacity-30">Real-World Impact</span>
+            Coverage Across <span className="opacity-30">Engineering Services</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
-            Navigate through the current tech-driven landscape and foster long-term growth with custom AI solutions.
+            Strategy, implementation, and operations support across the AI and software lifecycle, scoped to your priorities, budget, and governance requirements.
           </p>
         </div>
         <ServicesShowcaseTabs services={services.slice(0, 6)} />

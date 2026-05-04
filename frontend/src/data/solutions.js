@@ -6,7 +6,7 @@ const solutions = [
     title: "DataBrain AI",
     shortDesc: "Convert large document collections into searchable, conversational knowledge with source-grounded answers.",
     heroTitle: "DataBrain AI — Chat With Your Documents",
-    heroDesc: "Transform how your team interacts with data. DataBrain AI lets you upload PDFs, spreadsheets, transcripts, and more, then ask questions in plain language and receive accurate, cited answers in seconds.",
+    heroDesc: "Provide conversational access to document corpora: upload structured and unstructured files, query in natural language, and receive answers grounded in sources with citations.",
     heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
     overview: "DataBrain AI is a document intelligence platform that ingests multi-format content and exposes it through reliable conversational search with citations and confidence-aware responses.",
     features: [
@@ -56,7 +56,7 @@ const solutions = [
     title: "Talentify AI",
     shortDesc: "Improve hiring outcomes with AI-assisted matching, screening workflows, and recruiter decision support.",
     heroTitle: "Talentify AI — Intelligent Recruitment Platform",
-    heroDesc: "Revolutionize your hiring process with AI-powered candidate matching, automated screening, and intelligent job recommendations that connect the right talent with the right opportunities 10x faster.",
+    heroDesc: "Improve hiring throughput with AI-assisted resume screening, structured matching, and recruiter workflows that shorten time-to-shortlist while preserving auditability.",
     heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
     overview: "Talentify AI transforms the recruitment landscape by using advanced AI to match candidates with opportunities based on skills, experience, culture fit, and career aspirations. For recruiters, it automates resume screening, generates interview questions, and provides predictive analytics on candidate success. For job seekers, it offers personalized job recommendations and AI-powered career guidance.",
     features: [

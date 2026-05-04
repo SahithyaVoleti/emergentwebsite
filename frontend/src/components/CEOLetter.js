@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { COMPANY_STARTUP_PITCH, COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const AVATAR_SRC = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=128&h=128&q=80",
@@ -38,10 +39,10 @@ export default function CEOLetter() {
           <AnimatedSection>
             <div className="max-w-xl lg:max-w-none">
               <h2 className="mb-6">
-                About Our Company
+                Why we started
               </h2>
               <p className="mb-8 text-base font-medium leading-relaxed text-slate-600">
-                We are a multidisciplinary team of engineers, architects, and delivery leads who design and ship production AI systems for regulated and high-scale environments. Our work emphasizes integration discipline, measurable outcomes, and governance-ready implementations—not prototypes that stall after pilot.
+                {COMPANY_STARTUP_PITCH} Operations began on {COMPANY_FOUNDED_LABEL}, with delivery priorities centered on ownership, release discipline, and solutions intended for live environments—not narrative collateral alone.
               </p>
 
               <p
@@ -73,7 +74,7 @@ export default function CEOLetter() {
                   </button>
                 </div>
                 <p className="max-w-[220px] text-sm font-bold leading-snug text-[#0B1B3D] sm:max-w-none">
-                  <span className="text-base sm:text-lg">2.5k+</span> client engagements connected with our company
+                  <span className="text-base sm:text-lg">Discovery and pilot</span> conversations—share your roadmap and constraints
                 </p>
               </div>
 

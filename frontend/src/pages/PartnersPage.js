@@ -12,7 +12,7 @@ export default function PartnersPage() {
         label="Technology Partners"
         title="Technology Partnerships that Strengthen Delivery"
         description="We combine proven platform partners with practical architecture choices to reduce implementation risk and accelerate enterprise outcomes."
-        primaryCTA={{ text: "Discuss Architecture", href: "#page-contact" }}
+        primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-white">
@@ -21,8 +21,9 @@ export default function PartnersPage() {
             <div className="max-w-3xl mb-8 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Platforms We <span className="text-[#0B1B3D]/30">Leverage</span>
+                Coverage Across <span className="text-[#0B1B3D]/30">ecosystem platforms</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Vendors and clouds we integrate in live programs; final stack choices stay governed by your policies and data boundaries.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -42,8 +43,9 @@ export default function PartnersPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Partner <span className="text-[#0B1B3D]/30">Capabilities</span>
+                Methodology for <span className="text-[#0B1B3D]/30">using partner ecosystems</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl">This methodology groups how we apply cloud, model, data, and application partners so architecture reviews stay structured.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -67,10 +69,11 @@ export default function PartnersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Outcomes</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Partner-Backed <span className="text-[#0B1B3D]/30">Delivery</span>
+                Outcomes for <span className="text-[#0B1B3D]/30">ecosystem-backed delivery</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Practical benefits we aim for when platforms are chosen for fit—not logo placement for its own sake.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">

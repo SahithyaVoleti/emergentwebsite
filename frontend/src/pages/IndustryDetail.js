@@ -62,7 +62,7 @@ export default function IndustryDetail() {
                   <div className="max-w-2xl">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                     <h2 className="mb-8">
-                      Sector <span className="opacity-30">Transformation</span> <br /> Architecture
+                      Coverage Across <span className="opacity-30">sector context</span>
                     </h2>
                     <div className="h-px w-20 bg-blue-500 mb-8" />
                     <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-bold mb-8">
@@ -99,7 +99,7 @@ export default function IndustryDetail() {
                       {/* Architectural Overlay */}
                       <div className="absolute inset-0 border-[20px] border-white/40 pointer-events-none" />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-[#0B1B3D] text-white text-[8px] font-black px-2 py-1 rounded-sm uppercase tracking-widest">System Overview // Validated</span>
+                        <span className="bg-[#0B1B3D] text-white text-[8px] font-black px-2 py-1 rounded-sm uppercase tracking-widest">Reference architecture</span>
                       </div>
                     </div>
                   </div>
@@ -114,8 +114,8 @@ export default function IndustryDetail() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-                <h2 className="">AI Solutions for {industry.title}</h2>
+                <h2 className="">Coverage Across AI capabilities for {industry.title}</h2>
+                <p className="text-sm text-slate-600 mt-3 max-w-xl">Typical capability bundles we scope with sector stakeholders—not a fixed bundle sold as a single SKU.</p>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100">
@@ -144,12 +144,12 @@ export default function IndustryDetail() {
         </section>
 
         {/* Impact Stats */}
-        <ImpactStats title={`${industry.title} Performance Benchmarks`} customStats={[
-          { value: "45%", label: "Average efficiency improvement" },
-          { value: "3x", label: "Faster decision making" },
-          { value: "60%", label: "Cost reduction potential" },
-          { value: "99.9%", label: "System uptime guarantee" },
-          { value: "2x", label: "Revenue growth acceleration" },
+        <ImpactStats title={`Outcomes for ${industry.title} Programs`} customStats={[
+          { value: "Defined", label: "KPIs agreed before pilot funding" },
+          { value: "Governed", label: "Controls mapped to sector requirements" },
+          { value: "Iterative", label: "Releases sized to operational risk" },
+          { value: "Measured", label: "Evidence captured for steering reviews" },
+          { value: "Documented", label: "Handover artifacts for internal teams" },
         ]} />
 
         {/* 3. Industry Implementation Workflow - Linear Technical Model */}
@@ -159,8 +159,9 @@ export default function IndustryDetail() {
               <AnimatedSection>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-8">
-                  Implementation <br /><span className="opacity-30">Model</span>
+                  Methodology for <span className="opacity-30">{industry.title} delivery phases</span>
                 </h2>
+                <p className="text-sm text-slate-600 max-w-xl">This methodology sequences discovery through scale so security and operational checkpoints occur before irreversible commitments.</p>
               </AnimatedSection>
             </div>
 
@@ -200,7 +201,7 @@ export default function IndustryDetail() {
         </section>
 
         {/* Related Case Studies */}
-        <RelatedCaseStudies industryFilter={industry.title} title={`AI Success Stories in ${industry.title}`} />
+        <RelatedCaseStudies showLabel={false} industryFilter={industry.title} title={`Coverage across ${industry.title} scenarios`} />
 
         {/* 4. Strategic Modules - Condensed Capability Matrix */}
         <section data-testid="industry-services-section" className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-100">
@@ -209,21 +210,12 @@ export default function IndustryDetail() {
               {/* Left Column - Tighter summary */}
               <div className="lg:col-span-3 lg:sticky lg:top-24 h-fit">
                 <AnimatedSection>
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                   <h2 className="mb-6">
-                    {industry.title} <br />Operational <span className="opacity-30">Fit</span>
+                    Coverage Across <span className="opacity-30">service fit</span> for {industry.title}
                   </h2>
-
-                  {/* Compact Stats */}
-                  <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[9px] font-black text-[#0B1B3D] uppercase tracking-widest">Readiness</span>
-                      <span className="text-blue-600 text-xs font-black">94.8%</span>
-                    </div>
-                    <div className="h-1 w-full bg-slate-100 rounded-full">
-                      <div className="h-full bg-blue-600 w-[94.8%]" />
-                    </div>
-                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                    This coverage maps our service lines to the programs we usually run in this sector; exact scope is set after data and control review.
+                  </p>
                 </AnimatedSection>
               </div>
 
@@ -265,8 +257,9 @@ export default function IndustryDetail() {
                 <AnimatedSection>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Assurance</p>
                   <h2 className="mb-8">
-                    Hardened <br /><span className="opacity-40">Security Layers</span>
+                    Assurance for <span className="opacity-40">security and compliance posture</span>
                   </h2>
+                  <p className="text-sm text-slate-300/90 max-w-md mb-6">This assurance model states control patterns we design toward; specific certifications and attestations are agreed per engagement.</p>
                   <div className="space-y-6">
                     {[
                       "Zero-trust data access protocols",
@@ -309,11 +302,10 @@ export default function IndustryDetail() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-4">
-                  Technologies for {industry.title}
+                  Coverage Across <span className="opacity-40">reference technologies</span> for {industry.title}
                 </h2>
-                <p className="text-base text-slate-500 max-w-2xl">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
+                <p className="text-base text-slate-500 max-w-2xl">This coverage lists stack categories and examples for planning discussions—not a mandatory or exclusive technology list.</p>
               </div>
             </AnimatedSection>
 
@@ -366,18 +358,18 @@ export default function IndustryDetail() {
 
         <CTASection
           compact
-          title={`Plan a Practical ${industry.title} Rollout`}
-          description={`Schedule a consultation to align use cases, controls, and execution milestones for your operating context.`}
+          title={`Next Step for ${industry.title} Programs`}
+          description={`Schedule a consultation to align use cases, controls, and milestones to your operating context and governance model.`}
         />
       </div>
 
       {/* 5. Surface Layer 2 */}
       <div className="relative z-30 bg-white text-[#0B1B3D] shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
         {/* Testimonials */}
-        <TestimonialsSection title={`What ${industry.title} Leaders Say About Us`} />
+        <TestimonialsSection title={`Engagement: ${industry.title}`} />
 
         {/* Blog */}
-        <RelatedBlog title={`${industry.title} AI Insights`} />
+        <RelatedBlog title={`Articles: ${industry.title}`} />
 
         {/* FAQ */}
         <FAQSection faqs={industry.faqs} />

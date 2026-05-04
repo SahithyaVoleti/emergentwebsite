@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const footerLinks = {
   Services: [
@@ -55,7 +56,7 @@ export default function Footer() {
               NeuralTrix AI
             </span>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              High-performance AI software engineering for enterprises ready to lead.
+              Applied AI engineering: product accelerators and custom delivery, operating since {COMPANY_FOUNDED_LABEL}.
             </p>
           </div>
           {Object.entries(footerLinks).map(([category, links]) => (

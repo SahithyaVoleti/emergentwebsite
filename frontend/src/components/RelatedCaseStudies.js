@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "./AnimatedSection";
 import caseStudies from "../data/caseStudies";
 
-export default function RelatedCaseStudies({ industryFilter, limit = 4, title }) {
+export default function RelatedCaseStudies({ industryFilter, limit = 4, title, showLabel = true }) {
   let filtered = caseStudies;
   if (industryFilter) {
     filtered = caseStudies.filter((cs) =>
@@ -20,13 +20,15 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
         <AnimatedSection>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
+              {showLabel && (
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
+              )}
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                {title || "Real Stories of AI Wins That Deliver Impact"}
+                {title || "Coverage across related delivery scenarios"}
               </h2>
             </div>
             <Link to="/case-studies" data-testid="view-all-case-studies" className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-[#2563EB] hover:underline">
-              View All <ArrowUpRight size={14} />
+              View scenarios <ArrowUpRight size={14} />
             </Link>
           </div>
         </AnimatedSection>
@@ -38,7 +40,7 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
                   <div>
                     <span className="text-xs font-medium text-[#2563EB] uppercase tracking-wider">{cs.industry}</span>
                     <h3 className="text-lg font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" >{cs.title}</h3>
-                    <p className="text-sm text-slate-500 mt-1">{cs.client}</p>
+                    <p className="text-sm text-slate-500 mt-1">{cs.archetype}</p>
                   </div>
                   <ArrowUpRight size={18} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                 </div>

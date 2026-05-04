@@ -5,12 +5,12 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/Ani
 import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 
 const team = [
-  { name: "Arjun Mehta", role: "CEO & Co-founder", bio: "15+ years in enterprise software. Previously VP Engineering at a Fortune 100 tech company." },
-  { name: "Sarah Chen", role: "CTO", bio: "PhD in Machine Learning from Stanford. Led AI research at a major cloud provider." },
-  { name: "David Okafor", role: "VP of Engineering", bio: "Former principal engineer at a leading AI startup. Expert in distributed systems." },
-  { name: "Lisa Park", role: "VP of Product", bio: "10+ years in product management. Led AI product strategy at a top SaaS company." },
-  { name: "Raj Patel", role: "Head of AI Research", bio: "PhD in NLP. Published 30+ papers in top AI conferences." },
-  { name: "Maria Santos", role: "VP of Client Success", bio: "15+ years in consulting. Ensures every client achieves measurable ROI." },
+  { name: "Arjun Mehta", role: "CEO & Co-founder", bio: "Product-minded operator focused on shipping AI systems customers actually run." },
+  { name: "Sarah Chen", role: "CTO & Co-founder", bio: "Hands-on ML lead—architecture through evaluation harnesses and production monitoring." },
+  { name: "David Okafor", role: "Principal Engineer", bio: "Distributed systems and shipping discipline from high-growth platform teams." },
+  { name: "Lisa Park", role: "Head of Product", bio: "Turns ambiguous AI ideas into scoped milestones teams can execute." },
+  { name: "Raj Patel", role: "Lead Applied Scientist", bio: "LLMs, retrieval, and evaluation—making models behave in the wild." },
+  { name: "Maria Santos", role: "Customer Programs", bio: "Keeps pilots honest on outcomes, timelines, and handover clarity." },
 ];
 
 export default function TeamPage() {
@@ -18,9 +18,9 @@ export default function TeamPage() {
     <div>
       <PageHero
         label="Our Team"
-        title="Leadership Team Guiding Delivery Quality and Direction"
-        description="Our leadership combines product judgment, engineering depth, and execution discipline to keep complex programs aligned and outcome-focused."
-        primaryCTA={{ text: "Join Our Team", href: "/careers" }}
+        title="Leadership and Delivery, Accountable to Scope"
+        description="Senior practitioners remain engaged on delivery workstreams so stakeholders interact with decision-makers responsible for outcomes."
+        primaryCTA={{ text: "View careers", href: "/careers" }}
         image={ABOUT_HERO_IMAGE}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-white">
@@ -29,8 +29,9 @@ export default function TeamPage() {
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                The Team Behind High-Performance Delivery
+                Coverage Across <span className="opacity-40">who you work with</span>
               </h2>
+              <p className="text-sm text-slate-600 mt-3 max-w-2xl">Roles typically engaged on delivery workstreams so conversations stay with people authorized to change scope and priorities.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

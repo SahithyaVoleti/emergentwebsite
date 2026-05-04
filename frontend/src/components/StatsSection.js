@@ -3,49 +3,49 @@ import { ArrowUpRight, Zap, Target, Shield, Cpu, Activity, TrendingUp } from 'lu
 
 const stats = [
   {
-    value: "2x",
-    label: "Velocity",
-    desc: "AI reviews and intelligent testing doubles engineering speed.",
+    value: "2026",
+    label: "Founded",
+    desc: "Operating baseline January 12, 2026; metrics emphasize accountable delivery over headline claims.",
     icon: Zap,
     gridClass: "lg:col-span-8 lg:row-span-2",
     theme: "blue"
   },
   {
-    value: "10x",
-    label: "Faster Deployments",
-    desc: "Automated CI/CD pipelines accelerate cycles.",
+    value: "CI/CD",
+    label: "Release automation",
+    desc: "Pipelines and gates proportionate to change risk and audit requirements.",
     icon: Activity,
     gridClass: "lg:col-span-4 lg:row-span-1",
     theme: "indigo"
   },
   {
-    value: "99.9%",
-    label: "Uptime",
-    desc: "Predictive maintenance guarantees stability.",
+    value: "SLO-based",
+    label: "Reliability",
+    desc: "Availability targets defined per system with observability and incident practices.",
     icon: Shield,
     gridClass: "lg:col-span-4 lg:row-span-1",
     theme: "blue"
   },
   {
-    value: "150+",
-    label: "Systems Deployed",
-    desc: "Enterprise solutions engineered and scaled.",
+    value: "Pilot",
+    label: "Scoped programs",
+    desc: "Engagements structured around milestones, acceptance tests, and documented handover.",
     icon: Cpu,
     gridClass: "lg:col-span-6 lg:row-span-2",
     theme: "dark"
   },
   {
-    value: "55%",
-    label: "Efficiency",
-    desc: "Reduces manual testing overhead.",
+    value: "Measured",
+    label: "Quality gains",
+    desc: "Efficiency improvements tracked against agreed baselines rather than generic percentages.",
     icon: Target,
     gridClass: "lg:col-span-3 lg:row-span-2",
     theme: "blue"
   },
   {
-    value: "60%",
-    label: "Cost Reduction",
-    desc: "AI agents refactor legacy code.",
+    value: "Governed",
+    label: "Cost controls",
+    desc: "FinOps and automation aligned to budgets and change approval paths.",
     icon: TrendingUp,
     gridClass: "lg:col-span-3 lg:row-span-2",
     theme: "indigo"
@@ -64,15 +64,15 @@ export default function StatsSection() {
         <div className="mb-10 border-l border-white/10 pl-8">
           <div className="flex items-center gap-4 mb-6">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">
-              Operating model
+              Outcomes
             </span>
             <div className="h-px w-24 bg-gradient-to-r from-blue-500/50 to-transparent" />
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-white mb-6">
-            Outcomes <span className="text-white/40 italic">Architected</span>
+            Outcomes Across <span className="text-white/40">delivery programs</span>
           </h2>
           <p className="text-blue-100/60 text-lg max-w-2xl font-light leading-relaxed">
-            Every engagement is engineered to deliver quantifiable operational gains rooted in real-world ROI and technical excellence.
+            This outcomes view highlights themes we track in scoped work; your baselines, controls, and acceptance tests still define success.
           </p>
         </div>
 

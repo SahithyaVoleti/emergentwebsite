@@ -21,10 +21,10 @@ export default function IndustriesPage() {
       <div className="sticky top-0 z-0 h-[min(70vh,750px)] overflow-hidden">
         <PageHero
           label="Industries"
-          title="Industry-Specific AI Programs for Complex Environments"
-          description="Each industry track addresses domain constraints, compliance expectations, and process maturity to ensure adoption without operational disruption."
-          primaryCTA={{ text: "Talk to Our Experts", href: "#page-contact" }}
-          secondaryCTA={{ text: "Explore Verticals", href: "#verticals" }}
+          title="Industry Programs Aligned to Regulation and Operations"
+          description="We align delivery to sector constraints—controls, data practices, and operating cadence—then define pilots sized to your governance and funding cycle."
+          primaryCTA={{ text: "Contact us", href: "#page-contact" }}
+          secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
           image={LISTING_PAGE_HERO_IMAGES.industries}
         />
       </div>
@@ -37,9 +37,11 @@ export default function IndustriesPage() {
               <div className="max-w-3xl mb-10 lg:mb-12">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-6">
-                  Select Your <span className="opacity-30">Industry Vertical</span>
+                  Coverage Across <span className="opacity-30">industry programs</span>
                 </h2>
-                <p className="text-lg text-slate-600 leading-relaxed font-bold">Domain-optimized models and deployment architectures tailored to specific regulatory and operational constraints.</p>
+                <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                  This coverage surfaces sectors where we scope pilots today—each overview ties constraints to delivery patterns and milestone checkpoints.
+                </p>
               </div>
             </AnimatedSection>
 
@@ -70,16 +72,16 @@ export default function IndustriesPage() {
                 <AnimatedSection>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                   <h2 className="mb-8">
-                    Outcome-Focused AI <br /><span className="opacity-30">Benchmarks</span>
+                    Outcomes for <span className="opacity-30">domain programs</span>
                   </h2>
                   <p className="text-base text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
-                    We align each rollout to the KPIs that matter in your domain, focusing on auditability and throughput.
+                    This outcomes framing links sector pilots to the dimensions executives actually fund—automation depth, signal latency, handling effort, and traceability—not generic AI hype.
                   </p>
                   <div className="flex items-center gap-4 py-8 border-t border-slate-200">
                     <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-black">AI</div>
                     <div>
-                      <p className="text-sm font-black text-[#0B1B3D]">Sector Validated</p>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Enterprise Ready</p>
+                      <p className="text-sm font-black text-[#0B1B3D]">Scoped jointly</p>
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">KPIs before scale</p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -88,10 +90,10 @@ export default function IndustriesPage() {
               <div className="lg:col-span-7">
                 <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    { value: "30-60%", label: "Process automation improvement" },
-                    { value: "2-4x", label: "Faster operational insights" },
-                    { value: "40%+", label: "Reduction in handling time" },
-                    { value: "SLA-Driven", label: "Governed and traceable workflows" },
+                    { value: "Automation", label: "Target reduction in repetitive work inside the scoped workflow." },
+                    { value: "Insight latency", label: "Time from operational signal to an actionable view or alert." },
+                    { value: "Handling effort", label: "Front-line effort per case where the workflow touches people." },
+                    { value: "Traceability", label: "Audit trails and controls aligned to your sector's review habits." },
                   ].map((item, i) => (
                     <StaggerItem key={item.label}>
                       <div className="group h-full bg-white border border-slate-100 p-8 hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden">
@@ -127,10 +129,12 @@ export default function IndustriesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-10">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-6">
-                  Cross-Vertical <span className="opacity-30">Feature Parity</span>
+                  Coverage Across <span className="opacity-30">capability by vertical</span>
                 </h2>
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
+                  This coverage matrix compares how capabilities land across sectors—use it to steer discovery questions, not as a guarantee of off-the-shelf parity.
+                </p>
               </div>
             </AnimatedSection>
 
@@ -164,8 +168,11 @@ export default function IndustriesPage() {
               <div className="max-w-3xl mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
-                  Program Delivery Workflow
+                  Methodology for <span className="opacity-30">industry program phases</span>
                 </h2>
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                  This methodology moves from blueprint to pilot to expansion with explicit controls—so domain risk is addressed before throughput investments compound.
+                </p>
               </div>
             </AnimatedSection>
 

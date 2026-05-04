@@ -10,10 +10,10 @@ export default function CaseStudiesPage() {
   return (
     <div>
       <PageHero
-        label="Case Studies"
-        title="Case Studies from Complex AI Transformation Programs"
-        description="See how client teams solved specific operational challenges, which decisions mattered most, and what measurable outcomes followed."
-        primaryCTA={{ text: "Start Your Project", href: "#page-contact" }}
+        label="Delivery scenarios"
+        title="Illustrative Programs Aligned to Our Services"
+        description="These scenarios show how NeuralTrix approaches common AI and software problems—so you can judge fit before a pilot. They are not endorsements or guarantees from named customers."
+        primaryCTA={{ text: "Schedule a consultation", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
@@ -39,7 +39,7 @@ export default function CaseStudiesPage() {
                     <div className="min-w-0">
                       <span className="text-xs font-medium text-[#2563EB] uppercase tracking-wider">{cs.industry}</span>
                       <h3 className="text-xl font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" >{cs.title}</h3>
-                      <p className="text-sm text-slate-500 mt-1">{cs.client}</p>
+                      <p className="text-sm text-slate-500 mt-1">{cs.archetype}</p>
                     </div>
                     <ArrowUpRight size={20} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                   </div>
@@ -57,22 +57,25 @@ export default function CaseStudiesPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
-                Program <span className="text-[#0B1B3D]/30">Outcomes</span>
+                Methodology for <span className="text-[#0B1B3D]/30">using this library</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                This methodology frames how to read each scenario: what is modeled, what is held constant, and what a real program would still need to validate in your environment.
+              </p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "2-5x", label: "Faster delivery and decision cycles" },
-              { value: "40-75%", label: "Cost reduction in target workflows" },
-              { value: "500K+", label: "End-user interactions processed" },
-              { value: "50+", label: "Production integrations delivered" },
+              { value: "KPIs", label: "Success measures defined with your team before build assumptions harden." },
+              { value: "Phased", label: "Scope moves in thin slices with explicit go or stop decisions." },
+              { value: "Controls", label: "Security, access, and audit paths treated as part of the design, not a late add-on." },
+              { value: "Handover", label: "Artifacts and runbooks your staff can operate without lock-in to a single vendor." },
             ].map((item) => (
               <StaggerItem key={item.label}>
                 <div className="rounded-sm border border-slate-200 p-6 bg-[#F8FAFC] h-full">
-                  <p className="text-3xl font-bold text-[#0B1B3D] mb-2" >{item.value}</p>
+                  <p className="text-2xl font-bold text-[#0B1B3D] mb-2" >{item.value}</p>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.label}</p>
                 </div>
               </StaggerItem>
@@ -84,10 +87,13 @@ export default function CaseStudiesPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Discovery Channels</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
-                Explore by <span className="text-[#0B1B3D]/30">Objective</span>
+                Coverage Across <span className="text-[#0B1B3D]/30">ways to browse</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                This coverage lists filters we use in workshops—industry, use case, stack, and impact type—so you can route to the closest scenario quickly.
+              </p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -111,10 +117,12 @@ export default function CaseStudiesPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12 text-left">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Execution <span className="text-[#0B1B3D]/30">Pattern</span>
+                Methodology for <span className="text-[#0B1B3D]/30">phasing delivery</span>
               </h2>
+              <p className="text-base text-slate-600 leading-relaxed mt-4 max-w-xl">
+                This methodology mirrors how we structure live engagements—from context through pilot—so scenario pages read like an execution checklist, not marketing narrative.
+              </p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
