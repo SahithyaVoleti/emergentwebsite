@@ -7,21 +7,21 @@ const articles = [
     title: "Augment Code vs Cursor: Best AI Tool for Developers?",
     slug: "augment-code-vs-cursor",
     desc: "Pick the one that matches your criteria, repository size, and workflow preferences for maximum productivity.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&w=600&h=400&fit=crop&q=80",
   },
   {
     category: "AI Comparison",
     title: "Claude vs ChatGPT for Coding: Features & Use Cases",
     slug: "claude-vs-chatgpt-coding",
     desc: "A deep comparison of the leading AI assistants for software development and code generation tasks.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&w=600&h=400&fit=crop&q=80",
   },
   {
     category: "Development",
     title: "Top 10 Vibe Coding Tools for Faster AI App Development",
     slug: "top-vibe-coding-tools",
     desc: "The way developers build software is changing, and these tools are responsible for the transformation.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&w=600&h=400&fit=crop&q=80",
   },
 ];
 

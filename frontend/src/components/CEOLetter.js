@@ -3,27 +3,27 @@ import { Plus } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const AVATAR_SRC = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=128&h=128&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=128&h=128&q=80",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=128&h=128&q=80",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=128&h=128&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=128&h=128&q=80",
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=128&h=128&q=80",
 ];
 
 /** Staggered heights / offsets to mirror masonry-style collage */
 const COLLAGE = [
   {
-    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     alt: "Team member collaborating at a laptop",
     wrapperClass: "mt-10 w-[30%] max-w-[200px]",
     imgClass: "h-[260px] w-full object-cover sm:h-[280px]",
   },
   {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     alt: "Team discussion in an office setting",
     wrapperClass: "w-[38%] max-w-[240px] -mt-2",
     imgClass: "h-[340px] w-full object-cover sm:h-[380px]",
   },
   {
-    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     alt: "Professional at work",
     wrapperClass: "mt-14 w-[30%] max-w-[200px]",
     imgClass: "h-[290px] w-full object-cover sm:h-[310px]",

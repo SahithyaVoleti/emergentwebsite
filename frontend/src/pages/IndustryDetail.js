@@ -12,6 +12,7 @@ import RelatedBlog from "../components/RelatedBlog";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import industries from "../data/industries";
 import services from "../data/services";
+import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
@@ -89,9 +90,11 @@ export default function IndustryDetail() {
                     <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-75 group-hover:bg-blue-500/10 transition-all duration-700" />
                     <div className="relative border border-slate-100 rounded-2xl overflow-hidden shadow-2xl">
                       <img
-                        src="/technical_industry_overview_diagram_1777016738237.png"
+                        src={INDUSTRY_ARCHITECTURE_IMAGE}
                         alt="Technical Industry Architecture"
                         className="w-full h-auto aspect-[16/10] object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                       {/* Architectural Overlay */}
                       <div className="absolute inset-0 border-[20px] border-white/40 pointer-events-none" />

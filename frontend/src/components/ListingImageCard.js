@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DEFAULT_PAGE_HERO_IMAGE } from "../lib/heroImageThemes";
 
 export default function ListingImageCard({
   to,
@@ -14,6 +16,11 @@ export default function ListingImageCard({
   contentMinHeightClass = "min-h-[320px]",
   contentPaddingClass = "p-6 sm:p-8",
 }) {
+  const [imgSrc, setImgSrc] = useState(image);
+  useEffect(() => {
+    setImgSrc(image);
+  }, [image]);
+
   const variantStyles = {
     default: {
       overlay: "absolute inset-0 bg-gradient-to-t from-black/[0.92] via-black/50 to-black/15",
@@ -73,10 +80,12 @@ export default function ListingImageCard({
       className={`group relative isolate ${minHeightClass} overflow-hidden rounded-sm border border-slate-200/80 shadow-sm hover:border-slate-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 block h-full flex flex-col`}
     >
       <img
-        src={image}
+        src={imgSrc}
         alt=""
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         loading="lazy"
+        decoding="async"
+        onError={() => setImgSrc(DEFAULT_PAGE_HERO_IMAGE)}
       />
       <div className={styles.overlay} aria-hidden />
       <div className={styles.grid} aria-hidden />

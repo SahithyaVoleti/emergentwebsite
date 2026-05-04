@@ -8,8 +8,8 @@ const DISPLAY = solutions.slice(0, 3);
 const TAB_LABELS = ["Delivery scope", "Integrations", "Architecture"];
 
 const ALT_IMAGES = [
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=960&q=80",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=960&q=80",
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=960&q=80",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=960&q=80",
 ];
 
 function tabBullets(solution, tabIdx) {

@@ -1,9 +1,13 @@
 /**
  * High-resolution AI / enterprise IT hero imagery (Unsplash).
  * Used with HeroAnimatedBackdrop (Ken Burns + subtle “digital pulse”).
+ * `ixlib` + `ixid` pattern matches Unsplash’s hotlink expectations and improves load reliability.
  */
 export const hq = (photoPath) =>
-  `https://images.unsplash.com/${photoPath}?auto=format&fit=crop&w=2400&q=88`;
+  `https://images.unsplash.com/${photoPath}?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=88`;
+
+/** Architecture / diagram-style visual for industry overview panels (not hero duplicate). */
+export const INDUSTRY_ARCHITECTURE_IMAGE = hq("photo-1558494949-ef010cbdcc31");
 
 /** Homepage — flagship abstract AI / neural aesthetic */
 export const HOME_HERO_IMAGE = hq("photo-1677442136019-21780ecad995");

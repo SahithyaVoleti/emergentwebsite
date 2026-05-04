@@ -17,8 +17,8 @@ const DEFAULT_SPLIT_HIGHLIGHTS = [
 ];
 
 const DEFAULT_SPLIT_IMAGES = [
-  "https://images.unsplash.com/photo-1522071820081-4ef5e1c0b612?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1522071820081-4ef5e1c0b612?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
 ];
 
 /**
