@@ -3,21 +3,21 @@ import AnimatedSection from "../components/AnimatedSection";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 const termsTemplates = [
-  { title: "India Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-india.txt" },
-  { title: "United Kingdom Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-uk.txt" },
-  { title: "European Union Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-eu.txt" },
-  { title: "United States (Delaware) Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-us-delaware.txt" },
-  { title: "Singapore Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-singapore.txt" },
-  { title: "UAE (DIFC) Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-uae-difc.txt" },
+  { title: "India Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-india.pdf" },
+  { title: "United Kingdom Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-uk.pdf" },
+  { title: "European Union Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-eu.pdf" },
+  { title: "United States (Delaware) Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-us-delaware.pdf" },
+  { title: "Singapore Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-singapore.pdf" },
+  { title: "UAE (DIFC) Jurisdiction Clause", file: "/legal-templates/jurisdiction-template-uae-difc.pdf" },
 ];
 
 const privacyTemplates = [
-  { title: "India Privacy Request Template", file: "/legal-templates/privacy-request-template-india.txt" },
-  { title: "United Kingdom Privacy Request Template", file: "/legal-templates/privacy-request-template-uk.txt" },
-  { title: "European Union Privacy Request Template", file: "/legal-templates/privacy-request-template-eu.txt" },
-  { title: "United States Privacy Request Template", file: "/legal-templates/privacy-request-template-us.txt" },
-  { title: "Singapore Privacy Request Template", file: "/legal-templates/privacy-request-template-singapore.txt" },
-  { title: "UAE Privacy Request Template", file: "/legal-templates/privacy-request-template-uae.txt" },
+  { title: "India Privacy Request Template", file: "/legal-templates/privacy-request-template-india.pdf" },
+  { title: "United Kingdom Privacy Request Template", file: "/legal-templates/privacy-request-template-uk.pdf" },
+  { title: "European Union Privacy Request Template", file: "/legal-templates/privacy-request-template-eu.pdf" },
+  { title: "United States Privacy Request Template", file: "/legal-templates/privacy-request-template-us.pdf" },
+  { title: "Singapore Privacy Request Template", file: "/legal-templates/privacy-request-template-singapore.pdf" },
+  { title: "UAE Privacy Request Template", file: "/legal-templates/privacy-request-template-uae.pdf" },
 ];
 
 function TemplateCard({ item }) {
@@ -80,7 +80,7 @@ export default function LegalTemplatesPage() {
                   This assurance block provides a board-ready legal risk dashboard covering operational, financial, compliance, intellectual property, and dispute exposure.
                 </p>
                 <a
-                  href="/legal-templates/legal-risk-dashboard.md"
+                  href="/legal-templates/legal-risk-dashboard.pdf"
                   download
                   className="inline-flex items-center rounded-sm border border-[#0B1B3D] px-3 py-1.5 text-xs font-semibold text-[#0B1B3D] hover:bg-[#0B1B3D] hover:text-white transition-colors"
                 >

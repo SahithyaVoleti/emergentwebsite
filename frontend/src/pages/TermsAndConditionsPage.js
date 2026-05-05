@@ -3,12 +3,12 @@ import AnimatedSection from "../components/AnimatedSection";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 const templateDownloads = [
-  { title: "India", file: "/legal-templates/jurisdiction-template-india.txt", note: "Courts-focused template with India governing law." },
-  { title: "United Kingdom", file: "/legal-templates/jurisdiction-template-uk.txt", note: "English law template with England and Wales venue." },
-  { title: "European Union", file: "/legal-templates/jurisdiction-template-eu.txt", note: "Member-state selection template for EU engagements." },
-  { title: "United States (Delaware)", file: "/legal-templates/jurisdiction-template-us-delaware.txt", note: "Delaware law template with state or federal venue." },
-  { title: "Singapore", file: "/legal-templates/jurisdiction-template-singapore.txt", note: "Singapore law template with SIAC arbitration option." },
-  { title: "UAE (DIFC)", file: "/legal-templates/jurisdiction-template-uae-difc.txt", note: "DIFC law template with DIFC Courts or arbitration." },
+  { title: "India", file: "/legal-templates/jurisdiction-template-india.pdf", note: "Comprehensive jurisdiction template for India-focused contracts." },
+  { title: "United Kingdom", file: "/legal-templates/jurisdiction-template-uk.pdf", note: "Comprehensive jurisdiction template for UK contracts." },
+  { title: "European Union", file: "/legal-templates/jurisdiction-template-eu.pdf", note: "Comprehensive jurisdiction template for EU member-state contracts." },
+  { title: "United States (Delaware)", file: "/legal-templates/jurisdiction-template-us-delaware.pdf", note: "Comprehensive jurisdiction template for Delaware-law contracts." },
+  { title: "Singapore", file: "/legal-templates/jurisdiction-template-singapore.pdf", note: "Comprehensive jurisdiction template for Singapore-law contracts." },
+  { title: "UAE (DIFC)", file: "/legal-templates/jurisdiction-template-uae-difc.pdf", note: "Comprehensive jurisdiction template for DIFC-governed contracts." },
 ];
 
 const sections = [

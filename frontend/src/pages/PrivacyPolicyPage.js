@@ -3,12 +3,12 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/Ani
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 const privacyTemplateDownloads = [
-  { title: "India", file: "/legal-templates/privacy-request-template-india.txt", note: "DPDP-oriented request template for access, correction, and erasure." },
-  { title: "United Kingdom", file: "/legal-templates/privacy-request-template-uk.txt", note: "UK GDPR request template for data subject rights." },
-  { title: "European Union", file: "/legal-templates/privacy-request-template-eu.txt", note: "GDPR-aligned rights request template for EU/EEA residents." },
-  { title: "United States", file: "/legal-templates/privacy-request-template-us.txt", note: "Consumer request template for access, deletion, and opt-out rights." },
-  { title: "Singapore", file: "/legal-templates/privacy-request-template-singapore.txt", note: "PDPA-aligned request template for access and correction." },
-  { title: "UAE (DIFC)", file: "/legal-templates/privacy-request-template-uae.txt", note: "UAE-focused request template for personal data rights inquiries." },
+  { title: "India", file: "/legal-templates/privacy-request-template-india.pdf", note: "Comprehensive DPDP-oriented request and verification template." },
+  { title: "United Kingdom", file: "/legal-templates/privacy-request-template-uk.pdf", note: "Comprehensive UK GDPR request and verification template." },
+  { title: "European Union", file: "/legal-templates/privacy-request-template-eu.pdf", note: "Comprehensive GDPR request and verification template." },
+  { title: "United States", file: "/legal-templates/privacy-request-template-us.pdf", note: "Comprehensive US consumer-rights request and verification template." },
+  { title: "Singapore", file: "/legal-templates/privacy-request-template-singapore.pdf", note: "Comprehensive PDPA request and verification template." },
+  { title: "UAE (DIFC)", file: "/legal-templates/privacy-request-template-uae.pdf", note: "Comprehensive UAE request and verification template." },
 ];
 
 const sections = [
