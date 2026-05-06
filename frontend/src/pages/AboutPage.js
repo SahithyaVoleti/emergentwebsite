@@ -42,64 +42,62 @@ export default function AboutPage() {
       {/* 1. Hero */}
       <PageHero label="About Us" title="Applied AI Engineering with Disciplined Delivery" description={`NeuralTrix AI began operations on ${COMPANY_FOUNDED_LABEL}. We are a compact, senior-led team focused on production AI and software outcomes for early customer programs.`} primaryCTA={{ text: "Contact us", href: "#page-contact" }} secondaryCTA={{ text: "Careers", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
-      {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
-      <section className="py-6 sm:py-8 md:py-10 bg-white overflow-hidden">
+      {/* 2. Mission & Vision - FOUNDATIONAL INTEGRITY REDESIGN */}
+      <section className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <div className="relative rounded-[2.5rem] bg-[#0B1B3D] text-white p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
-            {/* Background Texture/Glow - Subtle */}
-            <div className="absolute top-0 right-0 w-[40%] h-full bg-gradient-to-l from-blue-600/10 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 relative z-10">
-              {/* Left Column: Context & Branding */}
-              <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 pb-10 lg:pb-0 lg:pr-12">
-                <AnimatedSection>
-                  <h2 className="mb-6 text-white">
-                    Assurance for <br className="hidden xl:block" /> <span className="text-blue-400">execution clarity</span>
-                  </h2>
-                  <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
-                    We operate as a focused engineering partner, not a broad legacy integrator, helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
-                  </p>
-                </AnimatedSection>
-              </div>
-
-              {/* Right Column: Values */}
-              <div className="lg:col-span-7 space-y-12">
-                <StaggerChildren className="space-y-12 lg:space-y-14">
-                  <StaggerItem>
-                    <div className="group flex items-start gap-6 sm:gap-8">
-                      <div className="flex-shrink-0 pt-1">
-                        <div className="w-10 h-10 rounded-sm bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500">
-                          <Target size={20} />
-                        </div>
-                      </div>
-                      <div>
-                        <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Our Mission</span>
-                        <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug max-w-xl">
-                          To deliver production-grade AI and software with transparent scope, contemporary tooling, and deliverables your organization can operate and extend.
-                        </p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-
-                  <StaggerItem>
-                    <div className="group flex items-start gap-6 sm:gap-8">
-                      <div className="flex-shrink-0 pt-1">
-                        <div className="w-10 h-10 rounded-sm bg-white/10 border border-white/10 flex items-center justify-center text-white/40 group-hover:scale-110 transition-transform duration-500">
-                          <Eye size={20} />
-                        </div>
-                      </div>
-                      <div>
-                        <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Our Vision</span>
-                        <p className="text-xl sm:text-2xl font-bold text-white/70 tracking-tight leading-snug max-w-xl">
-                          A trusted partner for applied AI delivery, measured by shipped capability, governance fit, and durable client relationships.
-                        </p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                </StaggerChildren>
-              </div>
+            {/* Left: Sticky Institutional Context */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
+              <AnimatedSection>
+                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.4em] mb-6 block">Company Foundation</span>
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#0B1B3D] tracking-tight uppercase leading-tight mb-8">
+                  Foundational <br /> <span className="text-blue-600">Integrity</span>
+                </h2>
+                <div className="h-0.5 w-16 bg-blue-600 mb-10" />
+                <p className="text-base text-slate-500 leading-relaxed font-medium max-w-sm">
+                  We operate as a focused engineering partner, helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
+                </p>
+              </AnimatedSection>
             </div>
+
+            {/* Right: Mission & Vision Blocks */}
+            <div className="lg:col-span-7 space-y-20 lg:space-y-32">
+
+              {/* Mission */}
+              <AnimatedSection delay={0.1}>
+                <div className="relative">
+                  <span className="absolute -top-6 -left-10 text-[100px] font-bold text-slate-50/80 pointer-events-none select-none">01</span>
+                  <div className="relative z-10">
+                    <h3 className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.4em] mb-6">Our Mission</h3>
+                    <p className="text-2xl lg:text-3xl font-bold text-[#0B1B3D] tracking-tight leading-snug uppercase mb-8">
+                      To deliver production-grade AI and software with transparent scope and contemporary tooling.
+                    </p>
+                    <p className="text-sm text-slate-500 leading-relaxed font-medium max-w-xl">
+                      We focus on deliverables your organization can operate and extend, avoiding the legacy integrator trap by shipping maintainable, high-fidelity engineering outcomes.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Vision */}
+              <AnimatedSection delay={0.2}>
+                <div className="relative">
+                  <span className="absolute -top-6 -left-10 text-[100px] font-bold text-slate-50/80 pointer-events-none select-none">02</span>
+                  <div className="relative z-10">
+                    <h3 className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.4em] mb-6">Our Vision</h3>
+                    <p className="text-2xl lg:text-3xl font-bold text-[#0B1B3D] tracking-tight leading-snug uppercase mb-8">
+                      A trusted partner for applied AI delivery, measured by capability and governance fit.
+                    </p>
+                    <p className="text-sm text-slate-500 leading-relaxed font-medium max-w-xl">
+                      We envision a future where AI capability is measured by actual performance and structural integrity rather than roadmap projections or narrative hype.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+            </div>
+
           </div>
         </div>
       </section>
@@ -307,20 +305,10 @@ export default function AboutPage() {
       <TestimonialsSection showLabel={false} title="How we engage new partners" />
 
       {/* 11. Strategic CTA */}
-      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <h2 className="mb-4 text-white" >
-                Next Step for <span className="corp-heading-secondary-on-dark">a conversation</span>
-              </h2>
-              <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                Tell us what you are building, if there is a fit, we will propose a lean pilot and a path to scale.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <CTASection
+        title="Next Step for a conversation"
+        description="Tell us what you are building, if there is a fit, we will propose a lean pilot and a path to scale."
+      />
 
       {/* 12. Contact */}
       <PageContactForm context="About Page" />

@@ -3,7 +3,9 @@ import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import ListingImageCard from "../components/ListingImageCard";
 import CTASection from "../components/CTASection";
+import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import { useEffect } from "react";
+import { Brain, Zap, BarChart3 } from "lucide-react";
 import industries from "../data/industries";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
@@ -176,21 +178,13 @@ export default function IndustriesPage() {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-slate-100">
-              {[
-                { title: "Advisory + Blueprint", desc: "Define priority use-cases and implementation architecture for your industry context." },
-                { title: "Pilot Deployment", desc: "Launch one high-value workflow with KPI tracking and governance controls." },
-                { title: "Scaled Rollout", desc: "Expand across business units with operating standards and optimization loops." },
-              ].map((item, i) => (
-                <StaggerItem key={item.title}>
-                  <div className="group h-full bg-white border-r border-b border-slate-100 p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    <h3 className="mb-4 tracking-tighter uppercase">{item.title}</h3>
-                    <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{item.desc}</p>
-                    <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-full transition-all duration-500 mt-8" />
-                  </div>
-                </StaggerItem>
-              ))}
-            </div>
+            <MethodologyFlowchart 
+              steps={[
+                { icon: Brain, label: "Advisory + Blueprint", desc: "Define priority use-cases and implementation architecture for your industry context." },
+                { icon: Zap, label: "Pilot Deployment", desc: "Launch one high-value workflow with KPI tracking and governance controls." },
+                { icon: BarChart3, label: "Scaled Rollout", desc: "Expand across business units with operating standards and optimization loops." },
+              ]} 
+            />
           </div>
         </section>
 

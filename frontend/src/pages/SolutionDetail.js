@@ -8,6 +8,9 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
 import ImpactStats from "../components/ImpactStats";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
+import MethodologyFlowchart from "../components/MethodologyFlowchart";
+import DomainAssurance from "../components/DomainAssurance";
+import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import solutions from "../data/solutions";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
@@ -66,7 +69,7 @@ export default function SolutionDetail() {
                   </div>
 
                   <div className="max-w-4xl">
-                    <p className="text-lg text-slate-600 leading-relaxed font-medium mb-10 lg:mb-14">
+                    <p className="text-base lg:text-lg text-[#0B1B3D] leading-relaxed font-medium mb-10 lg:mb-14">
                       {solution.overview}
                     </p>
 
@@ -132,49 +135,14 @@ export default function SolutionDetail() {
           </div>
         </section>
 
-        {/* 4. Impact Stats */}
-        <ImpactStats title="Outcomes for Similar Programs" customStats={[
-          { value: "Scoped", label: "Pilot definitions with KPI gates" },
-          { value: "Measured", label: "Evaluation harnesses per release" },
-          { value: "Governed", label: "Access control and audit trails" },
-          { value: "Integrated", label: "APIs aligned to existing systems" },
-          { value: "Iterative", label: "Roadmap tied to production feedback" },
-        ]} />
+        <DomainAssurance />
 
-        {/* 5. Features */}
-        <section id="features" className="py-6 sm:py-8 md:py-10 bg-white relative">
-          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-            <AnimatedSection>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-              <h2 className="mb-10 sm:mb-14">
-                Functional <span className="corp-heading-secondary">Capabilities</span>
-              </h2>
-            </AnimatedSection>
-
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100">
-              {solution.features.map((f, i) => (
-                <StaggerItem key={i}>
-                  <div className="group h-full bg-white border-r border-b border-slate-100 p-8 sm:p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    <div className="relative z-10">
-                      <h3 className="mb-4 tracking-tighter uppercase">
-                        {f.title}
-                      </h3>
-                      <p className="text-[12px] lg:text-[13px] text-slate-500 leading-relaxed font-medium max-w-sm mb-8">
-                        {f.desc}
-                      </p>
-
-                      {/* Kinetic Indicator */}
-                      <div className="flex items-center gap-2 group/btn cursor-default">
-                        <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-16 group-hover:bg-blue-600 transition-all duration-500" />
-                        <span className="text-[9px] font-black text-slate-300 group-hover:text-blue-600 uppercase tracking-widest transition-colors">Operational</span>
-                      </div>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
+        {/* Features */}
+        <ArchitecturalShowcase 
+          title="Functional Capabilities"
+          description="Service modules are structured to shorten time-to-value while keeping architecture and operations maintainable."
+          capabilities={solution.features}
+        />
       </div>
 
       {/* 6. Pinned CTA Layer */}
@@ -203,26 +171,14 @@ export default function SolutionDetail() {
 
               {/* Steps Column */}
               <div className="lg:w-2/3">
-                <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { step: "Connect Data", desc: "Link existing sources through secure permission-aware connectors.", icon: Database },
-                    { step: "Configure Scope", desc: "Define AI behavior and roles to your needs.", icon: Code2 },
-                    { step: "Validate Logic", desc: "Review and validate ground-truth responses at scale.", icon: Brain },
-                    { step: "Scale Output", desc: "Go live, monitor usage, and iterate on quality.", icon: Zap },
-                  ].map((s, i) => (
-                    <StaggerItem key={i}>
-                      <div className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-lg hover:border-blue-500/20 transition-all duration-300 group">
-                        <div className="w-10 h-10 rounded-lg bg-[#0B1B3D] flex items-center justify-center shrink-0 text-white shadow-sm group-hover:bg-blue-600 transition-colors">
-                          <s.icon size={18} />
-                        </div>
-                        <div>
-                          <h3 className="mb-1 tracking-tight uppercase">{s.step}</h3>
-                          <p className="text-[11px] text-slate-500 leading-tight font-medium">{s.desc}</p>
-                        </div>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </StaggerChildren>
+            <MethodologyFlowchart 
+              steps={[
+                { icon: Database, label: "Connect Data", desc: "Link existing sources through secure permission-aware connectors." },
+                { icon: Code2, label: "Configure Scope", desc: "Define AI behavior and roles to your needs." },
+                { icon: Brain, label: "Validate Logic", desc: "Review and validate ground-truth responses at scale." },
+                { icon: Zap, label: "Scale Output", desc: "Go live, monitor usage, and iterate on quality." },
+              ]} 
+            />
               </div>
             </div>
           </div>

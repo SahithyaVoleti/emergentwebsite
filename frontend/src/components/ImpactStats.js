@@ -1,4 +1,4 @@
-import { Users, Handshake, Star, Headset } from "lucide-react";
+import { Users, Handshake, Star, Headset, Target } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const stats = [
@@ -107,72 +107,53 @@ export default function ImpactStats({
   return (
     <section
       data-testid="impact-stats-section"
-      className="relative overflow-hidden border-y border-slate-100 bg-white py-4 sm:py-6 md:py-8"
+      className="py-16 lg:py-24 bg-white"
     >
-      <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-slate-50/50 to-transparent" />
-
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-4 xl:col-span-3">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Header */}
+          <div className="lg:col-span-4">
             <AnimatedSection>
-              <div className="max-w-md text-left lg:pt-4">
-                {label != null && label !== false && (
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-                    {label}
-                  </p>
-                )}
-                <h2 className="mb-6 text-3xl font-black leading-none tracking-tighter text-[#0B1B3D] lg:text-4xl">
-                  {title || "Market context for AI adoption"}
-                </h2>
-                <p className="text-[13px] font-medium leading-relaxed text-slate-500">
-                  Third-party market indicators for context; delivery decisions remain grounded in your constraints and measured outcomes.
-                </p>
-
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-50 text-[8px] font-black text-blue-400"
-                      >
-                        NT
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-blue-500/50">
-                    Audited
-                  </span>
-                </div>
-              </div>
+              <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] mb-4 block">System Outputs</span>
+              <h2 className="text-3xl lg:text-4xl font-black text-[#0B1B3D] tracking-tighter uppercase leading-[0.9] mb-6">
+                Outcomes for <br/> <span className="text-blue-600 italic">Early Operations</span>
+              </h2>
+              <p className="text-sm text-slate-500 font-medium leading-relaxed max-w-sm">
+                Operational indicators and market benchmarks for context; delivery decisions remain grounded in your constraints.
+              </p>
             </AnimatedSection>
           </div>
 
-          <div className="lg:col-span-8 xl:col-span-9">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {/* Mini KPI Grid */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {displayStats.map((s, i) => (
-                <AnimatedSection key={i} delay={i * 0.05}>
-                  <div className="group relative h-full overflow-hidden border-y border-r border-slate-100 border-l-transparent border-l-2 bg-[#F8FAFC]/50 p-6 transition-all duration-300 hover:border-l-blue-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 sm:p-8">
-                    <div className="relative z-10">
-                      <span className="mb-2 block text-3xl font-black tracking-tighter text-[#0B1B3D] transition-colors group-hover:text-blue-600 lg:text-4xl">
-                        {s.value}
-                      </span>
-                      <p className="text-[10px] font-bold uppercase leading-tight tracking-widest text-slate-500 transition-colors group-hover:text-slate-700">
-                        {s.label}
-                      </p>
-                    </div>
-
-                    {s.source && (
-                      <div className="mt-6 border-t border-slate-100/50 pt-4 opacity-100">
-                        <span className="text-[8px] font-bold uppercase tracking-widest text-slate-300">
-                          Source: {s.source}
-                        </span>
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  <div className="group relative bg-[#F8FAFC] border border-slate-100 rounded-[2rem] p-6 lg:p-8 transition-all duration-500 hover:bg-white hover:border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/10">
+                    <div className="flex flex-col h-full justify-between">
+                      <div className="flex items-center justify-between mb-8">
+                        <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-blue-500 shadow-sm transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white">
+                          <Target size={14} />
+                        </div>
+                        <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest">0{i+1}</span>
                       </div>
-                    )}
+                      
+                      <div>
+                        <span className="block text-2xl lg:text-3xl font-black text-[#0B1B3D] tracking-tighter mb-2 group-hover:text-blue-600 transition-colors">
+                          {s.value}
+                        </span>
+                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-tight group-hover:text-slate-700 transition-colors">
+                          {s.label}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </AnimatedSection>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

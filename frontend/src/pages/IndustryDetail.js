@@ -11,6 +11,9 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
 import CategorizedTechStackSection from "../components/CategorizedTechStackSection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
+import MethodologyFlowchart from "../components/MethodologyFlowchart";
+import DomainAssurance from "../components/DomainAssurance";
+import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import industries from "../data/industries";
 import services from "../data/services";
 import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
@@ -66,7 +69,7 @@ export default function IndustryDetail() {
                       Coverage Across <span className="corp-heading-secondary">sector context</span>
                     </h2>
                     <div className="h-px w-20 bg-blue-500 mb-8" />
-                    <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-bold mb-8">
+                    <p className="text-base lg:text-lg text-[#0B1B3D] leading-relaxed font-medium mb-8">
                       {industry.overview}
                     </p>
 
@@ -111,47 +114,13 @@ export default function IndustryDetail() {
         </section>
 
         {/* AI Capabilities */}
-        <section id="capabilities" className="py-6 sm:py-8 md:py-10 corp-pat-dots">
-          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-            <AnimatedSection>
-              <div className="max-w-2xl mb-8">
-                <h2 className="">Coverage Across AI capabilities for {industry.title}</h2>
-                <p className="text-sm text-slate-600 mt-3 max-w-xl">Typical capability bundles we scope with sector stakeholders, not a fixed bundle sold as a single SKU.</p>
-              </div>
-            </AnimatedSection>
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100">
-              {industry.features.map((f, i) => (
-                <StaggerItem key={i}>
-                  <div className="group h-full bg-white border-r border-b border-slate-100 p-8 sm:p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    <div className="relative z-10">
-                      <h3 className="mb-4 tracking-tighter uppercase">
-                        {f.title}
-                      </h3>
-                      <p className="text-[12px] lg:text-[13px] text-slate-500 leading-relaxed font-medium max-w-sm mb-8">
-                        {f.desc}
-                      </p>
+        <ArchitecturalShowcase 
+          title={`Coverage Across AI capabilities for ${industry.title}`}
+          description="Typical capability bundles we scope with sector stakeholders, not a fixed bundle sold as a single SKU."
+          capabilities={industry.features}
+        />
 
-                      {/* Kinetic Indicator */}
-                      <div className="flex items-center gap-2 group/btn cursor-default">
-                        <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-16 group-hover:bg-blue-600 transition-all duration-500" />
-                        <span className="text-[9px] font-black text-slate-300 group-hover:text-blue-600 uppercase tracking-widest transition-colors">Strategic</span>
-                      </div>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
-
-        {/* Impact Stats */}
-        <ImpactStats title={`Outcomes for ${industry.title} Programs`} customStats={[
-          { value: "Defined", label: "KPIs agreed before pilot funding" },
-          { value: "Governed", label: "Controls mapped to sector requirements" },
-          { value: "Iterative", label: "Releases sized to operational risk" },
-          { value: "Measured", label: "Evidence captured for steering reviews" },
-          { value: "Documented", label: "Handover artifacts for internal teams" },
-        ]} />
+        <DomainAssurance />
 
         {/* 3. Industry Implementation Workflow - Linear Technical Model */}
         <section className="py-6 sm:py-8 md:py-10 bg-white relative overflow-hidden border-y border-slate-100">
@@ -166,38 +135,16 @@ export default function IndustryDetail() {
               </AnimatedSection>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0 border-t border-l border-slate-100">
-              {[
-                { icon: Database, label: "Data Discovery" },
-                { icon: GitBranch, label: "System Mapping" },
-                { icon: Brain, label: "Model Selection" },
-                { icon: Code2, label: "Logic Staging" },
-                { icon: Zap, label: "Pilot Deployment" },
-                { icon: BarChart3, label: "Scale & Optimize" },
-              ].map((step, i) => (
-                <div key={i} className="group relative bg-white border-r border-b border-slate-100 p-8 hover:bg-blue-50/30 transition-all duration-300 min-h-[300px] flex flex-col justify-between">
-                  <div>
-                    <div className="mb-8">
-                      <div className="w-10 h-10 rounded-sm bg-[#0B1B3D] text-white flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                        <step.icon size={20} />
-                      </div>
-                    </div>
-
-                    <h3 className="mb-4 tracking-tighter uppercase">
-                      {industry.process[i]?.step || step.label}
-                    </h3>
-                    <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
-                      {industry.process[i]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility."}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 mt-8">
-                    <div className="w-2 h-2 rounded-full bg-blue-500" />
-                    <div className="h-px flex-1 bg-slate-100 group-hover:bg-blue-200 transition-all" />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <MethodologyFlowchart 
+              steps={[
+                { icon: Database, label: industry.process[0]?.step || "Data Discovery", desc: industry.process[0]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+                { icon: GitBranch, label: industry.process[1]?.step || "System Mapping", desc: industry.process[1]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+                { icon: Brain, label: industry.process[2]?.step || "Model Selection", desc: industry.process[2]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+                { icon: Code2, label: industry.process[3]?.step || "Logic Staging", desc: industry.process[3]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+                { icon: Zap, label: industry.process[4]?.step || "Pilot Deployment", desc: industry.process[4]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+                { icon: BarChart3, label: industry.process[5]?.step || "Scale & Optimize", desc: industry.process[5]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility." },
+              ]} 
+            />
           </div>
         </section>
 

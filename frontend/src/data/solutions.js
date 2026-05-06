@@ -4,11 +4,11 @@ const solutions = [
   {
     slug: "databrain-ai",
     title: "Corpus",
-    shortDesc: "Convert large document collections into searchable, conversational knowledge with source-grounded answers.",
+    shortDesc: "Synthesize large-scale document corpora into high-fidelity, conversational knowledge bases with verifiable source grounding.",
     heroTitle: "Corpus: Chat With Your Documents",
-    heroDesc: "Provide conversational access to document corpora: upload structured and unstructured files, query in natural language, and receive answers grounded in sources with citations.",
+    heroDesc: "Implement multi-source document intelligence modules that focus on evidence-based synthesis and citation-accurate retrieval across heterogeneous file systems.",
     heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
-    overview: "Corpus is a document intelligence platform that ingests multi-format content and exposes it through reliable conversational search with citations and confidence-aware responses.",
+    overview: "Corpus is an enterprise-grade document intelligence framework designed for high-consequence information retrieval. Unlike generic RAG systems, Corpus prioritizes structural evidence—mapping multi-format unstructured data into a governed semantic graph that provides verifiable, source-grounded answers with forensic citation accuracy.",
     features: [
       { title: "Multi-Format Ingestion", desc: "Upload PDFs, Word docs, spreadsheets, presentations, audio files, and images. Corpus processes them all." },
       { title: "Natural Language Q&A", desc: "Ask complex questions in plain English and receive accurate answers with source citations and confidence scores." },
@@ -29,11 +29,11 @@ const solutions = [
   {
     slug: "medimind-ai",
     title: "ClinIQ",
-    shortDesc: "Support clinical and operational teams with healthcare AI built for safety, privacy, and workflow fit.",
+    shortDesc: "Optimize clinical throughput and documentation accuracy with healthcare AI built for governance-first workflow integration.",
     heroTitle: "ClinIQ: AI-Powered Healthcare Intelligence",
-    heroDesc: "Streamline clinical workflows, automate documentation, and improve patient outcomes with a HIPAA-compliant AI platform designed specifically for healthcare providers and health systems.",
+    heroDesc: "NeuralTrix ClinIQ modules focus on the structural automation of clinical documentation and diagnostic triage, maintained within HIPAA-sovereign control boundaries.",
     heroImage: SOLUTION_HERO_IMAGES["medimind-ai"],
-    overview: "ClinIQ is a comprehensive healthcare AI platform built in collaboration with medical professionals. It helps hospitals, clinics, and health systems automate clinical documentation, assist with diagnostic insights, streamline patient communications, and optimize administrative workflows, all while maintaining strict HIPAA compliance and patient data privacy.",
+    overview: "ClinIQ is a specialized healthcare intelligence framework engineered for clinical safety and operational throughput. It decouples administrative documentation from patient-clinician interactions, using high-fidelity NLP to generate structured, verifiable records that integrate directly with legacy EHR systems while maintaining strict governance and data sovereignty.",
     features: [
       { title: "Clinical Documentation", desc: "AI-assisted note-taking that generates structured clinical documentation from physician-patient conversations." },
       { title: "Diagnostic Assistance", desc: "AI-powered symptom analysis and differential diagnosis suggestions to support clinical decision-making." },
@@ -54,11 +54,11 @@ const solutions = [
   {
     slug: "talentify-ai",
     title: "Arc",
-    shortDesc: "Improve hiring outcomes with AI-assisted matching, screening workflows, and recruiter decision support.",
+    shortDesc: "Drive recruitment throughput with bias-mitigated matching and structural decision support across talent pipelines.",
     heroTitle: "Arc: Intelligent Recruitment Platform",
-    heroDesc: "Improve hiring throughput with AI-assisted resume screening, structured matching, and recruiter workflows that shorten time-to-shortlist while preserving auditability.",
+    heroDesc: "Scale hiring operations through high-fidelity resume synthesis and intent-aware candidate matching modules designed for high-volume enterprise throughput.",
     heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
-    overview: "Arc transforms the recruitment landscape by using advanced AI to match candidates with opportunities based on skills, experience, culture fit, and career aspirations. For recruiters, it automates resume screening, generates interview questions, and provides predictive analytics on candidate success. For job seekers, it offers personalized job recommendations and AI-powered career guidance.",
+    overview: "Arc is a structural recruitment intelligence framework that optimizes the candidate-to-role matching logic. By decoupling core skill extraction from demographic noise, Arc provides bias-mitigated screening and intent-aware shortlist generation, enabling talent teams to process large-scale pipelines with verifiable accuracy and forensic auditability of every decision gate.",
     features: [
       { title: "AI Resume Screening", desc: "Automatically parse, score, and rank resumes against job requirements with bias-free AI evaluation." },
       { title: "Smart Matching", desc: "Multi-dimensional matching algorithm that considers skills, experience, culture fit, and growth potential." },
@@ -79,11 +79,11 @@ const solutions = [
   {
     slug: "quikbiz-ai",
     title: "Reach",
-    shortDesc: "Increase conversion and support quality with context-aware conversational engagement across channels.",
+    shortDesc: "Accelerate conversion and engagement through high-fidelity conversational modules mapped to audience intent graphs.",
     heroTitle: "Reach: Conversational Commerce Platform",
-    heroDesc: "Deploy intelligent AI chatbots that understand your business, engage visitors naturally, qualify leads, answer questions, and drive conversions, all without human intervention. Available 24/7 across all your digital channels.",
+    heroDesc: "Deploy autonomous engagement modules that unify product knowledge and customer intent into a high-conversion conversational engine available across all digital channels.",
     heroImage: SOLUTION_HERO_IMAGES["quikbiz-ai"],
-    overview: "Reach is a conversational AI platform designed for businesses that want to scale customer engagement without scaling headcount. It goes beyond scripted chatbots by using RAG technology to understand your products, services, and FAQs, then engage visitors in natural, context-aware conversations that drive sales and satisfaction.",
+    overview: "Reach is an autonomous conversational engagement framework designed for multi-channel commerce scale. Unlike traditional chatbots, Reach leverages a unified product-intent graph to facilitate context-aware interactions that drive verifiable conversion outcomes, automating the qualification and support loop without compromising brand integrity or operational control.",
     features: [
       { title: "Contextual Conversations", desc: "AI that understands your business context and provides relevant, accurate responses to any customer query." },
       { title: "Lead Qualification", desc: "Automatically qualify website visitors based on their questions, behavior, and fit with your ideal customer profile." },
@@ -104,11 +104,11 @@ const solutions = [
   {
     slug: "intellibot-ai",
     title: "Nexus",
-    shortDesc: "Unify enterprise knowledge sources and resolve internal queries through permission-aware AI assistance.",
+    shortDesc: "Synthesize enterprise knowledge sources through permission-aware semantic retrieval and multi-source context mapping.",
     heroTitle: "Nexus: Enterprise Knowledge Assistant",
-    heroDesc: "Unify your organization's knowledge across systems and make it instantly accessible through an intelligent AI assistant that employees and customers can query in natural language.",
+    heroDesc: "Unify heterogeneous organizational knowledge into a single, permission-governed semantic interface that provides high-fidelity answers across all internal data sources.",
     heroImage: SOLUTION_HERO_IMAGES["intellibot-ai"],
-    overview: "Nexus is an enterprise-grade knowledge management platform that centralizes information from Confluence, SharePoint, Google Drive, Notion, Slack, and other sources into a unified AI-powered search and Q&A interface. It eliminates information silos, reduces support tickets, and helps every team member find answers in seconds instead of hours.",
+    overview: "Nexus is a permission-sovereign knowledge synthesis framework engineered for enterprise-scale information discovery. By mapping disparate data silos—from Confluence to SharePoint—into a unified semantic fabric, Nexus enables employees to retrieve high-fidelity, context-aware answers through a secure interface that respects existing role-based access controls and organizational security boundaries.",
     features: [
       { title: "Multi-Source Ingestion", desc: "Connect to Confluence, SharePoint, Google Drive, Notion, Slack, Jira, and 50+ other data sources." },
       { title: "Semantic Search", desc: "Find information based on meaning, not just keywords. Nexus understands context and intent." },
