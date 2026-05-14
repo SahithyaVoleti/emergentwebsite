@@ -15,7 +15,7 @@ function scrollToSelector(e, hashSelector) {
   }
 }
 
-export default function PageHero({ label, title, description, primaryCTA, secondaryCTA, bgDark = true, image }) {
+export default function PageHero({ label, title, description, primaryCTA, secondaryCTA, bgDark = true, image, video }) {
   const location = useLocation();
   const resolvedImage = image ?? DEFAULT_PAGE_HERO_IMAGE;
 
@@ -28,7 +28,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
       className={`relative overflow-hidden ${bgDark ? "text-white bg-[#0B1B3D]" : "text-[#0B1B3D] bg-[#F8FAFC]"}`}
     >
       <div className="relative isolate flex min-h-[min(75vh,820px)] flex-col justify-center">
-        <HeroAnimatedBackdrop image={resolvedImage} bgDark={bgDark} />
+        <HeroAnimatedBackdrop image={resolvedImage} video={video} bgDark={bgDark} />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-14 sm:py-16 md:py-20">
           <div className="max-w-3xl">
             <motion.p
