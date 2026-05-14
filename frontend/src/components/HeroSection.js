@@ -6,7 +6,7 @@ import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 
 export default function HeroSection() {
   return (
-    <section id="hero" data-testid="hero-section" className="sticky top-0 w-full aspect-video max-h-screen bg-[#F0F4F8] z-0 overflow-hidden">
+    <section id="hero" data-testid="hero-section" className="sticky top-[100px] w-full aspect-video max-h-screen bg-[#F0F4F8] z-0 overflow-hidden">
       <HeroAnimatedBackdrop video="/hero/hero-background.mp4" bgDark={false} />
     </section>
   );
