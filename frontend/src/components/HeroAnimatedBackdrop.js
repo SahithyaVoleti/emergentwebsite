@@ -1,8 +1,7 @@
 import { FULL_BLEED_DARK_OVERLAY_STYLE, FULL_BLEED_LIGHT_OVERLAY_STYLE } from "../lib/heroFullBleed";
 
 /**
- * Full-bleed hero media: slow “AI showcase” motion (Ken Burns) + subtle digital pulse.
- * Respects prefers-reduced-motion via CSS.
+ * Full-bleed hero media: background video or image with standard object-contain/cover.
  */
 export default function HeroAnimatedBackdrop({ image, video, bgDark = true }) {
   return (
@@ -15,7 +14,7 @@ export default function HeroAnimatedBackdrop({ image, video, bgDark = true }) {
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover object-bottom select-none"
+            className="absolute inset-0 w-full h-full object-cover object-center select-none"
           >
             <source src={video} type="video/mp4" />
           </video>
@@ -27,6 +26,13 @@ export default function HeroAnimatedBackdrop({ image, video, bgDark = true }) {
             className="absolute inset-0 w-full h-full object-cover object-bottom select-none"
           />
         )}
+        {/* Dark overlay to ensure text legibility over video background */}
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none" 
+          style={{ 
+            background: "linear-gradient(to right, rgba(11,27,61,0.6) 0%, rgba(11,27,61,0.2) 50%, rgba(11,27,61,0) 100%)" 
+          }} 
+        />
       </div>
     </>
   );

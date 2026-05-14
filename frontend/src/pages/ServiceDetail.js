@@ -35,6 +35,7 @@ export default function ServiceDetail() {
           primaryCTA={{ text: "Contact us", href: "#page-contact" }}
           secondaryCTA={{ text: "View capabilities", href: "#capabilities" }}
           image={service.heroImage}
+          video={service.heroVideo}
         />
       </div>
 
