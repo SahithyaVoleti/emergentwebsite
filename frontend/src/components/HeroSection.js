@@ -48,16 +48,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="lg:col-span-5 flex flex-col items-start justify-center text-left"
         >
-          {/* Subtle Technology Badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0052CC]/10 text-[#0052CC] font-sans text-xs font-semibold uppercase tracking-wider mb-6"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0052CC] animate-ping" />
-            Co-development Workspace
-          </motion.div>
+
 
           <h1 className="font-sans text-[#172B4D] text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.25rem] leading-[1.1] font-bold tracking-tight mb-6">
             Collaborative AI <br />

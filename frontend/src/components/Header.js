@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "../components/ui/button";
 import services from "../data/services";
@@ -68,11 +67,11 @@ export default function Header() {
       data-testid="header"
       className="sticky top-0 z-[100] backdrop-blur-xl bg-white/95 border-b border-slate-200/80 shadow-sm"
     >
-      <div className="relative flex items-center justify-between h-16 w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="flex items-center justify-between h-16 w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <Link
           to="/"
           data-testid="header-logo"
-          className="relative z-10 flex items-center shrink-0"
+          className="flex items-center shrink-0"
         >
           <img 
             src="/neuraltrix-logo.jpeg" 
@@ -81,11 +80,12 @@ export default function Header() {
           />
         </Link>
 
+        {/* Desktop navigation only visible on XL (1280px and up) to avoid congestion when zooming */}
         <nav
-          className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 xl:flex xl:items-center xl:gap-8"
+          className="hidden xl:flex xl:items-center xl:justify-center flex-1 mx-4"
           aria-label="Main"
         >
-          <div className="pointer-events-auto flex items-center gap-6 xl:gap-8">
+          <div className="flex items-center gap-5 xl:gap-8">
             {renderDesktopDropdown("Service Portfolio", servicesLinks, "/services")}
             {renderDesktopDropdown("System Solutions", solutionsLinks, "/solutions")}
             {renderDesktopDropdown("Industries Served", industriesLinks, "/industries")}
@@ -139,11 +139,12 @@ export default function Header() {
           </div>
         </nav>
 
-        <div className="relative z-10 flex items-center justify-end gap-3 shrink-0">
+        <div className="flex items-center justify-end shrink-0 gap-3">
+          {/* Contact Us Button: Visible on tablet and desktop (md and up) */}
           <Button
             data-testid="header-cta-button"
             asChild
-            className="bg-[#0052CC] text-white hover:bg-[#0052CC]/90 rounded-full px-4 sm:px-6 py-2 text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/10 transition-all hover:scale-105 active:scale-95"
+            className="hidden md:inline-flex bg-[#0052CC] text-white hover:bg-[#0052CC]/90 rounded-full px-5 py-2 text-sm font-bold shadow-lg shadow-blue-500/10 transition-all hover:scale-105 active:scale-95"
           >
             <Link 
               to="/#page-contact"
@@ -157,6 +158,8 @@ export default function Header() {
               Contact us
             </Link>
           </Button>
+
+          {/* Menubar Hamburg Toggle: Visible on mobile and tablet (below xl) */}
           <button
             data-testid="mobile-menu-toggle"
             className="xl:hidden p-2 text-[#172B4D] hover:bg-slate-50 rounded-md transition-colors"
@@ -237,7 +240,7 @@ export default function Header() {
           <Button
             data-testid="mobile-cta-button"
             asChild
-            className="w-full mt-4 bg-[#0052CC] text-white hover:bg-[#0052CC]/90 rounded-full py-3 text-base font-bold shadow-lg shadow-blue-500/10"
+            className="w-full mt-6 bg-[#0052CC] text-white hover:bg-[#0052CC]/90 rounded-full py-3 text-base font-bold shadow-lg shadow-blue-500/10 transition-colors"
           >
             <Link
               to="/#page-contact"
