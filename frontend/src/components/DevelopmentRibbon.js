@@ -34,7 +34,7 @@ export default function DevelopmentRibbon() {
     <div
       role="status"
       aria-live="polite"
-      className="fixed inset-x-0 top-0 z-[60] border-b border-slate-700 bg-[#0B1B3D] text-slate-100"
+      className="relative w-full z-[60] border-b border-slate-700 bg-[#0B1B3D] text-slate-100"
     >
       <div className="hidden h-9 items-center justify-center px-4 motion-reduce:flex">
         <p className="text-center text-xs font-medium sm:text-sm">{MESSAGE}</p>
