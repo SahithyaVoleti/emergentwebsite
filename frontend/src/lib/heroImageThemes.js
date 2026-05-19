@@ -58,7 +58,7 @@ export const INDUSTRY_HERO_IMAGES = [
 
 /** Case study detail: order matches `caseStudies` */
 export const CASE_STUDY_HERO_IMAGES = [
-  hq("photo-1536240478700-b869070f9279"),
+  hq("photo-1531297484001-80022131f5a1"),
   hq("photo-1503676260728-1c00da094a0b"),
   hq("photo-1462331940025-496dfbfc7564"),
   hq("photo-1488646953014-85cb44e25828"),
