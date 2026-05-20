@@ -7,8 +7,9 @@ module.exports = {
   ],
   theme: {
   	fontFamily: {
-  		sans: ['"Source Sans 3"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-  		display: ['"Cabinet Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+   		sans: ['Satoshi', '"Source Sans 3"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+   		display: ['"Cabinet Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+   		mono: ['"JetBrains Mono"', 'monospace'],
   	},
   	extend: {
   		borderRadius: {

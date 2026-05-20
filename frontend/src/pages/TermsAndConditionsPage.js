@@ -234,8 +234,7 @@ const sections = [
           Continued use of services after publication of updates constitutes binding acceptance of revised terms to the extent permitted by applicable law.
         </p>
         <div
-          className="inline-flex mt-4 items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB]"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          className="inline-flex mt-4 items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB] font-mono"
         >
           EFFECTIVE DATE: MAY 2026 | LAST UPDATED: MAY 2026
         </div>
@@ -298,13 +297,12 @@ export default function TermsAndConditionsPage() {
                 <h2>
                   Assurance for <span className="opacity-30">Service Terms</span>
                 </h2>
-                <div className="mt-5 flex flex-wrap items-center gap-3">
-                  <span
-                    className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB]"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    UPDATED MAY 2026
-                  </span>
+                        <div className="mt-5 flex flex-wrap items-center gap-3">
+                          <span
+                            className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB] font-mono"
+                          >
+                            UPDATED MAY 2026
+                          </span>
                   <span className="inline-flex items-center rounded-sm border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800">
                     INTERNAL LEGAL REVIEW RECOMMENDED
                   </span>

@@ -254,7 +254,7 @@ const sections = [
   {
     title: "14. Effective Date and Last Updated",
     content: (
-      <div className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+      <div className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB] font-mono">
         EFFECTIVE DATE: MAY 2026 | LAST UPDATED: MAY 2026
       </div>
     )
@@ -284,8 +284,7 @@ export default function PrivacyPolicyPage() {
                 </h2>
                 <div className="mt-5 flex flex-wrap items-center gap-3">
                   <span
-                    className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB]"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    className="inline-flex items-center rounded-sm border border-[#2563EB]/20 bg-[#2563EB]/5 px-3 py-1 text-xs font-bold text-[#2563EB] font-mono"
                   >
                     UPDATED MAY 2026
                   </span>

@@ -25,16 +25,17 @@
 
 body {
     margin: 0;
-    font-family: 'Source Sans 3', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Satoshi', 'Source Sans 3', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-/* Cabinet Grotesk for all headings; body copy uses Source Sans 3 (see tailwind font-sans) */
+/* Cabinet Grotesk for all headings; body copy uses Satoshi (see tailwind font-sans) */
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: 'Cabinet Grotesk', 'Inter', ui-sans-serif, sans-serif;
     line-height: 1.25;
 }
@@ -66,6 +67,20 @@ h4 {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.3px;
+    color: #0b1b3d;
+}
+
+h5 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #0b1b3d;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
     color: #0b1b3d;
 }
 
@@ -146,6 +161,14 @@ h4 {
 
     h4 {
         font-size: 18px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    h6 {
+        font-size: 14px;
     }
 }
 

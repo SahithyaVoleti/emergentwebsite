@@ -50,7 +50,7 @@ export default function CaseStudyDetail() {
             {cs.results.map((r, i) => (
               <StaggerItem key={i}>
                 <div data-testid={`result-${i}`} className="text-center">
-                  <span className="text-4xl font-extrabold text-[#0B1B3D] block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{r.metric}</span>
+                  <span className="text-4xl font-extrabold text-[#0B1B3D] block font-mono">{r.metric}</span>
                   <p className="text-sm font-bold text-[#0B1B3D] mt-1">{r.label}</p>
                   <p className="text-xs text-slate-500 mt-1">{r.desc}</p>
                 </div>

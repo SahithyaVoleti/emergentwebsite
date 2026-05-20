@@ -238,9 +238,9 @@ export default function IndustryDetail() {
                     { title: "Auditability", desc: "Every model decision is traceable back to training inputs." },
                     { title: "Redundancy", val: "99.99% UP", desc: "High-availability clusters for mission-critical industrial use." },
                   ].map((item, i) => (
-                    <div key={i} className="p-8 border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors rounded-none">
+                        <div key={i} className="p-8 border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors rounded-none">
                       {item.val ? (
-                        <span className="text-[10px] font-black text-blue-400 mb-4 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{item.val}</span>
+                        <span className="text-[10px] font-black text-blue-400 mb-4 block font-mono">{item.val}</span>
                       ) : null}
                       <h3 className="mb-3 tracking-tighter uppercase">{item.title}</h3>
                       <p className="text-[12px] text-slate-400 leading-relaxed font-medium">{item.desc}</p>

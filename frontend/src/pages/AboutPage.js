@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <StaggerItem key={t.year}>
                   <div data-testid={`timeline-${t.year}`} className="group relative grid grid-cols-[110px_44px_1fr] md:grid-cols-[140px_48px_1fr] items-start gap-4 md:gap-6">
                     <div className="pt-1 text-right">
-                      <span className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                      <span className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D] font-mono">
                         {t.year}
                       </span>
                     </div>

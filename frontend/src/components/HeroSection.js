@@ -50,7 +50,7 @@ export default function HeroSection() {
         >
 
 
-          <h1 className="font-sans text-[#172B4D] text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.25rem] leading-[1.1] font-bold tracking-tight mb-6">
+          <h1 className="font-display text-[#172B4D] text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.25rem] leading-[1.1] font-bold tracking-tight mb-6">
             Collaborative AI <br />
             Engineering
           </h1>
