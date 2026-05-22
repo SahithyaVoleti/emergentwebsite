@@ -11,7 +11,7 @@ export default function ServicesGrid4x4({
   eyebrow = "Coverage",
   title = "Coverage across service delivery tracks",
   lead = "This coverage lists delivery tracks you can brief against. Select a card to open the full service overview.",
-  viewAllHref = "/services",
+  viewAllHref = undefined,
   viewAllLabel = "View all services",
   className = "",
 }) {

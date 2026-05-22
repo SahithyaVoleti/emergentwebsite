@@ -74,7 +74,7 @@ export default function HeroSection() {
             </Link>
             
             <Link
-              to="/services"
+              to="/#services-grid"
               className="inline-flex items-center justify-center sm:justify-start gap-3 text-[#0052CC] hover:text-[#0065FF] font-semibold text-base transition-colors duration-200 group py-2"
             >
               {/* Play Icon */}

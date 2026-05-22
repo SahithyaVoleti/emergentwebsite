@@ -1,7 +1,5 @@
 ﻿import { Link, useLocation } from "react-router-dom";
-import UbuntuDetailNav from "../ubuntu/UbuntuDetailNav";
 import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
-import UbuntuLink from "../ubuntu/UbuntuLink";
 import SolutionsHorizontalSlider from "../ubuntu/SolutionsHorizontalSlider";
 import ServiceSubservicesGrid from "./ServiceSubservicesGrid";
 import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
@@ -75,12 +73,6 @@ export default function ServiceDetailHomeLayout({
   return (
     <>
       <div id="capabilities">
-        <UbuntuDetailNav
-          to="/services"
-          label="Back to all services"
-          testId="back-to-services"
-        />
-
         <ServiceSubservicesGrid service={service} />
       </div>
 
@@ -175,9 +167,6 @@ export default function ServiceDetailHomeLayout({
           >
             Contact us
           </Link>
-          <UbuntuLink to="/services" className="!text-[#e8b4b8]">
-            View all services
-          </UbuntuLink>
         </div>
       </UbuntuSplitLayout>
 

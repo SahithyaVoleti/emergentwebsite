@@ -53,7 +53,7 @@ export const HOME_ALERT = {
   title: "Engineering intelligent systems for interdisciplinary innovation",
   body: "We build scalable AI ecosystems that combine applied machine learning, GenAI, data platforms, and cloud-native engineering to power the next generation of intelligent digital experiences.",
   primaryCta: { label: "About our vision", href: "/about" },
-  secondaryCta: { label: "Explore services →", href: "/services" },
+  secondaryCta: { label: "Explore services →", href: "/#services-grid" },
 };
 
 /** Capability labels per service — cross-cutting themes, not service card titles. */
@@ -177,7 +177,7 @@ export const HOME_SERVICES_GRID = {
   eyebrow: "Service delivery",
   title: "Engineering tracks for enterprise AI systems",
   lead: "Interdisciplinary delivery across applied machine learning, GenAI, platform engineering, and intelligent automation—structured for production-scale adoption.",
-  viewAllHref: "/services",
+  viewAllHref: undefined,
   viewAllLabel: "View all services",
 };
 
@@ -187,7 +187,7 @@ export const HOME_TECH_STACK = {
   title: "Engineering stack for governed AI delivery",
   lead: "Select a delivery track to view the technologies we use for that service—drawn from the stacks defined across our service catalog.",
   primaryCta: { label: "View DevOps services", href: "/services/devops" },
-  secondaryCta: { label: "Explore all services", href: "/services" },
+  secondaryCta: { label: "Explore all services", href: "/#services-grid" },
   filterAllLabel: "All services",
 };
 
@@ -371,7 +371,7 @@ export const HOME_OUTCOMES_SECTION = {
     "Vendor-neutral recommendations tied to your constraints",
   ],
   learnMore: { label: "Let's discuss your initiative", href: "/#page-contact" },
-  contact: { label: "View services", href: "/services" },
+  contact: { label: "View services", href: "/#services-grid" },
 };
 
 /** @deprecated Use HOME_CORE_TOPIC_SECTIONS + HOME_ASSURANCE_SECTION + HOME_OUTCOMES_SECTION */

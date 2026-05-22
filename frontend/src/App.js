@@ -1,8 +1,7 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
-import ServicesPage from "@/pages/ServicesPage";
 import ServiceDetail from "@/pages/ServiceDetail";
 import SolutionsPage from "@/pages/SolutionsPage";
 import SolutionDetail from "@/pages/SolutionDetail";
@@ -34,7 +33,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
-          <Route path="/services" element={<PublicLayout><ServicesPage /></PublicLayout>} />
+          <Route path="/services" element={<Navigate to="/#services-grid" replace />} />
           <Route path="/services/:slug" element={<PublicLayout><ServiceDetail /></PublicLayout>} />
           <Route path="/solutions" element={<PublicLayout><SolutionsPage /></PublicLayout>} />
           <Route path="/solutions/:slug" element={<PublicLayout><SolutionDetail /></PublicLayout>} />

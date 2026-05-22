@@ -61,7 +61,7 @@ export default function CTASection({
             {buttonText || "Contact us"}
           </Link>
         )}
-        <UbuntuLink to="/services" className="!text-[#e8b4b8]">
+        <UbuntuLink to="/#services-grid" className="!text-[#e8b4b8]">
           View services
         </UbuntuLink>
       </div>

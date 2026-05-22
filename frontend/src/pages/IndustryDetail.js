@@ -106,7 +106,7 @@ export default function IndustryDetail() {
           eyebrow="Coverage"
           title={`Service tracks for ${industry.title}`}
           lead="Delivery tracks commonly scoped for this sector. Select a card for full scope and methodology."
-          viewAllHref="/services"
+          viewAllHref={undefined}
           viewAllLabel="View all services"
         />
 

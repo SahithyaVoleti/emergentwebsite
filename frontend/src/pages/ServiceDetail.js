@@ -14,8 +14,8 @@ export default function ServiceDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Service not found</h1>
-          <Link to="/services" className="mt-4 text-[#8b1538] hover:underline">
-            Back to services
+          <Link to="/#services-grid" className="mt-4 text-[#8b1538] hover:underline">
+            Back to home
           </Link>
         </div>
       </SitePageMain>

@@ -47,7 +47,7 @@ export default function NextStepCTA() {
               variant="outline"
               className="h-12 rounded-sm border-white/40 bg-transparent px-8 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 hover:text-white"
             >
-              <Link to="/services">Explore services</Link>
+              <Link to="/#services-grid">Explore services</Link>
             </Button>
           </div>
         </div>
