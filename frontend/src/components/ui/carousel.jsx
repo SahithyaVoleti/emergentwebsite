@@ -54,14 +54,17 @@ const Carousel = React.forwardRef((
   }, [api])
 
   const handleKeyDown = React.useCallback((event) => {
-    if (event.key === "ArrowLeft") {
+    const isVertical = orientation === "vertical"
+    const prevKey = isVertical ? "ArrowUp" : "ArrowLeft"
+    const nextKey = isVertical ? "ArrowDown" : "ArrowRight"
+    if (event.key === prevKey) {
       event.preventDefault()
       scrollPrev()
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === nextKey) {
       event.preventDefault()
       scrollNext()
     }
-  }, [scrollPrev, scrollNext])
+  }, [scrollPrev, scrollNext, orientation])
 
   React.useEffect(() => {
     if (!api || !setApi) {

@@ -7,11 +7,10 @@ import ServiceSubservicesGrid from "./ServiceSubservicesGrid";
 import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
 import TestimonialsSection from "../TestimonialsSection";
 import PageContactForm from "../PageContactForm";
-import UbuntuHomeStatsStrip from "../home/ubuntu/UbuntuHomeStatsStrip";
+import UbuntuProcessMethodologyStrip from "../ubuntu/UbuntuProcessMethodologyStrip";
 import UbuntuHomeVisionCta from "../home/ubuntu/UbuntuHomeVisionCta";
 import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
 import UbuntuHomeTechStack from "../home/ubuntu/UbuntuHomeTechStack";
-import UbuntuHomeWorkflow from "../home/ubuntu/UbuntuHomeWorkflow";
 import { UbuntuHomeBlogs } from "../home/ubuntu/UbuntuHomeIndustriesBlogs";
 import { getHomeSectionImage } from "../../data/homePageImages";
 import { getSiteMockup } from "../../data/siteMockups";
@@ -85,7 +84,14 @@ export default function ServiceDetailHomeLayout({
         <ServiceSubservicesGrid service={service} />
       </div>
 
-      {processStats.length > 0 && <UbuntuHomeStatsStrip stats={processStats} id="service-stats" />}
+      {processStats.length > 0 && (
+        <UbuntuProcessMethodologyStrip
+          id="service-methodology-steps"
+          title={`Methodology for ${service.title} engagements`}
+          lead="This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage."
+          steps={processStats}
+        />
+      )}
 
       <UbuntuHomeVisionCta
         mockup={visionMockup}
@@ -122,10 +128,10 @@ export default function ServiceDetailHomeLayout({
         mockup={philosophyMockup}
         imagePosition={nextPosition()}
         config={{
-          id: "service-methodology",
-          eyebrow: "Methodology",
-          title: `Methodology for ${service.title} engagements`,
-          lead: "This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage.",
+          id: "service-methodology-detail",
+          eyebrow: "Assurance",
+          title: `Assurance for ${service.title} programs`,
+          lead: "Controls and checkpoints applied at each stage of the methodology above.",
           bullets: philosophyBullets,
         }}
       />
@@ -143,18 +149,6 @@ export default function ServiceDetailHomeLayout({
           secondaryCta: { label: "View capabilities", href: "#capabilities" },
         }}
       />
-
-      {workflowSteps.length > 0 && (
-        <UbuntuHomeWorkflow
-          config={{
-            id: "service-workflow",
-            eyebrow: "Methodology",
-            title: `Methodology for ${service.title} engagements`,
-            lead: "This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage.",
-          }}
-          steps={workflowSteps}
-        />
-      )}
 
       <ServiceDetailIndustriesBand />
 
