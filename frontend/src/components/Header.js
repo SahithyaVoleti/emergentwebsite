@@ -88,7 +88,7 @@ export default function Header({ embedded = false, shell = false }) {
 
   const bar = (
     <>
-      <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 max-w-[90rem] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link to="/" data-testid="header-logo" className="flex shrink-0 items-center">
           <img
             src="/neuraltrix-logo.jpeg"
