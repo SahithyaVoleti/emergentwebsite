@@ -23,7 +23,7 @@ export function useHeroStackSlide() {
     const scrollRange = scroller.offsetHeight - vh;
 
     if (scrollRange <= 0) {
-      setTranslateY(0);
+      setTranslateY(-48);
       setIsPinned(false);
       return;
     }
