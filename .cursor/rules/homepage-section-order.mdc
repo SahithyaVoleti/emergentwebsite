@@ -1,0 +1,19 @@
+---
+description: Site chrome and homepage section order
+globs:
+  - frontend/src/components/ubuntu/UbuntuPageShell.jsx
+  - frontend/src/components/ubuntu/SitePageChrome.jsx
+  - frontend/src/components/PageHero.js
+alwaysApply: false
+---
+
+# Site chrome (entire website)
+
+- `UbuntuPageShell` renders one site-wide navbar (`Header shell`) on every public page.
+- `SitePageChrome` provides one hero pattern per page; it does not render a second navbar.
+- Hero chrome uses negative top margin so the pattern continues behind the shell navbar.
+- `PageHero` and `BlogDetail` use `SitePageChrome`; development ribbon is hidden.
+
+# Homepage section order
+
+See `HOME_PAGE_LAYOUT` in `homePageSections.js`.

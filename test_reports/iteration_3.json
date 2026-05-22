@@ -1,0 +1,32 @@
+{
+  "summary": "Completed comprehensive frontend testing of updated service and industry pages with hero images, expandable subservices, tech stack sections, process roadmaps, stats grids, FAQ accordions, and contact forms",
+  "backend_issues": {},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "Service detail page /services/artificial-intelligence loads with hero image on right side",
+    "Service detail page has 8 expandable subservice cards with 4 sub-items each",
+    "Service detail page has tech stack section with 4 categories",
+    "Service detail page has process section with 6 numbered steps",
+    "Service detail page has Why Choose Us section with stats grid (6 stats)",
+    "Service detail /services/generative-ai loads with all sections",
+    "Service detail /services/devops loads with all sections",
+    "Industry detail page /industries/healthcare loads with hero image and all sections",
+    "Industry detail page /industries/fintech loads with hero image and all sections",
+    "Solution detail page /solutions/databrain-ai loads with hero image",
+    "Case study detail /case-studies/ai-video-creation loads with hero image",
+    "Contact form on service detail page submits successfully to /api/contact with success message",
+    "FAQ accordion works on all detail pages",
+    "Subservice card expand/collapse toggles correctly (clicking same card closes, clicking different opens new one)",
+    "All 8 service slugs load correctly: artificial-intelligence, generative-ai, custom-software, mobile-apps, ai-agents, llm-development, devops, data-engineering"
+  ],
+  "test_report_links": [],
+  "action_item_for_main_agent": "",
+  "updated_files": [],
+  "success_percentage": "frontend: 100%",
+  "should_call_test_agent_after_fix": "false",
+  "should_main_agent_test_itself": "true"
+}
