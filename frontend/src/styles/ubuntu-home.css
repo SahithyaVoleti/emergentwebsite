@@ -245,9 +245,52 @@
   }
 }
 
+/* Development notice ribbon — fixed above navbar on all shell pages */
+.ubuntu-site .ubuntu-chrome-ribbon--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  background: #fdf2f4;
+  border-bottom: 1px solid #e8b4b8;
+  color: #4a1020;
+}
+
+.ubuntu-site .ubuntu-chrome-ribbon--fixed .ubuntu-chrome-ribbon__track {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 640px) {
+  .ubuntu-site .ubuntu-chrome-ribbon--fixed .ubuntu-chrome-ribbon__track {
+    font-size: 0.8125rem;
+  }
+}
+
+.ubuntu-site.ubuntu-site--dev-ribbon .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--fixed {
+  top: var(--ubuntu-chrome-ribbon-h);
+}
+
+.ubuntu-site.ubuntu-site--dev-ribbon .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered {
+  top: calc(0.75rem + var(--ubuntu-chrome-ribbon-h));
+}
+
+@media (min-width: 768px) {
+  .ubuntu-site.ubuntu-site--dev-ribbon .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered {
+    top: calc(1rem + var(--ubuntu-chrome-ribbon-h));
+  }
+}
+
 /* Offset page content for fixed navbar; hero chrome pulls back under the bar */
 .ubuntu-site.ubuntu-site--fixed-nav .ubuntu-site__body {
   padding-top: var(--ubuntu-chrome-header-h);
+}
+
+.ubuntu-site.ubuntu-site--dev-ribbon.ubuntu-site--fixed-nav .ubuntu-site__body {
+  padding-top: calc(var(--ubuntu-chrome-header-h) + var(--ubuntu-chrome-ribbon-h));
 }
 
 /* Hero chrome: one pattern; pulled under shell navbar for continuous background */
@@ -1775,6 +1818,12 @@
 }
 
 .ubuntu-chrome-ribbon {
+  background: #fdf2f4;
+  border-bottom: 1px solid #e8b4b8;
+  color: #4a1020;
+}
+
+.ubuntu-chrome-ribbon--embedded {
   background: transparent;
   border-bottom: none;
   color: #333;
