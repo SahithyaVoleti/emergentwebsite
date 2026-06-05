@@ -1,0 +1,58 @@
+import {
+  Bot,
+  Brain,
+  Briefcase,
+  Building2,
+  Circle,
+  Cloud,
+  Code,
+  Cpu,
+  Database,
+  Dna,
+  Factory,
+  GraduationCap,
+  Handshake,
+  HeartPulse,
+  Info,
+  Landmark,
+  LayoutGrid,
+  MessageCircle,
+  Newspaper,
+  Shield,
+  Sparkles,
+  Sprout,
+  Store,
+  Users,
+} from "lucide-react";
+
+const ICON_BY_HREF = {
+  "/services/artificial-intelligence": Brain,
+  "/services/generative-ai": Sparkles,
+  "/services/ai-agents": Bot,
+  "/services/custom-software": Code,
+  "/services/data-engineering": Database,
+  "/services/devops": Cloud,
+  "/solutions": Building2,
+  "/solutions/talentify-ai": GraduationCap,
+  "/solutions/quikbiz-ai": MessageCircle,
+  "/solutions/intellibot-ai": Cpu,
+  "/security": Shield,
+  "/industries/education": GraduationCap,
+  "/industries/healthcare": HeartPulse,
+  "/industries/manufacturing": Factory,
+  "/industries/agriculture": Sprout,
+  "/industries/biotechnology": Dna,
+  "/industries/government": Landmark,
+  "/industries/retail": Store,
+  "/about": Info,
+  "/team": Users,
+  "/careers": Briefcase,
+  "/partners": Handshake,
+  "/blog": Newspaper,
+};
+
+export function getNavDropdownIcon(href, fallback = Circle) {
+  return ICON_BY_HREF[href] || fallback;
+}
+
+export const NAV_VIEW_ALL_ICON = LayoutGrid;

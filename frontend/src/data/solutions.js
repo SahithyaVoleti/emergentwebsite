@@ -1,0 +1,142 @@
+import { SOLUTION_HERO_IMAGES } from "../lib/heroImageThemes";
+
+/**
+ * NeuralTrix solution accelerators.
+ * - `title`: Sanskrit product name (customer-facing brand).
+ * - `cardDescriptor`: one-line English scope for cards and navigation context.
+ * - `slug`: technical route id (unchanged for URLs and integrations).
+ */
+const solutions = [
+  {
+    slug: "databrain-ai",
+    title: "Smriti",
+    cardDescriptor: "Document intelligence",
+    shortDesc: "Synthesize large-scale document corpora into governed, conversational knowledge bases with verifiable source grounding.",
+    heroTitle: "Smriti: Enterprise Document Intelligence",
+    heroDesc: "Pre-architected document intelligence modules for evidence-based synthesis and citation-accurate retrieval across heterogeneous file systems.",
+    heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
+    overview: "Smriti is a NeuralTrix document intelligence accelerator for high-consequence information retrieval. Unlike generic RAG deployments, Smriti prioritizes structural evidence—mapping multi-format unstructured data into a governed semantic graph that provides verifiable, source-grounded answers with forensic citation accuracy.",
+    features: [
+      { title: "Multi-Format Ingestion", desc: "Upload PDFs, Word docs, spreadsheets, presentations, audio files, and images. Smriti processes them all." },
+      { title: "Natural Language Q&A", desc: "Ask complex questions in plain English and receive accurate answers with source citations and confidence scores." },
+      { title: "Document Summarization", desc: "Generate executive summaries, meeting notes, and key takeaways from lengthy documents in seconds." },
+      { title: "Audio Transcription", desc: "Automatically transcribe meetings, interviews, and calls with speaker identification and timestamps." },
+      { title: "Collaborative Workspaces", desc: "Share document collections and AI conversations with team members for collaborative research and analysis." },
+      { title: "Enterprise Security", desc: "Role-based access control, encryption at rest and in transit, and audit logging scoped to your engagement." },
+    ],
+    useCases: ["Legal contract analysis", "Research paper review", "Financial report analysis", "Meeting transcript processing", "Compliance document review", "Technical documentation search"],
+    tech: ["RAG Pipeline", "LangChain", "GPT-4o", "Pinecone", "React", "Python", "AWS"],
+    faqs: [
+      { q: "What file formats does Smriti support?", a: "Smriti supports PDF, DOCX, XLSX, PPTX, CSV, TXT, MP3, WAV, MP4, and common image formats. Additional formats are added as customer programs require." },
+      { q: "How accurate are the AI responses?", a: "Smriti uses RAG technology to ground responses in your documents, with source citations on every answer for verification." },
+      { q: "Is my data secure?", a: "Smriti is designed for enterprise security with end-to-end encryption, tenant data isolation, and no model training on customer data without agreement. SOC 2 alignment is scoped per engagement." },
+      { q: "Can Smriti integrate with our existing tools?", a: "Yes. Smriti offers APIs and integrations with Slack, Teams, Google Drive, Dropbox, and custom data sources." },
+    ],
+  },
+  {
+    slug: "medimind-ai",
+    title: "Arogya",
+    cardDescriptor: "Healthcare AI",
+    shortDesc: "Improve clinical throughput and documentation accuracy with healthcare AI built for governance-first workflow integration.",
+    heroTitle: "Arogya: Clinical Documentation AI",
+    heroDesc: "Healthcare accelerator modules for structured clinical documentation and triage support, maintained within HIPAA-sovereign control boundaries.",
+    heroImage: SOLUTION_HERO_IMAGES["medimind-ai"],
+    overview: "Arogya is a NeuralTrix healthcare intelligence accelerator engineered for clinical safety and operational throughput. It separates administrative documentation from patient-clinician interactions, using governed NLP to generate structured, verifiable records that integrate with legacy EHR systems while maintaining data sovereignty.",
+    features: [
+      { title: "Clinical Documentation", desc: "AI-assisted note-taking that generates structured clinical documentation from physician-patient conversations." },
+      { title: "Diagnostic Assistance", desc: "AI-powered symptom analysis and differential diagnosis suggestions to support clinical decision-making." },
+      { title: "Patient Communication", desc: "Automated appointment reminders, follow-up messages, and health education content personalized per patient." },
+      { title: "Medical Records Analysis", desc: "Extract insights from electronic health records, lab results, and imaging reports for population health management." },
+      { title: "Billing Optimization", desc: "AI-driven coding suggestions and claim optimization to reduce denials and accelerate reimbursement." },
+      { title: "HIPAA Compliance", desc: "Built for healthcare with encryption, access controls, audit trails, and BAA agreements." },
+    ],
+    useCases: ["Hospital systems", "Primary care clinics", "Telehealth platforms", "Health insurance companies", "Clinical research organizations", "Home healthcare providers"],
+    tech: ["HIPAA Compliance", "GPT-4o", "Azure Health", "FHIR/HL7", "React Native", "Python"],
+    faqs: [
+      { q: "Is Arogya HIPAA compliant?", a: "Arogya is designed for HIPAA-aligned deployments with BAA agreements, encryption, access controls, audit logging, and third-party security reviews scoped to your program." },
+      { q: "Can it integrate with our EHR system?", a: "Yes. Arogya integrates with major EHR systems through FHIR/HL7 standards, including Epic, Cerner, Allscripts, and others." },
+      { q: "Does it replace physicians?", a: "No. Arogya assists healthcare professionals; all AI suggestions require physician review and approval." },
+      { q: "What about patient data privacy?", a: "Patient data is encrypted at rest and in transit, stored in HIPAA-compliant infrastructure, and not used for model training without explicit agreement." },
+    ],
+  },
+  {
+    slug: "talentify-ai",
+    title: "Pratibha",
+    cardDescriptor: "Talent and recruitment AI",
+    shortDesc: "Increase recruitment throughput with bias-mitigated matching and structured decision support across talent pipelines.",
+    heroTitle: "Pratibha: Intelligent Recruitment Platform",
+    heroDesc: "Recruitment accelerator modules for resume synthesis and intent-aware candidate matching, designed for high-volume enterprise hiring.",
+    heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
+    overview: "Pratibha is a NeuralTrix recruitment intelligence accelerator that optimizes candidate-to-role matching. By separating core skill signals from demographic noise, Pratibha provides bias-mitigated screening and intent-aware shortlist generation, enabling talent teams to process large pipelines with auditable decision gates.",
+    features: [
+      { title: "AI Resume Screening", desc: "Automatically parse, score, and rank resumes against job requirements with bias-mitigated AI evaluation." },
+      { title: "Smart Matching", desc: "Multi-dimensional matching algorithm that considers skills, experience, culture fit, and growth potential." },
+      { title: "Interview Intelligence", desc: "Generate role-specific interview questions and provide AI-powered interview scoring and feedback." },
+      { title: "Career Guidance", desc: "AI-powered career path recommendations, skill gap analysis, and personalized learning suggestions for candidates." },
+      { title: "Diversity Analytics", desc: "Track and improve diversity metrics across your hiring pipeline with actionable insights and recommendations." },
+      { title: "ATS Integration", desc: "Seamless integration with major ATS platforms including Greenhouse, Lever, Workday, and iCIMS." },
+    ],
+    useCases: ["Enterprise recruitment teams", "Staffing agencies", "Job boards", "University career centers", "HR technology platforms", "Gig economy platforms"],
+    tech: ["NLP", "Machine Learning", "React", "Node.js", "PostgreSQL", "Elasticsearch"],
+    faqs: [
+      { q: "How does AI matching reduce bias?", a: "Pratibha uses skill-based matching focused on capabilities and potential. Algorithm fairness reviews and bias metrics dashboards are available per engagement." },
+      { q: "Can it handle high-volume hiring?", a: "Yes. Pratibha is designed for scale and can process thousands of applications per hour with real-time ranking." },
+      { q: "Does it integrate with our ATS?", a: "Yes. Native integrations include Greenhouse, Lever, Workday, iCIMS, and custom ATS platforms through our API." },
+      { q: "What about candidate data privacy?", a: "Pratibha supports GDPR and CCPA requirements. Candidate data is encrypted, access-controlled, and subject to deletion requests per your policy." },
+    ],
+  },
+  {
+    slug: "quikbiz-ai",
+    title: "Samvad",
+    cardDescriptor: "Conversational commerce",
+    shortDesc: "Improve conversion and engagement through conversational modules mapped to product knowledge and audience intent.",
+    heroTitle: "Samvad: Conversational Commerce Platform",
+    heroDesc: "Commerce accelerator modules that unify product knowledge and customer intent into a governed conversational engine across digital channels.",
+    heroImage: SOLUTION_HERO_IMAGES["quikbiz-ai"],
+    overview: "Samvad is a NeuralTrix conversational commerce accelerator designed for multi-channel engagement. It uses a unified product-intent graph for context-aware interactions that support qualification and support workflows without compromising brand controls or operational governance.",
+    features: [
+      { title: "Contextual Conversations", desc: "AI that understands your business context and provides relevant, accurate responses to customer queries." },
+      { title: "Lead Qualification", desc: "Automatically qualify website visitors based on their questions, behavior, and fit with your ideal customer profile." },
+      { title: "Multi-Channel Deployment", desc: "Deploy across website, WhatsApp, Facebook Messenger, Instagram, and Slack from a single platform." },
+      { title: "Human Handoff", desc: "Seamless escalation to human agents when conversations require personal attention, with full context transfer." },
+      { title: "Analytics Dashboard", desc: "Track conversation metrics, satisfaction scores, conversion rates, and popular topics in real-time." },
+      { title: "Custom Branding", desc: "Customizable chat interface that matches your brand look, voice, and approval workflows." },
+    ],
+    useCases: ["E-commerce websites", "SaaS platforms", "Real estate agencies", "Financial services", "Travel companies", "Healthcare providers"],
+    tech: ["RAG", "GPT-4o", "WebSocket", "React", "Node.js", "Redis", "MongoDB"],
+    faqs: [
+      { q: "How does Samvad learn about my business?", a: "Samvad ingests website content, product catalogs, FAQ documents, and knowledge base articles to build a governed understanding of your business." },
+      { q: "Can it handle multiple languages?", a: "Yes. Samvad supports 50+ languages with automatic language detection and translation capabilities." },
+      { q: "What if the AI cannot answer a question?", a: "Samvad includes fallback paths: escalation to human agents, support ticket creation, or clarifying questions based on your rules." },
+      { q: "How quickly can we deploy?", a: "A baseline deployment can be live within 48 hours. Full customization with integrations is typically scoped in a 1–2 week pilot." },
+    ],
+  },
+  {
+    slug: "intellibot-ai",
+    title: "Kosha",
+    cardDescriptor: "Enterprise knowledge",
+    shortDesc: "Unify enterprise knowledge sources through permission-aware semantic retrieval and multi-source context mapping.",
+    heroTitle: "Kosha: Enterprise Knowledge Assistant",
+    heroDesc: "Knowledge accelerator modules that connect heterogeneous organizational sources into a permission-governed semantic interface for internal teams.",
+    heroImage: SOLUTION_HERO_IMAGES["intellibot-ai"],
+    overview: "Kosha is a NeuralTrix enterprise knowledge accelerator for permission-sovereign information discovery. It maps data silos—from Confluence to SharePoint—into a unified semantic layer so employees retrieve context-aware answers through controls that respect existing role-based access and security boundaries.",
+    features: [
+      { title: "Multi-Source Ingestion", desc: "Connect to Confluence, SharePoint, Google Drive, Notion, Slack, Jira, and 50+ other data sources." },
+      { title: "Semantic Search", desc: "Find information based on meaning, not just keywords. Kosha understands context and intent." },
+      { title: "Auto-Updated Knowledge", desc: "Automatically syncs with your data sources so answers reflect the latest approved content." },
+      { title: "Permission-Aware", desc: "Respects existing access controls; users only see answers from documents they are authorized to access." },
+      { title: "Conversational Interface", desc: "Natural language Q&A with follow-up questions, clarifications, and multi-turn conversations." },
+      { title: "Usage Analytics", desc: "Understand what questions are asked, identify knowledge gaps, and measure content effectiveness." },
+    ],
+    useCases: ["Internal knowledge management", "IT help desk automation", "Customer support teams", "Onboarding acceleration", "Sales enablement", "Compliance and policy lookup"],
+    tech: ["Vector DB", "LangChain", "GPT-4o", "Pinecone", "Python", "React", "OAuth 2.0"],
+    faqs: [
+      { q: "Which data sources can Kosha connect to?", a: "Kosha supports 50+ integrations including Confluence, SharePoint, Google Drive, Notion, Slack, Jira, GitHub, Zendesk, Salesforce, and custom APIs." },
+      { q: "How does it handle permissions?", a: "Kosha syncs with permission systems (Active Directory, Google Workspace, Okta) so users only see authorized information." },
+      { q: "How often is the knowledge base updated?", a: "Kosha continuously syncs with connected sources. Most integrations update within minutes of content changes." },
+      { q: "Can it be deployed on-premise?", a: "Yes. Kosha offers cloud and on-premise deployment options for organizations with strict data residency requirements." },
+    ],
+  },
+];
+
+export default solutions;

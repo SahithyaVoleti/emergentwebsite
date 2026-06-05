@@ -1,0 +1,23 @@
+/* NeuralTrix AI - Corporate Styles */
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #2563EB;
+  color: white;
+}
+
+/* Hide Emergent badge if re-injected by dev/preview tooling */
+#emergent-badge {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Global body copy alignment */
+p,
+li {
+  text-align: justify;
+  text-justify: inter-word;
+}
