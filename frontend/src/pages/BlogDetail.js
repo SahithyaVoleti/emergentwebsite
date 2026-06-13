@@ -1,4 +1,4 @@
-﻿import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { BookOpen, Share2 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
@@ -25,6 +25,24 @@ export default function BlogDetail() {
 
   const headings = article.content.filter((b) => b.type === "heading");
   const meta = `${article.date} · ${article.readTime}`;
+  const shareUrl = encodeURIComponent(
+    `${window.location.origin}/blog/${article.slug}`
+  );
+  const shareTitle = encodeURIComponent(article.title);
+  const shareLinks = [
+    {
+      label: "Twitter",
+      href: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`,
+    },
+    {
+      label: "LinkedIn",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
+    },
+    {
+      label: "Email",
+      href: `mailto:?subject=${shareTitle}&body=${shareUrl}`,
+    },
+  ];
 
   return (
     <SitePageMain>
@@ -61,14 +79,16 @@ export default function BlogDetail() {
                     <Share2 size={14} aria-hidden /> Share
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Twitter", "LinkedIn", "Email"].map((s) => (
-                      <button
-                        key={s}
-                        type="button"
+                    {shareLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target={link.label === "Email" ? undefined : "_blank"}
+                        rel={link.label === "Email" ? undefined : "noopener noreferrer"}
                         className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
                       >
-                        {s}
-                      </button>
+                        {link.label}
+                      </a>
                     ))}
                   </div>
                 </div>

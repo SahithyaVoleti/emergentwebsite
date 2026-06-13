@@ -1,5 +1,19 @@
 # NeuralTrix AI - PRD
 
+## Current local architecture (June 2026)
+
+This export is a **static React marketing site**:
+
+- Content is authored in `frontend/src/data/*.js`
+- Contact forms redirect to WhatsApp (`frontend/src/utils/whatsappLead.js`)
+- No local FastAPI backend, MongoDB, or admin CMS is included
+- Deploy via Vercel static build (`vercel.json`)
+- Navigation is centralized in `frontend/src/lib/siteNav.js` (header + footer)
+- SEO metadata via `react-helmet-async` (`RouteMeta`, `PageMeta`, `pageMeta.js`)
+- Routes are lazy-loaded in `App.js` for smaller initial bundle
+
+Historical Emergent preview environments included a FastAPI + MongoDB CMS validated by `backend_test.py` against a remote URL. Treat that script as optional remote integration testing, not local app behavior.
+
 ## Problem Statement
 Create a corporate website for NeuralTrix AI (AI consulting & software development) based on openxcell.com structure, with navy blue + white corporate style, plain colors. All sections from reference site + individual subpages for every section + careers page.
 
@@ -43,8 +57,9 @@ Create a corporate website for NeuralTrix AI (AI consulting & software developme
 - GET /api/contact - Retrieves submissions
 
 ## Prioritized Backlog
-- P1: SEO meta tags per page, Open Graph tags
-- P1: Blog CMS / admin panel for managing articles
+- P1: ~~SEO meta tags per page, Open Graph tags~~ (implemented via react-helmet-async)
+- P1: Blog CMS / admin panel for managing articles (requires restored backend or external CMS)
 - P2: Newsletter subscription functionality
 - P2: Pricing/cost estimation section on service pages
 - P3: Search functionality across all pages
+- P3: Replace CRA build toolchain with Vite or similar

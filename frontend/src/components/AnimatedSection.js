@@ -1,9 +1,18 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 export default function AnimatedSection({ children, className = "", delay = 0, direction = "up" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   const variants = {
     hidden: {
@@ -35,6 +44,15 @@ export default function AnimatedSection({ children, className = "", delay = 0, d
 export function StaggerChildren({ children, className = "", stagger = 0.08 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -50,6 +68,12 @@ export function StaggerChildren({ children, className = "", stagger = 0.08 }) {
 }
 
 export function StaggerItem({ children, className = "" }) {
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

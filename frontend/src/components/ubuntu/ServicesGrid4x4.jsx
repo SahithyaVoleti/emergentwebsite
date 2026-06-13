@@ -1,7 +1,6 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
-
 /**
  * Services catalog as a responsive 4-column card grid (4×2 for eight tracks on large screens).
  */
@@ -44,8 +43,7 @@ export default function ServicesGrid4x4({
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
           {services.map((service) => {
             const Icon = service.icon;
-            return (
-              <Link
+            return (              <Link
                 key={service.slug}
                 to={`/services/${service.slug}`}
                 data-testid={`service-grid-card-${service.slug}`}
@@ -64,8 +62,7 @@ export default function ServicesGrid4x4({
                       <Icon size={16} strokeWidth={2} aria-hidden />
                     </span>
                   )}
-                </div>
-                <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-3 sm:py-4 group-hover:bg-[#fafafa]">
+                </div>                <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-3 sm:py-4 group-hover:bg-[#fafafa]">
                   <ProductCardHeading className="group-hover:[&_.ubuntu-product-card__heading-text]:text-[#8b1538]">
                     {service.title}
                   </ProductCardHeading>

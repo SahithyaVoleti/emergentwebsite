@@ -1,5 +1,6 @@
-﻿import { useEffect, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import {
   Heart,
   GraduationCap,
@@ -12,7 +13,10 @@ import {
 } from "lucide-react";
 import blogArticles from "../../../data/blog";
 import { HOME_BLOGS_BAND, HOME_DOMAINS } from "../../../data/homePageSections";
+import { COMPANY_LOGO_PATH } from "../../../lib/company";
 import UbuntuLink from "../../ubuntu/UbuntuLink";
+import SectionPatternBackground from "../../SectionPatternBackground";
+import { usePatternSectionHover } from "../../../hooks/usePatternSectionHover";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 
 const INDUSTRY_ICONS = {
@@ -53,7 +57,7 @@ function BlogFeaturedCard({ post }) {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#e5e5e5] pt-6">
           <div className="flex items-center gap-3">
             <img
-              src="/neuraltrix-logo.jpeg"
+              src={COMPANY_LOGO_PATH}
               alt=""
               className="h-10 w-10 rounded-full border border-[#e5e5e5] bg-white object-cover"
             />
@@ -97,44 +101,88 @@ function BlogCompactCard({ post }) {
 }
 
 export function UbuntuHomeIndustries() {
+  const items = HOME_DOMAINS.items;
+  const contentRef = useRef(null);
+  const isInView = useInView(contentRef, { once: true, margin: "-10%" });
+  const prefersReducedMotion = useReducedMotion();
+  const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
+
+  const headerMotion = prefersReducedMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 28 },
+        animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 },
+        transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+      };
+
   return (
     <section
+      ref={sectionRef}
       id={HOME_DOMAINS.id}
       data-testid="home-industries"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className="ubuntu-section-block ubuntu-pattern-section ubuntu-pattern-section--cta ubuntu-section--dark ubuntu-industries-band border-b border-[#d9d9d9]"
       aria-labelledby={`${HOME_DOMAINS.id}-heading`}
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
     >
-      <div className="ubuntu-container">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-          {HOME_DOMAINS.eyebrow}
-        </p>
-        <h2 id={`${HOME_DOMAINS.id}-heading`} className="ubuntu-section-title text-[#111]">
-          {HOME_DOMAINS.title}
-        </h2>
-        {HOME_DOMAINS.lead && (
-          <p className="ubuntu-lead mt-4 max-w-3xl text-[#333]">{HOME_DOMAINS.lead}</p>
-        )}
-        <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
-          {HOME_DOMAINS.items.map((item) => {
-            const Icon = INDUSTRY_ICONS[item.icon] ?? BarChart3;
+      <SectionPatternBackground variant="cta" />
+      <div ref={contentRef} className="ubuntu-container relative z-10">
+        <motion.div
+          className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+          {...headerMotion}
+        >
+          <div className="max-w-2xl">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+              {HOME_DOMAINS.eyebrow}
+            </p>
+            <h2 id={`${HOME_DOMAINS.id}-heading`} className="ubuntu-section-title text-white">
+              {HOME_DOMAINS.title}
+            </h2>
+            {HOME_DOMAINS.lead && (
+              <p className="ubuntu-lead mt-3 text-white/90">{HOME_DOMAINS.lead}</p>
+            )}
+          </div>
+          {HOME_DOMAINS.viewAllHref && (
+            <UbuntuLink to={HOME_DOMAINS.viewAllHref} muted className="shrink-0 !text-[#e8b4b8]">
+              {HOME_DOMAINS.viewAllLabel}
+            </UbuntuLink>
+          )}
+        </motion.div>
+
+        <ul className="ubuntu-industries-band__grid mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:mt-10 lg:grid-cols-7">
+          {items.map((item, index) => {
+            const Icon = item.icon ?? INDUSTRY_ICONS[item.iconKey] ?? BarChart3;
+            const itemMotion = prefersReducedMotion
+              ? {}
+              : {
+                  initial: { opacity: 0, y: 32, scale: 0.88 },
+                  animate: isInView
+                    ? { opacity: 1, y: 0, scale: 1 }
+                    : { opacity: 0, y: 32, scale: 0.88 },
+                  transition: {
+                    duration: 0.55,
+                    delay: 0.12 + index * 0.09,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                };
+
             return (
-              <li key={item.title}>
+              <motion.li
+                key={item.slug ?? item.title}
+                className="min-w-0"
+                {...itemMotion}
+              >
                 <Link
                   to={item.href}
-                  className="ubuntu-industry-icon-card group flex flex-col items-center text-center"
+                  data-testid={`home-industry-link-${item.slug}`}
+                  className="ubuntu-industries-band__link group flex h-full min-h-[7.5rem] flex-col items-center justify-center gap-3 px-3 py-5 text-center sm:min-h-[8.5rem] sm:px-4"
                 >
-                  <span className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 border-[#8b1538] bg-white transition-colors group-hover:border-[#7a1528] group-hover:bg-[#fafafa] sm:h-20 sm:w-20">
-                    <Icon
-                      className="h-8 w-8 text-[#8b1538] transition-colors group-hover:text-[#7a1528] sm:h-9 sm:w-9"
-                      strokeWidth={1.5}
-                      aria-hidden
-                    />
+                  <span className="ubuntu-industries-band__icon flex h-11 w-11 items-center justify-center border border-white/25 bg-[#8b1538]/80 text-white transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={22} strokeWidth={1.75} aria-hidden />
                   </span>
-                  <span className="mt-4 text-sm font-medium leading-snug text-[#111] transition-colors group-hover:text-[#8b1538] sm:text-base">
-                    {item.title}
-                  </span>
+                  <span className="text-sm font-medium leading-snug text-white">{item.title}</span>
                 </Link>
-              </li>
+              </motion.li>
             );
           })}
         </ul>

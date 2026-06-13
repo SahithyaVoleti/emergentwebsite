@@ -2,19 +2,7 @@ import PageHero from "../components/PageHero";
 import UbuntuPartnerGrid from "../components/ubuntu/UbuntuPartnerGrid";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
-
-const partners = [
-  "AWS",
-  "Google Cloud",
-  "Microsoft Azure",
-  "OpenAI",
-  "Anthropic",
-  "Meta AI",
-  "NVIDIA",
-  "Snowflake",
-  "Databricks",
-  "MongoDB",
-];
+import technologyPartners from "../data/partners";
 
 export default function PartnersPage() {
   return (
@@ -27,7 +15,7 @@ export default function PartnersPage() {
         illustrationKey="solutions"
       />
 
-      <UbuntuPartnerGrid partners={partners} />
+      <UbuntuPartnerGrid partners={technologyPartners} />
 
       <PageStandardSections pageKey="partners" contactContext="Partners Page" />
     </SitePageMain>

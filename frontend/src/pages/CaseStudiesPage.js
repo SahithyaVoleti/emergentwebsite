@@ -3,20 +3,22 @@ import CaseStudiesVerticalSlider from "../components/ubuntu/CaseStudiesVerticalS
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import caseStudies from "../data/caseStudies";
-import { TRACEFOLD } from "../lib/tracefoldLabel";
+import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 export default function CaseStudiesPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Delivery scenarios"
-        title={`${TRACEFOLD}-Indexed Programs Aligned to Our Services`}
-        description={`These ${TRACEFOLD} narratives show how NeuralTrix approaches common AI and software problems, so you can judge fit before a pilot. They are not endorsements or guarantees from named customers.`}
+        label="Delivery patterns"
+        title="Delivery patterns & pilot work"
+        description="Tracefold narratives show how NeuralTrix approaches common AI and software problems—so you can judge fit before a pilot. They are not endorsements from named customers."
         primaryCTA={{
-          text: "Schedule a consultation",
+          text: "Start a pilot",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
+        secondaryCTA={{ text: "How we work", href: "/testimonials" }}
+        image={LISTING_PAGE_HERO_IMAGES.caseStudies}
         illustrationKey="caseStudies"
       />
 
@@ -24,18 +26,18 @@ export default function CaseStudiesPage() {
         studies={caseStudies}
         id="case-studies-catalog"
         showLabel
-        eyebrow="Coverage"
-        title={
-          <>
-            Coverage across <span className="text-[#8b1538]">{TRACEFOLD} scenarios</span>
-          </>
-        }
-        lead={`Scroll through representative ${TRACEFOLD} narratives. Each panel describes a problem class we address.`}
+        eyebrow="Patterns"
+        title="Representative delivery narratives"
+        lead="Each card is tagged with an honest status. Scroll to compare scenarios, then contact us to scope something concrete."
         viewAllHref={undefined}
         className="!border-t-0"
       />
 
-      <PageStandardSections pageKey="caseStudies" contactContext="Case Studies Page" />
+      <PageStandardSections
+        pageKey="caseStudies"
+        contactContext="Case Studies Page"
+        includeAssurance={false}
+      />
     </SitePageMain>
   );
 }

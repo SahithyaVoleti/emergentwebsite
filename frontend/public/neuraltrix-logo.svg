@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="NeuralTrix AI">
+  <rect x="0" y="4" width="32" height="32" rx="6" fill="#8b1538"/>
+  <path d="M10 28V12h4l6 10 6-10h4v16h-3.5V18l-5.5 9h-2l-5.5-9v10H10z" fill="#fff"/>
+  <text x="42" y="27" font-family="Ubuntu, Arial, sans-serif" font-size="18" font-weight="700" fill="#111">NeuralTrix</text>
+  <text x="148" y="27" font-family="Ubuntu, Arial, sans-serif" font-size="14" font-weight="500" fill="#8b1538">AI</text>
+</svg>

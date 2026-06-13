@@ -1,28 +1,17 @@
 ﻿import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import SiteNavLink from "./ubuntu/SiteNavLink";
 import { useSiteNavScroll } from "../hooks/useSiteNavScroll";
 import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
 import SectionPatternBackground from "./SectionPatternBackground";
-import services from "../data/services";
-import solutions from "../data/solutions";
-import industries from "../data/industries";
-
-const servicesLinks = services.map((s) => ({ label: s.title, href: `/services/${s.slug}` }));
-const solutionsLinks = solutions.map((s) => ({ label: s.title, href: `/solutions/${s.slug}` }));
-const industriesLinks = industries.map((i) => ({ label: i.title, href: `/industries/${i.slug}` }));
-
-const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Team", href: "/team" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Technology Partners", href: "/partners" },
-  { label: "Security", href: "/security" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Legal Templates", href: "/legal-templates" },
-  { label: "Careers", href: "/careers" },
-];
+import { COMPANY_LOGO_PATH, COMPANY_NAME } from "../lib/company";
+import {
+  headerCompanyLinks,
+  industryNavLinks,
+  serviceNavLinks,
+  solutionNavLinks,
+} from "../lib/siteNav";
 
 function navLinkClass(isActive) {
   return `ubuntu-nav-link inline-flex items-center gap-1 whitespace-nowrap ${isActive ? "ubuntu-nav-link--active" : ""}`;
@@ -34,13 +23,6 @@ export default function Header({ embedded = false, shell = false }) {
   const isNavCentered = useSiteNavScroll(shell);
   const { sectionRef: navRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
 
-  const scrollToContact = (e) => {
-    if (location.pathname === "/") {
-      e.preventDefault();
-      document.getElementById("page-contact")?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const renderDesktopDropdown = (label, links, basePath) => {
     const isActive = location.pathname.startsWith(basePath);
 
@@ -50,6 +32,8 @@ export default function Header({ embedded = false, shell = false }) {
           type="button"
           data-testid={`nav-link-${label.toLowerCase()}`}
           className={navLinkClass(isActive)}
+          aria-haspopup="menu"
+          aria-expanded={false}
         >
           {label}
           <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />
@@ -91,28 +75,30 @@ export default function Header({ embedded = false, shell = false }) {
       <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link to="/" data-testid="header-logo" className="flex shrink-0 items-center">
           <img
-            src="/neuraltrix-logo.jpeg"
-            alt="NeuralTrix AI"
-            className="h-8 w-auto object-contain"
+            src={COMPANY_LOGO_PATH}
+            alt={COMPANY_NAME}
+            className="h-9 w-auto max-w-[11rem] object-contain object-left sm:h-10 sm:max-w-[14rem]"
           />
         </Link>
 
         <nav className="mx-4 hidden flex-1 items-center justify-center xl:flex" aria-label="Main">
           <div className="flex items-center gap-6 xl:gap-8">
-            {renderDesktopDropdown("Services", servicesLinks, "/services")}
-            {renderDesktopDropdown("Solutions", solutionsLinks, "/solutions")}
-            {renderDesktopDropdown("Industries", industriesLinks, "/industries")}
+            {renderDesktopDropdown("Services", serviceNavLinks, "/services")}
+            {renderDesktopDropdown("Solutions", solutionNavLinks, "/solutions")}
+            {renderDesktopDropdown("Industries", industryNavLinks, "/industries")}
             <div className="relative group">
               <button
                 type="button"
                 data-testid="nav-link-company"
-                className={navLinkClass(companyLinks.some((l) => location.pathname.startsWith(l.href)))}
+                className={navLinkClass(headerCompanyLinks.some((l) => location.pathname.startsWith(l.href)))}
+                aria-haspopup="menu"
+                aria-expanded={false}
               >
                 Company
                 <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />
               </button>
               <div className="ubuntu-nav-dropdown" role="menu">
-                {companyLinks.map((link) => (
+                {headerCompanyLinks.map((link) => (
                   <Link
                     key={link.label}
                     to={link.href}
@@ -137,14 +123,15 @@ export default function Header({ embedded = false, shell = false }) {
         </nav>
 
         <div className="flex shrink-0 items-center justify-end gap-3">
-          <Link
-            to="/#page-contact"
+          <SiteNavLink
+            href="/#page-contact"
             data-testid="header-cta-button"
-            onClick={scrollToContact}
-            className="ubuntu-btn-primary ubuntu-chrome-header__cta-desktop hidden xl:inline-flex"
+            primary
+            showArrow={false}
+            className="ubuntu-chrome-header__cta-desktop hidden xl:inline-flex"
           >
             Contact us
-          </Link>
+          </SiteNavLink>
 
           <button
             data-testid="mobile-menu-toggle"
@@ -165,10 +152,10 @@ export default function Header({ embedded = false, shell = false }) {
           className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-[#fafafa]/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden"
         >
           {[
-            { title: "Services", links: servicesLinks },
-            { title: "Solutions", links: solutionsLinks },
-            { title: "Industries", links: industriesLinks },
-            { title: "Company", links: companyLinks },
+            { title: "Services", links: serviceNavLinks },
+            { title: "Solutions", links: solutionNavLinks },
+            { title: "Industries", links: industryNavLinks },
+            { title: "Company", links: headerCompanyLinks },
           ].map((group) => (
             <div key={group.title} className="pt-3">
               <p className="py-2 text-xs font-medium uppercase tracking-wide text-[#666]">{group.title}</p>
@@ -191,17 +178,16 @@ export default function Header({ embedded = false, shell = false }) {
           >
             Blog
           </Link>
-          <Link
-            to="/#page-contact"
+          <SiteNavLink
+            href="/#page-contact"
             data-testid="mobile-cta-button"
-            onClick={(e) => {
-              setMobileOpen(false);
-              scrollToContact(e);
-            }}
-            className="ubuntu-btn-primary mt-6 w-full"
+            onClick={() => setMobileOpen(false)}
+            primary
+            showArrow={false}
+            className="mt-6 w-full"
           >
             Contact us
-          </Link>
+          </SiteNavLink>
         </div>
       )}
     </>

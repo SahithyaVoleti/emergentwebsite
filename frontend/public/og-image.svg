@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="NeuralTrix AI">
+  <rect width="1200" height="630" fill="#fafafa"/>
+  <rect x="80" y="80" width="80" height="80" rx="12" fill="#8b1538"/>
+  <path d="M105 140V100h10l15 25 15-25h10v40h-9V115l-14 23h-5l-14-23v25h-9z" fill="#fff"/>
+  <text x="180" y="145" font-family="Ubuntu, Arial, sans-serif" font-size="64" font-weight="700" fill="#111">NeuralTrix</text>
+  <text x="620" y="145" font-family="Ubuntu, Arial, sans-serif" font-size="48" font-weight="500" fill="#8b1538">AI</text>
+  <text x="80" y="260" font-family="Ubuntu, Arial, sans-serif" font-size="36" font-weight="400" fill="#333">Applied AI engineering for enterprise programs</text>
+  <rect x="80" y="300" width="1040" height="2" fill="#e5e5e5"/>
+  <text x="80" y="360" font-family="Ubuntu, Arial, sans-serif" font-size="24" fill="#666">Senior-led delivery · Pilot-scoped programs · Documented handover</text>
+</svg>

@@ -2284,7 +2284,7 @@
 .ubuntu-site
   .ubuntu-section-block:not(.ubuntu-pattern-section--hero):not(.ubuntu-pattern-section--cta):not(
     .ubuntu-site-page-chrome__hero
-  ),
+  ):not(.ubuntu-industries-band),
 .ubuntu-site .ubuntu-case-studies-scroll,
 .ubuntu-site .ubuntu-services-slider {
   position: relative;
@@ -2309,12 +2309,125 @@
   font-family: inherit;
 }
 
-/* Industries icon grid */
+/* Industries band — dark animated CTA pattern + staggered tiles */
+
+.ubuntu-site .ubuntu-industries-band.ubuntu-pattern-section--cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.ubuntu-site .ubuntu-industries-band__link {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(139, 21, 56, 0.35);
+  backdrop-filter: blur(6px);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ubuntu-site .ubuntu-industries-band__link:hover {
+  border-color: rgba(232, 180, 184, 0.65);
+  background: rgba(139, 21, 56, 0.55);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+}
+
+.ubuntu-site .ubuntu-industries-band__icon {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
 
 .ubuntu-site .ubuntu-industry-icon-card:focus-visible {
   outline: 2px solid #8b1538;
   outline-offset: 4px;
   border-radius: 4px;
+}
+
+.ubuntu-site .ubuntu-industries-band__link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+.ubuntu-site .ubuntu-industries-band .ubuntu-link-muted {
+  color: #e8b4b8;
+}
+
+.ubuntu-site .ubuntu-industries-band .ubuntu-link-muted:hover {
+  color: #fff;
+}
+
+/* Service detail — unified pilot overview */
+
+.ubuntu-site .service-pilot-overview__sidebar {
+  padding-bottom: 0.5rem;
+}
+
+.ubuntu-site .service-pilot-block:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .ubuntu-site .service-pilot-overview__sidebar {
+    padding-right: 0.5rem;
+  }
+}
+
+/* Solution detail sections */
+
+.ubuntu-site .solution-datasheet {
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
+}
+
+.ubuntu-site .solution-pilot-schedule__row:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.ubuntu-site .solution-fact-tile + .solution-fact-tile {
+  border-top: 0;
+}
+
+@media (min-width: 640px) {
+  .ubuntu-site .grid.sm\:grid-cols-3 > .solution-fact-tile + .solution-fact-tile {
+    border-top: 0;
+    border-left: 1px solid #e5e5e5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ubuntu-site .grid.lg\:grid-cols-1 > .solution-fact-tile + .solution-fact-tile {
+    border-left: 0;
+    border-top: 1px solid #e5e5e5;
+  }
+}
+
+.ubuntu-site .solution-methodology-panel .text-\[\#111\] {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ubuntu-site .solution-methodology-panel .text-\[\#555\] {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ubuntu-site .solution-methodology-panel .border-\[\#d9d9d9\] {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ubuntu-site .solution-methodology-panel .bg-white {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.ubuntu-site .solution-methodology-panel .bg-\[\#d9d9d9\] {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.ubuntu-site .solution-methodology-panel .text-\[\#8b1538\] {
+  color: #e8b4b8;
+}
+
+.ubuntu-site .solution-methodology-panel .text-\[\#ccc\] {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* Blog — featured split + compact carousel */

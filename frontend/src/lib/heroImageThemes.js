@@ -26,6 +26,8 @@ export const LISTING_PAGE_HERO_IMAGES = {
   industries: hq("photo-1451187580459-43490279c0fa"),
   /** Case studies: outcomes & analytics */
   caseStudies: hq("photo-1460925895917-afdab827c52f"),
+  /** Services: engineering delivery & AI consulting */
+  services: hq("photo-1518980120692-3cfe64c152d0"),
   /** Blog: engineering insights & editorial */
   blog: hq("photo-1517694712202-14dd9538aa97"),
 };
@@ -66,6 +68,9 @@ export const CASE_STUDY_HERO_IMAGES = [
 
 /** Blog listing cards + article heroes */
 export const BLOG_ARTICLE_HERO_IMAGES = {
+  "ai-pilot-playbook": hq("photo-1558494949-ef010cbdcc31"),
+  "rag-eval-before-scale": hq("photo-1460925895917-afdab827c52f"),
+  "how-we-price-ai-engagements": hq("photo-1522071820081-4ef5e1c0b612"),
   "augment-code-vs-cursor": hq("photo-1555949963-aa79dcee981c"),
   "claude-vs-chatgpt-coding": hq("photo-1677442136019-21780ecad995"),
   "top-vibe-coding-tools": hq("photo-1461749280684-dccba630e2f6"),

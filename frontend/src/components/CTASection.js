@@ -1,8 +1,9 @@
-﻿import { Link, useLocation } from "react-router-dom";
+﻿import { useLocation } from "react-router-dom";
 import UbuntuSplitLayout from "./ubuntu/UbuntuSplitLayout";
-import UbuntuLink from "./ubuntu/UbuntuLink";
+import SiteNavLink from "./ubuntu/SiteNavLink";
 import { getSiteMockup } from "../data/siteMockups";
-import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
+import { CONTACT_TOPIC } from "../lib/contactIntent";
+import { isContactHref, resolveNavTarget } from "../lib/siteNavigation";
 
 export default function CTASection({
   title,
@@ -19,6 +20,7 @@ export default function CTASection({
     contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
   const mockup = getSiteMockup(mockupKey);
   const href = buttonHref?.trim() || "#page-contact";
+  const servicesTarget = resolveNavTarget("/services", location.pathname);
 
   return (
     <UbuntuSplitLayout
@@ -29,7 +31,6 @@ export default function CTASection({
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition="right"
-
     >
       {!hideLabel && (
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
@@ -37,33 +38,29 @@ export default function CTASection({
         </p>
       )}
       <h2 data-testid="cta-title" className="ubuntu-section-title text-white">
-        {title || "Next Step for Your AI and Software Initiative"}
+        {title || "Ready to scope a pilot?"}
       </h2>
       <p className="ubuntu-lead text-white/85">
         {description ||
-          "Contact us to discuss scope, timeline, and fit. We respond with a structured view of options, dependencies, and governance considerations for your environment."}
+          "30-minute discovery call · Fixed-scope pilot proposal within 5 business days · No slide-deck-only engagements"}
       </p>
       <div className="ubuntu-cta-row">
-        {href.startsWith("http") || href.startsWith("mailto:") ? (
-          <a href={href} className="ubuntu-btn-primary">
-            {buttonText || "Contact us"}
-          </a>
-        ) : href === "#page-contact" ? (
-          <Link to={contactFormTo(location.pathname, topic)} className="ubuntu-btn-primary">
-            {buttonText || "Contact us"}
-          </Link>
-        ) : href.startsWith("#") ? (
-          <a href={href} className="ubuntu-btn-primary">
-            {buttonText || "Contact us"}
-          </a>
-        ) : (
-          <Link to={href} className="ubuntu-btn-primary">
-            {buttonText || "Contact us"}
-          </Link>
-        )}
-        <UbuntuLink to="/#services-grid" className="!text-[#e8b4b8]">
+        <SiteNavLink
+          href={href}
+          contactIntent={isContactHref(href) ? contactIntent : undefined}
+          primary
+          showArrow={false}
+          className={compact ? "text-sm" : ""}
+        >
+          {buttonText || (contactIntent === "consultation" ? "Start a pilot" : "Contact us")}
+        </SiteNavLink>
+        <SiteNavLink
+          href={servicesTarget.type === "route" ? servicesTarget.to : "/services"}
+          muted
+          className="!text-[#e8b4b8]"
+        >
           View services
-        </UbuntuLink>
+        </SiteNavLink>
       </div>
     </UbuntuSplitLayout>
   );

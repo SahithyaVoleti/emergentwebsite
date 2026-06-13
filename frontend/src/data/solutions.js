@@ -30,7 +30,7 @@ const solutions = [
       { q: "What file formats does Smriti support?", a: "Smriti supports PDF, DOCX, XLSX, PPTX, CSV, TXT, MP3, WAV, MP4, and common image formats. Additional formats are added as customer programs require." },
       { q: "How accurate are the AI responses?", a: "Smriti uses RAG technology to ground responses in your documents, with source citations on every answer for verification." },
       { q: "Is my data secure?", a: "Smriti is designed for enterprise security with end-to-end encryption, tenant data isolation, and no model training on customer data without agreement. SOC 2 alignment is scoped per engagement." },
-      { q: "Can Smriti integrate with our existing tools?", a: "Yes. Smriti offers APIs and integrations with Slack, Teams, Google Drive, Dropbox, and custom data sources." },
+      { q: "Can Smriti integrate with our existing tools?", a: "APIs and integrations with common tools (Slack, Teams, Drive, etc.) are available in pilot scope—we document effort during discovery." },
     ],
   },
   {

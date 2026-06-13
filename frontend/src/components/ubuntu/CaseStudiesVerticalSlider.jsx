@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { TRACEFOLD } from "../../lib/tracefoldLabel";
+import { CASE_STUDY_STATUS_LABELS } from "../../data/caseStudies";
 import UbuntuLink from "./UbuntuLink";
 
 const SLIDE_VH = 85;
@@ -145,8 +146,15 @@ export default function CaseStudiesVerticalSlider({
                         className="absolute inset-0 h-full w-full object-cover"
                         loading={index <= 1 ? "eager" : "lazy"}
                       />
-                      <div className="absolute left-4 top-4 bg-[#8b1538] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
-                        {cs.industry}
+                      <div className="absolute left-4 top-4 flex flex-col gap-1">
+                        <span className="bg-[#8b1538] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white w-fit">
+                          {cs.industry}
+                        </span>
+                        {cs.status && (
+                          <span className="bg-[#111]/85 px-2 py-1 text-[10px] font-medium text-white w-fit">
+                            {CASE_STUDY_STATUS_LABELS[cs.status] ?? cs.status}
+                          </span>
+                        )}
                       </div>
                     </div>
 

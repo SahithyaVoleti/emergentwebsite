@@ -65,6 +65,30 @@ export const SITE_MOCKUPS = {
     src: hq("photo-1450101499163-c8848c66ca85"),
     alt: "Compliance and policy documentation mockup",
   },
+  services: {
+    src: hq("photo-1518980120692-3cfe64c152d0"),
+    alt: "AI engineering services delivery mockup",
+  },
+  about: {
+    src: hq("photo-1522071820081-4ef5e1c0b612"),
+    alt: "About NeuralTrix team and mission mockup",
+  },
+  industries: {
+    src: hq("photo-1451187580459-43490279c0fa"),
+    alt: "Industry vertical programs mockup",
+  },
+  caseStudies: {
+    src: hq("photo-1460925895917-afdab827c52f"),
+    alt: "Delivery patterns and pilot work mockup",
+  },
+  blog: {
+    src: hq("photo-1517694712202-14dd9538aa97"),
+    alt: "Engineering blog and resources mockup",
+  },
+  solutions: {
+    src: hq("photo-1456324504439-367ceeef0852"),
+    alt: "Solution accelerator modules mockup",
+  },
 };
 
 export function getSiteMockup(key) {

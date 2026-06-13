@@ -4,9 +4,16 @@ import { CASE_STUDY_HERO_IMAGES as caseStudyHeroes } from "../lib/heroImageTheme
  * Tracefold delivery narratives: problem classes NeuralTrix is built to address.
  * Not depictions of completed customer programs; use them to compare your situation to our methods.
  */
+const CASE_STUDY_STATUS_LABELS = {
+  representative: "Representative delivery pattern",
+  pilot: "Customer pilot (anonymized)",
+  "internal-rd": "Internal R&D",
+};
+
 const caseStudies = [
   {
     slug: "ai-video-creation",
+    status: "representative",
     archetype: "Media & brand content teams",
     title: "Tracefold: AI-assisted video and avatar production",
     industry: "Media & Content",
@@ -42,6 +49,7 @@ const caseStudies = [
   },
   {
     slug: "smart-teaching-platform",
+    status: "representative",
     archetype: "Schools, districts, and EdTech products",
     title: "Tracefold: educator workflows with AI assistance",
     industry: "Education",
@@ -74,6 +82,7 @@ const caseStudies = [
   },
   {
     slug: "ai-astrology-app",
+    status: "representative",
     archetype: "Consumer product companies",
     title: "Tracefold: LLM-powered consumer application",
     industry: "Consumer Tech",
@@ -105,6 +114,7 @@ const caseStudies = [
   },
   {
     slug: "ai-trip-planner",
+    status: "representative",
     archetype: "Travel and mobility products",
     title: "Tracefold: conversational planning with live data",
     industry: "Travel",
@@ -136,4 +146,5 @@ const caseStudies = [
   },
 ];
 
+export { CASE_STUDY_STATUS_LABELS };
 export default caseStudies;

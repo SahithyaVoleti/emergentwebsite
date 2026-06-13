@@ -1,18 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
-import UbuntuLink from "./UbuntuLink";
+import SiteNavLink from "./SiteNavLink";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
 import { DEFAULT_PAGE_HERO_IMAGE } from "../../lib/heroImageThemes";
 import { getSiteMockup } from "../../data/siteMockups";
-import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
-
-function scrollToSelector(e, hashSelector) {
-  e.preventDefault();
-  const target = document.querySelector(hashSelector);
-  if (target) {
-    const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
-    window.scrollTo({ top, behavior: "smooth" });
-  }
-}
+import {
+  COMPANY_PROOF_LINE,
+  PRIMARY_CTA_LABEL,
+  SECONDARY_CTA_LABEL,
+} from "../../lib/company";
 
 export default function UbuntuPageHero({
   label,
@@ -21,71 +15,42 @@ export default function UbuntuPageHero({
   primaryCTA,
   secondaryCTA,
   image,
+  illustrationKey,
+  showProofLine = true,
   hideContent = false,
   imagePosition = "right",
   embedded = false,
 }) {
-  const location = useLocation();
+  const resolvedPrimary = primaryCTA ?? {
+    text: PRIMARY_CTA_LABEL,
+    href: "#page-contact",
+    contactIntent: "consultation",
+  };
+  const resolvedSecondary = secondaryCTA ?? {
+    text: SECONDARY_CTA_LABEL,
+    href: "/services",
+  };
   const mockup = image
     ? { src: image, alt: title ? `${title} — product mockup` : "Page hero mockup" }
-    : getSiteMockup("hero");
-
-  const contactTopicFor = (cta) =>
-    cta?.contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
+    : illustrationKey
+      ? getSiteMockup(illustrationKey)
+      : getSiteMockup("hero");
 
   const renderCta = (cta, primary = false) => {
     if (!cta) return null;
     const href = cta.href?.trim();
-    if (primary) {
-      if (href === "#page-contact") {
-        return (
-          <Link to={contactFormTo(location.pathname, contactTopicFor(cta))} className="ubuntu-btn-primary">
-            {cta.text}
-          </Link>
-        );
-      }
-      if (href?.startsWith("#")) {
-        return (
-          <a href={href} className="ubuntu-btn-primary" onClick={(e) => scrollToSelector(e, href)}>
-            {cta.text}
-          </a>
-        );
-      }
-      if (href?.startsWith("http") || href?.startsWith("mailto:")) {
-        return (
-          <a href={href} className="ubuntu-btn-primary" target="_blank" rel="noreferrer">
-            {cta.text}
-          </a>
-        );
-      }
-      return (
-        <Link to={href || "/"} className="ubuntu-btn-primary">
-          {cta.text}
-        </Link>
-      );
-    }
+    if (!href) return null;
 
-    if (href === "#page-contact") {
-      return <UbuntuLink to={contactFormTo(location.pathname, contactTopicFor(cta))}>{cta.text}</UbuntuLink>;
-    }
-    if (href?.startsWith("#")) {
-      return (
-        <a href={href} className="ubuntu-link-muted" onClick={(e) => scrollToSelector(e, href)}>
-          {cta.text}
-        </a>
-      );
-    }
-    if (href?.startsWith("http") || href?.startsWith("mailto:")) {
-      return (
-        <a href={href} className="ubuntu-link-muted" target="_blank" rel="noreferrer">
-          {cta.text}
-        </a>
-      );
-    }
     return (
-      <UbuntuLink to={href || "/"} muted>
+      <SiteNavLink
+        href={href}
+        contactIntent={cta.contactIntent}
+        primary={primary}
+        muted={!primary}
+        showArrow={!primary}
+      >
         {cta.text}
-      </UbuntuLink>
+      </SiteNavLink>
     );
   };
 
@@ -125,9 +90,12 @@ export default function UbuntuPageHero({
         </h1>
       )}
       {description && <p className="ubuntu-lead mt-4">{description}</p>}
+      {showProofLine && (
+        <p className="mt-3 text-sm font-medium text-[#555]">{COMPANY_PROOF_LINE}</p>
+      )}
       <div className="ubuntu-cta-row">
-        {renderCta(primaryCTA, true)}
-        {renderCta(secondaryCTA, false)}
+        {renderCta(resolvedPrimary, true)}
+        {renderCta(resolvedSecondary, false)}
       </div>
     </UbuntuSplitLayout>
   );

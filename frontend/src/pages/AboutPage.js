@@ -9,52 +9,8 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 import { getSiteMockup } from "../data/siteMockups";
-
-const team = [
-  {
-    name: "Arjun Mehta",
-    role: "CEO & Co-founder",
-    bio: "Product-minded operator focused on shipping AI systems customers actually run.",
-  },
-  {
-    name: "Sarah Chen",
-    role: "CTO & Co-founder",
-    bio: "Hands-on ML lead, architecture through evaluation harnesses and production monitoring.",
-  },
-  {
-    name: "David Okafor",
-    role: "Principal Engineer",
-    bio: "Distributed systems and shipping discipline from high-growth platform teams.",
-  },
-  {
-    name: "Lisa Park",
-    role: "Head of Product",
-    bio: "Turns ambiguous AI ideas into scoped milestones teams can execute.",
-  },
-  {
-    name: "Raj Patel",
-    role: "Lead Applied Scientist",
-    bio: "LLMs, retrieval, and evaluation, making models behave in the wild.",
-  },
-  {
-    name: "Maria Santos",
-    role: "Customer Programs",
-    bio: "Keeps pilots honest on outcomes, timelines, and handover clarity.",
-  },
-];
-
-const partners = [
-  "AWS",
-  "Google Cloud",
-  "Microsoft Azure",
-  "OpenAI",
-  "Anthropic",
-  "Meta AI",
-  "NVIDIA",
-  "Snowflake",
-  "Databricks",
-  "MongoDB",
-];
+import teamMembers from "../data/team";
+import technologyPartners from "../data/partners";
 
 const values = [
   {
@@ -124,9 +80,10 @@ export default function AboutPage() {
       <UbuntuTeamGrid
         title="Coverage across the delivery team"
         lead="Senior practitioners engaged on workstreams so stakeholders interact with decision-makers responsible for outcomes."
+        members={teamMembers}
       />
 
-      <UbuntuPartnerGrid partners={partners} />
+      <UbuntuPartnerGrid partners={technologyPartners} />
 
       <PageStandardSections pageKey="about" contactContext="About Page" />
     </SitePageMain>

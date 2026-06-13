@@ -97,8 +97,11 @@ export default function SolutionsAcceleratorCarousel({
                     >
                       <p className="ubuntu-solutions-carousel__descriptor">
                         {item.cardDescriptor || item.domain}
+                        {item.pilotDuration ? ` · Pilot-ready in ${item.pilotDuration}` : " · Pilot-ready in 4–6 weeks"}
                       </p>
-                      <h3 className="ubuntu-solutions-carousel__title">{item.title}</h3>
+                      <h3 className="ubuntu-solutions-carousel__title">
+                        {item.cardDescriptor ? `${item.title} — ${item.cardDescriptor}` : item.title}
+                      </h3>
                       <p className="ubuntu-solutions-carousel__text">
                         {item.shortDesc || item.summary || item.heroDesc}
                       </p>

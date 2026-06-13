@@ -39,6 +39,23 @@ let webpackConfig = {
     },
     configure: (webpackConfig) => {
 
+      // Stale source-map-loader paths can break when router versions change.
+      webpackConfig.module.rules = webpackConfig.module.rules.map((rule) => {
+        if (!rule.oneOf) return rule;
+        return {
+          ...rule,
+          oneOf: rule.oneOf.map((oneOfRule) => {
+            if (oneOfRule.loader && String(oneOfRule.loader).includes("source-map-loader")) {
+              return {
+                ...oneOfRule,
+                exclude: [/node_modules\/react-router-dom/],
+              };
+            }
+            return oneOfRule;
+          }),
+        };
+      });
+
       // Add ignored patterns to reduce watched directories
         webpackConfig.watchOptions = {
           ...webpackConfig.watchOptions,

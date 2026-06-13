@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MapPin, Clock, Briefcase, ChevronDown, ChevronUp, Award, Coffee, BookOpen, Heart, Globe, Users } from "lucide-react";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
@@ -22,6 +22,8 @@ function JobCard({ job }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={`job-details-${job.id}`}
         className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-[#fafafa] sm:p-8"
       >
         <div>
@@ -46,7 +48,7 @@ function JobCard({ job }) {
         )}
       </button>
       {open && (
-        <div className="border-t border-[#e5e5e5] px-6 pb-8 pt-6 sm:px-8">
+        <div id={`job-details-${job.id}`} className="border-t border-[#e5e5e5] px-6 pb-8 pt-6 sm:px-8">
           <p className="mb-6 text-sm leading-relaxed text-[#555]">{job.description}</p>
           <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#111]">
             Responsibilities

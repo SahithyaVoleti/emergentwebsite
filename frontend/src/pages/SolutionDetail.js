@@ -4,17 +4,23 @@ import PageHero from "../components/PageHero";
 import FAQSection from "../components/FAQSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
-import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuDetailNav from "../components/ubuntu/UbuntuDetailNav";
 import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
-import MethodologyFlowchart from "../components/MethodologyFlowchart";
-import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
-import TechStackLogoGrid from "../components/TechStackLogoGrid";
-import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
+import {
+  SolutionMethodologySection,
+  SolutionOverviewSection,
+  SolutionPilotTimeline,
+} from "../components/solution/SolutionDetailSections";
 import solutions from "../data/solutions";
-import { getSiteMockup } from "../data/siteMockups";
+
+const PILOT_WEEKS = [
+  { week: "1–2", label: "Discovery", desc: "Data boundaries, integration map, acceptance tests." },
+  { week: "3–4", label: "Configure", desc: "Accelerator modules wired to your environment." },
+  { week: "5–6", label: "Validate", desc: "Stakeholder review on representative workloads." },
+  { week: "7–8", label: "Hand over", desc: "Runbooks, access docs, expand/stop decision." },
+];
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -33,17 +39,29 @@ export default function SolutionDetail() {
     );
   }
 
-  const overviewMockup = getSiteMockup("dashboard");
-  const methodologyMockup = getSiteMockup("code");
+  const heroTitle = solution.cardDescriptor
+    ? `${solution.title}: ${solution.cardDescriptor}`
+    : solution.heroTitle;
+
+  const methodologySteps = [
+    {
+      icon: Database,
+      label: "Connect data",
+      desc: "Link sources through permission-aware connectors.",
+    },
+    { icon: Code2, label: "Configure scope", desc: "Define behavior and roles for your pilot." },
+    { icon: Brain, label: "Validate logic", desc: "Review responses against agreed eval sets." },
+    { icon: Zap, label: "Hand over", desc: "Monitor usage and iterate within pilot bounds." },
+  ];
 
   return (
     <SitePageMain>
       <PageHero
-        label="Solutions"
-        title={solution.heroTitle}
-        description={solution.heroDesc}
+        label={solution.cardDescriptor ?? "Solutions"}
+        title={heroTitle}
+        description={`${solution.heroDesc} Not a standalone SaaS product—accelerator modules we deploy into your environment during scoped pilots.`}
         primaryCTA={{
-          text: "Request a briefing",
+          text: "Start a pilot",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
@@ -54,50 +72,17 @@ export default function SolutionDetail() {
       <div id="capabilities">
         <UbuntuDetailNav to="/solutions" label="All solutions" testId="back-to-solutions" />
 
-        <UbuntuPageSection
-          eyebrow="Coverage"
-          title={`Coverage for ${solution.title}`}
-          lead={solution.overview}
-          image={overviewMockup.src}
-          imageAlt={overviewMockup.alt}
-          belowContent={
-            <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <FlatTechStackPanel title="Technology stack" intro="Tools commonly integrated for this accelerator.">
-                <TechStackLogoGrid items={solution.tech} compact className="w-full" />
-              </FlatTechStackPanel>
-            </div>
-          }
-        />
+        <SolutionOverviewSection solution={solution} />
+
+        <SolutionPilotTimeline weeks={PILOT_WEEKS} />
 
         <ArchitecturalShowcase
-          title="Coverage across functional capabilities"
-          description="Service modules structured to shorten time-to-value while keeping architecture and operations maintainable."
+          title="What's included in the accelerator"
+          description="Functional modules configured during pilot—not a exhaustive product catalog."
           capabilities={solution.features}
         />
 
-        <UbuntuPageSection
-          eyebrow="Methodology"
-          title="Methodology for accelerator adoption"
-          lead="This methodology sequences connectivity, configuration, validation, and rollout with explicit checkpoints."
-          image={methodologyMockup.src}
-          imageAlt={methodologyMockup.alt}
-          belowContent={
-            <MethodologyFlowchart
-              steps={[
-                {
-                  icon: Database,
-                  label: "Connect data",
-                  desc: "Link existing sources through secure permission-aware connectors.",
-                },
-                { icon: Code2, label: "Configure scope", desc: "Define AI behavior and roles to your needs." },
-                { icon: Brain, label: "Validate logic", desc: "Review and validate ground-truth responses at scale." },
-                { icon: Zap, label: "Scale output", desc: "Go live, monitor usage, and iterate on quality." },
-              ]}
-            />
-          }
-        />
-
-        <DomainAssurance />
+        <SolutionMethodologySection steps={methodologySteps} />
       </div>
 
       <PageStandardSections
@@ -107,14 +92,16 @@ export default function SolutionDetail() {
         includeOutcomes={false}
         includeAssurance={false}
         ctaOverrides={{
-          title: `Next Step for ${solution.title}`,
+          title: `Next step for ${solution.title}`,
           description:
-            "Assess integration effort, governance fit, and operational impact for your environment and stakeholder model.",
+            "Brief us on your environment. We map accelerator fit, integration effort, and a proportionate pilot scope.",
+          buttonText: "Start a pilot",
+          contactIntent: "consultation",
           mockupKey: "dashboard",
         }}
         beforeCta={
           <>
-            <TestimonialsSection title="How we engage new partners" />
+            <TestimonialsSection title="How we engage on accelerator programs" />
             <FAQSection faqs={solution.faqs} />
             <RelatedBlog />
           </>

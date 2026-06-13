@@ -1,6 +1,7 @@
 import { LockKeyhole, Eye, Server, ShieldCheck } from "lucide-react";
 import PageHero from "../components/PageHero";
 import UbuntuFeaturesBand from "../components/ubuntu/UbuntuFeaturesBand";
+import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 
@@ -8,23 +9,29 @@ const pillars = [
   {
     icon: LockKeyhole,
     title: "Secure by design",
-    desc: "Security controls embedded across architecture, development, and deployment workflows.",
+    desc: "Security controls embedded in architecture, development, and deployment—not bolted on after launch.",
   },
   {
     icon: Eye,
-    title: "Governance and auditability",
-    desc: "Traceable controls, review paths, and operational transparency for enterprise assurance.",
+    title: "Access & auditability",
+    desc: "Role-based access, logging, and review paths sized to your program—not generic enterprise claims.",
   },
   {
     icon: Server,
-    title: "Infrastructure hardening",
-    desc: "Environment-level protections, access boundaries, and resilient platform practices.",
+    title: "Data handling",
+    desc: "Classification, retention, and residency decisions documented per engagement.",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance alignment",
-    desc: "Delivery patterns designed to support regulated and security-sensitive industries.",
+    title: "Incident readiness",
+    desc: "Runbooks and escalation paths for models, APIs, and data pipelines in pilot scope.",
   },
+];
+
+const notYetClaims = [
+  "SOC 2 Type II certification (available to scope in future programs)",
+  "Pen-test reports unless contracted per engagement",
+  "Guaranteed compliance with every regional framework without assessment",
 ];
 
 export default function SecurityPage() {
@@ -32,26 +39,34 @@ export default function SecurityPage() {
     <SitePageMain>
       <PageHero
         label="Security"
-        title="Security Practices for Enterprise AI Environments"
-        description="Our security model integrates technical controls, governance checkpoints, and operational safeguards across the full delivery lifecycle."
+        title="Security practices in our delivery"
+        description="How we handle data, access, and change control during pilot and production programs—not a certified enterprise security brochure."
         primaryCTA={{
           text: "Discuss security requirements",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
-        illustrationKey="industries"
+        illustrationKey="security"
       />
 
       <UbuntuFeaturesBand
         id="security-pillars"
-        eyebrow="Coverage"
-        title="Coverage across security controls"
-        lead="This coverage summarizes control areas we address during architecture, build, and operations—not certification claims unless separately contracted."
+        eyebrow="Practices"
+        title="Control areas we address in delivery"
+        lead="These summarize practices we embed in milestones. Certification claims require separate contractual scope."
         items={pillars}
         className="!border-t-0"
       />
 
-      <PageStandardSections pageKey="security" contactContext="Security Page" />
+      <UbuntuPageSection
+        eyebrow="Honest boundaries"
+        title="What we can't claim yet"
+        lead="Early-stage honesty builds trust with security-conscious buyers. Ask us for evidence paths relevant to your review."
+        variant="alt"
+        bullets={notYetClaims}
+      />
+
+      <PageStandardSections pageKey="security" contactContext="Security Page" includeAssurance={false} />
     </SitePageMain>
   );
 }

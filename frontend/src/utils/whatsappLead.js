@@ -1,5 +1,7 @@
+import { COMPANY_CONTACT } from "../lib/company";
+
 /** Digits only, international format without + (e.g. India 91xxxxxxxxxx). */
-const DEFAULT_LEAD_NUMBER = "918142438759";
+const DEFAULT_LEAD_NUMBER = COMPANY_CONTACT.phoneE164;
 
 function normalizeLeadNumber(raw) {
   const d = (raw || DEFAULT_LEAD_NUMBER).replace(/\D/g, "");

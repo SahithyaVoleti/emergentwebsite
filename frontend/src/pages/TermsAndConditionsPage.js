@@ -1,4 +1,5 @@
 ﻿import PageHero from "../components/PageHero";
+import LegalContactBlock from "../components/LegalContactBlock";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
@@ -339,6 +340,8 @@ export default function TermsAndConditionsPage() {
           ))}
         </div>
       </UbuntuListingSection>
+
+      <LegalContactBlock />
 
       <PageStandardSections pageKey="legal" contactContext="Terms and Conditions Page" />
     </SitePageMain>

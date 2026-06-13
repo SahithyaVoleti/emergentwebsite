@@ -1,10 +1,11 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
 import MockupFrame from "./MockupFrame";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { openWhatsAppLead } from "../../utils/whatsappLead";
+import { COMPANY_CONTACT } from "../../lib/company";
 
 const PHONE_COUNTRIES = [
   { code: "IN", dial: "+91", label: "IN +91" },
@@ -106,7 +107,7 @@ export default function UbuntuContactFormSection({
       <CheckCircle2 size={40} className="mb-3 text-[#8b1538]" strokeWidth={1.5} />
       <h3 className="mb-2 text-lg font-medium text-[#111]">Thank you</h3>
       <p className="text-sm text-[#555]">
-        We have received your message and will respond with clear next steps.
+        WhatsApp should open with your message draft. Send it there and we will follow up with clear next steps.
       </p>
       <button
         type="button"
@@ -326,21 +327,23 @@ export default function UbuntuContactFormSection({
             <Mail size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
             <div>
               <p className="text-xs uppercase tracking-wide text-white/60">Email</p>
-              <p className="font-medium text-white">neuraltrixai@yahoo.com</p>
+              <p className="font-medium text-white">{COMPANY_CONTACT.email}</p>
             </div>
           </li>
           <li className="flex items-start gap-3 text-sm">
             <Phone size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
             <div>
               <p className="text-xs uppercase tracking-wide text-white/60">Phone</p>
-              <p className="font-medium text-white">+91 81424 38759</p>
+              <p className="font-medium text-white">{COMPANY_CONTACT.phone}</p>
             </div>
           </li>
           <li className="flex items-start gap-3 text-sm">
             <MapPin size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
             <div>
               <p className="text-xs uppercase tracking-wide text-white/60">Office</p>
-              <p className="font-medium text-white">N-Block, Vignan University, Guntur</p>
+              <p className="font-medium text-white">
+                {COMPANY_CONTACT.addressLine1}, {COMPANY_CONTACT.addressLine2}
+              </p>
             </div>
           </li>
         </ul>

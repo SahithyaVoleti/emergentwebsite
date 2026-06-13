@@ -9,7 +9,7 @@ import UbuntuSplitCopy from "../components/ubuntu/UbuntuSplitCopy";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
-import caseStudies from "../data/caseStudies";
+import caseStudies, { CASE_STUDY_STATUS_LABELS } from "../data/caseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 import { TRACEFOLD } from "../lib/tracefoldLabel";
@@ -47,8 +47,8 @@ export default function CaseStudyDetail() {
 
       <UbuntuPageSection
         variant="alt"
-        eyebrow="Assurance"
-        title={`${TRACEFOLD} delivery pattern`}
+        eyebrow="Status"
+        title={CASE_STUDY_STATUS_LABELS[cs.status] ?? "Representative delivery pattern"}
         lead="This page describes a representative delivery narrative aligned with NeuralTrix services—not a claim about a specific completed customer program."
       />
 

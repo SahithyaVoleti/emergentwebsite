@@ -1,51 +1,44 @@
 import services from "./services";
 import solutions from "./solutions";
 import blogArticles from "./blog";
-import { COMPANY_STARTUP_PITCH } from "../lib/company";
+import industries from "./industries";
+import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from "../lib/company";
 
 const serviceBySlug = (slug) => services.find((s) => s.slug === slug);
 const solutionBySlug = (slug) => solutions.find((s) => s.slug === slug);
 
 /**
- * Canonical homepage order — aligned to CONTENT_STYLE_GUIDE flow:
- * Hero stack → services → stats → features → vision (research CTA) → solutions → philosophy → tech-stack → workflow → coverage → next-step → blogs → contact.
+ * Canonical homepage order — aligned to UbuntuHome.jsx rendered sections.
  *
  * CTA placement:
  * 1. hero-stack — hero + engagement CTA (sticky overlap on hero)
- * 2. stats strip — after services grid
- * 3. vision (research) — after features, before solutions & engineering
- * 4. next-step — after coverage, before blogs
- * 5. contact — after blogs
+ * 2. next-step — before contact
+ * 3. contact — page footer form
  */
 export const HOME_PAGE_LAYOUT = [
   "hero-stack",
   "services",
-  "stats",
-  "features",
-  "vision-cta",
+  "how-we-work",
   "solutions",
-  "philosophy",
-  "tech-stack",
-  "workflow",
   "industries",
-  "next-step",
+  "founder-letter",
   "blogs",
+  "next-step",
   "contact",
 ];
 
 export const HOME_HERO = {
-  title: "Engineering intelligent systems for the future of interdisciplinary innovation",
-  lead: "Applied AI, GenAI platforms, intelligent automation, and scalable enterprise infrastructure engineered for next-generation digital ecosystems.",
-  primaryCta: { label: "Explore solutions", href: "/solutions" },
-  secondaryCta: { label: "About our vision", href: "/about" },
+  title: "NeuralTrix AI — engineering intelligent systems for interdisciplinary innovation",
+  lead: "Applied AI, GenAI platforms, intelligent automation, and scalable enterprise infrastructure for organizations running early, scoped delivery programs.",
+  primaryCta: { label: PRIMARY_CTA_LABEL, href: "/#page-contact?topic=consultation" },
+  secondaryCta: { label: SECONDARY_CTA_LABEL, href: "/#services-grid" },
 };
 
 export const HOME_STARTUP_STATS = [
-  { value: "50+", label: "AI Workflows" },
-  { value: "30+", label: "Intelligent Agents" },
-  { value: "15+", label: "Integrations" },
-  { value: "8+", label: "Industry Domains" },
-  { value: "99.9%", label: "Reliability" },
+  { value: "2026", label: "Founded" },
+  { value: "Senior-led", label: "Delivery leadership" },
+  { value: "Remote-first", label: "Engineering practice" },
+  { value: "Pilot-based", label: "Scoped programs" },
 ];
 
 export const HOME_ALERT = {
@@ -263,21 +256,32 @@ export const HOME_ENGINEERING_SHOWCASES = {
   ],
 };
 
+const HOME_INDUSTRY_ICON_KEYS = {
+  healthcare: "healthcare",
+  education: "education",
+  retail: "commerce",
+  "sports-gaming": "media",
+  fintech: "fintech",
+  manufacturing: "operations",
+  "real-estate": "proptech",
+};
+
 export const HOME_DOMAINS = {
   id: "interdisciplinary-domains",
   eyebrow: "Coverage",
   title: "Industries we serve",
   lead: "Interdisciplinary AI engineering across regulated, operational, and knowledge-intensive fields.",
-  items: [
-    { title: "Healthcare AI", href: "/industries/healthcare", icon: "healthcare" },
-    { title: "Education & learning", href: "/industries/education", icon: "education" },
-    { title: "Commerce & retail", href: "/industries/retail", icon: "commerce" },
-    { title: "Sports & media", href: "/industries/sports-gaming", icon: "media" },
-    { title: "Banking & finance", href: "/industries/fintech", icon: "fintech" },
-    { title: "Travel & operations", href: "/industries/manufacturing", icon: "operations" },
-    { title: "Real estate & PropTech", href: "/industries/real-estate", icon: "proptech" },
-    { title: "Knowledge & analytics", href: "/services/data-engineering", icon: "analytics" },
-  ],
+  viewAllHref: "/industries",
+  viewAllLabel: "View all industries",
+  items: industries.map((industry) => ({
+    slug: industry.slug,
+    title: industry.title,
+    href: `/industries/${industry.slug}`,
+    shortDesc: industry.shortDesc,
+    image: industry.heroImage,
+    icon: industry.icon,
+    iconKey: HOME_INDUSTRY_ICON_KEYS[industry.slug] ?? "analytics",
+  })),
 };
 
 export const HOME_BLOGS_BAND = {
@@ -408,4 +412,9 @@ export const HOME_NEXT_STEP = {
   primaryCta: { label: "Schedule consultation", href: "/#page-contact?topic=consultation" },
   secondaryCta: { label: "Contact team", href: "/#page-contact" },
   tertiaryCta: { label: "Explore solutions", href: "/solutions" },
+  firstCallBullets: [
+    "30-minute discovery call with senior delivery leads",
+    "Pilot scope and success criteria drafted within five business days",
+    "No slide-deck-only engagements",
+  ],
 };

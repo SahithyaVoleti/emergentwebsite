@@ -1,8 +1,6 @@
 ﻿import { HOME_WORKFLOW } from "../../../data/homePageSections";
 import AnimatedSection from "../../AnimatedSection";
-import ArchTimelineHexIcon from "./ArchTimelineHexIcon";
-
-const STEP_COLORS = ["#173d5e", "#2f6fad", "#c9a227", "#8b1538"];
+import UbuntuHomeProcessTimeline from "./UbuntuHomeProcessTimeline";
 
 export default function UbuntuHomeWorkflow({ config, steps }) {
   const sectionId = config?.id ?? HOME_WORKFLOW.id;
@@ -34,37 +32,9 @@ export default function UbuntuHomeWorkflow({ config, steps }) {
         </AnimatedSection>
 
         <AnimatedSection delay={0.08}>
-          <ol className="ubuntu-arch-timeline mt-10 sm:mt-12">
-            <div className="ubuntu-arch-timeline__track" aria-hidden="true">
-              <span className="ubuntu-arch-timeline__track-line" />
-            </div>
-
-            {timelineSteps.map((step, index) => {
-              const color = STEP_COLORS[index] ?? STEP_COLORS[STEP_COLORS.length - 1];
-
-              return (
-                <li
-                  key={step.title}
-                  className="ubuntu-arch-timeline__step"
-                  style={{ "--arch-step-color": color }}
-                >
-                  <div className="ubuntu-arch-timeline__hex">
-                    <ArchTimelineHexIcon
-                      index={index}
-                      label={String(index + 1).padStart(2, "0")}
-                    />
-                  </div>
-
-                  <div className="ubuntu-arch-timeline__marker" aria-hidden="true">
-                    <span className="ubuntu-arch-timeline__dot" />
-                  </div>
-
-                  <h3 className="ubuntu-arch-timeline__title">{step.title}</h3>
-                  <p className="ubuntu-arch-timeline__desc">{step.desc}</p>
-                </li>
-              );
-            })}
-          </ol>
+          <div className="mt-10 sm:mt-12">
+            <UbuntuHomeProcessTimeline steps={timelineSteps} />
+          </div>
         </AnimatedSection>
       </div>
     </section>

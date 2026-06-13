@@ -1,11 +1,26 @@
 import requests
 import sys
+import os
 from datetime import datetime
 import json
 
+"""
+Remote CMS API integration tests.
+
+This script validates a hosted FastAPI + MongoDB preview API. The local
+repository ships a static React frontend with WhatsApp lead capture only.
+
+Configure via environment variables:
+  CMS_BASE_URL
+  CMS_ADMIN_EMAIL
+  CMS_ADMIN_PASSWORD
+"""
+
 class NeuralTrixCMSAPITester:
-    def __init__(self, base_url="https://business-clean.preview.emergentagent.com"):
-        self.base_url = base_url
+    def __init__(self, base_url=None):
+        self.base_url = base_url or os.environ.get(
+            "CMS_BASE_URL", "https://business-clean.preview.emergentagent.com"
+        )
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
         self.tests_passed = 0
@@ -78,9 +93,15 @@ class NeuralTrixCMSAPITester:
 
     def test_admin_login(self):
         """Test admin login"""
+        email = os.environ.get("CMS_ADMIN_EMAIL")
+        password = os.environ.get("CMS_ADMIN_PASSWORD")
+        if not email or not password:
+            print("\nSkipping admin login: set CMS_ADMIN_EMAIL and CMS_ADMIN_PASSWORD")
+            return True
+
         login_data = {
-            "email": "admin@neuraltrix.ai",
-            "password": "NeuralAdmin2025!"
+            "email": email,
+            "password": password
         }
         
         success, response = self.run_test(
