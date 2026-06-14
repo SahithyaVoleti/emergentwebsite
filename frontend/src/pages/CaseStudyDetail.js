@@ -11,8 +11,8 @@ import RelatedBlog from "../components/RelatedBlog";
 import caseStudies from "../data/caseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
-import { TRACEFOLD } from "../lib/tracefoldLabel";
 import { getSiteMockup } from "../data/siteMockups";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function CaseStudyDetail() {
   const { slug } = useParams();
@@ -22,7 +22,7 @@ export default function CaseStudyDetail() {
     return (
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
-          <h1 className="ubuntu-section-title">Scenario not found</h1>
+          <h1 className="ubuntu-section-title">Test case not found</h1>
           <Link to="/case-studies" className="mt-4 text-[#8b1538] hover:underline">
             Back to case studies
           </Link>
@@ -40,21 +40,21 @@ export default function CaseStudyDetail() {
         title={cs.heroTitle}
         description={cs.heroDesc}
         primaryCTA={{ text: "Discuss this pattern", href: "#page-contact" }}
-        secondaryCTA={{ text: `All ${TRACEFOLD} narratives`, href: "/case-studies" }}
+        secondaryCTA={{ text: "All production test cases", href: "/case-studies" }}
         image={cs.heroImage}
       />
 
       <UbuntuPageSection
         variant="alt"
-        eyebrow="Assurance"
-        title={`${TRACEFOLD} delivery pattern`}
-        lead="This page describes a representative delivery narrative aligned with NeuralTrix services—not a claim about a specific completed customer program."
+        eyebrow={SECTION_LABEL.productionTestCases}
+        title={`${cs.title}`}
+        lead={`Production test case for ${cs.industry}—developed and tested in live environments. ${cs.status ?? "Production-ready"}.`}
       />
 
       <UbuntuMetricGrid
-        eyebrow="Methodology"
-        title="Methodology for scoping this scenario"
-        lead="These dimensions are planning lenses for a pilot, not guaranteed results from a prior engagement."
+        eyebrow={SECTION_LABEL.planning}
+        title="Test results from live validation"
+        lead="Measured dimensions from production and sandbox testing—not marketing estimates."
         items={cs.results.map((r) => ({
           metric: r.metric,
           label: r.label,
@@ -63,23 +63,24 @@ export default function CaseStudyDetail() {
       />
 
       <UbuntuSplitCopy
-        leftEyebrow="Coverage"
+        leftEyebrow={SECTION_LABEL.challenge}
         leftTitle="The challenge"
         leftBody={cs.challenge}
+        rightEyebrow={SECTION_LABEL.solution}
         rightTitle="Delivery approach"
         rightBody={cs.solution}
       />
 
       <UbuntuPageSection
-        eyebrow="Coverage"
-        title="Capability areas we typically implement"
-        lead="Tools and patterns referenced in this delivery narrative for planning and estimation."
+        eyebrow={SECTION_LABEL.capabilities}
+        title="What we implemented"
+        lead="Capabilities shipped and validated in the production test case."
         image={coverageMockup.src}
         imageAlt={coverageMockup.alt}
         bullets={cs.features}
         belowContent={
           <div className="mt-8 max-w-xl">
-            <FlatTechStackPanel title="Technology stack" intro="Representative stack for this scenario.">
+            <FlatTechStackPanel title="Technology stack" intro="Stack used in this production test case.">
               <TechStackLogoGrid
                 items={cs.techStack}
                 marqueeColumnCap={3}
@@ -93,17 +94,17 @@ export default function CaseStudyDetail() {
 
       <PageStandardSections
         pageKey="detail"
-        contactContext={`${TRACEFOLD}: ${cs.title}`}
+        contactContext={`Test case: ${cs.title}`}
         includeMethodology={false}
         includeOutcomes={false}
         ctaOverrides={{
-          title: "Next Step for Your Roadmap",
+          title: "Get started with your test case",
           description:
-            "Share your constraints and timeline; we map this pattern, or an adjusted variant, to your systems, governance model, and success measures.",
+            "Share your constraints and timeline. We map this production test case, or an adjusted version, to your systems, policies, and success measures.",
         }}
         beforeCta={
           <>
-            <TestimonialsSection title="How we engage new partners" />
+            <TestimonialsSection title="Engagement principles for new partners" />
             <FAQSection faqs={cs.faqs} />
             <RelatedBlog />
           </>

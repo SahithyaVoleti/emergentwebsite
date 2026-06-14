@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MapPin, Clock, Briefcase, ChevronDown, ChevronUp, Award, Coffee, BookOpen, Heart, Globe, Users } from "lucide-react";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
@@ -84,12 +84,12 @@ function JobCard({ job }) {
 }
 
 const perks = [
-  { icon: Coffee, title: "Modern stack", desc: "Hands-on work with current AI and cloud tooling on production-oriented programs." },
-  { icon: Globe, title: "Remote-first", desc: "Distributed team with coordinated hours and clear communication norms." },
-  { icon: BookOpen, title: "Professional development", desc: "Learning allocation for certifications, conferences, and structured mentorship." },
-  { icon: Heart, title: "Compensation and benefits", desc: "Market-informed packages with health benefits and paid time off; equity where applicable." },
-  { icon: Users, title: "Senior peers", desc: "Collaborate directly with experienced engineers, scientists, and delivery leads." },
-  { icon: Award, title: "Measurable impact", desc: "Contributions tied to shipped releases, client milestones, and operational outcomes." },
+  { icon: Coffee, title: "Modern stack", desc: "Hands-on work with current AI and cloud tools on production programs." },
+  { icon: Globe, title: "Remote-first", desc: "Distributed team with set hours and clear communication norms." },
+  { icon: BookOpen, title: "Professional development", desc: "Learning budget for certifications, conferences, and mentorship." },
+  { icon: Heart, title: "Compensation and benefits", desc: "Market-based packages with health benefits and paid time off; equity where applicable." },
+  { icon: Users, title: "Senior peers", desc: "Work directly with experienced engineers, scientists, and delivery leads." },
+  { icon: Award, title: "Measurable impact", desc: "Contributions tied to shipped releases, client milestones, and operational results." },
 ];
 
 export default function CareersPage() {
@@ -101,8 +101,8 @@ export default function CareersPage() {
     <SitePageMain>
       <PageHero
         label="Careers"
-        title="Build Your Practice in Enterprise AI Delivery"
-        description="Join delivery programs that emphasize production discipline, stakeholder communication, and accountable outcomes across research, engineering, and operations."
+        title="Build Your Career in Enterprise AI Delivery"
+        description="Join delivery programs focused on production discipline, clear communication, and accountable outcomes across research, engineering, and operations."
         primaryCTA={{ text: "View open positions", href: "#positions" }}
         illustrationKey="careers"
       />
@@ -117,17 +117,16 @@ export default function CareersPage() {
       />
 
       <UbuntuFeaturesBand
-        eyebrow="Assurance"
-        title="Assurance for your career here"
-        lead="Benefits and working norms we aim to maintain as the team scales delivery capacity."
+        eyebrow="Careers"
+        title="Benefits and working norms"
+        lead="Benefits and working norms we maintain as the team grows."
         variant="alt"
         items={perks}
       />
 
       <UbuntuListingSection
         id="positions"
-        eyebrow="Coverage"
-        title="Coverage across open positions"
+        title="Open positions"
         lead={`${careers.length} open roles across ${departments.length} departments. Filter by department or expand a role for details.`}
       >
         <div className="mb-8 flex flex-wrap gap-2">

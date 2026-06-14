@@ -1,3 +1,5 @@
+import { env } from "../lib/env";
+
 /** Digits only, international format without + (e.g. India 91xxxxxxxxxx). */
 const DEFAULT_LEAD_NUMBER = "918142438759";
 
@@ -7,7 +9,7 @@ function normalizeLeadNumber(raw) {
 }
 
 export const WHATSAPP_LEAD_NUMBER = normalizeLeadNumber(
-  process.env.REACT_APP_WHATSAPP_LEAD_NUMBER
+  env("WHATSAPP_LEAD_NUMBER")
 );
 
 /**

@@ -4,40 +4,40 @@
  */
 const engagementPrinciples = [
   {
-    headline: "Pilot-scoped first",
+    headline: "Agents inside your apps",
     body:
-      "We align on problem statement, data access, and success measures before writing production code, so you can validate fit on a fixed timeline and budget.",
-    tag: "How we start",
+      "We build AI agents that run inside CRM, ERP, internal tools, and customer apps—not standalone chat windows disconnected from how your team works.",
+    tag: "Agents",
   },
   {
-    headline: "Engineering-led conversations",
+    headline: "Modernize what you have",
     body:
-      "You work directly with people who implement systems: architecture, ML, and integration decisions are owned by the same team that delivers them.",
+      "Legacy and normal business apps get upgraded with AI-ready APIs, copilots, and automation—without throwing away systems that already work.",
+    tag: "App modernization",
+  },
+  {
+    headline: "Pilot before you scale",
+    body:
+      "We agree on the workflow, data access, and success measures first. You validate fit on a fixed timeline before expanding agent autonomy.",
+    tag: "First steps",
+  },
+  {
+    headline: "Builders, not slide decks",
+    body:
+      "You work with the people who ship agents and modernize apps. Architecture, integration, and model decisions stay with the same delivery team.",
     tag: "Access",
   },
   {
-    headline: "Production-minded AI",
+    headline: "Safe by default",
     body:
-      "Retrieval, evaluation, guardrails, and observability are planned from the first slice, not bolted on after a demo.",
-    tag: "Quality bar",
+      "Scoped credentials, human review queues, logging, and kill switches are planned from the first slice—not added after a demo.",
+    tag: "Controls",
   },
   {
-    headline: "Transparent handover",
+    headline: "Your team owns it",
     body:
-      "Repositories, runbooks, and acceptance tests are structured so your staff can operate and extend what we build, or we stay engaged under a clear support model.",
+      "Code, runbooks, and tests are structured so your engineers can operate and extend what we build. We can stay on for support with clear boundaries.",
     tag: "Ownership",
-  },
-  {
-    headline: "Governance by design",
-    body:
-      "Access control, logging, and review workflows match your sector and internal policies; we document assumptions for security and compliance reviewers.",
-    tag: "Assurance",
-  },
-  {
-    headline: "Invitation to compare fit",
-    body:
-      "If your roadmap includes AI copilots, custom software, or data platforms, a short discovery call clarifies whether our delivery model matches your stage and constraints.",
-    tag: "Next step",
   },
 ];
 

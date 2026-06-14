@@ -74,6 +74,23 @@
 }
 
 /* Site-wide navbar (UbuntuPageShell) — fixed at top; centers when scrolling */
+.ubuntu-site .ubuntu-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  background: #8b1538;
+  color: #fff;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.ubuntu-site .ubuntu-skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
 .ubuntu-site .ubuntu-chrome-header--site-nav {
   overflow: visible;
 }
@@ -921,7 +938,8 @@
   color: #e8b4b8;
 }
 
-.ubuntu-site .ubuntu-solutions-carousel__title {
+.ubuntu-site .ubuntu-solutions-carousel__title,
+.ubuntu-site section.ubuntu-solutions-carousel h3.ubuntu-solutions-carousel__title {
   margin: 0;
   font-size: 1.35rem;
   font-weight: 500;
@@ -957,6 +975,11 @@
 
 .ubuntu-site .ubuntu-solutions-carousel__slide:hover .ubuntu-solutions-carousel__cta,
 .ubuntu-site .ubuntu-solutions-carousel__slide:focus-visible .ubuntu-solutions-carousel__cta {
+  color: #fff;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__slide:hover .ubuntu-solutions-carousel__title,
+.ubuntu-site .ubuntu-solutions-carousel__slide:focus-visible .ubuntu-solutions-carousel__title {
   color: #fff;
 }
 
@@ -2479,6 +2502,8 @@
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown__panel {
+  max-height: min(70vh, 24rem);
+  overflow-y: auto;
   background: #fff;
   border: 1px solid #c9c9c9;
   border-radius: 6px;
@@ -3032,7 +3057,7 @@
 
 /* Legacy section shells → ubuntu rhythm */
 .ubuntu-site section:not(.ubuntu-pattern-section):not(.ubuntu-chrome-header) h2,
-.ubuntu-site section:not(.ubuntu-pattern-section) h3 {
+.ubuntu-site section:not(.ubuntu-pattern-section) h3:not(.ubuntu-solutions-carousel__title) {
   color: #111;
   font-weight: 500;
 }

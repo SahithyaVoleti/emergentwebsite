@@ -28,6 +28,7 @@ export const LISTING_PAGE_HERO_IMAGES = {
   caseStudies: hq("photo-1460925895917-afdab827c52f"),
   /** Blog: engineering insights & editorial */
   blog: hq("photo-1517694712202-14dd9538aa97"),
+  services: SERVICES_LANDING_HERO_IMAGE,
 };
 
 /** Company pages */
@@ -59,12 +60,18 @@ export const INDUSTRY_HERO_IMAGES = [
   hq("photo-1450101499163-c8848c66ca85"),
 ];
 
-/** Case study detail: order matches `caseStudies` */
+/** Case study detail heroes — order matches `caseStudies` array. */
 export const CASE_STUDY_HERO_IMAGES = [
-  hq("photo-1536240478700-b869070f9279"),
   hq("photo-1503676260728-1c00da094a0b"),
-  hq("photo-1462331940025-496dfbfc7564"),
-  hq("photo-1488646953014-85cb44e25828"),
+  hq("photo-1576091160399-112ba8d25d1f"),
+  hq("photo-1554224155-6726b3ff858f"),
+  hq("photo-1441986300917-64674bd600d8"),
+  hq("photo-1536240478700-b869070f9279"),
+  hq("photo-1581091226825-a6a2a5aee158"),
+  hq("photo-1560518883-ce09059eeffa"),
+  hq("photo-1625246333195-78dbf3b962f5"),
+  hq("photo-1532187863486-ab9ffa644140"),
+  hq("photo-1450101499163-c8848c66ca85"),
 ];
 
 /** Blog listing cards + article heroes */

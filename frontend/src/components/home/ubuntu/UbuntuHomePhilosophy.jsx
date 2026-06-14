@@ -19,9 +19,11 @@ export default function UbuntuHomePhilosophy({
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-        {section.eyebrow}
-      </p>
+      {section.eyebrow && (
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+          {section.eyebrow}
+        </p>
+      )}
       <h2 className="ubuntu-section-title">{section.title}</h2>
       <p className="ubuntu-lead">{section.lead}</p>
       <ul className="mt-6 space-y-3">

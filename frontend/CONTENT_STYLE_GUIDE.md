@@ -60,7 +60,7 @@ Use this order whenever possible:
 
 ## Visual/Content Consistency Rules
 
-- Use `Cabinet Grotesk` for major headings.
+- Use `Roboto` and `Roboto Mono` for UI typography (see `index.css` and `ubuntu-home.css`).
 - Use concise section intros (1 sentence, max 2).
 - Keep card titles short and functional.
 - Keep card body text outcome-driven and easy to scan.
@@ -68,15 +68,17 @@ Use this order whenever possible:
 
 ## Navigation Naming
 
-For About dropdown pages, use:
+For Company dropdown pages, use:
 
 - `About Us`
-- `Our Team`
-- `Testimonials`
-- `Technology Partners`
+- `Leadership`
+- `Engagement`
+- `Careers`
+- `Partners`
 - `Security`
+- `News & Media`
 - `Privacy Policy`
-- `Career`
+- `Terms and Conditions`
 
 ## Do / Don't
 

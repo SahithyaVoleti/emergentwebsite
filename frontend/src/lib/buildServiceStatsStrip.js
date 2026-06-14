@@ -14,7 +14,7 @@ export function buildServiceStatsStrip(service) {
 
   return [
     expertiseCount > 0 && { value: String(expertiseCount), label: "Expertise areas" },
-    caseStudyCount > 0 && { value: String(caseStudyCount), label: "Case study narratives" },
+    caseStudyCount > 0 && { value: String(caseStudyCount), label: "Production test cases" },
     platformCount > 0 && { value: String(platformCount), label: "ML platforms" },
     phaseCount > 0 && { value: String(phaseCount), label: "Delivery phases" },
     { value: "99.9%", label: "Reliability target" },

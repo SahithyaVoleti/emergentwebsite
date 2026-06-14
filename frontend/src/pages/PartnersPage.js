@@ -21,8 +21,8 @@ export default function PartnersPage() {
     <SitePageMain>
       <PageHero
         label="Technology Partners"
-        title="Technology Partnerships that Strengthen Delivery"
-        description="We combine proven platform partners with practical architecture choices to reduce implementation risk and accelerate enterprise outcomes."
+        title="Technology Partnerships for Enterprise Delivery"
+        description="We work with proven platform partners and practical architecture choices to reduce implementation risk and speed enterprise delivery."
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         illustrationKey="solutions"
       />

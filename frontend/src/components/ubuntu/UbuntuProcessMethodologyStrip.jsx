@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 const STEP_INTERVAL_MS = 4000;
 
@@ -7,9 +8,9 @@ const STEP_INTERVAL_MS = 4000;
  */
 export default function UbuntuProcessMethodologyStrip({
   id = "methodology-process",
-  eyebrow = "Methodology",
-  title = "Methodology for delivery engagements",
-  lead = "This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage.",
+  eyebrow = SECTION_LABEL.methodology,
+  title = "How we run delivery engagements",
+  lead = "We sequence alignment, build, and deployment checkpoints with clear ownership at each stage.",
   steps = [],
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,7 +83,7 @@ export default function UbuntuProcessMethodologyStrip({
           <div
             className="ubuntu-process-stepper__track-wrap"
             role="navigation"
-            aria-label="Engagement methodology steps"
+            aria-label="Methodology steps"
           >
             <div className="ubuntu-process-stepper__track" aria-hidden="true">
               <span className="ubuntu-process-stepper__track-bg" />

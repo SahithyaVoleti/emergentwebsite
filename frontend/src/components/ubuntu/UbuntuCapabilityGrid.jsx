@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 function splitItems(items = []) {
   const mid = Math.ceil(items.length / 2);
@@ -8,6 +9,13 @@ function splitItems(items = []) {
     scope: items.slice(0, mid),
     governance: items.slice(mid),
   };
+}
+
+function buildAgentNote(cap) {
+  const deploys = cap.deploysIn
+    ? `Deploys inside ${cap.deploysIn}. `
+    : "";
+  return `${deploys}We customize this industry ready agent to your applications, permissions, and approval rules before production rollout.`;
 }
 
 function buildEngagementNote(cap, serviceTitle) {
@@ -24,8 +32,8 @@ function buildOutcomesNote(cap) {
  */
 export default function UbuntuCapabilityGrid({
   capabilities = [],
-  eyebrow = "Coverage",
-  title = "Coverage across functional capabilities",
+  eyebrow = SECTION_LABEL.modules,
+  title = "Functional capabilities",
   lead,
   id = "capabilities",
   variant = "alt",
@@ -34,6 +42,7 @@ export default function UbuntuCapabilityGrid({
   serviceIcon: ServiceIcon,
   detailImage,
   contactHref = "#page-contact",
+  presentation = "module",
 }) {
   const [active, setActive] = useState(0);
   if (!capabilities?.length) return null;
@@ -41,8 +50,10 @@ export default function UbuntuCapabilityGrid({
   const activeCap = capabilities[active] ?? capabilities[0];
   const detailItems = activeCap.items ?? [];
   const { scope, governance } = splitItems(detailItems);
-  const moduleLabel = String(active + 1).padStart(2, "0");
-  const moduleTotal = String(capabilities.length).padStart(2, "0");
+  const isIndustryAgent = presentation === "industry-agent";
+  const itemLabel = isIndustryAgent ? "Agent" : "Module";
+  const itemIndex = String(active + 1).padStart(2, "0");
+  const itemTotal = String(capabilities.length).padStart(2, "0");
 
   const sectionClass = [
     "ubuntu-section-block border-b border-[#d9d9d9]",
@@ -68,7 +79,10 @@ export default function UbuntuCapabilityGrid({
         </div>
 
         <div className="ubuntu-capability-grid mt-8">
-          <nav className="ubuntu-capability-grid__nav" aria-label="Service modules">
+          <nav
+            className="ubuntu-capability-grid__nav"
+            aria-label={isIndustryAgent ? "Industry ready agents" : "Service modules"}
+          >
             <ul className="ubuntu-capability-grid__nav-list">
               {capabilities.map((cap, i) => {
                 const isActive = active === i;
@@ -115,7 +129,7 @@ export default function UbuntuCapabilityGrid({
                     </span>
                   )}
                   <p className="ubuntu-capability-grid__detail-eyebrow">
-                    Module {moduleLabel} of {moduleTotal}
+                    {itemLabel} {itemIndex} of {itemTotal}
                   </p>
                 </div>
                 <h3 id={`${id}-detail-heading`} className="ubuntu-capability-grid__detail-title">
@@ -124,12 +138,20 @@ export default function UbuntuCapabilityGrid({
                 {activeCap.desc && (
                   <p className="ubuntu-capability-grid__detail-lead">{activeCap.desc}</p>
                 )}
-                <p className="ubuntu-capability-grid__detail-body">
-                  {buildEngagementNote(activeCap, serviceTitle)}
-                </p>
-                <p className="ubuntu-capability-grid__detail-body">
-                  {buildOutcomesNote(activeCap)}
-                </p>
+                {isIndustryAgent ? (
+                  <p className="ubuntu-capability-grid__detail-body">
+                    {buildAgentNote(activeCap)}
+                  </p>
+                ) : (
+                  <>
+                    <p className="ubuntu-capability-grid__detail-body">
+                      {buildEngagementNote(activeCap, serviceTitle)}
+                    </p>
+                    <p className="ubuntu-capability-grid__detail-body">
+                      {buildOutcomesNote(activeCap)}
+                    </p>
+                  </>
+                )}
               </header>
 
               {detailItems.length > 0 && (
@@ -179,7 +201,7 @@ export default function UbuntuCapabilityGrid({
                   Discuss {activeCap.title}
                 </Link>
                 <Link to={contactHref} className="ubuntu-link-muted">
-                  Request a scoped briefing
+                  {isIndustryAgent ? "Request this industry ready agent" : "Request a scoped briefing"}
                 </Link>
               </div>
             </div>

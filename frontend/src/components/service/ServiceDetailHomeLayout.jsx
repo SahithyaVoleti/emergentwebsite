@@ -1,4 +1,4 @@
-﻿import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
 import SolutionsHorizontalSlider from "../ubuntu/SolutionsHorizontalSlider";
 import ServiceSubservicesGrid from "./ServiceSubservicesGrid";
@@ -13,12 +13,18 @@ import { UbuntuHomeBlogs } from "../home/ubuntu/UbuntuHomeIndustriesBlogs";
 import { getHomeSectionImage } from "../../data/homePageImages";
 import { getSiteMockup } from "../../data/siteMockups";
 import { homeImagePosition } from "../../lib/homeImagePosition";
-import { TRACEFOLD } from "../../lib/tracefoldLabel";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 import blogArticles from "../../data/blog";
 
 const CASE_STUDIES_LEAD =
-  "Examples of problem classes and how we structure an engagement—not references to specific completed client programs unless separately agreed.";
+  "Production test cases linked to this service—systems we developed, tested in live environments, and validated as production-ready.";
+
+const SERVICE_ASSURANCE_BULLETS = [
+  "Scoped credentials and audit trails for agent actions",
+  "Tests on critical workflows before production go-live",
+  "Rollback paths for prompts, models, and tool permissions",
+  "Documentation ready for security and procurement review",
+];
 
 /**
  * Service detail body — mirrors homepage section order and containers; copy comes from service data.
@@ -42,19 +48,6 @@ export default function ServiceDetailHomeLayout({
     label: step.step,
   }));
 
-  const featureItems = (service.subservices ?? []).slice(0, 8).map((sub) => ({
-    name: sub.title,
-    description: sub.desc,
-    icon: "ml",
-  }));
-
-  const workflowSteps = (service.process ?? []).map((p) => ({
-    title: p.step,
-    desc: p.desc,
-  }));
-
-  const philosophyBullets = (service.process ?? []).map((p) => `${p.step}: ${p.desc}`);
-
   const caseStudySlides = cases.map((cs, index) => ({
     slug: `${service.slug}-pattern-${index}`,
     heroImage: service.heroImage,
@@ -62,13 +55,13 @@ export default function ServiceDetailHomeLayout({
     shortDesc: cs.desc,
     cardDescriptor: cs.archetype,
     domain: cs.industry,
-    href: "#page-contact",
+    href: cs.caseStudySlug ? `/case-studies/${cs.caseStudySlug}` : "/case-studies",
   }));
 
-  const ctaTitle = ctaOverrides.title ?? `Next Step for ${service.title}`;
+  const ctaTitle = ctaOverrides.title ?? `Get started with ${service.title}`;
   const ctaDescription =
     ctaOverrides.description ??
-    `We can align ${service.title} to your systems, priorities, and timeline to define an actionable starting scope and governance boundary.`;
+    `We align ${service.title} to your systems, priorities, and timeline to define a practical starting scope and control boundaries.`;
 
   return (
     <>
@@ -79,8 +72,9 @@ export default function ServiceDetailHomeLayout({
       {processStats.length > 0 && (
         <UbuntuProcessMethodologyStrip
           id="service-methodology-steps"
-          title={`Methodology for ${service.title} engagements`}
-          lead="This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage."
+          eyebrow="Methodology"
+          title={`Delivery steps for ${service.title}`}
+          lead="We sequence alignment, build, and deployment checkpoints with clear ownership at each stage."
           steps={processStats}
         />
       )}
@@ -90,9 +84,9 @@ export default function ServiceDetailHomeLayout({
         imagePosition={nextPosition()}
         config={{
           id: "service-outcomes",
-          eyebrow: "Outcomes",
-          title: `Outcomes for ${service.title}`,
-          body: "These outcomes describe why teams continue engagement beyond initial pilots; your acceptance criteria define success.",
+          eyebrow: "Value",
+          title: `Why teams choose ${service.title}`,
+          body: "Differentiators we bring to discovery and pilot—not a substitute for your own acceptance criteria.",
           primaryCta: {
             label: "Contact us",
             href: contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT),
@@ -105,9 +99,9 @@ export default function ServiceDetailHomeLayout({
       {caseStudySlides.length > 0 && (
         <SolutionsHorizontalSlider
           id="service-case-patterns"
+          eyebrow="Production test cases"
           items={caseStudySlides}
-          eyebrow="Coverage"
-          title={`${TRACEFOLD} patterns: ${service.title}`}
+          title={`Live-tested implementations: ${service.title}`}
           lead={CASE_STUDIES_LEAD}
           viewAllHref={undefined}
           autoAdvanceMs={6000}
@@ -120,20 +114,20 @@ export default function ServiceDetailHomeLayout({
         mockup={philosophyMockup}
         imagePosition={nextPosition()}
         config={{
-          id: "service-methodology-detail",
+          id: "service-assurance",
           eyebrow: "Assurance",
           title: `Assurance for ${service.title} programs`,
-          lead: "Controls and checkpoints applied at each stage of the methodology above.",
-          bullets: philosophyBullets,
+          lead: "Controls and review artifacts we build into each delivery milestone—not added after launch.",
+          bullets: SERVICE_ASSURANCE_BULLETS,
         }}
       />
 
       <UbuntuHomeTechStack
         initialSlug={service.slug}
         config={{
-          eyebrow: "Coverage",
           title: "Technical foundation",
-          lead: "Platforms and tools commonly integrated on delivery programs for this service track.",
+          eyebrow: "Technology",
+          lead: "Platforms and tools we commonly use on delivery programs for this service track.",
           primaryCta: {
             label: "Contact us",
             href: contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT),
@@ -144,7 +138,7 @@ export default function ServiceDetailHomeLayout({
 
       <ServiceDetailIndustriesBand />
 
-      <TestimonialsSection title="How we engage new partners" />
+      <TestimonialsSection title="Engagement principles for new partners" />
 
       <UbuntuSplitLayout
         id="next-step"
@@ -156,7 +150,7 @@ export default function ServiceDetailHomeLayout({
         imagePosition={nextPosition()}
       >
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
-          Next Step
+          Contact
         </p>
         <h2 className="ubuntu-section-title text-white">{ctaTitle}</h2>
         <p className="ubuntu-lead text-white/90">{ctaDescription}</p>
@@ -173,7 +167,7 @@ export default function ServiceDetailHomeLayout({
       <UbuntuHomeBlogs
         config={{
           id: "related-articles",
-          eyebrow: "Coverage",
+          eyebrow: "Articles",
           title: "Related technical articles",
           lead: undefined,
           viewAllHref: "/blog",

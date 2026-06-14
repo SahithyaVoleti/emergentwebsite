@@ -1,12 +1,13 @@
-﻿import {
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
 import UbuntuListingSection from "./ubuntu/UbuntuListingSection";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
-export default function FAQSection({ faqs, title, eyebrow = "Assurance", bare = false }) {
+export default function FAQSection({ faqs, title, eyebrow = SECTION_LABEL.questions, bare = false }) {
   if (!faqs || faqs.length === 0) return null;
 
   const accordion = (

@@ -1,11 +1,13 @@
 import { lazy, Suspense } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import RouteFallback from "@/components/RouteFallback";
+import SiteSEO from "@/components/SiteSEO";
 import HomePage from "@/pages/HomePage";
 import UbuntuPageShell from "@/components/ubuntu/UbuntuPageShell";
 
+const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const SolutionsPage = lazy(() => import("@/pages/SolutionsPage"));
 const SolutionDetail = lazy(() => import("@/pages/SolutionDetail"));
@@ -25,6 +27,7 @@ const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const BlogDetail = lazy(() => import("@/pages/BlogDetail"));
 const CareersPage = lazy(() => import("@/pages/CareersPage"));
 const ResearchInnovationPage = lazy(() => import("@/pages/ResearchInnovationPage"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 function PublicLayout({ children }) {
   return <UbuntuPageShell>{children}</UbuntuPageShell>;
@@ -39,9 +42,19 @@ function App() {
     <div className="min-h-screen bg-white font-sans antialiased">
       <BrowserRouter>
         <ScrollToTop />
+        <SiteSEO />
         <Routes>
           <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
-          <Route path="/services" element={<Navigate to="/#services-grid" replace />} />
+          <Route
+            path="/services"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <ServicesPage />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
           <Route
             path="/services/:slug"
             element={
@@ -228,6 +241,16 @@ function App() {
               <PublicLayout>
                 <LazyPage>
                   <ResearchInnovationPage />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <NotFoundPage />
                 </LazyPage>
               </PublicLayout>
             }

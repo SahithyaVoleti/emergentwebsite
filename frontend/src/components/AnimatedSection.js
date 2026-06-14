@@ -1,9 +1,26 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return reduced;
+}
 
 export default function AnimatedSection({ children, className = "", delay = 0, direction = "up" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const reducedMotion = usePrefersReducedMotion();
+
+  if (reducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   const variants = {
     hidden: {
@@ -35,6 +52,11 @@ export default function AnimatedSection({ children, className = "", delay = 0, d
 export function StaggerChildren({ children, className = "", stagger = 0.08 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const reducedMotion = usePrefersReducedMotion();
+
+  if (reducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -50,6 +72,12 @@ export function StaggerChildren({ children, className = "", stagger = 0.08 }) {
 }
 
 export function StaggerItem({ children, className = "" }) {
+  const reducedMotion = usePrefersReducedMotion();
+
+  if (reducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

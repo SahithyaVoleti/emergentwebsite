@@ -1,7 +1,8 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UbuntuSectionShell from "./ubuntu/UbuntuSectionShell";
 import UbuntuLink from "./ubuntu/UbuntuLink";
 import caseStudies from "../data/caseStudies";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function RelatedCaseStudies({
   industryFilter,
@@ -25,13 +26,13 @@ export default function RelatedCaseStudies({
         <div className="max-w-3xl">
           {showLabel && (
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-              Coverage
+              {SECTION_LABEL.productionTestCases}
             </p>
           )}
-          <h2 className="ubuntu-section-title">{title || "Coverage across scenarios"}</h2>
+          <h2 className="ubuntu-section-title">{title || "Related production test cases"}</h2>
         </div>
         <UbuntuLink to="/case-studies" muted data-testid="view-all-case-studies">
-          Explore all scenarios
+          View all test cases
         </UbuntuLink>
       </div>
 
@@ -48,8 +49,8 @@ export default function RelatedCaseStudies({
             <h3 className="mt-3 text-base font-medium text-[#111] group-hover:text-[#8b1538]">
               {cs.title}
             </h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-[#555]">{cs.shortDesc}</p>
-            <span className="mt-4 text-sm font-medium text-[#8b1538]">View scenario →</span>
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-[#555]">{cs.shortDesc ?? cs.heroDesc}</p>
+            <span className="mt-4 text-sm font-medium text-[#8b1538]">View test case →</span>
           </Link>
         ))}
       </div>

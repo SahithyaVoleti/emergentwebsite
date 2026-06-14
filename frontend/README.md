@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# NeuralTrix AI Website (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vite + React 19 marketing site for NeuralTrix AI.
 
-## Available Scripts
+## Development
 
-In the project directory, you can run:
+```bash
+cd frontend
+npm install
+npm start          # http://localhost:3000
+```
 
-### `npm start`
+## Scripts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Command | Description |
+|---------|-------------|
+| `npm start` / `npm run dev` | Vite dev server |
+| `npm run build` | Production build to `dist/` (runs sitemap + legal PDF generation first) |
+| `npm run preview` | Preview production build |
+| `npm test` | Vitest watch mode |
+| `npm run test:ci` | Vitest single run (CI) |
+| `npm run lint` | ESLint |
+| `npm run lint:ci` | ESLint with zero warnings |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Environment variables
 
-### `npm test`
+Copy `.env.example` to `.env.development` and set values as needed. All client env vars use the `VITE_` prefix.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Variable | Purpose |
+|----------|---------|
+| `VITE_SITE_URL` | Canonical URL and sitemap base |
+| `VITE_WHATSAPP_LEAD_NUMBER` | WhatsApp lead destination |
+| `VITE_LEAD_API_URL` | Optional CRM/API POST endpoint |
+| `VITE_CONTACT_EMAIL` | Contact form email display |
+| `VITE_LINKEDIN_URL` / `VITE_TWITTER_URL` | Footer social links |
+| `VITE_SHOW_DEV_RIBBON` | Development notice ribbon |
+| `VITE_POSTHOG_KEY` | Analytics (optional) |
 
-### `npm run build`
+For sitemap generation at build time, set `SITE_URL` or `VITE_SITE_URL` in CI/Vercel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Legal templates
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+PDFs in `public/legal-templates/` are committed for deployment. Regenerate locally with:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+pip install -r public/legal-templates/requirements.txt
+python3 public/legal-templates/generate_legal_pdfs.py
+```
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Vercel config in `vercel.json` — output directory `dist/`.

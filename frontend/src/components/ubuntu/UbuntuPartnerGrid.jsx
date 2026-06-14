@@ -1,10 +1,11 @@
 import UbuntuListingSection from "./UbuntuListingSection";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 export default function UbuntuPartnerGrid({
   partners = [],
   id = "partners-grid",
-  eyebrow = "Coverage",
-  title = "Coverage across ecosystem platforms",
+  eyebrow = SECTION_LABEL.partners,
+  title = "Ecosystem platforms",
   lead = "Vendors and clouds we integrate in live programs; final stack choices stay governed by your policies and data boundaries.",
   className = "!border-t-0",
 }) {

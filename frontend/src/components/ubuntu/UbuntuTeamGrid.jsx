@@ -1,11 +1,12 @@
-﻿import { Linkedin, Twitter, Users } from "lucide-react";
+import { Linkedin, Twitter, Users } from "lucide-react";
 import UbuntuListingSection from "./UbuntuListingSection";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 export default function UbuntuTeamGrid({
   members = [],
   id = "team-grid",
-  eyebrow = "Coverage",
-  title = "Coverage across delivery roles",
+  eyebrow = SECTION_LABEL.team,
+  title = "Delivery roles",
   lead = "Roles typically engaged on workstreams so conversations stay with people authorized to change scope and priorities.",
   className = "!border-t-0",
 }) {

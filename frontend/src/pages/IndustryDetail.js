@@ -13,9 +13,10 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
 import CategorizedTechStackSection from "../components/CategorizedTechStackSection";
 import industries from "../data/industries";
-import services from "../data/services";
+import services, { servicesForDisplay } from "../data/services";
 import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
 import { getSiteMockup } from "../data/siteMockups";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
@@ -42,10 +43,16 @@ export default function IndustryDetail() {
         desc: p.desc,
       }))
     : [
-        { icon: Database, label: "Data discovery", desc: "Map inputs and legacy constraints." },
-        { icon: Brain, label: "Model selection", desc: "Align models to sector risk." },
-        { icon: Zap, label: "Pilot deployment", desc: "Validate on representative workloads." },
+        { icon: Database, label: "Map your applications", desc: "List the software your teams use today." },
+        { icon: Brain, label: "Design industry agents", desc: "Define agents for your sector workflows." },
+        { icon: Zap, label: "Pilot inside one app", desc: "Embed agents and measure real usage." },
       ];
+
+  const overviewBullets = industry.highlights ?? [
+    "AI agents inside applications your sector already runs",
+    "Modernization paths for legacy business software",
+    "Controls aligned to how your industry reviews change",
+  ];
 
   return (
     <SitePageMain>
@@ -54,38 +61,37 @@ export default function IndustryDetail() {
         title={industry.heroTitle}
         description={industry.heroDesc}
         primaryCTA={{
-          text: "Get industry assessment",
+          text: "Discuss your applications",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
-        secondaryCTA={{ text: "View capabilities", href: "#capabilities" }}
+        secondaryCTA={{ text: "See industry ready agents", href: "#industry-ready-agents" }}
         image={industry.heroImage}
       />
 
       <div id="capabilities">
         <UbuntuPageSection
-          eyebrow="Coverage"
-          title={`Coverage across ${industry.title}`}
+          eyebrow={SECTION_LABEL.sectorContext}
+          title={`Agents and apps in ${industry.title}`}
           lead={industry.overview}
           image={INDUSTRY_ARCHITECTURE_IMAGE}
-          imageAlt={`${industry.title} reference architecture`}
-          bullets={[
-            "Priority focus: operational accuracy and throughput",
-            "Deployment path: hardened enterprise infrastructure",
-            "Controls aligned to sector review and audit habits",
-          ]}
+          imageAlt={`${industry.title} AI agents in applications`}
+          bullets={overviewBullets}
         />
 
         <ArchitecturalShowcase
-          title={`Coverage across AI capabilities for ${industry.title}`}
-          description="Typical capability bundles we scope with sector stakeholders—not a fixed SKU sold as a single bundle."
-          capabilities={industry.features}
+          id="industry-ready-agents"
+          eyebrow={SECTION_LABEL.industryAgents}
+          title="Industry ready agents"
+          description={`Proposed AI agents for ${industry.title}—ready to scope, customize, and deploy inside your sector applications.`}
+          capabilities={industry.industryReadyAgents}
+          presentation="industry-agent"
         />
 
         <UbuntuPageSection
-          eyebrow="Methodology"
-          title={`Methodology for ${industry.title} delivery phases`}
-          lead="This methodology sequences discovery through scale so security and operational checkpoints occur before irreversible commitments."
+          eyebrow={SECTION_LABEL.delivery}
+          title={`Delivery steps for ${industry.title}`}
+          lead="We start with the applications you run, design agents for real workflows, embed them in your software, and expand when pilots prove value."
           image={methodologyMockup.src}
           imageAlt={methodologyMockup.alt}
           belowContent={<MethodologyFlowchart steps={processSteps} />}
@@ -94,52 +100,52 @@ export default function IndustryDetail() {
         <RelatedCaseStudies
           showLabel
           industryFilter={industry.title}
-          title={`Coverage across ${industry.title} scenarios`}
+          title={`Production test cases in ${industry.title}`}
         />
 
         <ServicesGrid4x4
-          services={services.slice(0, 8)}
+          services={servicesForDisplay(services)}
           id="industry-services"
-          eyebrow="Coverage"
-          title={`Service tracks for ${industry.title}`}
-          lead="Delivery tracks commonly scoped for this sector. Select a card for full scope and methodology."
-          viewAllHref={undefined}
+          eyebrow={SECTION_LABEL.services}
+          title={`Services for ${industry.title}`}
+          lead="AI agents, app modernization, copilots, and supporting engineering—scoped for applications in your sector."
+          viewAllHref="/services"
           viewAllLabel="View all services"
         />
 
         <UbuntuPageSection
-          eyebrow="Assurance"
-          title="Assurance for security and compliance posture"
-          lead="This assurance model states control patterns we design toward; specific certifications are agreed per engagement."
+          eyebrow={SECTION_LABEL.controls}
+          title={`Assurance for ${industry.title} applications`}
+          lead="Agents in regulated and operational environments need clear permissions, logs, and human oversight—we build those in from the first pilot."
           variant="alt"
           bullets={[
-            "Zero-trust data access protocols",
-            "PII and PHI masking aligned to policy",
-            "Staging environments with audit logging",
-            "Immutable traceability for sensitive workflows",
+            "Scoped access—agents only reach data and tools you approve",
+            "Human review on high-impact actions inside your applications",
+            "Audit logs suitable for sector security and compliance review",
+            "Staging and rollback before changes hit production users",
           ]}
         />
 
         <CategorizedTechStackSection
           dataTestId="industry-tech-stack"
-          title={`Reference technology stack for ${industry.title}`}
-          intro="Example groupings for planning and architecture discussions. Final selection follows your constraints and procurement rules."
+          title={`Technology for ${industry.title} agents`}
+          intro="Typical models, frameworks, and infrastructure for agents embedded in sector applications. Final choices follow your security and procurement rules."
           categories={[
             {
-              title: "AI & ML models",
-              techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"],
+              title: "AI & agent frameworks",
+              techs: ["GPT-4o", "Claude 3.5", "LangChain", "LangGraph", "CrewAI", "Vector DBs"],
             },
             {
-              title: "Languages & frameworks",
-              techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"],
+              title: "Application integration",
+              techs: ["REST APIs", "GraphQL", "Webhooks", "FHIR/HL7", "LTI", "OAuth 2.0"],
             },
             {
               title: "Data & pipelines",
-              techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"],
+              techs: ["PostgreSQL", "Snowflake", "Kafka", "Airflow", "Redis", "MongoDB"],
             },
             {
               title: "Cloud & deployment",
-              techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD", "Serverless"],
+              techs: ["AWS", "Azure", "Docker", "Kubernetes", "On-premise", "Edge"],
             },
           ]}
         />
@@ -152,14 +158,14 @@ export default function IndustryDetail() {
         includeOutcomes={false}
         includeAssurance={false}
         ctaOverrides={{
-          title: `Next Step for ${industry.title} Programs`,
+          title: `Get started with ${industry.title} agents`,
           description:
-            "Schedule a consultation to align use cases, controls, and milestones to your operating context and governance model.",
+            "Tell us which applications you run and where you want AI agents or modernization. We will propose a pilot sized to your sector and review cycle.",
           mockupKey: "cloud",
         }}
         beforeCta={
           <>
-            <TestimonialsSection title={`Engagement: ${industry.title}`} />
+            <TestimonialsSection title={`Engagement principles for ${industry.title} programs`} />
             <RelatedBlog title={`Articles: ${industry.title}`} />
             <FAQSection faqs={industry.faqs} />
           </>

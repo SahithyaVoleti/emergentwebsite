@@ -1,13 +1,14 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import industries from "../../data/industries";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Homepage UbuntuHomeIndustries shell — industries served copy unchanged.
  */
 export default function ServiceDetailIndustriesBand({
   id = "industries-served",
-  eyebrow = "Coverage",
-  title = "Coverage across industries",
+  eyebrow = SECTION_LABEL.industries,
+  title = "Industries we serve",
   lead = "Sector patterns and use cases we scope during discovery for this service track.",
 }) {
   const displayIndustries = industries.slice(0, 8);
@@ -20,7 +21,9 @@ export default function ServiceDetailIndustriesBand({
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+        {eyebrow && (
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+        )}
         <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#111]">
           {title}
         </h2>

@@ -3,13 +3,14 @@ import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
 import UbuntuHomeLink from "../home/ubuntu/UbuntuHomeLink";
 import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Dark CTA band — copy + actions left, browser mockup with scrolling stack icons right.
  */
 export default function TechnicalFoundationSplitSection({
   id = "service-technical-foundation",
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.foundation,
   title,
   lead = "Platforms and tools commonly integrated on delivery programs for this service track.",
   techItems = [],

@@ -23,7 +23,7 @@ function ScrollingTrack() {
 
   return (
     <div className="h-9 w-full overflow-hidden">
-      <div className="ubuntu-chrome-ribbon__track flex w-max animate-marquee-ribbon items-center py-1">
+      <div className="ubuntu-chrome-ribbon__track flex w-max animate-marquee-ribbon items-center py-1" aria-live="off">
         <div className="flex shrink-0">{chunk}</div>
         <div className="flex shrink-0" aria-hidden="true">
           {chunk}

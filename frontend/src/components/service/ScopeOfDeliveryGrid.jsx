@@ -13,6 +13,7 @@ import {
   Network,
   Cpu,
 } from "lucide-react";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 const ICON_BY_KEYWORD = [
   { match: /strategy|consulting/i, Icon: Compass },
@@ -41,7 +42,7 @@ export function resolveScopeDeliveryIcon(title, fallback = Brain) {
 
 export default function ScopeOfDeliveryGrid({
   id = "scope-of-delivery",
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.scope,
   title,
   lead,
   modules = [],

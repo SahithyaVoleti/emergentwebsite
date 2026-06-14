@@ -1,7 +1,8 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Solution accelerators carousel — one slide per accelerator (CoreUI CCarousel pattern:
@@ -10,7 +11,7 @@ import UbuntuLink from "./UbuntuLink";
 export default function SolutionsAcceleratorCarousel({
   items = [],
   id = "solutions-slider",
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.accelerators,
   title,
   lead,
   viewAllHref = "/solutions",

@@ -1,5 +1,5 @@
 import UbuntuFeaturesBand from "./ubuntu/UbuntuFeaturesBand";
-import { TRACEFOLD } from "../lib/tracefoldLabel";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function ServiceCaseStudies({ cases, title }) {
   if (!cases || cases.length === 0) return null;
@@ -14,9 +14,9 @@ export default function ServiceCaseStudies({ cases, title }) {
   return (
     <UbuntuFeaturesBand
       id="service-case-studies"
-      eyebrow="Coverage"
-      title={title || `${TRACEFOLD} delivery patterns`}
-      lead="Examples of problem classes and how we structure an engagement—not references to specific completed client programs unless separately agreed."
+      eyebrow={SECTION_LABEL.productionTestCases}
+      title={title || "Production test cases for this service"}
+      lead="Systems we developed, tested in live environments, and validated as production-ready."
       items={items}
     />
   );

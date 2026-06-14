@@ -1,16 +1,10 @@
 /**
- * Enterprise site navigation — single source of truth for header (and footer sync).
- *
- * Framework:
- * - What We Offer → Services
- * - Platforms → Products / Solutions
- * - Industries → Industry coverage
- * - Why Us → Case Studies
- * - Research & Innovation → Research hub
- * - Company → Corporate
- *
- * Primary nav sequence: offerings → platforms → industries → proof → innovation → company.
+ * Enterprise site navigation — single source of truth for header and footer.
  */
+import services from "./services";
+import solutions from "./solutions";
+import industries from "./industries";
+import { env } from "../lib/env";
 
 export const TOP_NAV = {
   services: {
@@ -32,7 +26,7 @@ export const TOP_NAV = {
     testId: "industries",
     viewAllLabel: "View all industries",
   },
-  caseStudies: { label: "Why Us", href: "/case-studies", testId: "case-studies" },
+  caseStudies: { label: "Test Cases", href: "/case-studies", testId: "case-studies" },
   research: { label: "Research & Innovation", href: "/research-innovation", testId: "research-innovation" },
   company: {
     label: "Company",
@@ -42,7 +36,6 @@ export const TOP_NAV = {
   },
 };
 
-/** Primary nav sequence: offerings → segments → proof → innovation → company. */
 export const TOP_NAV_ORDER = [
   "services",
   "products",
@@ -52,48 +45,82 @@ export const TOP_NAV_ORDER = [
   "company",
 ];
 
-/** Client delivery and implementation programs (not SaaS products). */
-export const SERVICES_NAV = [
-  { label: "AI Consulting", href: "/services/artificial-intelligence" },
-  { label: "Generative AI Solutions", href: "/services/generative-ai" },
-  { label: "AI Agent Development", href: "/services/ai-agents" },
-  { label: "Enterprise AI Automation", href: "/services/ai-agents" },
-  { label: "Computer Vision Solutions", href: "/services/artificial-intelligence" },
-  { label: "NLP & Speech AI", href: "/services/generative-ai" },
-  { label: "AI SaaS Development", href: "/services/custom-software" },
-  { label: "Data Engineering & Analytics", href: "/services/data-engineering" },
-  { label: "Cloud & MLOps", href: "/services/devops" },
-  { label: "AI System Integration", href: "/services/custom-software" },
-];
+/** One entry per service slug from services.js */
+export const SERVICES_NAV = services.map((service) => ({
+  label: service.title,
+  href: `/services/${service.slug}`,
+}));
 
-/** Product ecosystem categories — routes to accelerators and program hubs. */
+/** All solution accelerators + governance hub */
 export const PRODUCTS_NAV = [
   { label: "Enterprise AI", href: "/solutions" },
-  { label: "Education AI", href: "/solutions/talentify-ai" },
-  { label: "Communication AI", href: "/solutions/quikbiz-ai" },
-  { label: "Intelligence Systems", href: "/solutions/intellibot-ai" },
+  ...solutions.map((solution) => ({
+    label: solution.title,
+    href: `/solutions/${solution.slug}`,
+  })),
   { label: "Governance & Security", href: "/security" },
 ];
 
-/** Industry coverage for enterprise buyers. */
-export const INDUSTRIES_NAV = [
-  { label: "Education", href: "/industries/education" },
-  { label: "Healthcare", href: "/industries/healthcare" },
-  { label: "Agriculture", href: "/industries/agriculture" },
-  { label: "Biotechnology", href: "/industries/biotechnology" },
-  { label: "Manufacturing", href: "/industries/manufacturing" },
-  { label: "Enterprise Operations", href: "/industries/retail" },
-  { label: "Government", href: "/industries/government" },
-];
+/** All industry programs */
+export const INDUSTRIES_NAV = industries.map((industry) => ({
+  label: industry.title,
+  href: `/industries/${industry.slug}`,
+}));
 
-/** Corporate and company information. */
 export const COMPANY_NAV = [
   { label: "About Us", href: "/about" },
   { label: "Leadership", href: "/team" },
+  { label: "Engagement", href: "/testimonials" },
   { label: "Careers", href: "/careers" },
   { label: "Partners", href: "/partners" },
   { label: "News & Media", href: "/blog" },
 ];
+
+export const FOOTER_COLUMNS = [
+  {
+    title: "Services",
+    links: services.map((s) => ({ label: s.title, href: `/services/${s.slug}` })),
+  },
+  {
+    title: "Platforms",
+    links: solutions.map((s) => ({ label: s.title, href: `/solutions/${s.slug}` })),
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Leadership", href: "/team" },
+      { label: "Test Cases", href: "/case-studies" },
+      { label: "Engagement", href: "/testimonials" },
+      { label: "News & Media", href: "/blog" },
+      { label: "Careers", href: "/careers" },
+      { label: "Partners", href: "/partners" },
+      { label: "Research & Innovation", href: "/research-innovation" },
+      { label: "Contact", href: "/#page-contact" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      ...industries.map((i) => ({
+        label: i.title,
+        href: `/industries/${i.slug}`,
+      })),
+      { label: "View all industries", href: "/industries" },
+    ],
+  },
+];
+
+export const LEGAL_LINKS = [
+  { label: "Privacy", href: "/privacy-policy" },
+  { label: "Terms", href: "/terms-and-conditions" },
+  { label: "Legal", href: "/legal-templates" },
+];
+
+export const SOCIAL_LINKS = {
+  linkedin: env("LINKEDIN_URL"),
+  twitter: env("TWITTER_URL"),
+};
 
 export const PRIMARY_NAV_CTA = {
   label: "Consult Now",
@@ -131,3 +158,21 @@ export function isNavSectionActive(pathname, basePath, links = []) {
   if (path === base || path.startsWith(`${base}/`)) return true;
   return links.some((link) => isPathActive(pathname, link.href));
 }
+
+/** Secondary CTA labels for PageStandardSections by page key */
+export const SECONDARY_CTA_BY_PAGE = {
+  services: { label: "View services", href: "/services" },
+  solutions: { label: "View platforms", href: "/solutions" },
+  industries: { label: "View industries", href: "/industries" },
+  about: { label: "View leadership", href: "/team" },
+  team: { label: "View careers", href: "/careers" },
+  careers: { label: "View company", href: "/about" },
+  blog: { label: "View case studies", href: "/case-studies" },
+  caseStudies: { label: "View services", href: "/services" },
+  detail: { label: "View services", href: "/services" },
+  legal: { label: "Contact us", href: "#page-contact" },
+  security: { label: "View platforms", href: "/solutions" },
+  testimonials: { label: "View case studies", href: "/case-studies" },
+  partners: { label: "View company", href: "/about" },
+  research: { label: "View platforms", href: "/solutions" },
+};

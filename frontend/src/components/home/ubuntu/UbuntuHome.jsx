@@ -15,7 +15,7 @@ import {
   HOME_SOLUTIONS_SLIDER,
   HOME_NEXT_STEP,
 } from "../../../data/homePageSections";
-import services from "../../../data/services";
+import services, { servicesForDisplay } from "../../../data/services";
 
 const UbuntuHomeFeatures = lazy(() => import("./UbuntuHomeFeatures"));
 const UbuntuHomeVisionCta = lazy(() => import("./UbuntuHomeVisionCta"));
@@ -23,18 +23,11 @@ const SolutionsHorizontalSlider = lazy(() => import("../../ubuntu/SolutionsHoriz
 const UbuntuHomePhilosophy = lazy(() => import("./UbuntuHomePhilosophy"));
 const UbuntuHomeTechStack = lazy(() => import("./UbuntuHomeTechStack"));
 const UbuntuHomeWorkflow = lazy(() => import("./UbuntuHomeWorkflow"));
-const UbuntuHomeIndustriesBlogs = lazy(() =>
-  import("./UbuntuHomeIndustriesBlogs").then((mod) => ({
-    default: function UbuntuHomeIndustriesBlogsBundle() {
-      const { UbuntuHomeIndustries, UbuntuHomeBlogs } = mod;
-      return (
-        <>
-          <UbuntuHomeIndustries />
-          <UbuntuHomeBlogs />
-        </>
-      );
-    },
-  }))
+const UbuntuHomeIndustries = lazy(() =>
+  import("./UbuntuHomeIndustriesBlogs").then((mod) => ({ default: mod.UbuntuHomeIndustries }))
+);
+const UbuntuHomeBlogs = lazy(() =>
+  import("./UbuntuHomeIndustriesBlogs").then((mod) => ({ default: mod.UbuntuHomeBlogs }))
 );
 const ContactForm = lazy(() => import("../../ContactForm"));
 
@@ -51,7 +44,7 @@ export default function UbuntuHome() {
   const visionMockup = getSiteMockup("code");
 
   return (
-    <main className="ubuntu-home-page relative z-10 bg-white">
+    <div className="ubuntu-home-page relative z-10 bg-white">
       <UbuntuHomeHeroChrome />
 
       <UbuntuHomeHeroStack
@@ -82,7 +75,7 @@ export default function UbuntuHome() {
         }
       />
 
-      <ServicesGrid4x4 services={services} {...HOME_SERVICES_GRID} />
+      <ServicesGrid4x4 services={servicesForDisplay(services)} {...HOME_SERVICES_GRID} />
 
       <UbuntuHomeStatsStrip />
 
@@ -111,7 +104,7 @@ export default function UbuntuHome() {
       </Suspense>
 
       <Suspense fallback={<HomeSectionFallback />}>
-        <UbuntuHomeIndustriesBlogs />
+        <UbuntuHomeIndustries />
       </Suspense>
 
       <UbuntuSplitLayout
@@ -124,7 +117,7 @@ export default function UbuntuHome() {
         imagePosition={nextPosition()}
       >
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
-          Next Step
+          {HOME_NEXT_STEP.eyebrow}
         </p>
         <h2 className="ubuntu-section-title text-white">{HOME_NEXT_STEP.title}</h2>
         <p className="ubuntu-lead text-white/90">{HOME_NEXT_STEP.lead}</p>
@@ -144,8 +137,12 @@ export default function UbuntuHome() {
       </UbuntuSplitLayout>
 
       <Suspense fallback={<HomeSectionFallback minHeight="16rem" />}>
+        <UbuntuHomeBlogs />
+      </Suspense>
+
+      <Suspense fallback={<HomeSectionFallback minHeight="16rem" />}>
         <ContactForm />
       </Suspense>
-    </main>
+    </div>
   );
 }

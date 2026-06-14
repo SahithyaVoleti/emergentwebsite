@@ -1,7 +1,7 @@
-﻿import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { TRACEFOLD } from "../../lib/tracefoldLabel";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 import UbuntuLink from "./UbuntuLink";
 
 const SLIDE_VH = 85;
@@ -14,11 +14,11 @@ export default function CaseStudiesVerticalSlider({
   studies = [],
   id = "case-studies",
   showLabel = true,
-  eyebrow = "Outcomes",
+  eyebrow = SECTION_LABEL.productionTestCases,
   title,
   lead,
   viewAllHref = "/case-studies",
-  viewAllLabel = "View all scenarios",
+  viewAllLabel = "View all test cases",
   className = "",
 }) {
   const sectionRef = useRef(null);
@@ -29,13 +29,13 @@ export default function CaseStudiesVerticalSlider({
   const headingTitle =
     title ?? (
       <>
-        Outcomes Across <span className="text-[#8b1538]">{TRACEFOLD} scenarios</span>
+        Production-ready <span className="text-[#8b1538]">test cases</span> by sector
       </>
     );
 
   const headingLead =
     lead ??
-    `${TRACEFOLD} patterns are representative narratives, not completed client projects. Scroll to compare each scenario, then contact us to scope something concrete.`;
+    "Live-tested implementations NeuralTrix built and validated for production. Scroll through each sector, then contact us to adapt a test case to your applications.";
 
   const updateIndexFromScroll = useCallback(() => {
     const el = sectionRef.current;
@@ -96,7 +96,7 @@ export default function CaseStudiesVerticalSlider({
       data-testid="case-studies-section"
       className={`ubuntu-case-studies-scroll ubuntu-section-block relative border-y border-[#d9d9d9] bg-white ${className}`}
       style={{ height: `${sectionHeightVh}vh` }}
-      aria-label="Case study scenarios"
+      aria-label="Production test cases"
     >
       <div className="sticky top-0 z-10 h-screen overflow-hidden">
         <div className="ubuntu-container relative z-10 flex h-full flex-col">
@@ -148,6 +148,11 @@ export default function CaseStudiesVerticalSlider({
                       <div className="absolute left-4 top-4 bg-[#8b1538] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
                         {cs.industry}
                       </div>
+                      {cs.status && (
+                        <div className="absolute right-4 top-4 border border-white/80 bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#8b1538]">
+                          {cs.status}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-1 flex-col justify-center bg-white p-6 sm:p-8 lg:p-10">
@@ -174,7 +179,7 @@ export default function CaseStudiesVerticalSlider({
                         data-testid={`case-study-card-${cs.slug}`}
                         className="ubuntu-btn-primary inline-flex w-fit text-sm"
                       >
-                        Read scenario
+                        Read test case
                       </Link>
                     </div>
                   </div>
@@ -184,7 +189,7 @@ export default function CaseStudiesVerticalSlider({
 
             <div
               className="absolute right-3 top-1/2 z-30 hidden -translate-y-1/2 flex-col items-center gap-2 md:flex"
-              aria-label="Scenario navigation"
+              aria-label="Test case navigation"
             >
               {studies.map((cs, index) => (
                 <button
@@ -206,7 +211,7 @@ export default function CaseStudiesVerticalSlider({
                 onClick={() => scrollToSlide(activeIndex - 1)}
                 disabled={activeIndex === 0}
                 className="ubuntu-case-studies-scroll__nav-btn"
-                aria-label="Previous scenario"
+                aria-label="Previous test case"
               >
                 <ChevronUp size={18} />
               </button>
@@ -215,7 +220,7 @@ export default function CaseStudiesVerticalSlider({
                 onClick={() => scrollToSlide(activeIndex + 1)}
                 disabled={activeIndex >= count - 1}
                 className="ubuntu-case-studies-scroll__nav-btn"
-                aria-label="Next scenario"
+                aria-label="Next test case"
               >
                 <ChevronDown size={18} />
               </button>

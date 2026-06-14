@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Heart,
@@ -53,7 +53,7 @@ function BlogFeaturedCard({ post }) {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#e5e5e5] pt-6">
           <div className="flex items-center gap-3">
             <img
-              src="/neuraltrix-logo.jpeg"
+              src="/neuraltrix-logo.svg"
               alt=""
               className="h-10 w-10 rounded-full border border-[#e5e5e5] bg-white object-cover"
             />

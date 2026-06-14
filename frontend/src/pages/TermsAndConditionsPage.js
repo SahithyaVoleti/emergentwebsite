@@ -1,4 +1,4 @@
-﻿import PageHero from "../components/PageHero";
+import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
@@ -294,8 +294,8 @@ export default function TermsAndConditionsPage() {
 
       <UbuntuPageSection
         id="terms-content"
-        eyebrow="Assurance"
-        title="Assurance for service terms"
+        eyebrow="Policy"
+        title="Terms and conditions overview"
         lead="Contractual terms for engagement structure, delivery governance, and legal responsibilities."
         image={termsMockup.src}
         imageAlt={termsMockup.alt}
@@ -323,8 +323,7 @@ export default function TermsAndConditionsPage() {
       />
 
       <UbuntuListingSection
-        eyebrow="Coverage"
-        title="Coverage across jurisdiction templates"
+        title="Jurisdiction templates"
         lead="Downloadable clause templates for contracting jurisdictions. Align with executed agreements and applicable mandatory law."
       >
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -340,7 +339,12 @@ export default function TermsAndConditionsPage() {
         </div>
       </UbuntuListingSection>
 
-      <PageStandardSections pageKey="legal" contactContext="Terms and Conditions Page" />
+      <PageStandardSections
+        pageKey="legal"
+        contactContext="Terms and Conditions Page"
+        includeMethodology={false}
+        includeOutcomes={false}
+      />
     </SitePageMain>
   );
 }

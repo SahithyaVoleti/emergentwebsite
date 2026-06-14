@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { getNavDropdownIcon, NAV_VIEW_ALL_ICON } from "../data/navDropdownIcons";
@@ -35,6 +35,7 @@ const DROPDOWN_NAV = {
 export default function Header({ embedded = false, shell = false }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSections, setOpenMobileSections] = useState({});
+  const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
   const isNavCentered = useSiteNavScroll(shell);
   const { sectionRef: navRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
@@ -49,6 +50,15 @@ export default function Header({ embedded = false, shell = false }) {
   const toggleMobileSection = (key) => {
     setOpenMobileSections((prev) => ({ ...prev, [key]: !prev[key] }));
   };
+
+  useEffect(() => {
+    if (!mobileOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
 
   const renderDropdownLink = (link, testIdPrefix, onNavigate) => {
     const linkActive = isPathActive(location.pathname, link.href);
@@ -79,19 +89,32 @@ export default function Header({ embedded = false, shell = false }) {
     const dropdownClass =
       dropdownVariant === "wide" ? "ubuntu-nav-dropdown ubuntu-nav-dropdown--wide" : "ubuntu-nav-dropdown";
 
+    const menuId = `nav-dropdown-${testIdPrefix}`;
+
     return (
-      <div key={key} className="ubuntu-nav-dropdown-group relative group">
+      <div
+        key={key}
+        className="ubuntu-nav-dropdown-group relative group"
+        onPointerEnter={() => setOpenDropdown(key)}
+        onPointerLeave={() => setOpenDropdown(null)}
+        onFocusCapture={() => setOpenDropdown(key)}
+        onBlurCapture={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget)) setOpenDropdown(null);
+        }}
+      >
         <button
           type="button"
           data-testid={`nav-link-${testIdPrefix}`}
           className={`${navLinkClass(isActive)} ubuntu-nav-dropdown-group__trigger`}
           aria-label={`${label} menu`}
           aria-haspopup="menu"
+          aria-expanded={openDropdown === key}
+          aria-controls={menuId}
         >
           {label}
           <ChevronDown size={14} className="ubuntu-nav-dropdown-group__chevron" aria-hidden />
         </button>
-        <div className={dropdownClass} role="menu" aria-label={label}>
+        <div className={dropdownClass} role="menu" aria-label={label} id={menuId}>
           <div className="ubuntu-nav-dropdown__panel">
             <ul className="ubuntu-nav-dropdown__list" role="none">
               {links.map((link) => renderDropdownLink(link, testIdPrefix))}
@@ -118,6 +141,8 @@ export default function Header({ embedded = false, shell = false }) {
     const sectionActive = isNavSectionActive(location.pathname, basePath, links);
     const ViewAllIcon = NAV_VIEW_ALL_ICON;
 
+    const panelId = `nav-mobile-${testIdPrefix}`;
+
     return (
       <div key={key} className="border-b border-[#e5e5e5]">
         <button
@@ -127,6 +152,7 @@ export default function Header({ embedded = false, shell = false }) {
           }`}
           onClick={() => toggleMobileSection(key)}
           aria-expanded={isOpen}
+          aria-controls={panelId}
         >
           <span className={sectionActive && !isOpen ? "text-[#8b1538]" : ""}>{title}</span>
           <ChevronDown
@@ -136,7 +162,7 @@ export default function Header({ embedded = false, shell = false }) {
           />
         </button>
         {isOpen && (
-          <div className="ubuntu-nav-mobile-panel">
+          <div className="ubuntu-nav-mobile-panel" id={panelId}>
             <ul className="ubuntu-nav-dropdown__list" role="none">
               {links.map((link) => renderDropdownLink(link, testIdPrefix, () => setMobileOpen(false)))}
             </ul>
@@ -213,7 +239,7 @@ export default function Header({ embedded = false, shell = false }) {
       <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link to="/" data-testid="header-logo" className="flex shrink-0 items-center">
           <img
-            src="/neuraltrix-logo.jpeg"
+            src="/neuraltrix-logo.svg"
             alt="NeuralTrix AI"
             className="h-8 w-auto object-contain"
           />
@@ -240,6 +266,7 @@ export default function Header({ embedded = false, shell = false }) {
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu-panel"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -249,6 +276,7 @@ export default function Header({ embedded = false, shell = false }) {
 
       {mobileOpen && (
         <div
+          id="mobile-menu-panel"
           data-testid="mobile-menu"
           className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-[#fafafa]/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden"
         >
@@ -269,17 +297,16 @@ export default function Header({ embedded = false, shell = false }) {
 
   if (embedded || shell) {
     return (
-      <nav
+      <header
         ref={shell ? navRef : undefined}
         data-testid="header"
         className={headerClass}
-        aria-label="Main"
         onPointerMove={shell && isNavCentered ? onPointerMove : undefined}
         onPointerLeave={shell && isNavCentered ? onPointerLeave : undefined}
       >
         {shell && isNavCentered && <SectionPatternBackground variant="nav" />}
         {bar}
-      </nav>
+      </header>
     );
   }
 

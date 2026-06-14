@@ -1,10 +1,14 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
 import MockupFrame from "./MockupFrame";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { openWhatsAppLead } from "../../utils/whatsappLead";
+import { submitLead } from "../../lib/submitLead";
+import { captureEvent } from "../../lib/analytics";
+import { env } from "../../lib/env";
+
+const CONTACT_EMAIL = env("CONTACT_EMAIL", "neuraltrixai@yahoo.com");
 
 const PHONE_COUNTRIES = [
   { code: "IN", dial: "+91", label: "IN +91" },
@@ -38,7 +42,13 @@ export default function UbuntuContactFormSection({
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [apiWarning, setApiWarning] = useState("");
   const [error, setError] = useState("");
+
+  const errorId = `${testIdPrefix}-error`;
+  const fieldErrorProps = error
+    ? { "aria-invalid": true, "aria-describedby": errorId }
+    : {};
 
   const dial =
     PHONE_COUNTRIES.find((c) => c.code === form.phone_country)?.dial ?? "+91";
@@ -54,6 +64,7 @@ export default function UbuntuContactFormSection({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setApiWarning("");
     if (
       !form.first_name ||
       !form.last_name ||
@@ -71,7 +82,7 @@ export default function UbuntuContactFormSection({
         form.company ? `Company: ${form.company}` : null,
         form.description,
       ].filter(Boolean);
-      openWhatsAppLead({
+      const result = await submitLead({
         first_name: form.first_name,
         last_name: form.last_name,
         email: form.email,
@@ -80,6 +91,12 @@ export default function UbuntuContactFormSection({
         context,
         leadIntent,
       });
+      if (result.apiError) {
+        setApiWarning(
+          "Your message was not saved to our system. Please complete the WhatsApp message to ensure we receive your inquiry."
+        );
+      }
+      captureEvent("lead_submitted", { context, leadIntent, apiSubmitted: result.apiSubmitted });
       setSubmitted(true);
       setForm({
         first_name: "",
@@ -106,8 +123,13 @@ export default function UbuntuContactFormSection({
       <CheckCircle2 size={40} className="mb-3 text-[#8b1538]" strokeWidth={1.5} />
       <h3 className="mb-2 text-lg font-medium text-[#111]">Thank you</h3>
       <p className="text-sm text-[#555]">
-        We have received your message and will respond with clear next steps.
+        WhatsApp opened — send the message to complete your inquiry. We respond with clear next steps.
       </p>
+      {apiWarning ? (
+        <p role="status" className="mt-3 text-sm text-amber-700">
+          {apiWarning}
+        </p>
+      ) : null}
       <button
         type="button"
         data-testid={`${testIdPrefix}-send-another`}
@@ -118,7 +140,11 @@ export default function UbuntuContactFormSection({
       </button>
     </div>
   ) : (
-    <form onSubmit={handleSubmit} className="px-4 py-5 sm:px-5 sm:py-6">
+    <form
+      onSubmit={handleSubmit}
+      className="px-4 py-5 sm:px-5 sm:py-6"
+      aria-labelledby={`${id}-heading`}
+    >
       <div className="ubuntu-contact-form__grid grid grid-cols-2 gap-x-4 gap-y-4">
         <div>
           <label htmlFor={`${testIdPrefix}-first-name`} className={labelClass}>
@@ -135,6 +161,7 @@ export default function UbuntuContactFormSection({
               onChange={handleChange}
               className={fieldClass}
               required
+              {...fieldErrorProps}
             />
           </div>
         </div>
@@ -153,6 +180,7 @@ export default function UbuntuContactFormSection({
               onChange={handleChange}
               className={fieldClass}
               required
+              {...fieldErrorProps}
             />
           </div>
         </div>
@@ -188,6 +216,7 @@ export default function UbuntuContactFormSection({
               placeholder="you@company.com"
               className={fieldClass}
               required
+              {...fieldErrorProps}
             />
           </div>
         </div>
@@ -245,6 +274,7 @@ export default function UbuntuContactFormSection({
               placeholder={copy.messagePlaceholder}
               className={`${fieldClass} min-h-[5rem] resize-y`}
               required
+              {...fieldErrorProps}
             />
           </div>
         </div>
@@ -270,7 +300,12 @@ export default function UbuntuContactFormSection({
       </div>
 
       {error && (
-        <p data-testid={`${testIdPrefix}-error`} className="mt-4 text-sm text-red-600">
+        <p
+          id={errorId}
+          data-testid={errorId}
+          role="alert"
+          className="mt-4 text-sm text-red-600"
+        >
           {error}
         </p>
       )}
@@ -308,9 +343,11 @@ export default function UbuntuContactFormSection({
       mediaClassName="ubuntu-contact-mockup__media"
       mediaSlot={mockupPanel}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
-        {copy.eyebrow}
-      </p>
+      {copy.eyebrow && (
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+          {copy.eyebrow}
+        </p>
+      )}
       <h2
         id={`${id}-heading`}
         data-testid={`${testIdPrefix}-heading`}
@@ -326,7 +363,7 @@ export default function UbuntuContactFormSection({
             <Mail size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
             <div>
               <p className="text-xs uppercase tracking-wide text-white/60">Email</p>
-              <p className="font-medium text-white">neuraltrixai@yahoo.com</p>
+              <p className="font-medium text-white">{CONTACT_EMAIL}</p>
             </div>
           </li>
           <li className="flex items-start gap-3 text-sm">

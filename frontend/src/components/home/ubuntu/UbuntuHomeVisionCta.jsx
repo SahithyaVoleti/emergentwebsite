@@ -35,9 +35,11 @@ export default function UbuntuHomeVisionCta({
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
-        {section.eyebrow}
-      </p>
+      {section.eyebrow && (
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+          {section.eyebrow}
+        </p>
+      )}
       <h2 className="ubuntu-section-title text-white">{section.title}</h2>
       <p className="ubuntu-lead text-white/90">{section.body}</p>
       {bullets.length > 0 && (

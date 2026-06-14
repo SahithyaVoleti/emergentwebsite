@@ -1,21 +1,10 @@
 import services from "./services";
-import solutions from "./solutions";
 import blogArticles from "./blog";
-import { COMPANY_STARTUP_PITCH } from "../lib/company";
 
 const serviceBySlug = (slug) => services.find((s) => s.slug === slug);
-const solutionBySlug = (slug) => solutions.find((s) => s.slug === slug);
 
 /**
- * Canonical homepage order — aligned to CONTENT_STYLE_GUIDE flow:
- * Hero stack → services → stats → features → vision (research CTA) → solutions → philosophy → tech-stack → workflow → coverage → next-step → blogs → contact.
- *
- * CTA placement:
- * 1. hero-stack — hero + engagement CTA (sticky overlap on hero)
- * 2. stats strip — after services grid
- * 3. vision (research) — after features, before solutions & engineering
- * 4. next-step — after coverage, before blogs
- * 5. contact — after blogs
+ * Canonical homepage section order.
  */
 export const HOME_PAGE_LAYOUT = [
   "hero-stack",
@@ -34,93 +23,92 @@ export const HOME_PAGE_LAYOUT = [
 ];
 
 export const HOME_HERO = {
-  title: "Engineering intelligent systems for the future of interdisciplinary innovation",
-  lead: "Applied AI, GenAI platforms, intelligent automation, and scalable enterprise infrastructure engineered for next-generation digital ecosystems.",
-  primaryCta: { label: "Explore solutions", href: "/solutions" },
-  secondaryCta: { label: "About our vision", href: "/about" },
+  title: "We build AI agents and turn your apps into AI-powered software",
+  lead: "NeuralTrix creates intelligent agents for business applications—and modernizes the software you already run—across healthcare, finance, retail, education, manufacturing, and more.",
+  primaryCta: { label: "See AI agent services", href: "/services/ai-agents" },
+  secondaryCta: { label: "How we modernize apps", href: "/services/custom-software" },
 };
 
 export const HOME_STARTUP_STATS = [
-  { value: "50+", label: "AI Workflows" },
-  { value: "30+", label: "Intelligent Agents" },
-  { value: "15+", label: "Integrations" },
-  { value: "8+", label: "Industry Domains" },
-  { value: "99.9%", label: "Reliability" },
+  { value: "AI agents", label: "Built for real applications" },
+  { value: "10+", label: "Industries we work in" },
+  { value: "2 tracks", label: "New agents & app modernization" },
+  { value: "Pilot-first", label: "Prove value before you scale" },
 ];
 
 export const HOME_ALERT = {
-  eyebrow: "Our approach",
-  title: "Engineering intelligent systems for interdisciplinary innovation",
-  body: "We build scalable AI ecosystems that combine applied machine learning, GenAI, data platforms, and cloud-native engineering to power the next generation of intelligent digital experiences.",
-  primaryCta: { label: "About our vision", href: "/about" },
+  eyebrow: "Engagement",
+  title: "How we put AI inside your software",
+  body: "We study how your teams use existing applications, design agents for those workflows, and ship AI features people can rely on—not demos that sit on the shelf.",
+  primaryCta: { label: "About us", href: "/about" },
   secondaryCta: { label: "Explore services →", href: "/#services-grid" },
 };
 
-/** Capability labels per service — cross-cutting themes, not service card titles. */
+/** Capabilities aligned to agent building and app modernization. */
 const HOME_SERVICE_CAPABILITIES = [
   {
-    serviceSlug: "artificial-intelligence",
-    name: "Model training & inference operations",
-    description:
-      "Versioned training jobs, registry promotions, slice-based evaluation, and governed inference for batch and real-time ML workloads.",
-    icon: "ml",
-  },
-  {
-    serviceSlug: "generative-ai",
-    name: "Grounded copilots & retrieval",
-    description:
-      "Permission-aware ingestion, hybrid retrieval, prompt versioning, and release gates for production copilots and content pipelines.",
-    icon: "genai",
-  },
-  {
-    serviceSlug: "custom-software",
-    name: "Application platforms & API contracts",
-    description:
-      "Bounded services, schema-stable APIs, identity integration, and release cadences that keep product and integration teams aligned.",
-    icon: "platform",
-  },
-  {
-    serviceSlug: "mobile-apps",
-    name: "Client delivery & device operations",
-    description:
-      "Native and cross-platform builds with performance budgets, secure storage, staged rollouts, and telemetry tied to store and MDM constraints.",
-    icon: "mobile",
-  },
-  {
     serviceSlug: "ai-agents",
-    name: "Orchestrated automation & tool policy",
+    name: "AI agents for your applications",
     description:
-      "Typed tool surfaces, durable execution, human-in-the-loop queues, and structured run records for auditable autonomous workflows.",
+      "Multi-step agents that work inside your CRM, ERP, internal tools, and customer-facing apps—with human review and clear audit trails.",
     icon: "agents",
   },
   {
-    serviceSlug: "llm-development",
-    name: "LLM evaluation & lifecycle control",
+    serviceSlug: "custom-software",
+    name: "App modernization",
     description:
-      "Fine-tuning and adapter governance, regression harnesses, routing and cost telemetry, and residency-aware hosting patterns.",
+      "Upgrade existing web, mobile, and enterprise applications with AI copilots, automation, and intelligent workflows.",
+    icon: "platform",
+  },
+  {
+    serviceSlug: "generative-ai",
+    name: "Copilots inside your apps",
+    description:
+      "Add document search, chat assistants, and smart suggestions directly into the software your company already uses.",
+    icon: "genai",
+  },
+  {
+    serviceSlug: "artificial-intelligence",
+    name: "ML behind your agents",
+    description:
+      "Prediction, classification, and decision models that power agent actions in production.",
+    icon: "ml",
+  },
+  {
+    serviceSlug: "mobile-apps",
+    name: "AI-powered mobile apps",
+    description:
+      "Native and cross-platform apps with built-in agents, voice, and on-device intelligence.",
+    icon: "mobile",
+  },
+  {
+    serviceSlug: "llm-development",
+    name: "Language models for agents",
+    description:
+      "Choose, tune, and host the models that drive agent reasoning—with cost and safety controls.",
     icon: "llm",
   },
   {
-    serviceSlug: "devops",
-    name: "Release automation & reliability",
+    serviceSlug: "data-engineering",
+    name: "Data for intelligent apps",
     description:
-      "Pipeline-as-code, declarative infrastructure, SLO-backed observability, and incident playbooks aligned to service ownership.",
-    icon: "devops",
+      "Connect your application data to agents and copilots so answers stay accurate and up to date.",
+    icon: "data",
   },
   {
-    serviceSlug: "data-engineering",
-    name: "Governed data movement & contracts",
+    serviceSlug: "devops",
+    name: "Ship and run AI features",
     description:
-      "Batch and streaming pipelines, schema evolution, lineage, quality SLAs, and curated datasets for analytics and model consumers.",
-    icon: "data",
+      "Deploy agent updates safely, monitor usage, and keep AI-powered applications reliable in production.",
+    icon: "devops",
   },
 ];
 
 export const HOME_FEATURES = {
   id: "home-features",
-  eyebrow: "AI Engineering Infrastructure",
-  title: "Capabilities shared across every delivery track",
-  lead: "Engineering foundations that underpin all service lines above—scope control, quality gates, integration, and operations—not a repeat of the service catalog.",
+  eyebrow: "Capabilities",
+  title: "Two ways we help companies use AI",
+  lead: "We build new AI agents from scratch and we transform the applications you already have into AI-powered software—both across the industries you operate in.",
   items: HOME_SERVICE_CAPABILITIES.map((cap) => {
     const service = serviceBySlug(cap.serviceSlug);
     if (!service) return null;
@@ -143,40 +131,11 @@ export const HOME_BLOG = {
   viewAll: { label: "View all articles", href: "/blog" },
 };
 
-function serviceSection(slug, titleOverride, extraBullets = []) {
-  const s = serviceBySlug(slug);
-  if (!s) return null;
-  return {
-    id: slug,
-    title: titleOverride || s.heroTitle || s.title,
-    lead: s.shortDesc,
-    bullets: [
-      ...(s.whyChooseUs?.slice(0, 2).map((w) => w.desc) || []),
-      ...extraBullets,
-    ].slice(0, 6),
-    learnMore: { label: "Learn more", href: `/services/${slug}` },
-    contact: { label: "Contact us", href: "/#page-contact" },
-  };
-}
-
-function solutionSection(slug) {
-  const s = solutionBySlug(slug);
-  if (!s) return null;
-  return {
-    id: s.slug,
-    title: s.heroTitle || s.title,
-    lead: s.shortDesc,
-    bullets: (s.features || []).slice(0, 6).map((f) => f.title),
-    learnMore: { label: "Learn more", href: `/solutions/${slug}` },
-    contact: { label: "Contact us", href: "/#page-contact" },
-  };
-}
-
 export const HOME_SERVICES_GRID = {
   id: "services-grid",
-  eyebrow: "Service delivery",
-  title: "Engineering tracks for enterprise AI systems",
-  lead: "Interdisciplinary delivery across applied machine learning, GenAI, platform engineering, and intelligent automation—structured for production-scale adoption.",
+  eyebrow: "Service catalog",
+  title: "Build agents. Modernize apps.",
+  lead: "From greenfield AI agents to upgrading legacy ERP, CRM, and internal tools—pick the service track that matches where you are today.",
   viewAllHref: undefined,
   viewAllLabel: "View all services",
 };
@@ -184,107 +143,107 @@ export const HOME_SERVICES_GRID = {
 export const HOME_TECH_STACK = {
   id: "tech-stack",
   eyebrow: "Technology",
-  title: "Engineering stack for governed AI delivery",
-  lead: "Select a delivery track to view the technologies we use for that service—drawn from the stacks defined across our service catalog.",
-  primaryCta: { label: "View DevOps services", href: "/services/devops" },
+  title: "Tools we use for agents and AI apps",
+  lead: "See the frameworks, models, and platforms behind the agents and modernized applications we deliver.",
+  primaryCta: { label: "View AI agent services", href: "/services/ai-agents" },
   secondaryCta: { label: "Explore all services", href: "/#services-grid" },
   filterAllLabel: "All services",
 };
 
 export const HOME_WORKFLOW = {
   id: "ai-workflow",
-  eyebrow: "Architecture",
-  title: "How intelligent systems are engineered end to end",
-  lead: "A reference architecture for connecting data, models, agents, and enterprise automation with measurable control points.",
+  eyebrow: "Workflow",
+  title: "How we build agents and modernize your apps",
+  lead: "Whether we are creating a new agent or upgrading software you already own, we follow the same practical path—from your real workflows to production AI.",
   steps: [
     {
-      title: "Discover & plan",
-      desc: "Confirm problem statement, data availability, governance boundaries, and success metrics within a bounded discovery window.",
+      title: "Understand your application",
+      desc: "Map how people use your software today—CRMs, ERPs, portals, mobile apps—and find the workflows agents can improve first.",
     },
     {
-      title: "Design & build",
-      desc: "Shape pipelines, model routing, retrieval policies, and platform contracts aligned to residency, security, and release cadence.",
+      title: "Design the AI agents",
+      desc: "Define what each agent does, which tools it can access, and where humans stay in the loop.",
     },
     {
-      title: "Implement & validate",
-      desc: "Deploy agents, integrations, and automation with evaluation gates, observability, and human oversight on critical paths.",
+      title: "Build and integrate",
+      desc: "Embed agents and copilots into your application with APIs, UI changes, and secure connections to your data.",
     },
     {
-      title: "Operate & scale",
-      desc: "Measure usage and outcomes through dashboards, SLAs, and feedback loops that inform the next controlled iteration.",
+      title: "Launch and expand",
+      desc: "Roll out to a pilot group, measure adoption and results, then extend agents to more teams and use cases.",
     },
   ],
 };
 
 export const HOME_ENGINEERING_SHOWCASES = {
   id: "engineering-showcases",
-  eyebrow: "Engineering showcases",
-  title: "AI systems designed for interdisciplinary innovation",
-  lead: "Representative architecture concepts and innovation blueprints—not client endorsements. Use them to compare methods and technical scope.",
+  eyebrow: "Industry ready agents",
+  title: "Production-ready agents we ship",
+  lead: "Named agents—Agent Vidya, Agent Arogya, Agent Kavacha, and more—built inside sector applications, tested live, and validated for production.",
   viewAllHref: "/case-studies",
-  viewAllLabel: "View all showcases",
+  viewAllLabel: "View all agents",
   items: [
     {
-      slug: "medimind-ai",
-      title: "AI healthcare intelligence platform",
-      shortTitle: "Healthcare intelligence",
-      summary: "Clinical documentation, triage support, and governed NLP within HIPAA-aligned deployment boundaries.",
+      slug: "fraud-guard-transactions",
+      title: "Agent Kavacha — live transaction monitoring",
+      shortTitle: "Agent Kavacha",
+      summary: "AML agent tested on live payment streams with analyst queues and audit trails.",
+      imageKey: "medimind-ai",
+      domain: "Finance",
+      href: "/case-studies/fraud-guard-transactions",
+    },
+    {
+      slug: "medimind-clinical-assist",
+      title: "Agent Arogya — clinical documentation agent",
+      shortTitle: "Agent Arogya",
+      summary: "EHR-embedded agent tested in clinical sandboxes with clinician review on every output.",
       imageKey: "medimind-ai",
       domain: "Healthcare",
-      href: "/solutions/medimind-ai",
+      href: "/case-studies/medimind-clinical-assist",
     },
     {
       slug: "smart-teaching-platform",
-      title: "Autonomous education copilot",
-      shortTitle: "Education copilot",
-      summary: "Educator workflows with human review gates, curriculum templates, and privacy-first data handling.",
+      title: "Agent Vidya — educator copilot",
+      shortTitle: "Agent Vidya",
+      summary: "LMS copilot tested in live classrooms with FERPA-aligned controls and teacher review.",
       imageKey: "smart-teaching-platform",
       domain: "Education",
       href: "/case-studies/smart-teaching-platform",
     },
     {
-      slug: "ai-agents-ecosystem",
-      title: "Enterprise AI agent ecosystem",
-      shortTitle: "AI agent ecosystem",
-      summary: "Multi-agent orchestration with tool policies, observability, and role-based access for internal operations.",
-      imageKey: "intellibot-ai",
-      domain: "Enterprise automation",
-      href: "/services/ai-agents",
-    },
-    {
-      slug: "data-intelligence",
-      title: "Real-time data intelligence platform",
-      shortTitle: "Data intelligence",
-      summary: "Streaming pipelines, semantic layers, and operational dashboards for cross-functional analytics teams.",
+      slug: "stock-sense-commerce",
+      title: "Agent Vyapar — ERP inventory agent",
+      shortTitle: "Agent Vyapar",
+      summary: "Replenishment agent tested inside ERP and WMS with manager approval before purchase orders.",
       imageKey: "data-engineering",
-      domain: "Data platforms",
-      href: "/services/data-engineering",
+      domain: "Commerce",
+      href: "/case-studies/stock-sense-commerce",
     },
   ],
 };
 
 export const HOME_DOMAINS = {
   id: "interdisciplinary-domains",
-  eyebrow: "Coverage",
-  title: "Industries we serve",
-  lead: "Interdisciplinary AI engineering across regulated, operational, and knowledge-intensive fields.",
+  eyebrow: "Industries",
+  title: "AI agents across industries",
+  lead: "We build and embed agents in industry-specific applications. Each industry page lists industry ready agents you can scope and deploy inside your software.",
   items: [
     { title: "Healthcare AI", href: "/industries/healthcare", icon: "healthcare" },
-    { title: "Education & learning", href: "/industries/education", icon: "education" },
-    { title: "Commerce & retail", href: "/industries/retail", icon: "commerce" },
-    { title: "Sports & media", href: "/industries/sports-gaming", icon: "media" },
-    { title: "Banking & finance", href: "/industries/fintech", icon: "fintech" },
-    { title: "Travel & operations", href: "/industries/manufacturing", icon: "operations" },
-    { title: "Real estate & PropTech", href: "/industries/real-estate", icon: "proptech" },
-    { title: "Knowledge & analytics", href: "/services/data-engineering", icon: "analytics" },
+    { title: "Education and learning", href: "/industries/education", icon: "education" },
+    { title: "Commerce and retail", href: "/industries/retail", icon: "commerce" },
+    { title: "Sports and media", href: "/industries/sports-gaming", icon: "media" },
+    { title: "Banking and finance", href: "/industries/fintech", icon: "fintech" },
+    { title: "Manufacturing and operations", href: "/industries/manufacturing", icon: "operations" },
+    { title: "Real estate and PropTech", href: "/industries/real-estate", icon: "proptech" },
+    { title: "Knowledge and analytics", href: "/services/data-engineering", icon: "analytics" },
   ],
 };
 
 export const HOME_BLOGS_BAND = {
   id: "from-the-blogs",
-  eyebrow: "Insights",
-  title: "From the blogs",
-  lead: "Technical notes on AI engineering, delivery tooling, and enterprise adoption patterns.",
+  eyebrow: "Blog",
+  title: "From our blog",
+  lead: "Notes on building AI agents, modernizing applications, and shipping AI features that teams actually use.",
   viewAllHref: "/blog",
   viewAllLabel: "View all articles",
   autoAdvanceMs: 5500,
@@ -293,23 +252,22 @@ export const HOME_BLOGS_BAND = {
 
 export const HOME_VISION_CTA_2 = {
   id: "vision-cta-2",
-  eyebrow: "Research",
-  title: "Research-driven AI engineering for real-world impact",
-  body: "From AI agents to enterprise orchestration systems, we explore modern architectures shaping the future of intelligent digital platforms.",
-  primaryCta: { label: "Read insights", href: "/blog" },
-  secondaryCta: { label: "Explore AI systems", href: "/solutions" },
+  eyebrow: "Platforms",
+  title: "Agent platforms you can start from",
+  body: "Pre-built agent modules and application patterns speed up delivery—then we tailor them to your software, data, and industry rules.",
+  primaryCta: { label: "See agent platforms", href: "/solutions" },
+  secondaryCta: { label: "Talk to our team", href: "/#page-contact" },
   mockupKey: "code",
 };
 
 /** @deprecated Homepage uses HOME_BLOGS_BAND inside industries block */
 export const HOME_INSIGHTS = HOME_BLOGS_BAND;
 
-/** @deprecated Removed from homepage — assurance topics covered in service tracks and philosophy. */
+/** @deprecated Removed from homepage */
 export const HOME_INFRASTRUCTURE = {
   id: "infrastructure",
-  eyebrow: "Infrastructure",
-  title: "Cloud-native infrastructure for AI at scale",
-  lead: "Reliability, observability, and security patterns for distributed intelligent systems.",
+  title: "Cloud infrastructure for AI agents",
+  lead: "Reliable hosting, monitoring, and security for agent-powered applications at scale.",
   topics: [],
   mockupKey: "pipeline",
 };
@@ -317,24 +275,24 @@ export const HOME_INFRASTRUCTURE = {
 export const HOME_PHILOSOPHY = {
   id: "philosophy",
   eyebrow: "Philosophy",
-  title: "An AI-first engineering discipline for long-term innovation",
-  lead: "We treat intelligent systems as infrastructure: measurable, governable, and designed for continuous evolution—not one-off experiments.",
+  title: "What we believe about AI in business software",
+  lead: "AI agents belong inside the applications people already use—not as separate tools that slow teams down.",
   bullets: [
-    "Research-informed architecture with production accountability",
-    "Interdisciplinary teams across ML, platform, and product engineering",
-    "Transparent tradeoffs between scope, risk, and timeline",
-    "Vendor-neutral recommendations tied to your constraints",
+    "Every company app can become an AI-powered application",
+    "Agents should automate real workflows, not generic chat",
+    "Start with one use case, prove results, then grow",
+    "Your team keeps ownership of the software we help upgrade",
   ],
   mockupKey: "security",
 };
 
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
-  eyebrow: "Solutions & engineering",
-  title: "Accelerators and engineering showcases",
-  lead: "Pre-architected solution modules and representative architecture blueprints—review each slide, then open the overview that matches your scope.",
-  viewAllHref: "/solutions",
-  viewAllLabel: "View all accelerators",
+  eyebrow: "Industry ready agents",
+  title: "Production-ready agents we ship",
+  lead: "Named agents—Agent Vidya, Agent Arogya, Agent Kavacha, and more—built inside sector applications, tested live, and validated for production. Includes customizable agent platforms for faster rollout.",
+  viewAllHref: "/case-studies",
+  viewAllLabel: "View all agents",
 };
 
 /** @deprecated Use HOME_SERVICES_GRID + HOME_SOLUTIONS_SLIDER */
@@ -344,37 +302,37 @@ export const HOME_CORE_TOPIC_SECTIONS = HOME_SOLUTION_TOPIC_SECTIONS;
 
 export const HOME_ASSURANCE_SECTION = {
   id: "assurance",
-  title: "Assurance for governed AI delivery",
-  lead: "Security, compliance, and operational controls across the full delivery stack—not only model endpoints.",
+  title: "Assurance for every agent we ship",
+  lead: "Security, access control, and human review are built into agents from day one—not added after launch.",
   bullets: [
-    "Access control and audit trails for data and model artifacts",
-    "Evaluation sets and regression checks on critical slices",
-    "Incident playbooks tied to SLOs and escalation paths",
-    "Documentation for security review and vendor diligence",
-    "Privacy and retention boundaries defined during discovery",
-    "Change management for prompts, tools, and automation rules",
+    "Agents only access data and tools you approve",
+    "Human review on high-risk agent actions",
+    "Full logs of what agents did and why",
+    "Documentation for your security and compliance teams",
+    "Privacy rules agreed before we connect to your apps",
+    "Controlled updates to agent behavior and prompts",
   ],
-  learnMore: { label: "Discover assurance practices", href: "/security" },
+  learnMore: { label: "See our security practices", href: "/security" },
   contact: { label: "Contact us", href: "/#page-contact" },
 };
 
 export const HOME_OUTCOMES_SECTION = {
   id: "enterprise-efficiency",
-  title: "Outcomes for measurable enterprise efficiency",
-  lead: "Sustainable delivery at proportionate cost—scoped pilots, clear tradeoffs, and paths to scale without uncontrolled scope.",
+  title: "Outcomes when we modernize your software",
+  lead: "Faster workflows, smarter applications, and a clear path from pilot to company-wide rollout.",
   bullets: [
-    "Pilot boundaries frozen behind agreed KPI gates",
-    "Transparent effort and dependency tracking",
-    "Multi-cloud and on-prem patterns where residency matters",
-    "Handoff packages engineering teams can extend",
-    "Long-term maintenance options after initial delivery",
-    "Vendor-neutral recommendations tied to your constraints",
+    "AI agents working inside your existing applications",
+    "Modernized apps your teams can adopt without retraining on new tools",
+    "Pilot scope with agreed goals before full rollout",
+    "Handoff so your engineers can extend agents and features",
+    "Support after launch when you need it",
+    "Honest recommendations on build vs. buy for each agent",
   ],
-  learnMore: { label: "Let's discuss your initiative", href: "/#page-contact" },
+  learnMore: { label: "Discuss your applications", href: "/#page-contact" },
   contact: { label: "View services", href: "/#services-grid" },
 };
 
-/** @deprecated Use HOME_CORE_TOPIC_SECTIONS + HOME_ASSURANCE_SECTION + HOME_OUTCOMES_SECTION */
+/** @deprecated */
 export const HOME_TOPIC_SECTIONS = [
   ...HOME_CORE_TOPIC_SECTIONS,
   HOME_ASSURANCE_SECTION,
@@ -382,30 +340,31 @@ export const HOME_TOPIC_SECTIONS = [
 ];
 
 export const HOME_METHODOLOGY = {
-  title: "Methodology for enterprise AI delivery",
-  lead: "This methodology keeps scope controlled, releases on a predictable cadence, and places decisions with the delivery team so working software is visible early.",
+  title: "How we deliver AI agents and app upgrades",
+  lead: "We keep pilots small, integrate with software you already run, and show working agents early—not months of planning.",
   steps: [
-    { title: "Discover", desc: "Confirm problem statement, data availability, and success metrics within a short discovery window." },
-    { title: "Build", desc: "Ship a thin vertical slice your team can use, then harden from real feedback." },
-    { title: "Ship", desc: "Release on a steady cadence with monitoring, not a one-off handover." },
-    { title: "Learn", desc: "Measure usage and outcomes, then stack the next high-leverage iteration." },
+    { title: "Discover", desc: "Review your applications, workflows, and data to pick the first agent or AI feature to build." },
+    { title: "Build", desc: "Create agents and embed them in your app—or modernize the app with AI in a pilot scope." },
+    { title: "Ship", desc: "Launch to a real user group with monitoring and human oversight where needed." },
+    { title: "Expand", desc: "Measure results and add agents to more processes, teams, and applications." },
   ],
 };
 
 export const HOME_COVERAGE = {
-  title: "Coverage across organizations we engage",
-  lead: "This coverage clarifies stakeholder mixes where our delivery model fits today—product and engineering, leadership and operations, or innovation and IT.",
+  title: "Who we work with",
+  lead: "Companies that want AI inside their software—not another disconnected chatbot.",
   items: [
-    { title: "Product and engineering", desc: "Teams integrating AI into product roadmaps and needing delivery aligned to release milestones." },
-    { title: "Leadership and operations", desc: "Executives and operators who require transparent tradeoffs between scope, risk, and timeline." },
-    { title: "Innovation and IT", desc: "Functions modernizing workflows and seeking measurable validation before broader funding." },
+    { title: "Product and engineering teams", desc: "Adding AI agents and copilots to products and internal tools on a release timeline." },
+    { title: "Operations and business leaders", desc: "Modernizing legacy applications to cut manual work and improve decisions." },
+    { title: "IT and innovation groups", desc: "Running pilots that prove AI value in real applications before wider investment." },
   ],
 };
 
 export const HOME_NEXT_STEP = {
-  title: "Next step for your AI engineering initiative",
-  lead: "Schedule a working session to align objectives, constraints, and a proportionate path from discovery to production.",
-  primaryCta: { label: "Schedule consultation", href: "/#page-contact?topic=consultation" },
-  secondaryCta: { label: "Contact team", href: "/#page-contact" },
-  tertiaryCta: { label: "Explore solutions", href: "/solutions" },
+  eyebrow: "Contact",
+  title: "Ready to add AI agents to your applications?",
+  lead: "Tell us about the software you run today—we will suggest whether to build new agents, modernize an existing app, or both.",
+  primaryCta: { label: "Book a call", href: "/#page-contact?topic=consultation" },
+  secondaryCta: { label: "Send a message", href: "/#page-contact" },
+  tertiaryCta: { label: "See AI agents", href: "/services/ai-agents" },
 };

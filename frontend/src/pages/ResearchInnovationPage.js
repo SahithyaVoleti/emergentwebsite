@@ -4,31 +4,32 @@ import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import { getSiteMockup } from "../data/siteMockups";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 const RESEARCH_TOPICS = [
   {
     title: "AI Research Labs",
-    desc: "Structured experimentation on model behavior, evaluation harnesses, and domain-specific benchmarks before production commitments.",
+    desc: "Structured tests of agent behavior, tool use, and safety before we embed agents in client apps.",
   },
   {
     title: "Emerging Technologies",
-    desc: "Applied exploration across multimodal models, agent orchestration, and retrieval architectures aligned to enterprise constraints.",
+    desc: "Hands-on review of multimodal models, agent orchestration, and copilot patterns inside real app setups.",
   },
   {
     title: "Whitepapers",
-    desc: "Technical briefs on delivery patterns, governance models, and measurable adoption criteria for AI programs.",
+    desc: "Technical briefs on agent deployment, app modernization paths, and when to pilot versus scale.",
   },
   {
     title: "Publications",
-    desc: "Curated articles and field notes from delivery programs, published for practitioner and leadership audiences.",
+    desc: "Articles and field notes from agent and app modernization projects for practitioners and leaders.",
   },
   {
     title: "AI Experiments",
-    desc: "Time-boxed prototypes with frozen datasets, documented failure modes, and explicit production blockers.",
+    desc: "Time-boxed prototypes with fixed datasets, documented failures, and clear blockers before production.",
   },
   {
     title: "Innovation Programs",
-    desc: "Co-designed innovation tracks with defined scope, review gates, and handoff criteria into engineering delivery.",
+    desc: "Co-designed tracks to test agent ideas in your apps—with review gates and handoff to engineering.",
   },
 ];
 
@@ -39,8 +40,8 @@ export default function ResearchInnovationPage() {
     <SitePageMain>
       <PageHero
         label="Research & Innovation"
-        title="Research and innovation for applied AI programs"
-        description="Interdisciplinary research, structured experimentation, and innovation tracks that inform how we design, evaluate, and govern AI systems for enterprise delivery."
+        title="Research that feeds agent and app builds"
+        description="We test agent patterns and app integration in the lab, document what works, and move proven ideas into client projects—with clear limits and honest results."
         primaryCTA={{
           text: "Book a research briefing",
           href: "#page-contact",
@@ -51,21 +52,21 @@ export default function ResearchInnovationPage() {
       />
 
       <UbuntuPageSection
-        eyebrow="Methodology"
-        title="Methodology for research-led delivery"
-        lead="This methodology connects lab-style experimentation to governed implementation paths with clear ownership at each review gate."
+        eyebrow={SECTION_LABEL.experimentation}
+        title="How we connect research to production"
+        lead="Experiments inform agent and app modernization work—with a named owner at each review point."
         bullets={[
-          "Hypothesis framing tied to measurable business or operational outcomes",
-          "Evaluation design before scale-up of compute or vendor spend",
-          "Documented handoff from research spikes into production engineering",
+          "Start with a hypothesis tied to a real app workflow",
+          "Test agent behavior before heavy spend on compute or vendors",
+          "Hand off proven patterns to engineering with full documentation",
         ]}
       />
 
       <UbuntuPageSection
         variant="alt"
-        eyebrow="Coverage"
-        title="Coverage across research and innovation tracks"
-        lead="These tracks can run independently or as a precursor to scoped delivery engagements."
+        eyebrow={SECTION_LABEL.research}
+        title="Research and innovation tracks"
+        lead="Run these on their own or before a scoped agent or app modernization engagement."
       >
         <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {RESEARCH_TOPICS.map((topic) => (
@@ -85,15 +86,15 @@ export default function ResearchInnovationPage() {
       </UbuntuPageSection>
 
       <PageStandardSections
-        pageKey="detail"
+        pageKey="research"
         contactContext="Research & Innovation"
         includeMethodology={false}
-        includeOutcomes={false}
+        includeOutcomes
         includeAssurance
         ctaOverrides={{
-          title: "Next Step for research and innovation",
+          title: "Get started with research and innovation",
           description:
-            "We can align a research briefing to your domain, data constraints, and governance requirements to define an actionable starting scope.",
+            "Tell us about an agent pattern or app upgrade idea. We will align a briefing to your domain, data limits, and governance needs.",
           mockupKey: "code",
         }}
       />

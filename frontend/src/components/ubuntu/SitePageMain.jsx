@@ -3,6 +3,6 @@
  */
 export default function SitePageMain({ children, className = "" }) {
   return (
-    <main className={`ubuntu-home-page relative z-10 bg-white ${className}`.trim()}>{children}</main>
+    <div className={`ubuntu-home-page relative z-10 bg-white ${className}`.trim()}>{children}</div>
   );
 }

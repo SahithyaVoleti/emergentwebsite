@@ -1,8 +1,9 @@
-﻿import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import UbuntuSplitLayout from "./ubuntu/UbuntuSplitLayout";
 import UbuntuLink from "./ubuntu/UbuntuLink";
 import { getSiteMockup } from "../data/siteMockups";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function CTASection({
   title,
@@ -10,9 +11,10 @@ export default function CTASection({
   buttonText,
   buttonHref,
   contactIntent = "contact",
-  compact = false,
+  compact: _compact = false,
   hideLabel = false,
   mockupKey = "collaboration",
+  secondaryCta = { label: "View services", href: "/services" },
 }) {
   const location = useLocation();
   const topic =
@@ -33,15 +35,15 @@ export default function CTASection({
     >
       {!hideLabel && (
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
-          Next Step
+          {SECTION_LABEL.contact}
         </p>
       )}
       <h2 data-testid="cta-title" className="ubuntu-section-title text-white">
-        {title || "Next Step for Your AI and Software Initiative"}
+        {title || "Get started with AI agents in your applications"}
       </h2>
       <p className="ubuntu-lead text-white/85">
         {description ||
-          "Contact us to discuss scope, timeline, and fit. We respond with a structured view of options, dependencies, and governance considerations for your environment."}
+          "Tell us about the software you run. We will outline how to build agents, modernize apps, or both—with clear scope and next steps."}
       </p>
       <div className="ubuntu-cta-row">
         {href.startsWith("http") || href.startsWith("mailto:") ? (
@@ -61,8 +63,8 @@ export default function CTASection({
             {buttonText || "Contact us"}
           </Link>
         )}
-        <UbuntuLink to="/#services-grid" className="!text-[#e8b4b8]">
-          View services
+        <UbuntuLink to={secondaryCta.href} className="!text-[#e8b4b8]">
+          {secondaryCta.label}
         </UbuntuLink>
       </div>
     </UbuntuSplitLayout>

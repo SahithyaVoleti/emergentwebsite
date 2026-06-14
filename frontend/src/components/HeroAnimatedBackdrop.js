@@ -1,9 +1,7 @@
-import { FULL_BLEED_DARK_OVERLAY_STYLE, FULL_BLEED_LIGHT_OVERLAY_STYLE } from "../lib/heroFullBleed";
-
 /**
  * Full-bleed hero media: background video or image with standard object-contain/cover.
  */
-export default function HeroAnimatedBackdrop({ image, video, bgDark = true }) {
+export default function HeroAnimatedBackdrop({ image, video, bgDark: _bgDark = true }) {
   return (
     <>
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#F0F4F8]" aria-hidden>

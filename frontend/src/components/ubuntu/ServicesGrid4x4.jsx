@@ -1,6 +1,7 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Services catalog as a responsive 4-column card grid (4×2 for eight tracks on large screens).
@@ -8,9 +9,9 @@ import ProductCardHeading from "./ProductCardHeading";
 export default function ServicesGrid4x4({
   services = [],
   id = "services-grid",
-  eyebrow = "Coverage",
-  title = "Coverage across service delivery tracks",
-  lead = "This coverage lists delivery tracks you can brief against. Select a card to open the full service overview.",
+  eyebrow = SECTION_LABEL.serviceCatalog,
+  title = "Service delivery tracks",
+  lead = "Select a delivery track to review scope, capabilities, and integration assumptions for your environment.",
   viewAllHref = undefined,
   viewAllLabel = "View all services",
   className = "",

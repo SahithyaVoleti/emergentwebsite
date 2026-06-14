@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 function BlogFeaturedCard({ post }) {
   return (
     <Link
@@ -62,8 +63,8 @@ function BlogCompactCard({ post }) {
 export default function UbuntuBlogCatalogBand({
   articles = [],
   id = "blog-catalog",
-  eyebrow = "Coverage",
-  title = "Coverage across articles and resources",
+  eyebrow = SECTION_LABEL.blog,
+  title = "Articles and resources",
   lead = "Practical notes on tools, models, and delivery discipline for technical and program stakeholders.",
   className = "!border-t-0",
 }) {

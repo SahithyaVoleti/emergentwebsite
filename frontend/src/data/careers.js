@@ -6,7 +6,7 @@ const careers = [
     location: "San Francisco, CA (Hybrid)",
     type: "Full-Time",
     experience: "5+ years",
-    description: "Join our core AI engineering team to design, build, and deploy production-grade AI systems for enterprise clients. You'll work with cutting-edge LLMs, RAG pipelines, and multi-agent systems.",
+    description: "Join our AI engineering team to design, build, and deploy production AI systems for enterprise clients. You will work with LLMs, RAG pipelines, and multi-agent systems under defined governance boundaries.",
     responsibilities: [
       "Design and implement production-grade AI/ML pipelines",
       "Build RAG systems and fine-tune large language models",
@@ -29,7 +29,7 @@ const careers = [
     location: "Remote (US/Europe)",
     type: "Full-Time",
     experience: "3+ years",
-    description: "Build beautiful, high-performance web applications for our AI-powered products and client projects. You'll work across the stack with React, Node.js, and Python.",
+    description: "Build high-performance web applications for our AI products and client projects. You will work across the stack with React, Node.js, and Python.",
     responsibilities: [
       "Develop responsive web applications using React/Next.js",
       "Build and maintain RESTful APIs and GraphQL endpoints",
@@ -52,7 +52,7 @@ const careers = [
     location: "San Francisco, CA (Hybrid)",
     type: "Full-Time",
     experience: "4+ years",
-    description: "Define and drive the product strategy for our AI platform solutions. You'll work at the intersection of business, technology, and user experience.",
+    description: "Define and drive product strategy for our AI platform solutions. You will work at the intersection of business, technology, and user experience.",
     responsibilities: [
       "Define product vision, strategy, and roadmap for AI products",
       "Gather and prioritize requirements from clients and stakeholders",
@@ -75,7 +75,7 @@ const careers = [
     location: "Remote (Global)",
     type: "Full-Time",
     experience: "3+ years",
-    description: "Apply advanced analytics and machine learning to solve complex business problems for our enterprise clients across healthcare, fintech, and retail industries.",
+    description: "Apply analytics and machine learning to solve business problems for enterprise clients across healthcare, fintech, and retail.",
     responsibilities: [
       "Develop predictive models and machine learning pipelines",
       "Analyze large datasets to extract actionable insights",
@@ -98,7 +98,7 @@ const careers = [
     location: "Remote (US/Europe)",
     type: "Full-Time",
     experience: "4+ years",
-    description: "Build and maintain the cloud infrastructure that powers our AI solutions. You'll work with Kubernetes, Terraform, and modern CI/CD pipelines.",
+    description: "Build and maintain the cloud infrastructure that powers our AI solutions. You will work with Kubernetes, Terraform, and CI/CD pipelines.",
     responsibilities: [
       "Design and maintain cloud infrastructure on AWS and GCP",
       "Build and optimize CI/CD pipelines for rapid deployment",
@@ -121,7 +121,7 @@ const careers = [
     location: "San Francisco, CA (Hybrid)",
     type: "Full-Time",
     experience: "3+ years",
-    description: "Design intuitive, beautiful interfaces for AI-powered products that make complex technology accessible and delightful for users.",
+    description: "Design clear interfaces for AI-powered products that make complex technology accessible to users.",
     responsibilities: [
       "Design user interfaces for web and mobile AI applications",
       "Conduct user research and usability testing",

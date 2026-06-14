@@ -3,57 +3,7 @@ import { Link } from "react-router-dom";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 import SectionPatternBackground from "./SectionPatternBackground";
 import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
-
-const footerColumns = [
-  {
-    title: "Services",
-    links: [
-      { label: "Applied ML", href: "/services/artificial-intelligence" },
-      { label: "GenAI & Copilots", href: "/services/generative-ai" },
-      { label: "Platform Engineering", href: "/services/custom-software" },
-      { label: "AI Agents", href: "/services/ai-agents" },
-      { label: "LLM Lifecycle", href: "/services/llm-development" },
-      { label: "Data Platform", href: "/services/data-engineering" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Smriti", href: "/solutions/databrain-ai" },
-      { label: "Arogya", href: "/solutions/medimind-ai" },
-      { label: "Pratibha", href: "/solutions/talentify-ai" },
-      { label: "Samvad", href: "/solutions/quikbiz-ai" },
-      { label: "Kosha", href: "/solutions/intellibot-ai" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "/about" },
-      { label: "Team", href: "/team" },
-      { label: "Case studies", href: "/case-studies" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact", href: "/#page-contact" },
-    ],
-  },
-  {
-    title: "Industries",
-    links: [
-      { label: "Healthcare", href: "/industries/healthcare" },
-      { label: "Education", href: "/industries/education" },
-      { label: "FinTech", href: "/industries/fintech" },
-      { label: "Commerce", href: "/industries/retail" },
-      { label: "Industrial", href: "/industries/manufacturing" },
-    ],
-  },
-];
-
-const legalLinks = [
-  { label: "Privacy", href: "/privacy-policy" },
-  { label: "Terms", href: "/terms-and-conditions" },
-  { label: "Legal", href: "/legal-templates" },
-];
+import { FOOTER_COLUMNS, LEGAL_LINKS, SOCIAL_LINKS } from "../data/siteNav";
 
 export default function Footer() {
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
@@ -76,7 +26,7 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <Link to="/" className="mb-3 inline-block">
               <img
-                src="/neuraltrix-logo.jpeg"
+                src="/neuraltrix-logo.svg"
                 alt="NeuralTrix AI"
                 className="h-8 w-auto object-contain"
               />
@@ -85,28 +35,32 @@ export default function Footer() {
               Applied AI engineering and software delivery for enterprise programs.
             </p>
             <div className="mt-3 flex items-center gap-2.5" aria-label="Social links">
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ubuntu-footer-social"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={16} aria-hidden />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ubuntu-footer-social"
-                aria-label="Twitter"
-              >
-                <Twitter size={16} aria-hidden />
-              </a>
+              {SOCIAL_LINKS.linkedin ? (
+                <a
+                  href={SOCIAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ubuntu-footer-social"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={16} aria-hidden />
+                </a>
+              ) : null}
+              {SOCIAL_LINKS.twitter ? (
+                <a
+                  href={SOCIAL_LINKS.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ubuntu-footer-social"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={16} aria-hidden />
+                </a>
+              ) : null}
             </div>
           </div>
 
-          {footerColumns.map((column) => (
+          {FOOTER_COLUMNS.map((column) => (
             <div key={column.title}>
               <h4 className="ubuntu-footer-heading">{column.title}</h4>
               <ul className="ubuntu-footer-list">
@@ -122,33 +76,25 @@ export default function Footer() {
           ))}
         </div>
 
-        <hr className="ubuntu-footer-rule my-6" />
-
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="ubuntu-footer-meta text-xs sm:text-[0.8125rem]">
-            &copy; {new Date().getFullYear()} NeuralTrix AI · Established {COMPANY_FOUNDED_LABEL}
-            <span className="mx-2 hidden text-[#333]/25 sm:inline" aria-hidden="true">
-              |
-            </span>
-            <span className="mt-2 flex flex-wrap gap-x-4 gap-y-1 sm:mt-0 sm:inline-flex">
-              {legalLinks.map((link) => (
-                <Link key={link.href} to={link.href} className="ubuntu-footer-link">
-                  {link.label}
-                </Link>
-              ))}
-            </span>
+        <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="ubuntu-footer-meta text-xs">
+            © {new Date().getFullYear()} NeuralTrix AI. Founded {COMPANY_FOUNDED_LABEL}.
           </p>
-
-          <button
-            data-testid="scroll-to-top"
-            type="button"
-            onClick={scrollToTop}
-            className="ubuntu-footer-top inline-flex items-center gap-1.5 text-xs sm:text-sm"
-            aria-label="Back to top"
-          >
-            Back to top
-            <ArrowUp size={14} aria-hidden />
-          </button>
+          <div className="flex flex-wrap items-center gap-4">
+            {LEGAL_LINKS.map((link) => (
+              <Link key={link.label} to={link.href} className="ubuntu-footer-link text-xs">
+                {link.label}
+              </Link>
+            ))}
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="ubuntu-footer-social"
+              aria-label="Back to top"
+            >
+              <ArrowUp size={16} aria-hidden />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

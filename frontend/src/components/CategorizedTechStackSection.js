@@ -1,6 +1,6 @@
-﻿import AnimatedSection from "./AnimatedSection";
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
+import { SECTION_LABEL } from "../data/sectionLabels";
 import TechStackLogoGrid from "./TechStackLogoGrid";
 
 const DEFAULT_CATEGORY_DESC =
@@ -124,7 +124,7 @@ export function CategorizedTechStackPanels({
  * Full section: eyebrow, title, intro, optional integrations link, categorized panels.
  */
 export default function CategorizedTechStackSection({
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.technology,
   title,
   intro,
   categories = [],

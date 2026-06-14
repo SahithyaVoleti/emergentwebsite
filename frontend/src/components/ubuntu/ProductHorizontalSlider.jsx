@@ -1,9 +1,10 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Shared horizontal carousel for services, solutions, or similar catalog items.
@@ -11,7 +12,7 @@ import ProductCardHeading from "./ProductCardHeading";
 export default function ProductHorizontalSlider({
   items = [],
   id = "product-slider",
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.examples,
   title,
   lead,
   viewAllHref,

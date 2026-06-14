@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Industry catalog — same circular icon grid as homepage domains band.
@@ -6,9 +7,9 @@
 export default function UbuntuIndustriesIconGrid({
   industries = [],
   id = "verticals",
-  eyebrow = "Coverage",
-  title = "Coverage across industry programs",
-  lead = "This coverage surfaces sectors where we scope pilots today; each overview ties constraints to delivery patterns and milestone checkpoints.",
+  eyebrow = SECTION_LABEL.industries,
+  title = "Industry programs",
+  lead = "Sectors where we scope pilots today; each overview ties constraints to delivery patterns and milestone checkpoints.",
   className = "!border-t-0",
 }) {
   if (!industries.length) return null;

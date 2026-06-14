@@ -1,4 +1,4 @@
-﻿import PageHero from "../components/PageHero";
+import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
@@ -280,8 +280,8 @@ export default function PrivacyPolicyPage() {
 
       <UbuntuPageSection
         id="privacy-content"
-        eyebrow="Assurance"
-        title="Assurance for data privacy"
+        eyebrow="Policy"
+        title="Privacy policy overview"
         lead="Policy sections for collection, use, retention, and rights requests across services and digital channels."
         image={policyMockup.src}
         imageAlt={policyMockup.alt}
@@ -309,8 +309,7 @@ export default function PrivacyPolicyPage() {
       />
 
       <UbuntuListingSection
-        eyebrow="Coverage"
-        title="Coverage across privacy request templates"
+        title="Privacy request templates"
         lead="Downloadable templates for common privacy and data-subject rights requests. Template use does not modify statutory obligations or response timelines."
       >
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -330,7 +329,12 @@ export default function PrivacyPolicyPage() {
         </div>
       </UbuntuListingSection>
 
-      <PageStandardSections pageKey="legal" contactContext="Privacy Policy Page" />
+      <PageStandardSections
+        pageKey="legal"
+        contactContext="Privacy Policy Page"
+        includeMethodology={false}
+        includeOutcomes={false}
+      />
     </SitePageMain>
   );
 }

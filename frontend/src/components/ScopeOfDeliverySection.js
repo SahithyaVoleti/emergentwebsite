@@ -1,4 +1,5 @@
 import ScopeOfDeliveryGrid from "./service/ScopeOfDeliveryGrid";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 /**
  * Service scope band — centered icon grid (feature-card layout).
@@ -15,7 +16,7 @@ export default function ScopeOfDeliverySection({ service }) {
   return (
     <ScopeOfDeliveryGrid
       id="scope-of-delivery"
-      eyebrow="Coverage"
+      eyebrow={SECTION_LABEL.scope}
       title={`Scope of delivery for ${service.title}`}
       lead="Service modules structured for rapid time-to-value with clear boundaries per track."
       modules={modules}

@@ -1,19 +1,20 @@
-﻿import { ShieldCheck, Target, Repeat, BarChart, FileCheck } from "lucide-react";
+import { ShieldCheck, Target, Repeat, BarChart, FileCheck } from "lucide-react";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 import UbuntuSectionShell from "./UbuntuSectionShell";
 
 const DEFAULT_PILLARS = [
-  { icon: Target, title: "Defined", desc: "Precision KPI gates agreed before build scale-up." },
-  { icon: ShieldCheck, title: "Governed", desc: "Access, audit, and change control embedded in delivery." },
-  { icon: Repeat, title: "Iterative", desc: "Thin slices with explicit go or stop decisions." },
+  { icon: Target, title: "Defined", desc: "KPI targets agreed before build scale-up." },
+  { icon: ShieldCheck, title: "Controlled", desc: "Access, audit, and change control built into delivery." },
+  { icon: Repeat, title: "Iterative", desc: "Small releases with clear go or stop decisions." },
   { icon: BarChart, title: "Measured", desc: "Operational metrics tied to acceptance criteria." },
-  { icon: FileCheck, title: "Documented", desc: "Handover artifacts suitable for internal review." },
+  { icon: FileCheck, title: "Documented", desc: "Handover materials suitable for internal review." },
 ];
 
 export default function UbuntuAssurancePillars({
   pillars = DEFAULT_PILLARS,
-  eyebrow = "Assurance",
+  eyebrow = SECTION_LABEL.controls,
   title = "Assurance through delivery commitments",
-  lead = "This assurance model keeps deployments grounded in measurable checkpoints, governance, and documented handover.",
+  lead = "We keep deployments grounded in measurable checkpoints, governance, and documented handover.",
 }) {
   return (
     <UbuntuSectionShell eyebrow={eyebrow} title={title} lead={lead}>

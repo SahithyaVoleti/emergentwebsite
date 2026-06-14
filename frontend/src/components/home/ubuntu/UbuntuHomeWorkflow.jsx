@@ -23,9 +23,11 @@ export default function UbuntuHomeWorkflow({ config, steps }) {
       <div className="ubuntu-container">
         <AnimatedSection>
           <div className="max-w-3xl text-left">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-              {eyebrow}
-            </p>
+            {eyebrow && (
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+                {eyebrow}
+              </p>
+            )}
             <h2 id={`${sectionId}-heading`} className="ubuntu-section-title text-[#111]">
               {title}
             </h2>

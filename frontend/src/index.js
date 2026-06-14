@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import "@/index.css";
 import "@/styles/ubuntu-home.css";
 import App from "@/App";
+import { initAnalytics } from "@/lib/analytics";
+
+initAnalytics();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>,
 );

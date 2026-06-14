@@ -8,22 +8,22 @@ const pillars = [
   {
     icon: LockKeyhole,
     title: "Secure by design",
-    desc: "Security controls embedded across architecture, development, and deployment workflows.",
+    desc: "Security controls built into architecture, development, and deployment.",
   },
   {
     icon: Eye,
     title: "Governance and auditability",
-    desc: "Traceable controls, review paths, and operational transparency for enterprise assurance.",
+    desc: "Traceable controls, review paths, and operational transparency.",
   },
   {
     icon: Server,
     title: "Infrastructure hardening",
-    desc: "Environment-level protections, access boundaries, and resilient platform practices.",
+    desc: "Environment protections, access boundaries, and resilient platform practices.",
   },
   {
     icon: ShieldCheck,
     title: "Compliance alignment",
-    desc: "Delivery patterns designed to support regulated and security-sensitive industries.",
+    desc: "Delivery patterns that support regulated and security-sensitive industries.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function SecurityPage() {
       <PageHero
         label="Security"
         title="Security Practices for Enterprise AI Environments"
-        description="Our security model integrates technical controls, governance checkpoints, and operational safeguards across the full delivery lifecycle."
+        description="Our security model combines technical controls, governance checkpoints, and operational safeguards across the delivery lifecycle."
         primaryCTA={{
           text: "Discuss security requirements",
           href: "#page-contact",
@@ -44,9 +44,8 @@ export default function SecurityPage() {
 
       <UbuntuFeaturesBand
         id="security-pillars"
-        eyebrow="Coverage"
-        title="Coverage across security controls"
-        lead="This coverage summarizes control areas we address during architecture, build, and operations—not certification claims unless separately contracted."
+        title="Security controls we address"
+        lead="Control areas we address during architecture, build, and operations. Not certification claims unless separately contracted."
         items={pillars}
         className="!border-t-0"
       />

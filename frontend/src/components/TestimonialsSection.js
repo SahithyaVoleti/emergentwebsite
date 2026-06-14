@@ -1,4 +1,4 @@
-﻿import {
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -6,15 +6,20 @@
   CarouselPrevious,
 } from "./ui/carousel";
 import engagementPrinciples from "../data/engagementPrinciples";
+import { SECTION_LABEL } from "../data/sectionLabels";
 import UbuntuListingSection from "./ubuntu/UbuntuListingSection";
 
-export default function TestimonialsSection({ title, showLabel = true }) {
+export default function TestimonialsSection({
+  title,
+  showLabel = true,
+  eyebrow = SECTION_LABEL.engagement,
+}) {
   return (
     <UbuntuListingSection
       id="page-testimonials"
-      eyebrow={showLabel ? "Assurance" : undefined}
-      title={title || "Assurance for early programs"}
-      lead="Operating commitments for discovery and pilots—use alongside your own diligence, security review, and procurement rules."
+      eyebrow={showLabel ? eyebrow : undefined}
+      title={title || "Engagement principles for new partners"}
+      lead="Operating commitments for discovery and pilots. Use alongside your own diligence, security review, and procurement rules."
       variant="alt"
     >
       <Carousel opts={{ align: "start", loop: true }} className="w-full">

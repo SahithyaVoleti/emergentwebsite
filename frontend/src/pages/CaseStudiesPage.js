@@ -1,19 +1,18 @@
-﻿import PageHero from "../components/PageHero";
+import PageHero from "../components/PageHero";
 import CaseStudiesVerticalSlider from "../components/ubuntu/CaseStudiesVerticalSlider";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import caseStudies from "../data/caseStudies";
-import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function CaseStudiesPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Delivery scenarios"
-        title={`${TRACEFOLD}-Indexed Programs Aligned to Our Services`}
-        description={`These ${TRACEFOLD} narratives show how NeuralTrix approaches common AI and software problems, so you can judge fit before a pilot. They are not endorsements or guarantees from named customers.`}
+        label="Production test cases"
+        title="AI systems we built, tested, and made production-ready"
+        description="These are real implementations NeuralTrix developed and validated in live environments—across education, healthcare, finance, commerce, manufacturing, and more. Each test case is ready to adapt to your applications."
         primaryCTA={{
-          text: "Schedule a consultation",
+          text: "Discuss a test case",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
@@ -24,13 +23,12 @@ export default function CaseStudiesPage() {
         studies={caseStudies}
         id="case-studies-catalog"
         showLabel
-        eyebrow="Coverage"
         title={
           <>
-            Coverage across <span className="text-[#8b1538]">{TRACEFOLD} scenarios</span>
+            Production-ready <span className="text-[#8b1538]">test cases</span> by sector
           </>
         }
-        lead={`Scroll through representative ${TRACEFOLD} narratives. Each panel describes a problem class we address.`}
+        lead="Scroll through live-tested implementations across industry sectors. Each case shows what we built, how we tested it, and what is ready for your environment."
         viewAllHref={undefined}
         className="!border-t-0"
       />

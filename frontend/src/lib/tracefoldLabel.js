@@ -1,5 +1,7 @@
 /**
- * Coined in-site label for representative delivery narratives (not a public industry term).
- * Use "Tracefold" to qualify scenario copy so it is not read as a completed client program.
+ * Label for NeuralTrix-built systems developed, tested in live environments, and production-ready.
  */
-export const TRACEFOLD = "Tracefold";
+export const PRODUCTION_TEST_CASE = "Production test case";
+
+/** @deprecated Use PRODUCTION_TEST_CASE — kept for import compatibility during migration. */
+export const TRACEFOLD = PRODUCTION_TEST_CASE;

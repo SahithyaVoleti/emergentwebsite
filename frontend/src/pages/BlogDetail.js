@@ -1,4 +1,4 @@
-﻿import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { BookOpen, Share2 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
@@ -25,6 +25,9 @@ export default function BlogDetail() {
 
   const headings = article.content.filter((b) => b.type === "heading");
   const meta = `${article.date} · ${article.readTime}`;
+  const pageUrl = typeof window !== "undefined" ? window.location.href : "";
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedTitle = encodeURIComponent(article.title);
 
   return (
     <SitePageMain>
@@ -61,15 +64,28 @@ export default function BlogDetail() {
                     <Share2 size={14} aria-hidden /> Share
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Twitter", "LinkedIn", "Email"].map((s) => (
-                      <button
-                        key={s}
-                        type="button"
-                        className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
-                      >
-                        {s}
-                      </button>
-                    ))}
+                    <a
+                      href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                    >
+                      Twitter
+                    </a>
+                    <a
+                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                    >
+                      Email
+                    </a>
                   </div>
                 </div>
               </div>
@@ -123,15 +139,14 @@ export default function BlogDetail() {
         includeMethodology={false}
         includeOutcomes={false}
         ctaOverrides={{
-          title: "Next Step for Related Questions",
+          title: "Get started with related questions",
           description:
             "Share your scenario for orientation on implementation options, tradeoffs, and sequencing decisions appropriate to your environment.",
           buttonText: "Contact us",
         }}
         beforeCta={
           <UbuntuListingSection
-            eyebrow="Coverage"
-            title="Coverage across related articles"
+            title="Related articles"
             lead="Additional articles on tools, delivery, and governance topics."
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">

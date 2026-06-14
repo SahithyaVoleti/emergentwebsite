@@ -27,7 +27,6 @@ import {
   SiGraphql,
   SiApachekafka,
   SiElasticsearch,
-  SiPinecone,
   SiHuggingface,
   SiMistralai,
 } from "react-icons/si";

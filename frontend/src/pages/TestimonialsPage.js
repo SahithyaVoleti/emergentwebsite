@@ -1,5 +1,6 @@
 import PageHero from "../components/PageHero";
 import TestimonialsSection from "../components/TestimonialsSection";
+import { SECTION_LABEL } from "../data/sectionLabels";
 import UbuntuStatsStrip from "../components/ubuntu/UbuntuStatsStrip";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
@@ -9,8 +10,8 @@ export default function TestimonialsPage() {
     <SitePageMain>
       <PageHero
         label="Engagement"
-        title="How We Work With Prospective Partners"
-        description="NeuralTrix is building its client base: this page explains what you can expect in discovery and pilot—transparency, engineering access, and explicit success measures."
+        title="Engagement Principles for Prospective Partners"
+        description="NeuralTrix is building its client base. This page explains what to expect in discovery and pilot: transparency, engineering access, and clear success measures."
         primaryCTA={{ text: "Start a conversation", href: "#page-contact" }}
         illustrationKey="caseStudies"
       />
@@ -24,7 +25,10 @@ export default function TestimonialsPage() {
         ]}
       />
 
-      <TestimonialsSection title="Principles in detail" />
+      <TestimonialsSection
+        eyebrow={SECTION_LABEL.engagement}
+        title="Principles in detail"
+      />
 
       <PageStandardSections pageKey="testimonials" contactContext="Engagement / prospective partner" />
     </SitePageMain>

@@ -3,23 +3,24 @@ import SolutionsHorizontalSlider from "../components/ubuntu/SolutionsHorizontalS
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function SolutionsPage() {
   return (
     <SitePageMain>
       <PageHero
         label="Solutions"
-        title="Solution Accelerators for Structured AI Rollouts"
-        description="Pre-architected modules for document intelligence, regulated workflows, talent operations, and adjacent domains, maintained with customer programs and internal delivery feedback."
-        primaryCTA={{ text: "Review accelerators", href: "#solutions-slider" }}
+        title="Agent and copilot modules for your apps"
+        description="Pre-built modules you deploy inside CRM, ERP, internal tools, and customer apps—updated from real agent and app modernization projects."
+        primaryCTA={{ text: "Browse solutions", href: "#solutions-slider" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
       <SolutionsHorizontalSlider
         id="solutions-catalog"
-        eyebrow="Coverage"
-        title="Coverage across solution accelerators"
-        lead="Pre-architected modules by accelerator—use the carousel to review each solution, then open a full overview with scope boundaries and integration assumptions."
+        eyebrow={SECTION_LABEL.accelerators}
+        title="Solution modules"
+        lead="Each module targets a workflow inside software you already use. Browse the carousel, then open a full overview with scope and integration notes."
         viewAllHref={undefined}
         autoAdvanceMs={0}
         className="!border-t-0"

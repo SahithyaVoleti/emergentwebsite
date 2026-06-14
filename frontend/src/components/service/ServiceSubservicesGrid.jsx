@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 const SLIDE_INTERVAL_MS = 4500;
 
@@ -15,7 +16,7 @@ const SLIDE_INTERVAL_MS = 4500;
 export default function ServiceSubservicesGrid({
   service,
   id = "scope-of-delivery",
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.scope,
   title,
   lead = "Service modules structured for rapid time-to-value with clear boundaries per track.",
   className = "!border-t-0",

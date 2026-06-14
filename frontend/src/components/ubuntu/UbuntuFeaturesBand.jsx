@@ -1,11 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
  * Homepage Features band — brand icon squares + two-column definition list.
  */
 export default function UbuntuFeaturesBand({
   id,
-  eyebrow = "Coverage",
+  eyebrow = SECTION_LABEL.capabilities,
   title,
   lead,
   items = [],

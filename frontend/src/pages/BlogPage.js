@@ -10,7 +10,7 @@ export default function BlogPage() {
       <PageHero
         label="Blog and resources"
         title="Technical and Operational Notes from Enterprise AI Delivery"
-        description="Practical articles on tools, models, and delivery discipline, useful whether you engage NeuralTrix next month or are still building an internal business case."
+        description="Practical articles on tools, models, and delivery discipline. Useful whether you plan to engage NeuralTrix soon or are building an internal business case."
         primaryCTA={{ text: "Request information", href: "#page-contact" }}
         illustrationKey="blog"
       />

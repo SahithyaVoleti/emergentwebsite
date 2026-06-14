@@ -10,10 +10,12 @@ import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
+import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 import solutions from "../data/solutions";
 import { getSiteMockup } from "../data/siteMockups";
+import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -52,8 +54,8 @@ export default function SolutionDetail() {
 
       <div id="capabilities">
         <UbuntuPageSection
-          eyebrow="Coverage"
-          title={`Coverage for ${solution.title}`}
+          eyebrow={SECTION_LABEL.overview}
+          title={`${solution.title} overview`}
           lead={solution.overview}
           image={overviewMockup.src}
           imageAlt={overviewMockup.alt}
@@ -67,15 +69,16 @@ export default function SolutionDetail() {
         />
 
         <ArchitecturalShowcase
-          title="Coverage across functional capabilities"
-          description="Service modules structured to shorten time-to-value while keeping architecture and operations maintainable."
+          eyebrow={SECTION_LABEL.modules}
+          title="Solution modules"
+          description="Pre-built modules structured to shorten time-to-value while keeping architecture and operations maintainable."
           capabilities={solution.features}
         />
 
         <UbuntuPageSection
-          eyebrow="Methodology"
-          title="Methodology for accelerator adoption"
-          lead="This methodology sequences connectivity, configuration, validation, and rollout with explicit checkpoints."
+          eyebrow={SECTION_LABEL.methodology}
+          title={`Rollout steps for ${solution.title}`}
+          lead="We sequence connectivity, configuration, validation, and rollout with explicit checkpoints."
           image={methodologyMockup.src}
           imageAlt={methodologyMockup.alt}
           belowContent={
@@ -94,7 +97,10 @@ export default function SolutionDetail() {
           }
         />
 
-        <DomainAssurance />
+        <DomainAssurance
+          title={`Assurance for ${solution.title} rollouts`}
+          lead="Measurable checkpoints, permission scoping, and documented handover for accelerator deployments."
+        />
       </div>
 
       <PageStandardSections
@@ -104,14 +110,15 @@ export default function SolutionDetail() {
         includeOutcomes={false}
         includeAssurance={false}
         ctaOverrides={{
-          title: `Next Step for ${solution.title}`,
+          title: `Get started with ${solution.title}`,
           description:
             "Assess integration effort, governance fit, and operational impact for your environment and stakeholder model.",
           mockupKey: "dashboard",
         }}
         beforeCta={
           <>
-            <TestimonialsSection title="How we engage new partners" />
+            <RelatedCaseStudies />
+            <TestimonialsSection title="Engagement principles for new partners" />
             <FAQSection faqs={solution.faqs} />
             <RelatedBlog />
           </>
