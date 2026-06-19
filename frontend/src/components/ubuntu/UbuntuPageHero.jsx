@@ -1,15 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
-import UbuntuLink from "./UbuntuLink";
-import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
-
-function scrollToSelector(e, hashSelector) {
-  e.preventDefault();
-  const target = document.querySelector(hashSelector);
-  if (target) {
-    const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
-    window.scrollTo({ top, behavior: "smooth" });
-  }
-}
+import SiteNavLink from "./SiteNavLink";
 
 export default function UbuntuPageHero({
   label,
@@ -20,64 +9,21 @@ export default function UbuntuPageHero({
   hideContent = false,
   embedded = false,
 }) {
-  const location = useLocation();
-
-  const contactTopicFor = (cta) =>
-    cta?.contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
-
   const renderCta = (cta, primary = false) => {
     if (!cta) return null;
     const href = cta.href?.trim();
-    if (primary) {
-      if (href === "#page-contact") {
-        return (
-          <Link to={contactFormTo(location.pathname, contactTopicFor(cta))} className="ubuntu-btn-primary">
-            {cta.text}
-          </Link>
-        );
-      }
-      if (href?.startsWith("#")) {
-        return (
-          <a href={href} className="ubuntu-btn-primary" onClick={(e) => scrollToSelector(e, href)}>
-            {cta.text}
-          </a>
-        );
-      }
-      if (href?.startsWith("http") || href?.startsWith("mailto:")) {
-        return (
-          <a href={href} className="ubuntu-btn-primary" target="_blank" rel="noreferrer">
-            {cta.text}
-          </a>
-        );
-      }
-      return (
-        <Link to={href || "/"} className="ubuntu-btn-primary">
-          {cta.text}
-        </Link>
-      );
-    }
+    if (!href) return null;
 
-    if (href === "#page-contact") {
-      return <UbuntuLink to={contactFormTo(location.pathname, contactTopicFor(cta))}>{cta.text}</UbuntuLink>;
-    }
-    if (href?.startsWith("#")) {
-      return (
-        <a href={href} className="ubuntu-link-muted" onClick={(e) => scrollToSelector(e, href)}>
-          {cta.text}
-        </a>
-      );
-    }
-    if (href?.startsWith("http") || href?.startsWith("mailto:")) {
-      return (
-        <a href={href} className="ubuntu-link-muted" target="_blank" rel="noreferrer">
-          {cta.text}
-        </a>
-      );
-    }
     return (
-      <UbuntuLink to={href || "/"} muted>
+      <SiteNavLink
+        href={href}
+        contactIntent={cta.contactIntent}
+        primary={primary}
+        muted={!primary}
+        showArrow={!primary}
+      >
         {cta.text}
-      </UbuntuLink>
+      </SiteNavLink>
     );
   };
 

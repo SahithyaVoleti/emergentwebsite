@@ -12,6 +12,7 @@ export default function ContactForm({
   testIdPrefix = "contact",
   showContactDetails = true,
   copyOverrides,
+  alternateCta,
 }) {
   const [searchParams] = useSearchParams();
   const leadIntent =
@@ -57,6 +58,7 @@ export default function ContactForm({
       context={context}
       leadIntent={leadIntent}
       showContactDetails={showContactDetails}
+      alternateCta={alternateCta}
     />
   );
 }

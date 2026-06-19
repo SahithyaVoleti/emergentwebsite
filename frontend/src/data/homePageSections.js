@@ -20,9 +20,26 @@ export const HOME_PAGE_LAYOUT = [
 ];
 
 export const HOME_HERO = {
-  title: "We build AI agents and turn your apps into AI-powered software",
+  badge: "AI agents & app modernization",
+  titleBefore: "We build",
+  titleAccent: "AI agents",
+  titleAfter: "and turn your apps into AI-powered software",
   lead: "NeuralTrix creates intelligent agents for business applications—and modernizes the software you already run—across healthcare, finance, retail, education, manufacturing, and more.",
+  features: [
+    { icon: "bot", label: "AI agents" },
+    { icon: "layers", label: "Intelligent integration" },
+    { icon: "brain", label: "Advanced AI models" },
+    { icon: "trending-up", label: "Scalable impact" },
+  ],
   primaryCta: { label: "See AI agent services", href: "/services/ai-agents" },
+  valueDeliver: [
+    { icon: "heart", label: "Enhanced user experience" },
+    { icon: "settings", label: "Operational excellence" },
+    { icon: "bar-chart", label: "Data-driven decisions" },
+    { icon: "box", label: "Future-ready products" },
+  ],
+  /** @deprecated kept for any legacy references */
+  title: "We build AI agents and turn your apps into AI-powered software",
   secondaryCta: { label: "How we modernize apps", href: "/services/custom-software" },
 };
 

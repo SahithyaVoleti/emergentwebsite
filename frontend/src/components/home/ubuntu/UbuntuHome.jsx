@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Link } from "react-router-dom";
+import SiteNavLink from "../../ubuntu/SiteNavLink";
 import UbuntuHomeHeroChrome from "./UbuntuHomeHeroChrome";
 import UbuntuHomeHeroStack from "./UbuntuHomeHeroStack";
 import UbuntuHomeStatsStrip from "./UbuntuHomeStatsStrip";
@@ -63,9 +63,9 @@ export default function UbuntuHome() {
             <h2 className="ubuntu-section-title">{HOME_ALERT.title}</h2>
             <p className="ubuntu-lead">{HOME_ALERT.body}</p>
             <div className="ubuntu-cta-row">
-              <Link to={HOME_ALERT.primaryCta.href} className="ubuntu-btn-primary">
+              <SiteNavLink href={HOME_ALERT.primaryCta.href} primary showArrow={false}>
                 {HOME_ALERT.primaryCta.label}
-              </Link>
+              </SiteNavLink>
               <UbuntuHomeLink to={HOME_ALERT.secondaryCta.href}>
                 {HOME_ALERT.secondaryCta.label}
               </UbuntuHomeLink>
@@ -120,9 +120,14 @@ export default function UbuntuHome() {
         <h2 className="ubuntu-section-title">{HOME_NEXT_STEP.title}</h2>
         <p className="ubuntu-lead">{HOME_NEXT_STEP.lead}</p>
         <div className="ubuntu-cta-row flex-wrap">
-          <Link to={HOME_NEXT_STEP.primaryCta.href} className="ubuntu-btn-primary">
+          <SiteNavLink
+            href={HOME_NEXT_STEP.primaryCta.href}
+            contactIntent="consultation"
+            primary
+            showArrow={false}
+          >
             {HOME_NEXT_STEP.primaryCta.label}
-          </Link>
+          </SiteNavLink>
           <UbuntuHomeLink to={HOME_NEXT_STEP.secondaryCta.href}>
             {HOME_NEXT_STEP.secondaryCta.label}
           </UbuntuHomeLink>

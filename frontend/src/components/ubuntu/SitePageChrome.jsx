@@ -4,6 +4,7 @@ import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
 
 /**
  * Hero band with optional full-bleed background image (navbar is rendered once in UbuntuPageShell).
+ * @param {"default" | "light-split"} [variant]
  */
 export default function SitePageChrome({
   children,
@@ -11,9 +12,11 @@ export default function SitePageChrome({
   testId = "site-page-chrome",
   backgroundImage,
   backgroundVideo,
+  variant = "default",
 }) {
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
-  const isFullBleed = Boolean(backgroundImage || backgroundVideo);
+  const isLightSplit = variant === "light-split";
+  const isFullBleed = !isLightSplit && Boolean(backgroundImage || backgroundVideo);
 
   return (
     <section
@@ -24,6 +27,7 @@ export default function SitePageChrome({
         "ubuntu-site-page-chrome",
         "ubuntu-pattern-section",
         "ubuntu-pattern-section--hero",
+        isLightSplit && "ubuntu-site-page-chrome--light-split",
         isFullBleed && "ubuntu-site-page-chrome--fullbleed",
       ]
         .filter(Boolean)
@@ -31,7 +35,7 @@ export default function SitePageChrome({
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
-      <SectionPatternBackground variant="hero" />
+      {!isLightSplit && <SectionPatternBackground variant="hero" />}
       {isFullBleed && (
         <HeroAnimatedBackdrop image={backgroundImage} video={backgroundVideo} />
       )}

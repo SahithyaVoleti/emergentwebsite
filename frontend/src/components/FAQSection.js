@@ -28,17 +28,18 @@ export default function FAQSection({ faqs, title, eyebrow = SECTION_LABEL.questi
     </Accordion>
   );
 
-  if (bare || !title) {
-    return <div className="max-w-4xl">{accordion}</div>;
+  if (bare) {
+    return accordion;
   }
 
   return (
     <UbuntuListingSection
+      id="page-faq"
       eyebrow={eyebrow}
       title={title || "Frequently asked questions"}
       variant="alt"
     >
-      <div className="max-w-4xl">{accordion}</div>
+      {accordion}
     </UbuntuListingSection>
   );
 }

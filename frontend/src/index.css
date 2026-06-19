@@ -116,7 +116,19 @@ h4 {
     background-clip: unset !important;
 }
 
-/* Home hero headline: readable solid + accent on video */
+/* Hero headlines — white on dark/image hero bands (not light-split homepage) */
+.ubuntu-site .ubuntu-site-page-chrome:not(.ubuntu-site-page-chrome--light-split) #hero h1,
+.ubuntu-site .ubuntu-site-page-chrome:not(.ubuntu-site-page-chrome--light-split) #page-hero h1 {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: currentColor;
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
 #hero h1 {
     background: none;
     -webkit-background-clip: unset;

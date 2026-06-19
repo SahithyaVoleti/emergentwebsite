@@ -4,6 +4,7 @@ import PageContactForm from "../PageContactForm";
 import { PAGE_STANDARD_SECTIONS } from "../../data/pageStandardSections";
 import { SECONDARY_CTA_BY_PAGE } from "../../data/siteNav";
 import { getSiteMockup } from "../../data/siteMockups";
+import { isContactHref } from "../../lib/siteNavigation";
 
 function sectionFromConfig(config) {
   if (!config) return null;
@@ -50,6 +51,10 @@ export default function PageStandardSections({
           lead: cta.description,
         }
       : undefined;
+  const alternateCta =
+    cta.buttonHref && cta.buttonText && !isContactHref(cta.buttonHref)
+      ? { label: cta.buttonText, href: cta.buttonHref }
+      : undefined;
 
   return (
     <>
@@ -70,7 +75,11 @@ export default function PageStandardSections({
         />
       )}
       {includeContact && (
-        <PageContactForm context={contactContext} copyOverrides={contactCopyOverrides} />
+        <PageContactForm
+          context={contactContext}
+          copyOverrides={contactCopyOverrides}
+          alternateCta={alternateCta}
+        />
       )}
     </>
   );

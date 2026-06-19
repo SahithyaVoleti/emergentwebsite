@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
+import SiteNavLink from "./SiteNavLink";
 import MockupFrame from "./MockupFrame";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { submitLead } from "../../lib/submitLead";
@@ -29,6 +30,7 @@ export default function UbuntuContactFormSection({
   context,
   leadIntent = "contact",
   showContactDetails = true,
+  alternateCta,
 }) {
   const [form, setForm] = useState({
     first_name: "",
@@ -355,6 +357,14 @@ export default function UbuntuContactFormSection({
         {copy.title}
       </h2>
       <p className="ubuntu-lead mt-4">{copy.lead}</p>
+
+      {alternateCta && (
+        <div className="ubuntu-cta-row mt-6">
+          <SiteNavLink href={alternateCta.href} primary showArrow={false}>
+            {alternateCta.label}
+          </SiteNavLink>
+        </div>
+      )}
 
       {showContactDetails && (
         <ul className="mt-8 space-y-5 text-left">

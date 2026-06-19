@@ -1,5 +1,6 @@
 import { ArrowUp, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import SiteNavLink from "./ubuntu/SiteNavLink";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 import SectionPatternBackground from "./SectionPatternBackground";
 import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
@@ -66,9 +67,9 @@ export default function Footer() {
               <ul className="ubuntu-footer-list">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.href} className="ubuntu-footer-link">
+                    <SiteNavLink href={link.href} className="ubuntu-footer-link" muted showArrow={false}>
                       {link.label}
-                    </Link>
+                    </SiteNavLink>
                   </li>
                 ))}
               </ul>
