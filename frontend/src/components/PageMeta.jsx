@@ -5,7 +5,7 @@ const OG_IMAGE_PATH = "/og-image.svg";
 
 export default function PageMeta({ title, description, pathname = "/" }) {
   const pageTitle = title || DEFAULT_PAGE_TITLE;
-  const canonicalBase = process.env.REACT_APP_SITE_URL || "https://neuraltrix.ai";
+  const canonicalBase = import.meta.env.VITE_SITE_URL || "https://neuraltrix.ai";
   const canonicalUrl = `${canonicalBase.replace(/\/$/, "")}${pathname === "/" ? "" : pathname}`;
   const ogImageUrl = `${canonicalBase.replace(/\/$/, "")}${OG_IMAGE_PATH}`;
 
