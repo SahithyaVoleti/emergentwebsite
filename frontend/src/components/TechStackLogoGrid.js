@@ -1,13 +1,44 @@
 import { useMemo, useState, useEffect } from "react";
 import { cn } from "../lib/utils";
 import { getTechFoundationIcon } from "../lib/techFoundationIcons";
+import {
+  getSimpleIconColoredImageUrl,
+  getSimpleIconImageUrl,
+  techNameToSimpleIconSlug,
+} from "../lib/serviceTechStackSlugs";
+
+function TechBrandIcon({ name, compact = false }) {
+  const slug = techNameToSimpleIconSlug(name);
+  const [source, setSource] = useState(slug ? "colored" : "fallback");
+  const Icon = getTechFoundationIcon(name);
+  const sizeClass = compact ? "h-6 w-6 sm:h-7 sm:w-7" : "h-8 w-8";
+
+  if (source === "fallback" || !slug) {
+    return <Icon className={cn("shrink-0 text-[#002855]", sizeClass)} aria-hidden />;
+  }
+
+  const src =
+    source === "colored" ? getSimpleIconColoredImageUrl(slug) : getSimpleIconImageUrl(slug);
+
+  return (
+    <img
+      src={src}
+      alt=""
+      className={cn("shrink-0 object-contain", sizeClass)}
+      loading="lazy"
+      decoding="async"
+      draggable={false}
+      onError={() => {
+        setSource((prev) => (prev === "colored" ? "mono" : "fallback"));
+      }}
+    />
+  );
+}
 
 /**
- * Technology card: white tile, soft shadow, centered brand icon, uppercase navy label
- * (matches site-wide stack presentation).
+ * Technology card: white tile, brand SVG (Simple Icons) with react-icons fallback.
  */
 export function TechStackLogoTile({ name, compact = false, className }) {
-  const Icon = getTechFoundationIcon(name);
   return (
     <div
       className={cn(
@@ -21,16 +52,10 @@ export function TechStackLogoTile({ name, compact = false, className }) {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")}`}
     >
-      <Icon
-        className={cn(
-          "shrink-0 text-[#0B1B3D]",
-          compact ? "h-6 w-6 sm:h-7 sm:w-7" : "h-8 w-8"
-        )}
-        aria-hidden
-      />
+      <TechBrandIcon name={name} compact={compact} />
       <span
         className={cn(
-          "mt-2 max-w-[140px] font-bold uppercase leading-tight tracking-wide text-[#0B1B3D]",
+          "mt-2 max-w-[140px] font-bold uppercase leading-tight tracking-wide text-[#002855]",
           compact ? "text-[8px] sm:text-[9px]" : "text-[9px] sm:text-[10px]"
         )}
       >

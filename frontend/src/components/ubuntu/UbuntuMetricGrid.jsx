@@ -1,4 +1,5 @@
-﻿import UbuntuSectionShell from "./UbuntuSectionShell";
+import UbuntuSectionShell from "./UbuntuSectionShell";
+import { paletteAccent } from "../../lib/brandPalette";
 
 /** Stats / results grid — ubuntu bordered cards */
 export default function UbuntuMetricGrid({
@@ -22,15 +23,17 @@ export default function UbuntuMetricGrid({
   return (
     <UbuntuSectionShell id={id} eyebrow={eyebrow} title={title} lead={lead} variant={variant}>
       <div className={`grid grid-cols-1 gap-4 ${colClass}`}>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <article
             key={item.label ?? item.title}
             className="border border-[#d9d9d9] bg-white p-5 text-center sm:text-left"
           >
-            <p className="text-2xl font-medium text-[#111]">{item.value ?? item.metric}</p>
-            <p className="mt-1 text-sm font-medium text-[#8b1538]">{item.label ?? item.title}</p>
+            <p className="text-2xl font-medium" style={{ color: paletteAccent(index) }}>
+              {item.value ?? item.metric}
+            </p>
+            <p className="mt-1 text-sm font-medium text-[#5c677d]">{item.label ?? item.title}</p>
             {item.desc && (
-              <p className="mt-2 text-sm leading-relaxed text-[#555]">{item.desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{item.desc}</p>
             )}
           </article>
         ))}

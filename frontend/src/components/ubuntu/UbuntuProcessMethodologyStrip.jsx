@@ -58,21 +58,20 @@ export default function UbuntuProcessMethodologyStrip({
     <section
       id={id}
       data-testid="process-methodology-stepper"
-      className="ubuntu-stats-cta-strip ubuntu-process-stepper border-y border-[#2a2a2a]"
+      className="ubuntu-stats-cta-strip ubuntu-process-stepper border-y border-[#dce8f5]"
       aria-labelledby={`${id}-heading`}
     >
-      <div className="ubuntu-stats-dots-layer" aria-hidden="true" />
       <div className="ubuntu-container relative z-10 py-8 sm:py-10 md:py-12">
         <header className="max-w-3xl text-left">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {eyebrow}
             </p>
           )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title !text-white !mb-3">
+          <h2 id={`${id}-heading`} className="ubuntu-section-title !mb-3">
             {title}
           </h2>
-          {lead && <p className="ubuntu-lead mt-0 !text-white/85">{lead}</p>}
+          {lead && <p className="ubuntu-lead mt-0">{lead}</p>}
         </header>
 
         <div

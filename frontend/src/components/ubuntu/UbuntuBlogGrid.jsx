@@ -21,7 +21,7 @@ export default function UbuntuBlogGrid({
             key={article.slug}
             to={`/blog/${article.slug}`}
             data-testid={`blog-link-${article.slug}`}
-            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#8b1538]"
+            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]"
           >
             <div className="aspect-[16/10] overflow-hidden bg-[#eee]">
               <img
@@ -33,8 +33,8 @@ export default function UbuntuBlogGrid({
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-[#666]">
-                <span className="font-semibold uppercase tracking-wide text-[#8b1538]">
+              <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-[#5c677d]">
+                <span className="font-semibold uppercase tracking-wide text-[#0466c8]">
                   {article.category}
                 </span>
                 <span className="inline-flex items-center gap-1">
@@ -42,11 +42,11 @@ export default function UbuntuBlogGrid({
                   {article.readTime}
                 </span>
               </div>
-              <h3 className="text-base font-medium leading-snug text-[#111] group-hover:text-[#8b1538]">
+              <h3 className="text-base font-medium leading-snug text-[#002855] group-hover:text-[#0353a4]">
                 {article.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#555]">{article.excerpt}</p>
-              <span className="mt-4 text-sm font-medium text-[#8b1538]">Read article →</span>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#7d8597]">{article.excerpt}</p>
+              <span className="mt-4 text-sm font-medium text-[#0466c8]">Read article →</span>
             </div>
           </Link>
         ))}

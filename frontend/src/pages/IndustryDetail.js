@@ -27,7 +27,7 @@ export default function IndustryDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Industry not found</h1>
-          <Link to="/industries" className="mt-4 text-[#8b1538] hover:underline">
+          <Link to="/industries" className="mt-4 text-[#0466c8] hover:underline">
             Back to industries
           </Link>
         </div>

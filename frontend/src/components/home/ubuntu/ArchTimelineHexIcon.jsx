@@ -1,10 +1,10 @@
-﻿import { ClipboardList, Layers, ShieldCheck, LineChart } from "lucide-react";
+import { ClipboardList, Layers, ShieldCheck, LineChart } from "lucide-react";
 
 const HEX_GRADIENTS = [
-  { from: "#153a5c", to: "#3d7ab8", text: "#153a5c" },
-  { from: "#2563a8", to: "#5a9fd4", text: "#2563a8" },
+  { from: "#023e7d", to: "#0466c8", text: "#023e7d" },
+  { from: "#0353a4", to: "#5c677d", text: "#0353a4" },
   { from: "#b8890f", to: "#e8c84a", text: "#9a7209" },
-  { from: "#d44a12", to: "#e8b4b8", text: "#c73d0a" },
+  { from: "#002855", to: "#979dac", text: "#002855" },
 ];
 
 const STEP_ICONS = [ClipboardList, Layers, ShieldCheck, LineChart];

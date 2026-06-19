@@ -63,10 +63,10 @@ export default function ScopeOfDeliveryGrid({
               {eyebrow}
             </p>
           )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#111]">
+          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#002855]">
             {title}
           </h2>
-          {lead && <p className="ubuntu-lead mt-4 text-[#333]">{lead}</p>}
+          {lead && <p className="ubuntu-lead mt-4 text-[#33415c]">{lead}</p>}
         </header>
 
         <div className="ubuntu-scope-grid__panel">

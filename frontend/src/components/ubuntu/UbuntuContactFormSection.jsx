@@ -18,9 +18,9 @@ const PHONE_COUNTRIES = [
 ];
 
 const fieldClass =
-  "ubuntu-contact-field block w-full border border-[#d9d9d9] bg-white px-3 py-2 text-sm text-[#111] placeholder:text-[#888] focus:border-[#8b1538] focus:outline-none focus:ring-1 focus:ring-[#8b1538]";
+  "ubuntu-contact-field block w-full border border-[#d9d9d9] bg-white px-3 py-2 text-sm text-[#002855] placeholder:text-[#888] focus:border-[#0466c8] focus:outline-none focus:ring-1 focus:ring-[#0466c8]";
 
-const labelClass = "block text-xs font-semibold text-[#111] sm:text-sm";
+const labelClass = "block text-xs font-semibold text-[#002855] sm:text-sm";
 
 export default function UbuntuContactFormSection({
   id = "page-contact",
@@ -120,9 +120,9 @@ export default function UbuntuContactFormSection({
       data-testid={`${testIdPrefix}-success`}
       className="flex min-h-[18rem] flex-col items-center justify-center px-4 py-10 text-center sm:min-h-[22rem]"
     >
-      <CheckCircle2 size={40} className="mb-3 text-[#8b1538]" strokeWidth={1.5} />
-      <h3 className="mb-2 text-lg font-medium text-[#111]">Thank you</h3>
-      <p className="text-sm text-[#555]">
+      <CheckCircle2 size={40} className="mb-3 text-[#0466c8]" strokeWidth={1.5} />
+      <h3 className="mb-2 text-lg font-medium text-[#002855]">Thank you</h3>
+      <p className="text-sm text-[#7d8597]">
         WhatsApp opened — send the message to complete your inquiry. We respond with clear next steps.
       </p>
       {apiWarning ? (
@@ -159,7 +159,7 @@ export default function UbuntuContactFormSection({
               autoComplete="given-name"
               value={form.first_name}
               onChange={handleChange}
-              className={fieldClass}
+      className={fieldClass}
               required
               {...fieldErrorProps}
             />
@@ -178,7 +178,7 @@ export default function UbuntuContactFormSection({
               autoComplete="family-name"
               value={form.last_name}
               onChange={handleChange}
-              className={fieldClass}
+      className={fieldClass}
               required
               {...fieldErrorProps}
             />
@@ -196,7 +196,7 @@ export default function UbuntuContactFormSection({
               autoComplete="organization"
               value={form.company}
               onChange={handleChange}
-              className={fieldClass}
+      className={fieldClass}
             />
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function UbuntuContactFormSection({
               value={form.email}
               onChange={handleChange}
               placeholder="you@company.com"
-              className={fieldClass}
+      className={fieldClass}
               required
               {...fieldErrorProps}
             />
@@ -225,14 +225,14 @@ export default function UbuntuContactFormSection({
             Phone number
           </label>
           <div className="mt-1.5">
-            <div className="ubuntu-contact-phone-row flex min-w-0 border border-[#d9d9d9] bg-white focus-within:border-[#8b1538] focus-within:ring-1 focus-within:ring-[#8b1538]">
+            <div className="ubuntu-contact-phone-row flex min-w-0 border border-[#d9d9d9] bg-white focus-within:border-[#0466c8] focus-within:ring-1 focus-within:ring-[#0466c8]">
               <div className="relative grid shrink-0 grid-cols-1">
                 <select
                   name="phone_country"
                   aria-label="Country code"
                   value={form.phone_country}
                   onChange={handleChange}
-                  className="col-start-1 row-start-1 w-full appearance-none border-0 bg-transparent py-2 pr-7 pl-2.5 text-sm text-[#555] focus:outline-none"
+      className="col-start-1 row-start-1 w-full appearance-none border-0 bg-transparent py-2 pr-7 pl-2.5 text-sm text-[#7d8597] focus:outline-none"
                 >
                   {PHONE_COUNTRIES.map((c) => (
                     <option key={c.code} value={c.code}>
@@ -242,7 +242,7 @@ export default function UbuntuContactFormSection({
                 </select>
                 <ChevronDown
                   aria-hidden
-                  className="pointer-events-none col-start-1 row-start-1 mr-1.5 size-4 self-center justify-self-end text-[#666]"
+      className="pointer-events-none col-start-1 row-start-1 mr-1.5 size-4 self-center justify-self-end text-[#5c677d]"
                 />
               </div>
               <input
@@ -254,7 +254,7 @@ export default function UbuntuContactFormSection({
                 placeholder="Phone number"
                 value={form.phone}
                 onChange={handleChange}
-                className="min-w-0 grow border-0 bg-transparent py-2 pr-2 pl-1 text-sm text-[#111] placeholder:text-[#888] focus:outline-none"
+      className="min-w-0 grow border-0 bg-transparent py-2 pr-2 pl-1 text-sm text-[#002855] placeholder:text-[#888] focus:outline-none"
               />
             </div>
           </div>
@@ -272,7 +272,7 @@ export default function UbuntuContactFormSection({
               value={form.description}
               onChange={handleChange}
               placeholder={copy.messagePlaceholder}
-              className={`${fieldClass} min-h-[5rem] resize-y`}
+      className={`${fieldClass} min-h-[5rem] resize-y`}
               required
               {...fieldErrorProps}
             />
@@ -286,12 +286,12 @@ export default function UbuntuContactFormSection({
               type="checkbox"
               checked={form.agree}
               onChange={handleChange}
-              className="size-4 border-[#d9d9d9] text-[#8b1538] focus:ring-[#8b1538]"
+      className="size-4 border-[#d9d9d9] text-[#0466c8] focus:ring-[#0466c8]"
             />
           </div>
-          <label htmlFor={`${testIdPrefix}-agree`} className="text-xs leading-relaxed text-[#555] sm:text-sm">
+          <label htmlFor={`${testIdPrefix}-agree`} className="text-xs leading-relaxed text-[#7d8597] sm:text-sm">
             By selecting this, you agree to our{" "}
-            <Link to="/privacy-policy" className="font-semibold text-[#8b1538] hover:underline">
+            <Link to="/privacy-policy" className="font-semibold text-[#0466c8] hover:underline">
               privacy policy
             </Link>
             .
@@ -328,7 +328,7 @@ export default function UbuntuContactFormSection({
       <MockupFrame screenClassName="ubuntu-contact-mockup__screen">
         <div className="ubuntu-contact-mockup__inner ubuntu-contact-form">{formBody}</div>
       </MockupFrame>
-      <BorderBeam duration={8} size={100} colorFrom="#8b1538" colorTo="#e8b4b8" borderWidth={2} />
+      <BorderBeam duration={8} size={100} colorFrom="#0466c8" colorTo="#979dac" borderWidth={2} />
     </div>
   );
 
@@ -337,47 +337,46 @@ export default function UbuntuContactFormSection({
       id={id}
       testId={`${testIdPrefix}-section`}
       pattern="cta"
-      variant="dark"
       imagePosition="right"
       className="ubuntu-contact-section scroll-mt-[88px]"
       mediaClassName="ubuntu-contact-mockup__media"
       mediaSlot={mockupPanel}
     >
       {copy.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
           {copy.eyebrow}
         </p>
       )}
       <h2
         id={`${id}-heading`}
         data-testid={`${testIdPrefix}-heading`}
-        className="ubuntu-section-title text-white"
+        className="ubuntu-section-title"
       >
         {copy.title}
       </h2>
-      <p className="ubuntu-lead mt-4 text-white/90">{copy.lead}</p>
+      <p className="ubuntu-lead mt-4">{copy.lead}</p>
 
       {showContactDetails && (
         <ul className="mt-8 space-y-5 text-left">
           <li className="flex items-start gap-3 text-sm">
-            <Mail size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
+            <Mail size={18} className="mt-0.5 shrink-0 text-[#5c677d]" strokeWidth={1.5} />
             <div>
-              <p className="text-xs uppercase tracking-wide text-white/60">Email</p>
-              <p className="font-medium text-white">{CONTACT_EMAIL}</p>
+              <p className="text-xs uppercase tracking-wide text-[#5c677d]">Email</p>
+              <p className="font-medium text-[#002855]">{CONTACT_EMAIL}</p>
             </div>
           </li>
           <li className="flex items-start gap-3 text-sm">
-            <Phone size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
+            <Phone size={18} className="mt-0.5 shrink-0 text-[#5c677d]" strokeWidth={1.5} />
             <div>
-              <p className="text-xs uppercase tracking-wide text-white/60">Phone</p>
-              <p className="font-medium text-white">+91 81424 38759</p>
+              <p className="text-xs uppercase tracking-wide text-[#5c677d]">Phone</p>
+              <p className="font-medium text-[#002855]">+91 81424 38759</p>
             </div>
           </li>
           <li className="flex items-start gap-3 text-sm">
-            <MapPin size={18} className="mt-0.5 shrink-0 text-[#e8b4b8]" strokeWidth={1.5} />
+            <MapPin size={18} className="mt-0.5 shrink-0 text-[#5c677d]" strokeWidth={1.5} />
             <div>
-              <p className="text-xs uppercase tracking-wide text-white/60">Office</p>
-              <p className="font-medium text-white">N-Block, Vignan University, Guntur</p>
+              <p className="text-xs uppercase tracking-wide text-[#5c677d]">Office</p>
+              <p className="font-medium text-[#002855]">N-Block, Vignan University, Guntur</p>
             </div>
           </li>
         </ul>

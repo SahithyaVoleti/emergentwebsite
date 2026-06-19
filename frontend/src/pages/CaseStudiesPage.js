@@ -3,6 +3,7 @@ import CaseStudiesVerticalSlider from "../components/ubuntu/CaseStudiesVerticalS
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import caseStudies from "../data/caseStudies";
+import { PALETTE } from "../lib/brandPalette";
 
 export default function CaseStudiesPage() {
   return (
@@ -25,7 +26,7 @@ export default function CaseStudiesPage() {
         showLabel
         title={
           <>
-            Production-ready <span className="text-[#8b1538]">test cases</span> by sector
+            Production-ready <span style={{ color: PALETTE.regalNavy }}>test cases</span> by sector
           </>
         }
         lead="Scroll through live-tested implementations across industry sectors. Each case shows what we built, how we tested it, and what is ready for your environment."

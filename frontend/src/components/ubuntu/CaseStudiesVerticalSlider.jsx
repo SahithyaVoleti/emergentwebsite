@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import UbuntuLink from "./UbuntuLink";
+import { PALETTE, paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
 
 const SLIDE_VH = 85;
 
@@ -29,7 +30,7 @@ export default function CaseStudiesVerticalSlider({
   const headingTitle =
     title ?? (
       <>
-        Production-ready <span className="text-[#8b1538]">test cases</span> by sector
+        Production-ready <span style={{ color: PALETTE.regalNavy }}>test cases</span> by sector
       </>
     );
 
@@ -103,7 +104,7 @@ export default function CaseStudiesVerticalSlider({
           <div className="mb-6 flex flex-shrink-0 flex-col gap-4 md:mb-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               {showLabel && eyebrow && (
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
               )}
               <h2 className="ubuntu-section-title">{headingTitle}</h2>
               <p className="ubuntu-lead mt-2 text-sm md:text-base">{headingLead}</p>
@@ -119,6 +120,7 @@ export default function CaseStudiesVerticalSlider({
             <div className="ubuntu-case-studies-scroll__viewport relative h-full overflow-hidden border border-[#d9d9d9]">
               {studies.map((cs, index) => {
                 const offset = index - activeIndex;
+                const accent = paletteAccent(index);
                 const transform = reduceMotion
                   ? offset === 0
                     ? "translateY(0)"
@@ -145,31 +147,45 @@ export default function CaseStudiesVerticalSlider({
                         className="absolute inset-0 h-full w-full object-cover"
                         loading={index <= 1 ? "eager" : "lazy"}
                       />
-                      <div className="absolute left-4 top-4 bg-[#8b1538] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+                      <div
+                        className="ubuntu-palette-badge absolute left-4 top-4 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide"
+                        data-palette-accent={paletteAccentIndex(index)}
+                      >
                         {cs.industry}
                       </div>
                       {cs.status && (
-                        <div className="absolute right-4 top-4 border border-white/80 bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#8b1538]">
+                        <div
+                          className="absolute right-4 top-4 border border-white/80 bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide"
+                          style={{ color: accent }}
+                        >
                           {cs.status}
                         </div>
                       )}
                     </div>
 
                     <div className="flex flex-1 flex-col justify-center bg-white p-6 sm:p-8 lg:p-10">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8b1538] mb-2">
+                      <p
+                        className="text-[10px] font-semibold uppercase tracking-[0.14em] mb-2"
+                        style={{ color: accent }}
+                      >
                         {cs.archetype}
                       </p>
-                      <h3 className="text-xl font-medium text-[#111] leading-snug sm:text-2xl mb-3">{cs.title}</h3>
-                      <p className="text-sm leading-relaxed text-[#555] line-clamp-3 mb-4">{cs.heroDesc}</p>
+                      <h3 className="text-xl font-medium text-[#002855] leading-snug sm:text-2xl mb-3">{cs.title}</h3>
+                      <p className="text-sm leading-relaxed text-[#7d8597] line-clamp-3 mb-4">{cs.heroDesc}</p>
                       {cs.results?.length > 0 && (
                         <ul className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                          {cs.results.slice(0, 4).map((r) => (
+                          {cs.results.slice(0, 4).map((r, rIndex) => (
                             <li
                               key={r.label}
                               className="border border-[#e5e5e5] bg-[#fafafa] px-2 py-2 text-center"
                             >
-                              <span className="block text-xs font-semibold text-[#8b1538]">{r.metric}</span>
-                              <span className="block text-[10px] text-[#666] leading-tight mt-0.5">{r.label}</span>
+                              <span
+                                className="block text-xs font-semibold"
+                                style={{ color: paletteAccent(index + rIndex) }}
+                              >
+                                {r.metric}
+                              </span>
+                              <span className="block text-[10px] text-[#5c677d] leading-tight mt-0.5">{r.label}</span>
                             </li>
                           ))}
                         </ul>
@@ -199,8 +215,9 @@ export default function CaseStudiesVerticalSlider({
                   aria-label={`Go to ${cs.title}`}
                   aria-current={index === activeIndex ? "true" : undefined}
                   className={`rounded-full transition-all ${
-                    index === activeIndex ? "h-8 w-2 bg-[#8b1538]" : "h-2 w-2 bg-[#d9d9d9] hover:bg-[#bbb]"
+                    index === activeIndex ? "h-8 w-2" : "h-2 w-2 bg-[#d9d9d9] hover:bg-[#bbb]"
                   }`}
+                  style={index === activeIndex ? { backgroundColor: paletteAccent(index) } : undefined}
                 />
               ))}
             </div>
@@ -226,8 +243,8 @@ export default function CaseStudiesVerticalSlider({
               </button>
             </div>
 
-            <div className="absolute bottom-3 left-4 z-30 font-mono text-xs text-[#666] md:bottom-4">
-              <span className="text-[#111] font-semibold">{String(activeIndex + 1).padStart(2, "0")}</span>
+            <div className="absolute bottom-3 left-4 z-30 font-mono text-xs text-[#5c677d] md:bottom-4">
+              <span className="text-[#002855] font-semibold">{String(activeIndex + 1).padStart(2, "0")}</span>
               <span className="mx-1">/</span>
               <span>{String(count).padStart(2, "0")}</span>
             </div>

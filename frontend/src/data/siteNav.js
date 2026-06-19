@@ -78,35 +78,30 @@ export const COMPANY_NAV = [
 
 export const FOOTER_COLUMNS = [
   {
-    title: "Services",
-    links: services.map((s) => ({ label: s.title, href: `/services/${s.slug}` })),
-  },
-  {
-    title: "Platforms",
-    links: solutions.map((s) => ({ label: s.title, href: `/solutions/${s.slug}` })),
+    title: "Offerings",
+    links: [
+      { label: "Services", href: "/services" },
+      { label: "Platforms", href: "/solutions" },
+      { label: "Industries", href: "/industries" },
+      { label: "Test Cases", href: "/case-studies" },
+    ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
       { label: "Leadership", href: "/team" },
-      { label: "Test Cases", href: "/case-studies" },
-      { label: "Engagement", href: "/testimonials" },
-      { label: "News & Media", href: "/blog" },
       { label: "Careers", href: "/careers" },
-      { label: "Partners", href: "/partners" },
-      { label: "Research & Innovation", href: "/research-innovation" },
       { label: "Contact", href: "/#page-contact" },
     ],
   },
   {
-    title: "Industries",
+    title: "Resources",
     links: [
-      ...industries.map((i) => ({
-        label: i.title,
-        href: `/industries/${i.slug}`,
-      })),
-      { label: "View all industries", href: "/industries" },
+      { label: "Blog", href: "/blog" },
+      { label: "Research", href: "/research-innovation" },
+      { label: "Engagement", href: "/testimonials" },
+      { label: "Partners", href: "/partners" },
     ],
   },
 ];

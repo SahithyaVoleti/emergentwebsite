@@ -16,7 +16,7 @@ export default function UbuntuSplitCopy({
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           {leftEyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {leftEyebrow}
             </p>
           )}
@@ -25,7 +25,7 @@ export default function UbuntuSplitCopy({
         </div>
         <div>
           {rightEyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {rightEyebrow}
             </p>
           )}

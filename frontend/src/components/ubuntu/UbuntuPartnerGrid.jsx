@@ -17,7 +17,7 @@ export default function UbuntuPartnerGrid({
             key={partner}
             className="flex h-20 items-center justify-center border border-[#d9d9d9] bg-[#fafafa] px-3 text-center"
           >
-            <span className="text-sm font-medium tracking-wide text-[#555]">{partner}</span>
+            <span className="text-sm font-medium tracking-wide text-[#7d8597]">{partner}</span>
           </div>
         ))}
       </div>

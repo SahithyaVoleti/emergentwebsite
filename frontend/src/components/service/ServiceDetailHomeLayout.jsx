@@ -144,20 +144,19 @@ export default function ServiceDetailHomeLayout({
         id="next-step"
         testId="service-next-step-cta"
         pattern="cta"
-        variant="dark"
-        image={nextStepImage?.src ?? getSiteMockup(ctaOverrides.mockupKey ?? "code").src}
+      image={nextStepImage?.src ?? getSiteMockup(ctaOverrides.mockupKey ?? "code").src}
         imageAlt={nextStepImage?.alt ?? getSiteMockup("code").alt}
         imagePosition={nextPosition()}
       >
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
           Contact
         </p>
-        <h2 className="ubuntu-section-title text-white">{ctaTitle}</h2>
-        <p className="ubuntu-lead text-white/90">{ctaDescription}</p>
+        <h2 className="ubuntu-section-title">{ctaTitle}</h2>
+        <p className="ubuntu-lead">{ctaDescription}</p>
         <div className="ubuntu-cta-row flex-wrap">
           <Link
             to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
-            className="ubuntu-btn-primary"
+      className="ubuntu-btn-primary"
           >
             Contact us
           </Link>

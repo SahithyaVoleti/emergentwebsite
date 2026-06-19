@@ -23,7 +23,7 @@ export default function CaseStudyDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Test case not found</h1>
-          <Link to="/case-studies" className="mt-4 text-[#8b1538] hover:underline">
+          <Link to="/case-studies" className="mt-4 text-[#0466c8] hover:underline">
             Back to case studies
           </Link>
         </div>

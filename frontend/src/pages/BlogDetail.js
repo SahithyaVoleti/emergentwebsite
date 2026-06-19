@@ -15,7 +15,7 @@ export default function BlogDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Article not found</h1>
-          <Link to="/blog" className="mt-4 text-[#8b1538] hover:underline">
+          <Link to="/blog" className="mt-4 text-[#0466c8] hover:underline">
             Back to blog
           </Link>
         </div>
@@ -45,7 +45,7 @@ export default function BlogDetail() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
             <aside className="hidden lg:block">
               <div className="sticky top-24">
-                <h4 className="mb-4 flex items-center gap-2 text-sm font-medium text-[#111]">
+                <h4 className="mb-4 flex items-center gap-2 text-sm font-medium text-[#002855]">
                   <BookOpen size={14} aria-hidden /> Table of contents
                 </h4>
                 <nav className="space-y-2 border-l border-[#d9d9d9] pl-3">
@@ -53,14 +53,14 @@ export default function BlogDetail() {
                     <a
                       key={i}
                       href={`#heading-${i}`}
-                      className="block py-1 text-sm text-[#555] transition-colors hover:text-[#8b1538]"
+                      className="block py-1 text-sm text-[#7d8597] transition-colors hover:text-[#0353a4]"
                     >
                       {h.text}
                     </a>
                   ))}
                 </nav>
                 <div className="mt-8 border-t border-[#d9d9d9] pt-6">
-                  <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-[#111]">
+                  <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-[#002855]">
                     <Share2 size={14} aria-hidden /> Share
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -68,7 +68,7 @@ export default function BlogDetail() {
                       href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
                     >
                       Twitter
                     </a>
@@ -76,13 +76,13 @@ export default function BlogDetail() {
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
                     >
                       LinkedIn
                     </a>
                     <a
                       href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#555] transition-colors hover:border-[#8b1538]"
+                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
                     >
                       Email
                     </a>
@@ -120,7 +120,7 @@ export default function BlogDetail() {
                     NT
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#111]">NeuralTrix AI Engineering Team</p>
+                    <p className="text-sm font-medium text-[#002855]">NeuralTrix AI Engineering Team</p>
                     <p className="ubuntu-body mt-2">
                       Editorial notes from delivery teams translating enterprise AI field experience
                       into practical implementation guidance.
@@ -166,11 +166,11 @@ export default function BlogDetail() {
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         loading="lazy"
                       />
-                      <span className="absolute bottom-3 left-3 border border-[#e5e5e5]/80 bg-white/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#555]">
+                      <span className="absolute bottom-3 left-3 border border-[#e5e5e5]/80 bg-white/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#7d8597]">
                         {a.category}
                       </span>
                     </div>
-                    <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#111] transition-colors group-hover:text-[#8b1538]">
+                    <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4]">
                       {a.title}
                     </h3>
                   </Link>

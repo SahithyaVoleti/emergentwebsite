@@ -2,7 +2,7 @@ import { HOME_STARTUP_STATS } from "../../../data/homePageSections";
 import UbuntuStatsStrip from "../../ubuntu/UbuntuStatsStrip";
 
 /**
- * Compact dark stats band — dotted animated background, no heading copy.
+ * Compact light stats band — dotted animated background, no heading copy.
  */
 export default function UbuntuHomeStatsStrip({ stats = HOME_STARTUP_STATS, id = "startup-stats" }) {
   return (

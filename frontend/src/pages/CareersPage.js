@@ -25,9 +25,9 @@ function JobCard({ job }) {
         className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-[#fafafa] sm:p-8"
       >
         <div>
-          <h3 className="text-base font-medium text-[#111]">{job.title}</h3>
-          <p className="mt-1 text-sm text-[#666]">{job.department}</p>
-          <div className="mt-3 flex flex-wrap gap-4 text-xs text-[#666]">
+          <h3 className="text-base font-medium text-[#002855]">{job.title}</h3>
+          <p className="mt-1 text-sm text-[#5c677d]">{job.department}</p>
+          <div className="mt-3 flex flex-wrap gap-4 text-xs text-[#5c677d]">
             <span className="inline-flex items-center gap-1">
               <MapPin size={12} aria-hidden /> {job.location}
             </span>
@@ -40,31 +40,31 @@ function JobCard({ job }) {
           </div>
         </div>
         {open ? (
-          <ChevronUp size={20} className="shrink-0 text-[#666]" aria-hidden />
+          <ChevronUp size={20} className="shrink-0 text-[#5c677d]" aria-hidden />
         ) : (
-          <ChevronDown size={20} className="shrink-0 text-[#666]" aria-hidden />
+          <ChevronDown size={20} className="shrink-0 text-[#5c677d]" aria-hidden />
         )}
       </button>
       {open && (
         <div className="border-t border-[#e5e5e5] px-6 pb-8 pt-6 sm:px-8">
-          <p className="mb-6 text-sm leading-relaxed text-[#555]">{job.description}</p>
-          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#111]">
+          <p className="mb-6 text-sm leading-relaxed text-[#7d8597]">{job.description}</p>
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#002855]">
             Responsibilities
           </h4>
           <ul className="mb-6 space-y-2">
             {job.responsibilities.map((r) => (
-              <li key={r} className="flex items-start gap-2 text-sm text-[#555]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#8b1538]" aria-hidden />
+              <li key={r} className="flex items-start gap-2 text-sm text-[#7d8597]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#0466c8]" aria-hidden />
                 {r}
               </li>
             ))}
           </ul>
-          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#111]">
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#002855]">
             Requirements
           </h4>
           <ul className="mb-6 space-y-2">
             {job.requirements.map((r) => (
-              <li key={r} className="flex items-start gap-2 text-sm text-[#555]">
+              <li key={r} className="flex items-start gap-2 text-sm text-[#7d8597]">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ccc]" aria-hidden />
                 {r}
               </li>
@@ -136,8 +136,8 @@ export default function CareersPage() {
             onClick={() => setFilter("All")}
             className={`px-4 py-2 text-sm font-medium transition-colors ${
               filter === "All"
-                ? "bg-[#8b1538] text-white"
-                : "border border-[#d9d9d9] bg-white text-[#555] hover:border-[#8b1538]"
+                ? "bg-[#0466c8] text-white"
+                : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#0466c8]"
             }`}
           >
             All
@@ -150,8 +150,8 @@ export default function CareersPage() {
               onClick={() => setFilter(d)}
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 filter === d
-                  ? "bg-[#8b1538] text-white"
-                  : "border border-[#d9d9d9] bg-white text-[#555] hover:border-[#8b1538]"
+                  ? "bg-[#0466c8] text-white"
+                  : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#0466c8]"
               }`}
             >
               {d}

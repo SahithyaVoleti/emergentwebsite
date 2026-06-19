@@ -28,7 +28,6 @@ export default function UbuntuSplitLayout({
     isPatternSection && "ubuntu-pattern-section",
     isHero && "ubuntu-pattern-section--hero",
     isCta && "ubuntu-pattern-section--cta",
-    isCta && "ubuntu-section--dark",
     variant === "alt" && !isPatternSection && "ubuntu-section--alt",
     className,
   ]

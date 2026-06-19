@@ -1,8 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import UbuntuLink from "./UbuntuLink";
-import UbuntuSplitLayout from "./UbuntuSplitLayout";
-import { DEFAULT_PAGE_HERO_IMAGE } from "../../lib/heroImageThemes";
-import { getSiteMockup } from "../../data/siteMockups";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 
 function scrollToSelector(e, hashSelector) {
@@ -20,15 +17,10 @@ export default function UbuntuPageHero({
   description,
   primaryCTA,
   secondaryCTA,
-  image,
   hideContent = false,
-  imagePosition = "right",
   embedded = false,
 }) {
   const location = useLocation();
-  const mockup = image
-    ? { src: image, alt: title ? `${title} — product mockup` : "Page hero mockup" }
-    : getSiteMockup("hero");
 
   const contactTopicFor = (cta) =>
     cta?.contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
@@ -89,46 +81,54 @@ export default function UbuntuPageHero({
     );
   };
 
-  const pattern = embedded ? null : "hero";
-  const heroClass = embedded ? "ubuntu-site-page-chrome__hero" : undefined;
-
   if (hideContent) {
     return (
-      <UbuntuSplitLayout
+      <div
         id="page-hero"
-        testId="page-hero"
-        pattern={pattern}
-        className={heroClass}
-        image={mockup.src || DEFAULT_PAGE_HERO_IMAGE}
-        imageAlt={mockup.alt}
-        imagePosition={imagePosition}
+        data-testid="page-hero"
+        className={[
+          "ubuntu-hero-fullbleed__body",
+          embedded ? "ubuntu-site-page-chrome__hero" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        aria-hidden
       />
     );
   }
 
   return (
-    <UbuntuSplitLayout
+    <div
       id="page-hero"
-      testId="page-hero"
-      pattern={pattern}
-      className={heroClass}
-      image={mockup.src || DEFAULT_PAGE_HERO_IMAGE}
-      imageAlt={mockup.alt}
-      imagePosition={imagePosition}
+      data-testid="page-hero"
+      className={[
+        "ubuntu-hero-fullbleed__body",
+        embedded ? "ubuntu-site-page-chrome__hero" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
-      {label && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{label}</p>
-      )}
-      {title && (
-        <h1 data-testid="page-hero-title" className="ubuntu-hero-title">
-          {title}
-        </h1>
-      )}
-      {description && <p className="ubuntu-lead mt-4">{description}</p>}
-      <div className="ubuntu-cta-row">
-        {renderCta(primaryCTA, true)}
-        {renderCta(secondaryCTA, false)}
+      <div className="ubuntu-container">
+        <div className="ubuntu-hero-fullbleed__content max-w-2xl">
+          {label && (
+            <p className="ubuntu-hero-eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.12em]">
+              {label}
+            </p>
+          )}
+          {title && (
+            <h1 data-testid="page-hero-title" className="ubuntu-hero-title">
+              {title}
+            </h1>
+          )}
+          {description && <p className="ubuntu-lead mt-4">{description}</p>}
+          {(primaryCTA || secondaryCTA) && (
+            <div className="ubuntu-cta-row">
+              {renderCta(primaryCTA, true)}
+              {renderCta(secondaryCTA, false)}
+            </div>
+          )}
+        </div>
       </div>
-    </UbuntuSplitLayout>
+    </div>
   );
 }

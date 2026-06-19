@@ -15,18 +15,18 @@ const MethodologyFlowchart = ({ steps }) => {
             const Icon = step.icon;
             return (
               <div key={i} className="relative z-10 flex flex-1 flex-col items-center text-center">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center border border-[#d9d9d9] bg-white transition-colors hover:border-[#8b1538]">
+                <div className="mb-6 flex h-20 w-20 items-center justify-center border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]">
                   {Icon ? (
-                    <Icon size={24} className="text-[#8b1538]" strokeWidth={1.5} aria-hidden />
+                    <Icon size={24} className="text-[#0466c8]" strokeWidth={1.5} aria-hidden />
                   ) : (
-                    <span className="text-lg font-medium text-[#111]">{i + 1}</span>
+                    <span className="text-lg font-medium text-[#002855]">{i + 1}</span>
                   )}
                 </div>
-                <h3 className="text-xs font-semibold uppercase tracking-wide text-[#111]">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-[#002855]">
                   {step.label || step.step || step.title}
                 </h3>
                 {step.desc && (
-                  <p className="mt-2 max-w-[10rem] text-xs leading-relaxed text-[#555]">
+                  <p className="mt-2 max-w-[10rem] text-xs leading-relaxed text-[#7d8597]">
                     {step.desc}
                   </p>
                 )}
@@ -51,19 +51,19 @@ const MethodologyFlowchart = ({ steps }) => {
               key={i}
               className="flex gap-4 border border-[#d9d9d9] bg-white p-5"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#8b1538] bg-[#fafafa]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#0466c8] bg-[#fafafa]">
                 {Icon ? (
-                  <Icon size={20} className="text-[#8b1538]" strokeWidth={1.5} aria-hidden />
+                  <Icon size={20} className="text-[#0466c8]" strokeWidth={1.5} aria-hidden />
                 ) : (
-                  <span className="text-sm font-medium text-[#111]">{i + 1}</span>
+                  <span className="text-sm font-medium text-[#002855]">{i + 1}</span>
                 )}
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#111]">
+                <h3 className="text-sm font-medium text-[#002855]">
                   {step.label || step.step || step.title}
                 </h3>
                 {step.desc && (
-                  <p className="mt-1 text-sm leading-relaxed text-[#555]">{step.desc}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#7d8597]">{step.desc}</p>
                 )}
               </div>
             </article>

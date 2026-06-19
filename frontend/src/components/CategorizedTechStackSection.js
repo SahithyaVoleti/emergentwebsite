@@ -36,16 +36,16 @@ export function FlatTechStackPanel({
         className
       )}
     >
-      <div className="h-1 shrink-0 bg-[#8b1538]" aria-hidden />
+      <div className="h-1 shrink-0 bg-[#0466c8]" aria-hidden />
       <div className="border-b border-[#e5e5e5] bg-white px-5 py-4 sm:px-6 sm:py-5">
         {eyebrow ? (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
             {eyebrow}
           </p>
         ) : null}
-        <h3 className="text-sm font-medium text-[#111]">{title}</h3>
+        <h3 className="text-sm font-medium text-[#002855]">{title}</h3>
         {intro ? (
-          <p className="mt-3 text-sm leading-relaxed text-[#555]">{intro}</p>
+          <p className="mt-3 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
         ) : null}
       </div>
       <div className={cn("bg-[#fafafa] px-4 py-4 sm:px-5 sm:py-5", bodyClassName)}>
@@ -92,14 +92,14 @@ export function CategorizedTechStackPanels({
       {cats.map((c) => (
         <article
           key={c.title}
-          className="group flex flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#8b1538]"
+          className="group flex flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]"
         >
-          <div className="h-1 shrink-0 bg-[#8b1538]" aria-hidden />
+          <div className="h-1 shrink-0 bg-[#0466c8]" aria-hidden />
           <div className="border-b border-[#e5e5e5] bg-white px-4 py-4 sm:px-5 sm:py-5">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-[#111]">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-[#002855]">
               {c.title}
             </h3>
-            <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#555]">
+            <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#7d8597]">
               {c.description || DEFAULT_CATEGORY_DESC}
             </p>
           </div>
@@ -146,7 +146,7 @@ export default function CategorizedTechStackSection({
     >
       <div className="ubuntu-container">
         <div className="mb-10 max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
             {eyebrow}
           </p>
           {typeof title === "string" ? (
@@ -170,7 +170,7 @@ export default function CategorizedTechStackSection({
         />
 
         {!cats.length ? (
-          <p className="py-8 text-center text-sm text-[#555]">No technologies listed.</p>
+          <p className="py-8 text-center text-sm text-[#7d8597]">No technologies listed.</p>
         ) : null}
       </div>
     </section>

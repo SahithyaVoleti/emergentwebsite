@@ -1,7 +1,4 @@
-import services from "./services";
 import blogArticles from "./blog";
-
-const serviceBySlug = (slug) => services.find((s) => s.slug === slug);
 
 /**
  * Canonical homepage section order.
@@ -44,81 +41,55 @@ export const HOME_ALERT = {
   secondaryCta: { label: "Explore services →", href: "/#services-grid" },
 };
 
-/** Capabilities aligned to agent building and app modernization. */
-const HOME_SERVICE_CAPABILITIES = [
+/** Delivery capabilities — program standards distinct from the service catalog grid. */
+const HOME_DELIVERY_CAPABILITIES = [
   {
-    serviceSlug: "ai-agents",
-    name: "AI agents for your applications",
+    name: "Embedded in your applications",
     description:
-      "Multi-step agents that work inside your CRM, ERP, internal tools, and customer-facing apps—with human review and clear audit trails.",
+      "Agents appear inside CRM, ERP, EHR, and internal tools your teams already use—not separate chat windows outside daily work.",
     icon: "agents",
+    href: "/services/ai-agents",
   },
   {
-    serviceSlug: "custom-software",
-    name: "App modernization",
+    name: "Governance and human review",
     description:
-      "Upgrade existing web, mobile, and enterprise applications with AI copilots, automation, and intelligent workflows.",
-    icon: "platform",
+      "Role gates, approval queues, and audit trails on high-risk actions so security and compliance teams can verify agent behavior.",
+    icon: "governance",
   },
   {
-    serviceSlug: "generative-ai",
-    name: "Copilots inside your apps",
+    name: "Pilot-first rollout",
     description:
-      "Add document search, chat assistants, and smart suggestions directly into the software your company already uses.",
-    icon: "genai",
-  },
-  {
-    serviceSlug: "artificial-intelligence",
-    name: "ML behind your agents",
-    description:
-      "Prediction, classification, and decision models that power agent actions in production.",
-    icon: "ml",
-  },
-  {
-    serviceSlug: "mobile-apps",
-    name: "AI-powered mobile apps",
-    description:
-      "Native and cross-platform apps with built-in agents, voice, and on-device intelligence.",
-    icon: "mobile",
-  },
-  {
-    serviceSlug: "llm-development",
-    name: "Language models for agents",
-    description:
-      "Choose, tune, and host the models that drive agent reasoning—with cost and safety controls.",
-    icon: "llm",
-  },
-  {
-    serviceSlug: "data-engineering",
-    name: "Data for intelligent apps",
-    description:
-      "Connect your application data to agents and copilots so answers stay accurate and up to date.",
-    icon: "data",
-  },
-  {
-    serviceSlug: "devops",
-    name: "Ship and run AI features",
-    description:
-      "Deploy agent updates safely, monitor usage, and keep AI-powered applications reliable in production.",
+      "Bounded pilots with agreed success measures before we extend agents to more teams, sites, or use cases.",
     icon: "devops",
+  },
+  {
+    name: "Production validation",
+    description:
+      "Live and sandbox testing against named production agents—Agent Vidya, Agent Arogya, and sector programs—before we mark a build ready.",
+    icon: "platform",
+    href: "/case-studies",
+  },
+  {
+    name: "Sector-aware controls",
+    description:
+      "Workflow and data boundaries reflect industry context—clinical sign-off, AML explainability, FERPA scope, and public-sector accessibility.",
+    icon: "data",
+    href: "/industries",
+  },
+  {
+    name: "Measurable adoption",
+    description:
+      "Usage monitoring, feedback loops, and documented releases so operators can govern agent behavior after launch.",
+    icon: "genai",
   },
 ];
 
 export const HOME_FEATURES = {
   id: "home-features",
   eyebrow: "Capabilities",
-  title: "Two ways we help companies use AI",
-  lead: "We build new AI agents from scratch and we transform the applications you already have into AI-powered software—both across the industries you operate in.",
-  items: HOME_SERVICE_CAPABILITIES.map((cap) => {
-    const service = serviceBySlug(cap.serviceSlug);
-    if (!service) return null;
-    return {
-      name: cap.name,
-      description: cap.description,
-      icon: cap.icon,
-      href: `/services/${cap.serviceSlug}`,
-    };
-  }).filter(Boolean),
+  title: "Standards we apply to every agent program",
+  lead: "These delivery capabilities apply across new agent builds and application modernization—not a repeat of our service catalog, but what every engagement includes by default.",
+  items: HOME_DELIVERY_CAPABILITIES,
 };
 
 export const HOME_BLOG = {

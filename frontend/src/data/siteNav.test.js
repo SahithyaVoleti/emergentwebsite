@@ -46,13 +46,12 @@ describe("siteNav", () => {
     }
   });
 
-  it("includes all industries in footer with view-all link", () => {
-    const industryColumn = FOOTER_COLUMNS.find((c) => c.title === "Industries");
-    const hrefs = industryColumn.links.map((l) => l.href);
-    for (const industry of industries) {
-      expect(hrefs).toContain(`/industries/${industry.slug}`);
-    }
+  it("footer includes primary offering and industry hub links", () => {
+    const hrefs = collectHrefs(FOOTER_COLUMNS);
+    expect(hrefs).toContain("/services");
+    expect(hrefs).toContain("/solutions");
     expect(hrefs).toContain("/industries");
+    expect(hrefs).toContain("/case-studies");
   });
 
   it("uses known static routes for company and footer links", () => {

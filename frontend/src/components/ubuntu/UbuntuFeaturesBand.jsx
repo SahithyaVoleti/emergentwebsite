@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import { paletteAccentIndex } from "../../lib/brandPalette";
 
 /**
  * Homepage Features band — brand icon squares + two-column definition list.
@@ -32,25 +33,25 @@ export default function UbuntuFeaturesBand({
       <div className="ubuntu-container">
         <div className="max-w-3xl text-left">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 id={id ? `${id}-heading` : undefined} className="ubuntu-section-title text-[#111]">
+            <h2 id={id ? `${id}-heading` : undefined} className="ubuntu-section-title text-[#002855]">
               {title}
             </h2>
           )}
-          {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#333]">{lead}</p>}
+          {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#33415c]">{lead}</p>}
         </div>
 
         <dl className="mx-auto mt-8 grid max-w-none grid-cols-1 gap-x-8 gap-y-8 sm:mt-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const Icon = item.icon;
             const name = item.href ? (
               <Link
                 to={item.href}
-                className="text-[#111] underline decoration-transparent underline-offset-2 transition-colors hover:text-[#8b1538] hover:decoration-[#8b1538]"
+                className="text-[#002855] underline decoration-transparent underline-offset-2 transition-colors hover:text-[#0353a4] hover:decoration-[#0353a4]"
               >
                 {item.name ?? item.title}
               </Link>
@@ -59,18 +60,19 @@ export default function UbuntuFeaturesBand({
             );
 
             return (
-              <div key={item.name ?? item.title} className="relative pl-16">
+              <div
+                key={item.name ?? item.title}
+                className="relative pl-16"
+                data-palette-accent={paletteAccentIndex(index)}
+              >
                 <dt className="text-base font-medium leading-snug">
                   {Icon ? (
-                    <div
-                      className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-[#8b1538]"
-                      aria-hidden="true"
-                    >
+                    <div className="ubuntu-palette-icon absolute left-0 top-0 flex h-10 w-10 items-center justify-center" aria-hidden="true">
                       <Icon className="h-6 w-6 text-white" strokeWidth={2} />
                     </div>
                   ) : (
                     <div
-                      className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-[#8b1538] text-xs font-semibold text-white"
+                      className="ubuntu-palette-icon absolute left-0 top-0 flex h-10 w-10 items-center justify-center text-xs font-semibold text-white"
                       aria-hidden="true"
                     >
                       •
@@ -79,7 +81,7 @@ export default function UbuntuFeaturesBand({
                   {name}
                 </dt>
                 {(item.description ?? item.desc) && (
-                  <dd className="mt-2 text-base leading-relaxed text-[#555]">
+                  <dd className="mt-2 text-base leading-relaxed text-[#7d8597]">
                     {item.description ?? item.desc}
                   </dd>
                 )}

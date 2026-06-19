@@ -25,7 +25,7 @@ export default function RelatedCaseStudies({
       <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div className="max-w-3xl">
           {showLabel && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {SECTION_LABEL.productionTestCases}
             </p>
           )}
@@ -41,16 +41,16 @@ export default function RelatedCaseStudies({
           <Link
             key={cs.slug}
             to={`/case-studies/${cs.slug}`}
-            className="group flex h-full flex-col border border-[#d9d9d9] bg-white p-6 transition-colors hover:border-[#8b1538]"
+            className="group flex h-full flex-col border border-[#d9d9d9] bg-white p-6 transition-colors hover:border-[#0466c8]"
           >
-            <span className="text-xs font-semibold uppercase tracking-wide text-[#8b1538]">
+            <span className="text-xs font-semibold uppercase tracking-wide text-[#0466c8]">
               {cs.industry}
             </span>
-            <h3 className="mt-3 text-base font-medium text-[#111] group-hover:text-[#8b1538]">
+            <h3 className="mt-3 text-base font-medium text-[#002855] group-hover:text-[#0353a4]">
               {cs.title}
             </h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-[#555]">{cs.shortDesc ?? cs.heroDesc}</p>
-            <span className="mt-4 text-sm font-medium text-[#8b1538]">View test case →</span>
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-[#7d8597]">{cs.shortDesc ?? cs.heroDesc}</p>
+            <span className="mt-4 text-sm font-medium text-[#0466c8]">View test case →</span>
           </Link>
         ))}
       </div>

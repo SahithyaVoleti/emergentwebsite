@@ -30,20 +30,19 @@ export default function UbuntuHomeVisionCta({
       id={section.id}
       testId="home-vision-cta-2"
       pattern="cta"
-      variant="dark"
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
       {section.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
           {section.eyebrow}
         </p>
       )}
-      <h2 className="ubuntu-section-title text-white">{section.title}</h2>
-      <p className="ubuntu-lead text-white/90">{section.body}</p>
+      <h2 className="ubuntu-section-title">{section.title}</h2>
+      <p className="ubuntu-lead">{section.body}</p>
       {bullets.length > 0 && (
-        <ul className="ubuntu-bullet-list mt-4 text-white/90">
+        <ul className="ubuntu-bullet-list mt-4">
           {bullets.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -68,11 +67,11 @@ export default function UbuntuHomeVisionCta({
           </Link>
         )}
         {secondaryIsRouteObject ? (
-          <UbuntuHomeLink to={secondaryTarget} className="!text-[#e8b4b8]">
+          <UbuntuHomeLink to={secondaryTarget}>
             {secondaryLabel} →
           </UbuntuHomeLink>
         ) : (
-          <UbuntuHomeLink to={secondaryHref} className="!text-[#e8b4b8]">
+          <UbuntuHomeLink to={secondaryHref}>
             {secondaryLabel} →
           </UbuntuHomeLink>
         )}

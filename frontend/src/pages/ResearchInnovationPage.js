@@ -71,14 +71,14 @@ export default function ResearchInnovationPage() {
         <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {RESEARCH_TOPICS.map((topic) => (
             <li key={topic.title} className="border border-[#e5e5e5] bg-white p-5">
-              <h3 className="text-base font-semibold text-[#111]">{topic.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#555]">{topic.desc}</p>
+              <h3 className="text-base font-semibold text-[#002855]">{topic.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{topic.desc}</p>
             </li>
           ))}
         </ul>
         <p className="ubuntu-body mt-8">
           Technical articles and field notes are published on{" "}
-          <Link to="/blog" className="text-[#8b1538] hover:underline">
+          <Link to="/blog" className="text-[#0466c8] hover:underline">
             News & Media
           </Link>
           .

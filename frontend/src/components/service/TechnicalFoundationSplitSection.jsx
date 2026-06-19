@@ -6,7 +6,7 @@ import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
- * Dark CTA band — copy + actions left, browser mockup with scrolling stack icons right.
+ * Light CTA band — copy + actions left, scrolling tech stack panel right.
  */
 export default function TechnicalFoundationSplitSection({
   id = "service-technical-foundation",
@@ -34,22 +34,21 @@ export default function TechnicalFoundationSplitSection({
       id={id}
       testId="service-technical-foundation-cta"
       pattern="cta"
-      variant="dark"
       imagePosition="right"
       className="ubuntu-tech-foundation-cta"
       mediaClassName="ubuntu-tech-foundation-cta__media"
       mediaSlot={<TechFoundationCtaMedia techNames={techNames} />}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
         {eyebrow}
       </p>
-      <h2 className="ubuntu-section-title text-white">{title}</h2>
-      <p className="ubuntu-lead text-white/90">{lead}</p>
+      <h2 className="ubuntu-section-title">{title}</h2>
+      <p className="ubuntu-lead">{lead}</p>
       <div className="ubuntu-cta-row">
         <Link to={primaryHref} className="ubuntu-btn-primary">
           {primaryLabel}
         </Link>
-        <UbuntuHomeLink to={secondaryHref} className="!text-[#e8b4b8]">
+        <UbuntuHomeLink to={secondaryHref}>
           {secondaryLabel}
         </UbuntuHomeLink>
       </div>

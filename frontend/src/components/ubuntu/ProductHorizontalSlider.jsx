@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import { paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
 
 /**
  * Shared horizontal carousel for services, solutions, or similar catalog items.
@@ -54,7 +55,7 @@ export default function ProductHorizontalSlider({
       <div className="ubuntu-container">
         <div className="mb-8 max-w-3xl md:mb-10">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
           )}
           <h2 id={`${id}-heading`} className="ubuntu-section-title">
             {title}
@@ -82,7 +83,7 @@ export default function ProductHorizontalSlider({
 
           <Carousel setApi={setApi} opts={{ align: "start", loop: true, dragFree: false }} className="w-full">
             <CarouselContent className="-ml-4 pb-2">
-              {items.map((item) => {
+              {items.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <CarouselItem
@@ -92,7 +93,8 @@ export default function ProductHorizontalSlider({
                     <Link
                       to={hrefFor(item)}
                       data-testid={`${testIdPrefix}-${item.slug}`}
-                      className="ubuntu-services-slider__card ubuntu-product-slider-card group flex h-full min-h-[300px] flex-col overflow-hidden border border-[#e5e5e5] bg-white transition-colors hover:border-[#8b1538]/50"
+                      data-palette-accent={paletteAccentIndex(index)}
+                      className="ubuntu-services-slider__card ubuntu-product-slider-card group flex h-full min-h-[300px] flex-col overflow-hidden border border-[#e5e5e5] bg-white transition-colors"
                     >
                       <div className="ubuntu-product-slider-card__media relative min-h-[200px] flex-1 overflow-hidden bg-[#1a1a1a]">
                         <img
@@ -103,18 +105,13 @@ export default function ProductHorizontalSlider({
                           decoding="async"
                         />
                         {Icon && (
-                          <span className="absolute left-3 top-3 z-10 flex h-9 w-9 items-center justify-center bg-[#8b1538] text-white">
+                          <span className="ubuntu-palette-icon absolute left-3 top-3 z-10 flex h-9 w-9 items-center justify-center">
                             <Icon size={18} strokeWidth={2} aria-hidden />
                           </span>
                         )}
                       </div>
                       <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-4 sm:py-5 group-hover:bg-[#fafafa]">
-                        <ProductCardHeading
-                          descriptor={item.cardDescriptor}
-                          className="group-hover:[&_.ubuntu-product-card__heading-text]:text-[#8b1538]"
-                        >
-                          {item.title}
-                        </ProductCardHeading>
+                        <ProductCardHeading descriptor={item.cardDescriptor}>{item.title}</ProductCardHeading>
                       </div>
                     </Link>
                   </CarouselItem>
@@ -134,8 +131,9 @@ export default function ProductHorizontalSlider({
                   aria-label={`Go to ${item.title}`}
                   onClick={() => api?.scrollTo(index)}
                   className={`h-2.5 rounded-full transition-all ${
-                    current === index ? "w-8 bg-[#8b1538]" : "w-2.5 bg-[#d9d9d9] hover:bg-[#bbb]"
+                    current === index ? "w-8" : "w-2.5 bg-[#d9d9d9] hover:bg-[#bbb]"
                   }`}
+                  style={current === index ? { backgroundColor: paletteAccent(index) } : undefined}
                 />
               ))}
             </div>

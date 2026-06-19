@@ -27,21 +27,19 @@ export default function CTASection({
       id="page-cta"
       testId="cta-section"
       pattern="cta"
-      variant="dark"
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition="right"
-
     >
       {!hideLabel && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
           {SECTION_LABEL.contact}
         </p>
       )}
-      <h2 data-testid="cta-title" className="ubuntu-section-title text-white">
+      <h2 data-testid="cta-title" className="ubuntu-section-title">
         {title || "Get started with AI agents in your applications"}
       </h2>
-      <p className="ubuntu-lead text-white/85">
+      <p className="ubuntu-lead">
         {description ||
           "Tell us about the software you run. We will outline how to build agents, modernize apps, or both—with clear scope and next steps."}
       </p>
@@ -63,7 +61,7 @@ export default function CTASection({
             {buttonText || "Contact us"}
           </Link>
         )}
-        <UbuntuLink to={secondaryCta.href} className="!text-[#e8b4b8]">
+        <UbuntuLink to={secondaryCta.href}>
           {secondaryCta.label}
         </UbuntuLink>
       </div>

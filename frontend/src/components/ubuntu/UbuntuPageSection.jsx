@@ -15,7 +15,7 @@ function SectionCopy({
   return (
     <>
       {eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
       )}
       {title && <h2 className="ubuntu-section-title">{title}</h2>}
       {lead && <p className="ubuntu-lead">{lead}</p>}

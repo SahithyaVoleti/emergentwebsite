@@ -68,14 +68,14 @@ export default function UbuntuCapabilityGrid({
       <div className="ubuntu-container">
         <div className="max-w-3xl text-left">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {eyebrow}
             </p>
           )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#111]">
+          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#002855]">
             {title}
           </h2>
-          {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#333]">{lead}</p>}
+          {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#33415c]">{lead}</p>}
         </div>
 
         <div className="ubuntu-capability-grid mt-8">

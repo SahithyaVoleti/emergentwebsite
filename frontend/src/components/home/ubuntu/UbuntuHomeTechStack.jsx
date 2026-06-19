@@ -1,17 +1,15 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import DeferredMount from "../../DeferredMount";
-import { IconCloud } from "@/components/ui/icon-cloud";
-import { BorderBeam } from "@/components/ui/border-beam";
 import { HOME_TECH_STACK } from "../../../data/homePageSections";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
-import MockupFrame from "../../ubuntu/MockupFrame";
 import UbuntuHomeLink from "./UbuntuHomeLink";
+import TechStackLogoGrid from "../../TechStackLogoGrid";
+import services from "../../../data/services";
 import {
   SITE_SERVICE_TECH_CLOUDS,
-  getBalancedSiteTechSlugs,
-  getSimpleIconImageUrl,
-  getSlugsForService,
+  dedupeTechNamesByIcon,
+  extractTechNamesFromService,
+  getBalancedSiteTechNames,
 } from "../../../lib/serviceTechStackSlugs";
 
 const ALL_SERVICES_KEY = "all";
@@ -20,40 +18,29 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
   const section = { ...HOME_TECH_STACK, ...config };
   const [activeService, setActiveService] = useState(initialSlug);
 
-  const activeSlugs = useMemo(() => {
+  const activeTechNames = useMemo(() => {
     if (activeService === ALL_SERVICES_KEY) {
-      return getBalancedSiteTechSlugs(20);
+      return getBalancedSiteTechNames(24);
     }
-    return getSlugsForService(activeService);
+    const service = services.find((s) => s.slug === activeService);
+    return dedupeTechNamesByIcon(extractTechNamesFromService(service));
   }, [activeService]);
 
-  const images = useMemo(
-    () => activeSlugs.map((slug) => getSimpleIconImageUrl(slug)),
-    [activeSlugs]
-  );
-
-  const iconCloudPanel = (
-    <div className="ubuntu-tech-stack__mockup relative overflow-hidden">
-      <MockupFrame screenClassName="ubuntu-tech-stack__screen">
-        <div className="ubuntu-tech-stack__cloud-inner">
-          {images.length > 0 ? (
-            <DeferredMount minHeight="400px" rootMargin="320px">
-              <IconCloud
-                key={activeService}
-                images={images}
-                width={640}
-                height={400}
-                className="ubuntu-tech-stack__canvas"
-              />
-            </DeferredMount>
-          ) : (
-            <p className="px-6 text-center text-sm text-white/60">
-              No mapped icons for this service yet.
-            </p>
-          )}
-        </div>
-      </MockupFrame>
-      <BorderBeam duration={8} size={100} colorFrom="#8b1538" colorTo="#e8b4b8" borderWidth={2} />
+  const techStackPanel = (
+    <div className="ubuntu-tech-stack__panel">
+      {activeTechNames.length > 0 ? (
+        <TechStackLogoGrid
+          key={activeService}
+          items={activeTechNames}
+          compact
+          marqueeColumnCap={4}
+          marqueeColumnHeightClassName="h-[min(22rem,48vh)] sm:h-[24rem] min-h-[16rem]"
+        />
+      ) : (
+        <p className="px-6 py-12 text-center text-sm text-[#5c677d]">
+          No mapped technologies for this service yet.
+        </p>
+      )}
     </div>
   );
 
@@ -62,17 +49,16 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
       id={section.id}
       testId="home-tech-stack-section"
       pattern="cta"
-      variant="dark"
       imagePosition="right"
       className="ubuntu-tech-stack-section"
       mediaClassName="ubuntu-tech-stack__media"
-      mediaSlot={iconCloudPanel}
+      mediaSlot={techStackPanel}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
         {section.eyebrow}
       </p>
-      <h2 className="ubuntu-section-title text-white">{section.title}</h2>
-      <p className="ubuntu-lead text-white/90">{section.lead}</p>
+      <h2 className="ubuntu-section-title">{section.title}</h2>
+      <p className="ubuntu-lead">{section.lead}</p>
 
       <div className="ubuntu-tech-stack-filters" role="tablist" aria-label="Service technology stacks">
         <button
@@ -120,7 +106,7 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
               : `View ${SITE_SERVICE_TECH_CLOUDS.find((s) => s.slug === activeService)?.title ?? "service"}`}
         </Link>
         {section.secondaryCta && (
-          <UbuntuHomeLink to={section.secondaryCta.href} className="!text-[#e8b4b8]">
+          <UbuntuHomeLink to={section.secondaryCta.href}>
             {section.secondaryCta.label} →
           </UbuntuHomeLink>
         )}

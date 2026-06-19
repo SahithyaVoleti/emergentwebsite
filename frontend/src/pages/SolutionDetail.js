@@ -26,7 +26,7 @@ export default function SolutionDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Solution not found</h1>
-          <Link to="/solutions" className="mt-4 text-[#8b1538] hover:underline">
+          <Link to="/solutions" className="mt-4 text-[#0466c8] hover:underline">
             Back to solutions
           </Link>
         </div>

@@ -10,16 +10,16 @@ function normKey(name) {
 }
 
 /**
- * Tech names from services.js → Simple Icons slugs (jsDelivr simple-icons@12).
- * Unlisted names are omitted from the cloud to avoid broken logos.
+ * Tech names from services.js → Simple Icons slugs (simple-icons@12 / jsDelivr).
+ * Prefer exact brand slugs; pattern rules in techNameToSimpleIconSlug handle variants.
  */
 const TECH_TO_SLUG = {
   "gpt 4o": "openai",
   "openai gpt 4o": "openai",
-  "claude": "anthropic",
+  claude: "anthropic",
   "claude 3 5": "anthropic",
   "anthropic claude": "anthropic",
-  "gemini": "google",
+  gemini: "google",
   "gemini pro": "google",
   "google gemini": "google",
   "llama 3": "meta",
@@ -31,38 +31,39 @@ const TECH_TO_SLUG = {
   pytorch: "pytorch",
   "scikit learn": "scikitlearn",
   xgboost: "xgboost",
-  jax: "jax",
-  mlflow: "mlflow",
-  kubeflow: "kubernetes",
+  jax: "google",
+  mlflow: "databricks",
+  kubeflow: "kubeflow",
   prometheus: "prometheus",
   grafana: "grafana",
   "ci cd pipelines": "githubactions",
   "model versioning": "git",
-  aws: "amazon",
-  "aws bedrock": "amazon",
-  "aws sagemaker": "amazon",
-  "aws glue": "amazon",
-  "aws amplify": "amazon",
-  "aws cloudformation": "amazon",
+  aws: "amazonwebservices",
+  "aws bedrock": "amazonwebservices",
+  "aws sagemaker": "amazonwebservices",
+  "aws glue": "amazonwebservices",
+  "aws amplify": "amazonwebservices",
+  "aws cloudformation": "amazonwebservices",
   azure: "microsoftazure",
   "azure openai": "microsoftazure",
   "azure ml": "microsoftazure",
   "google cloud": "googlecloud",
   "gcp vertex ai": "googlecloud",
+  gcp: "googlecloud",
   docker: "docker",
   kubernetes: "kubernetes",
-  serverless: "amazon",
+  serverless: "awslambda",
   langchain: "langchain",
-  llamaindex: "huggingface",
-  haystack: "python",
+  llamaindex: "meta",
+  haystack: "deepset",
   "semantic kernel": "microsoft",
   dspy: "python",
-  chromadb: "mongodb",
-  chroma: "mongodb",
-  pinecone: "mongodb",
-  weaviate: "postgresql",
+  chromadb: "chromadb",
+  chroma: "chromadb",
+  pinecone: "pinecone",
+  weaviate: "weaviate",
   milvus: "milvus",
-  qdrant: "redis",
+  qdrant: "qdrant",
   redis: "redis",
   "node js": "nodedotjs",
   "express js": "express",
@@ -90,11 +91,11 @@ const TECH_TO_SLUG = {
   testflight: "apple",
   combine: "swift",
   kotlin: "kotlin",
-  "jetpack compose": "android",
+  "jetpack compose": "jetpackcompose",
   "android studio": "androidstudio",
   "ml kit": "google",
   coroutines: "kotlin",
-  room: "android",
+  room: "sqlite",
   flutter: "flutter",
   "react native": "react",
   dart: "dart",
@@ -110,13 +111,12 @@ const TECH_TO_SLUG = {
   temporal: "temporal",
   prefect: "prefect",
   "rest apis": "swagger",
-  webhooks: "ifttt",
+  webhooks: "webhook",
   "sdk toolkits": "python",
   "slack teams bots": "slack",
   "crm connectors": "salesforce",
-  gcp: "googlecloud",
   "hugging face": "huggingface",
-  deepspeed: "pytorch",
+  deepspeed: "microsoft",
   "lora qlora": "pytorch",
   axolotl: "huggingface",
   vllm: "huggingface",
@@ -132,7 +132,7 @@ const TECH_TO_SLUG = {
   opentofu: "opentofu",
   helm: "helm",
   podman: "podman",
-  ecs: "amazon",
+  ecs: "amazonwebservices",
   nomad: "hashicorp",
   datadog: "datadog",
   "elk stack": "elastic",
@@ -140,20 +140,20 @@ const TECH_TO_SLUG = {
   splunk: "splunk",
   "apache airflow": "apacheairflow",
   dbt: "dbt",
-  fivetran: "apacheairflow",
+  fivetran: "fivetran",
   spark: "apachespark",
   kafka: "apachekafka",
   "apache kafka": "apachekafka",
   snowflake: "snowflake",
   bigquery: "googlecloud",
-  redshift: "amazon",
+  redshift: "amazonwebservices",
   databricks: "databricks",
   "delta lake": "databricks",
   teradata: "teradata",
   "apache flink": "apacheflink",
   "spark streaming": "apachespark",
-  kinesis: "amazon",
-  confluent: "apachekafka",
+  kinesis: "amazonwebservices",
+  confluent: "confluent",
   pulsar: "apachepulsar",
   tableau: "tableau",
   "power bi": "powerbi",
@@ -163,13 +163,123 @@ const TECH_TO_SLUG = {
   elasticsearch: "elasticsearch",
 };
 
+/** Substring rules when exact key is missing (order matters — first match wins). */
+const SLUG_PATTERNS = [
+  [/openai|gpt[\s-]?4|gpt[\s-]?3/, "openai"],
+  [/anthropic|claude/, "anthropic"],
+  [/gemini|palm/, "google"],
+  [/llama|llamaindex/, "meta"],
+  [/mistral/, "mistralai"],
+  [/cohere/, "cohere"],
+  [/phi[\s-]?3/, "microsoft"],
+  [/hugging\s*face|huggingface|\bvllm\b|\btgi\b|axolotl/, "huggingface"],
+  [/pytorch|torch|lora|qlora|deepspeed/, "pytorch"],
+  [/tensorflow/, "tensorflow"],
+  [/scikit|sklearn/, "scikitlearn"],
+  [/xgboost/, "xgboost"],
+  [/\bjax\b/, "google"],
+  [/mlflow/, "databricks"],
+  [/kubeflow/, "kubeflow"],
+  [/prometheus/, "prometheus"],
+  [/grafana/, "grafana"],
+  [/ci[\s/\\-]?cd|github\s*actions/, "githubactions"],
+  [/model\s*version/, "git"],
+  [/sagemaker|bedrock|cloudformation|aws\s*glue|aws\s*amplify|\baws\b|redshift|kinesis|\becs\b/, "amazonwebservices"],
+  [/azure/, "microsoftazure"],
+  [/vertex\s*ai|google\s*cloud|\bgcp\b|bigquery/, "googlecloud"],
+  [/awslambda|serverless|lambda/, "awslambda"],
+  [/langchain|langgraph/, "langchain"],
+  [/haystack|deepset/, "deepset"],
+  [/semantic\s*kernel|autogen|\bphi\b/, "microsoft"],
+  [/chromadb|\bchroma\b/, "chromadb"],
+  [/pinecone/, "pinecone"],
+  [/weaviate/, "weaviate"],
+  [/milvus/, "milvus"],
+  [/qdrant/, "qdrant"],
+  [/\bredis\b/, "redis"],
+  [/node(\.js)?/, "nodedotjs"],
+  [/express/, "express"],
+  [/\.net|dotnet/, "dotnet"],
+  [/\bjava\b|openjdk|spring/, "openjdk"],
+  [/\bgo\b|golang/, "go"],
+  [/react/, "react"],
+  [/angular/, "angular"],
+  [/next\.?js/, "nextdotjs"],
+  [/typescript/, "typescript"],
+  [/vue/, "vuedotjs"],
+  [/svelte/, "svelte"],
+  [/postgres/, "postgresql"],
+  [/mongo/, "mongodb"],
+  [/mysql/, "mysql"],
+  [/cassandra/, "apachecassandra"],
+  [/firebase/, "firebase"],
+  [/jenkins/, "jenkins"],
+  [/terraform/, "terraform"],
+  [/swift|swiftui|combine/, "swift"],
+  [/xcode|core\s*ml|testflight/, "apple"],
+  [/kotlin|coroutines/, "kotlin"],
+  [/jetpack/, "jetpackcompose"],
+  [/android/, "android"],
+  [/flutter/, "flutter"],
+  [/dart/, "dart"],
+  [/expo/, "expo"],
+  [/capacitor/, "capacitor"],
+  [/ionic/, "ionic"],
+  [/supabase/, "supabase"],
+  [/graphql/, "graphql"],
+  [/crewai/, "openai"],
+  [/temporal/, "temporal"],
+  [/prefect/, "prefect"],
+  [/rest\s*api|swagger|openapi/, "swagger"],
+  [/webhook/, "webhook"],
+  [/slack|teams/, "slack"],
+  [/salesforce|crm/, "salesforce"],
+  [/triton|nvidia/, "nvidia"],
+  [/gitlab/, "gitlab"],
+  [/circleci/, "circleci"],
+  [/argo/, "argo"],
+  [/\bflux\b/, "flux"],
+  [/ansible/, "ansible"],
+  [/pulumi/, "pulumi"],
+  [/chef/, "chef"],
+  [/opentofu/, "opentofu"],
+  [/helm/, "helm"],
+  [/podman/, "podman"],
+  [/nomad|hashicorp/, "hashicorp"],
+  [/datadog/, "datadog"],
+  [/elastic|opensearch|elk/, "elastic"],
+  [/opentelemetry/, "opentelemetry"],
+  [/splunk/, "splunk"],
+  [/airflow/, "apacheairflow"],
+  [/\bdbt\b/, "dbt"],
+  [/fivetran/, "fivetran"],
+  [/spark/, "apachespark"],
+  [/kafka/, "apachekafka"],
+  [/snowflake/, "snowflake"],
+  [/databricks|delta\s*lake/, "databricks"],
+  [/teradata/, "teradata"],
+  [/flink/, "apacheflink"],
+  [/confluent/, "confluent"],
+  [/pulsar/, "apachepulsar"],
+  [/tableau/, "tableau"],
+  [/power\s*bi/, "powerbi"],
+  [/looker/, "looker"],
+  [/plotly/, "plotly"],
+  [/metabase/, "metabase"],
+  [/docker/, "docker"],
+  [/kubernetes|k8s/, "kubernetes"],
+  [/python|dspy|phidata/, "python"],
+];
+
 /** simple-icons@12 on jsDelivr — cdn.simpleicons.org 404s for several slugs (openai, aws, etc.). */
 const SIMPLE_ICONS_CDN_VERSION = "12";
 
 /** Legacy slug aliases → icon slug that exists in simple-icons@12 */
 const SLUG_ALIASES = {
-  amazonaws: "amazon",
-  amazonwebservices: "amazon",
+  amazon: "amazonwebservices",
+  amazonaws: "amazonwebservices",
+  amazonwebservices: "amazonwebservices",
+  awslambda: "awslambda",
 };
 
 export function resolveSimpleIconSlug(slug) {
@@ -189,7 +299,13 @@ export function getSimpleIconColoredImageUrl(slug) {
 
 export function techNameToSimpleIconSlug(name) {
   const key = normKey(name);
-  return TECH_TO_SLUG[key] ?? null;
+  if (TECH_TO_SLUG[key]) return resolveSimpleIconSlug(TECH_TO_SLUG[key]);
+
+  for (const [pattern, slug] of SLUG_PATTERNS) {
+    if (pattern.test(key)) return resolveSimpleIconSlug(slug);
+  }
+
+  return null;
 }
 
 /** Stable key for deduping marquee tiles that share the same brand icon. */
@@ -255,4 +371,30 @@ export function getBalancedSiteTechSlugs(maxIcons = 36) {
     round += 1;
   }
   return result;
+}
+
+/** Round-robin tech labels for homepage stack grid (balanced across service tracks). */
+export function getBalancedSiteTechNames(maxNames = 24) {
+  const byService = services
+    .map((service) => ({
+      names: dedupeTechNamesByIcon(extractTechNamesFromService(service)),
+    }))
+    .filter((entry) => entry.names.length > 0);
+
+  const result = [];
+  let round = 0;
+  while (result.length < maxNames) {
+    let added = false;
+    for (const { names } of byService) {
+      const name = names[round];
+      if (name && !result.includes(name)) {
+        result.push(name);
+        added = true;
+        if (result.length >= maxNames) break;
+      }
+    }
+    if (!added) break;
+    round += 1;
+  }
+  return dedupeTechNamesByIcon(result);
 }

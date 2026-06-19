@@ -1,5 +1,5 @@
 /**
- * Dark stats band — same visual as homepage startup stats strip.
+ * Light stats band — same visual as homepage startup stats strip.
  */
 export default function UbuntuStatsStrip({
   stats = [],
@@ -18,10 +18,9 @@ export default function UbuntuStatsStrip({
     <section
       id={id}
       data-testid={testId}
-      className={`ubuntu-stats-cta-strip border-y border-[#2a2a2a] ${className}`}
+      className={`ubuntu-stats-cta-strip border-y border-[#dce8f5] ${className}`}
       aria-label="Program statistics"
     >
-      <div className="ubuntu-stats-dots-layer" aria-hidden="true" />
       <div className="ubuntu-container relative z-10">
         <ul
           className={`ubuntu-stats-cta-strip__grid grid grid-cols-2 justify-items-center gap-y-6 ${colClass}`}

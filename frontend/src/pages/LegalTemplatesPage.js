@@ -16,7 +16,7 @@ const privacyTemplates = PRIVACY_TEMPLATES;
 function TemplateCard({ item }) {
   return (
     <article className="h-full border border-[#e5e5e5] bg-white p-6">
-      <h3 className="mb-4 text-base font-medium text-[#111]">{item.title}</h3>
+      <h3 className="mb-4 text-base font-medium text-[#002855]">{item.title}</h3>
       <a href={item.file} download className="ubuntu-btn-primary inline-flex border-0 px-4 py-2 text-xs">
         Download template
       </a>
@@ -47,18 +47,18 @@ export default function LegalTemplatesPage() {
         belowContent={
           <>
             <div className="mb-8 flex flex-wrap items-center gap-3">
-              <span className="inline-flex border border-[#d9d9d9] bg-[#fafafa] px-3 py-1 text-xs font-medium text-[#555]">
+              <span className="inline-flex border border-[#d9d9d9] bg-[#fafafa] px-3 py-1 text-xs font-medium text-[#7d8597]">
                 Updated May 2026
               </span>
-              <span className="inline-flex border border-[#8b1538]/30 bg-[#fdf2f4] px-3 py-1 text-xs font-medium text-[#7a1528]">
+              <span className="inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
                 Internal legal review recommended
               </span>
             </div>
 
             <article className="mb-10 border border-[#e5e5e5] bg-[#fafafa] p-6">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#666]">Governance reporting</p>
-              <h3 className="mb-3 text-base font-medium text-[#111]">Legal risk dashboard</h3>
-              <p className="mb-4 text-sm text-[#555]">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#5c677d]">Governance reporting</p>
+              <h3 className="mb-3 text-base font-medium text-[#002855]">Legal risk dashboard</h3>
+              <p className="mb-4 text-sm text-[#7d8597]">
                 Board-ready legal risk dashboard covering operational, financial, compliance, and dispute exposure.
               </p>
               <a

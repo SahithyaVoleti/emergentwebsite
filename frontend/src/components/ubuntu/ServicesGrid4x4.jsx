@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import { paletteAccentIndex } from "../../lib/brandPalette";
 
 /**
  * Services catalog as a responsive 4-column card grid (4×2 for eight tracks on large screens).
@@ -28,7 +29,7 @@ export default function ServicesGrid4x4({
         <div className="mb-6 flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             {eyebrow && (
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">{eyebrow}</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
             )}
             <h2 id={`${id}-heading`} className="ubuntu-section-title">
               {title}
@@ -43,14 +44,15 @@ export default function ServicesGrid4x4({
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <Link
                 key={service.slug}
                 to={`/services/${service.slug}`}
                 data-testid={`service-grid-card-${service.slug}`}
-                className="ubuntu-services-grid__card group flex flex-col border border-[#e5e5e5] bg-white transition-colors hover:border-[#8b1538]/55 hover:shadow-[0_8px_24px_rgba(139, 21, 56,0.08)]"
+                data-palette-accent={paletteAccentIndex(index)}
+                className="ubuntu-services-grid__card group flex flex-col border border-[#e5e5e5] bg-white transition-colors"
               >
                 <div className="relative aspect-square overflow-hidden bg-[#eee] border-b border-[#e5e5e5]">
                   <img
@@ -61,15 +63,13 @@ export default function ServicesGrid4x4({
                     decoding="async"
                   />
                   {Icon && (
-                    <span className="absolute left-2 top-2 flex h-8 w-8 items-center justify-center bg-[#8b1538] text-white sm:left-3 sm:top-3">
+                    <span className="ubuntu-palette-icon absolute left-2 top-2 flex h-8 w-8 items-center justify-center sm:left-3 sm:top-3">
                       <Icon size={16} strokeWidth={2} aria-hidden />
                     </span>
                   )}
                 </div>
                 <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-3 sm:py-4 group-hover:bg-[#fafafa]">
-                  <ProductCardHeading className="group-hover:[&_.ubuntu-product-card__heading-text]:text-[#8b1538]">
-                    {service.title}
-                  </ProductCardHeading>
+                  <ProductCardHeading>{service.title}</ProductCardHeading>
                 </div>
               </Link>
             );

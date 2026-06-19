@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import { paletteAccentIndex } from "../../lib/brandPalette";
 
 const SLIDE_INTERVAL_MS = 4500;
 
@@ -80,9 +81,9 @@ export default function ServiceSubservicesGrid({
   };
 
   const carouselNavPrevClass =
-    "z-10 h-8 w-8 rotate-90 border-[#d9d9d9] bg-white text-[#333] shadow-sm hover:border-[#8b1538] hover:bg-[#fdf2f4] disabled:opacity-40 left-1/2 -translate-x-1/2 -top-1 lg:left-auto lg:right-0 lg:top-1/4 lg:-translate-y-1/2 lg:translate-x-0";
+    "z-10 h-8 w-8 rotate-90 border-[#d9d9d9] bg-white text-[#33415c] shadow-sm hover:border-[#0353a4] hover:bg-[#eef4fc] disabled:opacity-40 left-1/2 -translate-x-1/2 -top-1 lg:left-auto lg:right-0 lg:top-1/4 lg:-translate-y-1/2 lg:translate-x-0";
   const carouselNavNextClass =
-    "z-10 h-8 w-8 rotate-90 border-[#d9d9d9] bg-white text-[#333] shadow-sm hover:border-[#8b1538] hover:bg-[#fdf2f4] disabled:opacity-40 bottom-0 left-1/2 -translate-x-1/2 lg:bottom-auto lg:left-auto lg:right-0 lg:top-3/4 lg:-translate-y-1/2 lg:translate-x-0";
+    "z-10 h-8 w-8 rotate-90 border-[#d9d9d9] bg-white text-[#33415c] shadow-sm hover:border-[#0353a4] hover:bg-[#eef4fc] disabled:opacity-40 bottom-0 left-1/2 -translate-x-1/2 lg:bottom-auto lg:left-auto lg:right-0 lg:top-3/4 lg:-translate-y-1/2 lg:translate-x-0";
 
   if (!subs.length) return null;
 
@@ -95,14 +96,14 @@ export default function ServiceSubservicesGrid({
       <div className="ubuntu-container">
         <div className="ubuntu-scope-carousel__header mb-5 max-w-3xl sm:mb-6">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
               {eyebrow}
             </p>
           )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title !mb-2 text-[#111]">
+          <h2 id={`${id}-heading`} className="ubuntu-section-title !mb-2 text-[#002855]">
             {sectionTitle}
           </h2>
-          {lead && <p className="ubuntu-lead mt-0 text-[#333]">{lead}</p>}
+          {lead && <p className="ubuntu-lead mt-0 text-[#33415c]">{lead}</p>}
         </div>
 
         <div
@@ -114,16 +115,16 @@ export default function ServiceSubservicesGrid({
           <div className="ubuntu-scope-carousel__detail flex flex-col justify-center lg:col-span-5">
             {activeSub && (
               <div key={activeIndex} className="ubuntu-scope-carousel__detail-panel">
-                <h3 className="text-xl font-medium leading-snug text-[#111] sm:text-2xl">
+                <h3 className="text-xl font-medium leading-snug text-[#002855] sm:text-2xl">
                   {activeSub.title}
                 </h3>
                 {activeSub.desc && (
-                  <p className="mt-3 text-sm leading-relaxed text-[#555] sm:text-base">
+                  <p className="mt-3 text-sm leading-relaxed text-[#7d8597] sm:text-base">
                     {activeSub.desc}
                   </p>
                 )}
                 {previewItems.length > 0 && (
-                  <ul className="ubuntu-bullet-list mt-4 text-sm text-[#555]">
+                  <ul className="ubuntu-bullet-list mt-4 text-sm text-[#7d8597]">
                     {previewItems.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
@@ -150,7 +151,8 @@ export default function ServiceSubservicesGrid({
                     >
                       <button
                         type="button"
-                        className="ubuntu-scope-carousel__slide group relative h-full w-full overflow-hidden border border-[#e5e5e5] bg-[#eee] text-left transition-colors hover:border-[#8b1538]/60"
+                        data-palette-accent={paletteAccentIndex(index)}
+                        className="ubuntu-scope-carousel__slide group relative h-full w-full overflow-hidden border border-[#e5e5e5] bg-[#eee] text-left transition-colors hover:border-[color-mix(in_srgb,var(--item-accent)_55%,#e5e5e5)]"
                         onClick={() => goToSlide(index)}
                         aria-label={sub.title}
                         aria-current={activeIndex === index ? "true" : undefined}
@@ -163,7 +165,7 @@ export default function ServiceSubservicesGrid({
                           decoding="async"
                         />
                         {Icon && (
-                          <span className="absolute left-2 top-2 flex h-8 w-8 items-center justify-center bg-[#8b1538] text-white sm:left-3 sm:top-3">
+                          <span className="ubuntu-palette-icon absolute left-2 top-2 flex h-8 w-8 items-center justify-center sm:left-3 sm:top-3">
                             <Icon size={16} strokeWidth={2} aria-hidden />
                           </span>
                         )}

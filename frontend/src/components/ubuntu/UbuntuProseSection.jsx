@@ -13,7 +13,7 @@ export default function UbuntuProseSection({
 }) {
   return (
     <UbuntuListingSection id={id} eyebrow={eyebrow} title={title} lead={lead} variant={variant}>
-      <div className="ubuntu-prose max-w-4xl text-[#555]">{children}</div>
+      <div className="ubuntu-prose max-w-4xl text-[#7d8597]">{children}</div>
     </UbuntuListingSection>
   );
 }

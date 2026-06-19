@@ -10,7 +10,7 @@ export default function RelatedBlog({ title }) {
     <UbuntuSectionShell data-testid="related-blog-section">
       <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div className="max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
             {SECTION_LABEL.articles}
           </p>
           <h2 className="ubuntu-section-title">{title || "Related articles"}</h2>
@@ -24,7 +24,7 @@ export default function RelatedBlog({ title }) {
           <Link
             key={article.slug}
             to={`/blog/${article.slug}`}
-            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#8b1538]"
+            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]"
           >
             <div className="aspect-[16/10] overflow-hidden bg-[#eee]">
               <img
@@ -35,8 +35,8 @@ export default function RelatedBlog({ title }) {
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <div className="mb-2 flex items-center gap-2 text-xs text-[#666]">
-                <span className="font-semibold uppercase tracking-wide text-[#8b1538]">
+              <div className="mb-2 flex items-center gap-2 text-xs text-[#5c677d]">
+                <span className="font-semibold uppercase tracking-wide text-[#0466c8]">
                   {article.category}
                 </span>
                 <span className="inline-flex items-center gap-1">
@@ -44,7 +44,7 @@ export default function RelatedBlog({ title }) {
                   {article.readTime}
                 </span>
               </div>
-              <h3 className="text-base font-medium leading-snug text-[#111] group-hover:text-[#8b1538]">
+              <h3 className="text-base font-medium leading-snug text-[#002855] group-hover:text-[#0353a4]">
                 {article.title}
               </h3>
             </div>

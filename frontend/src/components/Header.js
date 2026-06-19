@@ -23,7 +23,7 @@ function navLinkClass(isActive) {
 }
 
 const mobileLinkClass =
-  "block border-b border-[#e5e5e5] py-3 text-sm text-[#333] hover:text-[#8b1538]";
+  "block border-b border-[#e5e5e5] py-3 text-sm text-[#33415c] hover:text-[#0353a4]";
 
 const DROPDOWN_NAV = {
   services: SERVICES_NAV,
@@ -148,13 +148,13 @@ export default function Header({ embedded = false, shell = false }) {
         <button
           type="button"
           className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3 text-left text-sm font-medium ${
-            isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#333]"
+            isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#33415c]"
           }`}
           onClick={() => toggleMobileSection(key)}
           aria-expanded={isOpen}
           aria-controls={panelId}
         >
-          <span className={sectionActive && !isOpen ? "text-[#8b1538]" : ""}>{title}</span>
+          <span className={sectionActive && !isOpen ? "text-[#0466c8]" : ""}>{title}</span>
           <ChevronDown
             size={16}
             className={`ubuntu-nav-mobile-trigger__chevron ${isOpen ? "rotate-180" : ""}`}
@@ -262,7 +262,7 @@ export default function Header({ embedded = false, shell = false }) {
 
           <button
             data-testid="mobile-menu-toggle"
-            className="rounded-none p-2 text-[#333] transition-colors hover:text-[#8b1538] xl:hidden"
+            className="rounded-none p-2 text-[#33415c] transition-colors hover:text-[#0353a4] xl:hidden"
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
