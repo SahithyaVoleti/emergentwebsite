@@ -8,7 +8,7 @@ import HomePage from "@/pages/HomePage";
 import UbuntuPageShell from "@/components/ubuntu/UbuntuPageShell";
 
 const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
-const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
+const ServiceRoute = lazy(() => import("@/pages/ServiceRoute"));
 const SolutionsPage = lazy(() => import("@/pages/SolutionsPage"));
 const SolutionDetail = lazy(() => import("@/pages/SolutionDetail"));
 const CaseStudiesPage = lazy(() => import("@/pages/CaseStudiesPage"));
@@ -60,7 +60,7 @@ function App() {
             element={
               <PublicLayout>
                 <LazyPage>
-                  <ServiceDetail />
+                  <ServiceRoute />
                 </LazyPage>
               </PublicLayout>
             }

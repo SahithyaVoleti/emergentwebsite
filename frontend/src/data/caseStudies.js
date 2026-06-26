@@ -1,24 +1,24 @@
 import { CASE_STUDY_HERO_IMAGES as caseStudyHeroes } from "../lib/heroImageThemes";
 
 /**
- * Production test cases — systems NeuralTrix developed, tested in live environments,
+ * Production validation cases — products NeuralTrix transformed, tested in live environments,
  * and validated as production-ready across industry sectors.
  */
 const caseStudies = [
   {
     slug: "smart-teaching-platform",
     archetype: "LMS and educator tools",
-    title: "Agent Vidya — educator copilot in production",
+    title: "Educator platform transformation — live LMS deployment",
     industry: "Education",
     status: "Production-ready",
-    heroTitle: "Teacher copilot tested inside live LMS workflows",
+    heroTitle: "AI-enabled educator platform tested inside live LMS workflows",
     heroDesc:
-      "We built and tested an AI copilot inside educator tools—lesson planning, rubric-aligned quizzes, and parent communication—with human review gates and FERPA-aligned data handling.",
+      "We transformed an existing teaching platform with copilot features for lesson planning, rubric-aligned assessments, and parent communication—with human review gates and FERPA-aligned data handling.",
     heroImage: caseStudyHeroes[0],
     challenge:
-      "District and EdTech teams needed to cut documentation time without bypassing curriculum standards or student privacy rules. The test case had to run against real LMS integrations and district approval paths.",
+      "District and EdTech teams needed to cut documentation time without bypassing curriculum standards or student privacy rules. The product had to run against real LMS integrations and district approval paths.",
     solution:
-      "NeuralTrix shipped Agent Vidya inside the teaching platform: structured prompts, teacher approval queues, role-based access, and audit logs. We ran live classroom pilots, measured time saved on planning tasks, and hardened exports for LMS compatibility.",
+      "NeuralTrix embedded AI copilot capabilities into the teaching platform: structured prompts, teacher approval queues, role-based access, and audit logs. We ran live classroom pilots, measured time saved on planning tasks, and hardened exports for LMS compatibility.",
     results: [
       { metric: "Live", label: "Tested in production", desc: "Piloted with educators on real lesson and assessment workflows." },
       { metric: "Privacy", label: "Policy controls", desc: "FERPA-aligned retention, role gates, and district IT review artifacts." },
@@ -35,24 +35,24 @@ const caseStudies = [
       "LMS-compatible handoff formats",
     ],
     faqs: [
-      { q: "Was this tested with real users?", a: "Yes. We validated the copilot on live educator workflows with agreed success measures before marking the build production-ready." },
+      { q: "Was this tested with real users?", a: "Yes. We validated the product on live educator workflows with agreed success measures before marking the build production-ready." },
       { q: "Can it connect to our LMS?", a: "Integration patterns were tested against common LMS APIs. Your environment defines final connectors and data boundaries." },
     ],
   },
   {
     slug: "medimind-clinical-assist",
     archetype: "EHR and clinical documentation",
-    title: "Agent Arogya — clinical documentation agent",
+    title: "Clinical documentation product — healthcare transformation",
     industry: "Healthcare",
     status: "Production-ready",
-    heroTitle: "Clinical documentation agent tested in EHR-style workflows",
+    heroTitle: "Clinical documentation module tested in EHR-style workflows",
     heroDesc:
-      "A production test case for drafting structured clinical notes, routing triage support, and surfacing patient context inside EHR workflows—with clinician review on every output.",
+      "A production validation for drafting structured clinical notes, routing triage support, and surfacing patient context inside EHR workflows—with clinician review on every output.",
     heroImage: caseStudyHeroes[1],
     challenge:
-      "Clinical teams needed faster documentation without compromising HIPAA controls or clinician accountability. The agent had to run against real chart structures and approval habits.",
+      "Clinical teams needed faster documentation without compromising HIPAA controls or clinician accountability. The product had to run against real chart structures and approval habits.",
     solution:
-      "NeuralTrix built Agent Arogya as an EHR-embedded agent: FHIR-aware context retrieval, structured note drafts, triage suggestions with human override, and full audit trails. We tested in a live clinical sandbox with clinicians reviewing every generated note.",
+      "NeuralTrix transformed the clinical application with FHIR-aware context retrieval, structured note drafts, triage suggestions with human override, and full audit trails. We tested in a live clinical sandbox with clinicians reviewing every generated note.",
     results: [
       { metric: "Live", label: "Clinical sandbox", desc: "Tested on real chart layouts and documentation paths." },
       { metric: "Safety", label: "Clinician review", desc: "No autonomous clinical decisions—review queues on all outputs." },
@@ -69,24 +69,24 @@ const caseStudies = [
       "Rollback for prompts and tool permissions",
     ],
     faqs: [
-      { q: "Is this cleared for clinical use?", a: "The test case was validated in a controlled environment. Your organization defines clinical governance and go-live approval." },
+      { q: "Is this cleared for clinical use?", a: "The validation program ran in a controlled environment. Your organization defines clinical governance and go-live approval." },
       { q: "Which EHR systems were tested?", a: "We validated FHIR-based integration patterns. Final connectors follow your EHR vendor and security requirements." },
     ],
   },
   {
     slug: "fraud-guard-transactions",
     archetype: "AML and transaction monitoring",
-    title: "Agent Kavacha — real-time transaction agent",
+    title: "Transaction monitoring product — finance transformation",
     industry: "Finance",
     status: "Production-ready",
-    heroTitle: "Transaction monitoring agent tested on live payment streams",
+    heroTitle: "Transaction monitoring module tested on live payment streams",
     heroDesc:
-      "We developed and tested an AML-style agent that scores transactions in near real time, routes exceptions to analyst queues, and logs every decision for audit review.",
+      "We developed and validated an AML scoring module that processes transactions in near real time, routes exceptions to analyst queues, and logs every decision for audit review.",
     heroImage: caseStudyHeroes[2],
     challenge:
-      "Fintech and banking teams needed sub-second scoring with explainable alerts—not black-box flags. The test case had to handle production-like transaction volume and investigator workflows.",
+      "Fintech and banking teams needed sub-second scoring with explainable alerts—not black-box flags. The product had to handle production-like transaction volume and investigator workflows.",
     solution:
-      "NeuralTrix built Agent Kavacha with streaming ingestion, governed thresholds, explainability panels for analysts, and feedback loops for model tuning. We stress-tested on live payment sandboxes and validated alert precision with operations teams.",
+      "NeuralTrix built streaming ingestion, governed thresholds, explainability panels for analysts, and feedback loops for model tuning into the monitoring product. We stress-tested on live payment sandboxes and validated alert precision with operations teams.",
     results: [
       { metric: "Live", label: "Streaming test", desc: "Validated on production-like transaction throughput." },
       { metric: "Speed", label: "Sub-second scoring", desc: "Near real-time alerts with bounded latency." },
@@ -104,33 +104,33 @@ const caseStudies = [
     ],
     faqs: [
       { q: "Was this run on real transaction data?", a: "We tested on live sandboxes and anonymized production-like streams with your security boundaries." },
-      { q: "Can it integrate with our core banking stack?", a: "Yes. API and event hooks were validated during the test case—final wiring follows your vendor contracts." },
+      { q: "Can it integrate with our core banking stack?", a: "Yes. API and event hooks were validated during the program—final wiring follows your vendor contracts." },
     ],
   },
   {
     slug: "stock-sense-commerce",
     archetype: "ERP and warehouse operations",
-    title: "Agent Vyapar — inventory agent in ERP",
+    title: "Inventory product — commerce ERP transformation",
     industry: "Commerce",
     status: "Production-ready",
-    heroTitle: "Replenishment agent tested inside ERP and WMS workflows",
+    heroTitle: "Replenishment module tested inside ERP and WMS workflows",
     heroDesc:
-      "A production test case that reads stock across POS, warehouse, and channel systems—and recommends replenishment inside ERP screens with manager approval before purchase orders.",
+      "A production validation that reads stock across POS, warehouse, and channel systems—and recommends replenishment inside ERP screens with manager approval before purchase orders.",
     heroImage: caseStudyHeroes[3],
     challenge:
-      "Retail ops teams lost hours reconciling stock across channels. The agent had to surface exceptions inside ERP workflows teams already use—not a separate dashboard.",
+      "Retail ops teams lost hours reconciling stock across channels. The product had to surface exceptions inside ERP workflows teams already use—not a separate dashboard.",
     solution:
-      "NeuralTrix built Agent Vyapar embedded in ERP and WMS UIs: live stock reads, replenishment recommendations within margin rules, and manager approval gates. We ran a multi-store pilot and validated stockout reduction on agreed SKUs.",
+      "NeuralTrix embedded replenishment intelligence in ERP and WMS UIs: live stock reads, recommendations within margin rules, and manager approval gates. We ran a multi-store pilot and validated stockout reduction on agreed SKUs.",
     results: [
       { metric: "Live", label: "Store pilot", desc: "Tested across POS, warehouse, and channel feeds." },
       { metric: "Accuracy", label: "Stock signals", desc: "Exception detection before stockouts on pilot SKUs." },
       { metric: "Control", label: "Manager approval", desc: "No auto-PO without sign-off inside ERP." },
-      { metric: "Ship", label: "Production-ready", desc: "Monitoring and rollback for agent permissions." },
+      { metric: "Ship", label: "Production-ready", desc: "Monitoring and rollback for product permissions." },
     ],
     techStack: ["Python", "PostgreSQL", "REST APIs", "SAP connectors", "GPT-4o", "Redis"],
     testimonial: null,
     features: [
-      "Embedded agent panels in ERP screens",
+      "Embedded intelligence panels in ERP screens",
       "Cross-channel stock reconciliation",
       "Replenishment recommendations with margin rules",
       "Manager approval before purchase orders",
@@ -138,23 +138,23 @@ const caseStudies = [
     ],
     faqs: [
       { q: "Which ERP systems were tested?", a: "We validated patterns on common retail ERPs and custom WMS APIs. Your stack defines final connectors." },
-      { q: "Does it auto-order stock?", a: "No. The agent proposes actions; your rules define what requires manager approval." },
+      { q: "Does it auto-order stock?", a: "No. The product proposes actions; your rules define what requires manager approval." },
     ],
   },
   {
     slug: "ai-video-creation",
     archetype: "Sports media and content ops",
-    title: "Agent Chitra — AI video production pipeline",
+    title: "Video production product — media transformation",
     industry: "Sports & Media",
     status: "Production-ready",
-    heroTitle: "Avatar and video pipeline tested at production scale",
+    heroTitle: "Video production pipeline tested at production scale",
     heroDesc:
-      "We built and tested a multilingual video production system—script workflows, avatar rendering, and cloud pipelines with cost controls—for sports and media content teams.",
+      "We built and validated a multilingual video production system—script workflows, avatar rendering, and cloud pipelines with cost controls—for sports and media content teams.",
     heroImage: caseStudyHeroes[4],
     challenge:
-      "Media teams needed faster highlight and persona-led content without blowing render budgets. The test case had to run batch and interactive jobs with brand and disclosure controls.",
+      "Media teams needed faster highlight and persona-led content without blowing render budgets. The product had to run batch and interactive jobs with brand and disclosure controls.",
     solution:
-      "NeuralTrix delivered Agent Chitra with retrieval-assisted scripting, avatar and speech integrations, Azure render queues, and quota dashboards. We load-tested concurrent renders and validated publish workflows with content ops teams.",
+      "NeuralTrix delivered retrieval-assisted scripting, avatar and speech integrations, Azure render queues, and quota dashboards. We load-tested concurrent renders and validated publish workflows with content ops teams.",
     results: [
       { metric: "Live", label: "Render pilot", desc: "Tested batch and on-demand jobs at agreed concurrency." },
       { metric: "Cost", label: "Unit economics", desc: "Per-minute models tracked in production dashboards." },
@@ -178,17 +178,17 @@ const caseStudies = [
   {
     slug: "maint-predict-operations",
     archetype: "CMMS and plant operations",
-    title: "Agent Yantra — predictive maintenance agent",
+    title: "Predictive maintenance product — manufacturing transformation",
     industry: "Manufacturing",
     status: "Production-ready",
-    heroTitle: "Maintenance agent tested on live equipment telemetry",
+    heroTitle: "Maintenance intelligence tested on live equipment telemetry",
     heroDesc:
-      "A production test case that ingests sensor and historian data, predicts failure windows, and routes work orders inside CMMS—with maintenance lead approval before scheduling.",
+      "A production validation that ingests sensor and historian data, predicts failure windows, and routes work orders inside CMMS—with maintenance lead approval before scheduling.",
     heroImage: caseStudyHeroes[5],
     challenge:
-      "Plant teams needed earlier failure signals without flooding technicians with false alarms. The agent had to integrate with existing CMMS and historian systems.",
+      "Plant teams needed earlier failure signals without flooding technicians with false alarms. The product had to integrate with existing CMMS and historian systems.",
     solution:
-      "NeuralTrix built Agent Yantra with time-series models, alert routing to CMMS work orders, and technician feedback loops. We tested on live equipment telemetry in a plant sandbox and validated precision on agreed asset classes.",
+      "NeuralTrix built time-series models, alert routing to CMMS work orders, and technician feedback loops into the maintenance product. We tested on live equipment telemetry in a plant sandbox and validated precision on agreed asset classes.",
     results: [
       { metric: "Live", label: "Plant telemetry", desc: "Tested on real sensor streams and historian feeds." },
       { metric: "Precision", label: "Alert quality", desc: "Tuned thresholds with maintenance team feedback." },
@@ -212,17 +212,17 @@ const caseStudies = [
   {
     slug: "lead-score-proptech",
     archetype: "CRM and listing portals",
-    title: "Agent Bhumi — PropTech CRM agent",
+    title: "PropTech CRM product — real estate transformation",
     industry: "Real Estate",
     status: "Production-ready",
-    heroTitle: "Lead prioritization agent tested in live CRM workflows",
+    heroTitle: "Lead prioritization module tested in live CRM workflows",
     heroDesc:
-      "We built and tested an agent that scores inbound leads, drafts follow-up actions, and surfaces comparable listings inside CRM tools broker teams use daily.",
+      "We built and validated lead scoring, follow-up drafts, and comparable listing panels inside CRM tools broker teams use daily.",
     heroImage: caseStudyHeroes[6],
     challenge:
-      "Brokerage teams missed high-intent leads in noisy CRM queues. The agent had to rank leads and suggest actions without sending messages autonomously.",
+      "Brokerage teams missed high-intent leads in noisy CRM queues. The product had to rank leads and suggest actions without sending messages autonomously.",
     solution:
-      "NeuralTrix shipped Agent Bhumi inside CRM screens: intent scoring from inquiry history, follow-up draft suggestions, and listing match panels. We tested with live lead feeds and measured response-time improvement on pilot offices.",
+      "NeuralTrix transformed the CRM with intent scoring from inquiry history, follow-up draft suggestions, and listing match panels. We tested with live lead feeds and measured response-time improvement on pilot offices.",
     results: [
       { metric: "Live", label: "CRM pilot", desc: "Tested on real inbound lead streams." },
       { metric: "Speed", label: "Response time", desc: "Faster first contact on high-intent leads." },
@@ -246,17 +246,17 @@ const caseStudies = [
   {
     slug: "yield-plan-agriculture",
     archetype: "Farm management dashboards",
-    title: "Agent Krishi — crop forecasting agent",
+    title: "Crop forecasting product — agriculture transformation",
     industry: "Agriculture",
     status: "Production-ready",
-    heroTitle: "Yield forecasting agent tested on live farm data",
+    heroTitle: "Yield forecasting module tested on live farm data",
     heroDesc:
-      "A production test case that combines weather, soil, and harvest history to forecast yield inside farm management dashboards—with agronomist review before input recommendations.",
+      "A production validation that combines weather, soil, and harvest history to forecast yield inside farm management dashboards—with agronomist review before input recommendations.",
     heroImage: caseStudyHeroes[7],
     challenge:
-      "Farm operators needed seasonal forecasts they could trust for input and irrigation decisions. The agent had to run on live field data and regional weather feeds.",
+      "Farm operators needed seasonal forecasts they could trust for input and irrigation decisions. The product had to run on live field data and regional weather feeds.",
     solution:
-      "NeuralTrix built Agent Krishi with multi-source data ingestion, scenario panels for planting and input decisions, and agronomist approval gates. We tested across pilot fields and validated forecast accuracy against harvest records.",
+      "NeuralTrix built multi-source data ingestion, scenario panels for planting and input decisions, and agronomist approval gates into the farm platform. We tested across pilot fields and validated forecast accuracy against harvest records.",
     results: [
       { metric: "Live", label: "Field pilot", desc: "Tested on live weather, soil, and harvest feeds." },
       { metric: "Accuracy", label: "Forecast validation", desc: "Compared predictions to actual harvest outcomes." },
@@ -280,17 +280,17 @@ const caseStudies = [
   {
     slug: "protocol-lab-biotech",
     archetype: "Electronic lab notebooks",
-    title: "Agent Shodh — lab research agent",
+    title: "Lab research product — biotechnology transformation",
     industry: "Biotechnology",
     status: "Production-ready",
-    heroTitle: "Experiment search agent tested in live ELN workflows",
+    heroTitle: "Experiment search module tested in live ELN workflows",
     heroDesc:
-      "We built and tested an agent that searches protocols, routes deviation reports, and packages regulatory submission drafts inside electronic lab notebook environments.",
+      "We built and validated protocol search, deviation routing, and regulatory submission drafts inside electronic lab notebook environments.",
     heroImage: caseStudyHeroes[8],
     challenge:
-      "Research teams lost time searching protocols and compiling deviation summaries. The agent had to respect GxP access rules and scientist review on every output.",
+      "Research teams lost time searching protocols and compiling deviation summaries. The product had to respect GxP access rules and scientist review on every output.",
     solution:
-      "NeuralTrix delivered Agent Shodh inside ELN tools: semantic protocol search, deviation routing with QA review, and regulatory draft assembly. We tested in a live lab sandbox with scientists validating retrieval accuracy and audit trails.",
+      "NeuralTrix transformed ELN tools with semantic protocol search, deviation routing with QA review, and regulatory draft assembly. We tested in a live lab sandbox with scientists validating retrieval accuracy and audit trails.",
     results: [
       { metric: "Live", label: "Lab sandbox", desc: "Tested on real protocol libraries and deviation logs." },
       { metric: "Search", label: "Retrieval accuracy", desc: "Validated by scientists on agreed query sets." },
@@ -314,17 +314,17 @@ const caseStudies = [
   {
     slug: "citizen-serve-government",
     archetype: "Public service portals",
-    title: "Agent JanSeva — public inquiry agent",
+    title: "Public inquiry product — government transformation",
     industry: "Government",
     status: "Production-ready",
-    heroTitle: "Citizen inquiry agent tested on live public portals",
+    heroTitle: "Citizen inquiry module tested on live public portals",
     heroDesc:
-      "A production test case that routes citizen inquiries, drafts case summaries, and surfaces policy answers inside government portals—with caseworker review on every response.",
+      "A production validation that routes citizen inquiries, drafts case summaries, and surfaces policy answers inside government portals—with caseworker review on every response.",
     heroImage: caseStudyHeroes[9],
     challenge:
-      "Agency portals faced high inquiry volume and inconsistent routing. The agent had to integrate with case management systems and meet public-sector security requirements.",
+      "Agency portals faced high inquiry volume and inconsistent routing. The product had to integrate with case management systems and meet public-sector security requirements.",
     solution:
-      "NeuralTrix built Agent JanSeva with inquiry classification, policy retrieval with citations, case summary drafts, and caseworker approval queues. We tested on live portal traffic in a controlled agency sandbox and validated routing accuracy with operations staff.",
+      "NeuralTrix built inquiry classification, policy retrieval with citations, case summary drafts, and caseworker approval queues into the portal product. We tested on live portal traffic in a controlled agency sandbox and validated routing accuracy with operations staff.",
     results: [
       { metric: "Live", label: "Portal sandbox", desc: "Tested on real inquiry patterns and case queues." },
       { metric: "Routing", label: "Classification", desc: "Validated routing accuracy with agency staff." },

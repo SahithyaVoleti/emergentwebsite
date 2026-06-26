@@ -8,7 +8,6 @@ export default function UbuntuHomeHero({ embedded = false }) {
     titleBefore,
     titleAccent,
     titleAfter,
-    features,
     primaryCta,
   } = HOME_HERO;
 
@@ -22,7 +21,6 @@ export default function UbuntuHomeHero({ embedded = false }) {
       significance="primary"
       badge={badge}
       title={{ before: titleBefore, accent: titleAccent, after: titleAfter }}
-      features={features}
       primaryCTA={{
         label: primaryCta.label,
         href: primaryCta.href,

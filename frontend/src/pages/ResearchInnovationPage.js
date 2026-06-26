@@ -95,6 +95,9 @@ export default function ResearchInnovationPage() {
       <PageStandardSections
         pageKey="caseStudies"
         contactContext="Research & Innovation"
+        includeMethodology={false}
+        includeOutcomes={false}
+        includeAssurance={false}
         ctaOverrides={{
           title: "Next Step for research collaboration",
           description:

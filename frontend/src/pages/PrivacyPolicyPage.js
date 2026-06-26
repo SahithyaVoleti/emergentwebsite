@@ -1,18 +1,17 @@
+import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
 import { getSiteMockup } from "../data/siteMockups";
+import { PRIVACY_TEMPLATES } from "../data/legalTemplates";
 
-const privacyTemplateDownloads = [
-  { title: "India", file: "/legal-templates/privacy-request-template-india.pdf", note: "Comprehensive DPDP-oriented request and verification template." },
-  { title: "United Kingdom", file: "/legal-templates/privacy-request-template-uk.pdf", note: "Comprehensive UK GDPR request and verification template." },
-  { title: "European Union", file: "/legal-templates/privacy-request-template-eu.pdf", note: "Comprehensive GDPR request and verification template." },
-  { title: "United States", file: "/legal-templates/privacy-request-template-us.pdf", note: "Comprehensive US consumer-rights request and verification template." },
-  { title: "Singapore", file: "/legal-templates/privacy-request-template-singapore.pdf", note: "Comprehensive PDPA request and verification template." },
-  { title: "UAE (DIFC)", file: "/legal-templates/privacy-request-template-uae.pdf", note: "Comprehensive UAE request and verification template." },
-];
+const privacyTemplateDownloads = PRIVACY_TEMPLATES.map((item) => ({
+  title: item.title.replace(" Privacy Request Template", ""),
+  file: item.file,
+  note: `Request and verification template for ${item.title.replace(" Privacy Request Template", "")} privacy regimes.`,
+}));
 
 const sections = [
   {
@@ -308,6 +307,7 @@ export default function PrivacyPolicyPage() {
       />
 
       <UbuntuListingSection
+        id="privacy-templates"
         title="Privacy request templates"
         lead="Downloadable templates for common privacy and data-subject rights requests. Template use does not modify statutory obligations or response timelines."
       >
@@ -326,6 +326,13 @@ export default function PrivacyPolicyPage() {
             </article>
           ))}
         </div>
+        <p className="ubuntu-body mt-8">
+          Jurisdiction clause templates and the legal risk dashboard are on{" "}
+          <Link to="/terms-and-conditions#legal-templates" className="text-[#d1511f] hover:underline">
+            Terms and Conditions
+          </Link>
+          .
+        </p>
       </UbuntuListingSection>
 
       <PageStandardSections

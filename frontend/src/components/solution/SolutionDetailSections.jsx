@@ -1,4 +1,5 @@
 import { useMemo, useRef } from "react";
+import { getSolutionProductName } from "../../lib/solutionDisplay";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Calendar, Layers, Server } from "lucide-react";
 import { getTechFoundationIcon } from "../../lib/techFoundationIcons";
@@ -59,7 +60,7 @@ export function SolutionOverviewSection({ solution }) {
           <SectionEyebrow>Overview</SectionEyebrow>
           <SectionTitle
             id="solution-overview-heading"
-            title={`${solution.title} accelerator scope`}
+            title={`${getSolutionProductName(solution)} accelerator scope`}
           />
         </motion.div>
 

@@ -2,7 +2,8 @@ import { SOLUTION_HERO_IMAGES } from "../lib/heroImageThemes";
 
 /**
  * NeuralTrix solution accelerators.
- * - `title`: Sanskrit product name (customer-facing brand).
+ * - `productName`: English product name (primary display).
+ * - `brandName` / `title`: Sanskrit brand label.
  * - `cardDescriptor`: one-line English scope for cards and navigation context.
  * - `slug`: technical route id (unchanged for URLs and integrations).
  */
@@ -10,10 +11,12 @@ const solutions = [
   {
     slug: "databrain-ai",
     title: "Smriti",
+    brandName: "Smriti",
+    productName: "Document Intelligence",
     cardDescriptor: "Document intelligence",
-    shortDesc: "Document agents you embed in your apps—search, Q&A, and summaries with answers linked to source files.",
-    heroTitle: "Smriti: Document agents for your applications",
-    heroDesc: "Pre-built document intelligence you plug into CRM, portals, and internal tools—with citations on every answer.",
+    shortDesc: "Document intelligence you embed in CRM, portals, and internal tools—with search, Q&A, and citations on every answer.",
+    heroTitle: "Document Intelligence",
+    heroDesc: "Smriti delivers governed document search, Q&A, and summarization inside the applications your teams already use.",
     heroImage: SOLUTION_HERO_IMAGES["databrain-ai"],
     overview: "Smriti gives your applications document intelligence: ingest PDFs, spreadsheets, presentations, audio, and images, then answer questions with citations. Deploy inside the software your teams already use.",
     features: [
@@ -36,10 +39,12 @@ const solutions = [
   {
     slug: "medimind-ai",
     title: "Arogya",
+    brandName: "Arogya",
+    productName: "Healthcare AI",
     cardDescriptor: "Healthcare AI",
-    shortDesc: "Healthcare agents inside clinical apps—documentation, triage support, and NLP with HIPAA-aligned controls.",
-    heroTitle: "Arogya: Clinical AI agents for healthcare apps",
-    heroDesc: "Healthcare agent modules for documentation and triage, embedded in your clinical software with review checkpoints.",
+    shortDesc: "Clinical documentation and triage support embedded in healthcare applications—with HIPAA-aligned controls and clinician review.",
+    heroTitle: "Healthcare AI",
+    heroDesc: "Arogya adds governed clinical documentation and triage support to your healthcare software with review checkpoints on every output.",
     heroImage: SOLUTION_HERO_IMAGES["medimind-ai"],
     overview: "Arogya is a healthcare intelligence accelerator focused on clinical safety and operational throughput. It separates administrative documentation from patient-clinician interactions. Governed NLP produces structured records that integrate with legacy EHR systems while keeping data under your control.",
     features: [
@@ -62,10 +67,12 @@ const solutions = [
   {
     slug: "talentify-ai",
     title: "Pratibha",
+    brandName: "Pratibha",
+    productName: "Talent & Recruitment AI",
     cardDescriptor: "Talent and recruitment AI",
-    shortDesc: "Recruitment agents inside your ATS and HR apps—screening, matching, and auditable hiring workflows.",
-    heroTitle: "Pratibha: AI agents for hiring applications",
-    heroDesc: "Recruitment agents for resume analysis and candidate matching, integrated into enterprise hiring tools with review gates.",
+    shortDesc: "Recruitment intelligence inside ATS and HR applications—screening, matching, and auditable hiring workflows.",
+    heroTitle: "Talent & Recruitment AI",
+    heroDesc: "Pratibha integrates resume analysis and candidate matching into enterprise hiring tools with human review gates.",
     heroImage: SOLUTION_HERO_IMAGES["talentify-ai"],
     overview: "Pratibha is a recruitment intelligence accelerator that improves candidate-to-role matching. It separates skill signals from demographic noise to support bias-mitigated screening and shortlist generation. Talent teams can process large pipelines with auditable decision checkpoints.",
     features: [
@@ -88,17 +95,19 @@ const solutions = [
   {
     slug: "quikbiz-ai",
     title: "Samvad",
+    brandName: "Samvad",
+    productName: "Conversational Commerce",
     cardDescriptor: "Conversational commerce",
-    shortDesc: "Commerce agents for your website and apps—conversational sales, support, and lead qualification.",
-    heroTitle: "Samvad: Conversational agents for commerce apps",
-    heroDesc: "Commerce agents that connect product knowledge and buyer intent inside your digital channels and customer applications.",
+    shortDesc: "Conversational sales and support for websites and apps—product knowledge, lead qualification, and governed handoff to staff.",
+    heroTitle: "Conversational Commerce",
+    heroDesc: "Samvad connects product knowledge and buyer intent inside your digital channels and customer applications.",
     heroImage: SOLUTION_HERO_IMAGES["quikbiz-ai"],
     overview: "Samvad is a conversational commerce accelerator for multi-channel customer engagement. It uses a unified product and intent model to deliver context-aware interactions. Teams can run qualification and support workflows while maintaining brand controls and operational governance.",
     features: [
       { title: "Contextual Conversations", desc: "Respond to customer queries using business context and approved product knowledge." },
       { title: "Lead Qualification", desc: "Qualify visitors based on questions, behavior, and fit with your ideal customer profile." },
       { title: "Multi-Channel Deployment", desc: "Deploy across website, WhatsApp, Facebook Messenger, Instagram, and Slack from one platform." },
-      { title: "Human Handoff", desc: "Escalate to human agents when needed, with full conversation context transferred." },
+      { title: "Human Handoff", desc: "Escalate to staff when needed, with full conversation context transferred." },
       { title: "Analytics Dashboard", desc: "Track conversation volume, satisfaction scores, conversion rates, and common topics." },
       { title: "Custom Branding", desc: "Configure the chat interface to match your brand look, voice, and approval workflows." },
     ],
@@ -107,17 +116,19 @@ const solutions = [
     faqs: [
       { q: "How does Samvad learn about my business?", a: "Samvad ingests website content, product catalogs, FAQ documents, and knowledge base articles to build a governed understanding of your business." },
       { q: "Can it handle multiple languages?", a: "Yes. Samvad supports 50+ languages with automatic language detection and translation." },
-      { q: "What if the AI cannot answer a question?", a: "Samvad follows configured fallback paths: escalation to human agents, support ticket creation, or clarifying questions." },
+      { q: "What if the AI cannot answer a question?", a: "Samvad follows configured fallback paths: escalation to staff, support ticket creation, or clarifying questions." },
       { q: "How quickly can we deploy?", a: "A baseline deployment can be live within 48 hours. Full customization with integrations is typically scoped in a 1–2 week pilot." },
     ],
   },
   {
     slug: "intellibot-ai",
     title: "Kosha",
+    brandName: "Kosha",
+    productName: "Enterprise Knowledge",
     cardDescriptor: "Enterprise knowledge",
-    shortDesc: "Knowledge agents inside your internal apps—search Confluence, SharePoint, Slack, and 50+ sources with permission controls.",
-    heroTitle: "Kosha: Knowledge agents for enterprise apps",
-    heroDesc: "Knowledge agents that connect your data sources into a permission-controlled layer inside internal tools and portals.",
+    shortDesc: "Permission-controlled knowledge search across Confluence, SharePoint, Slack, and 50+ sources inside internal applications.",
+    heroTitle: "Enterprise Knowledge",
+    heroDesc: "Kosha unifies data sources into a permission-controlled knowledge layer inside internal tools and portals.",
     heroImage: SOLUTION_HERO_IMAGES["intellibot-ai"],
     overview: "Kosha is an enterprise knowledge accelerator for permission-controlled information discovery. It connects data silos—from Confluence to SharePoint—into one semantic layer. Employees retrieve context-aware answers through controls that respect existing role-based access and security boundaries.",
     features: [

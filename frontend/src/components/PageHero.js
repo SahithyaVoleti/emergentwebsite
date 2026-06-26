@@ -7,6 +7,7 @@ import {
   DEFAULT_PAGE_HERO_IMAGE,
   LISTING_PAGE_HERO_IMAGES,
 } from "../lib/heroImageThemes";
+import { DECORATIVE_ALT } from "../lib/decorativeMedia";
 
 const ILLUSTRATION_KEY_IMAGES = {
   blog: LISTING_PAGE_HERO_IMAGES.blog,
@@ -30,20 +31,22 @@ const ILLUSTRATION_KEY_MOCKUPS = {
   about: "collaboration",
 };
 
-function resolveHeroMedia({ image, video, illustrationKey, alt }) {
+function resolveHeroMedia({ image, video, illustrationKey, alt, variant }) {
   if (video) {
     return {
       src: video,
-      alt: alt ?? "Page hero visualization",
+      alt: alt ?? DECORATIVE_ALT,
       mediaType: "video",
+      variant,
     };
   }
 
   if (image) {
     return {
       src: image,
-      alt: alt ?? "Page hero visualization",
+      alt: alt ?? DECORATIVE_ALT,
       mediaType: "image",
+      variant,
     };
   }
 
@@ -63,7 +66,7 @@ function resolveHeroMedia({ image, video, illustrationKey, alt }) {
     if (fallbackImage) {
       return {
         src: fallbackImage,
-        alt: alt ?? "Page hero visualization",
+        alt: alt ?? DECORATIVE_ALT,
         mediaType: "image",
       };
     }
@@ -71,7 +74,7 @@ function resolveHeroMedia({ image, video, illustrationKey, alt }) {
 
   return {
     src: DEFAULT_PAGE_HERO_IMAGE,
-    alt: alt ?? "Page hero visualization",
+    alt: alt ?? DECORATIVE_ALT,
     mediaType: "image",
   };
 }
@@ -84,6 +87,7 @@ export default function PageHero({
   image,
   video,
   illustrationKey,
+  imageVariant,
   significance = "primary",
   label,
   title,
@@ -96,7 +100,7 @@ export default function PageHero({
   const media =
     significance === "utility"
       ? null
-      : resolveHeroMedia({ image, video, illustrationKey, alt });
+      : resolveHeroMedia({ image, video, illustrationKey, alt, variant: imageVariant });
 
   return (
     <SitePageChrome

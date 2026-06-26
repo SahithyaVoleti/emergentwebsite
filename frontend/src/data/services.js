@@ -4,15 +4,15 @@ import { SERVICES_HERO_IMAGES as heroImages } from "../lib/heroImageThemes";
 const services = [
   {
     slug: "artificial-intelligence",
-    pillar: "AI & Machine Learning",
+    pillar: "Model Fine-Tuning & ML",
     catalogTitle: "Applied Machine Learning",
     icon: Brain,
     title: "Applied Machine Learning",
     shortDesc: "Deliver production machine learning programs—from strategy and model development through MLOps, monitoring, and enterprise integration.",
     heroTitle: "Applied Machine Learning",
-    heroDesc: "Applied ML for the prediction and automation layers behind your agents and modernized apps, with clear metrics, drift checks, and rollback paths.",
+    heroDesc: "Applied ML for prediction and automation inside your products—with clear metrics, drift checks, and rollback paths.",
     heroImage: heroImages[0],
-    overview: "ML that supports agent decisions and app intelligence—from data readiness through model deployment inside CRM, ERP, and customer-facing surfaces you already run.",
+    overview: "ML that supports product intelligence—from data readiness through model deployment inside CRM, ERP, and customer-facing surfaces you already run.",
     subservices: [
       { title: "AI Strategy & Consulting", desc: "Assess feasibility, data gaps, and ROI before training. Define use cases, select benchmarks, and set pilot scope with measurable exit criteria.", items: ["AI readiness assessment", "High-impact use case discovery", "ROI-driven AI roadmap", "Risk-aligned implementation strategy", "Stakeholder alignment workshops", "Compliance-oriented prioritization", "Technology landscape assessment", "Pilot boundary definition", "Executive decision traceability", "Pilot exit criteria and KPI gates"] },
       { title: "Natural Language Processing", desc: "Deploy text classification, entity extraction, summarization, and search with labeled test sets, regression checks, and calibrated thresholds for production.", items: ["Sentiment analysis & insights", "Text summarization tools", "Entity recognition & tagging", "Multilingual understanding", "Intent and slot modeling", "Domain-specific lexicons", "Conversation quality metrics", "NER for regulated fields", "Evaluation sets for regression testing", "Human review workflows for edge cases"] },
@@ -43,7 +43,7 @@ const services = [
     ],
     whyChooseUs: [
       { title: "ML for real apps", desc: "Models wired into CRM, ERP, and customer workflows—not isolated experiments that never reach production." },
-      { title: "Production ready", desc: "Monitoring, retraining triggers, and rollback paths as agents and AI features scale inside your software." },
+      { title: "Production ready", desc: "Monitoring, retraining triggers, and rollback paths as AI features scale inside your software." },
     ],
     faqs: [
       { q: "How long does it take to build an AI solution?", a: "Pilots often complete in four to six weeks when data access is clear. Production-grade systems typically take three to six months depending on integrations and controls. Milestones are tied to agreed evaluation gates." },
@@ -55,7 +55,7 @@ const services = [
   },
   {
     slug: "generative-ai",
-    pillar: "AI Engineering",
+    pillar: "AI Product Transformation",
     catalogTitle: "Generative AI & Enterprise Copilots",
     icon: Bot,
     title: "Generative AI & Enterprise Copilots",
@@ -105,7 +105,7 @@ const services = [
   },
   {
     slug: "custom-software",
-    pillar: "Enterprise Applications",
+    pillar: "AI Product Transformation",
     catalogTitle: "Application Modernization",
     icon: Code2,
     title: "Application Modernization",
@@ -144,7 +144,7 @@ const services = [
     ],
     whyChooseUs: [
       { title: "Transform, don't restart", desc: "Incremental upgrades so your team keeps working while AI capabilities land in production slices." },
-      { title: "Built for agents", desc: "APIs, events, and auth patterns sized for copilots and agents—not bolted on after the fact." },
+      { title: "AI-ready by design", desc: "APIs, events, and auth patterns sized for copilots and embedded AI—not bolted on after the fact." },
     ],
     faqs: [
       { q: "What technologies do you use?", a: "Typical stacks include TypeScript or JavaScript, Python, Java, Go, or .NET on the server; React or Angular on web; PostgreSQL, MongoDB, or Redis; AWS, Azure, or GCP; Docker, Kubernetes, and Terraform." },
@@ -154,7 +154,7 @@ const services = [
   },
   {
     slug: "mobile-apps",
-    pillar: "Digital Experience",
+    pillar: "AI Product Transformation",
     catalogTitle: "Mobile & Digital Engineering",
     icon: Smartphone,
     title: "Mobile & Digital Engineering",
@@ -162,7 +162,7 @@ const services = [
     heroTitle: "Mobile & Digital Engineering",
     heroDesc: "Native and cross-platform builds where AI shows up in the app your users already have—not as a separate bolt-on experience.",
     heroImage: heroImages[3],
-    overview: "Mobile engineering for AI-powered customer and field apps: agent-friendly APIs, on-device ML where it helps, and secure sync with backend agents and copilots.",
+    overview: "Mobile engineering for AI-enabled customer and field apps: integration-ready APIs, on-device ML where it helps, and secure sync with backend services and copilots.",
     subservices: [
       { title: "iOS Development", desc: "SwiftUI and UIKit with performance tuning, secure keychain storage, background task limits, and App Store compliance checklists.", items: ["Swift & SwiftUI development", "Core ML integration", "Apple Watch apps", "App Store optimization", "TestFlight distribution", "Background tasks and sync", "Accessibility (VoiceOver)", "Crash and analytics instrumentation", "App Transport Security review", "Store review guideline checklists"] },
       { title: "Android Development", desc: "Jetpack Compose, safe async networking, app size optimization, and device integrity checks where required.", items: ["Kotlin development", "Jetpack Compose UI", "Material Design 3", "Play Store optimization", "Internal testing tracks", "Notification channels", "App size and startup tuning", "Play policy alignment", "ProGuard and R8 configuration", "Per-device performance sampling"] },
@@ -193,7 +193,7 @@ const services = [
     ],
     whyChooseUs: [
       { title: "AI in the pocket", desc: "Copilots and smart features inside mobile workflows your users already trust." },
-      { title: "Backend-ready", desc: "APIs and auth shaped so server-side agents and mobile clients stay in sync." },
+      { title: "Backend-ready", desc: "APIs and auth shaped so server-side AI services and mobile clients stay in sync." },
     ],
     faqs: [
       { q: "Should I build native or cross-platform?", a: "Choose native when you need peak animation or GPU performance or deep OS APIs. Choose cross-platform when UI parity and delivery speed matter more. We document tradeoffs with benchmarks on target devices." },
@@ -203,7 +203,7 @@ const services = [
   },
   {
     slug: "ai-agents",
-    pillar: "Intelligent Automation",
+    pillar: "AI Product Transformation",
     catalogTitle: "Enterprise AI Agents",
     icon: Users,
     title: "Enterprise AI Agents",
@@ -252,15 +252,15 @@ const services = [
   },
   {
     slug: "llm-development",
-    pillar: "AI Engineering",
+    pillar: "Model Fine-Tuning & ML",
     catalogTitle: "LLM Engineering & Operations",
     icon: Database,
     title: "LLM Engineering & Operations",
     shortDesc: "Build and operate the LLM layer for enterprise AI—with evaluation, fine-tuning, retrieval, routing, and secure inference.",
     heroTitle: "LLM Engineering & Operations",
-    heroDesc: "Benchmark, route, and serve models behind the agents and copilots embedded in your software—with cost and latency under control.",
+    heroDesc: "Benchmark, route, and serve models behind the copilots and AI features embedded in your software—with cost and latency under control.",
     heroImage: heroImages[5],
-    overview: "The LLM layer for agent-powered apps: evaluation, fine-tuning, RAG, and secure inference endpoints your product teams can depend on.",
+    overview: "The LLM layer for AI-enabled products: evaluation, fine-tuning, RAG, and secure inference endpoints your product teams can depend on.",
     subservices: [
       { title: "Custom LLM Training", desc: "Train from scratch or continue pretraining with dataset deduplication, tokenization review, compute estimates, and checkpoint resumption on scheduled infrastructure.", items: ["Training data curation", "Pre-training pipelines", "Domain adaptation", "Quality benchmarking", "Data licensing and consent", "Compute scheduling", "Checkpoint storage strategy", "Evaluation harness integration", "Training reproducibility bundles", "Carbon and cost reporting"] },
       { title: "Model Fine-Tuning", desc: "Parameter-efficient fine-tuning, supervised training, preference optimization, and controlled output formats with held-out evaluation sets.", items: ["Supervised fine-tuning (SFT)", "RLHF alignment", "DPO optimization", "LoRA & QLoRA methods", "Hyperparameter sweeps", "Catastrophic forgetting checks", "Inference latency validation", "Model registry integration", "Held-out domain evaluation", "Frozen baseline comparisons"] },
@@ -290,7 +290,7 @@ const services = [
       { step: "Production Deployment", desc: "Package models in managed inference endpoints with autoscaling tied to GPU utilization and queue depth." },
     ],
     whyChooseUs: [
-      { title: "Right model, right job", desc: "Multi-model routing and cost controls sized for agent workloads in production apps." },
+      { title: "Right model, right job", desc: "Multi-model routing and cost controls sized for production AI workloads in live applications." },
       { title: "Private by default", desc: "Train and serve inside your network when data can't leave your environment." },
     ],
     faqs: [
@@ -301,15 +301,15 @@ const services = [
   },
   {
     slug: "devops",
-    pillar: "Platform Operations",
+    pillar: "SaaS & Platform Engineering",
     catalogTitle: "Cloud Engineering & DevOps",
     icon: GitBranch,
     title: "Cloud Engineering & DevOps",
     shortDesc: "Establish CI/CD, observability, and platform capabilities that support AI workloads and mission-critical applications at scale.",
     heroTitle: "Cloud Engineering & DevOps",
-    heroDesc: "Pipelines and platforms that keep agent runtimes, model endpoints, and modernized apps deployable, observable, and recoverable.",
+    heroDesc: "Pipelines and platforms that keep model endpoints, SaaS runtimes, and modernized apps deployable, observable, and recoverable.",
     heroImage: heroImages[6],
-    overview: "DevOps for the stack behind AI agents and app modernization: automated releases, scalable inference, and incident tooling your team can own.",
+    overview: "DevOps for the stack behind AI products and app modernization: automated releases, scalable inference, and incident tooling your team can own.",
     subservices: [
       { title: "CI/CD Pipelines", desc: "Pipeline-as-code with caching, matrix builds, signed artifacts, and environment promotion with manual gates only where policy requires.", items: ["Pipeline architecture design", "Automated testing integration", "Multi-environment deployment", "Rollback automation", "Branch and merge policies", "Artifact signing", "Deployment approvals", "Pipeline observability", "DORA metrics baselines", "Flaky test quarantine process"] },
       { title: "Infrastructure as Code", desc: "Terraform and Pulumi modules with remote state, policy checks, and drift detection jobs.", items: ["Terraform modules", "Ansible playbooks", "State management", "Infrastructure documentation", "Drift detection", "Policy checks (OPA)", "Module versioning", "Secrets excluded from state", "State lock timeout handling", "Module adoption guidelines"] },
@@ -339,7 +339,7 @@ const services = [
       { step: "Team Enablement", desc: "Document platform APIs, on-call playbooks, and post-incident review cadence. Train teams on self-service tools." },
     ],
     whyChooseUs: [
-      { title: "Run agents in prod", desc: "Reliability patterns for long-running agent jobs, model endpoints, and app releases together." },
+      { title: "Run AI in production", desc: "Reliability patterns for model endpoints, long-running workloads, and app releases together." },
       { title: "Move fast safely", desc: "Progressive rollout and rollback for prompts, models, and app changes in one pipeline." },
     ],
     faqs: [
@@ -350,15 +350,15 @@ const services = [
   },
   {
     slug: "data-engineering",
-    pillar: "Data & Analytics",
+    pillar: "SaaS & Platform Engineering",
     catalogTitle: "Data Platform Engineering",
     icon: BarChart3,
     title: "Data Platform Engineering",
     shortDesc: "Engineer governed data platforms that supply reliable features, retrieval corpora, and analytics for AI and enterprise applications.",
     heroTitle: "Data Platform Engineering",
-    heroDesc: "Fresh, governed data for retrieval, agent tools, and app intelligence—with contracts your ML and product teams share.",
+    heroDesc: "Fresh, governed data for retrieval, product intelligence, and analytics—with contracts your ML and product teams share.",
     heroImage: heroImages[7],
-    overview: "Data platforms built for agent-powered apps: ingestion, warehousing, and feature pipelines that keep copilots and agents grounded in current information.",
+    overview: "Data platforms built for AI-enabled products: ingestion, warehousing, and feature pipelines that keep copilots and models grounded in current information.",
     subservices: [
       { title: "Data Pipeline Development", desc: "Orchestrated workflows with retries, data contracts at boundaries, quality checks, and lineage emitted to the catalog.", items: ["ETL/ELT pipeline design", "Incremental data loading", "Error handling & retry logic", "Data validation checks", "Orchestration scheduling", "Late-arriving data handling", "Pipeline observability", "Backfill procedures", "Schema drift alerts", "Partition pruning guidance"] },
       { title: "Data Warehouse Design", desc: "Dimensional modeling, workload isolation, materialized paths for heavy joins, and autosuspend policies tuned to query targets.", items: ["Star/snowflake schema design", "Materialized views", "Query optimization", "Cost management", "Workload management", "Role-based access", "Slow query reviews", "Archive and retention tiers", "Virtual warehouse sizing guidance", "Clone-based promotion workflows"] },
@@ -388,8 +388,8 @@ const services = [
       { step: "Handoff & Training", desc: "Transfer workflow ownership, on-call expectations, and cost dashboards to your platform team." },
     ],
     whyChooseUs: [
-      { title: "Data agents can trust", desc: "Indexed knowledge, feature stores, and freshness monitoring for retrieval and tool calls." },
-      { title: "One source of truth", desc: "Same data contracts for dashboards, agents, and modernized app features." },
+      { title: "Data products can trust", desc: "Indexed knowledge, feature stores, and freshness monitoring for retrieval and model inputs." },
+      { title: "One source of truth", desc: "Same data contracts for dashboards, AI features, and modernized app modules." },
     ],
     faqs: [
       { q: "What data tools do you use?", a: "Common stacks combine Airflow or Dagster, dbt, Spark or Flink, Kafka, Snowflake, BigQuery, or Redshift, and catalogs such as DataHub or Glue, chosen after workload profiling." },
@@ -399,14 +399,17 @@ const services = [
   },
 ];
 
-/** Surface flagship services (agents + app modernization) first in grids. */
+/** Grid and nav order — three pillars, flagship-first within each. */
 const DISPLAY_ORDER = [
-  "ai-agents",
-  "custom-software",
+  // AI Product Transformation
   "generative-ai",
-  "artificial-intelligence",
+  "custom-software",
+  "ai-agents",
   "mobile-apps",
+  // Model Fine-Tuning & ML
   "llm-development",
+  "artificial-intelligence",
+  // SaaS & Platform Engineering
   "data-engineering",
   "devops",
 ];

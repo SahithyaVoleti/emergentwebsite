@@ -1,7 +1,13 @@
 /**
  * Decorative product mockup frame (browser chrome) around section imagery.
  */
-export default function MockupFrame({ src, alt, variant = "browser", children, screenClassName = "" }) {
+export default function MockupFrame({
+  src,
+  alt = "",
+  variant = "browser",
+  children,
+  screenClassName = "",
+}) {
   if (variant === "plain") {
     if (!src) return null;
     return (

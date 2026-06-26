@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </Link>
             <p className="ubuntu-footer-meta max-w-xs text-xs leading-snug">
-              AI agents and application modernization for enterprise programs.
+              AI product transformation and SaaS engineering for enterprise programs.
             </p>
             <div className="mt-2 flex items-center gap-2" aria-label="Social links">
               {SOCIAL_LINKS.linkedin ? (

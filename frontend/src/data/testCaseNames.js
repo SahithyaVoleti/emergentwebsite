@@ -1,15 +1,15 @@
-/** Easy Sanskrit names for production test cases (slug → display name). */
+/** Sanskrit brand labels for production validation cases (slug → brand name). */
 export const TEST_CASE_SANSKRIT_NAMES = {
-  "smart-teaching-platform": "Agent Vidya",
-  "medimind-clinical-assist": "Agent Arogya",
-  "fraud-guard-transactions": "Agent Kavacha",
-  "stock-sense-commerce": "Agent Vyapar",
-  "ai-video-creation": "Agent Chitra",
-  "maint-predict-operations": "Agent Yantra",
-  "lead-score-proptech": "Agent Bhumi",
-  "yield-plan-agriculture": "Agent Krishi",
-  "protocol-lab-biotech": "Agent Shodh",
-  "citizen-serve-government": "Agent JanSeva"
+  "smart-teaching-platform": "Vidya",
+  "medimind-clinical-assist": "Arogya",
+  "fraud-guard-transactions": "Kavacha",
+  "stock-sense-commerce": "Vyapar",
+  "ai-video-creation": "Chitra",
+  "maint-predict-operations": "Yantra",
+  "lead-score-proptech": "Bhumi",
+  "yield-plan-agriculture": "Krishi",
+  "protocol-lab-biotech": "Shodh",
+  "citizen-serve-government": "JanSeva",
 };
 
 export default TEST_CASE_SANSKRIT_NAMES;

@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
-import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import UbuntuHomeLink from "../home/ubuntu/UbuntuHomeLink";
@@ -8,7 +7,7 @@ import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
- * Light CTA band — copy + actions left, scrolling tech stack panel right.
+ * Technology foundation band — copy and actions above a horizontal tech ribbon.
  */
 export default function TechnicalFoundationSplitSection({
   id = "service-technical-foundation",
@@ -32,26 +31,29 @@ export default function TechnicalFoundationSplitSection({
   const secondaryLabel = secondaryCta?.label ?? "View capabilities";
 
   return (
-    <UbuntuSplitLayout
+    <section
       id={id}
-      testId="service-technical-foundation-cta"
-      pattern="cta"
-      imagePosition="right"
-      className="ubuntu-tech-foundation-cta"
-      mediaClassName="ubuntu-tech-foundation-cta__media"
-      mediaSlot={<TechFoundationCtaMedia techNames={techNames} />}
+      data-testid="service-technical-foundation-cta"
+      className="ubuntu-section-block ubuntu-tech-foundation-cta border-y border-[#d9d9d9] bg-white"
+      aria-labelledby={`${id}-heading`}
     >
-      <SectionEyebrow>{eyebrow}</SectionEyebrow>
-      <SectionTitle as="h2" title={title} />
-      <p className="ubuntu-lead">{lead}</p>
-      <div className="ubuntu-cta-row">
-        <Link to={primaryHref} className="ubuntu-btn-primary">
-          {primaryLabel}
-        </Link>
-        <UbuntuHomeLink to={secondaryHref}>
-          {secondaryLabel}
-        </UbuntuHomeLink>
+      <div className="ubuntu-container">
+        <div className="max-w-3xl">
+          <SectionEyebrow>{eyebrow}</SectionEyebrow>
+          <SectionTitle as="h2" id={`${id}-heading`} title={title} />
+          <p className="ubuntu-lead mt-3">{lead}</p>
+          <div className="ubuntu-cta-row mt-6">
+            <Link to={primaryHref} className="ubuntu-btn-primary">
+              {primaryLabel}
+            </Link>
+            <UbuntuHomeLink to={secondaryHref}>{secondaryLabel}</UbuntuHomeLink>
+          </div>
+        </div>
+
+        <div className="ubuntu-tech-ribbon-wrap mt-8">
+          <TechFoundationCtaMedia techNames={techNames} />
+        </div>
       </div>
-    </UbuntuSplitLayout>
+    </section>
   );
 }

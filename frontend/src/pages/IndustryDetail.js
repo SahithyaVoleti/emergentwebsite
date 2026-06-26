@@ -1,19 +1,17 @@
 import { useParams, Link } from "react-router-dom";
-import { Brain, Database, Code2, Zap, GitBranch, BarChart3 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import FAQSection from "../components/FAQSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
-import ServicesGrid4x4 from "../components/ubuntu/ServicesGrid4x4";
+import ServicesPillarCatalog from "../components/ubuntu/ServicesPillarCatalog";
 import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
-import MethodologyFlowchart from "../components/MethodologyFlowchart";
+import UbuntuProcessMethodologyStrip from "../components/ubuntu/UbuntuProcessMethodologyStrip";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CategorizedTechStackSection from "../components/CategorizedTechStackSection";
 import industries from "../data/industries";
-import services, { servicesForDisplay } from "../data/services";
 import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
-import { getSiteMockup } from "../data/siteMockups";
+import { toMethodologyStripSteps } from "../lib/processSteps";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
 export default function IndustryDetail() {
@@ -33,21 +31,10 @@ export default function IndustryDetail() {
     );
   }
 
-  const methodologyMockup = getSiteMockup("code");
-  const processSteps = industry.process?.length
-    ? industry.process.map((p, idx) => ({
-        icon: [Database, GitBranch, Brain, Code2, Zap, BarChart3][idx % 6],
-        label: p.step,
-        desc: p.desc,
-      }))
-    : [
-        { icon: Database, label: "Map your applications", desc: "List the software your teams use today." },
-        { icon: Brain, label: "Design sector automation", desc: "Define intelligent automation for sector workflows." },
-        { icon: Zap, label: "Pilot in one application", desc: "Integrate automation and measure adoption against agreed criteria." },
-      ];
+  const methodologySteps = toMethodologyStripSteps(industry.process);
 
   const overviewBullets = industry.highlights ?? [
-    "Intelligent automation inside sector line-of-business applications",
+    "AI-enabled capabilities inside sector line-of-business applications",
     "Modernization paths for legacy business software",
     "Controls aligned to how your industry reviews change",
   ];
@@ -64,7 +51,7 @@ export default function IndustryDetail() {
           href: "#page-contact",
           contactIntent: "consultation",
         }}
-        secondaryCTA={{ text: "View industry-ready programs", href: "#industry-ready-agents" }}
+        secondaryCTA={{ text: "View industry product modules", href: "#industry-product-modules" }}
         image={industry.heroImage}
       />
 
@@ -74,34 +61,35 @@ export default function IndustryDetail() {
           title={`Coverage for ${industry.title} applications`}
           lead={industry.overview}
           image={INDUSTRY_ARCHITECTURE_IMAGE}
-          imageAlt={`${industry.title} AI agents in applications`}
+          imageAlt=""
           bullets={overviewBullets}
         />
 
         <ArchitecturalShowcase
-          id="industry-ready-agents"
+          id="industry-product-modules"
           eyebrow={SECTION_LABEL.industryAgents}
-          title="Industry-ready automation programs"
-          description={`Defined automation programs for ${industry.title}—scoped for customization and deployment within sector application estates.`}
-          capabilities={industry.industryReadyAgents}
-          presentation="industry-agent"
+          title="Industry product modules"
+          description={`Defined product modules for ${industry.title}—scoped for customization and deployment within sector application estates.`}
+          capabilities={industry.industryProductModules ?? industry.industryReadyAgents}
+          presentation="industry-product"
         />
 
-        <UbuntuPageSection
-          eyebrow={SECTION_LABEL.delivery}
-          title={`Methodology for ${industry.title} programs`}
-          lead="This methodology assesses existing applications, designs workflow-aligned automation, integrates with line-of-business systems, and expands under governed pilot criteria."
-          image={methodologyMockup.src}
-          imageAlt={methodologyMockup.alt}
-          belowContent={<MethodologyFlowchart steps={processSteps} />}
-        />
+        {methodologySteps.length > 0 && (
+          <UbuntuProcessMethodologyStrip
+            id="industry-methodology"
+            eyebrow={SECTION_LABEL.methodology}
+            title={`Methodology for ${industry.title} programs`}
+            lead="This methodology assesses existing applications, designs workflow-aligned automation, integrates with line-of-business systems, and expands under governed pilot criteria."
+            steps={methodologySteps}
+          />
+        )}
 
-        <ServicesGrid4x4
-          services={servicesForDisplay(services)}
+        <ServicesPillarCatalog
           id="industry-services"
+          variant="cards"
           eyebrow={SECTION_LABEL.services}
           title={`Services for ${industry.title}`}
-          lead="Structured service lines for intelligent automation, application modernization, data platforms, and cloud engineering—scoped for sector-specific systems and governance requirements."
+          lead="Three main disciplines—open each area to review service lines scoped for sector-specific systems and governance requirements."
           viewAllHref="/services"
           viewAllLabel="View all services"
         />
@@ -112,7 +100,7 @@ export default function IndustryDetail() {
           lead="This assurance model defines permissions, audit logging, and human oversight from the initial pilot phase in regulated and operational environments."
           variant="alt"
           bullets={[
-            "Scoped access—agents only reach data and tools you approve",
+            "Scoped access—modules only reach data and tools you approve",
             "Human review on high-impact actions inside your applications",
             "Audit logs suitable for sector security and compliance review",
             "Staging and rollback before changes hit production users",
@@ -125,7 +113,7 @@ export default function IndustryDetail() {
           intro="Representative models, frameworks, and infrastructure for sector programs. Final selections follow your security and procurement policies."
           categories={[
             {
-              title: "AI & agent frameworks",
+              title: "AI & integration frameworks",
               techs: ["GPT-4o", "Claude 3.5", "LangChain", "LangGraph", "CrewAI", "Vector DBs"],
             },
             {

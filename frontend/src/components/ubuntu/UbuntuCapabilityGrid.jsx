@@ -13,11 +13,11 @@ function splitItems(items = []) {
   };
 }
 
-function buildAgentNote(cap) {
+function buildProductModuleNote(cap) {
   const deploys = cap.deploysIn
     ? `Deploys inside ${cap.deploysIn}. `
     : "";
-  return `${deploys}We customize this industry ready agent to your applications, permissions, and approval rules before production rollout.`;
+  return `${deploys}We customize this industry product module to your applications, permissions, and approval rules before production rollout.`;
 }
 
 function buildEngagementNote(cap, serviceTitle) {
@@ -52,8 +52,9 @@ export default function UbuntuCapabilityGrid({
   const activeCap = capabilities[active] ?? capabilities[0];
   const detailItems = activeCap.items ?? [];
   const { scope, governance } = splitItems(detailItems);
-  const isIndustryAgent = presentation === "industry-agent";
-  const itemLabel = isIndustryAgent ? "Agent" : "Module";
+  const isIndustryProduct =
+    presentation === "industry-product" || presentation === "industry-agent";
+  const itemLabel = isIndustryProduct ? "Product module" : "Module";
   const itemIndex = String(active + 1).padStart(2, "0");
   const itemTotal = String(capabilities.length).padStart(2, "0");
 
@@ -77,7 +78,7 @@ export default function UbuntuCapabilityGrid({
         <div className="ubuntu-capability-grid mt-8">
           <nav
             className="ubuntu-capability-grid__nav"
-            aria-label={isIndustryAgent ? "Industry ready agents" : "Service modules"}
+            aria-label={isIndustryProduct ? "Industry product modules" : "Service modules"}
           >
             <ul className="ubuntu-capability-grid__nav-list">
               {capabilities.map((cap, i) => {
@@ -134,9 +135,9 @@ export default function UbuntuCapabilityGrid({
                 {activeCap.desc && (
                   <p className="ubuntu-capability-grid__detail-lead">{activeCap.desc}</p>
                 )}
-                {isIndustryAgent ? (
+                {isIndustryProduct ? (
                   <p className="ubuntu-capability-grid__detail-body">
-                    {buildAgentNote(activeCap)}
+                    {buildProductModuleNote(activeCap)}
                   </p>
                 ) : (
                   <>
@@ -197,7 +198,7 @@ export default function UbuntuCapabilityGrid({
                   Discuss {activeCap.title}
                 </Link>
                 <Link to={contactHref} className="ubuntu-link-muted">
-                  {isIndustryAgent ? "Request this industry ready agent" : "Request a scoped briefing"}
+                  {isIndustryProduct ? "Request this product module" : "Request a scoped briefing"}
                 </Link>
               </div>
             </div>

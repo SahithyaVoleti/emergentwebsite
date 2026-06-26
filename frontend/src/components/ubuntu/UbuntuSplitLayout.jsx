@@ -45,7 +45,7 @@ export default function UbuntuSplitLayout({
     </div>
   ) : image ? (
     <div className="ubuntu-split__media">
-      <MockupFrame src={image} alt={imageAlt} variant={mockupVariant} />
+      <MockupFrame src={image} alt={imageAlt ?? ""} variant={mockupVariant} />
     </div>
   ) : null;
 

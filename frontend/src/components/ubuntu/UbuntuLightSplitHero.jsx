@@ -20,6 +20,7 @@ function HeroMedia({ media }) {
       className={[
         "ubuntu-hero-transformation__media",
         isMotionMedia && "ubuntu-hero-transformation__media--video",
+        media.variant === "service-pillar" && "ubuntu-hero-transformation__media--service-pillar",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -31,20 +32,17 @@ function HeroMedia({ media }) {
           autoPlay
           muted
           playsInline
-          aria-label={media.alt}
+          aria-hidden="true"
         />
       ) : mediaType === "gif" && media.playOnce ? (
-        <HeroPlayOnceGif
-          src={media.src}
-          alt={media.alt}
-          className="ubuntu-hero-transformation__video"
-        />
+        <HeroPlayOnceGif src={media.src} className="ubuntu-hero-transformation__video" />
       ) : (
         <img
           src={media.src}
-          alt={media.alt}
+          alt=""
           className="ubuntu-hero-transformation__illustration"
           draggable={false}
+          aria-hidden="true"
         />
       )}
     </div>

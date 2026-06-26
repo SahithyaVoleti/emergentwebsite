@@ -1,29 +1,20 @@
+import { LockKeyhole, Eye, Server, ShieldCheck } from "lucide-react";
 import PageHero from "../components/PageHero";
+import TestimonialsSection from "../components/TestimonialsSection";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuFeaturesBand from "../components/ubuntu/UbuntuFeaturesBand";
 import UbuntuStatsStrip from "../components/ubuntu/UbuntuStatsStrip";
 import UbuntuTeamGrid from "../components/ubuntu/UbuntuTeamGrid";
 import UbuntuPartnerGrid from "../components/ubuntu/UbuntuPartnerGrid";
-import PageStandardSections from "../components/ubuntu/PageStandardSections";
+import UbuntuCareersSection from "../components/ubuntu/UbuntuCareersSection";
+import PageContactForm from "../components/PageContactForm";
 import team from "../data/team";
+import technologyPartners from "../data/partners";
 import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
-
-const partners = [
-  "AWS",
-  "Google Cloud",
-  "Microsoft Azure",
-  "OpenAI",
-  "Anthropic",
-  "Meta AI",
-  "NVIDIA",
-  "Snowflake",
-  "Databricks",
-  "MongoDB",
-];
 
 const values = [
   {
@@ -44,6 +35,29 @@ const values = [
   },
 ];
 
+const securityPillars = [
+  {
+    icon: LockKeyhole,
+    title: "Secure by design",
+    desc: "Security controls built into architecture, development, and deployment.",
+  },
+  {
+    icon: Eye,
+    title: "Governance and auditability",
+    desc: "Traceable controls, review paths, and operational transparency.",
+  },
+  {
+    icon: Server,
+    title: "Infrastructure hardening",
+    desc: "Environment protections, access boundaries, and resilient platform practices.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Compliance alignment",
+    desc: "Delivery patterns that support regulated and security-sensitive industries.",
+  },
+];
+
 export default function AboutPage() {
   const missionMockup = getSiteMockup("collaboration");
 
@@ -51,24 +65,24 @@ export default function AboutPage() {
     <SitePageMain>
       <PageHero
         label="About Us"
-        title="Enterprise AI delivery and application modernization"
-        description={`NeuralTrix AI was founded in ${COMPANY_FOUNDED_LABEL}. We are a senior-led team focused on governed intelligent automation and application modernization within enterprise software environments.`}
+        title="AI transformation and SaaS engineering company"
+        description={`NeuralTrix AI was founded in ${COMPANY_FOUNDED_LABEL}. We transform existing products into AI-enabled software, fine-tune models for production, and design interdisciplinary AI SaaS applications.`}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
-        secondaryCTA={{ text: "Careers", href: "/careers" }}
+        secondaryCTA={{ text: "How we work", href: "#engagement" }}
         image={ABOUT_HERO_IMAGE}
       />
 
       <UbuntuPageSection
         eyebrow={SECTION_LABEL.mission}
         title="Our mission"
-        lead="We deliver intelligent automation within existing application workflows—aligned to governance, integration, and measurable outcomes."
+        lead="We help software companies and enterprises transform products with AI, fine-tune models on domain data, and ship governed AI SaaS across interdisciplinary industries."
         image={missionMockup.src}
         imageAlt={missionMockup.alt}
         bullets={[
-          "Intelligent automation for CRM, ERP, internal tools, and customer applications",
-          "Application modernization for legacy and core business systems",
-          "Pilot first, scale when results hold up",
-          "Hand over code and runbooks your team can own",
+          "AI transformation for products already in market",
+          "Model fine-tuning and production ML engineering",
+          "Design and development of AI-native SaaS applications",
+          "Handover of code, models, and operational runbooks",
         ]}
       />
 
@@ -77,7 +91,7 @@ export default function AboutPage() {
           { value: "2026", label: `Founded ${COMPANY_FOUNDED_LABEL}` },
           { value: "Senior-led", label: "Builders on every workstream" },
           { value: "Remote-first", label: "Distributed engineering team" },
-          { value: "Pilot-based", label: "Scoped agent and app programs" },
+          { value: "Pilot-based", label: "Scoped product transformation programs" },
         ]}
       />
 
@@ -90,15 +104,38 @@ export default function AboutPage() {
         items={values}
       />
 
+      <TestimonialsSection
+        id="engagement"
+        title="How we work with clients"
+        eyebrow={SECTION_LABEL.engagement}
+      />
+
       <UbuntuTeamGrid
+        id="team"
         members={team}
-        title="Our team"
+        title="Leadership and delivery"
         lead="Senior practitioners lead workstreams so you engage directly with delivery owners—not intermediary account layers."
       />
 
-      <UbuntuPartnerGrid partners={partners} />
+      <UbuntuPartnerGrid
+        id="partners"
+        partners={technologyPartners}
+        title="Technology ecosystem"
+        lead="Vendors and clouds we integrate in live programs; final stack choices stay governed by your policies and data boundaries."
+      />
 
-      <PageStandardSections pageKey="about" contactContext="About Page" />
+      <UbuntuFeaturesBand
+        id="security"
+        eyebrow={SECTION_LABEL.security}
+        title="Security and governance"
+        lead="Control areas we address during architecture, build, and operations. Not certification claims unless separately contracted."
+        items={securityPillars}
+        variant="alt"
+      />
+
+      <UbuntuCareersSection id="careers" className="!border-t-0" />
+
+      <PageContactForm context="About Page" />
     </SitePageMain>
   );
 }

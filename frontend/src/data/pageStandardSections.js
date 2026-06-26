@@ -7,7 +7,7 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Methodology for solution module deployment",
       lead: "This methodology maps existing applications, deploys pre-built modules, and validates outcomes on production workflows before scale-up.",
       bullets: [
-        "Map where agents fit inside CRM, ERP, and internal tools",
+        "Map where AI modules fit inside CRM, ERP, and internal tools",
         "Connect modules to your data, auth, and audit setup",
         "Test on real tasks before turning up autonomy",
         "Hand off with runbooks your team can run",
@@ -19,8 +19,8 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Outcomes for solution modules",
       lead: "Accelerated delivery of AI capabilities within current application estates and integration boundaries.",
       bullets: [
-        "Agents and copilots running inside your current apps",
-        "Clear wiring from your systems to agent tools",
+        "AI features and copilots running inside your current apps",
+        "Clear wiring from your systems to application APIs and tools",
         "Controlled permissions for models, data, and actions",
         "Docs your engineering and security teams can review",
       ],
@@ -29,11 +29,11 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     assurance: {
       eyebrow: "Assurance",
-      title: "Assurance for agent rollouts",
+      title: "Assurance for product rollouts",
       lead: "Safety, logging, and rollback are part of the build—not a checklist at the end.",
       bullets: [
-        "Scoped access and audit trails for agent actions",
-        "Tests on critical agent paths before go-live",
+        "Scoped access and audit trails for automated actions",
+        "Tests on critical workflows before go-live",
         "Rollback for prompts, models, and tool permissions",
         "Artifacts ready for security and procurement review",
       ],
@@ -54,7 +54,7 @@ export const PAGE_STANDARD_SECTIONS = {
       lead: "This methodology sequences workflow analysis, pilot delivery, validation, and controlled expansion with defined governance checkpoints.",
       bullets: [
         "Discovery on which app and workflow to upgrade first",
-        "Pilot agents or copilots with clear success measures",
+        "Pilot AI features or copilots with clear success measures",
         "App modernization where legacy systems need AI-ready APIs",
         "Handover so your team owns what we ship",
       ],
@@ -65,9 +65,9 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Outcomes for our services",
       lead: "Production AI integrated with line-of-business applications, with measurable adoption and operational controls.",
       bullets: [
-        "Agents running in CRM, ERP, internal tools, or customer apps",
+        "AI capabilities running in CRM, ERP, internal tools, or customer apps",
         "Modernized apps with clean hooks for copilots and automation",
-        "Controlled permissions for models, data, and agent actions",
+        "Controlled permissions for models, data, and automated actions",
         "Code, runbooks, and tests your engineers can extend",
       ],
       mockupKey: "data",
@@ -75,10 +75,10 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     assurance: {
       eyebrow: "Assurance",
-      title: "Assurance for agent delivery",
+      title: "Assurance for AI product delivery",
       lead: "This assurance model embeds guardrails, logging, and rollback from the initial delivery phase.",
       bullets: [
-        "Scoped credentials and audit trails for agent actions",
+        "Scoped credentials and audit trails for automated actions",
         "Tests on the workflows that matter before go-live",
         "Rollback for prompts, models, and tool permissions",
         "Docs ready for security and procurement review",
@@ -102,7 +102,7 @@ export const PAGE_STANDARD_SECTIONS = {
       lead: "This methodology applies sector constraints first, then delivers intelligent automation inside line-of-business applications.",
       bullets: [
         "Sector discovery on data, compliance, and daily workflows",
-        "One high-value pilot—agent in CRM, ERP, or ops tool",
+        "One high-value pilot—AI module in CRM, ERP, or ops tool",
         "Expand with controls as results hold up",
         "Handover docs that match how your sector reviews change",
       ],
@@ -113,7 +113,7 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Outcomes for industry programs",
       lead: "Sector-aligned intelligent automation with governance suited to regulated and operational environments.",
       bullets: [
-        "Agents handling repetitive work inside your existing apps",
+        "AI modules handling repetitive work inside your existing apps",
         "Faster answers from operational data without tab switching",
         "Less manual effort per case where people stay in control",
         "Audit trails that match sector review expectations",
@@ -127,7 +127,7 @@ export const PAGE_STANDARD_SECTIONS = {
       lead: "Data boundaries, access control, and change management are part of the design—not afterthoughts.",
       bullets: [
         "Data handling aligned to sector retention and privacy rules",
-        "Change control for models, prompts, and agent permissions",
+        "Change control for models, prompts, and product permissions",
         "Monitoring with named owners after go-live",
         "Docs for internal risk and compliance review",
       ],
@@ -137,7 +137,7 @@ export const PAGE_STANDARD_SECTIONS = {
       eyebrow: "Contact",
       title: "Next Step for industry programs",
       description:
-        "Share your sector, apps, and constraints. We will propose a pilot agent or app upgrade sized to your review cycle.",
+        "Share your sector, apps, and constraints. We will propose a pilot product transformation sized to your review cycle.",
       buttonText: "Begin technical scoping",
       mockupKey: "cloud",
     },
@@ -150,7 +150,7 @@ export const PAGE_STANDARD_SECTIONS = {
       bullets: [
         "Built on real application workflows—not slide-deck demos",
         "Tested with live data feeds, users, or equipment where applicable",
-        "Human review gates on high-impact agent actions",
+        "Human review gates on high-impact automated actions",
         "Monitoring, rollback, and handover runbooks included",
       ],
       mockupKey: "pipeline",
@@ -161,7 +161,7 @@ export const PAGE_STANDARD_SECTIONS = {
       lead: "Production-ready implementations across education, healthcare, finance, commerce, manufacturing, and more.",
       bullets: [
         "Ten sector test cases spanning major industry applications",
-        "Agents embedded inside ERP, EHR, CRM, LMS, and public portals",
+        "AI products embedded inside ERP, EHR, CRM, LMS, and public portals",
         "Validated controls for regulated and operational environments",
         "Adaptable to your applications, data boundaries, and review cycle",
       ],
@@ -173,7 +173,7 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Assurance built into every test case",
       lead: "Scoped access, audit trails, and approval paths are part of each implementation—not added after testing.",
       bullets: [
-        "Permission-scoped agents with full action logging",
+        "Permission-scoped modules with full action logging",
         "Human approval on outbound and high-risk actions",
         "Rollback for prompts, models, and tool permissions",
         "Documentation for security and procurement review",
@@ -394,7 +394,7 @@ export const PAGE_STANDARD_SECTIONS = {
     outcomes: {
       eyebrow: "Outcomes",
       title: "Outcomes you can expect in discovery",
-      lead: "What prospective partners typically validate before expanding agent or app modernization work.",
+      lead: "What prospective partners typically validate before expanding product transformation work.",
       bullets: [
         "Clarity on scope, milestones, and decision ownership",
         "Practical communication during delivery and handover",
@@ -527,7 +527,7 @@ export const PAGE_STANDARD_SECTIONS = {
       lead: "This methodology maps applications and workflows, delivers a bounded pilot, validates against agreed criteria, and transfers operational ownership.",
       bullets: [
         "Discovery on systems, data access, and the workflow to automate",
-        "Agent or app upgrade design before we scale the build",
+        "Product transformation design before we scale the build",
         "Pilot validation on real tasks inside your software",
         "Production handover with monitoring and ownership transfer",
       ],
@@ -538,9 +538,9 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Outcomes for a scoped program",
       lead: "Working AI inside your app—with clear success measures you define.",
       bullets: [
-        "Agents or copilots running in your existing software",
+        "AI features or copilots running in your existing software",
         "App changes that make AI features maintainable long term",
-        "Controlled permissions for models, data, and agent actions",
+        "Controlled permissions for models, data, and automated actions",
         "Code and runbooks your team can extend",
       ],
       mockupKey: "data",
@@ -551,7 +551,7 @@ export const PAGE_STANDARD_SECTIONS = {
       title: "Assurance for scoped delivery",
       lead: "Guardrails, logging, and rollback are built into each milestone—not added at the end.",
       bullets: [
-        "Scoped access and audit trails for agent actions",
+        "Scoped access and audit trails for automated actions",
         "Tests on critical paths before go-live",
         "Rollback for prompts, models, and tool permissions",
         "Docs ready for security and procurement review",
@@ -571,10 +571,10 @@ export const PAGE_STANDARD_SECTIONS = {
     methodology: {
       eyebrow: "Methodology",
       title: "Methodology for pre-production experimentation",
-      lead: "We run time-boxed experiments on agent behavior, app integration, and failure modes—then move proven patterns into client builds.",
+      lead: "We run time-boxed experiments on product integration, model behavior, and failure modes—then move proven patterns into client builds.",
       bullets: [
         "Fixed-scope prototypes with clear pass or fail criteria",
-        "Agent and copilot patterns tested inside app-like setups",
+        "Product and copilot patterns tested inside app-like setups",
         "Review gates before any production commitment",
         "Handoff into engineering when results hold up",
       ],
@@ -583,7 +583,7 @@ export const PAGE_STANDARD_SECTIONS = {
     outcomes: {
       eyebrow: "Outcomes",
       title: "Outcomes for research tracks",
-      lead: "Honest results before you fund a full agent or app modernization program.",
+      lead: "Honest results before you fund a full product transformation program.",
       bullets: [
         "Benchmarks and documented failure modes for your use case",
         "Technical briefs you can share with leadership",
@@ -609,7 +609,7 @@ export const PAGE_STANDARD_SECTIONS = {
       eyebrow: "Contact",
       title: "Next Step for research collaboration",
       description:
-        "Contact us about an agent pattern, app upgrade idea, or innovation track. We will define a practical starting scope.",
+        "Contact us about a product transformation idea, SaaS concept, or innovation track. We will define a practical starting scope.",
       buttonText: "Contact us",
       mockupKey: "collaboration",
     },

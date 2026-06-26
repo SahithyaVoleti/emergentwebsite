@@ -6,7 +6,7 @@ const careers = [
     location: "San Francisco, CA (Hybrid)",
     type: "Full-Time",
     experience: "5+ years",
-    description: "Join our AI engineering team to design, build, and deploy production AI systems for enterprise clients. You will work with LLMs, RAG pipelines, and multi-agent systems under defined governance boundaries.",
+    description: "Join our AI engineering team to design, build, and deploy production AI systems for enterprise clients. You will work with LLMs, RAG pipelines, and governed automation under defined delivery boundaries.",
     responsibilities: [
       "Design and implement production-grade AI/ML pipelines",
       "Build RAG systems and fine-tune large language models",

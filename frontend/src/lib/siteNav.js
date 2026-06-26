@@ -1,14 +1,15 @@
-import services from "../data/services";
+import services, { servicesForDisplay } from "../data/services";
 import solutions from "../data/solutions";
 import industries from "../data/industries";
+import { getSolutionNavLabel } from "./solutionDisplay";
 
-export const serviceNavLinks = services.map((service) => ({
+export const serviceNavLinks = servicesForDisplay(services).map((service) => ({
   label: service.title,
   href: `/services/${service.slug}`,
 }));
 
 export const solutionNavLinks = solutions.map((solution) => ({
-  label: solution.title,
+  label: getSolutionNavLabel(solution),
   href: `/solutions/${solution.slug}`,
 }));
 
@@ -20,17 +21,12 @@ export const industryNavLinks = industries.map((industry) => ({
 /** Shared company destinations — single source for header and footer. */
 export const companyNavLinks = [
   { label: "About", href: "/about", headerLabel: "About Us" },
-  { label: "Team", href: "/team", headerLabel: "Our Team" },
   {
     label: "Research & Innovation",
     href: "/research-innovation",
     headerLabel: "Research & Innovation",
   },
-  { label: "Engagement", href: "/testimonials" },
-  { label: "Partners", href: "/partners", headerLabel: "Technology Partners" },
-  { label: "Security", href: "/security" },
-  { label: "Blog", href: "/blog" },
-  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog", headerLabel: "News & Media" },
   { label: "Contact", href: "/#page-contact" },
 ];
 
@@ -41,7 +37,6 @@ export const headerCompanyLinks = [
   })),
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Legal Templates", href: "/legal-templates" },
 ];
 
 export const footerCompanyLinks = companyNavLinks.map(({ label, href }) => ({ label, href }));
@@ -49,7 +44,6 @@ export const footerCompanyLinks = companyNavLinks.map(({ label, href }) => ({ la
 export const footerLegalLinks = [
   { label: "Privacy", href: "/privacy-policy" },
   { label: "Terms", href: "/terms-and-conditions" },
-  { label: "Legal", href: "/legal-templates" },
 ];
 
 export const footerColumns = [

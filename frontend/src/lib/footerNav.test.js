@@ -16,9 +16,7 @@ describe("siteNav", () => {
   it("includes core company destinations", () => {
     const hrefs = footerCompanyLinks.map((link) => link.href);
     const labels = footerCompanyLinks.map((link) => link.label);
-    expect(hrefs).toEqual(
-      expect.arrayContaining(["/research-innovation", "/testimonials", "/partners", "/security"])
-    );
-    expect(labels).toContain("Engagement");
+    expect(hrefs).toEqual(expect.arrayContaining(["/research-innovation", "/about"]));
+    expect(labels).toContain("About");
   });
 });

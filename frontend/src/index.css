@@ -366,6 +366,14 @@ html {
         will-change: transform;
     }
 
+    .ubuntu-tech-ribbon__track--slow {
+        animation-duration: 95s;
+    }
+
+    .ubuntu-tech-ribbon__track--fast {
+        animation-duration: 45s;
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .tech-marquee-track {
             animation: none;

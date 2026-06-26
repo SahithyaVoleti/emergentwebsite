@@ -2,23 +2,25 @@
  * Enterprise site navigation — single source of truth for header and footer.
  */
 import services, { servicesForDisplay } from "./services";
+import { SERVICE_PILLARS } from "./servicePillars";
 import solutions from "./solutions";
 import industries from "./industries";
+import { getSolutionNavLabel } from "../lib/solutionDisplay";
 import { env } from "../lib/env";
 
 export const TOP_NAV = {
   services: {
-    label: "What We Offer",
+    label: "Services",
     basePath: "/services",
     testId: "services",
     viewAllLabel: "View all services",
     dropdownVariant: "pillar",
   },
   products: {
-    label: "Platforms",
+    label: "Products",
     basePath: "/solutions",
     testId: "products",
-    viewAllLabel: "View all platforms",
+    viewAllLabel: "View all products",
   },
   industries: {
     label: "Industries",
@@ -67,14 +69,17 @@ export function buildServicesNavGroups(list = services) {
 
 export const SERVICES_NAV_GROUPS = buildServicesNavGroups();
 
-/** Pillar-only links for the header services dropdown (icon + practice-area label). */
+/** Main service links for the header services dropdown. */
 export function buildServicesPillarNav(groups = SERVICES_NAV_GROUPS) {
-  return groups.map((group) => ({
-    label: group.pillar,
-    pillar: group.pillar,
-    href: group.items[0]?.href ?? "/services",
-    matchHrefs: group.items.map((item) => item.href),
-  }));
+  return SERVICE_PILLARS.map((pillar) => {
+    const group = groups.find((entry) => entry.pillar === pillar.label);
+    return {
+      label: pillar.label,
+      pillar: pillar.label,
+      href: `/services/${pillar.id}`,
+      matchHrefs: [`/services/${pillar.id}`, ...(group?.items.map((item) => item.href) ?? [])],
+    };
+  });
 }
 
 export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
@@ -82,14 +87,14 @@ export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
 /** Flat service links — used for active-state checks and tests. */
 export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
-/** All solution accelerators + governance hub */
+/** AI SaaS products + governance anchor on About */
 export const PRODUCTS_NAV = [
-  { label: "Enterprise AI", href: "/solutions" },
+  { label: "SaaS product portfolio", href: "/solutions" },
   ...solutions.map((solution) => ({
-    label: solution.title,
+    label: getSolutionNavLabel(solution),
     href: `/solutions/${solution.slug}`,
   })),
-  { label: "Governance & Security", href: "/security" },
+  { label: "Governance & Security", href: "/about#security" },
 ];
 
 /** All industry programs */
@@ -99,16 +104,16 @@ export const INDUSTRIES_NAV = industries.map((industry) => ({
 }));
 
 export const COMPANY_NAV = [
-  { label: "About Us", href: "/about" },
-  { label: "Leadership", href: "/team" },
+  {
+    label: "About Us",
+    href: "/about",
+    matchHrefs: ["/about", "/team", "/partners", "/testimonials", "/security", "/careers"],
+  },
   {
     label: "Research & Innovation",
     href: "/research-innovation",
     matchHrefs: ["/research-innovation", "/case-studies"],
   },
-  { label: "Engagement", href: "/testimonials" },
-  { label: "Careers", href: "/careers" },
-  { label: "Partners", href: "/partners" },
   { label: "News & Media", href: "/blog" },
 ];
 
@@ -117,7 +122,7 @@ export const FOOTER_COLUMNS = [
     title: "Offerings",
     links: [
       { label: "Services", href: "/services" },
-      { label: "Platforms", href: "/solutions" },
+      { label: "Products", href: "/solutions" },
       { label: "Industries", href: "/industries" },
     ],
   },
@@ -125,26 +130,20 @@ export const FOOTER_COLUMNS = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Leadership", href: "/team" },
+      { label: "Careers", href: "/about#careers" },
       { label: "Research & Innovation", href: "/research-innovation" },
-      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/#page-contact" },
     ],
   },
   {
     title: "Resources",
-    links: [
-      { label: "News & Media", href: "/blog" },
-      { label: "Engagement", href: "/testimonials" },
-      { label: "Partners", href: "/partners" },
-    ],
+    links: [{ label: "News & Media", href: "/blog" }],
   },
 ];
 
 export const LEGAL_LINKS = [
   { label: "Privacy", href: "/privacy-policy" },
   { label: "Terms", href: "/terms-and-conditions" },
-  { label: "Legal", href: "/legal-templates" },
 ];
 
 export const SOCIAL_LINKS = {
@@ -195,17 +194,17 @@ export function isNavSectionActive(pathname, basePath, links = []) {
 /** Secondary CTA labels for PageStandardSections by page key */
 export const SECONDARY_CTA_BY_PAGE = {
   services: { label: "View services", href: "/services" },
-  solutions: { label: "View platforms", href: "/solutions" },
+  solutions: { label: "View products", href: "/solutions" },
   industries: { label: "View industries", href: "/industries" },
-  about: { label: "View leadership", href: "/team" },
-  team: { label: "View careers", href: "/careers" },
+  about: { label: "Open positions", href: "/about#careers" },
+  team: { label: "View company", href: "/about" },
   careers: { label: "View company", href: "/about" },
   blog: { label: "View test cases", href: "/research-innovation#test-cases" },
   caseStudies: { label: "View services", href: "/services" },
   detail: { label: "View services", href: "/services" },
   legal: { label: "Contact us", href: "#page-contact" },
   security: { label: "View platforms", href: "/solutions" },
-  testimonials: { label: "View test cases", href: "/research-innovation#test-cases" },
+  testimonials: { label: "View company", href: "/about" },
   partners: { label: "View company", href: "/about" },
   research: { label: "View test cases", href: "#test-cases" },
 };

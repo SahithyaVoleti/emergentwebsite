@@ -2,7 +2,7 @@
 export const SECTION_LABEL = {
   overview: "Overview",
   sectorContext: "Sector context",
-  industryAgents: "Industry-ready programs",
+  industryAgents: "Industry product modules",
   delivery: "Delivery",
   deployment: "Deployment",
   services: "Services",
@@ -18,7 +18,8 @@ export const SECTION_LABEL = {
   examples: "Examples",
   articles: "Articles",
   blog: "Blog",
-  platforms: "Platforms",
+  platforms: "Products",
+  products: "Products",
   modules: "Modules",
   accelerators: "Accelerators",
   scope: "Scope",

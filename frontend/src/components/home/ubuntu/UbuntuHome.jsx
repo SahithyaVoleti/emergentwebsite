@@ -7,9 +7,9 @@ import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
-import ServicesGrid4x4 from "../../ubuntu/ServicesGrid4x4";
+import ServicesPillarCatalog from "../../ubuntu/ServicesPillarCatalog";
+import ScrollPlayOnceGif from "../../ubuntu/ScrollPlayOnceGif";
 import { getHomeSectionImage } from "../../../data/homePageImages";
-import { getSiteMockup } from "../../../data/siteMockups";
 import { homeImagePosition } from "../../../lib/homeImagePosition";
 import {
   HOME_ALERT,
@@ -17,14 +17,11 @@ import {
   HOME_SOLUTIONS_SLIDER,
   HOME_NEXT_STEP,
 } from "../../../data/homePageSections";
-import services, { servicesForDisplay } from "../../../data/services";
 
 const UbuntuHomeFeatures = lazy(() => import("./UbuntuHomeFeatures"));
-const UbuntuHomeVisionCta = lazy(() => import("./UbuntuHomeVisionCta"));
 const SolutionsHorizontalSlider = lazy(() => import("../../ubuntu/SolutionsHorizontalSlider"));
-const UbuntuHomePhilosophy = lazy(() => import("./UbuntuHomePhilosophy"));
-const UbuntuHomeTechStack = lazy(() => import("./UbuntuHomeTechStack"));
 const UbuntuHomeWorkflow = lazy(() => import("./UbuntuHomeWorkflow"));
+const UbuntuHomeValidationSection = lazy(() => import("./UbuntuHomeValidationSection"));
 const UbuntuHomeIndustries = lazy(() =>
   import("./UbuntuHomeIndustriesBlogs").then((mod) => ({ default: mod.UbuntuHomeIndustries }))
 );
@@ -42,8 +39,6 @@ export default function UbuntuHome() {
   const nextPosition = () => homeImagePosition(mediaIndex++);
 
   const nextStepImage = getHomeSectionImage("next-step");
-  const engagementMockup = getSiteMockup("collaboration");
-  const visionMockup = getSiteMockup("code");
 
   return (
     <div className="ubuntu-home-page relative z-10 bg-white">
@@ -55,9 +50,14 @@ export default function UbuntuHome() {
             id="engagement-cta"
             testId="engagement-alert-cta"
             pattern="cta"
-      image={engagementMockup.src}
-      imageAlt={engagementMockup.alt}
-      imagePosition={nextPosition()}
+            imagePosition={nextPosition()}
+            mediaClassName="ubuntu-split__media--gif"
+            mediaSlot={
+              <ScrollPlayOnceGif
+                src={HOME_ALERT.media.src}
+                playbackMs={HOME_ALERT.media.playbackMs}
+              />
+            }
           >
             <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
             <SectionTitle as="h2" title={HOME_ALERT.title} />
@@ -74,16 +74,10 @@ export default function UbuntuHome() {
         }
       />
 
-      <ServicesGrid4x4 services={servicesForDisplay(services)} {...HOME_SERVICES_GRID} />
-
-      <UbuntuHomeStatsStrip />
+      <ServicesPillarCatalog variant="cards" {...HOME_SERVICES_GRID} />
 
       <Suspense fallback={<HomeSectionFallback />}>
         <UbuntuHomeFeatures />
-      </Suspense>
-
-      <Suspense fallback={<HomeSectionFallback />}>
-        <UbuntuHomeVisionCta mockup={visionMockup} imagePosition={nextPosition()} />
       </Suspense>
 
       <Suspense fallback={<HomeSectionFallback minHeight="20rem" />}>
@@ -91,20 +85,18 @@ export default function UbuntuHome() {
       </Suspense>
 
       <Suspense fallback={<HomeSectionFallback />}>
-        <UbuntuHomePhilosophy />
+        <UbuntuHomeIndustries />
       </Suspense>
 
-      <Suspense fallback={<HomeSectionFallback minHeight="24rem" />}>
-        <UbuntuHomeTechStack />
+      <Suspense fallback={<HomeSectionFallback />}>
+        <UbuntuHomeValidationSection />
       </Suspense>
 
       <Suspense fallback={<HomeSectionFallback />}>
         <UbuntuHomeWorkflow />
       </Suspense>
 
-      <Suspense fallback={<HomeSectionFallback />}>
-        <UbuntuHomeIndustries />
-      </Suspense>
+      <UbuntuHomeStatsStrip />
 
       <UbuntuSplitLayout
         id="next-step"

@@ -10,13 +10,14 @@ import { SECTION_LABEL } from "../data/sectionLabels";
 import UbuntuListingSection from "./ubuntu/UbuntuListingSection";
 
 export default function TestimonialsSection({
+  id = "engagement",
   title,
   showLabel = true,
   eyebrow = SECTION_LABEL.engagement,
 }) {
   return (
     <UbuntuListingSection
-      id="page-testimonials"
+      id={id}
       eyebrow={showLabel ? eyebrow : undefined}
       title={title || "Engagement principles for new partners"}
       lead="Operating commitments for discovery and pilots. Use alongside your own diligence, security review, and procurement rules."

@@ -1,8 +1,10 @@
 import services from "../data/services";
+import { getPillarById } from "../data/servicePillars";
 import solutions from "../data/solutions";
 import industries from "../data/industries";
 import blogArticles from "../data/blog";
 import caseStudies from "../data/caseStudies";
+import { getSolutionNavLabel } from "./solutionDisplay";
 import { DEFAULT_META_DESCRIPTION, DEFAULT_PAGE_TITLE } from "./company";
 
 export const STATIC_PAGE_META = {
@@ -83,7 +85,16 @@ export const STATIC_PAGE_META = {
 function matchDynamicMeta(pathname) {
   const serviceMatch = pathname.match(/^\/services\/([^/]+)$/);
   if (serviceMatch) {
-    const service = services.find((item) => item.slug === serviceMatch[1]);
+    const slug = serviceMatch[1];
+    const pillar = getPillarById(slug);
+    if (pillar) {
+      return {
+        title: `${pillar.label} | Services | NeuralTrix AI`,
+        description: pillar.shortDesc || DEFAULT_META_DESCRIPTION,
+      };
+    }
+
+    const service = services.find((item) => item.slug === slug);
     if (service) {
       return {
         title: `${service.title} | Services | NeuralTrix AI`,
@@ -97,7 +108,7 @@ function matchDynamicMeta(pathname) {
     const solution = solutions.find((item) => item.slug === solutionMatch[1]);
     if (solution) {
       return {
-        title: `${solution.title} | Solutions | NeuralTrix AI`,
+        title: `${getSolutionNavLabel(solution)} | Products | NeuralTrix AI`,
         description: solution.shortDesc || solution.heroDesc || DEFAULT_META_DESCRIPTION,
       };
     }

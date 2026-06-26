@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import services from "./services";
+import { SERVICE_PILLARS } from "./servicePillars";
 import solutions from "./solutions";
 import industries from "./industries";
 import {
+  buildServicesNavGroups,
   SERVICES_NAV,
   SERVICES_NAV_GROUPS,
   SERVICES_PILLAR_NAV,
@@ -33,6 +35,29 @@ describe("siteNav", () => {
     }
   });
 
+  it("orders services by three pillars in nav groups", () => {
+    const groups = buildServicesNavGroups();
+    expect(groups.map((group) => group.pillar)).toEqual([
+      "AI Product Transformation",
+      "Model Fine-Tuning & ML",
+      "SaaS & Platform Engineering",
+    ]);
+    expect(groups[0].items.map((item) => item.href)).toEqual([
+      "/services/generative-ai",
+      "/services/custom-software",
+      "/services/ai-agents",
+      "/services/mobile-apps",
+    ]);
+    expect(groups[1].items.map((item) => item.href)).toEqual([
+      "/services/llm-development",
+      "/services/artificial-intelligence",
+    ]);
+    expect(groups[2].items.map((item) => item.href)).toEqual([
+      "/services/data-engineering",
+      "/services/devops",
+    ]);
+  });
+
   it("groups services by pillar with catalog titles", () => {
     const groupedHrefs = SERVICES_NAV_GROUPS.flatMap((group) => group.items.map((item) => item.href));
     expect(groupedHrefs).toHaveLength(services.length);
@@ -47,21 +72,26 @@ describe("siteNav", () => {
     }
   });
 
-  it("exposes pillar-only links for the header services dropdown", () => {
-    expect(SERVICES_PILLAR_NAV.length).toBe(SERVICES_NAV_GROUPS.length);
+  it("exposes main service links for the header services dropdown", () => {
+    expect(SERVICES_PILLAR_NAV.length).toBe(SERVICE_PILLARS.length);
     for (const item of SERVICES_PILLAR_NAV) {
       expect(item.label).toBe(item.pillar);
-      expect(item.href).toMatch(/^\/services\//);
+      expect(item.href).toMatch(/^\/services\/[a-z0-9-]+$/);
       expect(item.matchHrefs.length).toBeGreaterThan(0);
       const group = SERVICES_NAV_GROUPS.find((g) => g.pillar === item.pillar);
       expect(group).toBeTruthy();
-      expect(item.matchHrefs).toEqual(group.items.map((entry) => entry.href));
+      const pillar = SERVICE_PILLARS.find((entry) => entry.label === item.pillar);
+      expect(pillar).toBeTruthy();
+      expect(item.matchHrefs).toEqual([
+        `/services/${pillar.id}`,
+        ...group.items.map((entry) => entry.href),
+      ]);
     }
   });
 
   it("maps product nav links to valid solution slugs or known hubs", () => {
     for (const { href } of PRODUCTS_NAV) {
-      if (href === "/solutions" || href === "/security") continue;
+      if (href === "/solutions" || href === "/about#security") continue;
       const slug = href.replace("/solutions/", "");
       expect(solutionSlugs.has(slug)).toBe(true);
     }
@@ -92,20 +122,13 @@ describe("siteNav", () => {
   it("uses known static routes for company and footer links", () => {
     const staticRoutes = new Set([
       "/about",
-      "/team",
-      "/testimonials",
-      "/careers",
-      "/partners",
-      "/security",
       "/blog",
       "/services",
       "/solutions",
       "/industries",
       "/research-innovation",
-      "/case-studies",
       "/privacy-policy",
       "/terms-and-conditions",
-      "/legal-templates",
     ]);
 
     const hrefs = [

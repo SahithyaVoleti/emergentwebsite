@@ -27,6 +27,9 @@ import {
 } from "lucide-react";
 
 const ICON_BY_HREF = {
+  "/services/ai-product-transformation": Sparkles,
+  "/services/model-fine-tuning-ml": Brain,
+  "/services/saas-platform-engineering": Cloud,
   "/services/artificial-intelligence": Brain,
   "/services/generative-ai": Sparkles,
   "/services/ai-agents": Bot,
@@ -41,7 +44,7 @@ const ICON_BY_HREF = {
   "/solutions/talentify-ai": GraduationCap,
   "/solutions/quikbiz-ai": MessageCircle,
   "/solutions/intellibot-ai": Cpu,
-  "/security": Shield,
+  "/about#security": Shield,
   "/industries/education": GraduationCap,
   "/industries/healthcare": HeartPulse,
   "/industries/manufacturing": Factory,
@@ -53,21 +56,14 @@ const ICON_BY_HREF = {
   "/industries/sports-gaming": Factory,
   "/industries/real-estate": Building2,
   "/about": Info,
-  "/team": Users,
-  "/testimonials": Users,
   "/careers": Briefcase,
-  "/partners": Handshake,
   "/blog": Newspaper,
 };
 
 const ICON_BY_PILLAR = {
-  "Intelligent Automation": Bot,
-  "AI Engineering": Sparkles,
-  "AI & Machine Learning": Brain,
-  "Enterprise Applications": Code,
-  "Digital Experience": Smartphone,
-  "Data & Analytics": Database,
-  "Platform Operations": Cloud,
+  "AI Product Transformation": Sparkles,
+  "Model Fine-Tuning & ML": Brain,
+  "SaaS & Platform Engineering": Cloud,
 };
 
 export function getNavDropdownIcon(href, { pillar, fallback = Circle } = {}) {

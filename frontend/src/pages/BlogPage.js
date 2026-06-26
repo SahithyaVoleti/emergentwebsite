@@ -31,7 +31,13 @@ export default function BlogPage() {
         lead="Technical and operational notes grouped by service offering, with deep links to each service-line section."
       />
 
-      <PageStandardSections pageKey="blog" contactContext="Blog Page" />
+      <PageStandardSections
+        pageKey="blog"
+        contactContext="Blog Page"
+        includeMethodology={false}
+        includeOutcomes={false}
+        includeAssurance={false}
+      />
     </SitePageMain>
   );
 }

@@ -18,16 +18,10 @@ const staticRoutes = [
   "/solutions",
   "/industries",
   "/about",
-  "/team",
-  "/testimonials",
-  "/careers",
-  "/partners",
-  "/security",
   "/blog",
   "/research-innovation",
   "/privacy-policy",
   "/terms-and-conditions",
-  "/legal-templates",
 ];
 
 function loadSlugs(file) {

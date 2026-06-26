@@ -4,21 +4,21 @@
  */
 const engagementPrinciples = [
   {
-    headline: "Embedded intelligent automation",
+    headline: "AI product transformation",
     body:
-      "Intelligent automation delivered inside CRM, ERP, internal tools, and customer applications—integrated with existing workflows and access controls.",
-    tag: "Agents",
+      "AI capabilities delivered inside CRM, ERP, internal tools, and customer applications—integrated with existing workflows and access controls.",
+    tag: "Transformation",
   },
   {
     headline: "Incremental application modernization",
     body:
       "Legacy and core business applications upgraded with AI-ready interfaces, copilots, and automation—without full platform replacement.",
-    tag: "App modernization",
+    tag: "Modernization",
   },
   {
     headline: "Governed pilot programs",
     body:
-      "We agree on the workflow, data access, and success measures first. You validate fit on a fixed timeline before expanding agent autonomy.",
+      "We agree on the workflow, data access, and success measures first. You validate fit on a fixed timeline before expanding production scope.",
     tag: "First steps",
   },
   {

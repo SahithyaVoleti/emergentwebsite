@@ -1,18 +1,17 @@
+import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
 import { getSiteMockup } from "../data/siteMockups";
+import { JURISDICTION_TEMPLATES, LEGAL_RISK_DASHBOARD } from "../data/legalTemplates";
 
-const templateDownloads = [
-  { title: "India", file: "/legal-templates/jurisdiction-template-india.pdf", note: "Comprehensive jurisdiction template for India-focused contracts." },
-  { title: "United Kingdom", file: "/legal-templates/jurisdiction-template-uk.pdf", note: "Comprehensive jurisdiction template for UK contracts." },
-  { title: "European Union", file: "/legal-templates/jurisdiction-template-eu.pdf", note: "Comprehensive jurisdiction template for EU member-state contracts." },
-  { title: "United States (Delaware)", file: "/legal-templates/jurisdiction-template-us-delaware.pdf", note: "Comprehensive jurisdiction template for Delaware-law contracts." },
-  { title: "Singapore", file: "/legal-templates/jurisdiction-template-singapore.pdf", note: "Comprehensive jurisdiction template for Singapore-law contracts." },
-  { title: "UAE (DIFC)", file: "/legal-templates/jurisdiction-template-uae-difc.pdf", note: "Comprehensive jurisdiction template for DIFC-governed contracts." },
-];
+const templateDownloads = JURISDICTION_TEMPLATES.map((item) => ({
+  title: item.title.replace(" Jurisdiction Clause", ""),
+  file: item.file,
+  note: `Jurisdiction clause template for ${item.title.replace(" Jurisdiction Clause", "")}-focused contracts.`,
+}));
 
 const sections = [
   {
@@ -322,9 +321,29 @@ export default function TermsAndConditionsPage() {
       />
 
       <UbuntuListingSection
-        title="Jurisdiction templates"
-        lead="Downloadable clause templates for contracting jurisdictions. Align with executed agreements and applicable mandatory law."
+        id="legal-templates"
+        eyebrow="Templates"
+        title="Legal templates and governance reporting"
+        lead="Downloadable jurisdiction clause templates and board-ready legal risk reporting. Privacy request templates are on the Privacy Policy page."
       >
+        <article className="mb-10 border border-[#e5e5e5] bg-white p-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#8b4c6e]">
+            Governance reporting
+          </p>
+          <h3 className="mb-3 text-base font-medium text-[#2d2d2d]">Legal risk dashboard</h3>
+          <p className="mb-4 text-sm text-[#7d8597]">
+            Board-ready legal risk dashboard covering operational, financial, compliance, and dispute exposure.
+          </p>
+          <a
+            href={LEGAL_RISK_DASHBOARD}
+            download
+            className="ubuntu-btn-primary inline-flex border-0 px-4 py-2 text-xs"
+          >
+            Download legal risk dashboard
+          </a>
+        </article>
+
+        <h3 className="mb-5 text-lg font-medium text-[#2d2d2d]">Jurisdiction clause templates</h3>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {templateDownloads.map((template) => (
             <article key={template.file} className="border border-[#e5e5e5] bg-white p-6">
@@ -336,6 +355,14 @@ export default function TermsAndConditionsPage() {
             </article>
           ))}
         </div>
+
+        <p className="ubuntu-body mt-8">
+          Privacy and data-subject request templates are available on the{" "}
+          <Link to="/privacy-policy#privacy-templates" className="text-[#d1511f] hover:underline">
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </UbuntuListingSection>
 
       <PageStandardSections

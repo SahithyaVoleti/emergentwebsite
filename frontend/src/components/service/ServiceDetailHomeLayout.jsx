@@ -5,9 +5,9 @@ import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
 import TestimonialsSection from "../TestimonialsSection";
 import PageContactForm from "../PageContactForm";
 import UbuntuProcessMethodologyStrip from "../ubuntu/UbuntuProcessMethodologyStrip";
+import { toMethodologyStripSteps } from "../../lib/processSteps";
 import UbuntuHomeVisionCta from "../home/ubuntu/UbuntuHomeVisionCta";
 import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
-import UbuntuHomeTechStack from "../home/ubuntu/UbuntuHomeTechStack";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import { getHomeSectionImage } from "../../data/homePageImages";
@@ -16,7 +16,7 @@ import { homeImagePosition } from "../../lib/homeImagePosition";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 
 const SERVICE_ASSURANCE_BULLETS = [
-  "Scoped credentials and audit trails for agent actions",
+  "Scoped credentials and audit trails for automated actions",
   "Tests on critical workflows before production go-live",
   "Rollback paths for prompts, models, and tool permissions",
   "Documentation ready for security and procurement review",
@@ -38,10 +38,7 @@ export default function ServiceDetailHomeLayout({
   const philosophyMockup = getSiteMockup("code");
   const nextStepImage = getHomeSectionImage("next-step");
 
-  const processStats = (service.process ?? []).map((step, index) => ({
-    value: String(index + 1).padStart(2, "0"),
-    label: step.step,
-  }));
+  const processStats = toMethodologyStripSteps(service.process);
 
   const displayTitle = service.catalogTitle ?? service.title;
 
@@ -92,20 +89,6 @@ export default function ServiceDetailHomeLayout({
           title: `Assurance for ${displayTitle} programs`,
           lead: "Controls and review artifacts we build into each delivery milestone—not added after launch.",
           bullets: SERVICE_ASSURANCE_BULLETS,
-        }}
-      />
-
-      <UbuntuHomeTechStack
-        initialSlug={service.slug}
-        config={{
-          title: "Technical foundation",
-          eyebrow: "Technology",
-          lead: "Platforms and tools we commonly use on delivery programs for this service track.",
-          primaryCta: {
-            label: "Contact us",
-            href: contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT),
-          },
-          secondaryCta: { label: "View capabilities", href: "#capabilities" },
         }}
       />
 

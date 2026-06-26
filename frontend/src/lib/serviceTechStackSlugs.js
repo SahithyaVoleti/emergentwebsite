@@ -1,4 +1,5 @@
 import services from "../data/services";
+import solutions from "../data/solutions";
 
 /** Normalize tech label for lookup */
 function normKey(name) {
@@ -397,4 +398,45 @@ export function getBalancedSiteTechNames(maxNames = 24) {
     round += 1;
   }
   return dedupeTechNamesByIcon(result);
+}
+
+/** Curated enterprise stack for Platforms page ribbon (not the full catalog). */
+const PLATFORMS_FEATURED_TECH = [
+  "GPT-4o",
+  "Claude",
+  "Gemini",
+  "Python",
+  "LangChain",
+  "TensorFlow",
+  "PyTorch",
+  "AWS",
+  "Azure",
+  "GCP",
+  "Docker",
+  "Kubernetes",
+  "React",
+  "PostgreSQL",
+  "Snowflake",
+  "Kafka",
+];
+
+/** Featured technology labels for the Platforms page ribbon. */
+export function getPlatformsFeaturedTechNames() {
+  const available = new Set(getPlatformsTechNames());
+  return PLATFORMS_FEATURED_TECH.filter((name) => available.has(name));
+}
+
+/** All unique technology labels across service tracks and platform accelerators. */
+export function getPlatformsTechNames() {
+  return dedupeTechNamesByIcon([
+    ...services.flatMap((service) => extractTechNamesFromService(service)),
+    ...solutions.flatMap((solution) => solution.tech ?? []),
+  ]);
+}
+
+/** All unique technology labels across service tracks (homepage ribbon). */
+export function getAllSiteTechNames() {
+  return dedupeTechNamesByIcon(
+    services.flatMap((service) => extractTechNamesFromService(service))
+  );
 }

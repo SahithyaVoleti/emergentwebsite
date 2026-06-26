@@ -1,19 +1,10 @@
-import TechStackLogoGrid from "../TechStackLogoGrid";
+import TechStackRibbon from "../TechStackRibbon";
 import { dedupeTechNamesByIcon } from "../../lib/serviceTechStackSlugs";
 
-/** Scrolling tech stack panel (shared homepage + service CTA bands). */
+/** Horizontal tech ribbon panel (shared homepage + service bands). */
 export default function TechFoundationCtaMedia({ techNames = [] }) {
   const names = dedupeTechNamesByIcon(techNames);
   if (!names.length) return null;
 
-  return (
-    <div className="ubuntu-tech-stack__panel">
-      <TechStackLogoGrid
-        items={names}
-        compact
-        marqueeColumnCap={3}
-        marqueeColumnHeightClassName="h-[min(22rem,48vh)] sm:h-[24rem] min-h-[16rem]"
-      />
-    </div>
-  );
+  return <TechStackRibbon items={names} />;
 }

@@ -4,4 +4,7 @@ export const COMPANY_FOUNDED_SHORT = "Jan 12, 2026";
 
 /** One sentence for letter-style intros (CEOLetter, etc.) */
 export const COMPANY_STARTUP_PITCH =
-  "NeuralTrix AI provides applied AI engineering and software delivery for organizations that require accountable execution, documented outcomes, and production-grade systems.";
+  "NeuralTrix AI transforms existing software products into AI-enabled platforms, fine-tunes models for production use, and designs interdisciplinary AI SaaS applications for enterprise clients.";
+
+export const COMPANY_VALUE_PROPOSITION =
+  "AI product transformation, model fine-tuning, and AI-native SaaS engineering across regulated and operational industries.";

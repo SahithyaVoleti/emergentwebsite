@@ -74,16 +74,13 @@ await auditPage(page, "/solutions", [
   },
 ]);
 
-await auditPage(page, "/careers", [
+await auditPage(page, "/about", [
   async (p, path) => {
-    await p.locator('[data-testid="page-hero"] .ubuntu-btn-primary').first().click();
+    await p.goto(`${path}#careers`);
     await p.waitForTimeout(800);
-    const positions = await p.locator("#positions").count();
-    if (positions === 0) throw new Error("Careers hero CTA did not reach #positions");
-    const alternate = p.locator('[data-testid="contact-section"] .ubuntu-btn-primary');
-    if ((await alternate.count()) === 0) {
-      throw new Error("Careers contact band missing View open roles alternate CTA");
-    }
+    const careers = await p.locator("#careers").count();
+    if (careers === 0) throw new Error("About careers anchor missing");
+    await p.locator('[data-testid="filter-all"]').first().click();
   },
 ]);
 

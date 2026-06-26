@@ -9,9 +9,10 @@ import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
-import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
+import TechStackRibbon from "../components/TechStackRibbon";
 import solutions from "../data/solutions";
+import { getSolutionProductName } from "../lib/solutionDisplay";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -35,12 +36,15 @@ export default function SolutionDetail() {
   const overviewMockup = getSiteMockup("dashboard");
   const methodologyMockup = getSiteMockup("code");
 
+  const productName = getSolutionProductName(solution);
+  const brandName = solution.brandName || solution.title;
+
   return (
     <SitePageMain>
       <PageHero
         significance="detail"
-        label="Solutions"
-        title={solution.heroTitle}
+        label={brandName ? `${brandName} · SaaS product` : "Products"}
+        title={solution.heroTitle || productName}
         description={solution.heroDesc}
         primaryCTA={{
           text: "Request a briefing",
@@ -54,14 +58,14 @@ export default function SolutionDetail() {
       <div id="capabilities">
         <UbuntuPageSection
           eyebrow={SECTION_LABEL.overview}
-          title={`${solution.title} overview`}
+          title={`${productName} overview`}
           lead={solution.overview}
           image={overviewMockup.src}
           imageAlt={overviewMockup.alt}
           belowContent={
             <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <FlatTechStackPanel title="Technology stack" intro="Tools commonly integrated for this accelerator.">
-                <TechStackLogoGrid items={solution.tech} compact className="w-full" />
+                <TechStackRibbon items={solution.tech} />
               </FlatTechStackPanel>
             </div>
           }
@@ -76,7 +80,7 @@ export default function SolutionDetail() {
 
         <UbuntuPageSection
           eyebrow={SECTION_LABEL.methodology}
-          title={`Rollout steps for ${solution.title}`}
+          title={`Rollout steps for ${productName}`}
           lead="We sequence connectivity, configuration, validation, and rollout with explicit checkpoints."
           image={methodologyMockup.src}
           imageAlt={methodologyMockup.alt}
@@ -97,19 +101,19 @@ export default function SolutionDetail() {
         />
 
         <DomainAssurance
-          title={`Assurance for ${solution.title} rollouts`}
+          title={`Assurance for ${productName} rollouts`}
           lead="Measurable checkpoints, permission scoping, and documented handover for accelerator deployments."
         />
       </div>
 
       <PageStandardSections
         pageKey="detail"
-        contactContext={solution.title}
+        contactContext={productName}
         includeMethodology={false}
         includeOutcomes={false}
         includeAssurance={false}
         ctaOverrides={{
-          title: `Next Step for ${solution.title}`,
+          title: `Next Step for ${productName}`,
           description:
             "Assess integration effort, governance fit, and operational impact for your environment and stakeholder model.",
           mockupKey: "dashboard",

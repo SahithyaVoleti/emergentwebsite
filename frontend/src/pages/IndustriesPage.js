@@ -10,8 +10,8 @@ export default function IndustriesPage() {
     <SitePageMain>
       <PageHero
         label="Industries"
-        title="Industry programs for intelligent automation"
-        description="We deliver intelligent automation inside sector applications—CRM, ERP, operations tools, and customer portals—aligned to regulatory and operational requirements."
+        title="Interdisciplinary AI product programs"
+        description="We transform and build AI-enabled software across healthcare, finance, education, manufacturing, and other sectors—aligned to each industry's application estate and governance requirements."
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
         illustrationKey="industries"
@@ -24,7 +24,13 @@ export default function IndustriesPage() {
         lead="Each sector operates distinct application estates—EHR, ERP, LMS, CRM, and more. Select an industry to review validated automation patterns and modernization scope."
       />
 
-      <PageStandardSections pageKey="industries" contactContext="Industries Page" />
+      <PageStandardSections
+        pageKey="industries"
+        contactContext="Industries Page"
+        includeMethodology={false}
+        includeOutcomes={false}
+        includeAssurance={false}
+      />
     </SitePageMain>
   );
 }

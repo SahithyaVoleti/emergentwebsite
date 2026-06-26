@@ -12,7 +12,7 @@ const coreTechData = {
     { name: "RAG Frameworks", description: "Frameworks for retrieval-augmented generation and knowledge-grounded responses.", techs: [{ name: "LangChain" }, { name: "LlamaIndex" }, { name: "Haystack" }, { name: "Semantic Kernel" }, { name: "DSPy" }] },
     { name: "Vector Databases", description: "Databases for semantic search and context retrieval in AI applications.", techs: [{ name: "Pinecone" }, { name: "Weaviate" }, { name: "Milvus" }, { name: "Qdrant" }, { name: "Chroma" }, { name: "Redis" }] },
     { name: "Embeddings", description: "Capture essential information by converting complex datasets into numerical representations for LLM training.", techs: [{ name: "OpenAI Ada" }, { name: "Cohere Embed" }, { name: "Google PaLM" }, { name: "Sentence Transformers" }, { name: "BGE" }] },
-    { name: "Agent Frameworks", description: "Frameworks for building agents that plan tasks, call tools, and complete multi-step workflows.", techs: [{ name: "LangGraph" }, { name: "AutoGen" }, { name: "CrewAI" }, { name: "Phidata" }, { name: "Temporal" }] },
+    { name: "Orchestration Frameworks", description: "Frameworks for multi-step AI workflows, tool calling, and governed automation in product integrations.", techs: [{ name: "LangGraph" }, { name: "AutoGen" }, { name: "CrewAI" }, { name: "Phidata" }, { name: "Temporal" }] },
     { name: "Deployment", description: "Production-ready serving infrastructure for large language models at scale.", techs: [{ name: "vLLM" }, { name: "TGI" }, { name: "Triton" }, { name: "Ollama" }, { name: "AWS Bedrock" }, { name: "Azure OpenAI" }] },
   ],
   "custom-software": [

@@ -77,7 +77,7 @@ export default function SolutionsAcceleratorCarousel({
                     to={hrefFor(item)}
                     data-testid={`${testIdPrefix}-${item.slug}`}
                     className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-[#111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
-                    aria-label={`${item.title}: ${item.cardDescriptor || item.domain || ""}`}
+                    aria-label={`${item.title}: ${item.brandName || item.cardDescriptor || item.domain || ""}`}
                   >
                     <div className="ubuntu-solutions-carousel__media">
                       <img
@@ -93,7 +93,9 @@ export default function SolutionsAcceleratorCarousel({
                       aria-roledescription="slide caption"
                     >
                       <p className="ubuntu-solutions-carousel__descriptor">
-                        {item.cardDescriptor || item.domain}
+                        {item.brandName
+                          ? `${item.brandName}${item.cardDescriptor ? ` · ${item.cardDescriptor}` : ""}`
+                          : item.cardDescriptor || item.domain}
                       </p>
                       <h3 className="ubuntu-solutions-carousel__title">{item.title}</h3>
                       <p className="ubuntu-solutions-carousel__text">
@@ -119,7 +121,7 @@ export default function SolutionsAcceleratorCarousel({
                   type="button"
                   role="tab"
                   aria-selected={current === index}
-                  aria-label={`${item.title} — ${item.cardDescriptor || item.domain || ""}`}
+                  aria-label={`${item.title} — ${item.brandName || item.cardDescriptor || item.domain || ""}`}
                   onClick={() => api?.scrollTo(index)}
                   className={`ubuntu-solutions-carousel__indicator ${
                     current === index ? "ubuntu-solutions-carousel__indicator--active" : ""

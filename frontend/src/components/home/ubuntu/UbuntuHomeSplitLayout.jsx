@@ -28,7 +28,7 @@ export default function UbuntuHomeSplitLayout({
     <div className="ubuntu-split__media">
       <img
         src={image}
-        alt={imageAlt}
+        alt={imageAlt ?? ""}
         loading="lazy"
         decoding="async"
         className="ubuntu-split__img"

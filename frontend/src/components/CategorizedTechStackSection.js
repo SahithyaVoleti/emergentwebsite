@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { SECTION_LABEL } from "../data/sectionLabels";
-import TechStackLogoGrid from "./TechStackLogoGrid";
+import TechStackRibbon from "./TechStackRibbon";
 import SectionEyebrow from "./ubuntu/SectionEyebrow";
 import SectionTitle from "./ubuntu/SectionTitle";
 
@@ -21,97 +21,61 @@ export function normalizeTechCategories(categories) {
     .filter((x) => x.title && x.techs.length);
 }
 
-/** Navy rule + header + inset grid — single flat list (case studies, solution sidebar, etc.) */
+/** Simple titled block with horizontal tech ribbon (case studies, solution sidebar, etc.) */
 export function FlatTechStackPanel({
   eyebrow,
   title,
   intro,
   children,
   className,
-  bodyClassName,
-  insetClassName,
 }) {
   return (
-    <div
-      className={cn(
-        "flex flex-col overflow-hidden border border-[#d9d9d9] bg-white",
-        className
-      )}
-    >
-      <div className="h-1 shrink-0 bg-[#5c5c5c]" aria-hidden />
-      <div className="border-b border-[#e5e5e5] bg-white px-5 py-4 sm:px-6 sm:py-5">
-        {eyebrow ? <SectionEyebrow>{eyebrow}</SectionEyebrow> : null}
-        <h3 className="text-sm font-medium text-[#2d2d2d]">{title}</h3>
-        {intro ? (
-          <p className="mt-3 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
-        ) : null}
-      </div>
-      <div className={cn("bg-white px-4 py-4 sm:px-5 sm:py-5", bodyClassName)}>
-        <div
-          className={cn(
-            "overflow-hidden border border-[#d9d9d9] bg-white p-3",
-            insetClassName
-          )}
-        >
-          {children}
-        </div>
-      </div>
+    <div className={cn("ubuntu-tech-stack-inline", className)}>
+      {eyebrow ? <SectionEyebrow>{eyebrow}</SectionEyebrow> : null}
+      {title ? <h3 className="text-sm font-medium text-[#2d2d2d] sm:text-base">{title}</h3> : null}
+      {intro ? (
+        <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
+      ) : null}
+      <div className="ubuntu-tech-ribbon-wrap mt-4">{children}</div>
     </div>
   );
 }
 
-/** Inset only (for tight card footers) — gray band + white inner well */
+/** Inset only (for tight card footers) — ribbon well */
 export function TechStackLogoInset({ children, className }) {
   return (
-    <div className={cn("rounded-md border border-slate-200/80 bg-white p-2.5 sm:p-3", className)}>
-      <div className="overflow-hidden rounded-md border border-slate-200/90 bg-white p-2 shadow-inner sm:p-3">
-        {children}
-      </div>
+    <div className={cn("ubuntu-tech-ribbon-wrap", className)}>
+      {children}
     </div>
   );
 }
 
 /**
- * 2×2 category grid with marquee panels (industry page, service technology foundation).
+ * Category rows — each with a horizontal sliding tech ribbon.
  */
 export function CategorizedTechStackPanels({
   categories,
   className,
-  marqueeColumnCap = 3,
-  marqueeColumnHeightClassName = "h-36 sm:h-44 min-h-[9rem]",
 }) {
   const cats = normalizeTechCategories(categories);
   if (cats.length === 0) return null;
 
   return (
-    <div
-      className={cn("grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6", className)}
-    >
-      {cats.map((c) => (
-        <article
-          key={c.title}
-          className="group flex flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#5c5c5c]"
-        >
-          <div className="h-1 shrink-0 bg-[#5c5c5c]" aria-hidden />
-          <div className="border-b border-[#e5e5e5] bg-white px-4 py-4 sm:px-5 sm:py-5">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
-              {c.title}
-            </h3>
-            <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#7d8597]">
-              {c.description || DEFAULT_CATEGORY_DESC}
-            </p>
-          </div>
-          <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
-            <div className="relative border border-[#d9d9d9] bg-white p-4">
-              <TechStackLogoGrid
-                items={c.techs}
-                compact
-                marqueeColumnCap={marqueeColumnCap}
-                marqueeColumnHeightClassName={marqueeColumnHeightClassName}
-                className="w-full"
-              />
-            </div>
-          </div>
+    <div className={cn("ubuntu-tech-category-ribbons flex flex-col gap-10", className)}>
+      {cats.map((c, index) => (
+        <article key={c.title} className="ubuntu-tech-category-ribbon">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
+            {c.title}
+          </h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#7d8597]">
+            {c.description || DEFAULT_CATEGORY_DESC}
+          </p>
+          <TechStackRibbon
+            items={c.techs}
+            className="mt-4"
+            speed={index % 2 === 0 ? "normal" : "slow"}
+            ariaLabel={`${c.title} technologies`}
+          />
         </article>
       ))}
     </div>
@@ -119,7 +83,7 @@ export function CategorizedTechStackPanels({
 }
 
 /**
- * Full section: eyebrow, title, intro, optional integrations link, categorized panels.
+ * Full section: eyebrow, title, intro, optional integrations link, categorized ribbons.
  */
 export default function CategorizedTechStackSection({
   eyebrow = SECTION_LABEL.technology,
@@ -132,8 +96,6 @@ export default function CategorizedTechStackSection({
   integrationsCta = "See all integrations",
   showIntegrations = false,
   children,
-  marqueeColumnCap,
-  marqueeColumnHeightClassName,
 }) {
   const cats = normalizeTechCategories(categories);
 
@@ -159,11 +121,7 @@ export default function CategorizedTechStackSection({
           {children}
         </div>
 
-        <CategorizedTechStackPanels
-          categories={cats}
-          marqueeColumnCap={marqueeColumnCap}
-          marqueeColumnHeightClassName={marqueeColumnHeightClassName}
-        />
+        <CategorizedTechStackPanels categories={cats} />
 
         {!cats.length ? (
           <p className="py-8 text-center text-sm text-[#7d8597]">No technologies listed.</p>

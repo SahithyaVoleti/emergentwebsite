@@ -19,7 +19,7 @@ export default function UbuntuBlogGrid({
         {articles.map((article) => (
           <Link
             key={article.slug}
-            to={`/blog/${article.slug}`}
+            to={`/insights/${article.slug}`}
             data-testid={`blog-link-${article.slug}`}
             className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#5c5c5c]"
           >

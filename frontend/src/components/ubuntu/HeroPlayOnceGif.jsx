@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function HeroPlayOnceGif({ src, alt, className }) {
+export default function HeroPlayOnceGif({ src, className }) {
   const containerRef = useRef(null);
   const [gifSrc, setGifSrc] = useState(null);
 
@@ -36,14 +36,16 @@ export default function HeroPlayOnceGif({ src, alt, className }) {
   }, [src]);
 
   return (
-    <div ref={containerRef} className="ubuntu-hero-transformation__gif-wrap">
-      <img
-        src={gifSrc ?? undefined}
-        alt={alt}
-        className={className}
-        draggable={false}
-        aria-hidden={!gifSrc}
-      />
+    <div ref={containerRef} className="ubuntu-hero-transformation__gif-wrap" aria-hidden="true">
+      {gifSrc ? (
+        <img
+          src={gifSrc}
+          alt=""
+          className={className}
+          draggable={false}
+          decoding="async"
+        />
+      ) : null}
     </div>
   );
 }
