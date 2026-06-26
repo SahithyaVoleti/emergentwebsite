@@ -4,7 +4,6 @@ import { getSiteMockup } from "../../../data/siteMockups";
 
 export default function UbuntuHomeHero({ embedded = false }) {
   const {
-    badge,
     titleBefore,
     titleAccent,
     titleAfter,
@@ -19,7 +18,6 @@ export default function UbuntuHomeHero({ embedded = false }) {
       testId="hero-section"
       embedded={embedded}
       significance="primary"
-      badge={badge}
       title={{ before: titleBefore, accent: titleAccent, after: titleAfter }}
       primaryCTA={{
         label: primaryCta.label,

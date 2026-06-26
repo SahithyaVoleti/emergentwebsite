@@ -5,7 +5,6 @@ export default function UbuntuPageHero(props) {
   return (
     <UbuntuLightSplitHero
       {...props}
-      badge={props.label}
       significance={props.significance ?? "primary"}
     />
   );

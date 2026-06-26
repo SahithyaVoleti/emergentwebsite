@@ -68,7 +68,7 @@
   --hero-nav-gap-md: 1.75rem;
   --hero-end-gap: 2rem;
   --hero-end-gap-md: 2.5rem;
-  --cta-content-gap: 1.75rem;
+  --cta-content-gap: 1rem;
   --cta-band-space-y: 2.5rem;
   --cta-band-space-y-md: 3rem;
   --cta-section-gap: 2rem;
@@ -296,6 +296,7 @@
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered .ubuntu-nav-dropdown-group__trigger {
   margin: 0;
   padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
 }
 
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered .ubuntu-chrome-header__cta-desktop {
@@ -303,12 +304,12 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: #fff;
-  background: #111;
+  background: var(--ubuntu-hero-orange);
   border-radius: 9999px;
 }
 
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered .ubuntu-chrome-header__cta-desktop:hover {
-  background: #2d2d2d;
+  background: var(--ubuntu-brand-hover);
   color: #fff;
 }
 
@@ -522,7 +523,7 @@
     "intro"
     "media"
     "actions";
-  gap: 1.25rem;
+  gap: 0.75rem;
   align-items: start;
 }
 
@@ -546,35 +547,13 @@
     grid-template-areas:
       "intro media"
       "actions media";
-    gap: 2rem 3rem;
+    gap: 1.25rem 3rem;
     align-items: center;
   }
 
   .ubuntu-site .ubuntu-hero-transformation__media {
     align-self: center;
   }
-}
-
-.ubuntu-site .ubuntu-hero-transformation__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1.25rem;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid rgba(233, 84, 32, 0.35);
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.9);
-  font-family: var(--font-hero-body);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ubuntu-hero-magenta);
-}
-
-.ubuntu-site .ubuntu-hero-transformation__badge-icon {
-  color: var(--ubuntu-hero-orange);
-  flex-shrink: 0;
 }
 
 .ubuntu-site .ubuntu-hero-transformation__title {
@@ -659,11 +638,11 @@
 }
 
 .ubuntu-site .ubuntu-hero-transformation__cta {
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
 }
 
 .ubuntu-site .ubuntu-hero-transformation__lead {
-  margin: 1.25rem 0 0;
+  margin: 0.75rem 0 0;
   max-width: 36rem;
   font-family: var(--font-hero-body);
   font-size: 1.125rem;
@@ -2997,7 +2976,7 @@
 }
 
 .ubuntu-site .ubuntu-lead {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.875rem;
 }
 
 .ubuntu-site .ubuntu-container > .ubuntu-lead + .ubuntu-cta-row,
@@ -3175,21 +3154,30 @@
   font-weight: 400;
   color: #333;
   text-decoration: none;
-  transition: color 0.15s ease;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .ubuntu-chrome-header .ubuntu-nav-link:hover,
 .ubuntu-chrome-header .ubuntu-nav-link--active {
   color: #d1511f;
+  background: rgba(209, 81, 31, 0.12);
+}
+
+.ubuntu-site .ubuntu-chrome-header__cta-desktop {
+  border-radius: 9999px;
 }
 
 /* GNOME / Ubuntu desktop-style nav dropdowns */
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group__trigger {
-  padding: 0.3125rem 0.625rem;
-  margin: -0.3125rem -0.625rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 9999px;
   background: transparent;
   cursor: pointer;
   transition:
@@ -3204,17 +3192,23 @@
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:hover > .ubuntu-nav-dropdown-group__trigger,
-.ubuntu-chrome-header .ubuntu-nav-dropdown-group:focus-within > .ubuntu-nav-dropdown-group__trigger {
-  background: #d1511f;
-  border-color: #d1511f;
-  color: #fff;
+.ubuntu-chrome-header .ubuntu-nav-dropdown-group:focus-within > .ubuntu-nav-dropdown-group__trigger,
+.ubuntu-chrome-header .ubuntu-nav-dropdown-group__trigger.ubuntu-nav-link--active {
+  background: rgba(209, 81, 31, 0.12);
+  border-color: transparent;
+  color: #d1511f;
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:hover > .ubuntu-nav-dropdown-group__trigger .ubuntu-nav-dropdown-group__chevron,
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:focus-within > .ubuntu-nav-dropdown-group__trigger .ubuntu-nav-dropdown-group__chevron {
   opacity: 1;
-  color: #fff;
+  color: #d1511f;
   transform: rotate(180deg);
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown-group__trigger.ubuntu-nav-link--active .ubuntu-nav-dropdown-group__chevron {
+  opacity: 1;
+  color: #d1511f;
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown {

@@ -110,7 +110,6 @@ export default function PageHero({
       <UbuntuLightSplitHero
         embedded
         significance={significance}
-        badge={label}
         title={title}
         description={description}
         primaryCTA={primaryCTA}

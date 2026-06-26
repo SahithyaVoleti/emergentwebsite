@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, Brain, Layers, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Bot, Brain, Layers, TrendingUp } from "lucide-react";
 import SiteNavLink from "./SiteNavLink";
 import HeroPlayOnceGif from "./HeroPlayOnceGif";
 
@@ -74,7 +74,6 @@ export default function UbuntuLightSplitHero({
   testId = "page-hero",
   embedded = false,
   significance = "primary",
-  badge,
   title,
   description,
   features = [],
@@ -155,13 +154,6 @@ export default function UbuntuLightSplitHero({
             .join(" ")}
         >
           <div className="ubuntu-hero-transformation__intro">
-            {badge && (
-              <p className="ubuntu-hero-transformation__badge">
-                <Sparkles size={14} aria-hidden className="ubuntu-hero-transformation__badge-icon" />
-                {badge}
-              </p>
-            )}
-
             {title && (
               <h1 data-testid="page-hero-title" className="ubuntu-hero-transformation__title">
                 {renderTitle(title)}
