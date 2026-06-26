@@ -1,37 +1,31 @@
 import { useMemo } from "react";
-import TechStackRibbon from "../TechStackRibbon";
+import UbuntuListingSection from "./UbuntuListingSection";
+import TechStackLogoGrid from "../TechStackLogoGrid";
+import { SECTION_LABEL } from "../../data/sectionLabels";
 import { getPlatformsFeaturedTechNames } from "../../lib/serviceTechStackSlugs";
 
 /**
- * Compact sliding tech stack band — Platforms listing only (/solutions).
- * Uses hero content width and CTA-style background treatment.
+ * Featured technology stack — Products listing (/solutions).
+ * Same static logo grid format as About Us technology ecosystem.
  */
 export default function PlatformsTechRibbon({
-  id = "platforms-tech-ribbon",
-  className = "",
+  id = "platforms-tech-stack",
+  className = "!border-t-0",
 }) {
   const items = useMemo(() => getPlatformsFeaturedTechNames(), []);
 
   if (!items.length) return null;
 
   return (
-    <section
+    <UbuntuListingSection
       id={id}
-      data-testid="platforms-tech-ribbon"
-      className={`ubuntu-platforms-tech-ribbon ubuntu-stats-cta-strip ${className}`.trim()}
-      aria-label="Technology stack"
+      eyebrow={SECTION_LABEL.technology}
+      title="Technology foundation"
+      lead="Representative platforms and tools integrated across product accelerators; final selections follow your security and procurement policies."
+      className={className}
+      variant="alt"
     >
-      <div className="ubuntu-stats-dots-layer" aria-hidden="true" />
-      <div className="ubuntu-container relative z-10">
-        <div className="ubuntu-platforms-tech-ribbon__track">
-          <TechStackRibbon
-            items={items}
-            compact
-            speed="slow"
-            className="ubuntu-tech-ribbon--compact"
-          />
-        </div>
-      </div>
-    </section>
+      <TechStackLogoGrid items={items} data-testid="platforms-tech-stack" />
+    </UbuntuListingSection>
   );
 }

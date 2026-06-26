@@ -10,7 +10,7 @@ import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
-import TechStackRibbon from "../components/TechStackRibbon";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import solutions from "../data/solutions";
 import { getSolutionProductName } from "../lib/solutionDisplay";
 import { getSiteMockup } from "../data/siteMockups";
@@ -65,7 +65,7 @@ export default function SolutionDetail() {
           belowContent={
             <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <FlatTechStackPanel title="Technology stack" intro="Tools commonly integrated for this accelerator.">
-                <TechStackRibbon items={solution.tech} />
+                <TechStackLogoGrid items={solution.tech} />
               </FlatTechStackPanel>
             </div>
           }

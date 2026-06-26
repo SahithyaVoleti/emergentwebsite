@@ -46,6 +46,8 @@
   --ubuntu-hero-orange: #d1511f;
   --ubuntu-hero-aubergine: #2d2d2d;
   --ubuntu-hero-magenta: #8b4c6e;
+  --ubuntu-btn-bg: #111;
+  --ubuntu-btn-bg-hover: #2d2d2d;
   --ubuntu-chrome-header-h: 3.5rem;
   --ubuntu-chrome-ribbon-h: 2.25rem;
   --ubuntu-hero-surface: #fff;
@@ -60,7 +62,7 @@
   --section-space-inset: 3rem;
   --container-space-y: 1.75rem;
   --container-space-y-md: 2.5rem;
-  --heading-to-body-gap: 1rem;
+  --heading-to-body-gap: 0.5rem;
   --content-block-gap: 2.25rem;
   --content-block-gap-md: 2.75rem;
   /* Hero & CTA bands — intentional breathing room (not generic section stack) */
@@ -68,7 +70,7 @@
   --hero-nav-gap-md: 1.75rem;
   --hero-end-gap: 2rem;
   --hero-end-gap-md: 2.5rem;
-  --cta-content-gap: 1rem;
+  --cta-content-gap: 0.5rem;
   --cta-band-space-y: 2.5rem;
   --cta-band-space-y-md: 3rem;
   --cta-section-gap: 2rem;
@@ -304,12 +306,12 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: #fff;
-  background: var(--ubuntu-hero-orange);
+  background: var(--ubuntu-btn-bg);
   border-radius: 9999px;
 }
 
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--centered .ubuntu-chrome-header__cta-desktop:hover {
-  background: var(--ubuntu-brand-hover);
+  background: var(--ubuntu-btn-bg-hover);
   color: #fff;
 }
 
@@ -520,20 +522,25 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "intro"
-    "media"
-    "actions";
+    "copy"
+    "media";
   gap: 0.75rem;
-  align-items: start;
+  align-items: center;
+}
+
+.ubuntu-site .ubuntu-hero-transformation__copy {
+  grid-area: copy;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .ubuntu-site .ubuntu-hero-transformation__intro {
-  grid-area: intro;
   min-width: 0;
 }
 
 .ubuntu-site .ubuntu-hero-transformation__actions {
-  grid-area: actions;
   min-width: 0;
 }
 
@@ -544,10 +551,8 @@
 @media (min-width: 1024px) {
   .ubuntu-site .ubuntu-hero-transformation__grid {
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    grid-template-areas:
-      "intro media"
-      "actions media";
-    gap: 1.25rem 3rem;
+    grid-template-areas: "copy media";
+    gap: 2rem 3rem;
     align-items: center;
   }
 
@@ -576,7 +581,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem 0.75rem;
   margin: 0;
-  padding: 1.25rem 0 0;
+  padding: 0.75rem 0 0;
   border-top: 1px solid rgba(119, 33, 111, 0.12);
   list-style: none;
 }
@@ -638,11 +643,11 @@
 }
 
 .ubuntu-site .ubuntu-hero-transformation__cta {
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .ubuntu-site .ubuntu-hero-transformation__lead {
-  margin: 0.75rem 0 0;
+  margin: 0.5rem 0 0;
   max-width: 36rem;
   font-family: var(--font-hero-body);
   font-size: 1.125rem;
@@ -652,9 +657,7 @@
 
 .ubuntu-site .ubuntu-hero-transformation__grid--content-only {
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "intro"
-    "actions";
+  grid-template-areas: "copy";
   max-width: 44rem;
 }
 
@@ -682,12 +685,12 @@
   border-radius: 9999px;
   font-family: var(--font-hero-body);
   font-weight: 600;
-  background: linear-gradient(135deg, var(--ubuntu-hero-orange) 0%, #b8451a 100%);
-  box-shadow: 0 8px 24px rgba(209, 81, 31, 0.28);
+  background: var(--ubuntu-btn-bg);
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.18);
 }
 
 .ubuntu-site .ubuntu-hero-transformation__cta-btn.ubuntu-btn-primary:hover {
-  background: linear-gradient(135deg, #e06530 0%, var(--ubuntu-hero-orange) 100%);
+  background: var(--ubuntu-btn-bg-hover);
 }
 
 .ubuntu-site .ubuntu-hero-transformation__cta-arrow {
@@ -1347,15 +1350,15 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   color: #fff;
-  background: var(--ubuntu-brand);
+  background: var(--ubuntu-btn-bg);
   border: none;
-  border-radius: 0;
+  border-radius: 9999px;
   text-decoration: none;
   transition: background 0.15s ease;
 }
 
 .ubuntu-site .ubuntu-btn-primary:hover {
-  background: var(--ubuntu-brand-hover);
+  background: var(--ubuntu-btn-bg-hover);
   color: #fff;
 }
 
@@ -2431,18 +2434,27 @@
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__grid {
-  gap: 2rem 1.5rem;
+  gap: 2rem 1.25rem;
+  align-items: start;
+}
+
+.ubuntu-site .ubuntu-stats-cta-strip__grid--cols-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ubuntu-site .ubuntu-stats-cta-strip__item {
+  padding: 0 0.5rem;
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__value {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--ubuntu-brand-heading);
   text-align: center;
-  text-justify: auto;
   width: 100%;
+  min-height: 1.1em;
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 1) .ubuntu-stats-cta-strip__value {
@@ -2470,21 +2482,28 @@
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__label {
-  margin-top: 0.625rem;
-  font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
-  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: #5c677d;
   text-align: center;
-  text-justify: auto;
   width: 100%;
+  max-width: 11rem;
+  min-height: 2.75em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
   .ubuntu-site .ubuntu-stats-cta-strip__grid {
-    gap: 2.25rem 2rem;
+    gap: 2rem 1.5rem;
+  }
+
+  .ubuntu-site .ubuntu-stats-cta-strip__grid--cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__value {
@@ -2492,17 +2511,16 @@
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__label {
-    margin-top: 0.75rem;
+    margin-top: 0.625rem;
     font-size: 0.875rem;
-    letter-spacing: 0.09em;
-    white-space: nowrap;
+    max-width: 12rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .ubuntu-site .ubuntu-stats-cta-strip__grid {
-    gap: 2rem 1.75rem;
-    grid-template-columns: repeat(5, minmax(11.5rem, 1fr));
+  .ubuntu-site .ubuntu-stats-cta-strip__grid--cols-4 {
+    gap: 2rem 2.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__value {
@@ -2511,7 +2529,6 @@
 
   .ubuntu-site .ubuntu-stats-cta-strip__label {
     font-size: 0.875rem;
-    letter-spacing: 0.08em;
   }
 }
 
@@ -2896,7 +2913,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem 1.5rem;
+  gap: 0.75rem 1rem;
   margin-top: var(--cta-content-gap);
 }
 
@@ -2976,17 +2993,16 @@
 }
 
 .ubuntu-site .ubuntu-lead {
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.5rem;
 }
 
-.ubuntu-site .ubuntu-container > .ubuntu-lead + .ubuntu-cta-row,
-.ubuntu-site .ubuntu-split__content > .ubuntu-lead + .ubuntu-cta-row,
-.ubuntu-site .ubuntu-split__body > .ubuntu-lead + .ubuntu-cta-row,
 .ubuntu-site .ubuntu-container > .ubuntu-lead + ul,
 .ubuntu-site .ubuntu-split__content > .ubuntu-lead + ul,
+.ubuntu-site .ubuntu-split__copy > .ubuntu-lead + ul,
 .ubuntu-site .ubuntu-split__body > .ubuntu-lead + ul,
 .ubuntu-site .ubuntu-container > .ubuntu-lead + ol,
 .ubuntu-site .ubuntu-split__content > .ubuntu-lead + ol,
+.ubuntu-site .ubuntu-split__copy > .ubuntu-lead + ol,
 .ubuntu-site .ubuntu-split__body > .ubuntu-lead + ol,
 .ubuntu-site .ubuntu-container > .ubuntu-section-title ~ ul,
 .ubuntu-site .ubuntu-container > .ubuntu-section-title ~ ol,
@@ -3012,14 +3028,13 @@
     padding-top: var(--section-space-inset);
   }
 
-  .ubuntu-site .ubuntu-container > .ubuntu-lead + .ubuntu-cta-row,
-  .ubuntu-site .ubuntu-split__content > .ubuntu-lead + .ubuntu-cta-row,
-  .ubuntu-site .ubuntu-split__body > .ubuntu-lead + .ubuntu-cta-row,
   .ubuntu-site .ubuntu-container > .ubuntu-lead + ul,
   .ubuntu-site .ubuntu-split__content > .ubuntu-lead + ul,
+  .ubuntu-site .ubuntu-split__copy > .ubuntu-lead + ul,
   .ubuntu-site .ubuntu-split__body > .ubuntu-lead + ul,
   .ubuntu-site .ubuntu-container > .ubuntu-lead + ol,
   .ubuntu-site .ubuntu-split__content > .ubuntu-lead + ol,
+  .ubuntu-site .ubuntu-split__copy > .ubuntu-lead + ol,
   .ubuntu-site .ubuntu-split__body > .ubuntu-lead + ol,
   .ubuntu-site .ubuntu-container > .ubuntu-section-title ~ ul,
   .ubuntu-site .ubuntu-container > .ubuntu-section-title ~ ol,
@@ -3121,15 +3136,15 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: #fff;
-  background: #d1511f;
+  background: #111;
   border: none;
-  border-radius: 0;
+  border-radius: 9999px;
   text-decoration: none;
   transition: background 0.15s ease;
 }
 
 .ubuntu-btn-primary:hover {
-  background: var(--ubuntu-brand-hover, #b8451a);
+  background: #2d2d2d;
   color: #fff;
 }
 
@@ -3169,6 +3184,16 @@
 
 .ubuntu-site .ubuntu-chrome-header__cta-desktop {
   border-radius: 9999px;
+}
+
+.ubuntu-site .ubuntu-chrome-header .ubuntu-btn-primary {
+  background: var(--ubuntu-btn-bg);
+  color: #fff;
+}
+
+.ubuntu-site .ubuntu-chrome-header .ubuntu-btn-primary:hover {
+  background: var(--ubuntu-btn-bg-hover);
+  color: #fff;
 }
 
 /* GNOME / Ubuntu desktop-style nav dropdowns */
@@ -3372,9 +3397,9 @@
 }
 
 .ubuntu-chrome-header .ubuntu-nav-mobile-trigger--open {
-  background: #d1511f;
+  background: var(--ubuntu-btn-bg, #111);
   color: #fff;
-  border-radius: 4px;
+  border-radius: 9999px;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -3581,6 +3606,10 @@
     align-items: stretch;
   }
 
+  .ubuntu-site .ubuntu-split--structured .ubuntu-split__copy {
+    display: contents;
+  }
+
   .ubuntu-site .ubuntu-split--structured .ubuntu-split__intro {
     grid-area: intro;
   }
@@ -3597,28 +3626,27 @@
 @media (min-width: 992px) {
   .ubuntu-site .ubuntu-split--structured.ubuntu-split--image-right {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "intro media"
-      "body media";
-    align-items: start;
+    grid-template-areas: "copy media";
+    align-items: center;
   }
 
   .ubuntu-site .ubuntu-split--structured.ubuntu-split--image-left {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "media intro"
-      "media body";
-    align-items: start;
+    grid-template-areas: "media copy";
+    align-items: center;
   }
 
-  .ubuntu-site .ubuntu-split--structured .ubuntu-split__intro {
-    grid-area: intro;
+  .ubuntu-site .ubuntu-split--structured .ubuntu-split__copy {
+    grid-area: copy;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
   }
 
-  .ubuntu-site .ubuntu-split--structured .ubuntu-split__body {
-    grid-area: body;
+  .ubuntu-site .ubuntu-split--structured .ubuntu-split__intro + .ubuntu-split__body {
+    margin-top: 0;
   }
 
   .ubuntu-site .ubuntu-split--structured .ubuntu-split__media {
@@ -3665,24 +3693,43 @@
 }
 
 .ubuntu-site .ubuntu-tech-stack-filters__btn:hover {
-  border-color: var(--ubuntu-brand);
-  color: var(--ubuntu-brand);
+  border-color: var(--ubuntu-btn-bg);
+  color: var(--ubuntu-btn-bg);
 }
 
 .ubuntu-site .ubuntu-tech-stack-filters__btn--active {
-  border-color: var(--ubuntu-brand);
-  background: var(--ubuntu-brand-bg-strong);
-  color: var(--ubuntu-brand);
+  border-color: var(--ubuntu-btn-bg);
+  background: var(--ubuntu-btn-bg);
+  color: #fff;
 }
 
 .ubuntu-site .ubuntu-tech-stack-section .ubuntu-lead + .ubuntu-tech-stack-filters {
   margin-top: var(--content-block-gap);
 }
 
-.ubuntu-site .ubuntu-tech-stack-section .ubuntu-tech-ribbon-wrap + .ubuntu-cta-row {
+.ubuntu-site .ubuntu-tech-stack-section .ubuntu-tech-brand-panel + .ubuntu-cta-row {
   margin-top: var(--content-block-gap);
 }
 
+.ubuntu-site .ubuntu-tech-brand-panel {
+  border-block: 1px solid #e5e5e5;
+  background: #fafafa;
+  padding: 1rem var(--site-content-pad-x, 1rem);
+}
+
+.ubuntu-site .ubuntu-tech-stack-inline .ubuntu-tech-brand-panel {
+  margin-left: calc(-1 * var(--site-content-pad-x, 1rem));
+  margin-right: calc(-1 * var(--site-content-pad-x, 1rem));
+}
+
+@media (min-width: 640px) {
+  .ubuntu-site .ubuntu-tech-brand-panel {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+/* Legacy ribbon wrap — kept for any remaining references */
 .ubuntu-site .ubuntu-tech-ribbon-wrap {
   overflow: hidden;
   border-block: 1px solid #e5e5e5;
@@ -3704,49 +3751,74 @@
 }
 
 .ubuntu-site .ubuntu-tech-ribbon__chip {
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transition: none;
 }
 
 .ubuntu-site .ubuntu-tech-ribbon:hover .ubuntu-tech-ribbon__chip {
-  border-color: #d9d9d9;
+  border: none;
+  box-shadow: none;
 }
 
-.ubuntu-site .ubuntu-tech-category-ribbons {
-  margin-top: 0;
+.ubuntu-site .ubuntu-tech-brand-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  min-width: 4.75rem;
+  max-width: 6.5rem;
+  text-align: center;
 }
 
-.ubuntu-site .ubuntu-tech-foundation-cta .ubuntu-tech-ribbon-wrap {
-  margin-top: 2rem;
+.ubuntu-site .ubuntu-tech-brand-mark--inline {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: none;
+  text-align: left;
 }
 
-/* Platforms listing — compact tech ribbon below hero (CTA band + hero inset) */
-.ubuntu-site .ubuntu-platforms-tech-ribbon.ubuntu-stats-cta-strip > .ubuntu-container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.ubuntu-site .ubuntu-tech-brand-mark__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a4a4a;
+  word-break: break-word;
 }
 
-@media (min-width: 768px) {
-  .ubuntu-site .ubuntu-platforms-tech-ribbon.ubuntu-stats-cta-strip > .ubuntu-container {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+.ubuntu-site .ubuntu-tech-brand-mark--inline .ubuntu-tech-brand-mark__label {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.ubuntu-site .ubuntu-tech-brand-grid {
+  display: grid;
+  gap: 1.25rem 1rem;
+  align-items: start;
+  justify-items: center;
+}
+
+@media (min-width: 640px) {
+  .ubuntu-site .ubuntu-tech-brand-grid {
+    gap: 1.5rem 1.25rem;
+  }
+
+  .ubuntu-site .ubuntu-tech-brand-mark__label {
+    font-size: 0.8125rem;
   }
 }
 
-.ubuntu-site .ubuntu-platforms-tech-ribbon__track {
-  overflow: hidden;
-  margin-left: calc(-1 * var(--site-content-pad-x));
-  margin-right: calc(-1 * var(--site-content-pad-x));
-  padding-left: var(--site-content-pad-x);
-  padding-right: var(--site-content-pad-x);
+.ubuntu-site .ubuntu-tech-category-groups {
+  margin-top: 0;
 }
 
-.ubuntu-site .ubuntu-platforms-tech-ribbon .ubuntu-tech-ribbon--compact .tech-marquee-track {
-  gap: 0.75rem;
-}
-
-.ubuntu-site .ubuntu-platforms-tech-ribbon .ubuntu-tech-ribbon__chip {
-  border-color: rgba(209, 81, 31, 0.12);
-  background: rgba(255, 255, 255, 0.92);
+.ubuntu-site .ubuntu-tech-foundation-cta .ubuntu-tech-brand-panel {
+  margin-top: 2rem;
 }
 
 /* Legacy panel — ribbon only (mockup chrome removed) */
@@ -3764,6 +3836,7 @@
 /* Contact section — CTA pattern band + centered form card */
 /* Contact CTA — split layout; form inside browser mockup (right) */
 .ubuntu-site .ubuntu-contact-section .ubuntu-split__content,
+.ubuntu-site .ubuntu-contact-section .ubuntu-split__copy,
 .ubuntu-site .ubuntu-contact-section .ubuntu-split__intro,
 .ubuntu-site .ubuntu-contact-section .ubuntu-split__body {
   align-self: center;
@@ -3838,10 +3911,13 @@
 }
 
 .ubuntu-site .ubuntu-split__content .ubuntu-lead,
+.ubuntu-site .ubuntu-split__copy .ubuntu-lead,
 .ubuntu-site .ubuntu-split__body .ubuntu-lead,
 .ubuntu-site .ubuntu-split__content .ubuntu-body,
+.ubuntu-site .ubuntu-split__copy .ubuntu-body,
 .ubuntu-site .ubuntu-split__body .ubuntu-body,
 .ubuntu-site .ubuntu-split__content .ubuntu-bullet-list,
+.ubuntu-site .ubuntu-split__copy .ubuntu-bullet-list,
 .ubuntu-site .ubuntu-split__body .ubuntu-bullet-list {
   max-width: none;
 }

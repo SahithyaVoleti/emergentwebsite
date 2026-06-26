@@ -35,10 +35,10 @@ export const HOME_HERO = {
 };
 
 export const HOME_STARTUP_STATS = [
-  { value: "3 lines", label: "Transform · Fine-tune · Build SaaS" },
-  { value: "10+", label: "Interdisciplinary industries" },
-  { value: "Production", label: "Model and product validation" },
-  { value: "Senior-led", label: "Engineering accountability" },
+  { value: "4–6", label: "Weeks to scoped pilot" },
+  { value: "10+", label: "Regulated industries" },
+  { value: "12+", label: "Production test cases" },
+  { value: "100%", label: "Senior engineers on delivery" },
 ];
 
 export const HOME_ALERT = {
@@ -49,41 +49,46 @@ export const HOME_ALERT = {
   secondaryCta: { label: "View services →", href: "/#services-grid" },
   media: {
     src: "/media/social-strategy.gif",
-    playbackMs: 8000,
   },
 };
 
-/** Three core business lines — aligned to company positioning. */
-const HOME_DELIVERY_CAPABILITIES = [
+/** Delivery outcomes — distinct from the services catalog above. */
+const HOME_DELIVERY_OUTCOMES = [
   {
-    name: "AI product transformation",
+    name: "Scoped pilots before scale",
     description:
-      "Upgrade existing CRM, ERP, portals, and internal tools with copilots, automation, and modern APIs—without replacing the product your teams already operate.",
-    icon: "platform",
-    href: "/services/ai-product-transformation",
+      "Fixed datasets, acceptance metrics, and rollback criteria agreed before production rollout—not open-ended experimentation.",
+    icon: "governance",
   },
   {
-    name: "Model fine-tuning & ML engineering",
+    name: "AI inside products already in market",
     description:
-      "Domain-specific fine-tuning, evaluation harnesses, and production ML pipelines so models perform on your data—not generic benchmarks alone.",
-    icon: "genai",
-    href: "/services/model-fine-tuning-ml",
+      "Copilots and automation embedded in CRM, ERP, and line-of-business tools your teams operate today.",
+    icon: "agents",
   },
   {
-    name: "AI SaaS design & development",
+    name: "Models measured on your domain",
     description:
-      "End-to-end design and engineering of multi-tenant SaaS products with governed AI features, ready for interdisciplinary industry deployment.",
-    icon: "platform",
-    href: "/solutions",
+      "Fine-tuning and evaluation harnesses tied to your tasks, data boundaries, and compliance requirements.",
+    icon: "ml",
+  },
+  {
+    name: "Handover your team can extend",
+    description:
+      "Runbooks, observability, and code ownership transition when operational responsibility shifts in-house.",
+    icon: "devops",
   },
 ];
 
 export const HOME_FEATURES = {
   id: "home-features",
   eyebrow: "What we deliver",
-  title: "Three disciplines for AI-enabled software",
-  lead: "Product transformation, model fine-tuning, and SaaS engineering—applied as one delivery program or as focused workstreams.",
-  items: HOME_DELIVERY_CAPABILITIES,
+  title: "Outcomes across transformation programs",
+  lead: "Each engagement targets measurable product impact—incremental AI in live systems, validated models, and governed rollout paths.",
+  items: HOME_DELIVERY_OUTCOMES,
+  media: {
+    src: "/media/operating-system-upgrade.gif",
+  },
 };
 
 export const HOME_BLOG = {

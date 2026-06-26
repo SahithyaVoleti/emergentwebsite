@@ -1,4 +1,5 @@
 import UbuntuListingSection from "./UbuntuListingSection";
+import TechStackLogoGrid from "../TechStackLogoGrid";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 export default function UbuntuPartnerGrid({
@@ -11,16 +12,7 @@ export default function UbuntuPartnerGrid({
 }) {
   return (
     <UbuntuListingSection id={id} eyebrow={eyebrow} title={title} lead={lead} className={className}>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {partners.map((partner) => (
-          <div
-            key={partner}
-            className="flex h-20 items-center justify-center border border-[#d9d9d9] bg-white px-3 text-center"
-          >
-            <span className="text-sm font-medium tracking-wide text-[#7d8597]">{partner}</span>
-          </div>
-        ))}
-      </div>
+      <TechStackLogoGrid items={partners} />
     </UbuntuListingSection>
   );
 }

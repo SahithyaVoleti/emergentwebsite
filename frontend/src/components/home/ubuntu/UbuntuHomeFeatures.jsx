@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   Bot,
   Sparkles,
@@ -11,6 +10,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { HOME_FEATURES } from "../../../data/homePageSections";
+import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
+import HeroPlayOnceGif from "../../ubuntu/HeroPlayOnceGif";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
 import { paletteAccentIndex } from "../../../lib/brandPalette";
@@ -28,63 +29,56 @@ const ICONS = {
 };
 
 export default function UbuntuHomeFeatures({ config, items }) {
-  const sectionId = config?.id ?? HOME_FEATURES.id;
-  const eyebrow = config?.eyebrow ?? HOME_FEATURES.eyebrow;
-  const title = config?.title ?? HOME_FEATURES.title;
-  const lead = config?.lead ?? HOME_FEATURES.lead;
-  const list = items ?? HOME_FEATURES.items;
+  const section = { ...HOME_FEATURES, ...config };
+  const { id: sectionId, eyebrow, title, lead, media } = section;
+  const list = items ?? section.items;
 
   if (!list.length) return null;
 
   return (
-    <section
+    <UbuntuSplitLayout
       id={sectionId}
-      data-testid="home-features-section"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
-      aria-labelledby={`${sectionId}-heading`}
+      testId="home-features-section"
+      className="border-b border-[#d9d9d9] bg-white"
+      imagePosition="right"
+      mediaClassName="ubuntu-split__media--gif"
+      mediaSlot={
+        media?.src ? (
+          <HeroPlayOnceGif
+            src={media.src}
+            wrapClassName="ubuntu-split__gif-wrap"
+            className="ubuntu-split__img"
+          />
+        ) : null
+      }
     >
-      <div className="ubuntu-container">
-        <div className="max-w-3xl text-left">
-          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
-          <SectionTitle id={`${sectionId}-heading`} title={title} />
-          <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>
-        </div>
+      {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+      <SectionTitle id={`${sectionId}-heading`} title={title} />
+      {lead && <p className="ubuntu-lead">{lead}</p>}
+      <dl className="ubuntu-home-features__list mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:mt-8 lg:grid-cols-1 lg:gap-y-7">
+        {list.map((feature, index) => {
+          const Icon = ICONS[feature.icon] ?? Brain;
 
-        <dl className="mx-auto mt-8 grid max-w-none grid-cols-1 gap-x-8 gap-y-8 sm:mt-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">
-          {list.map((feature, index) => {
-            const Icon = ICONS[feature.icon] ?? Brain;
-            const title = feature.href ? (
-              <Link
-                to={feature.href}
-                className="text-[#2d2d2d] underline decoration-transparent underline-offset-2 transition-colors hover:text-[#4a4a4a] hover:decoration-[#4a4a4a]"
-              >
+          return (
+            <div
+              key={feature.name}
+              className="relative pl-16"
+              data-palette-accent={paletteAccentIndex(index)}
+            >
+              <dt className="text-base font-medium leading-snug">
+                <div
+                  className="ubuntu-palette-icon absolute left-0 top-0 flex h-10 w-10 items-center justify-center"
+                  aria-hidden="true"
+                >
+                  <Icon className="h-6 w-6 text-white" strokeWidth={2} />
+                </div>
                 {feature.name}
-              </Link>
-            ) : (
-              feature.name
-            );
-
-            return (
-              <div
-                key={feature.name}
-                className="relative pl-16"
-                data-palette-accent={paletteAccentIndex(index)}
-              >
-                <dt className="text-base font-medium leading-snug">
-                  <div
-                    className="ubuntu-palette-icon absolute left-0 top-0 flex h-10 w-10 items-center justify-center"
-                    aria-hidden="true"
-                  >
-                    <Icon className="h-6 w-6 text-white" strokeWidth={2} />
-                  </div>
-                  {title}
-                </dt>
-                <dd className="mt-2 text-base leading-relaxed text-[#7d8597]">{feature.description}</dd>
-              </div>
-            );
-          })}
-        </dl>
-      </div>
-    </section>
+              </dt>
+              <dd className="mt-2 text-base leading-relaxed text-[#7d8597]">{feature.description}</dd>
+            </div>
+          );
+        })}
+      </dl>
+    </UbuntuSplitLayout>
   );
 }

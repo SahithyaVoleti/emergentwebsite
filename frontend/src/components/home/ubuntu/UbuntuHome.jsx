@@ -8,7 +8,7 @@ import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
 import ServicesPillarCatalog from "../../ubuntu/ServicesPillarCatalog";
-import ScrollPlayOnceGif from "../../ubuntu/ScrollPlayOnceGif";
+import HeroPlayOnceGif from "../../ubuntu/HeroPlayOnceGif";
 import { getHomeSectionImage } from "../../../data/homePageImages";
 import { homeImagePosition } from "../../../lib/homeImagePosition";
 import {
@@ -53,9 +53,10 @@ export default function UbuntuHome() {
             imagePosition={nextPosition()}
             mediaClassName="ubuntu-split__media--gif"
             mediaSlot={
-              <ScrollPlayOnceGif
+              <HeroPlayOnceGif
                 src={HOME_ALERT.media.src}
-                playbackMs={HOME_ALERT.media.playbackMs}
+                wrapClassName="ubuntu-split__gif-wrap"
+                className="ubuntu-split__img"
               />
             }
           >

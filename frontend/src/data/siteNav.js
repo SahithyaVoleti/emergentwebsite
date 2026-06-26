@@ -13,26 +13,22 @@ export const TOP_NAV = {
     label: "Services",
     basePath: "/services",
     testId: "services",
-    viewAllLabel: "View all services",
     dropdownVariant: "pillar",
   },
   products: {
     label: "Products",
     basePath: "/solutions",
     testId: "products",
-    viewAllLabel: "View all products",
   },
   industries: {
     label: "Industries",
     basePath: "/industries",
     testId: "industries",
-    viewAllLabel: "View all industries",
   },
   company: {
     label: "Company",
     basePath: "/about",
     testId: "company",
-    viewAllLabel: "About us",
   },
 };
 

@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
+import { GIF_PLAY_ONCE_OBSERVER, gifPlaySrc } from "../../lib/gifPlayback";
 
-export default function HeroPlayOnceGif({ src, className }) {
+/**
+ * Plays a GIF once when the element enters view (hero-aligned timing everywhere).
+ */
+export default function HeroPlayOnceGif({
+  src,
+  className,
+  wrapClassName = "ubuntu-hero-transformation__gif-wrap",
+}) {
   const containerRef = useRef(null);
   const [gifSrc, setGifSrc] = useState(null);
 
@@ -13,7 +21,7 @@ export default function HeroPlayOnceGif({ src, className }) {
     const startPlayback = () => {
       if (hasStarted) return;
       hasStarted = true;
-      setGifSrc(`${src}?play=${Date.now()}`);
+      setGifSrc(gifPlaySrc(src));
     };
 
     if (typeof IntersectionObserver === "undefined") {
@@ -28,7 +36,7 @@ export default function HeroPlayOnceGif({ src, className }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
+      GIF_PLAY_ONCE_OBSERVER
     );
 
     observer.observe(el);
@@ -36,7 +44,7 @@ export default function HeroPlayOnceGif({ src, className }) {
   }, [src]);
 
   return (
-    <div ref={containerRef} className="ubuntu-hero-transformation__gif-wrap" aria-hidden="true">
+    <div ref={containerRef} className={wrapClassName} aria-hidden="true">
       {gifSrc ? (
         <img
           src={gifSrc}

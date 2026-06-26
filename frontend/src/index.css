@@ -183,7 +183,7 @@ code {
         --card-foreground: 0 0% 18%;
         --popover: 0 0% 100%;
         --popover-foreground: 0 0% 18%;
-        --primary: 17 74% 47%;
+        --primary: 0 0% 7%;
         --primary-foreground: 0 0% 100%;
         --secondary: 0 0% 96%;
         --secondary-foreground: 0 0% 18%;
@@ -361,7 +361,7 @@ html {
     .tech-marquee-track {
         display: flex;
         width: max-content;
-        gap: 1rem;
+        gap: 1.5rem;
         animation: tech-marquee 70s linear infinite;
         will-change: transform;
     }

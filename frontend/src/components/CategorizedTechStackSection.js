@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { SECTION_LABEL } from "../data/sectionLabels";
-import TechStackRibbon from "./TechStackRibbon";
+import TechStackLogoGrid from "./TechStackLogoGrid";
 import SectionEyebrow from "./ubuntu/SectionEyebrow";
 import SectionTitle from "./ubuntu/SectionTitle";
 
 const DEFAULT_CATEGORY_DESC =
   "Representative tools for scoping and integration planning; selection follows your standards and procurement rules.";
+
+function techItemName(tech) {
+  if (typeof tech === "string") return tech.trim();
+  return String(tech?.name ?? "").trim();
+}
 
 /**
  * Normalize API shapes: { category }, { cat }, { title }, optional desc / description.
@@ -16,12 +21,12 @@ export function normalizeTechCategories(categories) {
     .map((c) => ({
       title: String(c.title || c.cat || c.category || "").trim(),
       description: String(c.desc || c.description || "").trim(),
-      techs: Array.isArray(c.techs) ? c.techs : [],
+      techs: Array.isArray(c.techs) ? c.techs.map(techItemName).filter(Boolean) : [],
     }))
     .filter((x) => x.title && x.techs.length);
 }
 
-/** Simple titled block with horizontal tech ribbon (case studies, solution sidebar, etc.) */
+/** Simple titled block with static tech logo grid (case studies, solution sidebar, etc.) */
 export function FlatTechStackPanel({
   eyebrow,
   title,
@@ -36,22 +41,18 @@ export function FlatTechStackPanel({
       {intro ? (
         <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
       ) : null}
-      <div className="ubuntu-tech-ribbon-wrap mt-4">{children}</div>
+      <div className="mt-4">{children}</div>
     </div>
   );
 }
 
-/** Inset only (for tight card footers) — ribbon well */
+/** Inset wrapper for tight layouts — same static grid format */
 export function TechStackLogoInset({ children, className }) {
-  return (
-    <div className={cn("ubuntu-tech-ribbon-wrap", className)}>
-      {children}
-    </div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 /**
- * Category rows — each with a horizontal sliding tech ribbon.
+ * Category rows — each with a static logo + name grid (About Us format).
  */
 export function CategorizedTechStackPanels({
   categories,
@@ -61,21 +62,16 @@ export function CategorizedTechStackPanels({
   if (cats.length === 0) return null;
 
   return (
-    <div className={cn("ubuntu-tech-category-ribbons flex flex-col gap-10", className)}>
-      {cats.map((c, index) => (
-        <article key={c.title} className="ubuntu-tech-category-ribbon">
+    <div className={cn("ubuntu-tech-category-groups flex flex-col gap-10", className)}>
+      {cats.map((c) => (
+        <article key={c.title} className="ubuntu-tech-category-group">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
             {c.title}
           </h3>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#7d8597]">
             {c.description || DEFAULT_CATEGORY_DESC}
           </p>
-          <TechStackRibbon
-            items={c.techs}
-            className="mt-4"
-            speed={index % 2 === 0 ? "normal" : "slow"}
-            ariaLabel={`${c.title} technologies`}
-          />
+          <TechStackLogoGrid items={c.techs} className="mt-4" />
         </article>
       ))}
     </div>
@@ -83,7 +79,7 @@ export function CategorizedTechStackPanels({
 }
 
 /**
- * Full section: eyebrow, title, intro, optional integrations link, categorized ribbons.
+ * Full section: eyebrow, title, intro, optional integrations link, categorized grids.
  */
 export default function CategorizedTechStackSection({
   eyebrow = SECTION_LABEL.technology,
@@ -114,9 +110,11 @@ export default function CategorizedTechStackSection({
           )}
           {intro ? <p className="ubuntu-lead mt-3">{intro}</p> : null}
           {showIntegrations && integrationsHref ? (
-            <Link to={integrationsHref} className="ubuntu-btn-primary mt-6 inline-flex border-0">
-              {integrationsCta}
-            </Link>
+            <div className="ubuntu-cta-row">
+              <Link to={integrationsHref} className="ubuntu-btn-primary inline-flex border-0">
+                {integrationsCta}
+              </Link>
+            </div>
           ) : null}
           {children}
         </div>

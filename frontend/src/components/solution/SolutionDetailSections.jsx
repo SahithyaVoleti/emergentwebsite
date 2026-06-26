@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { getSolutionProductName } from "../../lib/solutionDisplay";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Calendar, Layers, Server } from "lucide-react";
-import { getTechFoundationIcon } from "../../lib/techFoundationIcons";
+import TechStackLogoGrid from "../TechStackLogoGrid";
 import MethodologyFlowchart from "../MethodologyFlowchart";
 import SectionPatternBackground from "../SectionPatternBackground";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
@@ -115,29 +115,7 @@ export function SolutionOverviewSection({ solution }) {
               <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#888]">
                 Technology stack
               </p>
-              <ul className="solution-tech-strip mt-4 flex flex-wrap items-center gap-x-1 gap-y-3">
-                {techItems.map((name, index) => {
-                  const Icon = getTechFoundationIcon(name);
-                  return (
-                    <motion.li
-                      key={name}
-                      {...reveal(0.26 + index * 0.05)}
-                      className="flex items-center"
-                    >
-                      {index > 0 && (
-                        <span
-                          className="mx-3 hidden h-4 w-px bg-[#d9d9d9] sm:inline-block"
-                          aria-hidden
-                        />
-                      )}
-                      <span className="inline-flex items-center gap-2 text-sm text-[#333]">
-                        <Icon className="h-4 w-4 text-[#8b1538]" aria-hidden />
-                        <span className="font-medium">{name}</span>
-                      </span>
-                    </motion.li>
-                  );
-                })}
-              </ul>
+              <TechStackLogoGrid items={techItems} className="mt-4" />
             </div>
           )}
         </motion.div>

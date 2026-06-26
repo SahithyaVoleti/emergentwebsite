@@ -44,23 +44,29 @@ export default function UbuntuHomeSplitLayout({
     .filter(Boolean)
     .join(" ");
 
-  const introNode =
-    structured && intro?.length > 0 ? (
-      <div className="ubuntu-split__intro">{intro}</div>
-    ) : null;
+  const copyNode = structured ? (
+    <div className="ubuntu-split__copy">
+      {intro?.length > 0 ? <div className="ubuntu-split__intro">{intro}</div> : null}
+      {body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null}
+    </div>
+  ) : null;
 
-  const bodyNode = structured ? (
-    body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null
-  ) : (
+  const bodyNode = structured ? copyNode : (
     <div className="ubuntu-split__content">{children}</div>
   );
 
   const splitChildren = structured ? (
-    <>
-      {introNode}
-      {media}
-      {bodyNode}
-    </>
+    imageFirst ? (
+      <>
+        {media}
+        {bodyNode}
+      </>
+    ) : (
+      <>
+        {bodyNode}
+        {media}
+      </>
+    )
   ) : imageFirst ? (
     <>
       {media}

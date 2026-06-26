@@ -24,7 +24,7 @@ export default function UbuntuHomeEngagementPanel() {
         <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
         <SectionTitle as="h2" title={HOME_ALERT.title} />
         <p className="ubuntu-lead mt-4 text-base">{HOME_ALERT.body}</p>
-        <div className="ubuntu-cta-row mt-6 flex-col items-stretch sm:flex-row sm:items-center">
+        <div className="ubuntu-cta-row flex-col items-stretch sm:flex-row sm:items-center">
           <Link to={HOME_ALERT.primaryCta.href} className="ubuntu-btn-primary text-center">
             {HOME_ALERT.primaryCta.label}
           </Link>

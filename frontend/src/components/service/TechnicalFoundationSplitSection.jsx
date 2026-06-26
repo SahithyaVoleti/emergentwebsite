@@ -7,7 +7,7 @@ import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
- * Technology foundation band — copy and actions above a horizontal tech ribbon.
+ * Technology foundation band — copy and actions above a static tech logo grid.
  */
 export default function TechnicalFoundationSplitSection({
   id = "service-technical-foundation",
@@ -42,7 +42,7 @@ export default function TechnicalFoundationSplitSection({
           <SectionEyebrow>{eyebrow}</SectionEyebrow>
           <SectionTitle as="h2" id={`${id}-heading`} title={title} />
           <p className="ubuntu-lead mt-3">{lead}</p>
-          <div className="ubuntu-cta-row mt-6">
+          <div className="ubuntu-cta-row">
             <Link to={primaryHref} className="ubuntu-btn-primary">
               {primaryLabel}
             </Link>
@@ -50,7 +50,7 @@ export default function TechnicalFoundationSplitSection({
           </div>
         </div>
 
-        <div className="ubuntu-tech-ribbon-wrap mt-8">
+        <div className="mt-8">
           <TechFoundationCtaMedia techNames={techNames} />
         </div>
       </div>

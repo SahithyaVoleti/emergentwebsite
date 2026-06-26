@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { getNavDropdownIcon, NAV_VIEW_ALL_ICON } from "../data/navDropdownIcons";
+import { getNavDropdownIcon } from "../data/navDropdownIcons";
 import { useSiteNavScroll } from "../hooks/useSiteNavScroll";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
@@ -93,10 +93,9 @@ export default function Header({ embedded = false, shell = false }) {
   };
 
   const renderDesktopDropdown = (key, item, links) => {
-    const { label, basePath, testId: testIdPrefix, viewAllLabel, dropdownVariant } = item;
+    const { label, testId: testIdPrefix, dropdownVariant } = item;
     const sectionLinks = DROPDOWN_SECTION_LINKS[key] ?? links;
-    const isActive = isNavSectionActive(location.pathname, basePath, sectionLinks);
-    const ViewAllIcon = NAV_VIEW_ALL_ICON;
+    const isActive = isNavSectionActive(location.pathname, item.basePath, sectionLinks);
     const dropdownClass = [
       "ubuntu-nav-dropdown",
       dropdownVariant === "wide" && "ubuntu-nav-dropdown--wide",
@@ -134,16 +133,6 @@ export default function Header({ embedded = false, shell = false }) {
             <ul className="ubuntu-nav-dropdown__list" role="none">
               {links.map((link) => renderDropdownLink(link, testIdPrefix))}
             </ul>
-            <div className="ubuntu-nav-dropdown__separator" role="separator" />
-            <Link
-              to={basePath}
-              role="menuitem"
-              data-testid={`${testIdPrefix}-dropdown-view-all`}
-              className="ubuntu-nav-dropdown__link ubuntu-nav-dropdown__view-all"
-            >
-              <ViewAllIcon size={16} className="ubuntu-nav-dropdown__icon" aria-hidden />
-              <span className="ubuntu-nav-dropdown__label">{viewAllLabel}</span>
-            </Link>
           </div>
         </div>
       </div>
@@ -151,11 +140,10 @@ export default function Header({ embedded = false, shell = false }) {
   };
 
   const renderMobileAccordion = (key, item, links) => {
-    const { basePath, testId: testIdPrefix, viewAllLabel, label: title } = item;
+    const { testId: testIdPrefix, label: title } = item;
     const isOpen = !!openMobileSections[key];
     const sectionLinks = DROPDOWN_SECTION_LINKS[key] ?? links;
-    const sectionActive = isNavSectionActive(location.pathname, basePath, sectionLinks);
-    const ViewAllIcon = NAV_VIEW_ALL_ICON;
+    const sectionActive = isNavSectionActive(location.pathname, item.basePath, sectionLinks);
 
     const panelId = `nav-mobile-${testIdPrefix}`;
 
@@ -182,16 +170,6 @@ export default function Header({ embedded = false, shell = false }) {
             <ul className="ubuntu-nav-dropdown__list" role="none">
               {links.map((link) => renderDropdownLink(link, testIdPrefix, () => setMobileOpen(false)))}
             </ul>
-            <div className="ubuntu-nav-dropdown__separator" role="separator" />
-            <Link
-              to={basePath}
-              onClick={() => setMobileOpen(false)}
-              data-testid={`${testIdPrefix}-dropdown-view-all`}
-              className="ubuntu-nav-dropdown__link ubuntu-nav-dropdown__view-all"
-            >
-              <ViewAllIcon size={16} className="ubuntu-nav-dropdown__icon" aria-hidden />
-              <span className="ubuntu-nav-dropdown__label">{viewAllLabel}</span>
-            </Link>
           </div>
         )}
       </div>

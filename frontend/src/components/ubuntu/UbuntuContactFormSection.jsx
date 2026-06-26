@@ -356,7 +356,7 @@ export default function UbuntuContactFormSection({
       <p className="ubuntu-lead mt-4">{copy.lead}</p>
 
       {alternateCta && (
-        <div className="ubuntu-cta-row mt-6">
+        <div className="ubuntu-cta-row">
           <SiteNavLink href={alternateCta.href} primary showArrow={false}>
             {alternateCta.label}
           </SiteNavLink>

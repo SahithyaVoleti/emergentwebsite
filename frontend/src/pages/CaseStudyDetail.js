@@ -9,7 +9,7 @@ import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import caseStudies from "../data/caseStudies";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
-import TechStackRibbon from "../components/TechStackRibbon";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -81,7 +81,7 @@ export default function CaseStudyDetail() {
         belowContent={
           <div className="mt-8 max-w-xl">
             <FlatTechStackPanel title="Technology stack" intro="Stack used in this production test case.">
-              <TechStackRibbon items={cs.techStack} />
+              <TechStackLogoGrid items={cs.techStack} />
             </FlatTechStackPanel>
           </div>
         }
