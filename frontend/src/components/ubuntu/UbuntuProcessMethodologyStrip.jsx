@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 
 const STEP_INTERVAL_MS = 4000;
 
@@ -63,14 +65,8 @@ export default function UbuntuProcessMethodologyStrip({
     >
       <div className="ubuntu-container relative z-10 py-8 sm:py-10 md:py-12">
         <header className="max-w-3xl text-left">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {eyebrow}
-            </p>
-          )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title !mb-3">
-            {title}
-          </h2>
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${id}-heading`} className="!mb-3" title={title} />
           {lead && <p className="ubuntu-lead mt-0">{lead}</p>}
         </header>
 

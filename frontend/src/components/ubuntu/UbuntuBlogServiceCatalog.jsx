@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 import { getBlogCatalogByService, serviceArticlesSectionId } from "../../lib/blogByService";
 
 function ServiceArticleCard({ article }) {
@@ -60,13 +62,9 @@ export default function UbuntuBlogServiceCatalog({
       >
         <div className="ubuntu-container">
           <div className="mb-8 max-w-3xl md:mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-              {SECTION_LABEL.blog}
-            </p>
-            <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-              {title}
-            </h2>
-            {lead && <p className="ubuntu-lead mt-3 text-[#4a4a4a]">{lead}</p>}
+            <SectionEyebrow>{SECTION_LABEL.blog}</SectionEyebrow>
+            <SectionTitle id={`${id}-heading`} title={title} />
+            {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
           </div>
         </div>
       </section>

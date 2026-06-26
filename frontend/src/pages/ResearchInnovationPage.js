@@ -3,7 +3,8 @@ import PageHero from "../components/PageHero";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
-import { getSiteMockup } from "../data/siteMockups";
+import CaseStudiesVerticalSlider from "../components/ubuntu/CaseStudiesVerticalSlider";
+import caseStudies from "../data/caseStudies";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
 const RESEARCH_TOPICS = [
@@ -34,8 +35,6 @@ const RESEARCH_TOPICS = [
 ];
 
 export default function ResearchInnovationPage() {
-  const mockup = getSiteMockup("code");
-
   return (
     <SitePageMain>
       <PageHero
@@ -47,8 +46,8 @@ export default function ResearchInnovationPage() {
           href: "#page-contact",
           contactIntent: "consultation",
         }}
-        secondaryCTA={{ text: "View case studies", href: "/case-studies" }}
-        image={mockup.src}
+        secondaryCTA={{ text: "View test cases", href: "#test-cases" }}
+        illustrationKey="research"
       />
 
       <UbuntuPageSection
@@ -71,7 +70,7 @@ export default function ResearchInnovationPage() {
         <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {RESEARCH_TOPICS.map((topic) => (
             <li key={topic.title} className="border border-[#e5e5e5] bg-white p-5">
-              <h3 className="text-base font-semibold text-[#2d2d2d]">{topic.title}</h3>
+              <h3 className="text-base font-medium text-[#2d2d2d]">{topic.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{topic.desc}</p>
             </li>
           ))}
@@ -85,12 +84,17 @@ export default function ResearchInnovationPage() {
         </p>
       </UbuntuPageSection>
 
+      <CaseStudiesVerticalSlider
+        studies={caseStudies}
+        id="test-cases"
+        showLabel
+        lead="Review live-tested implementations by sector. Each case documents delivery scope, validation approach, and adaptation requirements for your environment."
+        viewAllHref={undefined}
+      />
+
       <PageStandardSections
-        pageKey="research"
+        pageKey="caseStudies"
         contactContext="Research & Innovation"
-        includeMethodology={false}
-        includeOutcomes
-        includeAssurance
         ctaOverrides={{
           title: "Next Step for research collaboration",
           description:

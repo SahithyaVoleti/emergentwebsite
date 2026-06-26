@@ -14,6 +14,8 @@ import {
   Cpu,
 } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 
 const ICON_BY_KEYWORD = [
   { match: /strategy|consulting/i, Icon: Compass },
@@ -59,14 +61,10 @@ export default function ScopeOfDeliveryGrid({
       <div className="ubuntu-container">
         <header className="ubuntu-scope-grid__header max-w-3xl">
           {eyebrow && (
-            <p className="ubuntu-scope-grid__eyebrow mb-2 text-xs font-semibold uppercase tracking-[0.12em]">
-              {eyebrow}
-            </p>
+            <SectionEyebrow className="ubuntu-scope-grid__eyebrow">{eyebrow}</SectionEyebrow>
           )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-            {title}
-          </h2>
-          {lead && <p className="ubuntu-lead mt-4 text-[#2d2d2d]">{lead}</p>}
+          <SectionTitle id={`${id}-heading`} title={title} />
+          {lead && <p className="ubuntu-lead mt-4">{lead}</p>}
         </header>
 
         <div className="ubuntu-scope-grid__panel">

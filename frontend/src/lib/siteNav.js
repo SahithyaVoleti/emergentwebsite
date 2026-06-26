@@ -21,7 +21,11 @@ export const industryNavLinks = industries.map((industry) => ({
 export const companyNavLinks = [
   { label: "About", href: "/about", headerLabel: "About Us" },
   { label: "Team", href: "/team", headerLabel: "Our Team" },
-  { label: "Case studies", href: "/case-studies", headerLabel: "Case Studies" },
+  {
+    label: "Research & Innovation",
+    href: "/research-innovation",
+    headerLabel: "Research & Innovation",
+  },
   { label: "Engagement", href: "/testimonials" },
   { label: "Partners", href: "/partners", headerLabel: "Technology Partners" },
   { label: "Security", href: "/security" },

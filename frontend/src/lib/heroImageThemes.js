@@ -28,6 +28,7 @@ export const LISTING_PAGE_HERO_IMAGES = {
   caseStudies: hq("photo-1460925895917-afdab827c52f"),
   /** Blog: engineering insights & editorial */
   blog: hq("photo-1517694712202-14dd9538aa97"),
+  research: hq("photo-1555949963-aa79dcee981c"),
   services: SERVICES_LANDING_HERO_IMAGE,
 };
 

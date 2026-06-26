@@ -11,6 +11,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { HOME_FEATURES } from "../../../data/homePageSections";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import { paletteAccentIndex } from "../../../lib/brandPalette";
 
 const ICONS = {
@@ -43,15 +45,9 @@ export default function UbuntuHomeFeatures({ config, items }) {
     >
       <div className="ubuntu-container">
         <div className="max-w-3xl text-left">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {eyebrow}
-            </p>
-          )}
-          <h2 id={`${sectionId}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-            {title}
-          </h2>
-          <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{lead}</p>
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${sectionId}-heading`} title={title} />
+          <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>
         </div>
 
         <dl className="mx-auto mt-8 grid max-w-none grid-cols-1 gap-x-8 gap-y-8 sm:mt-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">

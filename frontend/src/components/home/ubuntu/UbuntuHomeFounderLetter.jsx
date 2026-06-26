@@ -1,4 +1,6 @@
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import { getSiteMockup } from "../../../data/siteMockups";
 import {
   COMPANY_FOUNDED_LABEL,
@@ -18,10 +20,8 @@ export default function UbuntuHomeFounderLetter({ imagePosition = "left" }) {
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-        From leadership
-      </p>
-      <h2 className="ubuntu-section-title">A note on how we engage</h2>
+      <SectionEyebrow>From leadership</SectionEyebrow>
+      <SectionTitle title="A note on how we engage" />
       <p className="ubuntu-lead mt-4">{COMPANY_STARTUP_PITCH}</p>
       <p className="mt-4 text-sm leading-relaxed text-[#555]">
         {COMPANY_NAME} began operations on {COMPANY_FOUNDED_LABEL}. We work with early customer

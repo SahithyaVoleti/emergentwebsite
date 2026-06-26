@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import industries from "../../data/industries";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 import { paletteAccentIndex } from "../../lib/brandPalette";
 
 /**
@@ -22,13 +24,9 @@ export default function ServiceDetailIndustriesBand({
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">
-        {eyebrow && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">{eyebrow}</p>
-        )}
-        <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-          {title}
-        </h2>
-        {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{lead}</p>}
+        {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+        <SectionTitle id={`${id}-heading`} title={title} />
+        {lead && <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>}
 
         <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
           {displayIndustries.map((ind, index) => {

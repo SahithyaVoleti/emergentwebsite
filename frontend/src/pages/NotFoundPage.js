@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import SectionEyebrow from "../components/ubuntu/SectionEyebrow";
+import SectionTitle from "../components/ubuntu/SectionTitle";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 
 export default function NotFoundPage() {
@@ -6,11 +8,9 @@ export default function NotFoundPage() {
     <SitePageMain>
       <section className="ubuntu-section-block border-b border-[#d9d9d9] bg-white">
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-start justify-center py-16">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-            Not found
-          </p>
-          <h1 className="ubuntu-section-title text-[#2d2d2d]">Page not found</h1>
-          <p className="ubuntu-lead mt-4 max-w-xl text-[#2d2d2d]">
+          <SectionEyebrow>Not found</SectionEyebrow>
+          <SectionTitle as="h1" title="Page not found" />
+          <p className="ubuntu-lead mt-4 max-w-xl">
             The page you requested is not available. Use the links below to continue browsing.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">

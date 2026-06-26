@@ -31,9 +31,14 @@ export const STATIC_PAGE_META = {
       "Industry-specific AI engineering for commerce, healthcare, finance, education, manufacturing, sports, and property technology.",
   },
   "/case-studies": {
-    title: `Case Studies | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    title: `Production Test Cases | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
-      "Engineering showcases and delivery narratives from NeuralTrix AI pilot programs and scoped customer workstreams.",
+      "Production test cases catalog — now on Research & Innovation.",
+  },
+  "/research-innovation": {
+    title: `Research & Innovation | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    description:
+      "Research programs, innovation tracks, and production test cases for governed intelligent automation delivery.",
   },
   "/blog": {
     title: `Blog | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,

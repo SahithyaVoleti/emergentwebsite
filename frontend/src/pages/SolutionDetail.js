@@ -9,7 +9,6 @@ import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
-import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 import solutions from "../data/solutions";
@@ -117,7 +116,6 @@ export default function SolutionDetail() {
         }}
         beforeCta={
           <>
-            <RelatedCaseStudies />
             <TestimonialsSection title="Engagement principles for new partners" />
             <FAQSection faqs={solution.faqs} />
           </>

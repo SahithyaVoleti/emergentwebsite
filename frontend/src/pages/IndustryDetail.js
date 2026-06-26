@@ -8,7 +8,6 @@ import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import ServicesGrid4x4 from "../components/ubuntu/ServicesGrid4x4";
 import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import MethodologyFlowchart from "../components/MethodologyFlowchart";
-import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CategorizedTechStackSection from "../components/CategorizedTechStackSection";
 import industries from "../data/industries";
@@ -95,12 +94,6 @@ export default function IndustryDetail() {
           image={methodologyMockup.src}
           imageAlt={methodologyMockup.alt}
           belowContent={<MethodologyFlowchart steps={processSteps} />}
-        />
-
-        <RelatedCaseStudies
-          showLabel
-          industryFilter={industry.title}
-          title={`Production test cases in ${industry.title}`}
         />
 
         <ServicesGrid4x4

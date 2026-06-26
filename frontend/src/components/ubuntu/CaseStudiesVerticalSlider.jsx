@@ -3,9 +3,17 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import UbuntuLink from "./UbuntuLink";
-import { PALETTE, paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
+import { paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
 
 const SLIDE_VH = 85;
+
+const DEFAULT_SECTION_TITLE = {
+  before: "Production-ready",
+  accent: "test cases",
+  after: "by sector",
+};
 
 /**
  * Scroll-driven vertical stack: page scroll advances one case-study panel at a time
@@ -18,7 +26,7 @@ export default function CaseStudiesVerticalSlider({
   eyebrow = SECTION_LABEL.productionTestCases,
   title,
   lead,
-  viewAllHref = "/case-studies",
+  viewAllHref = "/research-innovation#test-cases",
   viewAllLabel = "View all test cases",
   className = "",
 }) {
@@ -27,12 +35,7 @@ export default function CaseStudiesVerticalSlider({
   const [reduceMotion, setReduceMotion] = useState(false);
   const count = studies.length;
 
-  const headingTitle =
-    title ?? (
-      <>
-        Production-ready <span style={{ color: PALETTE.regalNavy }}>test cases</span> by sector
-      </>
-    );
+  const headingTitle = title ?? DEFAULT_SECTION_TITLE;
 
   const headingLead =
     lead ??
@@ -103,10 +106,8 @@ export default function CaseStudiesVerticalSlider({
         <div className="ubuntu-container relative z-10 flex h-full flex-col">
           <div className="mb-6 flex flex-shrink-0 flex-col gap-4 md:mb-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              {showLabel && eyebrow && (
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">{eyebrow}</p>
-              )}
-              <h2 className="ubuntu-section-title">{headingTitle}</h2>
+              {showLabel && eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+              <SectionTitle as="h2" title={headingTitle} />
               <p className="ubuntu-lead mt-2 text-sm md:text-base">{headingLead}</p>
             </div>
             {viewAllHref && (

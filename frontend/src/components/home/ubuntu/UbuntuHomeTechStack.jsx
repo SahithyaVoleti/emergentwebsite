@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { HOME_TECH_STACK } from "../../../data/homePageSections";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import UbuntuHomeLink from "./UbuntuHomeLink";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import TechStackLogoGrid from "../../TechStackLogoGrid";
 import services from "../../../data/services";
 import {
@@ -54,10 +56,8 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
       mediaClassName="ubuntu-tech-stack__media"
       mediaSlot={techStackPanel}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-        {section.eyebrow}
-      </p>
-      <h2 className="ubuntu-section-title">{section.title}</h2>
+      <SectionEyebrow>{section.eyebrow}</SectionEyebrow>
+      <SectionTitle as="h2" title={section.title} />
       <p className="ubuntu-lead">{section.lead}</p>
 
       <div className="ubuntu-tech-stack-filters" role="tablist" aria-label="Service technology stacks">

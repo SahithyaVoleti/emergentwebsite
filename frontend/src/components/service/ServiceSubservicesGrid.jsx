@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 
 const MAX_DELIVERABLES = 8;
 
@@ -34,15 +36,9 @@ export default function ServiceSubservicesGrid({
     >
       <div className="ubuntu-container">
         <div className="mb-6 max-w-3xl sm:mb-8">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-              {eyebrow}
-            </p>
-          )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title !mb-2 text-[#2d2d2d]">
-            {sectionTitle}
-          </h2>
-          {lead && <p className="ubuntu-lead mt-0 text-[#4a4a4a]">{lead}</p>}
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${id}-heading`} className="!mb-2" title={sectionTitle} />
+          {lead && <p className="ubuntu-lead mt-0">{lead}</p>}
         </div>
 
         <div className="ubuntu-capability-grid">

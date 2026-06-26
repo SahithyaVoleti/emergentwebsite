@@ -1,4 +1,6 @@
 import UbuntuSectionShell from "./UbuntuSectionShell";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 
 /** Two-column copy band (challenge/solution, overview blocks). */
 export default function UbuntuSplitCopy({
@@ -15,21 +17,13 @@ export default function UbuntuSplitCopy({
     <UbuntuSectionShell id={id} variant={variant}>
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
-          {leftEyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {leftEyebrow}
-            </p>
-          )}
-          {leftTitle && <h2 className="ubuntu-section-title text-2xl">{leftTitle}</h2>}
+          {leftEyebrow && <SectionEyebrow>{leftEyebrow}</SectionEyebrow>}
+          {leftTitle && <SectionTitle as="h2" title={leftTitle} />}
           {leftBody && <p className="ubuntu-body mt-4">{leftBody}</p>}
         </div>
         <div>
-          {rightEyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {rightEyebrow}
-            </p>
-          )}
-          {rightTitle && <h2 className="ubuntu-section-title text-2xl">{rightTitle}</h2>}
+          {rightEyebrow && <SectionEyebrow>{rightEyebrow}</SectionEyebrow>}
+          {rightTitle && <SectionTitle as="h2" title={rightTitle} />}
           {rightBody && <p className="ubuntu-body mt-4">{rightBody}</p>}
         </div>
       </div>

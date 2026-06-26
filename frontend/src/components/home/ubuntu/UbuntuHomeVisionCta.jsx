@@ -1,8 +1,10 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HOME_VISION_CTA_2 } from "../../../data/homePageSections";
 import { getSiteMockup } from "../../../data/siteMockups";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 
 export default function UbuntuHomeVisionCta({
   mockup = getSiteMockup(HOME_VISION_CTA_2.mockupKey),
@@ -34,12 +36,8 @@ export default function UbuntuHomeVisionCta({
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
-      {section.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-          {section.eyebrow}
-        </p>
-      )}
-      <h2 className="ubuntu-section-title">{section.title}</h2>
+      {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
+      <SectionTitle as="h2" title={section.title} />
       <p className="ubuntu-lead">{section.body}</p>
       {bullets.length > 0 && (
         <ul className="ubuntu-bullet-list mt-4">

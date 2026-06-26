@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { HOME_ALERT } from "../../../data/homePageSections";
 import SectionPatternBackground from "../../SectionPatternBackground";
 import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import { usePatternSectionHover } from "../../../hooks/usePatternSectionHover";
 
 /** Compact engagement CTA for pairing beside the outcomes band. */
@@ -19,10 +21,8 @@ export default function UbuntuHomeEngagementPanel() {
     >
       <SectionPatternBackground variant="cta" />
       <div className="relative z-10 flex flex-1 flex-col justify-center px-6 sm:px-8 md:lg:px-10 xl:px-12">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-          {HOME_ALERT.eyebrow}
-        </p>
-        <h2 className="ubuntu-section-title text-2xl md:text-3xl">{HOME_ALERT.title}</h2>
+        <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
+        <SectionTitle as="h2" title={HOME_ALERT.title} />
         <p className="ubuntu-lead mt-4 text-base">{HOME_ALERT.body}</p>
         <div className="ubuntu-cta-row mt-6 flex-col items-stretch sm:flex-row sm:items-center">
           <Link to={HOME_ALERT.primaryCta.href} className="ubuntu-btn-primary text-center">

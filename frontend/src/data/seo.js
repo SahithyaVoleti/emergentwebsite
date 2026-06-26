@@ -33,6 +33,11 @@ const STATIC_PAGES = {
     title: `Production Test Cases | ${SITE_NAME}`,
     description: "Live-tested AI systems NeuralTrix built and validated as production-ready across industry sectors.",
   },
+  "/research-innovation": {
+    title: `Research & Innovation | ${SITE_NAME}`,
+    description:
+      "Research programs, innovation tracks, and production test cases for governed intelligent automation delivery.",
+  },
   "/about": {
     title: `About Us | ${SITE_NAME}`,
     description: "A senior-led firm delivering governed intelligent automation and application modernization for enterprise clients.",
@@ -60,10 +65,6 @@ const STATIC_PAGES = {
   "/blog": {
     title: `News & Media | ${SITE_NAME}`,
     description: "Technical articles and field notes from delivery programs.",
-  },
-  "/research-innovation": {
-    title: `Research & Innovation | ${SITE_NAME}`,
-    description: "Controlled experimentation on intelligent automation and application integration before production programs.",
   },
   "/privacy-policy": {
     title: `Privacy Policy | ${SITE_NAME}`,

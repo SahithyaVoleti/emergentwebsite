@@ -26,13 +26,11 @@ export const TOP_NAV = {
     testId: "industries",
     viewAllLabel: "View all industries",
   },
-  caseStudies: { label: "Test Cases", href: "/case-studies", testId: "case-studies" },
-  research: { label: "Research & Innovation", href: "/research-innovation", testId: "research-innovation" },
   company: {
     label: "Company",
     basePath: "/about",
     testId: "company",
-    viewAllLabel: "View all company",
+    viewAllLabel: "About us",
   },
 };
 
@@ -40,8 +38,6 @@ export const TOP_NAV_ORDER = [
   "services",
   "products",
   "industries",
-  "caseStudies",
-  "research",
   "company",
 ];
 
@@ -105,6 +101,11 @@ export const INDUSTRIES_NAV = industries.map((industry) => ({
 export const COMPANY_NAV = [
   { label: "About Us", href: "/about" },
   { label: "Leadership", href: "/team" },
+  {
+    label: "Research & Innovation",
+    href: "/research-innovation",
+    matchHrefs: ["/research-innovation", "/case-studies"],
+  },
   { label: "Engagement", href: "/testimonials" },
   { label: "Careers", href: "/careers" },
   { label: "Partners", href: "/partners" },
@@ -118,7 +119,6 @@ export const FOOTER_COLUMNS = [
       { label: "Services", href: "/services" },
       { label: "Platforms", href: "/solutions" },
       { label: "Industries", href: "/industries" },
-      { label: "Test Cases", href: "/case-studies" },
     ],
   },
   {
@@ -126,6 +126,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "About", href: "/about" },
       { label: "Leadership", href: "/team" },
+      { label: "Research & Innovation", href: "/research-innovation" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/#page-contact" },
     ],
@@ -133,8 +134,7 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Blog", href: "/blog" },
-      { label: "Research", href: "/research-innovation" },
+      { label: "News & Media", href: "/blog" },
       { label: "Engagement", href: "/testimonials" },
       { label: "Partners", href: "/partners" },
     ],
@@ -186,7 +186,10 @@ export function isNavSectionActive(pathname, basePath, links = []) {
   const base = basePath.replace(/\/$/, "") || "/";
   const path = pathname.replace(/\/$/, "") || "/";
   if (path === base || path.startsWith(`${base}/`)) return true;
-  return links.some((link) => isPathActive(pathname, link.href));
+  return links.some((link) => {
+    if (link.matchHrefs?.some((href) => isPathActive(pathname, href))) return true;
+    return isPathActive(pathname, link.href);
+  });
 }
 
 /** Secondary CTA labels for PageStandardSections by page key */
@@ -197,12 +200,12 @@ export const SECONDARY_CTA_BY_PAGE = {
   about: { label: "View leadership", href: "/team" },
   team: { label: "View careers", href: "/careers" },
   careers: { label: "View company", href: "/about" },
-  blog: { label: "View case studies", href: "/case-studies" },
+  blog: { label: "View test cases", href: "/research-innovation#test-cases" },
   caseStudies: { label: "View services", href: "/services" },
   detail: { label: "View services", href: "/services" },
   legal: { label: "Contact us", href: "#page-contact" },
   security: { label: "View platforms", href: "/solutions" },
-  testimonials: { label: "View case studies", href: "/case-studies" },
+  testimonials: { label: "View test cases", href: "/research-innovation#test-cases" },
   partners: { label: "View company", href: "/about" },
-  research: { label: "View platforms", href: "/solutions" },
+  research: { label: "View test cases", href: "#test-cases" },
 };

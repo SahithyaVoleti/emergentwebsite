@@ -1,5 +1,7 @@
 import UbuntuSplitLayout from "./ubuntu/UbuntuSplitLayout";
 import SiteNavLink from "./ubuntu/SiteNavLink";
+import SectionEyebrow from "./ubuntu/SectionEyebrow";
+import SectionTitle from "./ubuntu/SectionTitle";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -26,14 +28,12 @@ export default function CTASection({
       imageAlt={mockup.alt}
       imagePosition="right"
     >
-      {!hideLabel && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-          {SECTION_LABEL.contact}
-        </p>
-      )}
-      <h2 data-testid="cta-title" className="ubuntu-section-title">
-        {title || "Next Step for your enterprise AI program"}
-      </h2>
+      {!hideLabel && <SectionEyebrow>{SECTION_LABEL.contact}</SectionEyebrow>}
+      <SectionTitle
+        as="h2"
+        data-testid="cta-title"
+        title={title || "Next Step for your enterprise AI program"}
+      />
       <p className="ubuntu-lead">
         {description ||
           "Share your application landscape and priorities. We will outline service fit, pilot scope, and governance boundaries."}

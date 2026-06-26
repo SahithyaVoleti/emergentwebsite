@@ -1,6 +1,8 @@
 import { HOME_WORKFLOW } from "../../../data/homePageSections";
 import AnimatedSection from "../../AnimatedSection";
 import ArchTimelineHexIcon from "./ArchTimelineHexIcon";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 
 const STEP_COLORS = ["#6b6b6b", "#5c5c5c", "#c9a227", "#2d2d2d"];
 
@@ -23,15 +25,9 @@ export default function UbuntuHomeWorkflow({ config, steps }) {
       <div className="ubuntu-container">
         <AnimatedSection>
           <div className="max-w-3xl text-left">
-            {eyebrow && (
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                {eyebrow}
-              </p>
-            )}
-            <h2 id={`${sectionId}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-              {title}
-            </h2>
-            <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{lead}</p>
+            {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+            <SectionTitle id={`${sectionId}-heading`} title={title} />
+            <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>
           </div>
         </AnimatedSection>
 

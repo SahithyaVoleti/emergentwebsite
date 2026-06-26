@@ -5,6 +5,8 @@ import UbuntuHomeHeroStack from "./UbuntuHomeHeroStack";
 import UbuntuHomeStatsStrip from "./UbuntuHomeStatsStrip";
 import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import ServicesGrid4x4 from "../../ubuntu/ServicesGrid4x4";
 import { getHomeSectionImage } from "../../../data/homePageImages";
 import { getSiteMockup } from "../../../data/siteMockups";
@@ -57,10 +59,8 @@ export default function UbuntuHome() {
       imageAlt={engagementMockup.alt}
       imagePosition={nextPosition()}
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {HOME_ALERT.eyebrow}
-            </p>
-            <h2 className="ubuntu-section-title">{HOME_ALERT.title}</h2>
+            <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
+            <SectionTitle as="h2" title={HOME_ALERT.title} />
             <p className="ubuntu-lead">{HOME_ALERT.body}</p>
             <div className="ubuntu-cta-row">
               <SiteNavLink href={HOME_ALERT.primaryCta.href} primary showArrow={false}>
@@ -114,10 +114,8 @@ export default function UbuntuHome() {
         imageAlt={nextStepImage?.alt}
         imagePosition={nextPosition()}
       >
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-          {HOME_NEXT_STEP.eyebrow}
-        </p>
-        <h2 className="ubuntu-section-title">{HOME_NEXT_STEP.title}</h2>
+        <SectionEyebrow>{HOME_NEXT_STEP.eyebrow}</SectionEyebrow>
+        <SectionTitle as="h2" title={HOME_NEXT_STEP.title} />
         <p className="ubuntu-lead">{HOME_NEXT_STEP.lead}</p>
         <div className="ubuntu-cta-row flex-wrap">
           <SiteNavLink

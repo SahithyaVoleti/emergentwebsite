@@ -1,3 +1,7 @@
+import UbuntuLink from "./UbuntuLink";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
+
 /**
  * Standard homepage section container — ubuntu-section-block + ubuntu-container.
  * Prefer UbuntuListingSection or UbuntuPageSection when a full band header is needed.
@@ -37,17 +41,11 @@ export default function UbuntuSectionShell({
         {hasHeader && (
           <div className="mb-6 flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              {eyebrow && (
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                  {eyebrow}
-                </p>
-              )}
+              {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
               {title && (
-                <h2 id={id ? `${id}-heading` : undefined} className="ubuntu-section-title text-[#2d2d2d]">
-                  {title}
-                </h2>
+                <SectionTitle id={id ? `${id}-heading` : undefined} title={title} />
               )}
-              {lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{lead}</p>}
+              {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
             </div>
             {headerAction}
           </div>

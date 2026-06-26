@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { SECTION_LABEL } from "../data/sectionLabels";
 import TechStackLogoGrid from "./TechStackLogoGrid";
+import SectionEyebrow from "./ubuntu/SectionEyebrow";
+import SectionTitle from "./ubuntu/SectionTitle";
 
 const DEFAULT_CATEGORY_DESC =
   "Representative tools for scoping and integration planning; selection follows your standards and procurement rules.";
@@ -38,11 +40,7 @@ export function FlatTechStackPanel({
     >
       <div className="h-1 shrink-0 bg-[#5c5c5c]" aria-hidden />
       <div className="border-b border-[#e5e5e5] bg-white px-5 py-4 sm:px-6 sm:py-5">
-        {eyebrow ? (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-            {eyebrow}
-          </p>
-        ) : null}
+        {eyebrow ? <SectionEyebrow>{eyebrow}</SectionEyebrow> : null}
         <h3 className="text-sm font-medium text-[#2d2d2d]">{title}</h3>
         {intro ? (
           <p className="mt-3 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
@@ -146,11 +144,9 @@ export default function CategorizedTechStackSection({
     >
       <div className="ubuntu-container">
         <div className="mb-10 max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-            {eyebrow}
-          </p>
+          <SectionEyebrow>{eyebrow}</SectionEyebrow>
           {typeof title === "string" ? (
-            <h2 className="ubuntu-section-title">{title}</h2>
+            <SectionTitle title={title} />
           ) : (
             title
           )}

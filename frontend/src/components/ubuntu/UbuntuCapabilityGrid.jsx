@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 
 function splitItems(items = []) {
   const mid = Math.ceil(items.length / 2);
@@ -67,15 +69,9 @@ export default function UbuntuCapabilityGrid({
     <section id={id} className={sectionClass} aria-labelledby={`${id}-heading`}>
       <div className="ubuntu-container">
         <div className="max-w-3xl text-left">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {eyebrow}
-            </p>
-          )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-            {title}
-          </h2>
-          {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{lead}</p>}
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${id}-heading`} title={title} />
+          {lead && <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>}
         </div>
 
         <div className="ubuntu-capability-grid mt-8">

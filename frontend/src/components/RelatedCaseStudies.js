@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import UbuntuSectionShell from "./ubuntu/UbuntuSectionShell";
 import UbuntuLink from "./ubuntu/UbuntuLink";
+import SectionEyebrow from "./ubuntu/SectionEyebrow";
+import SectionTitle from "./ubuntu/SectionTitle";
 import caseStudies from "../data/caseStudies";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -25,13 +27,13 @@ export default function RelatedCaseStudies({
       <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div className="max-w-3xl">
           {showLabel && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {SECTION_LABEL.productionTestCases}
-            </p>
+            <SectionEyebrow>{SECTION_LABEL.productionTestCases}</SectionEyebrow>
           )}
-          <h2 className="ubuntu-section-title">{title || "Related production test cases"}</h2>
+          <SectionTitle
+            title={title || "Related production test cases"}
+          />
         </div>
-        <UbuntuLink to="/case-studies" muted data-testid="view-all-case-studies">
+        <UbuntuLink to="/research-innovation#test-cases" muted data-testid="view-all-case-studies">
           View all test cases
         </UbuntuLink>
       </div>

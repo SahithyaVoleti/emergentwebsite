@@ -1,6 +1,8 @@
-﻿import { HOME_PHILOSOPHY } from "../../../data/homePageSections";
+import { HOME_PHILOSOPHY } from "../../../data/homePageSections";
 import { getSiteMockup } from "../../../data/siteMockups";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 
 export default function UbuntuHomePhilosophy({
   config,
@@ -19,12 +21,8 @@ export default function UbuntuHomePhilosophy({
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
     >
-      {section.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-          {section.eyebrow}
-        </p>
-      )}
-      <h2 className="ubuntu-section-title">{section.title}</h2>
+      {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
+      <SectionTitle as="h2" title={section.title} />
       <p className="ubuntu-lead">{section.lead}</p>
       <ul className="mt-6 space-y-3">
         {(section.bullets ?? []).map((bullet) => (

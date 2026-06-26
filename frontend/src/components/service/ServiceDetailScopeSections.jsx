@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { FileText, Minus, Plus } from "lucide-react";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 
 function useReveal() {
   const ref = useRef(null);
@@ -64,12 +66,8 @@ export default function ServicePilotOverviewSection({ pilot }) {
             {...reveal(0)}
             className="service-pilot-overview__sidebar lg:col-span-4 lg:sticky lg:top-24 lg:self-start"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-              Pilot snapshot
-            </p>
-            <h2 id="pilot-overview-heading" className="ubuntu-section-title text-[#111]">
-              Who this track is for
-            </h2>
+            <SectionEyebrow>Pilot snapshot</SectionEyebrow>
+            <SectionTitle id="pilot-overview-heading" title="Who this track is for" />
             <p className="ubuntu-lead mt-3 text-[#333]">{pilot.idealFor}</p>
 
             <div className="mt-6 border border-[#e5e5e5] bg-white p-5 sm:p-6">

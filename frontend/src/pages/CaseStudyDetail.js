@@ -22,8 +22,8 @@ export default function CaseStudyDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Test case not found</h1>
-          <Link to="/case-studies" className="mt-4 text-[#d1511f] hover:underline">
-            Back to case studies
+          <Link to="/research-innovation#test-cases" className="mt-4 text-[#d1511f] hover:underline">
+            Back to test cases
           </Link>
         </div>
       </SitePageMain>
@@ -40,7 +40,7 @@ export default function CaseStudyDetail() {
         title={cs.heroTitle}
         description={cs.heroDesc}
         primaryCTA={{ text: "Discuss this pattern", href: "#page-contact" }}
-        secondaryCTA={{ text: "All production test cases", href: "/case-studies" }}
+        secondaryCTA={{ text: "All production test cases", href: "/research-innovation#test-cases" }}
         image={cs.heroImage}
       />
 

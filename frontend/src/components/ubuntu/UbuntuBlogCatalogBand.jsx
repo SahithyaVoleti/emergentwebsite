@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
+
 function BlogFeaturedCard({ post }) {
   return (
     <Link
@@ -81,14 +84,8 @@ export default function UbuntuBlogCatalogBand({
       <div className="ubuntu-container">
         <div className="mb-8 flex flex-col gap-4 md:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl text-left">
-            {eyebrow && (
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                {eyebrow}
-              </p>
-            )}
-            <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-              {title}
-            </h2>
+            {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+            <SectionTitle id={`${id}-heading`} title={title} />
             {lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{lead}</p>}
           </div>
         </div>

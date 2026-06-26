@@ -74,12 +74,19 @@ describe("siteNav", () => {
     }
   });
 
-  it("footer includes primary offering and industry hub links", () => {
+  it("footer includes primary offering hub links", () => {
     const hrefs = collectHrefs(FOOTER_COLUMNS);
     expect(hrefs).toContain("/services");
     expect(hrefs).toContain("/solutions");
     expect(hrefs).toContain("/industries");
-    expect(hrefs).toContain("/case-studies");
+    expect(hrefs).toContain("/research-innovation");
+  });
+
+  it("company nav includes research and innovation", () => {
+    const labels = COMPANY_NAV.map((item) => item.label);
+    const hrefs = COMPANY_NAV.map((item) => item.href);
+    expect(labels).toContain("Research & Innovation");
+    expect(hrefs).toContain("/research-innovation");
   });
 
   it("uses known static routes for company and footer links", () => {
@@ -94,8 +101,8 @@ describe("siteNav", () => {
       "/services",
       "/solutions",
       "/industries",
-      "/case-studies",
       "/research-innovation",
+      "/case-studies",
       "/privacy-policy",
       "/terms-and-conditions",
       "/legal-templates",

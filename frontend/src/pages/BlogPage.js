@@ -28,7 +28,7 @@ export default function BlogPage() {
 
       <UbuntuBlogServiceCatalog
         title="Articles by service line"
-        lead="Related articles previously shown on service, industry, solution, and test case pages are published here, grouped by the service offerings they support."
+        lead="Technical and operational notes grouped by service offering, with deep links to each service-line section."
       />
 
       <PageStandardSections pageKey="blog" contactContext="Blog Page" />

@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 import UbuntuHomeLink from "../home/ubuntu/UbuntuHomeLink";
 import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
 import { SECTION_LABEL } from "../../data/sectionLabels";
@@ -39,10 +41,8 @@ export default function TechnicalFoundationSplitSection({
       mediaClassName="ubuntu-tech-foundation-cta__media"
       mediaSlot={<TechFoundationCtaMedia techNames={techNames} />}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-        {eyebrow}
-      </p>
-      <h2 className="ubuntu-section-title">{title}</h2>
+      <SectionEyebrow>{eyebrow}</SectionEyebrow>
+      <SectionTitle as="h2" title={title} />
       <p className="ubuntu-lead">{lead}</p>
       <div className="ubuntu-cta-row">
         <Link to={primaryHref} className="ubuntu-btn-primary">

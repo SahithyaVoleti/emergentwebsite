@@ -69,14 +69,14 @@ export default function LegalTemplatesPage() {
               </a>
             </article>
 
-            <h3 className="ubuntu-section-title mb-5 text-xl">Jurisdiction clause templates</h3>
+            <h3 className="mb-5 text-lg font-medium text-[#2d2d2d]">Jurisdiction clause templates</h3>
             <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2">
               {termsTemplates.map((item) => (
                 <TemplateCard key={item.file} item={item} />
               ))}
             </div>
 
-            <h3 className="ubuntu-section-title mb-5 text-xl">Privacy request templates</h3>
+            <h3 className="mb-5 text-lg font-medium text-[#2d2d2d]">Privacy request templates</h3>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {privacyTemplates.map((item) => (
                 <TemplateCard key={item.file} item={item} />

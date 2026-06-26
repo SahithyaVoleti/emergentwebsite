@@ -1,5 +1,7 @@
 import UbuntuLink from "./UbuntuLink";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 import { useSectionMediaPosition } from "./SectionMediaContext";
 
 function SectionCopy({
@@ -14,10 +16,8 @@ function SectionCopy({
 }) {
   return (
     <>
-      {eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">{eyebrow}</p>
-      )}
-      {title && <h2 className="ubuntu-section-title">{title}</h2>}
+      {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+      {title && <SectionTitle as="h2" title={title} />}
       {lead && <p className="ubuntu-lead">{lead}</p>}
       {body && <p className="ubuntu-body mb-4">{body}</p>}
       {bullets.length > 0 && (

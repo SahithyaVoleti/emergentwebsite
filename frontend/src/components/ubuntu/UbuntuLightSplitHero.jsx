@@ -156,7 +156,7 @@ export default function UbuntuLightSplitHero({
             .filter(Boolean)
             .join(" ")}
         >
-          <div className="ubuntu-hero-transformation__content">
+          <div className="ubuntu-hero-transformation__intro">
             {badge && (
               <p className="ubuntu-hero-transformation__badge">
                 <Sparkles size={14} aria-hidden className="ubuntu-hero-transformation__badge-icon" />
@@ -173,32 +173,36 @@ export default function UbuntuLightSplitHero({
             {description && (
               <p className="ubuntu-hero-transformation__lead ubuntu-lead">{description}</p>
             )}
-
-            {features.length > 0 && (
-              <ul className="ubuntu-hero-transformation__features" aria-label="Core capabilities">
-                {features.map(({ icon, label }) => {
-                  const Icon = FEATURE_ICONS[icon] ?? Bot;
-                  return (
-                    <li key={label} className="ubuntu-hero-transformation__feature">
-                      <span className="ubuntu-hero-transformation__feature-icon-wrap" aria-hidden>
-                        <Icon size={20} className="ubuntu-hero-transformation__feature-icon" />
-                      </span>
-                      <span className="ubuntu-hero-transformation__feature-label">{label}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-
-            {(primaryCTA || secondaryCTA) && (
-              <div className="ubuntu-hero-transformation__cta ubuntu-cta-row">
-                {renderCta(primaryCTA, true)}
-                {renderCta(secondaryCTA, false)}
-              </div>
-            )}
           </div>
 
           {showMedia ? <HeroMedia media={media} /> : null}
+
+          {(features.length > 0 || primaryCTA || secondaryCTA) && (
+            <div className="ubuntu-hero-transformation__actions">
+              {features.length > 0 && (
+                <ul className="ubuntu-hero-transformation__features" aria-label="Core capabilities">
+                  {features.map(({ icon, label }) => {
+                    const Icon = FEATURE_ICONS[icon] ?? Bot;
+                    return (
+                      <li key={label} className="ubuntu-hero-transformation__feature">
+                        <span className="ubuntu-hero-transformation__feature-icon-wrap" aria-hidden>
+                          <Icon size={20} className="ubuntu-hero-transformation__feature-icon" />
+                        </span>
+                        <span className="ubuntu-hero-transformation__feature-label">{label}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+
+              {(primaryCTA || secondaryCTA) && (
+                <div className="ubuntu-hero-transformation__cta ubuntu-cta-row">
+                  {renderCta(primaryCTA, true)}
+                  {renderCta(secondaryCTA, false)}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 import SiteNavLink from "./SiteNavLink";
 import MockupFrame from "./MockupFrame";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -344,18 +346,13 @@ export default function UbuntuContactFormSection({
       mediaClassName="ubuntu-contact-mockup__media"
       mediaSlot={mockupPanel}
     >
-      {copy.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-          {copy.eyebrow}
-        </p>
-      )}
-      <h2
+      {copy.eyebrow && <SectionEyebrow>{copy.eyebrow}</SectionEyebrow>}
+      <SectionTitle
         id={`${id}-heading`}
         data-testid={`${testIdPrefix}-heading`}
-        className="ubuntu-section-title"
-      >
-        {copy.title}
-      </h2>
+        as="h2"
+        title={copy.title}
+      />
       <p className="ubuntu-lead mt-4">{copy.lead}</p>
 
       {alternateCta && (

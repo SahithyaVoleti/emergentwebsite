@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { getNavDropdownIcon, NAV_VIEW_ALL_ICON } from "../data/navDropdownIcons";
 import { useSiteNavScroll } from "../hooks/useSiteNavScroll";
-import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
-import SectionPatternBackground from "./SectionPatternBackground";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
   BRAND_LOGO_ALT,
@@ -49,7 +47,6 @@ export default function Header({ embedded = false, shell = false }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
   const isNavCentered = useSiteNavScroll(shell);
-  const { sectionRef: navRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
 
   const demoHref = contactFormTo(
     location.pathname,
@@ -246,7 +243,8 @@ export default function Header({ embedded = false, shell = false }) {
     isSiteNav && "ubuntu-chrome-header--site-nav",
     shell && "ubuntu-chrome-header--fixed",
     shell && !isNavCentered && "ubuntu-chrome-header--at-top",
-    shell && isNavCentered && "ubuntu-chrome-header--centered ubuntu-chrome-header--pattern",
+    shell && isNavCentered && "ubuntu-chrome-header--centered",
+    shell && mobileOpen && isNavCentered && "ubuntu-chrome-header--menu-open",
     embedded && !shell && "sticky top-0 z-[100]",
     !isSiteNav && "sticky top-0 z-[100]",
   ]
@@ -255,7 +253,14 @@ export default function Header({ embedded = false, shell = false }) {
 
   const bar = (
     <>
-      <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div
+        className={[
+          "ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8",
+          shell && isNavCentered && "ubuntu-chrome-header__bar--compact",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
         <Link
           to="/"
           data-testid="header-logo"
@@ -282,7 +287,15 @@ export default function Header({ embedded = false, shell = false }) {
           />
         </Link>
 
-        <nav className="mx-2 hidden flex-1 items-center justify-center xl:flex" aria-label="Main">
+        <nav
+          className={[
+            "mx-2 hidden items-center justify-center xl:flex",
+            shell && isNavCentered ? "flex-none" : "flex-1",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          aria-label="Main"
+        >
           <div className="flex items-center gap-4 xl:gap-5">
             {TOP_NAV_ORDER.map(renderDesktopNavItem)}
           </div>
@@ -334,14 +347,7 @@ export default function Header({ embedded = false, shell = false }) {
 
   if (embedded || shell) {
     return (
-      <header
-        ref={shell ? navRef : undefined}
-        data-testid="header"
-        className={headerClass}
-        onPointerMove={shell && isNavCentered ? onPointerMove : undefined}
-        onPointerLeave={shell && isNavCentered ? onPointerLeave : undefined}
-      >
-        {shell && isNavCentered && <SectionPatternBackground variant="nav" />}
+      <header data-testid="header" className={headerClass}>
         {bar}
       </header>
     );

@@ -103,7 +103,7 @@ export default function BlogDetail() {
                       <h2
                         key={i}
                         id={`heading-${headingIndex}`}
-                        className="ubuntu-section-title mt-10 scroll-mt-24 text-2xl first:mt-0"
+                        className="mt-10 scroll-mt-24 text-xl font-medium text-[#2d2d2d] first:mt-0"
                       >
                         {block.text}
                       </h2>

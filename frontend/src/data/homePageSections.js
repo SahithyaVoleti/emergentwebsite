@@ -84,7 +84,7 @@ const HOME_DELIVERY_CAPABILITIES = [
     description:
       "Live and sandbox testing against named production agents—Agent Vidya, Agent Arogya, and sector programs—before we mark a build ready.",
     icon: "platform",
-    href: "/case-studies",
+    href: "/research-innovation#test-cases",
   },
   {
     name: "Sector-aware controls",
@@ -276,11 +276,11 @@ export const HOME_PHILOSOPHY = {
 
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
-  eyebrow: "Industry ready agents",
-  title: "Production-validated intelligent automation",
-  lead: "Named agents—Agent Vidya, Agent Arogya, Agent Kavacha, and more—built inside sector applications, tested live, and validated for production. Includes customizable agent platforms for faster rollout.",
-  viewAllHref: "/case-studies",
-  viewAllLabel: "View all agents",
+  eyebrow: "Platforms",
+  title: "Solution accelerators for enterprise applications",
+  lead: "Pre-built modules for deployment inside CRM, ERP, internal tools, and customer applications—derived from production delivery programs.",
+  viewAllHref: "/solutions",
+  viewAllLabel: "View all accelerators",
 };
 
 /** @deprecated Use HOME_SERVICES_GRID + HOME_SOLUTIONS_SLIDER */

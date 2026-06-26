@@ -14,6 +14,8 @@ import blogArticles from "../../../data/blog";
 import { BRAND_LOGO_SYMBOL } from "../../../data/brandAssets";
 import { HOME_BLOGS_BAND, HOME_DOMAINS } from "../../../data/homePageSections";
 import UbuntuLink from "../../ubuntu/UbuntuLink";
+import SectionEyebrow from "../../ubuntu/SectionEyebrow";
+import SectionTitle from "../../ubuntu/SectionTitle";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 import { paletteAccentIndex } from "../../../lib/brandPalette";
 
@@ -107,12 +109,8 @@ export function UbuntuHomeIndustries() {
       aria-labelledby={`${HOME_DOMAINS.id}-heading`}
     >
       <div className="ubuntu-container">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-          {HOME_DOMAINS.eyebrow}
-        </p>
-        <h2 id={`${HOME_DOMAINS.id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-          {HOME_DOMAINS.title}
-        </h2>
+        <SectionEyebrow>{HOME_DOMAINS.eyebrow}</SectionEyebrow>
+        <SectionTitle id={`${HOME_DOMAINS.id}-heading`} title={HOME_DOMAINS.title} />
         {HOME_DOMAINS.lead && (
           <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{HOME_DOMAINS.lead}</p>
         )}
@@ -184,12 +182,8 @@ export function UbuntuHomeBlogs({ config }) {
       <div className="ubuntu-container">
         <div className="mb-8 flex flex-col gap-4 md:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl text-left">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-              {band.eyebrow}
-            </p>
-            <h2 id={`${band.id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
-              {band.title}
-            </h2>
+            {band.eyebrow && <SectionEyebrow>{band.eyebrow}</SectionEyebrow>}
+            <SectionTitle id={`${band.id}-heading`} title={band.title} />
             {band.lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{band.lead}</p>}
           </div>
           {band.viewAllHref && (

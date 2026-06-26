@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
@@ -54,14 +56,8 @@ export default function SolutionsAcceleratorCarousel({
     >
       <div className="ubuntu-container">
         <div className="mb-8 max-w-3xl md:mb-10">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-              {eyebrow}
-            </p>
-          )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title">
-            {title}
-          </h2>
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${id}-heading`} title={title} />
           {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
         </div>
 

@@ -3,7 +3,6 @@ import PageHero from "../components/PageHero";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import ServiceDetailHomeLayout from "../components/service/ServiceDetailHomeLayout";
 import services from "../data/services";
-import serviceCaseStudies from "../data/serviceCaseStudies";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -37,7 +36,6 @@ export default function ServiceDetail() {
 
       <ServiceDetailHomeLayout
         service={service}
-        cases={serviceCaseStudies[service.slug]}
         contactContext={service.title}
         ctaOverrides={{
           title: `Next step for ${service.catalogTitle ?? service.title}`,

@@ -10,6 +10,7 @@ import {
 
 const ILLUSTRATION_KEY_IMAGES = {
   blog: LISTING_PAGE_HERO_IMAGES.blog,
+  research: LISTING_PAGE_HERO_IMAGES.research,
   industries: LISTING_PAGE_HERO_IMAGES.industries,
   caseStudies: LISTING_PAGE_HERO_IMAGES.caseStudies,
   solutions: LISTING_PAGE_HERO_IMAGES.solutions,
@@ -20,6 +21,7 @@ const ILLUSTRATION_KEY_IMAGES = {
 
 const ILLUSTRATION_KEY_MOCKUPS = {
   blog: "chat",
+  research: "pipeline",
   industries: "cloud",
   caseStudies: "dashboard",
   solutions: "pipeline",

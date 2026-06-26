@@ -4,6 +4,8 @@ import { Calendar, Layers, Server } from "lucide-react";
 import { getTechFoundationIcon } from "../../lib/techFoundationIcons";
 import MethodologyFlowchart from "../MethodologyFlowchart";
 import SectionPatternBackground from "../SectionPatternBackground";
+import SectionEyebrow from "../ubuntu/SectionEyebrow";
+import SectionTitle from "../ubuntu/SectionTitle";
 import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
 
 function useReveal() {
@@ -54,12 +56,11 @@ export function SolutionOverviewSection({ solution }) {
     >
       <div ref={ref} className="ubuntu-container">
         <motion.div {...reveal(0)} className="mb-6 max-w-3xl sm:mb-8">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-            Overview
-          </p>
-          <h2 id="solution-overview-heading" className="ubuntu-section-title text-[#111]">
-            {solution.title} accelerator scope
-          </h2>
+          <SectionEyebrow>Overview</SectionEyebrow>
+          <SectionTitle
+            id="solution-overview-heading"
+            title={`${solution.title} accelerator scope`}
+          />
         </motion.div>
 
         <motion.div
@@ -200,12 +201,11 @@ export function SolutionPilotTimeline({ weeks }) {
     >
       <div ref={ref} className="ubuntu-container">
         <motion.div {...reveal(0)} className="max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#666]">
-            Pilot package
-          </p>
-          <h2 id="pilot-package-heading" className="ubuntu-section-title text-[#111]">
-            Typical 6–8 week accelerator pilot
-          </h2>
+          <SectionEyebrow>Pilot package</SectionEyebrow>
+          <SectionTitle
+            id="pilot-package-heading"
+            title="Typical 6–8 week accelerator pilot"
+          />
           <p className="ubuntu-lead mt-3 text-[#333]">
             Exact scope depends on integration depth. Slack, Teams, and SOC 2 alignment are
             available in pilot scope—not assumed day one.
@@ -237,12 +237,11 @@ export function SolutionMethodologySection({ steps }) {
       <SectionPatternBackground variant="cta" />
       <div ref={ref} className="ubuntu-container relative z-10">
         <motion.div {...reveal(0)} className="max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
-            Methodology
-          </p>
-          <h2 id="solution-methodology-heading" className="ubuntu-section-title">
-            Methodology for solution accelerator deployment
-          </h2>
+          <SectionEyebrow>Methodology</SectionEyebrow>
+          <SectionTitle
+            id="solution-methodology-heading"
+            title="Methodology for solution accelerator deployment"
+          />
           <p className="ubuntu-lead mt-3">
             Connect, configure, validate, and hand over—with explicit checkpoints.
           </p>

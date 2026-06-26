@@ -6,6 +6,8 @@ import UbuntuLink from "./UbuntuLink";
 import ProductCardHeading from "./ProductCardHeading";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import { paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 
 /**
  * Shared horizontal carousel for services, solutions, or similar catalog items.
@@ -54,12 +56,8 @@ export default function ProductHorizontalSlider({
     >
       <div className="ubuntu-container">
         <div className="mb-8 max-w-3xl md:mb-10">
-          {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">{eyebrow}</p>
-          )}
-          <h2 id={`${id}-heading`} className="ubuntu-section-title">
-            {title}
-          </h2>
+          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+          <SectionTitle id={`${id}-heading`} title={title} />
           {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
         </div>
 

@@ -1,6 +1,7 @@
 import MockupFrame from "./MockupFrame";
 import SectionPatternBackground from "../SectionPatternBackground";
 import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
+import { splitLayoutContentAtTitle } from "../../lib/splitLayoutContent";
 
 export default function UbuntuSplitLayout({
   image,
@@ -36,6 +37,7 @@ export default function UbuntuSplitLayout({
 
   const imageFirst = imagePosition === "left";
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
+  const { intro, body, structured } = splitLayoutContentAtTitle(children);
 
   const media = mediaSlot ? (
     <div className={["ubuntu-split__media", mediaClassName].filter(Boolean).join(" ")}>
@@ -47,7 +49,42 @@ export default function UbuntuSplitLayout({
     </div>
   ) : null;
 
-  const content = <div className="ubuntu-split__content">{children}</div>;
+  const splitClass = [
+    "ubuntu-split",
+    structured && "ubuntu-split--structured",
+    imageFirst ? "ubuntu-split--image-left" : "ubuntu-split--image-right",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const introNode =
+    structured && intro?.length > 0 ? (
+      <div className="ubuntu-split__intro">{intro}</div>
+    ) : null;
+
+  const bodyNode = structured ? (
+    body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null
+  ) : (
+    <div className="ubuntu-split__content">{children}</div>
+  );
+
+  const splitChildren = structured ? (
+    <>
+      {introNode}
+      {media}
+      {bodyNode}
+    </>
+  ) : imageFirst ? (
+    <>
+      {media}
+      {bodyNode}
+    </>
+  ) : (
+    <>
+      {bodyNode}
+      {media}
+    </>
+  );
 
   return (
     <section
@@ -60,21 +97,7 @@ export default function UbuntuSplitLayout({
     >
       {isPatternSection && <SectionPatternBackground variant={patternVariant} />}
       <div className="ubuntu-container relative z-10">
-        <div
-          className={`ubuntu-split ${imageFirst ? "ubuntu-split--image-left" : "ubuntu-split--image-right"}`}
-        >
-          {imageFirst ? (
-            <>
-              {media}
-              {content}
-            </>
-          ) : (
-            <>
-              {content}
-              {media}
-            </>
-          )}
-        </div>
+        <div className={splitClass}>{splitChildren}</div>
         {belowContent && <div className="ubuntu-split__below">{belowContent}</div>}
       </div>
     </section>

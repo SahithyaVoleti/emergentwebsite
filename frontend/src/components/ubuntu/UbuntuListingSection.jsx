@@ -1,4 +1,6 @@
 import UbuntuLink from "./UbuntuLink";
+import SectionEyebrow from "./SectionEyebrow";
+import SectionTitle from "./SectionTitle";
 
 /**
  * Homepage-style section shell for listing/catalog content (Coverage bands).
@@ -36,17 +38,11 @@ export default function UbuntuListingSection({
       <div className="ubuntu-container">
         <div className="mb-6 flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            {eyebrow && (
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                {eyebrow}
-              </p>
-            )}
+            {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
             {title && (
-              <h2 id={id ? `${id}-heading` : undefined} className="ubuntu-section-title text-[#2d2d2d]">
-                {title}
-              </h2>
+              <SectionTitle id={id ? `${id}-heading` : undefined} title={title} />
             )}
-            {lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{lead}</p>}
+            {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
           </div>
           {action}
         </div>
