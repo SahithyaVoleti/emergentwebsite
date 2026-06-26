@@ -57,7 +57,7 @@ export default function UbuntuHome() {
       imageAlt={engagementMockup.alt}
       imagePosition={nextPosition()}
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
               {HOME_ALERT.eyebrow}
             </p>
             <h2 className="ubuntu-section-title">{HOME_ALERT.title}</h2>
@@ -114,7 +114,7 @@ export default function UbuntuHome() {
         imageAlt={nextStepImage?.alt}
         imagePosition={nextPosition()}
       >
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
           {HOME_NEXT_STEP.eyebrow}
         </p>
         <h2 className="ubuntu-section-title">{HOME_NEXT_STEP.title}</h2>

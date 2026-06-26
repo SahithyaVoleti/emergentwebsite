@@ -20,40 +20,40 @@ export const HOME_PAGE_LAYOUT = [
 ];
 
 export const HOME_HERO = {
-  badge: "AI agents & app modernization",
-  titleBefore: "We build",
-  titleAccent: "AI agents",
-  titleAfter: "and turn your apps into AI-powered software",
-  lead: "NeuralTrix creates intelligent agents for business applications—and modernizes the software you already run—across healthcare, finance, retail, education, manufacturing, and more.",
+  badge: "Enterprise AI & application services",
+  titleBefore: "Enterprise",
+  titleAccent: "AI delivery",
+  titleAfter: "and application modernization at scale",
+  lead: "NeuralTrix delivers intelligent automation, generative AI, and application modernization programs—integrated with CRM, ERP, and line-of-business systems across regulated and operational environments.",
   features: [
     { icon: "bot", label: "AI agents" },
     { icon: "layers", label: "Intelligent integration" },
     { icon: "brain", label: "Advanced AI models" },
-    { icon: "trending-up", label: "Scalable impact" },
+    { icon: "trending-up", label: "Measurable outcomes" },
   ],
-  primaryCta: { label: "See AI agent services", href: "/services/ai-agents" },
+  primaryCta: { label: "View service offerings", href: "/#services-grid" },
   valueDeliver: [
-    { icon: "heart", label: "Enhanced user experience" },
+    { icon: "heart", label: "User-centered design" },
     { icon: "settings", label: "Operational excellence" },
     { icon: "bar-chart", label: "Data-driven decisions" },
-    { icon: "box", label: "Future-ready products" },
+    { icon: "box", label: "Sustainable architecture" },
   ],
   /** @deprecated kept for any legacy references */
-  title: "We build AI agents and turn your apps into AI-powered software",
-  secondaryCta: { label: "How we modernize apps", href: "/services/custom-software" },
+  title: "Enterprise AI delivery and application modernization",
+  secondaryCta: { label: "Application modernization", href: "/services/custom-software" },
 };
 
 export const HOME_STARTUP_STATS = [
   { value: "AI agents", label: "Built for real applications" },
   { value: "10+", label: "Industries we work in" },
-  { value: "2 tracks", label: "New agents & app modernization" },
-  { value: "Pilot-first", label: "Prove value before you scale" },
+  { value: "2 tracks", label: "Intelligent automation & modernization" },
+  { value: "Governed pilots", label: "Measured scope before scale-up" },
 ];
 
 export const HOME_ALERT = {
   eyebrow: "Engagement",
-  title: "How we put AI inside your software",
-  body: "We study how your teams use existing applications, design agents for those workflows, and ship AI features people can rely on—not demos that sit on the shelf.",
+  title: "Methodology for embedding AI in enterprise applications",
+  body: "This methodology assesses application workflows, designs governed intelligent automation, and delivers production capabilities with defined acceptance criteria.",
   primaryCta: { label: "About us", href: "/about" },
   secondaryCta: { label: "Explore services →", href: "/#services-grid" },
 };
@@ -104,8 +104,8 @@ const HOME_DELIVERY_CAPABILITIES = [
 export const HOME_FEATURES = {
   id: "home-features",
   eyebrow: "Capabilities",
-  title: "Standards we apply to every agent program",
-  lead: "These delivery capabilities apply across new agent builds and application modernization—not a repeat of our service catalog, but what every engagement includes by default.",
+  title: "Assurance standards for enterprise AI programs",
+  lead: "These delivery standards apply across intelligent automation and application modernization engagements—independent of the service catalog structure.",
   items: HOME_DELIVERY_CAPABILITIES,
 };
 
@@ -121,9 +121,9 @@ export const HOME_BLOG = {
 
 export const HOME_SERVICES_GRID = {
   id: "services-grid",
-  eyebrow: "Service catalog",
-  title: "Build agents. Modernize apps.",
-  lead: "From greenfield AI agents to upgrading legacy ERP, CRM, and internal tools—pick the service track that matches where you are today.",
+  eyebrow: "Service offerings",
+  title: "Enterprise capabilities for AI and application modernization",
+  lead: "Structured service lines across intelligent automation, generative AI, application modernization, data platforms, and cloud engineering—aligned to how global enterprises plan, govern, and scale delivery.",
   viewAllHref: undefined,
   viewAllLabel: "View all services",
 };
@@ -131,9 +131,9 @@ export const HOME_SERVICES_GRID = {
 export const HOME_TECH_STACK = {
   id: "tech-stack",
   eyebrow: "Technology",
-  title: "Tools we use for agents and AI apps",
-  lead: "See the frameworks, models, and platforms behind the agents and modernized applications we deliver.",
-  primaryCta: { label: "View AI agent services", href: "/services/ai-agents" },
+  title: "Technology foundation for enterprise AI delivery",
+  lead: "Frameworks, models, and platforms commonly applied across delivery programs for intelligent automation and application modernization.",
+  primaryCta: { label: "View service offerings", href: "/#services-grid" },
   secondaryCta: { label: "Explore all services", href: "/#services-grid" },
   filterAllLabel: "All services",
 };
@@ -141,8 +141,8 @@ export const HOME_TECH_STACK = {
 export const HOME_WORKFLOW = {
   id: "ai-workflow",
   eyebrow: "Workflow",
-  title: "How we build agents and modernize your apps",
-  lead: "Whether we are creating a new agent or upgrading software you already own, we follow the same practical path—from your real workflows to production AI.",
+  title: "Methodology for enterprise AI and application delivery",
+  lead: "This methodology applies the same delivery sequence for intelligent automation and application modernization—from workflow analysis through governed production rollout.",
   steps: [
     {
       title: "Understand your application",
@@ -166,8 +166,8 @@ export const HOME_WORKFLOW = {
 export const HOME_ENGINEERING_SHOWCASES = {
   id: "engineering-showcases",
   eyebrow: "Industry ready agents",
-  title: "Production-ready agents we ship",
-  lead: "Named agents—Agent Vidya, Agent Arogya, Agent Kavacha, and more—built inside sector applications, tested live, and validated for production.",
+  title: "Production-validated intelligent automation",
+  lead: "Named programs—including Agent Vidya, Agent Arogya, and Agent Kavacha—delivered inside sector applications, validated in live environments, and documented for production use.",
   viewAllHref: "/case-studies",
   viewAllLabel: "View all agents",
   items: [
@@ -213,8 +213,8 @@ export const HOME_ENGINEERING_SHOWCASES = {
 export const HOME_DOMAINS = {
   id: "interdisciplinary-domains",
   eyebrow: "Industries",
-  title: "AI agents across industries",
-  lead: "We build and embed agents in industry-specific applications. Each industry page lists industry ready agents you can scope and deploy inside your software.",
+  title: "Coverage across industry sectors",
+  lead: "Sector-specific intelligent automation programs embedded in line-of-business applications. Each industry page outlines validated agent patterns and integration scope.",
   items: [
     { title: "Healthcare AI", href: "/industries/healthcare", icon: "healthcare" },
     { title: "Education and learning", href: "/industries/education", icon: "education" },
@@ -231,7 +231,7 @@ export const HOME_BLOGS_BAND = {
   id: "from-the-blogs",
   eyebrow: "Blog",
   title: "From our blog",
-  lead: "Notes on building AI agents, modernizing applications, and shipping AI features that teams actually use.",
+  lead: "Technical notes on intelligent automation, application modernization, and governed AI delivery in production environments.",
   viewAllHref: "/blog",
   viewAllLabel: "View all articles",
   autoAdvanceMs: 5500,
@@ -241,10 +241,10 @@ export const HOME_BLOGS_BAND = {
 export const HOME_VISION_CTA_2 = {
   id: "vision-cta-2",
   eyebrow: "Platforms",
-  title: "Agent platforms you can start from",
-  body: "Pre-built agent modules and application patterns speed up delivery—then we tailor them to your software, data, and industry rules.",
-  primaryCta: { label: "See agent platforms", href: "/solutions" },
-  secondaryCta: { label: "Talk to our team", href: "/#page-contact" },
+  title: "Solution accelerators for faster deployment",
+  body: "Pre-built modules and reference architectures accelerate delivery—configured to your applications, data boundaries, and sector governance requirements.",
+  primaryCta: { label: "View solution modules", href: "/solutions" },
+  secondaryCta: { label: "Contact us", href: "/#page-contact" },
   mockupKey: "code",
 };
 
@@ -263,12 +263,12 @@ export const HOME_INFRASTRUCTURE = {
 export const HOME_PHILOSOPHY = {
   id: "philosophy",
   eyebrow: "Philosophy",
-  title: "What we believe about AI in business software",
-  lead: "AI agents belong inside the applications people already use—not as separate tools that slow teams down.",
+  title: "Delivery principles for enterprise AI",
+  lead: "Intelligent automation should operate within existing application workflows, with governance and measurable outcomes.",
   bullets: [
-    "Every company app can become an AI-powered application",
-    "Agents should automate real workflows, not generic chat",
-    "Start with one use case, prove results, then grow",
+    "Enterprise applications can adopt intelligent automation incrementally",
+    "Automation should target defined operational workflows",
+    "Pilot with agreed metrics, then expand under governance",
     "Your team keeps ownership of the software we help upgrade",
   ],
   mockupKey: "security",
@@ -277,7 +277,7 @@ export const HOME_PHILOSOPHY = {
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
   eyebrow: "Industry ready agents",
-  title: "Production-ready agents we ship",
+  title: "Production-validated intelligent automation",
   lead: "Named agents—Agent Vidya, Agent Arogya, Agent Kavacha, and more—built inside sector applications, tested live, and validated for production. Includes customizable agent platforms for faster rollout.",
   viewAllHref: "/case-studies",
   viewAllLabel: "View all agents",
@@ -290,7 +290,7 @@ export const HOME_CORE_TOPIC_SECTIONS = HOME_SOLUTION_TOPIC_SECTIONS;
 
 export const HOME_ASSURANCE_SECTION = {
   id: "assurance",
-  title: "Assurance for every agent we ship",
+  title: "Assurance for intelligent automation programs",
   lead: "Security, access control, and human review are built into agents from day one—not added after launch.",
   bullets: [
     "Agents only access data and tools you approve",
@@ -306,7 +306,7 @@ export const HOME_ASSURANCE_SECTION = {
 
 export const HOME_OUTCOMES_SECTION = {
   id: "enterprise-efficiency",
-  title: "Outcomes when we modernize your software",
+  title: "Outcomes for application modernization programs",
   lead: "Faster workflows, smarter applications, and a clear path from pilot to company-wide rollout.",
   bullets: [
     "AI agents working inside your existing applications",
@@ -328,19 +328,19 @@ export const HOME_TOPIC_SECTIONS = [
 ];
 
 export const HOME_METHODOLOGY = {
-  title: "How we deliver AI agents and app upgrades",
-  lead: "We keep pilots small, integrate with software you already run, and show working agents early—not months of planning.",
+  title: "Methodology for enterprise AI delivery",
+  lead: "This methodology emphasizes bounded pilots, integration with existing systems, and early validation against agreed success criteria.",
   steps: [
     { title: "Discover", desc: "Review your applications, workflows, and data to pick the first agent or AI feature to build." },
     { title: "Build", desc: "Create agents and embed them in your app—or modernize the app with AI in a pilot scope." },
-    { title: "Ship", desc: "Launch to a real user group with monitoring and human oversight where needed." },
+    { title: "Deploy", desc: "Release to a defined user cohort with monitoring and human oversight where required." },
     { title: "Expand", desc: "Measure results and add agents to more processes, teams, and applications." },
   ],
 };
 
 export const HOME_COVERAGE = {
-  title: "Who we work with",
-  lead: "Companies that want AI inside their software—not another disconnected chatbot.",
+  title: "Coverage across client profiles",
+  lead: "Organizations seeking governed intelligent automation within existing application estates.",
   items: [
     { title: "Product and engineering teams", desc: "Adding AI agents and copilots to products and internal tools on a release timeline." },
     { title: "Operations and business leaders", desc: "Modernizing legacy applications to cut manual work and improve decisions." },
@@ -350,9 +350,9 @@ export const HOME_COVERAGE = {
 
 export const HOME_NEXT_STEP = {
   eyebrow: "Contact",
-  title: "Ready to add AI agents to your applications?",
-  lead: "Tell us about the software you run today—we will suggest whether to build new agents, modernize an existing app, or both.",
-  primaryCta: { label: "Book a call", href: "/#page-contact?topic=consultation" },
+  title: "Next Step for your enterprise AI program",
+  lead: "Share your application landscape and priorities. We will recommend service lines, pilot scope, and governance boundaries.",
+  primaryCta: { label: "Schedule consultation", href: "/#page-contact?topic=consultation" },
   secondaryCta: { label: "Send a message", href: "/#page-contact" },
-  tertiaryCta: { label: "See AI agents", href: "/services/ai-agents" },
+  tertiaryCta: { label: "View service offerings", href: "/#services-grid" },
 };

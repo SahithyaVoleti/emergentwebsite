@@ -21,7 +21,7 @@ export default function UbuntuBlogGrid({
             key={article.slug}
             to={`/blog/${article.slug}`}
             data-testid={`blog-link-${article.slug}`}
-            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]"
+            className="group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#5c5c5c]"
           >
             <div className="aspect-[16/10] overflow-hidden bg-[#eee]">
               <img
@@ -33,8 +33,8 @@ export default function UbuntuBlogGrid({
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-[#5c677d]">
-                <span className="font-semibold uppercase tracking-wide text-[#0466c8]">
+              <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-[#6b6b6b]">
+                <span className="font-semibold uppercase tracking-wide text-[#5c5c5c]">
                   {article.category}
                 </span>
                 <span className="inline-flex items-center gap-1">
@@ -42,11 +42,11 @@ export default function UbuntuBlogGrid({
                   {article.readTime}
                 </span>
               </div>
-              <h3 className="text-base font-medium leading-snug text-[#002855] group-hover:text-[#0353a4]">
+              <h3 className="text-base font-medium leading-snug text-[#2d2d2d] group-hover:text-[#4a4a4a]">
                 {article.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-[#7d8597]">{article.excerpt}</p>
-              <span className="mt-4 text-sm font-medium text-[#0466c8]">Read article →</span>
+              <span className="mt-4 text-sm font-medium text-[#5c5c5c]">Read article →</span>
             </div>
           </Link>
         ))}

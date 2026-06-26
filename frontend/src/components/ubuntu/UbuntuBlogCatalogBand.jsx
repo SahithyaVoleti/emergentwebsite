@@ -4,7 +4,7 @@ function BlogFeaturedCard({ post }) {
   return (
     <Link
       to={`/blog/${post.slug}`}
-      className="ubuntu-blog-featured group grid overflow-hidden border border-[#e5e5e5] bg-white transition-colors hover:border-[#0466c8]/50 md:grid-cols-2"
+      className="ubuntu-blog-featured group grid overflow-hidden border border-[#e5e5e5] bg-white transition-colors hover:border-[#5c5c5c]/50 md:grid-cols-2"
     >
       <div className="relative min-h-[14rem] overflow-hidden bg-[#eee] md:min-h-[20rem]">
         <img
@@ -15,13 +15,13 @@ function BlogFeaturedCard({ post }) {
           decoding="async"
         />
       </div>
-      <div className="flex flex-col bg-[#fafafa] p-6 sm:p-8 md:p-10">
-        <h3 className="text-xl font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4] sm:text-2xl">
+      <div className="flex flex-col bg-white p-6 sm:p-8 md:p-10">
+        <h3 className="text-xl font-medium leading-snug text-[#2d2d2d] transition-colors group-hover:text-[#4a4a4a] sm:text-2xl">
           {post.title}
         </h3>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-[#7d8597] sm:text-base">{post.excerpt}</p>
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#e5e5e5] pt-6">
-          <p className="text-xs text-[#5c677d]">{post.readTime}</p>
+          <p className="text-xs text-[#6b6b6b]">{post.readTime}</p>
           <span className="border border-[#e5e5e5] bg-white px-3 py-1 text-xs font-medium text-[#7d8597]">
             {post.category}
           </span>
@@ -50,7 +50,7 @@ function BlogCompactCard({ post }) {
           {post.category}
         </span>
       </div>
-      <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4]">
+      <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#2d2d2d] transition-colors group-hover:text-[#4a4a4a]">
         {post.title}
       </h3>
     </Link>
@@ -82,14 +82,14 @@ export default function UbuntuBlogCatalogBand({
         <div className="mb-8 flex flex-col gap-4 md:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl text-left">
             {eyebrow && (
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
                 {eyebrow}
               </p>
             )}
-            <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#002855]">
+            <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
               {title}
             </h2>
-            {lead && <p className="ubuntu-lead mt-3 text-[#33415c]">{lead}</p>}
+            {lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{lead}</p>}
           </div>
         </div>
 

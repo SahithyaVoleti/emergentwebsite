@@ -1,7 +1,7 @@
 /**
  * Enterprise site navigation — single source of truth for header and footer.
  */
-import services from "./services";
+import services, { servicesForDisplay } from "./services";
 import solutions from "./solutions";
 import industries from "./industries";
 import { env } from "../lib/env";
@@ -12,7 +12,7 @@ export const TOP_NAV = {
     basePath: "/services",
     testId: "services",
     viewAllLabel: "View all services",
-    dropdownVariant: "wide",
+    dropdownVariant: "pillar",
   },
   products: {
     label: "Platforms",
@@ -45,11 +45,46 @@ export const TOP_NAV_ORDER = [
   "company",
 ];
 
-/** One entry per service slug from services.js */
-export const SERVICES_NAV = services.map((service) => ({
-  label: service.title,
-  href: `/services/${service.slug}`,
-}));
+/** Group services by practice-area pillar for header mega-menu. */
+export function buildServicesNavGroups(list = services) {
+  const ordered = servicesForDisplay(list);
+  const pillarOrder = [];
+  const byPillar = new Map();
+
+  for (const service of ordered) {
+    const pillar = service.pillar || "Services";
+    if (!byPillar.has(pillar)) {
+      byPillar.set(pillar, []);
+      pillarOrder.push(pillar);
+    }
+    byPillar.get(pillar).push({
+      label: service.catalogTitle ?? service.title,
+      href: `/services/${service.slug}`,
+    });
+  }
+
+  return pillarOrder.map((pillar) => ({
+    pillar,
+    items: byPillar.get(pillar),
+  }));
+}
+
+export const SERVICES_NAV_GROUPS = buildServicesNavGroups();
+
+/** Pillar-only links for the header services dropdown (icon + practice-area label). */
+export function buildServicesPillarNav(groups = SERVICES_NAV_GROUPS) {
+  return groups.map((group) => ({
+    label: group.pillar,
+    pillar: group.pillar,
+    href: group.items[0]?.href ?? "/services",
+    matchHrefs: group.items.map((item) => item.href),
+  }));
+}
+
+export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
+
+/** Flat service links — used for active-state checks and tests. */
+export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
 /** All solution accelerators + governance hub */
 export const PRODUCTS_NAV = [
@@ -118,7 +153,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const PRIMARY_NAV_CTA = {
-  label: "Consult Now",
+  label: "Contact us",
   topic: "consultation",
 };
 

@@ -7,19 +7,19 @@ import { env } from "../lib/env";
 
 const SITE_NAME = "NeuralTrix AI";
 const DEFAULT_DESCRIPTION =
-  "NeuralTrix AI builds AI agents inside business apps and modernizes legacy software into AI-powered applications.";
+  "NeuralTrix AI delivers enterprise intelligent automation, generative AI, and application modernization programs with governed integration.";
 
 export const SITE_URL = env("SITE_URL", "https://neuraltrix.ai").replace(/\/$/, "");
-export const DEFAULT_OG_IMAGE = "/neuraltrix-logo.svg";
+export const DEFAULT_OG_IMAGE = "/neuraltrix-header-logo.png";
 
 const STATIC_PAGES = {
   "/": {
-    title: `${SITE_NAME} | AI Agents & App Modernization`,
+    title: `${SITE_NAME} | Enterprise AI & Application Services`,
     description: DEFAULT_DESCRIPTION,
   },
   "/services": {
     title: `Services | ${SITE_NAME}`,
-    description: "Build AI agents, embed copilots, and modernize business apps into AI-powered software.",
+    description: "Enterprise services for intelligent automation, generative AI, application modernization, data platforms, and cloud engineering.",
   },
   "/solutions": {
     title: `Platforms | ${SITE_NAME}`,
@@ -27,7 +27,7 @@ const STATIC_PAGES = {
   },
   "/industries": {
     title: `Industries | ${SITE_NAME}`,
-    description: "AI agents and app modernization tailored to how your industry operates.",
+    description: "Sector-specific intelligent automation and application modernization aligned to industry governance requirements.",
   },
   "/case-studies": {
     title: `Production Test Cases | ${SITE_NAME}`,
@@ -35,7 +35,7 @@ const STATIC_PAGES = {
   },
   "/about": {
     title: `About Us | ${SITE_NAME}`,
-    description: "A senior-led startup that builds AI agents inside business apps and modernizes legacy software.",
+    description: "A senior-led firm delivering governed intelligent automation and application modernization for enterprise clients.",
   },
   "/team": {
     title: `Leadership | ${SITE_NAME}`,
@@ -63,7 +63,7 @@ const STATIC_PAGES = {
   },
   "/research-innovation": {
     title: `Research & Innovation | ${SITE_NAME}`,
-    description: "Experiments on agent behavior and app integration before production agent and modernization programs.",
+    description: "Controlled experimentation on intelligent automation and application integration before production programs.",
   },
   "/privacy-policy": {
     title: `Privacy Policy | ${SITE_NAME}`,

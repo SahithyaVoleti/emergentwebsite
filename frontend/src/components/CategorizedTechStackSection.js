@@ -36,19 +36,19 @@ export function FlatTechStackPanel({
         className
       )}
     >
-      <div className="h-1 shrink-0 bg-[#0466c8]" aria-hidden />
+      <div className="h-1 shrink-0 bg-[#5c5c5c]" aria-hidden />
       <div className="border-b border-[#e5e5e5] bg-white px-5 py-4 sm:px-6 sm:py-5">
         {eyebrow ? (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
             {eyebrow}
           </p>
         ) : null}
-        <h3 className="text-sm font-medium text-[#002855]">{title}</h3>
+        <h3 className="text-sm font-medium text-[#2d2d2d]">{title}</h3>
         {intro ? (
           <p className="mt-3 text-sm leading-relaxed text-[#7d8597]">{intro}</p>
         ) : null}
       </div>
-      <div className={cn("bg-[#fafafa] px-4 py-4 sm:px-5 sm:py-5", bodyClassName)}>
+      <div className={cn("bg-white px-4 py-4 sm:px-5 sm:py-5", bodyClassName)}>
         <div
           className={cn(
             "overflow-hidden border border-[#d9d9d9] bg-white p-3",
@@ -65,7 +65,7 @@ export function FlatTechStackPanel({
 /** Inset only (for tight card footers) — gray band + white inner well */
 export function TechStackLogoInset({ children, className }) {
   return (
-    <div className={cn("rounded-md border border-slate-200/80 bg-[#F8FAFC] p-2.5 sm:p-3", className)}>
+    <div className={cn("rounded-md border border-slate-200/80 bg-white p-2.5 sm:p-3", className)}>
       <div className="overflow-hidden rounded-md border border-slate-200/90 bg-white p-2 shadow-inner sm:p-3">
         {children}
       </div>
@@ -92,18 +92,18 @@ export function CategorizedTechStackPanels({
       {cats.map((c) => (
         <article
           key={c.title}
-          className="group flex flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]"
+          className="group flex flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[#5c5c5c]"
         >
-          <div className="h-1 shrink-0 bg-[#0466c8]" aria-hidden />
+          <div className="h-1 shrink-0 bg-[#5c5c5c]" aria-hidden />
           <div className="border-b border-[#e5e5e5] bg-white px-4 py-4 sm:px-5 sm:py-5">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-[#002855]">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
               {c.title}
             </h3>
             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#7d8597]">
               {c.description || DEFAULT_CATEGORY_DESC}
             </p>
           </div>
-          <div className="bg-[#fafafa] px-4 py-4 sm:px-5 sm:py-5">
+          <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
             <div className="relative border border-[#d9d9d9] bg-white p-4">
               <TechStackLogoGrid
                 items={c.techs}
@@ -146,7 +146,7 @@ export default function CategorizedTechStackSection({
     >
       <div className="ubuntu-container">
         <div className="mb-10 max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
             {eyebrow}
           </p>
           {typeof title === "string" ? (

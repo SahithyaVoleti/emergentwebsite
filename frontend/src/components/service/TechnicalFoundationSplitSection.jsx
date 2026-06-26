@@ -39,7 +39,7 @@ export default function TechnicalFoundationSplitSection({
       mediaClassName="ubuntu-tech-foundation-cta__media"
       mediaSlot={<TechFoundationCtaMedia techNames={techNames} />}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
         {eyebrow}
       </p>
       <h2 className="ubuntu-section-title">{title}</h2>

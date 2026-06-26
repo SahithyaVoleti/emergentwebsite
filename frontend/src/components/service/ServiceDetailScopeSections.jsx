@@ -72,7 +72,7 @@ export default function ServicePilotOverviewSection({ pilot }) {
             </h2>
             <p className="ubuntu-lead mt-3 text-[#333]">{pilot.idealFor}</p>
 
-            <div className="mt-6 border border-[#e5e5e5] bg-[#fafafa] p-5 sm:p-6">
+            <div className="mt-6 border border-[#e5e5e5] bg-white p-5 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#666]">
                 Typical pilot window
               </p>

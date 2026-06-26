@@ -13,10 +13,12 @@ export default function SitePageChrome({
   backgroundImage,
   backgroundVideo,
   variant = "default",
+  significance = "primary",
 }) {
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
   const isLightSplit = variant === "light-split";
   const isFullBleed = !isLightSplit && Boolean(backgroundImage || backgroundVideo);
+  const isUtility = significance === "utility";
 
   return (
     <section
@@ -28,6 +30,7 @@ export default function SitePageChrome({
         "ubuntu-pattern-section",
         "ubuntu-pattern-section--hero",
         isLightSplit && "ubuntu-site-page-chrome--light-split",
+        isLightSplit && isUtility && "ubuntu-site-page-chrome--utility",
         isFullBleed && "ubuntu-site-page-chrome--fullbleed",
       ]
         .filter(Boolean)

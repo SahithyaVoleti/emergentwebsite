@@ -9,27 +9,27 @@ import { SECTION_LABEL } from "../data/sectionLabels";
 const RESEARCH_TOPICS = [
   {
     title: "AI Research Labs",
-    desc: "Structured tests of agent behavior, tool use, and safety before we embed agents in client apps.",
+    desc: "Structured evaluation of intelligent automation behavior, tool use, and safety before client deployment.",
   },
   {
     title: "Emerging Technologies",
-    desc: "Hands-on review of multimodal models, agent orchestration, and copilot patterns inside real app setups.",
+    desc: "Hands-on assessment of multimodal models, orchestration patterns, and copilot integration in application environments.",
   },
   {
     title: "Whitepapers",
-    desc: "Technical briefs on agent deployment, app modernization paths, and when to pilot versus scale.",
+    desc: "Technical briefs on intelligent automation deployment, modernization paths, and pilot-versus-scale decisions.",
   },
   {
     title: "Publications",
-    desc: "Articles and field notes from agent and app modernization projects for practitioners and leaders.",
+    desc: "Articles and field notes from delivery programs for practitioners and program leadership.",
   },
   {
     title: "AI Experiments",
-    desc: "Time-boxed prototypes with fixed datasets, documented failures, and clear blockers before production.",
+    desc: "Time-boxed prototypes with fixed datasets, documented failure modes, and defined production blockers.",
   },
   {
     title: "Innovation Programs",
-    desc: "Co-designed tracks to test agent ideas in your apps—with review gates and handoff to engineering.",
+    desc: "Co-designed tracks to validate automation concepts in your applications—with review gates and engineering handover.",
   },
 ];
 
@@ -40,10 +40,10 @@ export default function ResearchInnovationPage() {
     <SitePageMain>
       <PageHero
         label="Research & Innovation"
-        title="Research that feeds agent and app builds"
-        description="We test agent patterns and app integration in the lab, document what works, and move proven ideas into client projects—with clear limits and honest results."
+        title="Research programs for production AI delivery"
+        description="Controlled experimentation on intelligent automation and application integration—documented outcomes inform governed production programs."
         primaryCTA={{
-          text: "Book a research briefing",
+          text: "Schedule research briefing",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
@@ -53,12 +53,12 @@ export default function ResearchInnovationPage() {
 
       <UbuntuPageSection
         eyebrow={SECTION_LABEL.experimentation}
-        title="How we connect research to production"
-        lead="Experiments inform agent and app modernization work—with a named owner at each review point."
+        title="Methodology for connecting research to production"
+        lead="This methodology links controlled experiments to delivery programs—with named ownership at each review gate."
         bullets={[
-          "Start with a hypothesis tied to a real app workflow",
-          "Test agent behavior before heavy spend on compute or vendors",
-          "Hand off proven patterns to engineering with full documentation",
+          "Hypothesis definition tied to a production workflow",
+          "Controlled evaluation before significant compute or vendor commitment",
+          "Engineering handover with full documentation of validated patterns",
         ]}
       />
 
@@ -66,19 +66,19 @@ export default function ResearchInnovationPage() {
         variant="alt"
         eyebrow={SECTION_LABEL.research}
         title="Research and innovation tracks"
-        lead="Run these on their own or before a scoped agent or app modernization engagement."
+        lead="These tracks operate independently or as precursors to scoped intelligent automation and modernization programs."
       >
         <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {RESEARCH_TOPICS.map((topic) => (
             <li key={topic.title} className="border border-[#e5e5e5] bg-white p-5">
-              <h3 className="text-base font-semibold text-[#002855]">{topic.title}</h3>
+              <h3 className="text-base font-semibold text-[#2d2d2d]">{topic.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{topic.desc}</p>
             </li>
           ))}
         </ul>
         <p className="ubuntu-body mt-8">
           Technical articles and field notes are published on{" "}
-          <Link to="/blog" className="text-[#0466c8] hover:underline">
+          <Link to="/blog" className="text-[#d1511f] hover:underline">
             News & Media
           </Link>
           .
@@ -92,9 +92,9 @@ export default function ResearchInnovationPage() {
         includeOutcomes
         includeAssurance
         ctaOverrides={{
-          title: "Get started with research and innovation",
+          title: "Next Step for research collaboration",
           description:
-            "Tell us about an agent pattern or app upgrade idea. We will align a briefing to your domain, data limits, and governance needs.",
+            "Share your research question or modernization hypothesis. We will align a briefing to your domain, data boundaries, and governance requirements.",
           mockupKey: "code",
         }}
       />

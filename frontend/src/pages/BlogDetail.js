@@ -5,6 +5,7 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
 import blogArticles from "../data/blog";
+import { getServiceLabelsForArticle } from "../lib/blogByService";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -15,7 +16,7 @@ export default function BlogDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Article not found</h1>
-          <Link to="/blog" className="mt-4 text-[#0466c8] hover:underline">
+          <Link to="/blog" className="mt-4 text-[#d1511f] hover:underline">
             Back to blog
           </Link>
         </div>
@@ -25,6 +26,7 @@ export default function BlogDetail() {
 
   const headings = article.content.filter((b) => b.type === "heading");
   const meta = `${article.date} · ${article.readTime}`;
+  const serviceLinks = getServiceLabelsForArticle(article);
   const pageUrl = typeof window !== "undefined" ? window.location.href : "";
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(article.title);
@@ -32,6 +34,7 @@ export default function BlogDetail() {
   return (
     <SitePageMain>
       <PageHero
+        significance="detail"
         label={article.category}
         title={article.title}
         description={meta}
@@ -45,7 +48,7 @@ export default function BlogDetail() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
             <aside className="hidden lg:block">
               <div className="sticky top-24">
-                <h4 className="mb-4 flex items-center gap-2 text-sm font-medium text-[#002855]">
+                <h4 className="mb-4 flex items-center gap-2 text-sm font-medium text-[#2d2d2d]">
                   <BookOpen size={14} aria-hidden /> Table of contents
                 </h4>
                 <nav className="space-y-2 border-l border-[#d9d9d9] pl-3">
@@ -53,14 +56,14 @@ export default function BlogDetail() {
                     <a
                       key={i}
                       href={`#heading-${i}`}
-                      className="block py-1 text-sm text-[#7d8597] transition-colors hover:text-[#0353a4]"
+                      className="block py-1 text-sm text-[#7d8597] transition-colors hover:text-[#b8451a]"
                     >
                       {h.text}
                     </a>
                   ))}
                 </nav>
                 <div className="mt-8 border-t border-[#d9d9d9] pt-6">
-                  <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-[#002855]">
+                  <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-[#2d2d2d]">
                     <Share2 size={14} aria-hidden /> Share
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -68,7 +71,7 @@ export default function BlogDetail() {
                       href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
+                      className="border border-[#d9d9d9] bg-white px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#d1511f]"
                     >
                       Twitter
                     </a>
@@ -76,13 +79,13 @@ export default function BlogDetail() {
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
+                      className="border border-[#d9d9d9] bg-white px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#d1511f]"
                     >
                       LinkedIn
                     </a>
                     <a
                       href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
-                      className="border border-[#d9d9d9] bg-[#fafafa] px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#0466c8]"
+                      className="border border-[#d9d9d9] bg-white px-3 py-1.5 text-xs text-[#7d8597] transition-colors hover:border-[#d1511f]"
                     >
                       Email
                     </a>
@@ -120,7 +123,7 @@ export default function BlogDetail() {
                     NT
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#002855]">NeuralTrix AI Engineering Team</p>
+                    <p className="text-sm font-medium text-[#2d2d2d]">NeuralTrix AI Engineering Team</p>
                     <p className="ubuntu-body mt-2">
                       Editorial notes from delivery teams translating enterprise AI field experience
                       into practical implementation guidance.
@@ -139,44 +142,36 @@ export default function BlogDetail() {
         includeMethodology={false}
         includeOutcomes={false}
         ctaOverrides={{
-          title: "Get started with related questions",
+          title: "Next Step for related inquiries",
           description:
             "Share your scenario for orientation on implementation options, tradeoffs, and sequencing decisions appropriate to your environment.",
           buttonText: "Contact us",
         }}
         beforeCta={
-          <UbuntuListingSection
-            title="Related articles"
-            lead="Additional articles on tools, delivery, and governance topics."
-          >
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {blogArticles
-                .filter((a) => a.slug !== slug)
-                .slice(0, 6)
-                .map((a) => (
+          serviceLinks.length > 0 ? (
+            <UbuntuListingSection
+              title="More in News & Media"
+              lead="Browse additional articles grouped by the service lines this article supports."
+            >
+              <div className="flex flex-wrap gap-3">
+                {serviceLinks.map((service) => (
                   <Link
-                    key={a.slug}
-                    to={`/blog/${a.slug}`}
-                    className="ubuntu-blog-compact-card group flex min-h-[18rem] flex-col"
+                    key={service.slug}
+                    to={service.href}
+                    className="inline-flex items-center border border-[#d9d9d9] bg-white px-4 py-2.5 text-sm font-medium text-[#2d2d2d] transition-colors hover:border-[#d1511f] hover:text-[#d1511f]"
                   >
-                    <div className="relative aspect-[4/3] shrink-0 overflow-hidden border border-[#e5e5e5] bg-[#eee]">
-                      <img
-                        src={a.image}
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        loading="lazy"
-                      />
-                      <span className="absolute bottom-3 left-3 border border-[#e5e5e5]/80 bg-white/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#7d8597]">
-                        {a.category}
-                      </span>
-                    </div>
-                    <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4]">
-                      {a.title}
-                    </h3>
+                    {service.label}
                   </Link>
                 ))}
-            </div>
-          </UbuntuListingSection>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center border border-[#d9d9d9] bg-white px-4 py-2.5 text-sm font-medium text-[#d1511f] transition-colors hover:border-[#d1511f]"
+                >
+                  View all articles
+                </Link>
+              </div>
+            </UbuntuListingSection>
+          ) : null
         }
       />
     </SitePageMain>

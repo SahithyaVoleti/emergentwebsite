@@ -9,8 +9,8 @@ const STEP_INTERVAL_MS = 4000;
 export default function UbuntuProcessMethodologyStrip({
   id = "methodology-process",
   eyebrow = SECTION_LABEL.methodology,
-  title = "How we run delivery engagements",
-  lead = "We sequence alignment, build, and deployment checkpoints with clear ownership at each stage.",
+  title = "Methodology for delivery engagements",
+  lead = "This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage.",
   steps = [],
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,7 +64,7 @@ export default function UbuntuProcessMethodologyStrip({
       <div className="ubuntu-container relative z-10 py-8 sm:py-10 md:py-12">
         <header className="max-w-3xl text-left">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
               {eyebrow}
             </p>
           )}

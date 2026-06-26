@@ -4,10 +4,12 @@ import { SERVICES_HERO_IMAGES as heroImages } from "../lib/heroImageThemes";
 const services = [
   {
     slug: "artificial-intelligence",
+    pillar: "AI & Machine Learning",
+    catalogTitle: "Applied Machine Learning",
     icon: Brain,
-    title: "Applied ML",
-    shortDesc: "ML models that power smart features and agent decisions inside your apps—classification, forecasting, vision, and automation with production monitoring.",
-    heroTitle: "Applied ML",
+    title: "Applied Machine Learning",
+    shortDesc: "Deliver production machine learning programs—from strategy and model development through MLOps, monitoring, and enterprise integration.",
+    heroTitle: "Applied Machine Learning",
     heroDesc: "Applied ML for the prediction and automation layers behind your agents and modernized apps, with clear metrics, drift checks, and rollback paths.",
     heroImage: heroImages[0],
     overview: "ML that supports agent decisions and app intelligence—from data readiness through model deployment inside CRM, ERP, and customer-facing surfaces you already run.",
@@ -53,10 +55,12 @@ const services = [
   },
   {
     slug: "generative-ai",
+    pillar: "AI Engineering",
+    catalogTitle: "Generative AI & Enterprise Copilots",
     icon: Bot,
-    title: "GenAI & Copilots",
-    shortDesc: "Embed copilots in the apps your team already uses—grounded on your docs, with guardrails for privacy, tenancy, and cost.",
-    heroTitle: "GenAI & Copilots",
+    title: "Generative AI & Enterprise Copilots",
+    shortDesc: "Embed copilots and generative capabilities in existing enterprise workflows with retrieval, safety controls, and operational governance.",
+    heroTitle: "Generative AI & Enterprise Copilots",
     heroDesc: "Copilots that live inside existing CRM, ERP, and internal tools—not another tab. Retrieval, structured outputs, and policy controls built in from day one.",
     heroImage: heroImages[1],
     overview: "We add generative AI where people already work: inline assistants, knowledge search, and guided workflows inside your current business applications.",
@@ -101,10 +105,12 @@ const services = [
   },
   {
     slug: "custom-software",
+    pillar: "Enterprise Applications",
+    catalogTitle: "Application Modernization",
     icon: Code2,
-    title: "App Modernization",
-    shortDesc: "Turn legacy and normal business apps into AI-powered software—modernized backends, clearer APIs, and room for agents and copilots.",
-    heroTitle: "App Modernization",
+    title: "Application Modernization",
+    shortDesc: "Modernize legacy and core business systems into AI-ready platforms through phased delivery, integration discipline, and production-grade engineering.",
+    heroTitle: "Application Modernization",
     heroDesc: "We upgrade what you have: refactor core systems, expose clean integration points, and add AI features without a full rewrite.",
     heroImage: heroImages[2],
     overview: "App modernization takes CRM, ERP, portals, and internal tools from manual workflows to AI-ready platforms—with phased delivery and rollback at each step.",
@@ -148,10 +154,12 @@ const services = [
   },
   {
     slug: "mobile-apps",
+    pillar: "Digital Experience",
+    catalogTitle: "Mobile & Digital Engineering",
     icon: Smartphone,
-    title: "Mobile Engineering",
-    shortDesc: "Mobile apps with embedded AI—on-device features, copilot-style helpers, and APIs ready for agents in customer-facing products.",
-    heroTitle: "Mobile Engineering",
+    title: "Mobile & Digital Engineering",
+    shortDesc: "Engineer secure mobile and digital products with embedded intelligence, enterprise integration, and release governance.",
+    heroTitle: "Mobile & Digital Engineering",
     heroDesc: "Native and cross-platform builds where AI shows up in the app your users already have—not as a separate bolt-on experience.",
     heroImage: heroImages[3],
     overview: "Mobile engineering for AI-powered customer and field apps: agent-friendly APIs, on-device ML where it helps, and secure sync with backend agents and copilots.",
@@ -195,10 +203,12 @@ const services = [
   },
   {
     slug: "ai-agents",
+    pillar: "Intelligent Automation",
+    catalogTitle: "Enterprise AI Agents",
     icon: Users,
-    title: "AI Agents",
-    shortDesc: "Build AI agents that work inside your CRM, ERP, internal tools, and customer apps—handling multi-step tasks with the right permissions and audit trails.",
-    heroTitle: "AI Agents",
+    title: "Enterprise AI Agents",
+    shortDesc: "Design, deploy, and govern autonomous agents within CRM, ERP, and line-of-business applications—with audit trails, policy controls, and measurable outcomes.",
+    heroTitle: "Enterprise AI Agents",
     heroDesc: "We design agents that connect to your existing systems, run workflows end to end, and hand off to people when needed—with clear logs and kill switches.",
     heroImage: heroImages[4],
     overview: "Our flagship work: agents embedded in the software you already use. We define tool access, durable execution, and safety controls before turning up autonomy.",
@@ -242,10 +252,12 @@ const services = [
   },
   {
     slug: "llm-development",
+    pillar: "AI Engineering",
+    catalogTitle: "LLM Engineering & Operations",
     icon: Database,
-    title: "LLM Lifecycle",
-    shortDesc: "LLM infrastructure for agents and copilots—routing, fine-tuning, retrieval, and hosting that fits inside your apps.",
-    heroTitle: "LLM Lifecycle",
+    title: "LLM Engineering & Operations",
+    shortDesc: "Build and operate the LLM layer for enterprise AI—with evaluation, fine-tuning, retrieval, routing, and secure inference.",
+    heroTitle: "LLM Engineering & Operations",
     heroDesc: "Benchmark, route, and serve models behind the agents and copilots embedded in your software—with cost and latency under control.",
     heroImage: heroImages[5],
     overview: "The LLM layer for agent-powered apps: evaluation, fine-tuning, RAG, and secure inference endpoints your product teams can depend on.",
@@ -289,10 +301,12 @@ const services = [
   },
   {
     slug: "devops",
+    pillar: "Platform Operations",
+    catalogTitle: "Cloud Engineering & DevOps",
     icon: GitBranch,
-    title: "DevOps & Reliability",
-    shortDesc: "Ship and run AI-powered apps reliably—CI/CD, observability, and infrastructure for agents, copilots, and modernized systems.",
-    heroTitle: "DevOps & Reliability",
+    title: "Cloud Engineering & DevOps",
+    shortDesc: "Establish CI/CD, observability, and platform capabilities that support AI workloads and mission-critical applications at scale.",
+    heroTitle: "Cloud Engineering & DevOps",
     heroDesc: "Pipelines and platforms that keep agent runtimes, model endpoints, and modernized apps deployable, observable, and recoverable.",
     heroImage: heroImages[6],
     overview: "DevOps for the stack behind AI agents and app modernization: automated releases, scalable inference, and incident tooling your team can own.",
@@ -336,10 +350,12 @@ const services = [
   },
   {
     slug: "data-engineering",
+    pillar: "Data & Analytics",
+    catalogTitle: "Data Platform Engineering",
     icon: BarChart3,
-    title: "Data Platform",
-    shortDesc: "Data pipelines and feature stores that feed agents and AI features inside your apps—with quality checks and clear lineage.",
-    heroTitle: "Data Platform",
+    title: "Data Platform Engineering",
+    shortDesc: "Engineer governed data platforms that supply reliable features, retrieval corpora, and analytics for AI and enterprise applications.",
+    heroTitle: "Data Platform Engineering",
     heroDesc: "Fresh, governed data for retrieval, agent tools, and app intelligence—with contracts your ML and product teams share.",
     heroImage: heroImages[7],
     overview: "Data platforms built for agent-powered apps: ingestion, warehousing, and feature pipelines that keep copilots and agents grounded in current information.",
@@ -397,9 +413,14 @@ const DISPLAY_ORDER = [
 
 export function servicesForDisplay(list = services) {
   const rank = Object.fromEntries(DISPLAY_ORDER.map((slug, index) => [slug, index]));
-  return [...list].sort(
-    (a, b) => (rank[a.slug] ?? DISPLAY_ORDER.length) - (rank[b.slug] ?? DISPLAY_ORDER.length)
-  );
+  return [...list]
+    .sort((a, b) => (rank[a.slug] ?? DISPLAY_ORDER.length) - (rank[b.slug] ?? DISPLAY_ORDER.length))
+    .map((service) => ({
+      ...service,
+      catalogCapabilities: (service.subservices ?? [])
+        .slice(0, 4)
+        .map((sub) => sub.title),
+    }));
 }
 
 export default services;

@@ -22,7 +22,7 @@ export const companyNavLinks = [
   { label: "About", href: "/about", headerLabel: "About Us" },
   { label: "Team", href: "/team", headerLabel: "Our Team" },
   { label: "Case studies", href: "/case-studies", headerLabel: "Case Studies" },
-  { label: "How we work", href: "/testimonials" },
+  { label: "Engagement", href: "/testimonials" },
   { label: "Partners", href: "/partners", headerLabel: "Technology Partners" },
   { label: "Security", href: "/security" },
   { label: "Blog", href: "/blog" },

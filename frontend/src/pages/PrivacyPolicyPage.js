@@ -3,7 +3,6 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 import { getSiteMockup } from "../data/siteMockups";
 
 const privacyTemplateDownloads = [
@@ -23,7 +22,7 @@ const sections = [
         <p className="text-[#7d8597]">
           This Privacy Policy applies to all services, solutions, and website interactions delivered by NeuralTrix AI, including consulting engagements, platform-enabled offerings, and support communications.
         </p>
-        <p className="mt-6 text-sm font-medium text-[#002855]">
+        <p className="mt-6 text-sm font-medium text-[#2d2d2d]">
           This policy covers:
         </p>
         <ul className="mt-4 space-y-3">
@@ -48,7 +47,7 @@ const sections = [
         <p className="text-[#7d8597]">
           We collect information required to deliver, secure, and improve services for enterprise clients and website users.
         </p>
-        <p className="mt-6 text-sm font-medium text-[#002855]">This may include:</p>
+        <p className="mt-6 text-sm font-medium text-[#2d2d2d]">This may include:</p>
         <ul className="mt-4 space-y-3">
           {[
             "Business contact details, including name, email, phone number, and company information",
@@ -104,7 +103,7 @@ const sections = [
     content: (
       <>
         <p className="text-[#7d8597]">We use cookies and analytics technologies to operate and improve our website experience.</p>
-        <p className="mt-6 text-sm font-medium text-[#002855]">These technologies support:</p>
+        <p className="mt-6 text-sm font-medium text-[#2d2d2d]">These technologies support:</p>
         <ul className="mt-4 space-y-3">
           {[
             "Session continuity and basic website functionality",
@@ -258,7 +257,7 @@ const sections = [
   {
     title: "14. Effective Date and Last Updated",
     content: (
-      <div className="inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
+      <div className="inline-flex border border-[#d1511f]/30 bg-white px-3 py-1 text-xs font-medium text-[#b8451a]">
         Effective date: May 2026 · Last updated: May 2026
       </div>
     )
@@ -271,11 +270,11 @@ export default function PrivacyPolicyPage() {
   return (
     <SitePageMain>
       <PageHero
+        significance="utility"
         label="Legal & Trust"
         title="Privacy Policy for Services and Website Use"
         description="This policy defines how NeuralTrix AI collects, uses, secures, transfers, and governs personal information across service delivery and digital channels."
         primaryCTA={{ text: "View Details", href: "#privacy-content" }}
-        image={LISTING_PAGE_HERO_IMAGES.blog}
       />
 
       <UbuntuPageSection
@@ -289,17 +288,17 @@ export default function PrivacyPolicyPage() {
         belowContent={
           <>
             <div className="mb-8 flex flex-wrap items-center gap-3">
-              <span className="inline-flex border border-[#d9d9d9] bg-[#fafafa] px-3 py-1 text-xs font-medium text-[#7d8597]">
+              <span className="inline-flex border border-[#d9d9d9] bg-white px-3 py-1 text-xs font-medium text-[#7d8597]">
                 Updated May 2026
               </span>
-              <span className="inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
+              <span className="inline-flex border border-[#d1511f]/30 bg-white px-3 py-1 text-xs font-medium text-[#b8451a]">
                 Internal legal review recommended
               </span>
             </div>
             <div className="ubuntu-prose space-y-10">
               {sections.map((section) => (
                 <div key={section.title} className="border-t border-[#e5e5e5] pt-8">
-                  <h3 className="mb-4 text-base font-medium text-[#002855]">{section.title}</h3>
+                  <h3 className="mb-4 text-base font-medium text-[#2d2d2d]">{section.title}</h3>
                   {section.content}
                 </div>
               ))}
@@ -315,7 +314,7 @@ export default function PrivacyPolicyPage() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {privacyTemplateDownloads.map((template) => (
             <article key={template.file} className="border border-[#e5e5e5] bg-white p-6">
-              <h3 className="mb-2 text-base font-medium text-[#002855]">{template.title}</h3>
+              <h3 className="mb-2 text-base font-medium text-[#2d2d2d]">{template.title}</h3>
               <p className="mb-4 text-sm text-[#7d8597]">{template.note}</p>
               <a
                 href={template.file}

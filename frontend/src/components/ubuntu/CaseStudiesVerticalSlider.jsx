@@ -104,7 +104,7 @@ export default function CaseStudiesVerticalSlider({
           <div className="mb-6 flex flex-shrink-0 flex-col gap-4 md:mb-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               {showLabel && eyebrow && (
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">{eyebrow}</p>
               )}
               <h2 className="ubuntu-section-title">{headingTitle}</h2>
               <p className="ubuntu-lead mt-2 text-sm md:text-base">{headingLead}</p>
@@ -140,7 +140,7 @@ export default function CaseStudiesVerticalSlider({
                     }}
                     aria-hidden={index !== activeIndex}
                   >
-                    <div className="relative min-h-[200px] flex-1 bg-[#f7f7f7] lg:min-h-0 lg:w-[42%] border-b lg:border-b-0 lg:border-r border-[#e5e5e5]">
+                    <div className="relative min-h-[200px] flex-1 bg-white lg:min-h-0 lg:w-[42%] border-b lg:border-b-0 lg:border-r border-[#e5e5e5]">
                       <img
                         src={cs.heroImage}
                         alt=""
@@ -170,14 +170,14 @@ export default function CaseStudiesVerticalSlider({
                       >
                         {cs.archetype}
                       </p>
-                      <h3 className="text-xl font-medium text-[#002855] leading-snug sm:text-2xl mb-3">{cs.title}</h3>
+                      <h3 className="text-xl font-medium text-[#2d2d2d] leading-snug sm:text-2xl mb-3">{cs.title}</h3>
                       <p className="text-sm leading-relaxed text-[#7d8597] line-clamp-3 mb-4">{cs.heroDesc}</p>
                       {cs.results?.length > 0 && (
                         <ul className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                           {cs.results.slice(0, 4).map((r, rIndex) => (
                             <li
                               key={r.label}
-                              className="border border-[#e5e5e5] bg-[#fafafa] px-2 py-2 text-center"
+                              className="border border-[#e5e5e5] bg-white px-2 py-2 text-center"
                             >
                               <span
                                 className="block text-xs font-semibold"
@@ -185,7 +185,7 @@ export default function CaseStudiesVerticalSlider({
                               >
                                 {r.metric}
                               </span>
-                              <span className="block text-[10px] text-[#5c677d] leading-tight mt-0.5">{r.label}</span>
+                              <span className="block text-[10px] text-[#8b4c6e] leading-tight mt-0.5">{r.label}</span>
                             </li>
                           ))}
                         </ul>
@@ -243,8 +243,8 @@ export default function CaseStudiesVerticalSlider({
               </button>
             </div>
 
-            <div className="absolute bottom-3 left-4 z-30 font-mono text-xs text-[#5c677d] md:bottom-4">
-              <span className="text-[#002855] font-semibold">{String(activeIndex + 1).padStart(2, "0")}</span>
+            <div className="absolute bottom-3 left-4 z-30 font-mono text-xs text-[#8b4c6e] md:bottom-4">
+              <span className="text-[#2d2d2d] font-semibold">{String(activeIndex + 1).padStart(2, "0")}</span>
               <span className="mx-1">/</span>
               <span>{String(count).padStart(2, "0")}</span>
             </div>

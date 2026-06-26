@@ -9,7 +9,6 @@ import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
 import MethodologyFlowchart from "../components/MethodologyFlowchart";
 import DomainAssurance from "../components/DomainAssurance";
 import TestimonialsSection from "../components/TestimonialsSection";
-import RelatedBlog from "../components/RelatedBlog";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
@@ -26,7 +25,7 @@ export default function SolutionDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Solution not found</h1>
-          <Link to="/solutions" className="mt-4 text-[#0466c8] hover:underline">
+          <Link to="/solutions" className="mt-4 text-[#d1511f] hover:underline">
             Back to solutions
           </Link>
         </div>
@@ -40,6 +39,7 @@ export default function SolutionDetail() {
   return (
     <SitePageMain>
       <PageHero
+        significance="detail"
         label="Solutions"
         title={solution.heroTitle}
         description={solution.heroDesc}
@@ -110,7 +110,7 @@ export default function SolutionDetail() {
         includeOutcomes={false}
         includeAssurance={false}
         ctaOverrides={{
-          title: `Get started with ${solution.title}`,
+          title: `Next Step for ${solution.title}`,
           description:
             "Assess integration effort, governance fit, and operational impact for your environment and stakeholder model.",
           mockupKey: "dashboard",
@@ -120,7 +120,6 @@ export default function SolutionDetail() {
             <RelatedCaseStudies />
             <TestimonialsSection title="Engagement principles for new partners" />
             <FAQSection faqs={solution.faqs} />
-            <RelatedBlog />
           </>
         }
       />

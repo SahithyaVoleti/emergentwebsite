@@ -9,12 +9,10 @@ import UbuntuProcessMethodologyStrip from "../ubuntu/UbuntuProcessMethodologyStr
 import UbuntuHomeVisionCta from "../home/ubuntu/UbuntuHomeVisionCta";
 import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
 import UbuntuHomeTechStack from "../home/ubuntu/UbuntuHomeTechStack";
-import { UbuntuHomeBlogs } from "../home/ubuntu/UbuntuHomeIndustriesBlogs";
 import { getHomeSectionImage } from "../../data/homePageImages";
 import { getSiteMockup } from "../../data/siteMockups";
 import { homeImagePosition } from "../../lib/homeImagePosition";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
-import blogArticles from "../../data/blog";
 
 const CASE_STUDIES_LEAD =
   "Production test cases linked to this service—systems we developed, tested in live environments, and validated as production-ready.";
@@ -58,10 +56,12 @@ export default function ServiceDetailHomeLayout({
     href: cs.caseStudySlug ? `/case-studies/${cs.caseStudySlug}` : "/case-studies",
   }));
 
-  const ctaTitle = ctaOverrides.title ?? `Get started with ${service.title}`;
+  const displayTitle = service.catalogTitle ?? service.title;
+
+  const ctaTitle = ctaOverrides.title ?? `Next step for ${displayTitle}`;
   const ctaDescription =
     ctaOverrides.description ??
-    `We align ${service.title} to your systems, priorities, and timeline to define a practical starting scope and control boundaries.`;
+    `We align ${displayTitle} to your systems, operating model, and delivery timeline to define a governed starting scope and success criteria.`;
 
   return (
     <>
@@ -73,8 +73,8 @@ export default function ServiceDetailHomeLayout({
         <UbuntuProcessMethodologyStrip
           id="service-methodology-steps"
           eyebrow="Methodology"
-          title={`Delivery steps for ${service.title}`}
-          lead="We sequence alignment, build, and deployment checkpoints with clear ownership at each stage."
+          title={`Methodology for ${displayTitle}`}
+          lead="This methodology sequences alignment, build, and deployment checkpoints with clear ownership at each stage."
           steps={processStats}
         />
       )}
@@ -85,8 +85,8 @@ export default function ServiceDetailHomeLayout({
         config={{
           id: "service-outcomes",
           eyebrow: "Value",
-          title: `Why teams choose ${service.title}`,
-          body: "Differentiators we bring to discovery and pilot—not a substitute for your own acceptance criteria.",
+          title: `Outcomes for ${displayTitle}`,
+          body: "Delivery differentiators we apply during discovery and pilot planning—complementing your acceptance criteria and governance requirements.",
           primaryCta: {
             label: "Contact us",
             href: contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT),
@@ -101,7 +101,7 @@ export default function ServiceDetailHomeLayout({
           id="service-case-patterns"
           eyebrow="Production test cases"
           items={caseStudySlides}
-          title={`Live-tested implementations: ${service.title}`}
+          title={`Live-tested implementations: ${displayTitle}`}
           lead={CASE_STUDIES_LEAD}
           viewAllHref={undefined}
           autoAdvanceMs={6000}
@@ -116,7 +116,7 @@ export default function ServiceDetailHomeLayout({
         config={{
           id: "service-assurance",
           eyebrow: "Assurance",
-          title: `Assurance for ${service.title} programs`,
+          title: `Assurance for ${displayTitle} programs`,
           lead: "Controls and review artifacts we build into each delivery milestone—not added after launch.",
           bullets: SERVICE_ASSURANCE_BULLETS,
         }}
@@ -148,7 +148,7 @@ export default function ServiceDetailHomeLayout({
         imageAlt={nextStepImage?.alt ?? getSiteMockup("code").alt}
         imagePosition={nextPosition()}
       >
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
           Contact
         </p>
         <h2 className="ubuntu-section-title">{ctaTitle}</h2>
@@ -162,18 +162,6 @@ export default function ServiceDetailHomeLayout({
           </Link>
         </div>
       </UbuntuSplitLayout>
-
-      <UbuntuHomeBlogs
-        config={{
-          id: "related-articles",
-          eyebrow: "Articles",
-          title: "Related technical articles",
-          lead: undefined,
-          viewAllHref: "/blog",
-          viewAllLabel: "View all articles",
-          slugs: blogArticles.slice(0, 3).map((a) => a.slug),
-        }}
-      />
 
       <PageContactForm context={contactContext} />
     </>

@@ -37,7 +37,7 @@ await auditPage(page, "/", [
     if ((await hero.count()) === 0) throw new Error("Missing hero section");
   },
   async (p) => {
-    const logo = p.locator('header img[src*="neuraltrix-logo"]');
+    const logo = p.locator('header img[src*="neuraltrix-header-logo"], header img[src*="neuraltrix-logo-symbol"]');
     if ((await logo.count()) === 0) throw new Error("Header logo missing");
     const box = await logo.first().boundingBox();
     if (!box || box.width < 20) throw new Error("Header logo not visible");

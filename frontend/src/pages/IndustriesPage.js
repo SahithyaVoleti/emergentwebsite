@@ -10,8 +10,8 @@ export default function IndustriesPage() {
     <SitePageMain>
       <PageHero
         label="Industries"
-        title="AI agents built for your industry"
-        description="We ship agents and copilots inside the apps your sector runs—CRM, ERP, ops tools, and customer portals—aligned to your rules and review cycle."
+        title="Industry programs for intelligent automation"
+        description="We deliver intelligent automation inside sector applications—CRM, ERP, operations tools, and customer portals—aligned to regulatory and operational requirements."
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
         illustrationKey="industries"
@@ -20,8 +20,8 @@ export default function IndustriesPage() {
       <UbuntuIndustriesIconGrid
         industries={industries}
         eyebrow={SECTION_LABEL.industries}
-        title="Industries where we build agents"
-        lead="Each sector runs different applications—EHR, ERP, LMS, CRM, and more. Open an industry to browse industry ready agents and see how we modernize existing software."
+        title="Coverage across industry sectors"
+        lead="Each sector operates distinct application estates—EHR, ERP, LMS, CRM, and more. Select an industry to review validated automation patterns and modernization scope."
       />
 
       <PageStandardSections pageKey="industries" contactContext="Industries Page" />

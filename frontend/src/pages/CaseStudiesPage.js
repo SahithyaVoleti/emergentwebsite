@@ -10,10 +10,10 @@ export default function CaseStudiesPage() {
     <SitePageMain>
       <PageHero
         label="Production test cases"
-        title="AI systems we built, tested, and made production-ready"
-        description="These are real implementations NeuralTrix developed and validated in live environments—across education, healthcare, finance, commerce, manufacturing, and more. Each test case is ready to adapt to your applications."
+        title="Production-validated AI implementations"
+        description="Implementations developed and validated in live and sandbox environments across education, healthcare, finance, commerce, manufacturing, and additional sectors. Each test case documents scope for adaptation to your application estate."
         primaryCTA={{
-          text: "Discuss a test case",
+          text: "Discuss a validation program",
           href: "#page-contact",
           contactIntent: "consultation",
         }}
@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
             Production-ready <span style={{ color: PALETTE.regalNavy }}>test cases</span> by sector
           </>
         }
-        lead="Scroll through live-tested implementations across industry sectors. Each case shows what we built, how we tested it, and what is ready for your environment."
+        lead="Review live-tested implementations by sector. Each case documents delivery scope, validation approach, and adaptation requirements for your environment."
         viewAllHref={undefined}
         className="!border-t-0"
       />

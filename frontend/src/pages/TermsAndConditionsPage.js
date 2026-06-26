@@ -3,7 +3,6 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 import { getSiteMockup } from "../data/siteMockups";
 
 const templateDownloads = [
@@ -42,7 +41,7 @@ const sections = [
             "Delays caused by client dependencies may result in schedule and cost adjustments",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[#7d8597]">
-              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0466c8] shrink-0" />
+              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#d1511f] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -106,7 +105,7 @@ const sections = [
             "No reverse engineering, extraction, or unauthorized reuse of deliverables, models, or proprietary methods",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[#7d8597]">
-              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0466c8] shrink-0" />
+              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#d1511f] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -219,7 +218,7 @@ const sections = [
             "Africa and Middle East jurisdictions: applicable data protection and commercial regulations",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[#7d8597]">
-              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0466c8] shrink-0" />
+              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#d1511f] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -237,7 +236,7 @@ const sections = [
         <p className="mt-4 text-[#7d8597]">
           Continued use of services after publication of updates constitutes binding acceptance of revised terms to the extent permitted by applicable law.
         </p>
-        <div className="mt-4 inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
+        <div className="mt-4 inline-flex border border-[#d1511f]/30 bg-white px-3 py-1 text-xs font-medium text-[#b8451a]">
           EFFECTIVE DATE: MAY 2026 | LAST UPDATED: MAY 2026
         </div>
       </>
@@ -250,7 +249,7 @@ const sections = [
         <p className="text-[#7d8597]">
           For master agreements and statements of work, parties may adopt the following template language and replace bracketed fields with agreed commercial terms.
         </p>
-        <div className="mt-4 rounded-sm border border-slate-200 bg-slate-50 p-4">
+        <div className="mt-4 rounded-sm border border-slate-200 bg-white p-4">
           <p className="text-sm text-slate-700 leading-relaxed">
             Governing Law and Venue. This Agreement is governed by the laws of [Country/State], excluding conflict of law rules. Courts located in [City/Country] have exclusive jurisdiction, except that parties may agree to arbitration under [Arbitration Rules] with seat in [Seat].
           </p>
@@ -285,11 +284,11 @@ export default function TermsAndConditionsPage() {
   return (
     <SitePageMain>
       <PageHero
+        significance="utility"
         label="Legal & Trust"
         title="Terms and Conditions for All Services"
         description="These terms define contractual structure, delivery governance, compliance expectations, and legal responsibilities across all NeuralTrix AI services."
         primaryCTA={{ text: "View Terms", href: "#terms-content" }}
-        image={LISTING_PAGE_HERO_IMAGES.blog}
       />
 
       <UbuntuPageSection
@@ -303,17 +302,17 @@ export default function TermsAndConditionsPage() {
         belowContent={
           <>
             <div className="mb-8 flex flex-wrap items-center gap-3">
-              <span className="inline-flex border border-[#d9d9d9] bg-[#fafafa] px-3 py-1 text-xs font-medium text-[#7d8597]">
+              <span className="inline-flex border border-[#d9d9d9] bg-white px-3 py-1 text-xs font-medium text-[#7d8597]">
                 Updated May 2026
               </span>
-              <span className="inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
+              <span className="inline-flex border border-[#d1511f]/30 bg-white px-3 py-1 text-xs font-medium text-[#b8451a]">
                 Internal legal review recommended
               </span>
             </div>
             <div className="ubuntu-prose space-y-10">
               {sections.map((section) => (
                 <div key={section.title} className="border-t border-[#e5e5e5] pt-8">
-                  <h3 className="mb-4 text-base font-medium text-[#002855]">{section.title}</h3>
+                  <h3 className="mb-4 text-base font-medium text-[#2d2d2d]">{section.title}</h3>
                   {section.content}
                 </div>
               ))}
@@ -329,7 +328,7 @@ export default function TermsAndConditionsPage() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {templateDownloads.map((template) => (
             <article key={template.file} className="border border-[#e5e5e5] bg-white p-6">
-              <h3 className="mb-2 text-base font-medium text-[#002855]">{template.title}</h3>
+              <h3 className="mb-2 text-base font-medium text-[#2d2d2d]">{template.title}</h3>
               <p className="mb-4 text-sm text-[#7d8597]">{template.note}</p>
               <a href={template.file} download className="ubuntu-btn-primary inline-flex border-0 px-4 py-2 text-xs">
                 Download template

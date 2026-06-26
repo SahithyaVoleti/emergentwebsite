@@ -15,7 +15,7 @@ export default function UbuntuPartnerGrid({
         {partners.map((partner) => (
           <div
             key={partner}
-            className="flex h-20 items-center justify-center border border-[#d9d9d9] bg-[#fafafa] px-3 text-center"
+            className="flex h-20 items-center justify-center border border-[#d9d9d9] bg-white px-3 text-center"
           >
             <span className="text-sm font-medium tracking-wide text-[#7d8597]">{partner}</span>
           </div>

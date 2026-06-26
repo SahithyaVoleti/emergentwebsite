@@ -55,7 +55,7 @@ export default function SolutionsAcceleratorCarousel({
       <div className="ubuntu-container">
         <div className="mb-8 max-w-3xl md:mb-10">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
               {eyebrow}
             </p>
           )}
@@ -80,7 +80,7 @@ export default function SolutionsAcceleratorCarousel({
                   <Link
                     to={hrefFor(item)}
                     data-testid={`${testIdPrefix}-${item.slug}`}
-                    className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-[#111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0466c8]"
+                    className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-[#111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
                     aria-label={`${item.title}: ${item.cardDescriptor || item.domain || ""}`}
                   >
                     <div className="ubuntu-solutions-carousel__media">

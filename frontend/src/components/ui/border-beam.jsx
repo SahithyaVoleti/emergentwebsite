@@ -7,7 +7,7 @@ export function BorderBeam({
   size = 50,
   delay = 0,
   duration = 6,
-  colorFrom = "#0466c8",
+  colorFrom = "#5c5c5c",
   colorTo = "#979dac",
   transition,
   style,

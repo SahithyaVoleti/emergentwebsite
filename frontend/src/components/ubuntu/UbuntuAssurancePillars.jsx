@@ -26,10 +26,10 @@ export default function UbuntuAssurancePillars({
             <article
               key={pillar.title}
               data-palette-accent={paletteAccentIndex(index)}
-              className="ubuntu-assurance-pillar flex h-full flex-col border border-[#d9d9d9] bg-[#fafafa] p-5 transition-colors"
+              className="ubuntu-assurance-pillar flex h-full flex-col border border-[#d9d9d9] bg-white p-5 transition-colors"
             >
               <Icon size={22} className="ubuntu-palette-icon-fill mb-4" strokeWidth={1.5} aria-hidden />
-              <h3 className="text-sm font-medium text-[#002855]">{pillar.title}</h3>
+              <h3 className="text-sm font-medium text-[#2d2d2d]">{pillar.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-[#7d8597]">{pillar.desc}</p>
             </article>
           );

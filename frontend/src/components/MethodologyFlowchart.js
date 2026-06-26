@@ -15,14 +15,14 @@ const MethodologyFlowchart = ({ steps }) => {
             const Icon = step.icon;
             return (
               <div key={i} className="relative z-10 flex flex-1 flex-col items-center text-center">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center border border-[#d9d9d9] bg-white transition-colors hover:border-[#0466c8]">
+                <div className="mb-6 flex h-20 w-20 items-center justify-center border border-[#d9d9d9] bg-white transition-colors hover:border-[#5c5c5c]">
                   {Icon ? (
-                    <Icon size={24} className="text-[#0466c8]" strokeWidth={1.5} aria-hidden />
+                    <Icon size={24} className="text-[#5c5c5c]" strokeWidth={1.5} aria-hidden />
                   ) : (
-                    <span className="text-lg font-medium text-[#002855]">{i + 1}</span>
+                    <span className="text-lg font-medium text-[#2d2d2d]">{i + 1}</span>
                   )}
                 </div>
-                <h3 className="text-xs font-semibold uppercase tracking-wide text-[#002855]">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
                   {step.label || step.step || step.title}
                 </h3>
                 {step.desc && (
@@ -51,15 +51,15 @@ const MethodologyFlowchart = ({ steps }) => {
               key={i}
               className="flex gap-4 border border-[#d9d9d9] bg-white p-5"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#0466c8] bg-[#fafafa]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#5c5c5c] bg-white">
                 {Icon ? (
-                  <Icon size={20} className="text-[#0466c8]" strokeWidth={1.5} aria-hidden />
+                  <Icon size={20} className="text-[#5c5c5c]" strokeWidth={1.5} aria-hidden />
                 ) : (
-                  <span className="text-sm font-medium text-[#002855]">{i + 1}</span>
+                  <span className="text-sm font-medium text-[#2d2d2d]">{i + 1}</span>
                 )}
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#002855]">
+                <h3 className="text-sm font-medium text-[#2d2d2d]">
                   {step.label || step.step || step.title}
                 </h3>
                 {step.desc && (

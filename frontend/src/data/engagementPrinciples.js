@@ -4,37 +4,37 @@
  */
 const engagementPrinciples = [
   {
-    headline: "Agents inside your apps",
+    headline: "Embedded intelligent automation",
     body:
-      "We build AI agents that run inside CRM, ERP, internal tools, and customer apps—not standalone chat windows disconnected from how your team works.",
+      "Intelligent automation delivered inside CRM, ERP, internal tools, and customer applications—integrated with existing workflows and access controls.",
     tag: "Agents",
   },
   {
-    headline: "Modernize what you have",
+    headline: "Incremental application modernization",
     body:
-      "Legacy and normal business apps get upgraded with AI-ready APIs, copilots, and automation—without throwing away systems that already work.",
+      "Legacy and core business applications upgraded with AI-ready interfaces, copilots, and automation—without full platform replacement.",
     tag: "App modernization",
   },
   {
-    headline: "Pilot before you scale",
+    headline: "Governed pilot programs",
     body:
       "We agree on the workflow, data access, and success measures first. You validate fit on a fixed timeline before expanding agent autonomy.",
     tag: "First steps",
   },
   {
-    headline: "Builders, not slide decks",
+    headline: "Senior delivery practitioners",
     body:
-      "You work with the people who ship agents and modernize apps. Architecture, integration, and model decisions stay with the same delivery team.",
+      "You work directly with senior practitioners accountable for architecture, integration, and model decisions throughout the program.",
     tag: "Access",
   },
   {
-    headline: "Safe by default",
+    headline: "Controls by design",
     body:
-      "Scoped credentials, human review queues, logging, and kill switches are planned from the first slice—not added after a demo.",
+      "Scoped credentials, human review queues, logging, and kill switches are defined in the initial delivery scope—not deferred to later phases.",
     tag: "Controls",
   },
   {
-    headline: "Your team owns it",
+    headline: "Operational handover",
     body:
       "Code, runbooks, and tests are structured so your engineers can operate and extend what we build. We can stay on for support with clear boundaries.",
     tag: "Ownership",

@@ -7,7 +7,7 @@ export default function UbuntuHomeHowWeWork() {
     <UbuntuHomeWorkflow
       config={{
         id: "how-we-work",
-        eyebrow: "How we work",
+        eyebrow: "Methodology",
         title: HOME_METHODOLOGY.title,
         lead: HOME_METHODOLOGY.lead,
       }}

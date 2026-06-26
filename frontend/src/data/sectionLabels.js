@@ -2,11 +2,11 @@
 export const SECTION_LABEL = {
   overview: "Overview",
   sectorContext: "Sector context",
-  industryAgents: "Industry ready agents",
+  industryAgents: "Industry-ready programs",
   delivery: "Delivery",
   deployment: "Deployment",
   services: "Services",
-  serviceCatalog: "Service catalog",
+  serviceCatalog: "Service offerings",
   technology: "Technology",
   techStack: "Tech stack",
   foundation: "Technical foundation",

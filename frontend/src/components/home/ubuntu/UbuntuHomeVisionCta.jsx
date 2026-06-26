@@ -35,7 +35,7 @@ export default function UbuntuHomeVisionCta({
       imagePosition={imagePosition}
     >
       {section.eyebrow && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
           {section.eyebrow}
         </p>
       )}

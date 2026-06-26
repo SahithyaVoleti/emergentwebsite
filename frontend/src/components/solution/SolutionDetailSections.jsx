@@ -27,7 +27,7 @@ function FactTile({ icon: Icon, label, value, delay, reveal }) {
   return (
     <motion.div
       {...reveal(delay)}
-      className="solution-fact-tile border border-[#e5e5e5] bg-[#fafafa] p-4 sm:p-5"
+      className="solution-fact-tile border border-[#e5e5e5] bg-white p-4 sm:p-5"
     >
       <div className="mb-2 flex items-center gap-2 text-[#8b1538]">
         <Icon size={16} strokeWidth={2} aria-hidden />
@@ -109,7 +109,7 @@ export function SolutionOverviewSection({ solution }) {
           </div>
 
           {techItems.length > 0 && (
-            <div className="border-t border-[#e5e5e5] bg-[#fafafa] px-4 py-5 sm:px-6 sm:py-6">
+            <div className="border-t border-[#e5e5e5] bg-white px-4 py-5 sm:px-6 sm:py-6">
               <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#888]">
                 Technology stack
               </p>
@@ -148,7 +148,7 @@ function SolutionPilotSchedule({ weeks, reveal }) {
   return (
     <div className="solution-pilot-schedule overflow-hidden border border-[#d9d9d9] bg-white">
       <div
-        className="solution-pilot-schedule__head hidden grid-cols-[6.5rem_9rem_1fr] gap-6 border-b border-[#e5e5e5] bg-[#fafafa] px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#666] sm:grid"
+        className="solution-pilot-schedule__head hidden grid-cols-[6.5rem_9rem_1fr] gap-6 border-b border-[#e5e5e5] bg-white px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#666] sm:grid"
         aria-hidden
       >
         <span>Week</span>
@@ -229,7 +229,7 @@ export function SolutionMethodologySection({ steps }) {
       ref={sectionRef}
       id="solution-methodology"
       data-testid="solution-methodology"
-      className="ubuntu-section-block ubuntu-pattern-section ubuntu-pattern-section--cta ubuntu-section--dark border-b border-[#d9d9d9]"
+      className="ubuntu-section-block ubuntu-pattern-section ubuntu-pattern-section--cta border-b border-[#d9d9d9]"
       aria-labelledby="solution-methodology-heading"
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
@@ -237,20 +237,20 @@ export function SolutionMethodologySection({ steps }) {
       <SectionPatternBackground variant="cta" />
       <div ref={ref} className="ubuntu-container relative z-10">
         <motion.div {...reveal(0)} className="max-w-3xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#e8b4b8]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
             Methodology
           </p>
-          <h2 id="solution-methodology-heading" className="ubuntu-section-title text-white">
-            How we deploy accelerators
+          <h2 id="solution-methodology-heading" className="ubuntu-section-title">
+            Methodology for solution accelerator deployment
           </h2>
-          <p className="ubuntu-lead mt-3 text-white/90">
+          <p className="ubuntu-lead mt-3">
             Connect, configure, validate, and hand over—with explicit checkpoints.
           </p>
         </motion.div>
 
         <motion.div
           {...reveal(0.12)}
-          className="solution-methodology-panel mt-8 border border-white/15 bg-black/20 p-4 backdrop-blur-sm sm:mt-10 sm:p-6"
+          className="solution-methodology-panel mt-8 border border-[#e5e5e5] bg-white p-4 sm:mt-10 sm:p-6"
         >
           <MethodologyFlowchart steps={steps} />
         </motion.div>

@@ -19,6 +19,7 @@ import {
   MessageCircle,
   Newspaper,
   Shield,
+  Smartphone,
   Sparkles,
   Sprout,
   Store,
@@ -59,7 +60,18 @@ const ICON_BY_HREF = {
   "/blog": Newspaper,
 };
 
-export function getNavDropdownIcon(href, fallback = Circle) {
+const ICON_BY_PILLAR = {
+  "Intelligent Automation": Bot,
+  "AI Engineering": Sparkles,
+  "AI & Machine Learning": Brain,
+  "Enterprise Applications": Code,
+  "Digital Experience": Smartphone,
+  "Data & Analytics": Database,
+  "Platform Operations": Cloud,
+};
+
+export function getNavDropdownIcon(href, { pillar, fallback = Circle } = {}) {
+  if (pillar && ICON_BY_PILLAR[pillar]) return ICON_BY_PILLAR[pillar];
   return ICON_BY_HREF[href] || fallback;
 }
 

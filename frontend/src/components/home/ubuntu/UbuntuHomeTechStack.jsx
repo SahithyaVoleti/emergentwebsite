@@ -37,7 +37,7 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
           marqueeColumnHeightClassName="h-[min(22rem,48vh)] sm:h-[24rem] min-h-[16rem]"
         />
       ) : (
-        <p className="px-6 py-12 text-center text-sm text-[#5c677d]">
+        <p className="px-6 py-12 text-center text-sm text-[#6b6b6b]">
           No mapped technologies for this service yet.
         </p>
       )}
@@ -54,7 +54,7 @@ export default function UbuntuHomeTechStack({ initialSlug = ALL_SERVICES_KEY, co
       mediaClassName="ubuntu-tech-stack__media"
       mediaSlot={techStackPanel}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
         {section.eyebrow}
       </p>
       <h2 className="ubuntu-section-title">{section.title}</h2>

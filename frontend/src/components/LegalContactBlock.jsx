@@ -4,7 +4,7 @@ import { COMPANY_CONTACT, COMPANY_NAME } from "../lib/company";
 export default function LegalContactBlock() {
   return (
     <section
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-[#fafafa]"
+      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
       aria-labelledby="legal-contact-heading"
     >
       <div className="ubuntu-container py-10">

@@ -7,7 +7,6 @@ import UbuntuMetricGrid from "../components/ubuntu/UbuntuMetricGrid";
 import UbuntuSplitCopy from "../components/ubuntu/UbuntuSplitCopy";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import TestimonialsSection from "../components/TestimonialsSection";
-import RelatedBlog from "../components/RelatedBlog";
 import caseStudies from "../data/caseStudies";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
@@ -23,7 +22,7 @@ export default function CaseStudyDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Test case not found</h1>
-          <Link to="/case-studies" className="mt-4 text-[#0466c8] hover:underline">
+          <Link to="/case-studies" className="mt-4 text-[#d1511f] hover:underline">
             Back to case studies
           </Link>
         </div>
@@ -36,6 +35,7 @@ export default function CaseStudyDetail() {
   return (
     <SitePageMain>
       <PageHero
+        significance="detail"
         label={cs.industry}
         title={cs.heroTitle}
         description={cs.heroDesc}
@@ -98,7 +98,7 @@ export default function CaseStudyDetail() {
         includeMethodology={false}
         includeOutcomes={false}
         ctaOverrides={{
-          title: "Get started with your test case",
+          title: "Next Step for your validation program",
           description:
             "Share your constraints and timeline. We map this production test case, or an adjusted version, to your systems, policies, and success measures.",
         }}
@@ -106,7 +106,6 @@ export default function CaseStudyDetail() {
           <>
             <TestimonialsSection title="Engagement principles for new partners" />
             <FAQSection faqs={cs.faqs} />
-            <RelatedBlog />
           </>
         }
       />

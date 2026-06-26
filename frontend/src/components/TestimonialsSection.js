@@ -30,10 +30,10 @@ export default function TestimonialsSection({
                 data-testid={`page-testimonial-${i}`}
                 className="flex h-full flex-col border border-[#e5e5e5] bg-white p-6"
               >
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#0466c8]">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#5c5c5c]">
                   {item.tag}
                 </p>
-                <p className="mb-3 text-base font-medium text-[#002855]">{item.headline}</p>
+                <p className="mb-3 text-base font-medium text-[#2d2d2d]">{item.headline}</p>
                 <p className="flex-1 text-sm leading-relaxed text-[#7d8597]">{item.body}</p>
               </article>
             </CarouselItem>

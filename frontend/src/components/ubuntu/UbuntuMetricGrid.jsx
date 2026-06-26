@@ -31,7 +31,7 @@ export default function UbuntuMetricGrid({
             <p className="text-2xl font-medium" style={{ color: paletteAccent(index) }}>
               {item.value ?? item.metric}
             </p>
-            <p className="mt-1 text-sm font-medium text-[#5c677d]">{item.label ?? item.title}</p>
+            <p className="mt-1 text-sm font-medium text-[#6b6b6b]">{item.label ?? item.title}</p>
             {item.desc && (
               <p className="mt-2 text-sm leading-relaxed text-[#7d8597]">{item.desc}</p>
             )}

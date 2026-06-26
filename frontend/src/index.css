@@ -25,7 +25,7 @@
 
 body {
     margin: 0;
-    font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: "Samsung Sharp Sans", "Ubuntu", Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -49,7 +49,7 @@ h1 {
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #002855;
+    color: #2d2d2d;
     transition: color var(--section-transition);
 }
 
@@ -57,26 +57,26 @@ h2 {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 0.3px;
-    color: #002855;
+    color: #2d2d2d;
 }
 
 h3 {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    color: #002855;
+    color: #2d2d2d;
 }
 
 h4 {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    color: #002855;
+    color: #2d2d2d;
 }
 
 /* Multi-color heading on light backgrounds (add class next to h1–h4) */
 .corp-heading-gradient {
-    background: linear-gradient(135deg, #002855 0%, #0466c8 50%, #0353a4 100%);
+    background: linear-gradient(135deg, #2d2d2d 0%, #d1511f 50%, #8b4c6e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,7 +94,7 @@ h4 {
 
 /* Split headings: secondary phrase readable on light cards / patterned sections */
 .corp-heading-secondary {
-    color: #33415c;
+    color: #4a4a4a;
     font-weight: 600;
 }
 
@@ -102,8 +102,8 @@ h4 {
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
-    -webkit-text-fill-color: #33415c !important;
-    color: #33415c !important;
+    -webkit-text-fill-color: #4a4a4a !important;
+    color: #4a4a4a !important;
 }
 
 /* Secondary phrase on navy / dark bands where global h1–h4 are forced light */
@@ -116,17 +116,18 @@ h4 {
     background-clip: unset !important;
 }
 
-/* Hero headlines — white on dark/image hero bands (not light-split homepage) */
-.ubuntu-site .ubuntu-site-page-chrome:not(.ubuntu-site-page-chrome--light-split) #hero h1,
-.ubuntu-site .ubuntu-site-page-chrome:not(.ubuntu-site-page-chrome--light-split) #page-hero h1 {
-    background: none;
-    -webkit-background-clip: unset;
-    background-clip: unset;
-    -webkit-text-fill-color: currentColor;
-    font-family: inherit;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    color: #fff;
+/* Hero headlines — light-split layout (homepage + inner pages) */
+.ubuntu-site .ubuntu-site-page-chrome--light-split #hero h1,
+.ubuntu-site .ubuntu-site-page-chrome--light-split #page-hero h1,
+.ubuntu-site .ubuntu-site-page-chrome--light-split .ubuntu-hero-transformation__title {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: currentColor;
+  font-family: var(--font-hero-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--ubuntu-hero-aubergine, #2d2d2d);
 }
 
 #hero h1 {
@@ -141,11 +142,11 @@ h4 {
 }
 
 #hero h1 .hero-heading-accent {
-    background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 55%, #7dd3fc 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: currentColor;
+    color: #d1511f;
 }
 
 @media (min-width: 768px) {
@@ -176,25 +177,25 @@ code {
 
 @layer base {
     :root {
-        --background: 210 40% 98%;
-        --foreground: 222 47% 11%;
+        --background: 0 0% 100%;
+        --foreground: 0 0% 18%;
         --card: 0 0% 100%;
-        --card-foreground: 222 47% 11%;
+        --card-foreground: 0 0% 18%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222 47% 11%;
-        --primary: 220 70% 14%;
+        --popover-foreground: 0 0% 18%;
+        --primary: 17 74% 47%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 214 32% 91%;
-        --secondary-foreground: 220 70% 14%;
-        --muted: 210 40% 96%;
-        --muted-foreground: 215 16% 47%;
-        --accent: 217 91% 60%;
+        --secondary: 0 0% 96%;
+        --secondary-foreground: 0 0% 18%;
+        --muted: 0 0% 96%;
+        --muted-foreground: 0 0% 40%;
+        --accent: 17 74% 47%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 214 32% 91%;
-        --input: 214 32% 91%;
-        --ring: 220 70% 14%;
+        --border: 0 0% 90%;
+        --input: 0 0% 90%;
+        --ring: 17 74% 47%;
         --chart-1: 12 76% 61%;
         --chart-2: 173 58% 39%;
         --chart-3: 197 37% 24%;
@@ -313,7 +314,7 @@ html {
      * No ruled "notebook" lines.
      */
     .corp-pat-dots {
-        background-color: #eef4fc;
+        background-color: #ffffff;
         background-image: radial-gradient(rgba(100, 116, 139, 0.09) 1px, transparent 1px);
         background-size: 18px 18px;
     }
@@ -338,7 +339,7 @@ html {
     }
 
     .corp-pat-diag-dash {
-        background-color: #fafbfc;
+        background-color: #ffffff;
         background-image: repeating-linear-gradient(-36deg,
                 transparent,
                 transparent 11px,
@@ -760,6 +761,6 @@ html {
 
 .sol-pagination-dot--active {
     width: 40px;
-    background: #0466c8;
-    box-shadow: 0 0 10px rgba(4, 102, 200, 0.4);
+    background: #d1511f;
+    box-shadow: 0 0 10px rgba(209, 81, 31, 0.4);
 }

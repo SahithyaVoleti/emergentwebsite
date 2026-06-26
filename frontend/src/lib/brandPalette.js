@@ -1,17 +1,17 @@
-/** NeuralTrix brand palette — use role tokens or cycle accents, not one flat blue. */
+/** Site palette — hero-aligned terracotta, charcoal, and burgundy accents. */
 export const PALETTE = {
-  smartBlue: "#0466c8",
-  sapphire: "#0353a4",
-  regalNavy: "#023e7d",
-  prussianBlue: "#002855",
-  prussianBlue2: "#001845",
-  prussianBlue3: "#001233",
-  twilightIndigo: "#33415c",
-  blueSlate: "#5c677d",
-  slateGrey: "#7d8597",
-  lavenderGrey: "#979dac",
-  surface: "#eef4fc",
-  surfaceStrong: "#dce8f5",
+  smartBlue: "#d1511f",
+  sapphire: "#b8451a",
+  regalNavy: "#8b4c6e",
+  prussianBlue: "#2d2d2d",
+  prussianBlue2: "#252525",
+  prussianBlue3: "#1a1a1a",
+  twilightIndigo: "#4a4a4a",
+  blueSlate: "#6b5564",
+  slateGrey: "#7d6b75",
+  lavenderGrey: "#9a8490",
+  surface: "#ffffff",
+  surfaceStrong: "#e5e5e5",
 };
 
 /** Rotating accents for cards, icons, and badges. */

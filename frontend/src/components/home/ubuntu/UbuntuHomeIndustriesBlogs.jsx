@@ -11,6 +11,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import blogArticles from "../../../data/blog";
+import { BRAND_LOGO_SYMBOL } from "../../../data/brandAssets";
 import { HOME_BLOGS_BAND, HOME_DOMAINS } from "../../../data/homePageSections";
 import UbuntuLink from "../../ubuntu/UbuntuLink";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
@@ -33,7 +34,7 @@ function BlogFeaturedCard({ post }) {
   return (
     <Link
       to={`/blog/${post.slug}`}
-      className="ubuntu-blog-featured group grid overflow-hidden border border-[#e5e5e5] bg-white transition-colors hover:border-[#0353a4]/40 md:grid-cols-2"
+      className="ubuntu-blog-featured group grid overflow-hidden border border-[#e5e5e5] bg-white transition-colors hover:border-[#b8451a]/40 md:grid-cols-2"
     >
       <div className="relative min-h-[14rem] overflow-hidden bg-[#eee] md:min-h-[20rem]">
         <img
@@ -44,8 +45,8 @@ function BlogFeaturedCard({ post }) {
           decoding="async"
         />
       </div>
-      <div className="flex flex-col bg-[#fafafa] p-6 sm:p-8 md:p-10">
-        <h3 className="text-xl font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4] sm:text-2xl">
+      <div className="flex flex-col bg-white p-6 sm:p-8 md:p-10">
+        <h3 className="text-xl font-medium leading-snug text-[#2d2d2d] transition-colors group-hover:text-[#b8451a] sm:text-2xl">
           {post.title}
         </h3>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-[#7d8597] sm:text-base">
@@ -54,13 +55,13 @@ function BlogFeaturedCard({ post }) {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#e5e5e5] pt-6">
           <div className="flex items-center gap-3">
             <img
-              src="/neuraltrix-logo.svg"
+              src={BRAND_LOGO_SYMBOL}
               alt=""
-              className="h-10 w-10 rounded-full border border-[#e5e5e5] bg-white object-cover"
+              className="h-10 w-10 rounded-full border border-[#e5e5e5] bg-white object-contain p-1"
             />
             <div>
-              <p className="text-sm font-medium text-[#002855]">NeuralTrix AI</p>
-              <p className="text-xs text-[#5c677d]">Engineering insights</p>
+              <p className="text-sm font-medium text-[#2d2d2d]">NeuralTrix AI</p>
+              <p className="text-xs text-[#8b4c6e]">Engineering insights</p>
             </div>
           </div>
           <span className="border border-[#e5e5e5] bg-white px-3 py-1 text-xs font-medium text-[#7d8597]">
@@ -90,7 +91,7 @@ function BlogCompactCard({ post }) {
           {post.category}
         </span>
       </div>
-      <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#002855] transition-colors group-hover:text-[#0353a4]">
+      <h3 className="ubuntu-blog-compact-card__title mt-4 text-center text-base font-medium leading-snug text-[#2d2d2d] transition-colors group-hover:text-[#b8451a]">
         {post.title}
       </h3>
     </Link>
@@ -106,14 +107,14 @@ export function UbuntuHomeIndustries() {
       aria-labelledby={`${HOME_DOMAINS.id}-heading`}
     >
       <div className="ubuntu-container">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
           {HOME_DOMAINS.eyebrow}
         </p>
-        <h2 id={`${HOME_DOMAINS.id}-heading`} className="ubuntu-section-title text-[#002855]">
+        <h2 id={`${HOME_DOMAINS.id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
           {HOME_DOMAINS.title}
         </h2>
         {HOME_DOMAINS.lead && (
-          <p className="ubuntu-lead mt-4 max-w-3xl text-[#33415c]">{HOME_DOMAINS.lead}</p>
+          <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{HOME_DOMAINS.lead}</p>
         )}
         <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
           {HOME_DOMAINS.items.map((item, index) => {
@@ -125,14 +126,14 @@ export function UbuntuHomeIndustries() {
                   data-palette-accent={paletteAccentIndex(index)}
                   className="ubuntu-industry-icon-card group flex flex-col items-center text-center"
                 >
-                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-[#fafafa] sm:h-20 sm:w-20">
+                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-white sm:h-20 sm:w-20">
                     <Icon
                       className="ubuntu-palette-icon-fill h-8 w-8 transition-colors sm:h-9 sm:w-9"
                       strokeWidth={1.5}
                       aria-hidden
                     />
                   </span>
-                  <span className="mt-4 text-sm font-medium leading-snug text-[#002855] transition-colors sm:text-base">
+                  <span className="mt-4 text-sm font-medium leading-snug text-[#2d2d2d] transition-colors sm:text-base">
                     {item.title}
                   </span>
                 </Link>
@@ -183,13 +184,13 @@ export function UbuntuHomeBlogs({ config }) {
       <div className="ubuntu-container">
         <div className="mb-8 flex flex-col gap-4 md:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl text-left">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b4c6e]">
               {band.eyebrow}
             </p>
-            <h2 id={`${band.id}-heading`} className="ubuntu-section-title text-[#002855]">
+            <h2 id={`${band.id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
               {band.title}
             </h2>
-            {band.lead && <p className="ubuntu-lead mt-3 text-[#33415c]">{band.lead}</p>}
+            {band.lead && <p className="ubuntu-lead mt-3 text-[#2d2d2d]">{band.lead}</p>}
           </div>
           {band.viewAllHref && (
             <UbuntuLink to={band.viewAllHref} muted className="flex-shrink-0 self-start lg:self-auto">

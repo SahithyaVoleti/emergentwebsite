@@ -6,8 +6,10 @@ import { hq } from "../lib/heroImageThemes";
  */
 export const SITE_MOCKUPS = {
   hero: {
-    src: hq("photo-1677442136019-21780ecad995"),
-    alt: "AI platform interface mockup — neural network visualization",
+    src: "/media/data-extraction-hero.gif",
+    alt: "Data extraction and AI pipeline — animated platform visualization",
+    mediaType: "gif",
+    playOnce: true,
   },
   dashboard: {
     src: hq("photo-1551288049-bebda4e38f71"),
@@ -46,8 +48,8 @@ export const SITE_MOCKUPS = {
     alt: "Multi-cloud infrastructure topology mockup",
   },
   data: {
-    src: hq("photo-1460925895917-afdab827c52f"),
-    alt: "Data platform and lineage monitoring mockup",
+    src: "/media/data-extraction.gif",
+    alt: "Data extraction and AI pipeline visualization mockup",
   },
   chat: {
     src: hq("photo-1531482615713-2afd69097998"),

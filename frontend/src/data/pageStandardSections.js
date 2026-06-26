@@ -3,9 +3,9 @@
 export const PAGE_STANDARD_SECTIONS = {
   solutions: {
     methodology: {
-      eyebrow: "Deployment",
-      title: "How we deploy agent-ready modules",
-      lead: "We start with your existing apps, plug in pre-built agent and copilot modules, and validate on real workflows before you scale.",
+      eyebrow: "Methodology",
+      title: "Methodology for solution module deployment",
+      lead: "This methodology maps existing applications, deploys pre-built modules, and validates outcomes on production workflows before scale-up.",
       bullets: [
         "Map where agents fit inside CRM, ERP, and internal tools",
         "Connect modules to your data, auth, and audit setup",
@@ -15,9 +15,9 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "pipeline",
     },
     outcomes: {
-      eyebrow: "Module value",
+      eyebrow: "Outcomes",
       title: "Outcomes for solution modules",
-      lead: "Faster paths to AI inside the software you already use—not greenfield rebuilds.",
+      lead: "Accelerated delivery of AI capabilities within current application estates and integration boundaries.",
       bullets: [
         "Agents and copilots running inside your current apps",
         "Clear wiring from your systems to agent tools",
@@ -28,7 +28,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Rollout controls",
+      eyebrow: "Assurance",
       title: "Assurance for agent rollouts",
       lead: "Safety, logging, and rollback are part of the build—not a checklist at the end.",
       bullets: [
@@ -41,17 +41,17 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with solution scoping",
+      title: "Next Step for solution scoping",
       description:
-        "Tell us which app and workflow you want to upgrade. We will map module fit, integration effort, and a pilot you can ship.",
+        "Share your target application and workflow. We will outline module fit, integration scope, and a governed pilot plan.",
       mockupKey: "chat",
     },
   },
   services: {
     methodology: {
-      eyebrow: "Delivery",
-      title: "How we build agents and modernize apps",
-      lead: "We find the workflow, ship a small agent or copilot inside your app, prove it works, then expand—with your team in the loop.",
+      eyebrow: "Methodology",
+      title: "Methodology for enterprise AI and application services",
+      lead: "This methodology sequences workflow analysis, pilot delivery, validation, and controlled expansion with defined governance checkpoints.",
       bullets: [
         "Discovery on which app and workflow to upgrade first",
         "Pilot agents or copilots with clear success measures",
@@ -61,9 +61,9 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "pipeline",
     },
     outcomes: {
-      eyebrow: "Service value",
+      eyebrow: "Outcomes",
       title: "Outcomes for our services",
-      lead: "Working AI inside your software—not slide decks or disconnected demos.",
+      lead: "Production AI integrated with line-of-business applications, with measurable adoption and operational controls.",
       bullets: [
         "Agents running in CRM, ERP, internal tools, or customer apps",
         "Modernized apps with clean hooks for copilots and automation",
@@ -74,9 +74,9 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Delivery controls",
+      eyebrow: "Assurance",
       title: "Assurance for agent delivery",
-      lead: "We ship with guardrails, logging, and rollback built in from the first slice.",
+      lead: "This assurance model embeds guardrails, logging, and rollback from the initial delivery phase.",
       bullets: [
         "Scoped credentials and audit trails for agent actions",
         "Tests on the workflows that matter before go-live",
@@ -87,9 +87,9 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with your delivery plan",
+      title: "Next Step for your delivery plan",
       description:
-        "Share the app and workflow you want to upgrade. We will map the right service mix and a pilot you can ship.",
+        "Share your application landscape and priority workflow. We will recommend service lines and a measurable pilot scope.",
       buttonText: "Schedule consultation",
       contactIntent: "consultation",
       mockupKey: "pipeline",
@@ -97,9 +97,9 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   industries: {
     methodology: {
-      eyebrow: "Sector delivery",
-      title: "How we build agents by industry",
-      lead: "We learn your sector rules first, then ship agents and copilots inside the apps your teams already use.",
+      eyebrow: "Methodology",
+      title: "Methodology for industry AI programs",
+      lead: "This methodology applies sector constraints first, then delivers intelligent automation inside line-of-business applications.",
       bullets: [
         "Sector discovery on data, compliance, and daily workflows",
         "One high-value pilot—agent in CRM, ERP, or ops tool",
@@ -109,9 +109,9 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "pipeline",
     },
     outcomes: {
-      eyebrow: "Program value",
+      eyebrow: "Outcomes",
       title: "Outcomes for industry programs",
-      lead: "AI that fits how your sector operates—not generic chatbots.",
+      lead: "Sector-aligned intelligent automation with governance suited to regulated and operational environments.",
       bullets: [
         "Agents handling repetitive work inside your existing apps",
         "Faster answers from operational data without tab switching",
@@ -122,7 +122,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Sector controls",
+      eyebrow: "Assurance",
       title: "Assurance for sector delivery",
       lead: "Data boundaries, access control, and change management are part of the design—not afterthoughts.",
       bullets: [
@@ -135,7 +135,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with industry programs",
+      title: "Next Step for industry programs",
       description:
         "Share your sector, apps, and constraints. We will propose a pilot agent or app upgrade sized to your review cycle.",
       buttonText: "Begin technical scoping",
@@ -144,8 +144,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   caseStudies: {
     methodology: {
-      eyebrow: "Live validation",
-      title: "How we test before production",
+      eyebrow: "Methodology",
+      title: "Methodology for production validation",
       lead: "Each test case runs in live or sandbox environments with agreed success measures before we mark it production-ready.",
       bullets: [
         "Built on real application workflows—not slide-deck demos",
@@ -156,7 +156,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "pipeline",
     },
     outcomes: {
-      eyebrow: "Sector coverage",
+      eyebrow: "Outcomes",
       title: "Outcomes across industry test cases",
       lead: "Production-ready implementations across education, healthcare, finance, commerce, manufacturing, and more.",
       bullets: [
@@ -169,7 +169,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Production controls",
+      eyebrow: "Assurance",
       title: "Assurance built into every test case",
       lead: "Scoped access, audit trails, and approval paths are part of each implementation—not added after testing.",
       bullets: [
@@ -182,7 +182,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with a production test case",
+      title: "Next Step for a production test case",
       description:
         "Tell us your sector and applications. We map the closest live-tested implementation and how to adapt it to your environment.",
       buttonText: "Schedule consultation",
@@ -192,8 +192,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   blog: {
     methodology: {
-      eyebrow: "Reading guide",
-      title: "How we use these resources",
+      eyebrow: "Methodology",
+      title: "Methodology for using delivery resources",
       lead: "Articles are grouped by the decisions you face—strategy, build, run, and control—so reading time maps to program needs.",
       bullets: [
         "Strategy and operating model considerations for leadership",
@@ -204,7 +204,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "code",
     },
     outcomes: {
-      eyebrow: "Resource value",
+      eyebrow: "Outcomes",
       title: "Outcomes for our delivery notes",
       lead: "Use these notes to inform internal reviews, vendor discussions, and milestone planning—not as guarantees of specific results.",
       bullets: [
@@ -217,7 +217,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Publication standards",
+      eyebrow: "Assurance",
       title: "Assurance for responsible AI publication",
       lead: "We tie recommendations to delivery practice, verifiable controls, and right-sized risk framing.",
       bullets: [
@@ -230,7 +230,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with a technical discussion",
+      title: "Next Step for a technical discussion",
       description:
         "Request information on a topic or initiative. We respond with relevant references and a practical view of fit and next steps.",
       buttonText: "Contact us",
@@ -239,9 +239,9 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   about: {
     methodology: {
-      eyebrow: "Engagement model",
-      title: "How we ship agents and modernize apps",
-      lead: "Senior builders stay on the work—scope, risk, and results stay visible from first pilot to handover.",
+      eyebrow: "Methodology",
+      title: "Methodology for enterprise AI delivery",
+      lead: "This methodology keeps senior practitioners accountable for scope, risk, and outcomes from pilot through handover.",
       bullets: [
         "Discovery on which app and workflow to upgrade first",
         "Agents and copilots designed for your existing software stack",
@@ -251,9 +251,9 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "collaboration",
     },
     outcomes: {
-      eyebrow: "Working together",
+      eyebrow: "Outcomes",
       title: "Outcomes working with us",
-      lead: "AI inside the apps you run today—not parallel experiments that never reach production.",
+      lead: "Intelligent automation embedded in existing applications, with a defined path from pilot to enterprise rollout.",
       bullets: [
         "Agents in CRM, ERP, internal tools, or customer-facing apps",
         "Modernized software with clean hooks for copilots and automation",
@@ -264,9 +264,9 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Delivery standards",
+      eyebrow: "Assurance",
       title: "Assurance for how we work",
-      lead: "We ship with guardrails, honest updates, and docs your security team can review.",
+      lead: "This assurance model includes guardrails, transparent reporting, and documentation for security review.",
       bullets: [
         "Outcome ownership—not just feature delivery",
         "Early visibility when scope or risk shifts",
@@ -277,7 +277,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with working together",
+      title: "Next Step for working together",
       description:
         "Tell us which app you want to upgrade. We will discuss fit, pilot scope, and how we align to your constraints.",
       buttonText: "Contact us",
@@ -286,8 +286,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   team: {
     methodology: {
-      eyebrow: "Collaboration",
-      title: "How we deliver cross-functionally",
+      eyebrow: "Methodology",
+      title: "Methodology for cross-functional delivery",
       lead: "Product, engineering, applied science, and client success work under one accountable framework.",
       bullets: [
         "Strategy leadership for roadmap and stakeholder oversight",
@@ -298,7 +298,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "collaboration",
     },
     outcomes: {
-      eyebrow: "Team experience",
+      eyebrow: "Outcomes",
       title: "Outcomes for named delivery ownership",
       lead: "Direct access to decision-makers responsible for scope and results—here is how teams experience engagement.",
       bullets: [
@@ -311,7 +311,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Accountability",
+      eyebrow: "Assurance",
       title: "Assurance for collaboration",
       lead: "We emphasize ownership, transparent communication, and improvement informed by delivery retrospectives.",
       bullets: [
@@ -324,7 +324,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with team introductions",
+      title: "Next Step for team introductions",
       description:
         "Contact us to meet the roles relevant to your initiative, or view open positions if you are exploring careers with NeuralTrix.",
       buttonText: "Contact us",
@@ -333,8 +333,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   partners: {
     methodology: {
-      eyebrow: "Ecosystem",
-      title: "How we use partner ecosystems",
+      eyebrow: "Methodology",
+      title: "Methodology for partner ecosystem delivery",
       lead: "We group how we apply cloud, model, data, and application partners so architecture reviews stay structured.",
       bullets: [
         "Cloud foundation design for secure, scalable environments",
@@ -345,7 +345,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "cloud",
     },
     outcomes: {
-      eyebrow: "Platform value",
+      eyebrow: "Outcomes",
       title: "Outcomes for ecosystem-backed delivery",
       lead: "Practical benefits when platforms are chosen for fit, not logo placement alone.",
       bullets: [
@@ -358,7 +358,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Architecture review",
+      eyebrow: "Assurance",
       title: "Assurance for partner-aligned architecture",
       lead: "We keep partner choices subordinate to your policies, data boundaries, and operational requirements.",
       bullets: [
@@ -371,7 +371,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with platform scoping",
+      title: "Next Step for platform scoping",
       description:
         "Discuss your environment and policies. We recommend partner and platform patterns right-sized to your control requirements.",
       buttonText: "Contact us",
@@ -380,8 +380,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   testimonials: {
     methodology: {
-      eyebrow: "Engagement model",
-      title: "How we start working together",
+      eyebrow: "Methodology",
+      title: "Methodology for engagement initiation",
       lead: "Discovery and pilots follow the same operating commitments on every service and industry track.",
       bullets: [
         "Pilot scope agreed before build scale-up",
@@ -392,7 +392,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "collaboration",
     },
     outcomes: {
-      eyebrow: "Working principles",
+      eyebrow: "Outcomes",
       title: "Outcomes you can expect in discovery",
       lead: "What prospective partners typically validate before expanding agent or app modernization work.",
       bullets: [
@@ -405,7 +405,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Delivery standards",
+      eyebrow: "Assurance",
       title: "Assurance for prospective partners",
       lead: "We document commitments so procurement and technical reviewers can assess fit without promotional quotes.",
       bullets: [
@@ -418,7 +418,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with a conversation",
+      title: "Next Step for a conversation",
       description:
         "Tell us about your applications and constraints. We outline fit, pilot scope, and next steps.",
       buttonText: "Contact us",
@@ -427,8 +427,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   security: {
     methodology: {
-      eyebrow: "Security practice",
-      title: "How we build security into AI delivery",
+      eyebrow: "Methodology",
+      title: "Methodology for secure AI delivery",
       lead: "We integrate threat modeling, access control, and operational safeguards from discovery through production.",
       bullets: [
         "Security requirements captured during architecture design",
@@ -439,7 +439,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "security",
     },
     outcomes: {
-      eyebrow: "Operational security",
+      eyebrow: "Outcomes",
       title: "Outcomes for controlled AI operations",
       lead: "Operational security goals we work toward—certification claims require separate contractual scope.",
       bullets: [
@@ -452,7 +452,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Control standards",
+      eyebrow: "Assurance",
       title: "Assurance for operational security practice",
       lead: "We embed controls into delivery milestones and document practices buyers commonly verify.",
       bullets: [
@@ -465,7 +465,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with security review",
+      title: "Next Step for security review",
       description:
         "Contact us with your security and compliance requirements. We outline controls, evidence paths, and delivery implications.",
       buttonText: "Contact us",
@@ -474,8 +474,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   careers: {
     methodology: {
-      eyebrow: "Hiring",
-      title: "How we hire and onboard",
+      eyebrow: "Methodology",
+      title: "Methodology for hiring and onboarding",
       lead: "Hiring stays practical: clear role scope, structured interviews, and onboarding aligned to delivery standards.",
       bullets: [
         "Role definitions tied to delivery workstreams",
@@ -486,7 +486,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "collaboration",
     },
     outcomes: {
-      eyebrow: "Team growth",
+      eyebrow: "Outcomes",
       title: "Outcomes as the team grows",
       lead: "We aim to scale delivery capacity without diluting quality as the team grows.",
       bullets: [
@@ -499,7 +499,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Quality bar",
+      eyebrow: "Assurance",
       title: "Assurance for consistent delivery quality",
       lead: "We keep hiring and growth subordinate to client outcomes and internal engineering discipline.",
       bullets: [
@@ -512,7 +512,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with careers",
+      title: "Next Step for careers",
       description:
         "Review open roles or contact us with your background. We respond with clarity on fit, process, and timing.",
       buttonText: "View open roles",
@@ -522,9 +522,9 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   detail: {
     methodology: {
-      eyebrow: "Program delivery",
-      title: "How we deliver scoped agent work",
-      lead: "We map your app and workflow, ship a focused agent or copilot pilot, validate on real tasks, then hand over what works.",
+      eyebrow: "Methodology",
+      title: "Methodology for scoped AI programs",
+      lead: "This methodology maps applications and workflows, delivers a bounded pilot, validates against agreed criteria, and transfers operational ownership.",
       bullets: [
         "Discovery on systems, data access, and the workflow to automate",
         "Agent or app upgrade design before we scale the build",
@@ -534,7 +534,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "pipeline",
     },
     outcomes: {
-      eyebrow: "Scoped deliverables",
+      eyebrow: "Outcomes",
       title: "Outcomes for a scoped program",
       lead: "Working AI inside your app—with clear success measures you define.",
       bullets: [
@@ -547,7 +547,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Milestone controls",
+      eyebrow: "Assurance",
       title: "Assurance for scoped delivery",
       lead: "Guardrails, logging, and rollback are built into each milestone—not added at the end.",
       bullets: [
@@ -560,7 +560,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with your program",
+      title: "Next Step for your program",
       description:
         "Contact us about the app and workflow you want to upgrade. We will outline scope, timeline, and a practical pilot path.",
       buttonText: "Contact us",
@@ -569,8 +569,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   research: {
     methodology: {
-      eyebrow: "Experimentation",
-      title: "How we test agents before production",
+      eyebrow: "Methodology",
+      title: "Methodology for pre-production experimentation",
       lead: "We run time-boxed experiments on agent behavior, app integration, and failure modes—then move proven patterns into client builds.",
       bullets: [
         "Fixed-scope prototypes with clear pass or fail criteria",
@@ -581,7 +581,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "code",
     },
     outcomes: {
-      eyebrow: "Research outputs",
+      eyebrow: "Outcomes",
       title: "Outcomes for research tracks",
       lead: "Honest results before you fund a full agent or app modernization program.",
       bullets: [
@@ -594,7 +594,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Research controls",
+      eyebrow: "Assurance",
       title: "Assurance for experimentation",
       lead: "We keep research reproducible, controlled, and aligned to your data and security constraints.",
       bullets: [
@@ -607,7 +607,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with research collaboration",
+      title: "Next Step for research collaboration",
       description:
         "Contact us about an agent pattern, app upgrade idea, or innovation track. We will define a practical starting scope.",
       buttonText: "Contact us",
@@ -616,8 +616,8 @@ export const PAGE_STANDARD_SECTIONS = {
   },
   legal: {
     methodology: {
-      eyebrow: "Policy review",
-      title: "How we support legal and policy review",
+      eyebrow: "Methodology",
+      title: "Methodology for legal and policy review",
       lead: "Policies are presented in plain language with version context so reviewers can assess obligations efficiently.",
       bullets: [
         "Structured sections for privacy, terms, and templates",
@@ -628,7 +628,7 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "code",
     },
     outcomes: {
-      eyebrow: "Policy clarity",
+      eyebrow: "Outcomes",
       title: "Outcomes for policy clarity",
       lead: "Support for procurement, legal, and security reviewers evaluating NeuralTrix engagements.",
       bullets: [
@@ -641,7 +641,7 @@ export const PAGE_STANDARD_SECTIONS = {
       variant: "alt",
     },
     assurance: {
-      eyebrow: "Responsible publication",
+      eyebrow: "Assurance",
       title: "Assurance for responsible publication",
       lead: "We keep site policies aligned to delivery practice without substituting for executed contracts.",
       bullets: [
@@ -654,7 +654,7 @@ export const PAGE_STANDARD_SECTIONS = {
     },
     cta: {
       eyebrow: "Contact",
-      title: "Get started with legal inquiry",
+      title: "Next Step for legal inquiry",
       description:
         "Contact us with contractual, privacy, or template questions. We route to the appropriate owner for your request.",
       buttonText: "Contact us",

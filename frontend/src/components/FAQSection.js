@@ -16,7 +16,7 @@ export default function FAQSection({ faqs, title, eyebrow = SECTION_LABEL.questi
         <AccordionItem key={i} value={`faq-${i}`} className="border-b border-[#d9d9d9]">
           <AccordionTrigger
             data-testid={`faq-trigger-${i}`}
-            className="py-5 text-left text-base font-medium text-[#002855] hover:text-[#0353a4] hover:no-underline"
+            className="py-5 text-left text-base font-medium text-[#2d2d2d] hover:text-[#4a4a4a] hover:no-underline"
           >
             {faq.q}
           </AccordionTrigger>

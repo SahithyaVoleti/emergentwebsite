@@ -14,7 +14,7 @@ export default function ServiceDetail() {
       <SitePageMain>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-center justify-center py-16">
           <h1 className="ubuntu-section-title">Service not found</h1>
-          <Link to="/services" className="mt-4 text-[#0466c8] hover:underline">
+          <Link to="/services" className="mt-4 text-[#d1511f] hover:underline">
             Back to services
           </Link>
         </div>
@@ -25,6 +25,7 @@ export default function ServiceDetail() {
   return (
     <SitePageMain>
       <PageHero
+        significance="detail"
         label="Services"
         title={service.heroTitle}
         description={service.heroDesc}
@@ -39,8 +40,8 @@ export default function ServiceDetail() {
         cases={serviceCaseStudies[service.slug]}
         contactContext={service.title}
         ctaOverrides={{
-          title: `Get started with ${service.title}`,
-          description: `We can align ${service.title} to your systems, priorities, and timeline to define an actionable starting scope and governance boundary.`,
+          title: `Next step for ${service.catalogTitle ?? service.title}`,
+          description: `We can align ${service.catalogTitle ?? service.title} to your systems, operating model, and delivery timeline to define a governed starting scope and measurable outcomes.`,
           mockupKey: "code",
         }}
       />

@@ -14,7 +14,7 @@ function TechBrandIcon({ name, compact = false }) {
   const sizeClass = compact ? "h-6 w-6 sm:h-7 sm:w-7" : "h-8 w-8";
 
   if (source === "fallback" || !slug) {
-    return <Icon className={cn("shrink-0 text-[#002855]", sizeClass)} aria-hidden />;
+    return <Icon className={cn("shrink-0 text-[#2d2d2d]", sizeClass)} aria-hidden />;
   }
 
   const src =
@@ -55,7 +55,7 @@ export function TechStackLogoTile({ name, compact = false, className }) {
       <TechBrandIcon name={name} compact={compact} />
       <span
         className={cn(
-          "mt-2 max-w-[140px] font-bold uppercase leading-tight tracking-wide text-[#002855]",
+          "mt-2 max-w-[140px] font-bold uppercase leading-tight tracking-wide text-[#2d2d2d]",
           compact ? "text-[8px] sm:text-[9px]" : "text-[9px] sm:text-[10px]"
         )}
       >

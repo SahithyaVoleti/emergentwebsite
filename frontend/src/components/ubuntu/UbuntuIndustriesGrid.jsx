@@ -40,7 +40,7 @@ export default function UbuntuIndustriesGrid({
                   <Icon className="ubuntu-palette-icon-fill" size={20} strokeWidth={1.5} aria-hidden />
                 </span>
               )}
-              <h3 className="text-base font-medium text-[#002855] group-hover:text-[var(--item-accent-hover)]">
+              <h3 className="text-base font-medium text-[#2d2d2d] group-hover:text-[var(--item-accent-hover)]">
                 {ind.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-[#7d8597]">{ind.shortDesc}</p>

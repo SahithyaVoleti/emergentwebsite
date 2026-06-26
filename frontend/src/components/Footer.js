@@ -5,6 +5,7 @@ import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 import SectionPatternBackground from "./SectionPatternBackground";
 import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
 import { FOOTER_COLUMNS, LEGAL_LINKS, SOCIAL_LINKS } from "../data/siteNav";
+import { BRAND_LOGO_ALT, BRAND_LOGO_FULL } from "../data/brandAssets";
 
 export default function Footer() {
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
@@ -27,9 +28,9 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
             <Link to="/" className="mb-2 inline-block">
               <img
-                src="/neuraltrix-logo.svg"
-                alt="NeuralTrix AI"
-                className="h-6 w-auto object-contain"
+                src={BRAND_LOGO_FULL}
+                alt={BRAND_LOGO_ALT}
+                className="h-7 w-auto max-w-[11rem] object-contain object-left"
               />
             </Link>
             <p className="ubuntu-footer-meta max-w-xs text-xs leading-snug">

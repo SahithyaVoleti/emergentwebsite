@@ -23,12 +23,12 @@ export default function ServiceDetailIndustriesBand({
     >
       <div className="ubuntu-container">
         {eyebrow && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">{eyebrow}</p>
         )}
-        <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#002855]">
+        <h2 id={`${id}-heading`} className="ubuntu-section-title text-[#2d2d2d]">
           {title}
         </h2>
-        {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#33415c]">{lead}</p>}
+        {lead && <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{lead}</p>}
 
         <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
           {displayIndustries.map((ind, index) => {
@@ -40,7 +40,7 @@ export default function ServiceDetailIndustriesBand({
                   data-palette-accent={paletteAccentIndex(index)}
                   className="ubuntu-industry-icon-card group flex flex-col items-center text-center"
                 >
-                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-[#fafafa] sm:h-20 sm:w-20">
+                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-white sm:h-20 sm:w-20">
                     {Icon && (
                       <Icon
                         className="ubuntu-palette-icon-fill h-8 w-8 transition-colors sm:h-9 sm:w-9"
@@ -49,7 +49,7 @@ export default function ServiceDetailIndustriesBand({
                       />
                     )}
                   </span>
-                  <span className="mt-4 text-sm font-medium leading-snug text-[#002855] transition-colors sm:text-base">
+                  <span className="mt-4 text-sm font-medium leading-snug text-[#2d2d2d] transition-colors sm:text-base">
                     {ind.title}
                   </span>
                 </Link>

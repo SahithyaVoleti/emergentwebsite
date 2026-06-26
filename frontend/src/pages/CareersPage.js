@@ -22,12 +22,12 @@ function JobCard({ job }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-[#fafafa] sm:p-8"
+        className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-white sm:p-8"
       >
         <div>
-          <h3 className="text-base font-medium text-[#002855]">{job.title}</h3>
-          <p className="mt-1 text-sm text-[#5c677d]">{job.department}</p>
-          <div className="mt-3 flex flex-wrap gap-4 text-xs text-[#5c677d]">
+          <h3 className="text-base font-medium text-[#2d2d2d]">{job.title}</h3>
+          <p className="mt-1 text-sm text-[#6b6b6b]">{job.department}</p>
+          <div className="mt-3 flex flex-wrap gap-4 text-xs text-[#6b6b6b]">
             <span className="inline-flex items-center gap-1">
               <MapPin size={12} aria-hidden /> {job.location}
             </span>
@@ -40,26 +40,26 @@ function JobCard({ job }) {
           </div>
         </div>
         {open ? (
-          <ChevronUp size={20} className="shrink-0 text-[#5c677d]" aria-hidden />
+          <ChevronUp size={20} className="shrink-0 text-[#6b6b6b]" aria-hidden />
         ) : (
-          <ChevronDown size={20} className="shrink-0 text-[#5c677d]" aria-hidden />
+          <ChevronDown size={20} className="shrink-0 text-[#6b6b6b]" aria-hidden />
         )}
       </button>
       {open && (
         <div className="border-t border-[#e5e5e5] px-6 pb-8 pt-6 sm:px-8">
           <p className="mb-6 text-sm leading-relaxed text-[#7d8597]">{job.description}</p>
-          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#002855]">
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
             Responsibilities
           </h4>
           <ul className="mb-6 space-y-2">
             {job.responsibilities.map((r) => (
               <li key={r} className="flex items-start gap-2 text-sm text-[#7d8597]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#0466c8]" aria-hidden />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#5c5c5c]" aria-hidden />
                 {r}
               </li>
             ))}
           </ul>
-          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#002855]">
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#2d2d2d]">
             Requirements
           </h4>
           <ul className="mb-6 space-y-2">
@@ -89,7 +89,7 @@ const perks = [
   { icon: BookOpen, title: "Professional development", desc: "Learning budget for certifications, conferences, and mentorship." },
   { icon: Heart, title: "Compensation and benefits", desc: "Market-based packages with health benefits and paid time off; equity where applicable." },
   { icon: Users, title: "Senior peers", desc: "Work directly with experienced engineers, scientists, and delivery leads." },
-  { icon: Award, title: "Measurable impact", desc: "Contributions tied to shipped releases, client milestones, and operational results." },
+  { icon: Award, title: "Measurable impact", desc: "Contributions tied to production releases, client milestones, and operational outcomes." },
 ];
 
 export default function CareersPage() {
@@ -101,7 +101,7 @@ export default function CareersPage() {
     <SitePageMain>
       <PageHero
         label="Careers"
-        title="Build Your Career in Enterprise AI Delivery"
+        title="Careers in enterprise AI delivery"
         description="Join delivery programs focused on production discipline, clear communication, and accountable outcomes across research, engineering, and operations."
         primaryCTA={{ text: "View open positions", href: "#positions" }}
         illustrationKey="careers"
@@ -136,8 +136,8 @@ export default function CareersPage() {
             onClick={() => setFilter("All")}
             className={`px-4 py-2 text-sm font-medium transition-colors ${
               filter === "All"
-                ? "bg-[#0466c8] text-white"
-                : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#0466c8]"
+                ? "bg-[#5c5c5c] text-white"
+                : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#5c5c5c]"
             }`}
           >
             All
@@ -150,8 +150,8 @@ export default function CareersPage() {
               onClick={() => setFilter(d)}
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 filter === d
-                  ? "bg-[#0466c8] text-white"
-                  : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#0466c8]"
+                  ? "bg-[#5c5c5c] text-white"
+                  : "border border-[#d9d9d9] bg-white text-[#7d8597] hover:border-[#5c5c5c]"
               }`}
             >
               {d}

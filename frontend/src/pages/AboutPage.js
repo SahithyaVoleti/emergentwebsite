@@ -27,15 +27,15 @@ const partners = [
 
 const values = [
   {
-    title: "Ship inside your apps",
-    desc: "Agents and copilots live in CRM, ERP, and tools your team already uses.",
+    title: "Embedded delivery",
+    desc: "Intelligent automation integrated with CRM, ERP, and line-of-business tools.",
   },
   {
-    title: "Modernize, don't restart",
+    title: "Incremental modernization",
     desc: "We upgrade legacy apps incrementally so work keeps moving while AI lands.",
   },
   {
-    title: "Honest execution",
+    title: "Transparent execution",
     desc: "Timelines, code, and tradeoffs are documented for your internal review.",
   },
   {
@@ -51,8 +51,8 @@ export default function AboutPage() {
     <SitePageMain>
       <PageHero
         label="About Us"
-        title="We build AI agents and modernize business apps"
-        description={`NeuralTrix AI started in ${COMPANY_FOUNDED_LABEL}. We are a small, senior team focused on two things: agents inside the software you run, and turning legacy apps into AI-powered products.`}
+        title="Enterprise AI delivery and application modernization"
+        description={`NeuralTrix AI was founded in ${COMPANY_FOUNDED_LABEL}. We are a senior-led team focused on governed intelligent automation and application modernization within enterprise software environments.`}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Careers", href: "/careers" }}
         image={ABOUT_HERO_IMAGE}
@@ -61,12 +61,12 @@ export default function AboutPage() {
       <UbuntuPageSection
         eyebrow={SECTION_LABEL.mission}
         title="Our mission"
-        lead="We help teams put AI where work actually happens—inside existing apps—not in parallel experiments."
+        lead="We deliver intelligent automation within existing application workflows—aligned to governance, integration, and measurable outcomes."
         image={missionMockup.src}
         imageAlt={missionMockup.alt}
         bullets={[
-          "Build AI agents for CRM, ERP, internal tools, and customer apps",
-          "Modernize legacy and normal apps into AI-powered software",
+          "Intelligent automation for CRM, ERP, internal tools, and customer applications",
+          "Application modernization for legacy and core business systems",
           "Pilot first, scale when results hold up",
           "Hand over code and runbooks your team can own",
         ]}
@@ -85,7 +85,7 @@ export default function AboutPage() {
         id="about-values"
         eyebrow={SECTION_LABEL.values}
         title="Values that guide delivery"
-        lead="These values guide how we scope agent work, modernize apps, and hand over systems your teams can run."
+        lead="These values guide how we scope intelligent automation programs, modernization workstreams, and operational handover."
         variant="alt"
         items={values}
       />
@@ -93,7 +93,7 @@ export default function AboutPage() {
       <UbuntuTeamGrid
         members={team}
         title="Our team"
-        lead="Senior builders lead workstreams so you talk to people who ship agents and app upgrades—not account layers."
+        lead="Senior practitioners lead workstreams so you engage directly with delivery owners—not intermediary account layers."
       />
 
       <UbuntuPartnerGrid partners={partners} />

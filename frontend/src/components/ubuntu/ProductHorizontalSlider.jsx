@@ -55,7 +55,7 @@ export default function ProductHorizontalSlider({
       <div className="ubuntu-container">
         <div className="mb-8 max-w-3xl md:mb-10">
           {eyebrow && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">{eyebrow}</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">{eyebrow}</p>
           )}
           <h2 id={`${id}-heading`} className="ubuntu-section-title">
             {title}
@@ -110,7 +110,7 @@ export default function ProductHorizontalSlider({
                           </span>
                         )}
                       </div>
-                      <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-4 sm:py-5 group-hover:bg-[#fafafa]">
+                      <div className="shrink-0 border-t border-[#e5e5e5] bg-white py-4 sm:py-5 group-hover:bg-white">
                         <ProductCardHeading descriptor={item.cardDescriptor}>{item.title}</ProductCardHeading>
                       </div>
                     </Link>

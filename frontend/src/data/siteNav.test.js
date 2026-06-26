@@ -4,6 +4,8 @@ import solutions from "./solutions";
 import industries from "./industries";
 import {
   SERVICES_NAV,
+  SERVICES_NAV_GROUPS,
+  SERVICES_PILLAR_NAV,
   PRODUCTS_NAV,
   INDUSTRIES_NAV,
   COMPANY_NAV,
@@ -28,6 +30,32 @@ describe("siteNav", () => {
     for (const { href } of SERVICES_NAV) {
       const slug = href.replace("/services/", "");
       expect(serviceSlugs.has(slug)).toBe(true);
+    }
+  });
+
+  it("groups services by pillar with catalog titles", () => {
+    const groupedHrefs = SERVICES_NAV_GROUPS.flatMap((group) => group.items.map((item) => item.href));
+    expect(groupedHrefs).toHaveLength(services.length);
+    expect(new Set(groupedHrefs).size).toBe(services.length);
+    for (const group of SERVICES_NAV_GROUPS) {
+      expect(group.pillar).toBeTruthy();
+      expect(group.items.length).toBeGreaterThan(0);
+      for (const item of group.items) {
+        expect(item.label).toBeTruthy();
+        expect(item.label).not.toBe(group.pillar);
+      }
+    }
+  });
+
+  it("exposes pillar-only links for the header services dropdown", () => {
+    expect(SERVICES_PILLAR_NAV.length).toBe(SERVICES_NAV_GROUPS.length);
+    for (const item of SERVICES_PILLAR_NAV) {
+      expect(item.label).toBe(item.pillar);
+      expect(item.href).toMatch(/^\/services\//);
+      expect(item.matchHrefs.length).toBeGreaterThan(0);
+      const group = SERVICES_NAV_GROUPS.find((g) => g.pillar === item.pillar);
+      expect(group).toBeTruthy();
+      expect(item.matchHrefs).toEqual(group.items.map((entry) => entry.href));
     }
   });
 

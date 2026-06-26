@@ -10,17 +10,17 @@ export default function SolutionsPage() {
     <SitePageMain>
       <PageHero
         label="Solutions"
-        title="Agent and copilot modules for your apps"
-        description="Pre-built modules you deploy inside CRM, ERP, internal tools, and customer apps—updated from real agent and app modernization projects."
-        primaryCTA={{ text: "Browse solutions", href: "#solutions-slider" }}
+        title="Solution accelerators for enterprise applications"
+        description="Pre-built modules for deployment inside CRM, ERP, internal tools, and customer applications—derived from production delivery programs."
+        primaryCTA={{ text: "Browse solution modules", href: "#solutions-slider" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
       <SolutionsHorizontalSlider
         id="solutions-catalog"
         eyebrow={SECTION_LABEL.accelerators}
-        title="Solution modules"
-        lead="Each module targets a workflow inside software you already use. Browse the carousel, then open a full overview with scope and integration notes."
+        title="Solution accelerator catalog"
+        lead="Each module addresses a defined workflow within existing application estates. Review the catalog for scope, integration requirements, and deployment notes."
         viewAllHref={undefined}
         autoAdvanceMs={0}
         className="!border-t-0"

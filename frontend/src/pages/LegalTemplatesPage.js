@@ -2,7 +2,6 @@ import PageHero from "../components/PageHero";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 import { getSiteMockup } from "../data/siteMockups";
 import {
   JURISDICTION_TEMPLATES,
@@ -16,7 +15,7 @@ const privacyTemplates = PRIVACY_TEMPLATES;
 function TemplateCard({ item }) {
   return (
     <article className="h-full border border-[#e5e5e5] bg-white p-6">
-      <h3 className="mb-4 text-base font-medium text-[#002855]">{item.title}</h3>
+      <h3 className="mb-4 text-base font-medium text-[#2d2d2d]">{item.title}</h3>
       <a href={item.file} download className="ubuntu-btn-primary inline-flex border-0 px-4 py-2 text-xs">
         Download template
       </a>
@@ -30,11 +29,11 @@ export default function LegalTemplatesPage() {
   return (
     <SitePageMain>
       <PageHero
+        significance="utility"
         label="Legal & Trust"
         title="Legal Templates Index for Global Engagements"
         description="This index centralizes jurisdiction and privacy templates for cross-border contracting and compliance workflows."
         primaryCTA={{ text: "View Templates", href: "#legal-templates-content" }}
-        image={LISTING_PAGE_HERO_IMAGES.blog}
       />
 
       <UbuntuPageSection
@@ -47,17 +46,17 @@ export default function LegalTemplatesPage() {
         belowContent={
           <>
             <div className="mb-8 flex flex-wrap items-center gap-3">
-              <span className="inline-flex border border-[#d9d9d9] bg-[#fafafa] px-3 py-1 text-xs font-medium text-[#7d8597]">
+              <span className="inline-flex border border-[#d9d9d9] bg-white px-3 py-1 text-xs font-medium text-[#7d8597]">
                 Updated May 2026
               </span>
-              <span className="inline-flex border border-[#0466c8]/30 bg-[#eef4fc] px-3 py-1 text-xs font-medium text-[#0353a4]">
+              <span className="inline-flex border border-[#d1511f]/30 bg-white px-3 py-1 text-xs font-medium text-[#b8451a]">
                 Internal legal review recommended
               </span>
             </div>
 
-            <article className="mb-10 border border-[#e5e5e5] bg-[#fafafa] p-6">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#5c677d]">Governance reporting</p>
-              <h3 className="mb-3 text-base font-medium text-[#002855]">Legal risk dashboard</h3>
+            <article className="mb-10 border border-[#e5e5e5] bg-white p-6">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#8b4c6e]">Governance reporting</p>
+              <h3 className="mb-3 text-base font-medium text-[#2d2d2d]">Legal risk dashboard</h3>
               <p className="mb-4 text-sm text-[#7d8597]">
                 Board-ready legal risk dashboard covering operational, financial, compliance, and dispute exposure.
               </p>

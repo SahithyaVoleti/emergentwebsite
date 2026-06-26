@@ -11,9 +11,9 @@ export default function ServicesPage() {
     <SitePageMain>
       <PageHero
         label="Services"
-        title="Build agents and modernize your apps"
-        description="We build AI agents inside CRM, ERP, and internal tools—and upgrade legacy apps into AI-powered software. Pick a track to see scope and how we integrate with what you run today."
-        primaryCTA={{ text: "Browse services", href: "#services-catalog" }}
+        title="Enterprise services for AI and application modernization"
+        description="We deliver structured consulting and engineering services—from intelligent agents and generative AI to application modernization, data platforms, and cloud operations—with governance, integration discipline, and measurable outcomes."
+        primaryCTA={{ text: "Browse service offerings", href: "#services-catalog" }}
         image={LISTING_PAGE_HERO_IMAGES.services}
       />
 
@@ -21,8 +21,8 @@ export default function ServicesPage() {
         id="services-catalog"
         services={servicesForDisplay(services)}
         eyebrow={SECTION_LABEL.serviceCatalog}
-        title="Services we deliver"
-        lead="Agents, copilots, app modernization, and the data and infrastructure that support them."
+        title="Service offerings"
+        lead="Select a service line to review capability scope, representative deliverables, and integration assumptions for your environment."
         className="!border-t-0"
       />
 

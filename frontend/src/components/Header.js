@@ -7,6 +7,12 @@ import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
 import SectionPatternBackground from "./SectionPatternBackground";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
+  BRAND_LOGO_ALT,
+  BRAND_LOGO_FULL,
+  BRAND_LOGO_SYMBOL,
+} from "../data/brandAssets";
+import {
+  SERVICES_PILLAR_NAV,
   SERVICES_NAV,
   PRODUCTS_NAV,
   INDUSTRIES_NAV,
@@ -23,13 +29,18 @@ function navLinkClass(isActive) {
 }
 
 const mobileLinkClass =
-  "block border-b border-[#e5e5e5] py-3 text-sm text-[#33415c] hover:text-[#0353a4]";
+  "block border-b border-[#e5e5e5] py-3 text-sm text-[#2d2d2d] hover:text-[#b8451a]";
 
 const DROPDOWN_NAV = {
-  services: SERVICES_NAV,
+  services: SERVICES_PILLAR_NAV,
   products: PRODUCTS_NAV,
   industries: INDUSTRIES_NAV,
   company: COMPANY_NAV,
+};
+
+/** All descendant links used to mark a nav section active (e.g. any service under What We Offer). */
+const DROPDOWN_SECTION_LINKS = {
+  services: SERVICES_NAV,
 };
 
 export default function Header({ embedded = false, shell = false }) {
@@ -61,8 +72,10 @@ export default function Header({ embedded = false, shell = false }) {
   }, [mobileOpen]);
 
   const renderDropdownLink = (link, testIdPrefix, onNavigate) => {
-    const linkActive = isPathActive(location.pathname, link.href);
-    const Icon = getNavDropdownIcon(link.href);
+    const linkActive = link.matchHrefs?.length
+      ? link.matchHrefs.some((href) => isPathActive(location.pathname, href))
+      : isPathActive(location.pathname, link.href);
+    const Icon = getNavDropdownIcon(link.href, { pillar: link.pillar });
 
     return (
       <li key={`${link.label}-${link.href}`} role="none" className="ubuntu-nav-dropdown__item">
@@ -84,10 +97,15 @@ export default function Header({ embedded = false, shell = false }) {
 
   const renderDesktopDropdown = (key, item, links) => {
     const { label, basePath, testId: testIdPrefix, viewAllLabel, dropdownVariant } = item;
-    const isActive = isNavSectionActive(location.pathname, basePath, links);
+    const sectionLinks = DROPDOWN_SECTION_LINKS[key] ?? links;
+    const isActive = isNavSectionActive(location.pathname, basePath, sectionLinks);
     const ViewAllIcon = NAV_VIEW_ALL_ICON;
-    const dropdownClass =
-      dropdownVariant === "wide" ? "ubuntu-nav-dropdown ubuntu-nav-dropdown--wide" : "ubuntu-nav-dropdown";
+    const dropdownClass = [
+      "ubuntu-nav-dropdown",
+      dropdownVariant === "wide" && "ubuntu-nav-dropdown--wide",
+    ]
+      .filter(Boolean)
+      .join(" ");
 
     const menuId = `nav-dropdown-${testIdPrefix}`;
 
@@ -138,7 +156,8 @@ export default function Header({ embedded = false, shell = false }) {
   const renderMobileAccordion = (key, item, links) => {
     const { basePath, testId: testIdPrefix, viewAllLabel, label: title } = item;
     const isOpen = !!openMobileSections[key];
-    const sectionActive = isNavSectionActive(location.pathname, basePath, links);
+    const sectionLinks = DROPDOWN_SECTION_LINKS[key] ?? links;
+    const sectionActive = isNavSectionActive(location.pathname, basePath, sectionLinks);
     const ViewAllIcon = NAV_VIEW_ALL_ICON;
 
     const panelId = `nav-mobile-${testIdPrefix}`;
@@ -148,13 +167,13 @@ export default function Header({ embedded = false, shell = false }) {
         <button
           type="button"
           className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3 text-left text-sm font-medium ${
-            isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#33415c]"
+            isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#2d2d2d]"
           }`}
           onClick={() => toggleMobileSection(key)}
           aria-expanded={isOpen}
           aria-controls={panelId}
         >
-          <span className={sectionActive && !isOpen ? "text-[#0466c8]" : ""}>{title}</span>
+          <span className={sectionActive && !isOpen ? "text-[#d1511f]" : ""}>{title}</span>
           <ChevronDown
             size={16}
             className={`ubuntu-nav-mobile-trigger__chevron ${isOpen ? "rotate-180" : ""}`}
@@ -237,13 +256,29 @@ export default function Header({ embedded = false, shell = false }) {
   const bar = (
     <>
       <div className="ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link to="/" data-testid="header-logo" className="ubuntu-chrome-header__logo-link">
+        <Link
+          to="/"
+          data-testid="header-logo"
+          className={[
+            "ubuntu-chrome-header__logo-link",
+            shell && isNavCentered && "ubuntu-chrome-header__logo-link--compact",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           <img
-            src="/neuraltrix-header-logo.png"
-            alt="NeuralTrix AI"
-            className="ubuntu-chrome-header__logo"
+            src={BRAND_LOGO_FULL}
+            alt={BRAND_LOGO_ALT}
+            className="ubuntu-chrome-header__logo ubuntu-chrome-header__logo--full"
             width={1024}
-            height={177}
+            height={190}
+          />
+          <img
+            src={BRAND_LOGO_SYMBOL}
+            alt={BRAND_LOGO_ALT}
+            className="ubuntu-chrome-header__logo ubuntu-chrome-header__logo--symbol"
+            width={902}
+            height={1024}
           />
         </Link>
 
@@ -264,7 +299,7 @@ export default function Header({ embedded = false, shell = false }) {
 
           <button
             data-testid="mobile-menu-toggle"
-            className="rounded-none p-2 text-[#33415c] transition-colors hover:text-[#0353a4] xl:hidden"
+            className="rounded-none p-2 text-[#2d2d2d] transition-colors hover:text-[#b8451a] xl:hidden"
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
@@ -280,7 +315,7 @@ export default function Header({ embedded = false, shell = false }) {
         <div
           id="mobile-menu-panel"
           data-testid="mobile-menu"
-          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-[#fafafa]/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden"
+          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-white/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden"
         >
           {TOP_NAV_ORDER.map(renderMobileNavItem)}
 

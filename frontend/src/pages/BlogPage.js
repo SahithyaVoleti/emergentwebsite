@@ -1,21 +1,35 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PageHero from "../components/PageHero";
-import UbuntuBlogCatalogBand from "../components/ubuntu/UbuntuBlogCatalogBand";
+import UbuntuBlogServiceCatalog from "../components/ubuntu/UbuntuBlogServiceCatalog";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
-import blogArticles from "../data/blog";
 
 export default function BlogPage() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const target = document.getElementById(hash.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [hash]);
+
   return (
     <SitePageMain>
       <PageHero
-        label="Blog and resources"
+        label="News & Media"
         title="Technical and Operational Notes from Enterprise AI Delivery"
-        description="Practical articles on tools, models, and delivery discipline. Useful whether you plan to engage NeuralTrix soon or are building an internal business case."
-        primaryCTA={{ text: "Request information", href: "#page-contact" }}
+        description="Practical articles on tools, models, and delivery discipline—organized by service line for program and engineering stakeholders."
+        primaryCTA={{ text: "Browse by service line", href: "#blog-service-catalog" }}
         illustrationKey="blog"
       />
 
-      <UbuntuBlogCatalogBand articles={blogArticles} />
+      <UbuntuBlogServiceCatalog
+        title="Articles by service line"
+        lead="Related articles previously shown on service, industry, solution, and test case pages are published here, grouped by the service offerings they support."
+      />
 
       <PageStandardSections pageKey="blog" contactContext="Blog Page" />
     </SitePageMain>

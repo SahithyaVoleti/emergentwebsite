@@ -23,14 +23,14 @@ export default function UbuntuTeamGrid({
             <div className="ubuntu-palette-icon mb-4 flex h-12 w-12 items-center justify-center">
               <Users size={22} strokeWidth={1.5} aria-hidden />
             </div>
-            <h3 className="text-lg font-medium text-[#002855]">{member.name}</h3>
+            <h3 className="text-lg font-medium text-[#2d2d2d]">{member.name}</h3>
             <p className="mt-1 text-sm font-medium" style={{ color: paletteAccent(index) }}>
               {member.role}
             </p>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-[#7d8597]">{member.bio}</p>
-            <div className="mt-4 flex gap-3 text-[#5c677d]">
-              <Linkedin size={16} aria-hidden className="hover:text-[#0353a4]" />
-              <Twitter size={16} aria-hidden className="hover:text-[#0353a4]" />
+            <div className="mt-4 flex gap-3 text-[#6b6b6b]">
+              <Linkedin size={16} aria-hidden className="hover:text-[#4a4a4a]" />
+              <Twitter size={16} aria-hidden className="hover:text-[#4a4a4a]" />
             </div>
           </article>
         ))}

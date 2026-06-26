@@ -27,16 +27,16 @@ export default function CTASection({
       imagePosition="right"
     >
       {!hideLabel && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c677d]">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
           {SECTION_LABEL.contact}
         </p>
       )}
       <h2 data-testid="cta-title" className="ubuntu-section-title">
-        {title || "Get started with AI agents in your applications"}
+        {title || "Next Step for your enterprise AI program"}
       </h2>
       <p className="ubuntu-lead">
         {description ||
-          "Tell us about the software you run. We will outline how to build agents, modernize apps, or both—with clear scope and next steps."}
+          "Share your application landscape and priorities. We will outline service fit, pilot scope, and governance boundaries."}
       </p>
       <div className="ubuntu-cta-row">
         <SiteNavLink
