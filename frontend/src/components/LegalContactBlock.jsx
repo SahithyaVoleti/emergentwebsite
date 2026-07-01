@@ -8,7 +8,7 @@ export default function LegalContactBlock() {
       aria-labelledby="legal-contact-heading"
     >
       <div className="ubuntu-container py-10">
-        <h2 id="legal-contact-heading" className="text-lg font-medium text-[#111]">
+        <h2 id="legal-contact-heading" className="text-lg font-medium text-white">
           Contact {COMPANY_NAME}
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-[#555]">

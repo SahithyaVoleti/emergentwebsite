@@ -19,12 +19,7 @@ function PillarSections({ groups, showServiceLines }) {
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#d1511f]">
               Main service
             </p>
-            <h2
-              id={`${group.id}-heading`}
-              className="mt-2 text-xl font-medium leading-snug text-[#2d2d2d] sm:text-2xl"
-            >
-              {group.label}
-            </h2>
+            <SectionTitle as="h2" id={`${group.id}-heading`} title={group.label} />
             <p className="ubuntu-lead mt-3">{group.shortDesc}</p>
           </div>
 

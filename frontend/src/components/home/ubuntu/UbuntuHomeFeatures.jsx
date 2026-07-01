@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { HOME_FEATURES } from "../../../data/homePageSections";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
-import HeroPlayOnceGif from "../../ubuntu/HeroPlayOnceGif";
+import MockupGif from "../../ubuntu/MockupGif";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
 import { paletteAccentIndex } from "../../../lib/brandPalette";
@@ -41,16 +41,7 @@ export default function UbuntuHomeFeatures({ config, items }) {
       testId="home-features-section"
       className="border-b border-[#d9d9d9] bg-white"
       imagePosition="right"
-      mediaClassName="ubuntu-split__media--gif"
-      mediaSlot={
-        media?.src ? (
-          <HeroPlayOnceGif
-            src={media.src}
-            wrapClassName="ubuntu-split__gif-wrap"
-            className="ubuntu-split__img"
-          />
-        ) : null
-      }
+      mediaSlot={media?.src ? <MockupGif src={media.src} /> : null}
     >
       {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
       <SectionTitle id={`${sectionId}-heading`} title={title} />

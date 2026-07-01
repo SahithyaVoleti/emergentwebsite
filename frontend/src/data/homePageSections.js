@@ -43,12 +43,13 @@ export const HOME_STARTUP_STATS = [
 
 export const HOME_ALERT = {
   eyebrow: "What we do",
-  title: "AI transformation for software products already in market",
+  title: "AI transformation for |software products| already in market",
   body: "We assess your product architecture, fine-tune models on your domain data, embed AI into existing workflows, and extend delivery into new AI-native SaaS offerings where scope requires greenfield build.",
   primaryCta: { label: "How we work", href: "/about#engagement" },
   secondaryCta: { label: "View services →", href: "/#services-grid" },
   media: {
-    src: "/media/social-strategy.gif",
+    src: "/media/home/ai-transformation-products.png",
+    alt: "AI transformation workflow for software products already in market",
   },
 };
 
@@ -83,7 +84,7 @@ const HOME_DELIVERY_OUTCOMES = [
 export const HOME_FEATURES = {
   id: "home-features",
   eyebrow: "What we deliver",
-  title: "Outcomes across transformation programs",
+  title: "Outcomes across |transformation programs|",
   lead: "Each engagement targets measurable product impact—incremental AI in live systems, validated models, and governed rollout paths.",
   items: HOME_DELIVERY_OUTCOMES,
   media: {
@@ -104,7 +105,7 @@ export const HOME_BLOG = {
 export const HOME_SERVICES_GRID = {
   id: "services-grid",
   eyebrow: "Services",
-  title: "Three core service disciplines",
+  title: "Three core |service disciplines|",
   lead: "Product transformation, model engineering, and platform delivery—each with defined service lines you can scope independently.",
   viewAllHref: "/services",
   viewAllLabel: "View all services",
@@ -123,7 +124,7 @@ export const HOME_TECH_STACK = {
 export const HOME_WORKFLOW = {
   id: "ai-workflow",
   eyebrow: "Methodology",
-  title: "Methodology for AI product transformation",
+  title: "Methodology for |AI product transformation|",
   lead: "This methodology sequences product assessment, model fine-tuning, integration, and production rollout for existing software and new SaaS programs.",
   process: [
     {
@@ -148,7 +149,7 @@ export const HOME_WORKFLOW = {
 export const HOME_VALIDATION = {
   id: "product-validation",
   eyebrow: "Validation",
-  title: "Production-tested product transformations",
+  title: "Production-tested |product transformations|",
   lead: "Representative programs validated in live environments before wider rollout—clinical documentation, transaction monitoring, and educator workflows.",
   viewAllHref: "/research-innovation#test-cases",
   viewAllLabel: "View full validation catalog",
@@ -209,7 +210,7 @@ export const HOME_ENGINEERING_SHOWCASES = {
 export const HOME_DOMAINS = {
   id: "interdisciplinary-domains",
   eyebrow: "Industries",
-  title: "Interdisciplinary industry coverage",
+  title: "Interdisciplinary |industry coverage|",
   lead: "AI transformation and SaaS programs across sector application estates—each industry page outlines product patterns, controls, and integration scope.",
   items: [
     { title: "Healthcare", href: "/industries/healthcare", icon: "healthcare" },
@@ -236,10 +237,10 @@ export const HOME_BLOGS_BAND = {
 
 export const HOME_VISION_CTA_2 = {
   id: "vision-cta-2",
-  eyebrow: "Products",
-  title: "Agentic solutions for enterprise workflows",
+  eyebrow: "Portfolio",
+  title: "Agentic solutions for |enterprise workflows|",
   body: "Purpose-built AI agents that monitor transactions, resolve public inquiries, accelerate research, and support regulated operations—with governed integration and human oversight.",
-  primaryCta: { label: "View agent portfolio", href: "/solutions" },
+  primaryCta: { label: "View portfolio", href: "/solutions" },
   secondaryCta: { label: "Contact us", href: "/#page-contact" },
   mockupKey: "code",
 };
@@ -257,7 +258,7 @@ export const HOME_INFRASTRUCTURE = {
 export const HOME_PHILOSOPHY = {
   id: "philosophy",
   eyebrow: "Philosophy",
-  title: "Principles for AI product programs",
+  title: "Principles for |AI product programs|",
   lead: "Transformation should strengthen products already in market—fine-tuning and SaaS delivery follow the same governance and measurement standards.",
   bullets: [
     "Existing products can adopt AI incrementally with clear rollback paths",
@@ -270,8 +271,8 @@ export const HOME_PHILOSOPHY = {
 
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
-  eyebrow: "Products",
-  title: "Agentic solutions for enterprise workflows",
+  eyebrow: "Portfolio",
+  title: "Agentic solutions for |enterprise workflows|",
   lead: "Production-ready AI agents for transaction security, public services, research, clinical documentation, travel operations, legal research, financial analysis, education, real estate, and agriculture.",
   viewAllHref: "/solutions",
   viewAllLabel: "View all agents",
@@ -283,7 +284,7 @@ export const HOME_CORE_TOPIC_SECTIONS = HOME_SOLUTION_TOPIC_SECTIONS;
 
 export const HOME_ASSURANCE_SECTION = {
   id: "assurance",
-  title: "Assurance for AI product programs",
+  title: "Assurance for |AI product programs|",
   lead: "Security, access control, and human review are built into transformation and SaaS delivery from the first release—not added after launch.",
   bullets: [
     "AI modules only access approved data and tools",
@@ -299,7 +300,7 @@ export const HOME_ASSURANCE_SECTION = {
 
 export const HOME_OUTCOMES_SECTION = {
   id: "enterprise-efficiency",
-  title: "Outcomes for AI-enabled products",
+  title: "Outcomes for |AI-enabled products|",
   lead: "Faster workflows, smarter software, and a defined path from pilot transformation to SaaS scale.",
   bullets: [
     "AI features operating inside products your teams already use",
@@ -323,15 +324,15 @@ export const HOME_METHODOLOGY = HOME_WORKFLOW;
 export const HOME_COVERAGE = {
   id: "coverage",
   eyebrow: "Coverage",
-  title: "Coverage across services and industries",
+  title: "Coverage across |services and industries|",
   lead: "This coverage model spans transformation services, SaaS products, and interdisciplinary industry programs.",
 };
 
 export const HOME_NEXT_STEP = {
   eyebrow: "Next Step",
-  title: "Next Step for your AI product program",
+  title: "Next Step for your |AI product program|",
   lead: "Share your product landscape, model requirements, or SaaS concept. We will outline transformation scope, fine-tuning approach, and delivery milestones.",
   primaryCta: { label: "Request consultation", href: "/#page-contact", contactIntent: "consultation" },
-  secondaryCta: { label: "View products", href: "/solutions" },
+  secondaryCta: { label: "View portfolio", href: "/solutions" },
   tertiaryCta: { label: "View industries", href: "/industries" },
 };

@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 
 const SCROLL_THRESHOLD_PX = 20;
 
-/**
- * True once the user has scrolled past the top — drives centered floating navbar.
- */
+/** True once the user has scrolled past the top — drives centered floating navbar. */
 export function useSiteNavScroll(enabled = true) {
   const [isScrolled, setIsScrolled] = useState(false);
 

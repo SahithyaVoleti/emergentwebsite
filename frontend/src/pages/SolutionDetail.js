@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import PageHero from "../components/PageHero";
 import FAQSection from "../components/FAQSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
@@ -48,6 +49,15 @@ export default function SolutionDetail() {
 
   return (
     <SitePageMain>
+      <PageHero
+        significance="detail"
+        title={solution.heroTitle}
+        description={solution.heroDesc}
+        primaryCTA={{ text: "Contact us", href: "#page-contact" }}
+        secondaryCTA={{ text: "View capabilities", href: "#agent-capabilities" }}
+        image={solution.heroImage}
+      />
+
       <SolutionAgentOverview solution={solution} />
 
       <ArchitecturalShowcase

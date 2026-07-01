@@ -1,6 +1,9 @@
 /**
  * Decorative product mockup frame (browser chrome) around section imagery.
  */
+import HeroPlayOnceGif from "./HeroPlayOnceGif";
+import { isGifSrc } from "../../lib/isGifSrc";
+
 export default function MockupFrame({
   src,
   alt = "",
@@ -10,12 +13,31 @@ export default function MockupFrame({
 }) {
   if (variant === "plain") {
     if (!src) return null;
+    if (isGifSrc(src)) {
+      return (
+        <MockupFrame variant="browser" screenClassName="ubuntu-mockup__screen--gif">
+          <HeroPlayOnceGif
+            src={src}
+            wrapClassName="ubuntu-mockup__gif-wrap"
+            className="ubuntu-mockup__gif-img"
+          />
+        </MockupFrame>
+      );
+    }
     return (
       <img src={src} alt={alt} loading="lazy" decoding="async" className="ubuntu-split__img" />
     );
   }
 
   if (!src && !children) return null;
+
+  const screenClasses = [
+    "ubuntu-mockup__screen",
+    isGifSrc(src) ? "ubuntu-mockup__screen--gif" : "ubuntu-mockup__screen--static",
+    screenClassName,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className="ubuntu-mockup" data-variant={variant}>
@@ -25,16 +47,24 @@ export default function MockupFrame({
         <span className="ubuntu-mockup__dot" />
         <span className="ubuntu-mockup__bar" />
       </div>
-      <div className={["ubuntu-mockup__screen", screenClassName].filter(Boolean).join(" ")}>
+      <div className={screenClasses}>
         {children ??
           (src ? (
-            <img
-              src={src}
-              alt={alt}
-              loading="lazy"
-              decoding="async"
-              className="ubuntu-mockup__img"
-            />
+            isGifSrc(src) ? (
+              <HeroPlayOnceGif
+                src={src}
+                wrapClassName="ubuntu-mockup__gif-wrap"
+                className="ubuntu-mockup__gif-img"
+              />
+            ) : (
+              <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+                className="ubuntu-mockup__img"
+              />
+            )
           ) : null)}
       </div>
     </div>

@@ -5,7 +5,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import { getPlatformsFeaturedTechNames } from "../../lib/serviceTechStackSlugs";
 
 /**
- * Featured technology stack — Products listing (/solutions).
+ * Featured technology stack — Portfolio listing (/solutions).
  * Same static logo grid format as About Us technology ecosystem.
  */
 export default function PlatformsTechRibbon({

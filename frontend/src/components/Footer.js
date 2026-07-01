@@ -2,27 +2,19 @@ import { ArrowUp, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import SiteNavLink from "./ubuntu/SiteNavLink";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
-import SectionPatternBackground from "./SectionPatternBackground";
-import { usePatternSectionHover } from "../hooks/usePatternSectionHover";
 import { FOOTER_COLUMNS, LEGAL_LINKS, SOCIAL_LINKS } from "../data/siteNav";
 import { BRAND_LOGO_ALT, BRAND_LOGO_FULL } from "../data/brandAssets";
 
 export default function Footer() {
-  const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer
-      ref={sectionRef}
       data-testid="footer"
-      className="ubuntu-chrome-footer ubuntu-pattern-section ubuntu-pattern-section--hero"
-      onPointerMove={onPointerMove}
-      onPointerLeave={onPointerLeave}
+      className="ubuntu-chrome-footer"
     >
-      <SectionPatternBackground variant="hero" />
       <div className="ubuntu-chrome-footer__inner relative z-10 py-5 sm:py-6">
         <div className="grid grid-cols-2 gap-4 gap-y-5 sm:grid-cols-4 lg:gap-6">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">

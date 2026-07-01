@@ -12,8 +12,8 @@ import UbuntuCareersSection from "../components/ubuntu/UbuntuCareersSection";
 import PageContactForm from "../components/PageContactForm";
 import team from "../data/team";
 import technologyPartners from "../data/partners";
-import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
+import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -50,8 +50,7 @@ export default function AboutPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="About Us"
-        title="AI transformation and SaaS engineering company"
+        title="AI transformation and |SaaS engineering| company"
         description={`NeuralTrix AI was founded in ${COMPANY_FOUNDED_LABEL}. We transform existing products into AI-enabled software, fine-tune models for production, and design interdisciplinary AI SaaS applications.`}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "How we work", href: "#engagement" }}
@@ -60,7 +59,7 @@ export default function AboutPage() {
 
       <UbuntuPageSection
         eyebrow={SECTION_LABEL.mission}
-        title="Our mission"
+        title="Our |mission|"
         lead="We help software companies and enterprises transform products with AI, fine-tune models on domain data, and ship governed AI SaaS across interdisciplinary industries."
         image={missionMockup.src}
         imageAlt={missionMockup.alt}

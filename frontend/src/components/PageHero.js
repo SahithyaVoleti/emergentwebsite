@@ -1,121 +1,38 @@
 import SitePageChrome from "./ubuntu/SitePageChrome";
-import UbuntuLightSplitHero from "./ubuntu/UbuntuLightSplitHero";
-import { getSiteMockup } from "../data/siteMockups";
-import {
-  ABOUT_HERO_IMAGE,
-  CAREERS_HERO_IMAGE,
-  DEFAULT_PAGE_HERO_IMAGE,
-  LISTING_PAGE_HERO_IMAGES,
-} from "../lib/heroImageThemes";
-import { DECORATIVE_ALT } from "../lib/decorativeMedia";
-
-const ILLUSTRATION_KEY_IMAGES = {
-  blog: LISTING_PAGE_HERO_IMAGES.blog,
-  research: LISTING_PAGE_HERO_IMAGES.research,
-  industries: LISTING_PAGE_HERO_IMAGES.industries,
-  caseStudies: LISTING_PAGE_HERO_IMAGES.caseStudies,
-  solutions: LISTING_PAGE_HERO_IMAGES.solutions,
-  services: LISTING_PAGE_HERO_IMAGES.services,
-  careers: CAREERS_HERO_IMAGE,
-  about: ABOUT_HERO_IMAGE,
-};
-
-const ILLUSTRATION_KEY_MOCKUPS = {
-  blog: "chat",
-  research: "pipeline",
-  industries: "cloud",
-  caseStudies: "dashboard",
-  solutions: "pipeline",
-  services: "code",
-  careers: "careers",
-  about: "collaboration",
-};
-
-function resolveHeroMedia({ image, video, illustrationKey, alt, variant }) {
-  if (video) {
-    return {
-      src: video,
-      alt: alt ?? DECORATIVE_ALT,
-      mediaType: "video",
-      variant,
-    };
-  }
-
-  if (image) {
-    return {
-      src: image,
-      alt: alt ?? DECORATIVE_ALT,
-      mediaType: "image",
-      variant,
-    };
-  }
-
-  if (illustrationKey) {
-    const mockupKey = ILLUSTRATION_KEY_MOCKUPS[illustrationKey];
-    if (mockupKey) {
-      const mockup = getSiteMockup(mockupKey);
-      return {
-        src: mockup.src,
-        alt: mockup.alt,
-        mediaType: mockup.mediaType ?? "image",
-        playOnce: mockup.playOnce,
-      };
-    }
-
-    const fallbackImage = ILLUSTRATION_KEY_IMAGES[illustrationKey];
-    if (fallbackImage) {
-      return {
-        src: fallbackImage,
-        alt: alt ?? DECORATIVE_ALT,
-        mediaType: "image",
-      };
-    }
-  }
-
-  return {
-    src: DEFAULT_PAGE_HERO_IMAGE,
-    alt: alt ?? DECORATIVE_ALT,
-    mediaType: "image",
-  };
-}
+import UbuntuPageHeroBanner from "./ubuntu/UbuntuPageHeroBanner";
 
 /**
- * Standard page hero — homepage light-split layout across all routes.
+ * Standard page hero — homepage banner layout (headline, lead, symbol watermark).
  * @param {"primary" | "detail" | "utility"} [significance]
  */
 export default function PageHero({
-  image,
-  video,
-  illustrationKey,
-  imageVariant,
   significance = "primary",
-  label,
   title,
   description,
+  lead,
   primaryCTA,
   secondaryCTA,
   hideContent,
-  alt,
+  showSymbol = true,
+  /** @deprecated Banner heroes use the site symbol watermark — kept for call-site compatibility */
+  image: _image,
+  video: _video,
+  illustrationKey: _illustrationKey,
+  imageVariant: _imageVariant,
+  label: _label,
+  alt: _alt,
 }) {
-  const media =
-    significance === "utility"
-      ? null
-      : resolveHeroMedia({ image, video, illustrationKey, alt, variant: imageVariant });
-
   return (
-    <SitePageChrome
-      variant="light-split"
-      significance={significance}
-    >
-      <UbuntuLightSplitHero
+    <SitePageChrome variant="home-banner" significance={significance}>
+      <UbuntuPageHeroBanner
         embedded
         significance={significance}
         title={title}
-        description={description}
+        lead={lead ?? description}
         primaryCTA={primaryCTA}
         secondaryCTA={secondaryCTA}
-        media={media}
         hideContent={hideContent}
+        showSymbol={showSymbol && significance !== "utility"}
       />
     </SitePageChrome>
   );

@@ -284,10 +284,9 @@ export default function TermsAndConditionsPage() {
     <SitePageMain>
       <PageHero
         significance="utility"
-        label="Legal & Trust"
-        title="Terms and Conditions for All Services"
+        title="Terms and Conditions for |all services|"
         description="These terms define contractual structure, delivery governance, compliance expectations, and legal responsibilities across all NeuralTrix AI services."
-        primaryCTA={{ text: "View Terms", href: "#terms-content" }}
+        primaryCTA={{ text: "View terms", href: "#terms-content" }}
       />
 
       <UbuntuPageSection

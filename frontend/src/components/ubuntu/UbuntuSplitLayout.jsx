@@ -1,6 +1,4 @@
 import MockupFrame from "./MockupFrame";
-import SectionPatternBackground from "../SectionPatternBackground";
-import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
 import { splitLayoutContentForMedia } from "../../lib/splitLayoutContent";
 
 export default function UbuntuSplitLayout({
@@ -9,8 +7,8 @@ export default function UbuntuSplitLayout({
   imagePosition = "right",
   mockupVariant = "browser",
   variant = "default",
-  /** @type {"hero" | "cta" | null} */
-  pattern,
+  /** @deprecated Pattern backgrounds removed — prop retained for call-site compatibility */
+  pattern: _pattern,
   id,
   testId,
   className = "",
@@ -19,24 +17,15 @@ export default function UbuntuSplitLayout({
   mediaSlot,
   mediaClassName = "",
 }) {
-  const patternVariant = pattern ?? (variant === "dark" ? "cta" : null);
-  const isHero = patternVariant === "hero";
-  const isCta = patternVariant === "cta";
-  const isPatternSection = isHero || isCta;
-
   const sectionClass = [
     "ubuntu-section-block",
-    isPatternSection && "ubuntu-pattern-section",
-    isHero && "ubuntu-pattern-section--hero",
-    isCta && "ubuntu-pattern-section--cta",
-    variant === "alt" && !isPatternSection && "ubuntu-section--alt",
+    variant === "alt" && "ubuntu-section--alt",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   const imageFirst = imagePosition === "left";
-  const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
   const hasMedia = Boolean(mediaSlot || image);
   const { intro, body, structured: hasTitleSplit } = splitLayoutContentForMedia(children);
   const structured = Boolean(hasMedia && hasTitleSplit);
@@ -96,14 +85,10 @@ export default function UbuntuSplitLayout({
 
   return (
     <section
-      ref={isPatternSection ? sectionRef : undefined}
       id={id}
       data-testid={testId}
       className={sectionClass}
-      onPointerMove={isPatternSection ? onPointerMove : undefined}
-      onPointerLeave={isPatternSection ? onPointerLeave : undefined}
     >
-      {isPatternSection && <SectionPatternBackground variant={patternVariant} />}
       <div className="ubuntu-container relative z-10">
         <div className={splitClass}>{splitChildren}</div>
         {belowContent && <div className="ubuntu-split__below">{belowContent}</div>}

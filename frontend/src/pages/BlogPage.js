@@ -19,8 +19,7 @@ export default function BlogPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="News & Media"
-        title="Technical and Operational Notes from Enterprise AI Delivery"
+        title="Technical and operational notes from |enterprise AI delivery|"
         description="Practical articles on tools, models, and delivery discipline—organized by service line for program and engineering stakeholders."
         primaryCTA={{ text: "Browse by service line", href: "#blog-service-catalog" }}
         illustrationKey="blog"

@@ -28,7 +28,7 @@ export default function ServicePillarPage({ pillar }) {
   return (
     <SitePageMain>
       <PageHero
-        label="Services"
+        significance="detail"
         title={group.label}
         description={group.shortDesc}
         primaryCTA={{ text: "Browse service lines", href: "#service-lines" }}
@@ -38,7 +38,7 @@ export default function ServicePillarPage({ pillar }) {
 
       <section
         id="service-lines"
-        className="ubuntu-section-block scroll-mt-24 border-y border-[#d9d9d9] bg-white !border-t-0"
+        className="ubuntu-section-block scroll-mt-24 border-y border-[#d9d9d9] bg-white"
         aria-labelledby="service-lines-heading"
       >
         <div className="ubuntu-container">

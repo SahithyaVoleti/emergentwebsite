@@ -27,7 +27,10 @@ export const HOME_SECTION_IMAGES = {
   "agent-vidya": { src: SOLUTION_HERO_IMAGES["agent-vidya"], alt: "Agent Vidya — educator copilot" },
   methodology: { src: CASE_STUDY_HERO_IMAGES[0], alt: DECORATIVE_ALT },
   coverage: { src: LISTING_PAGE_HERO_IMAGES.industries, alt: DECORATIVE_ALT },
-  "next-step": { src: CASE_STUDY_HERO_IMAGES[1], alt: DECORATIVE_ALT },
+  "next-step": {
+    src: "/media/home/next-step-ai-program.png",
+    alt: "Next step planning for an AI product program",
+  },
 };
 
 export function getHomeSectionImage(id) {

@@ -10,7 +10,6 @@ export default function ServiceDetail({ service }) {
     <SitePageMain>
       <PageHero
         significance="detail"
-        label={pillar ? `${pillar.label} · Service line` : "Services"}
         title={service.heroTitle}
         description={service.heroDesc}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}

@@ -39,7 +39,7 @@ function LazyPage({ children }) {
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased">
+    <div className="min-h-screen bg-[#3a3a3a] font-sans antialiased text-white">
       <BrowserRouter>
         <ScrollToTop />
         <SiteSEO />

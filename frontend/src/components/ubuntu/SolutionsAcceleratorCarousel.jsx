@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
+import UbuntuSplitLayout from "./UbuntuSplitLayout";
+import MockupFrame from "./MockupFrame";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
 /**
- * Solution accelerators carousel — one slide per accelerator (CoreUI CCarousel pattern:
- * full-width image, caption, indicators; auto-advance only).
+ * Agentic solutions carousel — copy on the left, product slides inside a browser mockup on the right.
  */
 export default function SolutionsAcceleratorCarousel({
   items = [],
@@ -46,99 +47,110 @@ export default function SolutionsAcceleratorCarousel({
 
   if (!items.length) return null;
 
-  return (
-    <section
-      id={id}
-      data-testid="solutions-accelerator-carousel"
-      className={`ubuntu-section-block ubuntu-services-slider ubuntu-solutions-carousel border-y border-[#d9d9d9] bg-white ${className}`}
-      aria-labelledby={`${id}-heading`}
+  const activeItem = items[current] ?? items[0];
+  const activeHref = hrefFor(activeItem);
+  const activeDescriptor = activeItem.brandName
+    ? `${activeItem.brandName}${activeItem.cardDescriptor ? ` · ${activeItem.cardDescriptor}` : ""}`
+    : activeItem.cardDescriptor || activeItem.domain;
+
+  const indicators = (
+    <div
+      className="ubuntu-solutions-carousel__indicators flex items-center justify-center gap-2"
+      role="tablist"
+      aria-label="Agent slides"
+    >
+      {items.map((item, index) => (
+        <button
+          key={item.slug}
+          type="button"
+          role="tab"
+          aria-selected={current === index}
+          aria-label={`${item.title} — ${item.brandName || item.cardDescriptor || item.domain || ""}`}
+          onClick={() => api?.scrollTo(index)}
+          className={`ubuntu-solutions-carousel__indicator ${
+            current === index ? "ubuntu-solutions-carousel__indicator--active" : ""
+          }`}
+        />
+      ))}
+    </div>
+  );
+
+  const carousel = (
+    <Carousel
+      setApi={setApi}
+      opts={{ align: "start", loop: true, dragFree: false, containScroll: "trimSnaps" }}
+      className="ubuntu-solutions-carousel__carousel w-full h-full overflow-hidden"
       aria-roledescription="carousel"
     >
-      <div className="ubuntu-container">
-        <div className="mb-8 max-w-3xl md:mb-10">
-          {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
-          <SectionTitle id={`${id}-heading`} title={title} />
-          {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
-        </div>
-
-        <div className="ubuntu-solutions-carousel__frame ubuntu-services-slider__frame relative">
-          <Carousel
-            setApi={setApi}
-            opts={{ align: "start", loop: true, dragFree: false, containScroll: "trimSnaps" }}
-            className="ubuntu-solutions-carousel__carousel w-full overflow-hidden"
+      <CarouselContent className="!ml-0 h-full">
+        {items.map((item, index) => (
+          <CarouselItem
+            key={item.slug}
+            className="!basis-full !pl-0 min-w-0 w-full max-w-full shrink-0 grow-0 h-full"
           >
-            <CarouselContent className="!ml-0">
-              {items.map((item, index) => (
-                <CarouselItem
-                  key={item.slug}
-                  className="!basis-full !pl-0 min-w-0 w-full max-w-full shrink-0 grow-0"
-                >
-                  <Link
-                    to={hrefFor(item)}
-                    data-testid={`${testIdPrefix}-${item.slug}`}
-                    className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
-                    aria-label={`${item.title}: ${item.brandName || item.cardDescriptor || item.domain || ""}`}
-                  >
-                    <div className="ubuntu-solutions-carousel__media">
-                      <img
-                        src={item.heroImage}
-                        alt=""
-                        className="ubuntu-solutions-carousel__image block w-full h-auto"
-                        loading={index === 0 ? "eager" : "lazy"}
-                        decoding="async"
-                      />
-                    </div>
-                    <div
-                      className="ubuntu-solutions-carousel__caption"
-                      aria-roledescription="slide caption"
-                    >
-                      <p className="ubuntu-solutions-carousel__descriptor">
-                        {item.brandName
-                          ? `${item.brandName}${item.cardDescriptor ? ` · ${item.cardDescriptor}` : ""}`
-                          : item.cardDescriptor || item.domain}
-                      </p>
-                      <h3 className="ubuntu-solutions-carousel__title">{item.title}</h3>
-                      <p className="ubuntu-solutions-carousel__text">
-                        {item.shortDesc || item.summary || item.heroDesc}
-                      </p>
-                      <span className="ubuntu-solutions-carousel__cta">Explore →</span>
-                    </div>
-                  </Link>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-
-          <div className="ubuntu-solutions-carousel__footer mt-6">
-            <div
-              className="ubuntu-solutions-carousel__indicators flex items-center justify-center gap-2"
-              role="tablist"
-              aria-label="Accelerator slides"
+            <Link
+              to={hrefFor(item)}
+              data-testid={`${testIdPrefix}-${item.slug}`}
+              className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
+              aria-label={`${item.title}: ${item.brandName || item.cardDescriptor || item.domain || ""}`}
             >
-              {items.map((item, index) => (
-                <button
-                  key={item.slug}
-                  type="button"
-                  role="tab"
-                  aria-selected={current === index}
-                  aria-label={`${item.title} — ${item.brandName || item.cardDescriptor || item.domain || ""}`}
-                  onClick={() => api?.scrollTo(index)}
-                  className={`ubuntu-solutions-carousel__indicator ${
-                    current === index ? "ubuntu-solutions-carousel__indicator--active" : ""
-                  }`}
+              <div className="ubuntu-solutions-carousel__media">
+                <img
+                  src={item.heroImage}
+                  alt=""
+                  className="ubuntu-solutions-carousel__image"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                 />
-              ))}
-            </div>
-            {viewAllHref && (
-              <div className="mt-4 flex justify-end">
-                <UbuntuLink to={viewAllHref} muted>
-                  {viewAllLabel}
-                </UbuntuLink>
               </div>
-            )}
+            </Link>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
+
+  return (
+    <UbuntuSplitLayout
+      id={id}
+      testId="solutions-accelerator-carousel"
+      className={`ubuntu-solutions-carousel border-y border-[#d9d9d9] bg-white ${className}`}
+      imagePosition="right"
+      mockupVariant="browser"
+      mediaClassName="ubuntu-solutions-carousel__mockup-wrap"
+      mediaSlot={
+        <MockupFrame variant="browser" screenClassName="ubuntu-solutions-carousel__mockup-screen">
+          <div className="ubuntu-solutions-carousel__mockup-inner">
+            {carousel}
+            {indicators}
           </div>
-        </div>
+        </MockupFrame>
+      }
+    >
+      {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
+      <SectionTitle id={`${id}-heading`} title={title} />
+      {lead && <p className="ubuntu-lead mt-3">{lead}</p>}
+
+      <div className="ubuntu-solutions-carousel__detail" key={activeItem.slug}>
+        {activeDescriptor && (
+          <p className="ubuntu-solutions-carousel__descriptor">{activeDescriptor}</p>
+        )}
+        <h3 className="ubuntu-solutions-carousel__title">{activeItem.title}</h3>
+        <p className="ubuntu-solutions-carousel__text">
+          {activeItem.shortDesc || activeItem.summary || activeItem.heroDesc}
+        </p>
+        <Link to={activeHref} className="ubuntu-solutions-carousel__cta">
+          Explore →
+        </Link>
       </div>
-    </section>
+
+      {viewAllHref && (
+        <div className="mt-6">
+          <UbuntuLink to={viewAllHref} muted>
+            {viewAllLabel}
+          </UbuntuLink>
+        </div>
+      )}
+    </UbuntuSplitLayout>
   );
 }

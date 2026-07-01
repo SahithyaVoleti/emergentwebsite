@@ -23,7 +23,7 @@ export const STATIC_PAGE_META = {
       "Meet the senior practitioners at NeuralTrix AI responsible for scoped delivery and accountable outcomes.",
   },
   "/solutions": {
-    title: `Agentic Solutions | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    title: `Portfolio | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
       "Explore NeuralTrix AI agentic solutions for transaction security, public inquiry resolution, research, clinical documentation, travel operations, legal research, and financial analysis.",
   },
@@ -108,7 +108,7 @@ function matchDynamicMeta(pathname) {
     const solution = solutions.find((item) => item.slug === solutionMatch[1]);
     if (solution) {
       return {
-        title: `${getSolutionNavLabel(solution)} | Products | NeuralTrix AI`,
+        title: `${getSolutionNavLabel(solution)} | Portfolio | NeuralTrix AI`,
         description: solution.shortDesc || solution.heroDesc || DEFAULT_META_DESCRIPTION,
       };
     }
@@ -170,5 +170,6 @@ export function resolvePageMeta(pathname) {
   return {
     title: `Page Not Found | NeuralTrix AI`,
     description: "The page you requested could not be found.",
+    notFound: true,
   };
 }

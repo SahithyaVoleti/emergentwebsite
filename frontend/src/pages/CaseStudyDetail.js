@@ -36,7 +36,6 @@ export default function CaseStudyDetail() {
     <SitePageMain>
       <PageHero
         significance="detail"
-        label={cs.industry}
         title={cs.heroTitle}
         description={cs.heroDesc}
         primaryCTA={{ text: "Discuss this pattern", href: "#page-contact" }}

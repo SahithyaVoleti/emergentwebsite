@@ -1,6 +1,6 @@
 import { ArrowRight, Bot, Brain, Layers, TrendingUp } from "lucide-react";
 import SiteNavLink from "./SiteNavLink";
-import HeroPlayOnceGif from "./HeroPlayOnceGif";
+import MockupGif from "./MockupGif";
 
 const FEATURE_ICONS = {
   bot: Bot,
@@ -34,8 +34,12 @@ function HeroMedia({ media }) {
           playsInline
           aria-hidden="true"
         />
-      ) : mediaType === "gif" && media.playOnce ? (
-        <HeroPlayOnceGif src={media.src} className="ubuntu-hero-transformation__video" />
+      ) : mediaType === "gif" ? (
+        <MockupGif
+          src={media.src}
+          screenClassName="ubuntu-hero-transformation__mockup-screen"
+          imgClassName="ubuntu-hero-transformation__mockup-gif"
+        />
       ) : (
         <img
           src={media.src}

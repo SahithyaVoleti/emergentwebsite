@@ -1,30 +1,16 @@
-import UbuntuLightSplitHero from "../../ubuntu/UbuntuLightSplitHero";
+import UbuntuPageHeroBanner from "../../ubuntu/UbuntuPageHeroBanner";
 import { HOME_HERO } from "../../../data/homePageSections";
-import { getSiteMockup } from "../../../data/siteMockups";
 
+/** Homepage hero — headline left, large grey logo symbol watermark right. */
 export default function UbuntuHomeHero({ embedded = false }) {
-  const {
-    titleBefore,
-    titleAccent,
-    titleAfter,
-    primaryCta,
-  } = HOME_HERO;
-
-  const heroMedia = getSiteMockup("hero");
+  const { titleBefore, titleAccent, titleAfter, lead, primaryCta } = HOME_HERO;
 
   return (
-    <UbuntuLightSplitHero
-      id="hero"
-      testId="hero-section"
+    <UbuntuPageHeroBanner
       embedded={embedded}
-      significance="primary"
       title={{ before: titleBefore, accent: titleAccent, after: titleAfter }}
-      primaryCTA={{
-        label: primaryCta.label,
-        href: primaryCta.href,
-        contactIntent: "consultation",
-      }}
-      media={heroMedia}
+      lead={lead}
+      primaryCTA={primaryCta ? { label: primaryCta.label, href: primaryCta.href } : null}
     />
   );
 }

@@ -1,25 +1,17 @@
 import { Link } from "react-router-dom";
 import { HOME_ALERT } from "../../../data/homePageSections";
-import SectionPatternBackground from "../../SectionPatternBackground";
 import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
-import { usePatternSectionHover } from "../../../hooks/usePatternSectionHover";
 
 /** Compact engagement CTA for pairing beside the outcomes band. */
 export default function UbuntuHomeEngagementPanel() {
-  const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
-
   return (
     <div
-      ref={sectionRef}
       id="engagement-cta"
       data-testid="engagement-alert-cta"
-      onPointerMove={onPointerMove}
-      onPointerLeave={onPointerLeave}
-      className="ubuntu-pattern-section ubuntu-pattern-section--cta relative flex h-full min-h-[28rem] flex-col overflow-hidden lg:min-h-0"
+      className="relative flex h-full min-h-[28rem] flex-col overflow-hidden lg:min-h-0"
     >
-      <SectionPatternBackground variant="cta" />
       <div className="relative z-10 flex flex-1 flex-col justify-center px-6 sm:px-8 md:lg:px-10 xl:px-12">
         <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
         <SectionTitle as="h2" title={HOME_ALERT.title} />

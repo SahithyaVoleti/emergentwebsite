@@ -21,7 +21,7 @@ export default function FAQSection({ faqs, title, eyebrow = SECTION_LABEL.questi
             {faq.q}
           </AccordionTrigger>
           <AccordionContent className="pb-5 text-sm leading-relaxed text-[#7d8597]">
-            {faq.a}
+            <p className="m-0">{faq.a}</p>
           </AccordionContent>
         </AccordionItem>
       ))}

@@ -270,10 +270,9 @@ export default function PrivacyPolicyPage() {
     <SitePageMain>
       <PageHero
         significance="utility"
-        label="Legal & Trust"
-        title="Privacy Policy for Services and Website Use"
+        title="Privacy Policy for |services and website use|"
         description="This policy defines how NeuralTrix AI collects, uses, secures, transfers, and governs personal information across service delivery and digital channels."
-        primaryCTA={{ text: "View Details", href: "#privacy-content" }}
+        primaryCTA={{ text: "View details", href: "#privacy-content" }}
       />
 
       <UbuntuPageSection

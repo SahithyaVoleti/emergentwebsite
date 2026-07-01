@@ -28,7 +28,7 @@ export default function UbuntuHomeFounderLetter({ imagePosition = "left" }) {
         programs through scoped pilots, senior-led delivery, and documented handovers your team can
         operate and extend.
       </p>
-      <p className="mt-6 text-sm font-medium text-[#111]">— {COMPANY_NAME} Leadership</p>
+      <p className="mt-6 text-sm font-medium text-white">— {COMPANY_NAME} Leadership</p>
     </UbuntuSplitLayout>
   );
 }

@@ -9,8 +9,7 @@ export default function ServicesPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Services"
-        title="AI product transformation, fine-tuning, and platform engineering"
+        title="AI product transformation, fine-tuning, and |platform engineering|"
         description="Three main service disciplines—each with its own scope, service lines, and delivery model."
         primaryCTA={{ text: "Browse disciplines", href: "#services-catalog" }}
         image={LISTING_PAGE_HERO_IMAGES.services}
@@ -20,7 +19,7 @@ export default function ServicesPage() {
         id="services-catalog"
         variant="cards"
         eyebrow={SECTION_LABEL.serviceCatalog}
-        title="Main services"
+        title="Main |services|"
         lead="Open a discipline to review its service lines, deliverables, and integration assumptions—without mixing offerings from other areas."
         className="!border-t-0"
       />

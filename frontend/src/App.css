@@ -15,9 +15,24 @@
   pointer-events: none !important;
 }
 
-/* Global body copy alignment */
+/* Global alignment: headings left, body copy justified */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+
 p,
-li {
+li,
+dd,
+blockquote,
+figcaption {
   text-align: justify;
   text-justify: inter-word;
+  hyphens: auto;
 }

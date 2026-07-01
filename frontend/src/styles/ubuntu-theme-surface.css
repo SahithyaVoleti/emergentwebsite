@@ -1,0 +1,431 @@
+/**
+ * Grey surface theme — white copy, orange highlights.
+ * Loaded after ubuntu-home.css; overrides Tailwind utilities inside .ubuntu-site.
+ */
+
+.ubuntu-site .ubuntu-site__body,
+.ubuntu-site .ubuntu-home-page {
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+.ubuntu-site p,
+.ubuntu-site li,
+.ubuntu-site dd,
+.ubuntu-site dt,
+.ubuntu-site label,
+.ubuntu-site figcaption {
+  color: inherit;
+}
+
+.ubuntu-site .ubuntu-hero-transformation__lead,
+.ubuntu-site .ubuntu-hero-transformation__feature-label {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-chrome-header .ubuntu-nav-dropdown__pillar-heading {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site .ubuntu-section-title__accent,
+.ubuntu-site .ubuntu-hero-transformation__title-accent,
+.ubuntu-site .ubuntu-palette-text,
+.ubuntu-site .hero-heading-accent {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .ubuntu-link,
+.ubuntu-site .ubuntu-link-muted {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .ubuntu-link:hover,
+.ubuntu-site .ubuntu-link-muted:hover {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site .ubuntu-logo-row span {
+  color: var(--site-text-subtle);
+}
+
+/* Header chrome */
+.ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top .ubuntu-nav-link,
+.ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top .ubuntu-nav-dropdown-group__trigger {
+  color: #fff;
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown__panel {
+  background: var(--site-bg-elevated);
+  border-color: var(--site-border-strong);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link {
+  color: var(--site-text);
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown__icon {
+  color: var(--site-text-subtle);
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link:hover,
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link:focus-visible,
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link--active {
+  background: rgba(209, 81, 31, 0.18);
+  border-color: var(--site-highlight);
+  color: var(--site-text);
+}
+
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link:hover .ubuntu-nav-dropdown__icon,
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link:focus-visible .ubuntu-nav-dropdown__icon,
+.ubuntu-chrome-header .ubuntu-nav-dropdown__link--active .ubuntu-nav-dropdown__icon {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site .ubuntu-chrome-header__mobile-menu {
+  background: color-mix(in srgb, var(--site-bg-elevated) 96%, transparent) !important;
+  border-top-color: var(--site-border) !important;
+}
+
+/* Footer */
+.ubuntu-chrome-footer {
+  background: var(--site-bg-alt);
+  color: var(--site-text-muted);
+  border-top-color: var(--site-border-strong);
+}
+
+.ubuntu-chrome-footer .ubuntu-footer-heading,
+.ubuntu-chrome-footer .ubuntu-footer-social,
+.ubuntu-chrome-footer .ubuntu-footer-top {
+  color: var(--site-text);
+}
+
+.ubuntu-chrome-footer .ubuntu-footer-link {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-chrome-footer .ubuntu-footer-link:hover,
+.ubuntu-chrome-footer .ubuntu-footer-top:hover,
+.ubuntu-chrome-footer .ubuntu-footer-social:hover {
+  color: var(--site-highlight);
+}
+
+.ubuntu-chrome-footer .ubuntu-footer-rule {
+  border-top-color: var(--site-border);
+}
+
+/* Forms */
+.ubuntu-site .ubuntu-contact-field,
+.ubuntu-site .ubuntu-contact-phone-row {
+  background: var(--site-bg-input) !important;
+  border-color: var(--site-border-strong) !important;
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site .ubuntu-contact-field::placeholder {
+  color: var(--site-text-subtle);
+}
+
+.ubuntu-site .ubuntu-contact-field:focus {
+  border-color: var(--site-highlight) !important;
+  box-shadow: 0 0 0 1px var(--site-highlight);
+}
+
+/* Cards & elevated panels — flat page surface (no layered strips behind content) */
+.ubuntu-site .bg-white {
+  background-color: var(--site-bg) !important;
+}
+
+.ubuntu-site .bg-\[\#eee\],
+.ubuntu-site .bg-\[\#f7f7f7\] {
+  background-color: var(--site-bg) !important;
+}
+
+.ubuntu-site .bg-white\/95 {
+  background-color: var(--site-bg) !important;
+}
+
+.ubuntu-site .border-\[\#d9d9d9\],
+.ubuntu-site .border-\[\#e5e5e5\],
+.ubuntu-site .border-\[\#e5e5e5\]\/80 {
+  border-color: var(--site-border) !important;
+}
+
+.ubuntu-site .text-\[\#2d2d2d\],
+.ubuntu-site .text-\[\#333\],
+.ubuntu-site .text-\[\#1e1e1e\],
+.ubuntu-site .text-\[\#111\] {
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site .text-\[\#4a4a4a\],
+.ubuntu-site .text-\[\#5c5c5c\],
+.ubuntu-site .text-\[\#666\],
+.ubuntu-site .text-\[\#6b6b6b\],
+.ubuntu-site .text-\[\#7d8597\],
+.ubuntu-site .text-\[\#888\] {
+  color: var(--site-text-muted) !important;
+}
+
+.ubuntu-site .text-\[\#8b4c6e\],
+.ubuntu-site .text-\[\#8b1538\],
+.ubuntu-site .text-\[\#d1511f\] {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .hover\:text-\[\#b8451a\]:hover,
+.ubuntu-site .group:hover .group-hover\:text-\[\#b8451a\],
+.ubuntu-site .group:hover .group-hover\:text-\[\#4a4a4a\] {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .ubuntu-product-card__heading-text {
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site .ubuntu-product-card__heading-desc {
+  color: var(--site-text-muted) !important;
+}
+
+.ubuntu-site .ubuntu-split__chip {
+  color: var(--site-text);
+  background: var(--site-bg-elevated);
+  border-color: var(--site-border);
+}
+
+.ubuntu-site .ubuntu-alert {
+  background: var(--site-bg-elevated);
+  border-left-color: var(--site-highlight);
+  color: var(--site-text);
+}
+
+.ubuntu-site .ubuntu-blog-list li {
+  border-bottom-color: var(--site-border);
+}
+
+.ubuntu-site .corp-heading-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, var(--site-highlight) 55%, #e8946f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ubuntu-site .corp-heading-secondary {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .corp-heading-gradient .corp-heading-secondary {
+  -webkit-text-fill-color: var(--site-text-muted) !important;
+  color: var(--site-text-muted) !important;
+}
+
+/* Mockup viewport — fill frame edge-to-edge */
+.ubuntu-site .ubuntu-mockup__screen--gif,
+.ubuntu-site .ubuntu-mockup__screen--static,
+.ubuntu-site .ubuntu-hero-transformation__mockup-screen,
+.ubuntu-site .ubuntu-solutions-carousel__mockup-screen,
+.ubuntu-site .ubuntu-mockup__gif-wrap,
+.ubuntu-site .ubuntu-mockup__gif-img,
+.ubuntu-site .ubuntu-mockup__img {
+  background: #fff;
+}
+
+/* No black or near-black text anywhere on site */
+.ubuntu-site .text-black {
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--site-text);
+}
+
+.ubuntu-site .group:hover .group-hover\:text-\[\#4a4a4a\] {
+  color: var(--site-highlight) !important;
+}
+
+/* Floating pill nav when scrolled — styles live in ubuntu-home.css */
+.ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top {
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* Flat page — no decorative layers, patterns, or glows behind content */
+.ubuntu-site,
+.ubuntu-site .ubuntu-site__body,
+.ubuntu-site .ubuntu-home-page,
+.ubuntu-site .page-surface,
+.ubuntu-site .ubuntu-section-block,
+.ubuntu-site .ubuntu-section--alt,
+.ubuntu-site .ubuntu-site-page-chrome,
+.ubuntu-site .ubuntu-pattern-section,
+.ubuntu-site .ubuntu-pattern-section--hero,
+.ubuntu-site .ubuntu-pattern-section--cta,
+.ubuntu-site .ubuntu-chrome-footer,
+.ubuntu-site .ubuntu-arch-timeline-section,
+.ubuntu-site .ubuntu-stats-cta-strip {
+  background: var(--site-bg) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner {
+  background: linear-gradient(
+    105deg,
+    #2f2f2f 0%,
+    #3a3a3a 42%,
+    #454545 72%,
+    #3d3d3d 100%
+  ) !important;
+  background-image: linear-gradient(
+    105deg,
+    #2f2f2f 0%,
+    #3a3a3a 42%,
+    #454545 72%,
+    #3d3d3d 100%
+  ) !important;
+  box-shadow: none !important;
+}
+
+.ubuntu-site .ubuntu-pattern-layer,
+.ubuntu-site .ubuntu-pattern-layer::after,
+.ubuntu-site .ubuntu-pattern-section::before,
+.ubuntu-site .ubuntu-pattern-section::after,
+.ubuntu-site .ubuntu-stats-dots-layer,
+.ubuntu-site .ubuntu-stripes-layer,
+.ubuntu-site .ubuntu-hero-backdrop,
+.ubuntu-site .ubuntu-hero-backdrop__overlay,
+.ubuntu-site .hero-ai-pulse,
+.ubuntu-site .ubuntu-border-beam-mask,
+.ubuntu-site .ubuntu-border-beam-glow,
+.ubuntu-site .ubuntu-scope-grid__card::before,
+.ubuntu-site .ubuntu-showcase-card__media::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.ubuntu-site .ubuntu-stats-cta-strip,
+.ubuntu-site .ubuntu-process-stepper {
+  border-color: var(--site-border) !important;
+}
+
+.ubuntu-site .corp-pat-dots,
+.ubuntu-site .corp-pat-cross-dash,
+.ubuntu-site .corp-pat-diag-dash {
+  background-image: none !important;
+  background-color: var(--site-bg) !important;
+}
+
+/* ── Alignment policy ───────────────────────────────────────
+   Headings / titles → left-aligned (never justified)
+   Body copy (p, li, leads) → justified
+   ─────────────────────────────────────────────────────────── */
+
+/* Body copy — justified */
+.ubuntu-site p,
+.ubuntu-site li,
+.ubuntu-site dd,
+.ubuntu-site blockquote,
+.ubuntu-site figcaption,
+.ubuntu-site .ubuntu-lead,
+.ubuntu-site .ubuntu-body,
+.ubuntu-site .ubuntu-home-hero-banner__lead,
+.ubuntu-site .ubuntu-hero-transformation__lead,
+.ubuntu-site .ubuntu-hero-transformation__intro,
+.ubuntu-site .ubuntu-hero-transformation__body,
+.ubuntu-site .ubuntu-product-card__heading-desc,
+.ubuntu-site .ubuntu-solutions-carousel__descriptor,
+.ubuntu-site .ubuntu-arch-timeline__desc,
+.ubuntu-site .ubuntu-showcase-bento__body,
+.ubuntu-site .ubuntu-prose p,
+.ubuntu-site .ubuntu-prose li,
+.ubuntu-site .ubuntu-prose dd,
+.ubuntu-site article p,
+.ubuntu-site article li,
+.ubuntu-site .ubuntu-split__intro p,
+.ubuntu-site .ubuntu-split__body p,
+.ubuntu-site .ubuntu-split__intro li,
+.ubuntu-site .ubuntu-split__body li,
+.ubuntu-site .ubuntu-split__intro .ubuntu-lead,
+.ubuntu-site .ubuntu-split__body .ubuntu-lead,
+.ubuntu-site .ubuntu-split__intro .ubuntu-body,
+.ubuntu-site .ubuntu-split__body .ubuntu-body,
+.ubuntu-site .max-w-3xl p,
+.ubuntu-site .max-w-3xl li,
+.ubuntu-site .text-left p,
+.ubuntu-site .text-left li,
+.ubuntu-site .text-left .ubuntu-lead,
+.ubuntu-site .text-left .ubuntu-body,
+.ubuntu-site .max-w-3xl .ubuntu-lead,
+.ubuntu-site .max-w-3xl .ubuntu-body,
+.ubuntu-site .svc-card__desc,
+.ubuntu-site [data-testid="faq-section"] [data-state] > div,
+.ubuntu-site [data-testid="faq-section"] [data-state] > div p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Headings / titles — left-aligned only */
+.ubuntu-site :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .text-left :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .max-w-3xl :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-home-hero-banner__title,
+.ubuntu-site .ubuntu-section-title,
+.ubuntu-site .ubuntu-hero-title,
+.ubuntu-site .ubuntu-hero-transformation__title,
+.ubuntu-site .ubuntu-arch-timeline__title,
+.ubuntu-site .ubuntu-product-card__heading-text,
+.ubuntu-site .ubuntu-solutions-carousel__title,
+.ubuntu-site .ubuntu-scope-carousel__header .ubuntu-section-title,
+.ubuntu-site .ubuntu-process-stepper h2.ubuntu-section-title,
+.ubuntu-site .ubuntu-capability-grid__panel-title,
+.ubuntu-site .ubuntu-split__content > :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .max-w-3xl > :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site header :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-page-eyebrow {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+
+/* Centered UI — not justified */
+.ubuntu-site .text-center,
+.ubuntu-site .text-center p,
+.ubuntu-site .text-center li,
+.ubuntu-site li.text-center,
+.ubuntu-site li.text-center p,
+.ubuntu-site .ubuntu-stats-cta-strip__item,
+.ubuntu-site .ubuntu-stats-cta-strip__item p,
+.ubuntu-site .ubuntu-industry-icon-card,
+.ubuntu-site .ubuntu-industry-icon-card p,
+.ubuntu-site .ubuntu-blog-compact-card__title,
+.ubuntu-site .ubuntu-chrome-ribbon__inner,
+.ubuntu-site .ubuntu-btn-primary,
+.ubuntu-site .ubuntu-btn-secondary,
+.ubuntu-site button.text-center {
+  text-align: center;
+  text-justify: auto;
+  hyphens: none;
+}
+
+.ubuntu-site label,
+.ubuntu-site .ubuntu-contact-form label {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+
+.ubuntu-site .ubuntu-blog-compact-card__title,
+.ubuntu-site .ubuntu-industry-icon-card :where(h2, h3, h4, p) {
+  text-align: center;
+  text-justify: auto;
+  hyphens: none;
+}

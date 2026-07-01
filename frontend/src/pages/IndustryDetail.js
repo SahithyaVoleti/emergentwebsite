@@ -43,7 +43,6 @@ export default function IndustryDetail() {
     <SitePageMain>
       <PageHero
         significance="detail"
-        label="Industries"
         title={industry.heroTitle}
         description={industry.heroDesc}
         primaryCTA={{

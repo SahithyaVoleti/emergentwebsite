@@ -15,8 +15,7 @@ export default function SecurityPage() {
     <SitePageMain>
       <PageHero
         significance="detail"
-        label="Company"
-        title="Governance and security"
+        title="Governance and |security|"
         description="Control areas we address during architecture, build, and operations for agentic solutions and AI product programs—not certification claims unless separately contracted."
         primaryCTA={{ text: "Discuss your requirements", href: "#page-contact" }}
         secondaryCTA={{ text: "View assurance controls", href: "#governance-controls" }}
@@ -26,7 +25,7 @@ export default function SecurityPage() {
       <UbuntuFeaturesBand
         id="governance-pillars"
         eyebrow={SECTION_LABEL.governance}
-        title="Governance and security pillars"
+        title="Governance and |security pillars|"
         lead="Practices applied across agent deployment, data integration, and production operations."
         items={GOVERNANCE_SECURITY_PILLARS}
         variant="alt"

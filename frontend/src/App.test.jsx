@@ -32,7 +32,8 @@ function renderApp(initialPath = "/") {
 describe("App", () => {
   it("renders the homepage", async () => {
     renderApp("/");
-    expect(await screen.findByTestId("hero-section")).toBeInTheDocument();
+    expect(document.getElementById("main-content")).toBeInTheDocument();
+    expect(await screen.findByTestId("engagement-alert-cta")).toBeInTheDocument();
   });
 
   it("renders the services hub", async () => {

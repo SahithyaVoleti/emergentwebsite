@@ -10,10 +10,9 @@ export default function SolutionsPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Products"
-        title="Agentic solutions for enterprise workflows"
+        title="Agentic solutions for |enterprise workflows|"
         description="Production-ready AI agents for transaction security, public services, research, clinical documentation, travel operations, legal research, financial analysis, education, real estate, and agriculture."
-        primaryCTA={{ text: "Browse agents", href: "#solutions-slider" }}
+        primaryCTA={{ text: "Browse agents", href: "#solutions-catalog" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
@@ -21,8 +20,8 @@ export default function SolutionsPage() {
 
       <SolutionsHorizontalSlider
         id="solutions-catalog"
-        eyebrow={SECTION_LABEL.products}
-        title="Agentic solution catalog"
+        eyebrow={SECTION_LABEL.portfolio}
+        title="Agentic solution |catalog|"
         lead="Each agent addresses a defined workflow. Review capabilities, integration scope, and deployment requirements for your operating environment."
         viewAllHref={undefined}
         autoAdvanceMs={0}

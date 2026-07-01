@@ -15,10 +15,10 @@ export const TOP_NAV = {
     testId: "services",
     dropdownVariant: "pillar",
   },
-  products: {
-    label: "Products",
+  portfolio: {
+    label: "Portfolio",
     basePath: "/solutions",
-    testId: "products",
+    testId: "portfolio",
   },
   industries: {
     label: "Industries",
@@ -34,7 +34,7 @@ export const TOP_NAV = {
 
 export const TOP_NAV_ORDER = [
   "services",
-  "products",
+  "portfolio",
   "industries",
   "company",
 ];
@@ -84,8 +84,8 @@ export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
 export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
 /** Agentic solutions portfolio */
-export const PRODUCTS_NAV = [
-  { label: "Agentic solutions portfolio", href: "/solutions" },
+export const PORTFOLIO_NAV = [
+  { label: "Portfolio overview", href: "/solutions" },
   ...solutions.map((solution) => ({
     label: getSolutionNavLabel(solution),
     href: `/solutions/${solution.slug}`,
@@ -123,7 +123,7 @@ export const FOOTER_COLUMNS = [
     title: "Offerings",
     links: [
       { label: "Services", href: "/services" },
-      { label: "Products", href: "/solutions" },
+      { label: "Portfolio", href: "/solutions" },
       { label: "Industries", href: "/industries" },
     ],
   },
@@ -158,7 +158,7 @@ export const PRIMARY_NAV_CTA = {
   topic: "consultation",
 };
 
-export function flattenProductLinks(groups = PRODUCTS_NAV) {
+export function flattenPortfolioLinks(groups = PORTFOLIO_NAV) {
   if (!groups?.length) return [];
   if (groups[0]?.items) {
     return groups.flatMap((section) => section.items);
@@ -196,7 +196,7 @@ export function isNavSectionActive(pathname, basePath, links = []) {
 /** Secondary CTA labels for PageStandardSections by page key */
 export const SECONDARY_CTA_BY_PAGE = {
   services: { label: "View services", href: "/services" },
-  solutions: { label: "View products", href: "/solutions" },
+  solutions: { label: "View portfolio", href: "/solutions" },
   industries: { label: "View industries", href: "/industries" },
   about: { label: "Open positions", href: "/about#careers" },
   team: { label: "View company", href: "/about" },
@@ -205,7 +205,7 @@ export const SECONDARY_CTA_BY_PAGE = {
   caseStudies: { label: "View services", href: "/services" },
   detail: { label: "View services", href: "/services" },
   legal: { label: "Contact us", href: "#page-contact" },
-  security: { label: "View agent portfolio", href: "/solutions" },
+  security: { label: "View portfolio", href: "/solutions" },
   testimonials: { label: "View company", href: "/about" },
   partners: { label: "View company", href: "/about" },
   research: { label: "View test cases", href: "#test-cases" },

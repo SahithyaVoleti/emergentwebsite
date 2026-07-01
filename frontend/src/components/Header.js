@@ -12,7 +12,7 @@ import {
 import {
   SERVICES_PILLAR_NAV,
   SERVICES_NAV,
-  PRODUCTS_NAV,
+  PORTFOLIO_NAV,
   INDUSTRIES_NAV,
   COMPANY_NAV,
   PRIMARY_NAV_CTA,
@@ -27,11 +27,11 @@ function navLinkClass(isActive) {
 }
 
 const mobileLinkClass =
-  "block border-b border-[#e5e5e5] py-3.5 text-base text-[#2d2d2d] hover:text-[#b8451a]";
+  "block border-b border-[var(--site-border)] py-3.5 text-base text-white hover:text-[#b8451a]";
 
 const DROPDOWN_NAV = {
   services: SERVICES_PILLAR_NAV,
-  products: PRODUCTS_NAV,
+  portfolio: PORTFOLIO_NAV,
   industries: INDUSTRIES_NAV,
   company: COMPANY_NAV,
 };
@@ -59,10 +59,22 @@ export default function Header({ embedded = false, shell = false }) {
     setOpenMobileSections((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+  const closeNav = () => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+    setOpenMobileSections({});
+  };
+
+  useEffect(() => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+    setOpenMobileSections({});
+  }, [location.pathname]);
+
   useEffect(() => {
     if (!mobileOpen) return undefined;
     const onKeyDown = (e) => {
-      if (e.key === "Escape") setMobileOpen(false);
+      if (e.key === "Escape") closeNav();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -108,7 +120,12 @@ export default function Header({ embedded = false, shell = false }) {
     return (
       <div
         key={key}
-        className="ubuntu-nav-dropdown-group relative group"
+        className={[
+          "ubuntu-nav-dropdown-group relative group",
+          openDropdown === key && "is-open",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         onPointerEnter={() => setOpenDropdown(key)}
         onPointerLeave={() => setOpenDropdown(null)}
         onFocusCapture={() => setOpenDropdown(key)}
@@ -124,6 +141,7 @@ export default function Header({ embedded = false, shell = false }) {
           aria-haspopup="menu"
           aria-expanded={openDropdown === key}
           aria-controls={menuId}
+          onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
         >
           {label}
           <ChevronDown size={14} className="ubuntu-nav-dropdown-group__chevron" aria-hidden />
@@ -131,7 +149,7 @@ export default function Header({ embedded = false, shell = false }) {
         <div className={dropdownClass} role="menu" aria-label={label} id={menuId}>
           <div className="ubuntu-nav-dropdown__panel">
             <ul className="ubuntu-nav-dropdown__list" role="none">
-              {links.map((link) => renderDropdownLink(link, testIdPrefix))}
+              {links.map((link) => renderDropdownLink(link, testIdPrefix, closeNav))}
             </ul>
           </div>
         </div>
@@ -148,11 +166,11 @@ export default function Header({ embedded = false, shell = false }) {
     const panelId = `nav-mobile-${testIdPrefix}`;
 
     return (
-      <div key={key} className="border-b border-[#e5e5e5]">
+      <div key={key} className="border-b border-[var(--site-border)]">
         <button
           type="button"
-          className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3.5 text-left text-base font-medium ${
-            isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#2d2d2d]"
+          className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3.5 text-left text-base font-medium text-white ${
+            isOpen ? "ubuntu-nav-mobile-trigger--open" : ""
           }`}
           onClick={() => toggleMobileSection(key)}
           aria-expanded={isOpen}
@@ -168,7 +186,7 @@ export default function Header({ embedded = false, shell = false }) {
         {isOpen && (
           <div className="ubuntu-nav-mobile-panel" id={panelId}>
             <ul className="ubuntu-nav-dropdown__list" role="none">
-              {links.map((link) => renderDropdownLink(link, testIdPrefix, () => setMobileOpen(false)))}
+              {links.map((link) => renderDropdownLink(link, testIdPrefix, closeNav))}
             </ul>
           </div>
         )}
@@ -189,6 +207,7 @@ export default function Header({ embedded = false, shell = false }) {
         to={item.href}
         data-testid={`nav-link-${item.testId}`}
         className={navLinkClass(location.pathname.startsWith(item.href))}
+        onClick={closeNav}
       >
         {item.label}
       </Link>
@@ -206,7 +225,7 @@ export default function Header({ embedded = false, shell = false }) {
       <Link
         key={key}
         to={item.href}
-        onClick={() => setMobileOpen(false)}
+        onClick={closeNav}
         className={mobileLinkClass}
       >
         {item.label}
@@ -233,7 +252,7 @@ export default function Header({ embedded = false, shell = false }) {
     <>
       <div
         className={[
-          "ubuntu-chrome-header__bar relative z-10 mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:h-14",
+          "ubuntu-chrome-header__bar relative z-10 mx-auto flex h-16 items-center justify-between gap-4 xl:h-14",
           shell && isNavCentered && "ubuntu-chrome-header__bar--compact",
         ]
           .filter(Boolean)
@@ -242,6 +261,7 @@ export default function Header({ embedded = false, shell = false }) {
         <Link
           to="/"
           data-testid="header-logo"
+          onClick={closeNav}
           className={[
             "ubuntu-chrome-header__logo-link",
             shell && isNavCentered && "ubuntu-chrome-header__logo-link--compact",
@@ -253,25 +273,20 @@ export default function Header({ embedded = false, shell = false }) {
             src={BRAND_LOGO_FULL}
             alt={BRAND_LOGO_ALT}
             className="ubuntu-chrome-header__logo ubuntu-chrome-header__logo--full"
-            width={1024}
-            height={190}
+            width={1160}
+            height={215}
           />
           <img
             src={BRAND_LOGO_SYMBOL}
             alt={BRAND_LOGO_ALT}
             className="ubuntu-chrome-header__logo ubuntu-chrome-header__logo--symbol"
-            width={902}
-            height={1024}
+            width={469}
+            height={532}
           />
         </Link>
 
         <nav
-          className={[
-            "mx-2 hidden items-center justify-center xl:flex",
-            shell && isNavCentered ? "flex-none" : "flex-1",
-          ]
-            .filter(Boolean)
-            .join(" ")}
+          className="mx-2 hidden flex-1 items-center justify-center xl:flex"
           aria-label="Main"
         >
           <div className="flex items-center gap-4 xl:gap-5">
@@ -279,7 +294,14 @@ export default function Header({ embedded = false, shell = false }) {
           </div>
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-3">
+        <div
+          className={[
+            "ubuntu-chrome-header__actions flex shrink-0 items-center justify-end gap-3",
+            shell && isNavCentered && "ubuntu-chrome-header__actions--compact",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           <Link
             to={demoHref}
             data-testid="header-cta-button"
@@ -290,7 +312,7 @@ export default function Header({ embedded = false, shell = false }) {
 
           <button
             data-testid="mobile-menu-toggle"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 text-[#2d2d2d] transition-colors hover:text-[#b8451a] xl:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 text-white transition-colors hover:text-[#b8451a] xl:hidden"
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
@@ -306,14 +328,14 @@ export default function Header({ embedded = false, shell = false }) {
         <div
           id="mobile-menu-panel"
           data-testid="mobile-menu"
-          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-white/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden xl:max-h-[calc(100vh-3.5rem)]"
+          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[var(--site-border)] bg-[var(--site-bg-elevated)] px-4 pb-6 sm:px-6 xl:hidden xl:max-h-[calc(100vh-3.5rem)]"
         >
           {TOP_NAV_ORDER.map(renderMobileNavItem)}
 
           <Link
             to={demoHref}
             data-testid="mobile-cta-button"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeNav}
             className="ubuntu-btn-primary mt-6 w-full"
           >
             {PRIMARY_NAV_CTA.label}

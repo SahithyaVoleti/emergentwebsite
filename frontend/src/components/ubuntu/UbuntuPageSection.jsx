@@ -68,6 +68,7 @@ export default function UbuntuPageSection({
   mockupVariant = "browser",
   belowContent,
   children,
+  className = "",
 }) {
   const nextPosition = useSectionMediaPosition();
   const resolvedPosition = imagePosition ?? nextPosition();
@@ -94,7 +95,11 @@ export default function UbuntuPageSection({
           : "ubuntu-section-block border-b border-[#d9d9d9] bg-white";
 
     return (
-      <section id={id} data-testid={id ? `ubuntu-section-${id}` : undefined} className={sectionClass}>
+      <section
+        id={id}
+        data-testid={id ? `ubuntu-section-${id}` : undefined}
+        className={[sectionClass, className].filter(Boolean).join(" ")}
+      >
         <div className="ubuntu-container">
           {copy}
           {children}
@@ -108,6 +113,7 @@ export default function UbuntuPageSection({
     <UbuntuSplitLayout
       id={id}
       testId={id ? `ubuntu-section-${id}` : undefined}
+      className={className}
       variant={variant}
       image={image}
       imageAlt={imageAlt}

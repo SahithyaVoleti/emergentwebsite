@@ -1,5 +1,6 @@
 import SiteNavLink from "../ubuntu/SiteNavLink";
 import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
+import MockupFrame from "../ubuntu/MockupFrame";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import { getSolutionProductName } from "../../lib/solutionDisplay";
@@ -21,13 +22,7 @@ export default function SolutionAgentOverview({ solution }) {
       imagePosition="right"
       mediaSlot={
         <div className="ubuntu-split__media ubuntu-split__media--product">
-          <img
-            src={solution.heroImage}
-            alt={`${brandName} — ${productName}`}
-            className="ubuntu-split__img ubuntu-split__img--product"
-            loading="eager"
-            decoding="async"
-          />
+          <MockupFrame src={solution.heroImage} alt={`${brandName} — ${productName}`} />
         </div>
       }
       belowContent={

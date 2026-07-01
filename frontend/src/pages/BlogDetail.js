@@ -35,7 +35,6 @@ export default function BlogDetail() {
     <SitePageMain>
       <PageHero
         significance="detail"
-        label={article.category}
         title={article.title}
         description={meta}
         image={article.image}
@@ -95,7 +94,24 @@ export default function BlogDetail() {
             </aside>
 
             <div className="lg:col-span-3">
-              <article className="ubuntu-prose max-w-none">
+              <p className="text-sm font-medium uppercase tracking-wide text-[#7d8597]">{article.category}</p>
+              <h1 className="ubuntu-section-title mt-2">{article.title}</h1>
+              <p className="ubuntu-lead mt-3 text-[#7d8597]">{meta}</p>
+              {serviceLinks?.length > 0 ? (
+                <p className="ubuntu-body mt-4 text-sm text-[#7d8597]">
+                  Related services:{" "}
+                  {serviceLinks.map((link, index) => (
+                    <span key={link.href}>
+                      {index > 0 ? ", " : null}
+                      <Link to={link.href} className="text-[#d1511f] hover:underline">
+                        {link.label}
+                      </Link>
+                    </span>
+                  ))}
+                </p>
+              ) : null}
+
+              <article className="ubuntu-prose mt-10 max-w-none">
                 {article.content.map((block, i) => {
                   const headingIndex = headings.indexOf(block);
                   if (block.type === "heading") {

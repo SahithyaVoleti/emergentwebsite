@@ -8,7 +8,6 @@ import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
 import ServicesPillarCatalog from "../../ubuntu/ServicesPillarCatalog";
-import HeroPlayOnceGif from "../../ubuntu/HeroPlayOnceGif";
 import { getHomeSectionImage } from "../../../data/homePageImages";
 import { homeImagePosition } from "../../../lib/homeImagePosition";
 import {
@@ -31,7 +30,7 @@ const UbuntuHomeBlogs = lazy(() =>
 const ContactForm = lazy(() => import("../../ContactForm"));
 
 function HomeSectionFallback({ minHeight = "12rem" }) {
-  return <div className="ubuntu-section-block bg-white" style={{ minHeight }} aria-hidden />;
+  return <div className="ubuntu-section-block" style={{ minHeight }} aria-hidden />;
 }
 
 export default function UbuntuHome() {
@@ -41,7 +40,7 @@ export default function UbuntuHome() {
   const nextStepImage = getHomeSectionImage("next-step");
 
   return (
-    <div className="ubuntu-home-page relative z-10 bg-white">
+    <div className="ubuntu-home-page relative z-10">
       <UbuntuHomeHeroChrome />
 
       <UbuntuHomeHeroStack
@@ -51,14 +50,8 @@ export default function UbuntuHome() {
             testId="engagement-alert-cta"
             pattern="cta"
             imagePosition={nextPosition()}
-            mediaClassName="ubuntu-split__media--gif"
-            mediaSlot={
-              <HeroPlayOnceGif
-                src={HOME_ALERT.media.src}
-                wrapClassName="ubuntu-split__gif-wrap"
-                className="ubuntu-split__img"
-              />
-            }
+            image={HOME_ALERT.media.src}
+            imageAlt={HOME_ALERT.media.alt}
           >
             <SectionEyebrow>{HOME_ALERT.eyebrow}</SectionEyebrow>
             <SectionTitle as="h2" title={HOME_ALERT.title} />
@@ -103,7 +96,7 @@ export default function UbuntuHome() {
         id="next-step"
         testId="next-step-cta"
         pattern="cta"
-      image={nextStepImage?.src}
+        image={nextStepImage?.src}
         imageAlt={nextStepImage?.alt}
         imagePosition={nextPosition()}
       >

@@ -9,8 +9,7 @@ export default function IndustriesPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Industries"
-        title="Interdisciplinary AI product programs"
+        title="Interdisciplinary |AI product programs|"
         description="We transform and build AI-enabled software across healthcare, finance, education, manufacturing, and other sectors—aligned to each industry's application estate and governance requirements."
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
@@ -20,7 +19,7 @@ export default function IndustriesPage() {
       <UbuntuIndustriesIconGrid
         industries={industries}
         eyebrow={SECTION_LABEL.industries}
-        title="Coverage across industry sectors"
+        title="Coverage across |industry sectors|"
         lead="Each sector operates distinct application estates—EHR, ERP, LMS, CRM, and more. Select an industry to review validated automation patterns and modernization scope."
       />
 

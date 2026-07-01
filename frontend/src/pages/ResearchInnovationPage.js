@@ -38,8 +38,7 @@ export default function ResearchInnovationPage() {
   return (
     <SitePageMain>
       <PageHero
-        label="Research & Innovation"
-        title="Research programs for production AI delivery"
+        title="Research programs for |production AI delivery|"
         description="Controlled experimentation on intelligent automation and application integration—documented outcomes inform governed production programs."
         primaryCTA={{
           text: "Schedule research briefing",

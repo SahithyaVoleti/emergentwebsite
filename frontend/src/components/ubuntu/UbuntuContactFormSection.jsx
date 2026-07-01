@@ -6,7 +6,6 @@ import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import SiteNavLink from "./SiteNavLink";
 import MockupFrame from "./MockupFrame";
-import { BorderBeam } from "@/components/ui/border-beam";
 import { submitLead } from "../../lib/submitLead";
 import { captureEvent } from "../../lib/analytics";
 import { env } from "../../lib/env";
@@ -332,7 +331,6 @@ export default function UbuntuContactFormSection({
       <MockupFrame screenClassName="ubuntu-contact-mockup__screen">
         <div className="ubuntu-contact-mockup__inner ubuntu-contact-form">{formBody}</div>
       </MockupFrame>
-      <BorderBeam duration={8} size={100} colorFrom="#5c5c5c" colorTo="#979dac" borderWidth={2} />
     </div>
   );
 

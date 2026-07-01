@@ -4,10 +4,8 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Calendar, Layers, Server } from "lucide-react";
 import TechStackLogoGrid from "../TechStackLogoGrid";
 import MethodologyFlowchart from "../MethodologyFlowchart";
-import SectionPatternBackground from "../SectionPatternBackground";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
-import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
 
 function useReveal() {
   const ref = useRef(null);
@@ -36,7 +34,7 @@ function FactTile({ icon: Icon, label, value, delay, reveal }) {
         <Icon size={16} strokeWidth={2} aria-hidden />
         <span className="text-[10px] font-semibold uppercase tracking-[0.12em]">{label}</span>
       </div>
-      <p className="text-sm font-medium leading-snug text-[#111] sm:text-base">{value}</p>
+      <p className="text-sm font-medium leading-snug text-white sm:text-base">{value}</p>
     </motion.div>
   );
 }
@@ -153,7 +151,7 @@ function SolutionPilotSchedule({ weeks, reveal }) {
               <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[#999] sm:sr-only">
                 Phase
               </span>
-              <p className="text-base font-medium text-[#111]">{week.label}</p>
+              <p className="text-base font-medium text-white">{week.label}</p>
             </div>
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[#999] sm:sr-only">
@@ -201,19 +199,14 @@ export function SolutionPilotTimeline({ weeks }) {
 
 export function SolutionMethodologySection({ steps }) {
   const { ref, reveal } = useReveal();
-  const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
 
   return (
     <section
-      ref={sectionRef}
       id="solution-methodology"
       data-testid="solution-methodology"
-      className="ubuntu-section-block ubuntu-pattern-section ubuntu-pattern-section--cta border-b border-[#d9d9d9]"
+      className="ubuntu-section-block border-b border-[var(--site-border)]"
       aria-labelledby="solution-methodology-heading"
-      onPointerMove={onPointerMove}
-      onPointerLeave={onPointerLeave}
     >
-      <SectionPatternBackground variant="cta" />
       <div ref={ref} className="ubuntu-container relative z-10">
         <motion.div {...reveal(0)} className="max-w-3xl">
           <SectionEyebrow>Methodology</SectionEyebrow>
