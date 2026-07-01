@@ -2,7 +2,7 @@
  * Two-column section: copy on one side, image on the other (ubuntu.com event-band pattern).
  * On small screens: eyebrow + title, then image, then remaining copy.
  */
-import { splitLayoutContentAtTitle } from "../../../lib/splitLayoutContent";
+import { splitLayoutContentForMedia } from "../../../lib/splitLayoutContent";
 
 export default function UbuntuHomeSplitLayout({
   image,
@@ -22,7 +22,9 @@ export default function UbuntuHomeSplitLayout({
         : "ubuntu-section-block";
 
   const imageFirst = imagePosition === "left";
-  const { intro, body, structured } = splitLayoutContentAtTitle(children);
+  const hasMedia = Boolean(image);
+  const { intro, body, structured: hasTitleSplit } = splitLayoutContentForMedia(children);
+  const structured = Boolean(hasMedia && hasTitleSplit);
 
   const media = image ? (
     <div className="ubuntu-split__media">
@@ -47,7 +49,7 @@ export default function UbuntuHomeSplitLayout({
   const copyNode = structured ? (
     <div className="ubuntu-split__copy">
       {intro?.length > 0 ? <div className="ubuntu-split__intro">{intro}</div> : null}
-      {body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null}
+      {Array.isArray(body) && body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null}
     </div>
   ) : null;
 

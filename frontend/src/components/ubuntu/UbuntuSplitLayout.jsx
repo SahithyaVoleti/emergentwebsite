@@ -1,7 +1,7 @@
 import MockupFrame from "./MockupFrame";
 import SectionPatternBackground from "../SectionPatternBackground";
 import { usePatternSectionHover } from "../../hooks/usePatternSectionHover";
-import { splitLayoutContentAtTitle } from "../../lib/splitLayoutContent";
+import { splitLayoutContentForMedia } from "../../lib/splitLayoutContent";
 
 export default function UbuntuSplitLayout({
   image,
@@ -37,7 +37,9 @@ export default function UbuntuSplitLayout({
 
   const imageFirst = imagePosition === "left";
   const { sectionRef, onPointerMove, onPointerLeave } = usePatternSectionHover();
-  const { intro, body, structured } = splitLayoutContentAtTitle(children);
+  const hasMedia = Boolean(mediaSlot || image);
+  const { intro, body, structured: hasTitleSplit } = splitLayoutContentForMedia(children);
+  const structured = Boolean(hasMedia && hasTitleSplit);
 
   const media = mediaSlot ? (
     <div className={["ubuntu-split__media", mediaClassName].filter(Boolean).join(" ")}>
@@ -60,7 +62,7 @@ export default function UbuntuSplitLayout({
   const copyNode = structured ? (
     <div className="ubuntu-split__copy">
       {intro?.length > 0 ? <div className="ubuntu-split__intro">{intro}</div> : null}
-      {body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null}
+      {Array.isArray(body) && body.length > 0 ? <div className="ubuntu-split__body">{body}</div> : null}
     </div>
   ) : null;
 

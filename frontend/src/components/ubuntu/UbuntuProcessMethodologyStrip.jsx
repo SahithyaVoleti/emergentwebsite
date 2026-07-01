@@ -77,15 +77,13 @@ export default function UbuntuProcessMethodologyStrip({
         >
           <div
             className="ubuntu-process-stepper__track-wrap"
+            style={{ "--process-progress": `${progressPercent}%` }}
             role="navigation"
             aria-label="Methodology steps"
           >
             <div className="ubuntu-process-stepper__track" aria-hidden="true">
               <span className="ubuntu-process-stepper__track-bg" />
-              <span
-                className="ubuntu-process-stepper__track-fill"
-                style={{ width: `${progressPercent}%` }}
-              />
+              <span className="ubuntu-process-stepper__track-fill" />
             </div>
 
             <ol className="ubuntu-process-stepper__rail">

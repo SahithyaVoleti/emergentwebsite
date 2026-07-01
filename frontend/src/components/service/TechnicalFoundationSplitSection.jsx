@@ -3,6 +3,7 @@ import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import UbuntuHomeLink from "../home/ubuntu/UbuntuHomeLink";
+import UbuntuSplitLayout from "../ubuntu/UbuntuSplitLayout";
 import TechFoundationCtaMedia from "./TechFoundationCtaMedia";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 
@@ -31,29 +32,23 @@ export default function TechnicalFoundationSplitSection({
   const secondaryLabel = secondaryCta?.label ?? "View capabilities";
 
   return (
-    <section
+    <UbuntuSplitLayout
       id={id}
-      data-testid="service-technical-foundation-cta"
-      className="ubuntu-section-block ubuntu-tech-foundation-cta border-y border-[#d9d9d9] bg-white"
-      aria-labelledby={`${id}-heading`}
+      testId="service-technical-foundation-cta"
+      className="ubuntu-tech-foundation-cta border-y border-[#d9d9d9] bg-white"
+      imagePosition="right"
+      mediaClassName="ubuntu-tech-foundation-cta__media"
+      mediaSlot={<TechFoundationCtaMedia techNames={techNames} />}
     >
-      <div className="ubuntu-container">
-        <div className="max-w-3xl">
-          <SectionEyebrow>{eyebrow}</SectionEyebrow>
-          <SectionTitle as="h2" id={`${id}-heading`} title={title} />
-          <p className="ubuntu-lead mt-3">{lead}</p>
-          <div className="ubuntu-cta-row">
-            <Link to={primaryHref} className="ubuntu-btn-primary">
-              {primaryLabel}
-            </Link>
-            <UbuntuHomeLink to={secondaryHref}>{secondaryLabel}</UbuntuHomeLink>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <TechFoundationCtaMedia techNames={techNames} />
-        </div>
+      <SectionEyebrow>{eyebrow}</SectionEyebrow>
+      <SectionTitle as="h2" id={`${id}-heading`} title={title} />
+      <p className="ubuntu-lead mt-3">{lead}</p>
+      <div className="ubuntu-cta-row">
+        <Link to={primaryHref} className="ubuntu-btn-primary">
+          {primaryLabel}
+        </Link>
+        <UbuntuHomeLink to={secondaryHref}>{secondaryLabel}</UbuntuHomeLink>
       </div>
-    </section>
+    </UbuntuSplitLayout>
   );
 }

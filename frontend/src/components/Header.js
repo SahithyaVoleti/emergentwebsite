@@ -27,7 +27,7 @@ function navLinkClass(isActive) {
 }
 
 const mobileLinkClass =
-  "block border-b border-[#e5e5e5] py-3 text-sm text-[#2d2d2d] hover:text-[#b8451a]";
+  "block border-b border-[#e5e5e5] py-3.5 text-base text-[#2d2d2d] hover:text-[#b8451a]";
 
 const DROPDOWN_NAV = {
   services: SERVICES_PILLAR_NAV,
@@ -151,7 +151,7 @@ export default function Header({ embedded = false, shell = false }) {
       <div key={key} className="border-b border-[#e5e5e5]">
         <button
           type="button"
-          className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3 text-left text-sm font-medium ${
+          className={`ubuntu-nav-mobile-trigger flex w-full items-center justify-between py-3.5 text-left text-base font-medium ${
             isOpen ? "ubuntu-nav-mobile-trigger--open" : "text-[#2d2d2d]"
           }`}
           onClick={() => toggleMobileSection(key)}
@@ -233,7 +233,7 @@ export default function Header({ embedded = false, shell = false }) {
     <>
       <div
         className={[
-          "ubuntu-chrome-header__bar relative z-10 mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8",
+          "ubuntu-chrome-header__bar relative z-10 mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 xl:h-14",
           shell && isNavCentered && "ubuntu-chrome-header__bar--compact",
         ]
           .filter(Boolean)
@@ -290,14 +290,14 @@ export default function Header({ embedded = false, shell = false }) {
 
           <button
             data-testid="mobile-menu-toggle"
-            className="rounded-none p-2 text-[#2d2d2d] transition-colors hover:text-[#b8451a] xl:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 text-[#2d2d2d] transition-colors hover:text-[#b8451a] xl:hidden"
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu-panel"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -306,7 +306,7 @@ export default function Header({ embedded = false, shell = false }) {
         <div
           id="mobile-menu-panel"
           data-testid="mobile-menu"
-          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-white/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden"
+          className="ubuntu-chrome-header__mobile-menu relative z-10 max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[#d9d9d9]/40 bg-white/95 px-4 pb-6 backdrop-blur-sm sm:px-6 xl:hidden xl:max-h-[calc(100vh-3.5rem)]"
         >
           {TOP_NAV_ORDER.map(renderMobileNavItem)}
 

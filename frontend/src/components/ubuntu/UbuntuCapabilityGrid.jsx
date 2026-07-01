@@ -118,64 +118,26 @@ export default function UbuntuCapabilityGrid({
             aria-labelledby={`${id}-detail-heading`}
           >
             <div className="ubuntu-capability-grid__detail-inner">
-              <header className="ubuntu-capability-grid__detail-head">
-                <div className="ubuntu-capability-grid__detail-meta">
-                  {ServiceIcon && (
-                    <span className="ubuntu-capability-grid__detail-icon" aria-hidden>
-                      <ServiceIcon size={18} strokeWidth={2} />
-                    </span>
-                  )}
-                  <p className="ubuntu-capability-grid__detail-eyebrow">
-                    {itemLabel} {itemIndex} of {itemTotal}
-                  </p>
-                </div>
-                <h3 id={`${id}-detail-heading`} className="ubuntu-capability-grid__detail-title">
-                  {activeCap.title}
-                </h3>
-                {activeCap.desc && (
-                  <p className="ubuntu-capability-grid__detail-lead">{activeCap.desc}</p>
-                )}
-                {isIndustryProduct ? (
-                  <p className="ubuntu-capability-grid__detail-body">
-                    {buildProductModuleNote(activeCap)}
-                  </p>
-                ) : (
-                  <>
-                    <p className="ubuntu-capability-grid__detail-body">
-                      {buildEngagementNote(activeCap, serviceTitle)}
+              <div className="ubuntu-capability-grid__detail-intro">
+                <header className="ubuntu-capability-grid__detail-head">
+                  <div className="ubuntu-capability-grid__detail-meta">
+                    {ServiceIcon && (
+                      <span className="ubuntu-capability-grid__detail-icon" aria-hidden>
+                        <ServiceIcon size={18} strokeWidth={2} />
+                      </span>
+                    )}
+                    <p className="ubuntu-capability-grid__detail-eyebrow">
+                      {itemLabel} {itemIndex} of {itemTotal}
                     </p>
-                    <p className="ubuntu-capability-grid__detail-body">
-                      {buildOutcomesNote(activeCap)}
-                    </p>
-                  </>
-                )}
-              </header>
-
-              {detailItems.length > 0 && (
-                <div className="ubuntu-capability-grid__detail-columns">
-                  <div className="ubuntu-capability-grid__detail-card">
-                    <h4 className="ubuntu-capability-grid__detail-card-title">Scope includes</h4>
-                    <ul className="ubuntu-capability-grid__detail-list">
-                      {scope.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
                   </div>
-                  <div className="ubuntu-capability-grid__detail-card">
-                    <h4 className="ubuntu-capability-grid__detail-card-title">
-                      Governance and handover
-                    </h4>
-                    <ul className="ubuntu-capability-grid__detail-list">
-                      {governance.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
+                  <h3 id={`${id}-detail-heading`} className="ubuntu-capability-grid__detail-title">
+                    {activeCap.title}
+                  </h3>
+                </header>
+              </div>
 
               {detailImage && (
-                <div className="ubuntu-capability-grid__detail-visual">
+                <div className="ubuntu-capability-grid__detail-media">
                   <img
                     src={detailImage}
                     alt=""
@@ -183,6 +145,52 @@ export default function UbuntuCapabilityGrid({
                     loading="lazy"
                     decoding="async"
                   />
+                </div>
+              )}
+
+              <div className="ubuntu-capability-grid__detail-body">
+                {activeCap.desc && (
+                  <p className="ubuntu-capability-grid__detail-lead">{activeCap.desc}</p>
+                )}
+                {isIndustryProduct ? (
+                  <p className="ubuntu-capability-grid__detail-body-text">
+                    {buildProductModuleNote(activeCap)}
+                  </p>
+                ) : (
+                  <>
+                    <p className="ubuntu-capability-grid__detail-body-text">
+                      {buildEngagementNote(activeCap, serviceTitle)}
+                    </p>
+                    <p className="ubuntu-capability-grid__detail-body-text">
+                      {buildOutcomesNote(activeCap)}
+                    </p>
+                  </>
+                )}
+
+                {detailItems.length > 0 && (
+                  <div className="ubuntu-capability-grid__detail-columns">
+                    <div className="ubuntu-capability-grid__detail-card">
+                      <h4 className="ubuntu-capability-grid__detail-card-title">Scope includes</h4>
+                      <ul className="ubuntu-capability-grid__detail-list">
+                        {scope.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="ubuntu-capability-grid__detail-card">
+                      <h4 className="ubuntu-capability-grid__detail-card-title">
+                        Governance and handover
+                      </h4>
+                      <ul className="ubuntu-capability-grid__detail-list">
+                        {governance.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+
+                {detailImage && (
                   <div className="ubuntu-capability-grid__detail-visual-copy">
                     <p className="ubuntu-capability-grid__detail-card-title">Delivery context</p>
                     <p className="ubuntu-capability-grid__detail-visual-text">
@@ -190,16 +198,16 @@ export default function UbuntuCapabilityGrid({
                       integration points, and acceptance criteria before production promotion.
                     </p>
                   </div>
-                </div>
-              )}
+                )}
 
-              <div className="ubuntu-capability-grid__detail-cta">
-                <Link to={contactHref} className="ubuntu-btn-primary">
-                  Discuss {activeCap.title}
-                </Link>
-                <Link to={contactHref} className="ubuntu-link-muted">
-                  {isIndustryProduct ? "Request this product module" : "Request a scoped briefing"}
-                </Link>
+                <div className="ubuntu-capability-grid__detail-cta">
+                  <Link to={contactHref} className="ubuntu-btn-primary">
+                    Discuss {activeCap.title}
+                  </Link>
+                  <Link to={contactHref} className="ubuntu-link-muted">
+                    {isIndustryProduct ? "Request this product module" : "Request a scoped briefing"}
+                  </Link>
+                </div>
               </div>
             </div>
           </article>

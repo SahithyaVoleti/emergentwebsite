@@ -18,7 +18,7 @@ export function renderSectionTitle(title) {
   return title;
 }
 
-export default function SectionTitle({
+function SectionTitle({
   as: Tag = "h2",
   id,
   className = "",
@@ -39,3 +39,7 @@ export default function SectionTitle({
     </Tag>
   );
 }
+
+SectionTitle.displayName = "SectionTitle";
+
+export default SectionTitle;
