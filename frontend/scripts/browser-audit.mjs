@@ -44,7 +44,7 @@ await auditPage(page, "/", [
   },
 ]);
 
-await auditPage(page, "/solutions/databrain-ai", [
+await auditPage(page, "/solutions/agent-kavacha", [
   async (p, path) => {
     const faq = p.locator('[data-testid="faq-section"]');
     if ((await faq.count()) === 0) throw new Error("FAQ missing");

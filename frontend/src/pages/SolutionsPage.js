@@ -11,9 +11,9 @@ export default function SolutionsPage() {
     <SitePageMain>
       <PageHero
         label="Products"
-        title="AI-native SaaS products and accelerators"
-        description="Products we design, develop, and validate for interdisciplinary deployment—extensible modules that can be configured to your data boundaries and sector requirements."
-        primaryCTA={{ text: "Browse products", href: "#solutions-slider" }}
+        title="Agentic solutions for enterprise workflows"
+        description="Production-ready AI agents for transaction security, public services, research, clinical documentation, travel operations, legal research, financial analysis, education, real estate, and agriculture."
+        primaryCTA={{ text: "Browse agents", href: "#solutions-slider" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
@@ -22,8 +22,8 @@ export default function SolutionsPage() {
       <SolutionsHorizontalSlider
         id="solutions-catalog"
         eyebrow={SECTION_LABEL.products}
-        title="SaaS product catalog"
-        lead="Each product addresses a defined workflow. Review scope, integration requirements, and deployment notes for your industry context."
+        title="Agentic solution catalog"
+        lead="Each agent addresses a defined workflow. Review capabilities, integration scope, and deployment requirements for your operating environment."
         viewAllHref={undefined}
         autoAdvanceMs={0}
         className="!border-t-0"

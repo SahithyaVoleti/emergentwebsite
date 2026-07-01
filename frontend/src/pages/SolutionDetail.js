@@ -1,20 +1,31 @@
 import { useParams, Link } from "react-router-dom";
-import { Brain, Database, Code2, Zap } from "lucide-react";
-import PageHero from "../components/PageHero";
 import FAQSection from "../components/FAQSection";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
 import ArchitecturalShowcase from "../components/ArchitecturalShowcase";
-import MethodologyFlowchart from "../components/MethodologyFlowchart";
-import DomainAssurance from "../components/DomainAssurance";
-import TestimonialsSection from "../components/TestimonialsSection";
+import UbuntuProcessMethodologyStrip from "../components/ubuntu/UbuntuProcessMethodologyStrip";
+import SolutionAgentOverview from "../components/solution/SolutionAgentOverview";
 import { FlatTechStackPanel } from "../components/CategorizedTechStackSection";
 import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import solutions from "../data/solutions";
 import { getSolutionProductName } from "../lib/solutionDisplay";
-import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
+
+const AGENT_DEPLOYMENT_STEPS = [
+  { value: "01", label: "Discovery & scoping" },
+  { value: "02", label: "Integration design" },
+  { value: "03", label: "Agent configuration" },
+  { value: "04", label: "Validation & pilot" },
+  { value: "05", label: "Production rollout" },
+];
+
+const ASSURANCE_BULLETS = [
+  "Scoped access—agents only reach data and tools you approve",
+  "Human review on high-impact actions and escalations",
+  "Audit logs suitable for security and compliance review",
+  "Staging and rollback paths before production changes",
+];
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -33,78 +44,52 @@ export default function SolutionDetail() {
     );
   }
 
-  const overviewMockup = getSiteMockup("dashboard");
-  const methodologyMockup = getSiteMockup("code");
-
   const productName = getSolutionProductName(solution);
-  const brandName = solution.brandName || solution.title;
 
   return (
     <SitePageMain>
-      <PageHero
-        significance="detail"
-        label={brandName ? `${brandName} · SaaS product` : "Products"}
-        title={solution.heroTitle || productName}
-        description={solution.heroDesc}
-        primaryCTA={{
-          text: "Request a briefing",
-          href: "#page-contact",
-          contactIntent: "consultation",
-        }}
-        secondaryCTA={{ text: "View capabilities", href: "#capabilities" }}
-        image={solution.heroImage}
+      <SolutionAgentOverview solution={solution} />
+
+      <ArchitecturalShowcase
+        id="agent-capabilities"
+        eyebrow={SECTION_LABEL.modules}
+        title={`Capabilities for ${productName}`}
+        description={`Core agent modules for ${solution.cardDescriptor}—scoped for integration within your applications and governance model.`}
+        capabilities={solution.features}
       />
 
-      <div id="capabilities">
-        <UbuntuPageSection
-          eyebrow={SECTION_LABEL.overview}
-          title={`${productName} overview`}
-          lead={solution.overview}
-          image={overviewMockup.src}
-          imageAlt={overviewMockup.alt}
-          belowContent={
-            <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <FlatTechStackPanel title="Technology stack" intro="Tools commonly integrated for this accelerator.">
-                <TechStackLogoGrid items={solution.tech} />
-              </FlatTechStackPanel>
-            </div>
-          }
-        />
+      <UbuntuPageSection
+        id="solution-tech-stack"
+        eyebrow={SECTION_LABEL.technology}
+        title={`Technology foundation for ${productName}`}
+        lead="Representative tools and integrations for this agent. Final selections follow your security and procurement policies."
+        variant="alt"
+        belowContent={
+          <FlatTechStackPanel
+            title="Integrated stack"
+            intro="Platforms and frameworks commonly connected during agent deployment."
+          >
+            <TechStackLogoGrid items={solution.tech} />
+          </FlatTechStackPanel>
+        }
+      />
 
-        <ArchitecturalShowcase
-          eyebrow={SECTION_LABEL.modules}
-          title="Solution modules"
-          description="Pre-built modules structured to shorten time-to-value while keeping architecture and operations maintainable."
-          capabilities={solution.features}
-        />
+      <UbuntuProcessMethodologyStrip
+        id="solution-methodology"
+        eyebrow={SECTION_LABEL.methodology}
+        title={`Methodology for ${productName} deployment`}
+        lead="This methodology sequences discovery, integration, validation, and rollout with explicit checkpoints at each stage."
+        steps={AGENT_DEPLOYMENT_STEPS}
+      />
 
-        <UbuntuPageSection
-          eyebrow={SECTION_LABEL.methodology}
-          title={`Rollout steps for ${productName}`}
-          lead="We sequence connectivity, configuration, validation, and rollout with explicit checkpoints."
-          image={methodologyMockup.src}
-          imageAlt={methodologyMockup.alt}
-          belowContent={
-            <MethodologyFlowchart
-              steps={[
-                {
-                  icon: Database,
-                  label: "Connect data",
-                  desc: "Link existing sources through secure permission-aware connectors.",
-                },
-                { icon: Code2, label: "Configure scope", desc: "Define AI behavior and roles to your needs." },
-                { icon: Brain, label: "Validate logic", desc: "Review and validate ground-truth responses at scale." },
-                { icon: Zap, label: "Scale output", desc: "Go live, monitor usage, and iterate on quality." },
-              ]}
-            />
-          }
-        />
-
-        <DomainAssurance
-          title={`Assurance for ${productName} rollouts`}
-          lead="Measurable checkpoints, permission scoping, and documented handover for accelerator deployments."
-        />
-      </div>
+      <UbuntuPageSection
+        id="solution-assurance"
+        eyebrow={SECTION_LABEL.controls}
+        title={`Assurance for ${productName} rollouts`}
+        lead="This assurance model defines permissions, audit logging, and human oversight from the initial pilot phase."
+        variant="default"
+        bullets={ASSURANCE_BULLETS}
+      />
 
       <PageStandardSections
         pageKey="detail"
@@ -118,12 +103,7 @@ export default function SolutionDetail() {
             "Assess integration effort, governance fit, and operational impact for your environment and stakeholder model.",
           mockupKey: "dashboard",
         }}
-        beforeCta={
-          <>
-            <TestimonialsSection title="Engagement principles for new partners" />
-            <FAQSection faqs={solution.faqs} />
-          </>
-        }
+        beforeCta={<FAQSection faqs={solution.faqs} />}
       />
     </SitePageMain>
   );

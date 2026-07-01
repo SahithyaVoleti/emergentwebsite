@@ -23,9 +23,9 @@ export const STATIC_PAGE_META = {
       "Meet the senior practitioners at NeuralTrix AI responsible for scoped delivery and accountable outcomes.",
   },
   "/solutions": {
-    title: `Solutions | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    title: `Agentic Solutions | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
-      "Explore NeuralTrix AI solution accelerators for document intelligence, healthcare, talent, commerce, and knowledge automation.",
+      "Explore NeuralTrix AI agentic solutions for transaction security, public inquiry resolution, research, clinical documentation, travel operations, legal research, and financial analysis.",
   },
   "/industries": {
     title: `Industries | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
@@ -63,9 +63,9 @@ export const STATIC_PAGE_META = {
       "Platform partnerships that strengthen NeuralTrix AI delivery across cloud, AI, and data infrastructure.",
   },
   "/security": {
-    title: `Security | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    title: `Governance & Security | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
-      "Security posture, data handling, and delivery safeguards for NeuralTrix AI customer programs.",
+      "Governance, security controls, and assurance practices for agentic solutions and AI product delivery programs.",
   },
   "/privacy-policy": {
     title: `Privacy Policy | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,

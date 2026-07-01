@@ -1,4 +1,5 @@
-import { LockKeyhole, Eye, Server, ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import TestimonialsSection from "../components/TestimonialsSection";
 import SitePageMain from "../components/ubuntu/SitePageMain";
@@ -35,31 +36,16 @@ const values = [
   },
 ];
 
-const securityPillars = [
-  {
-    icon: LockKeyhole,
-    title: "Secure by design",
-    desc: "Security controls built into architecture, development, and deployment.",
-  },
-  {
-    icon: Eye,
-    title: "Governance and auditability",
-    desc: "Traceable controls, review paths, and operational transparency.",
-  },
-  {
-    icon: Server,
-    title: "Infrastructure hardening",
-    desc: "Environment protections, access boundaries, and resilient platform practices.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance alignment",
-    desc: "Delivery patterns that support regulated and security-sensitive industries.",
-  },
-];
-
 export default function AboutPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const missionMockup = getSiteMockup("collaboration");
+
+  useEffect(() => {
+    if (location.hash === "#security") {
+      navigate("/security", { replace: true });
+    }
+  }, [location.hash, navigate]);
 
   return (
     <SitePageMain>
@@ -122,15 +108,6 @@ export default function AboutPage() {
         partners={technologyPartners}
         title="Technology ecosystem"
         lead="Vendors and clouds we integrate in live programs; final stack choices stay governed by your policies and data boundaries."
-      />
-
-      <UbuntuFeaturesBand
-        id="security"
-        eyebrow={SECTION_LABEL.security}
-        title="Security and governance"
-        lead="Control areas we address during architecture, build, and operations. Not certification claims unless separately contracted."
-        items={securityPillars}
-        variant="alt"
       />
 
       <UbuntuCareersSection id="careers" className="!border-t-0" />

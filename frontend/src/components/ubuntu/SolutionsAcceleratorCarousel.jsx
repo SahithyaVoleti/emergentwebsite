@@ -17,7 +17,7 @@ export default function SolutionsAcceleratorCarousel({
   title,
   lead,
   viewAllHref = "/solutions",
-  viewAllLabel = "View all accelerators",
+  viewAllLabel = "View all agents",
   autoAdvanceMs = 6000,
   className = "",
   hrefFor = (item) => item.href ?? `/solutions/${item.slug}`,
@@ -76,14 +76,14 @@ export default function SolutionsAcceleratorCarousel({
                   <Link
                     to={hrefFor(item)}
                     data-testid={`${testIdPrefix}-${item.slug}`}
-                    className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-[#111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
+                    className="ubuntu-solutions-carousel__slide group block w-full overflow-hidden border border-[#e5e5e5] bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5c5c5c]"
                     aria-label={`${item.title}: ${item.brandName || item.cardDescriptor || item.domain || ""}`}
                   >
                     <div className="ubuntu-solutions-carousel__media">
                       <img
                         src={item.heroImage}
                         alt=""
-                        className="ubuntu-solutions-carousel__image object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                        className="ubuntu-solutions-carousel__image block w-full h-auto"
                         loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
                       />

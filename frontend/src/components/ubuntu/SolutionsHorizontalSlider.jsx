@@ -21,7 +21,7 @@ export default function SolutionsHorizontalSlider({
       hrefFor={(item) => item.href ?? `/solutions/${item.slug}`}
       testIdPrefix="accelerator-slide"
       viewAllHref="/solutions"
-      viewAllLabel="View all products"
+      viewAllLabel="View all agents"
       {...props}
     />
   );

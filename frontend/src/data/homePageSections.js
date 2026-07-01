@@ -31,7 +31,7 @@ export const HOME_HERO = {
     { icon: "box", label: "Sustainable architecture" },
   ],
   title: "AI product transformation and AI-native SaaS engineering",
-  secondaryCta: { label: "View SaaS products", href: "/solutions" },
+  secondaryCta: { label: "View agentic solutions", href: "/solutions" },
 };
 
 export const HOME_STARTUP_STATS = [
@@ -172,7 +172,7 @@ export const HOME_ENGINEERING_SHOWCASES = {
       title: "Transaction monitoring product — finance",
       shortTitle: "Kavacha",
       summary: "AML scoring module tested on live payment streams with analyst queues and audit trails.",
-      imageKey: "medimind-ai",
+      imageKey: "agent-kavacha",
       domain: "Finance",
       href: "/case-studies/fraud-guard-transactions",
     },
@@ -181,7 +181,7 @@ export const HOME_ENGINEERING_SHOWCASES = {
       title: "Clinical documentation product — healthcare",
       shortTitle: "Arogya",
       summary: "EHR-embedded documentation module tested in clinical sandboxes with clinician review on every output.",
-      imageKey: "medimind-ai",
+      imageKey: "agent-arogya",
       domain: "Healthcare",
       href: "/case-studies/medimind-clinical-assist",
     },
@@ -190,7 +190,7 @@ export const HOME_ENGINEERING_SHOWCASES = {
       title: "Educator platform transformation — education",
       shortTitle: "Vidya",
       summary: "LMS copilot tested in live classrooms with FERPA-aligned controls and teacher review.",
-      imageKey: "smart-teaching-platform",
+      imageKey: "agent-vidya",
       domain: "Education",
       href: "/case-studies/smart-teaching-platform",
     },
@@ -237,9 +237,9 @@ export const HOME_BLOGS_BAND = {
 export const HOME_VISION_CTA_2 = {
   id: "vision-cta-2",
   eyebrow: "Products",
-  title: "AI-native SaaS products and accelerators",
-  body: "Products we design, develop, and validate for interdisciplinary deployment—configurable to your data boundaries and sector governance requirements.",
-  primaryCta: { label: "View product portfolio", href: "/solutions" },
+  title: "Agentic solutions for enterprise workflows",
+  body: "Purpose-built AI agents that monitor transactions, resolve public inquiries, accelerate research, and support regulated operations—with governed integration and human oversight.",
+  primaryCta: { label: "View agent portfolio", href: "/solutions" },
   secondaryCta: { label: "Contact us", href: "/#page-contact" },
   mockupKey: "code",
 };
@@ -271,10 +271,10 @@ export const HOME_PHILOSOPHY = {
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
   eyebrow: "Products",
-  title: "AI SaaS products and accelerators",
-  lead: "Products designed and developed for interdisciplinary deployment—document intelligence, healthcare, talent, commerce, and knowledge workflows.",
+  title: "Agentic solutions for enterprise workflows",
+  lead: "Production-ready AI agents for transaction security, public services, research, clinical documentation, travel operations, legal research, financial analysis, education, real estate, and agriculture.",
   viewAllHref: "/solutions",
-  viewAllLabel: "View all products",
+  viewAllLabel: "View all agents",
 };
 
 export const HOME_SERVICES_SLIDER = HOME_SERVICES_GRID;
@@ -293,7 +293,7 @@ export const HOME_ASSURANCE_SECTION = {
     "Privacy and retention rules agreed before integration",
     "Controlled updates to models, prompts, and product features",
   ],
-  learnMore: { label: "See security practices", href: "/about#security" },
+  learnMore: { label: "See governance practices", href: "/security" },
   contact: { label: "Contact us", href: "/#page-contact" },
 };
 

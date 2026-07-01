@@ -83,27 +83,26 @@ export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
 /** Flat service links — used for active-state checks and tests. */
 export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
-/** AI SaaS products + governance anchor on About */
+/** Agentic solutions portfolio */
 export const PRODUCTS_NAV = [
-  { label: "SaaS product portfolio", href: "/solutions" },
+  { label: "Agentic solutions portfolio", href: "/solutions" },
   ...solutions.map((solution) => ({
     label: getSolutionNavLabel(solution),
     href: `/solutions/${solution.slug}`,
   })),
-  { label: "Governance & Security", href: "/about#security" },
 ];
 
-/** All industry programs */
-export const INDUSTRIES_NAV = industries.map((industry) => ({
-  label: industry.title,
-  href: `/industries/${industry.slug}`,
-}));
-
+/** Company pages */
 export const COMPANY_NAV = [
   {
     label: "About Us",
     href: "/about",
-    matchHrefs: ["/about", "/team", "/partners", "/testimonials", "/security", "/careers"],
+    matchHrefs: ["/about", "/team", "/partners", "/testimonials", "/careers"],
+  },
+  {
+    label: "Governance & Security",
+    href: "/security",
+    matchHrefs: ["/security"],
   },
   {
     label: "Research & Innovation",
@@ -112,6 +111,12 @@ export const COMPANY_NAV = [
   },
   { label: "News & Media", href: "/blog" },
 ];
+
+/** All industry programs */
+export const INDUSTRIES_NAV = industries.map((industry) => ({
+  label: industry.title,
+  href: `/industries/${industry.slug}`,
+}));
 
 export const FOOTER_COLUMNS = [
   {
@@ -126,6 +131,7 @@ export const FOOTER_COLUMNS = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Governance & Security", href: "/security" },
       { label: "Careers", href: "/about#careers" },
       { label: "Research & Innovation", href: "/research-innovation" },
       { label: "Contact", href: "/#page-contact" },
@@ -199,7 +205,7 @@ export const SECONDARY_CTA_BY_PAGE = {
   caseStudies: { label: "View services", href: "/services" },
   detail: { label: "View services", href: "/services" },
   legal: { label: "Contact us", href: "#page-contact" },
-  security: { label: "View platforms", href: "/solutions" },
+  security: { label: "View agent portfolio", href: "/solutions" },
   testimonials: { label: "View company", href: "/about" },
   partners: { label: "View company", href: "/about" },
   research: { label: "View test cases", href: "#test-cases" },

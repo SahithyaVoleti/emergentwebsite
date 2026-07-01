@@ -91,10 +91,16 @@ describe("siteNav", () => {
 
   it("maps product nav links to valid solution slugs or known hubs", () => {
     for (const { href } of PRODUCTS_NAV) {
-      if (href === "/solutions" || href === "/about#security") continue;
+      if (href === "/solutions") continue;
       const slug = href.replace("/solutions/", "");
       expect(solutionSlugs.has(slug)).toBe(true);
     }
+  });
+
+  it("includes governance and security in company nav", () => {
+    const hrefs = COMPANY_NAV.map((item) => item.href);
+    expect(hrefs).toContain("/security");
+    expect(PRODUCTS_NAV.map((item) => item.href)).not.toContain("/security");
   });
 
   it("maps industry nav links to valid industry slugs", () => {
@@ -122,6 +128,7 @@ describe("siteNav", () => {
   it("uses known static routes for company and footer links", () => {
     const staticRoutes = new Set([
       "/about",
+      "/security",
       "/blog",
       "/services",
       "/solutions",

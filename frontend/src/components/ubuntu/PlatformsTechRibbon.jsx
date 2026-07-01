@@ -21,7 +21,7 @@ export default function PlatformsTechRibbon({
       id={id}
       eyebrow={SECTION_LABEL.technology}
       title="Technology foundation"
-      lead="Representative platforms and tools integrated across product accelerators; final selections follow your security and procurement policies."
+      lead="Representative platforms and tools integrated across agentic solutions; final selections follow your security and procurement policies."
       className={className}
       variant="alt"
     >

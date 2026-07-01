@@ -36,13 +36,18 @@ export const LISTING_PAGE_HERO_IMAGES = {
 export const ABOUT_HERO_IMAGE = hq("photo-1522071820081-4ef5e1c0b612");
 export const CAREERS_HERO_IMAGE = hq("photo-1521737711867-e3b97375f902");
 
-/** Product / solution detail pages */
+/** Product / solution detail pages — local product infographic assets */
 export const SOLUTION_HERO_IMAGES = {
-  "databrain-ai": hq("photo-1551288049-bebda4e38f71"),
-  "medimind-ai": hq("photo-1576091160399-112ba8d25d1d"),
-  "talentify-ai": hq("photo-1522071820081-4ef5e1c0b612"),
-  "quikbiz-ai": hq("photo-1556740738-b6a63e27c4df"),
-  "intellibot-ai": hq("photo-1531482615713-2afd69097998"),
+  "agent-kavacha": "/media/products/agent-kavacha.png",
+  "agent-janseva": "/media/products/agent-janseva.png",
+  "agent-shodh": "/media/products/agent-shodh.png",
+  "agent-bhumi": "/media/products/agent-bhumi.png",
+  "agent-vidya": "/media/products/agent-vidya.png",
+  "agent-arogya": "/media/products/agent-arogya.png",
+  "agent-yatra": "/media/products/agent-yatra.png",
+  "agent-nyaya": "/media/products/agent-nyaya.png",
+  "agent-artha": "/media/products/agent-artha.png",
+  "agent-krishi": "/media/products/agent-krishi.png",
 };
 
 /**

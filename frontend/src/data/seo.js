@@ -23,9 +23,9 @@ const STATIC_PAGES = {
       "AI product transformation, model fine-tuning, and platform engineering services for enterprise software teams.",
   },
   "/solutions": {
-    title: `Products | ${SITE_NAME}`,
+    title: `Agentic Solutions | ${SITE_NAME}`,
     description:
-      "AI-native SaaS products and accelerators designed and developed for interdisciplinary industry deployment.",
+      "Enterprise AI agents for transaction monitoring, public services, research, clinical documentation, legal research, financial analysis, and sector-specific operations—with governed deployment.",
   },
   "/industries": {
     title: `Industries | ${SITE_NAME}`,
@@ -44,7 +44,12 @@ const STATIC_PAGES = {
   "/about": {
     title: `About Us | ${SITE_NAME}`,
     description:
-      "AI transformation company: product fine-tuning, AI-enabled software, interdisciplinary SaaS engineering, team, and security practices.",
+      "AI transformation company: product fine-tuning, AI-enabled software, interdisciplinary SaaS engineering, and leadership team.",
+  },
+  "/security": {
+    title: `Governance & Security | ${SITE_NAME}`,
+    description:
+      "Governance, security controls, and assurance practices for agentic solutions and AI product delivery programs.",
   },
   "/blog": {
     title: `News & Media | ${SITE_NAME}`,
