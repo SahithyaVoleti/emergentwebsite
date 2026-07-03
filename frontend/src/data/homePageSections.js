@@ -6,12 +6,12 @@ import blogArticles from "./blog";
 export const HOME_PAGE_LAYOUT = [
   "hero-stack",
   "services",
+  "startup-stats",
   "features",
   "solutions",
   "industries",
   "next-step",
   "validation",
-  "startup-stats",
   "tech-stack",
   "blogs",
   "contact",

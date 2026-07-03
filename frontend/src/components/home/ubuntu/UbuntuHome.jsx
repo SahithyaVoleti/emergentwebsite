@@ -73,6 +73,8 @@ export default function UbuntuHome() {
 
       <ServicesPillarCatalog variant="cards" {...HOME_SERVICES_GRID} />
 
+      <UbuntuHomeStatsStrip />
+
       <Suspense fallback={<HomeSectionFallback />}>
         <UbuntuHomeFeatures />
       </Suspense>
@@ -127,8 +129,6 @@ export default function UbuntuHome() {
       <Suspense fallback={<HomeSectionFallback />}>
         <UbuntuHomeValidationSection />
       </Suspense>
-
-      <UbuntuHomeStatsStrip />
 
       <UbuntuHomeTechStack />
 
