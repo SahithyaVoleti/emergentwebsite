@@ -1,21 +1,19 @@
-import { useParams, Link } from "react-router-dom";
+import { Navigate, useParams, Link } from "react-router-dom";
 import SitePageMain from "../components/ubuntu/SitePageMain";
-import services from "../data/services";
+import { LEGACY_SERVICE_SLUGS } from "../data/services";
 import { getPillarById } from "../data/servicePillars";
-import ServiceDetail from "./ServiceDetail";
 import ServicePillarPage from "./ServicePillarPage";
 
 export default function ServiceRoute() {
   const { slug } = useParams();
-  const pillar = getPillarById(slug);
-
-  if (pillar) {
-    return <ServicePillarPage pillar={pillar} />;
+  const legacyTarget = LEGACY_SERVICE_SLUGS[slug];
+  if (legacyTarget && legacyTarget !== slug) {
+    return <Navigate to={`/services/${legacyTarget}`} replace />;
   }
 
-  const service = services.find((item) => item.slug === slug);
-  if (service) {
-    return <ServiceDetail service={service} />;
+  const pillar = getPillarById(slug);
+  if (pillar) {
+    return <ServicePillarPage pillar={pillar} />;
   }
 
   return (

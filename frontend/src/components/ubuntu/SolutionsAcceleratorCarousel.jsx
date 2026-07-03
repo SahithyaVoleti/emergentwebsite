@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import UbuntuLink from "./UbuntuLink";
 import UbuntuSplitLayout from "./UbuntuSplitLayout";
-import MockupFrame from "./MockupFrame";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { SECTION_LABEL } from "../../data/sectionLabels";
@@ -115,16 +114,13 @@ export default function SolutionsAcceleratorCarousel({
       id={id}
       testId="solutions-accelerator-carousel"
       className={`ubuntu-solutions-carousel border-y border-[#d9d9d9] bg-white ${className}`}
-      imagePosition="right"
-      mockupVariant="browser"
-      mediaClassName="ubuntu-solutions-carousel__mockup-wrap"
+      imagePosition="left"
+      mediaClassName="ubuntu-split__media--fill ubuntu-solutions-carousel__media-wrap"
       mediaSlot={
-        <MockupFrame variant="browser" screenClassName="ubuntu-solutions-carousel__mockup-screen">
-          <div className="ubuntu-solutions-carousel__mockup-inner">
-            {carousel}
-            {indicators}
-          </div>
-        </MockupFrame>
+        <>
+          {carousel}
+          {indicators}
+        </>
       }
     >
       {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}

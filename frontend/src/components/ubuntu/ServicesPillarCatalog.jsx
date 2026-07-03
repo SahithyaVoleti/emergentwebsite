@@ -1,11 +1,11 @@
-import services from "../../data/services";
 import { groupServicesByPillar } from "../../data/servicePillars";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import ServiceOfferingCards from "./ServiceOfferingCards";
+import ServicePillarCarousel from "./ServicePillarCarousel";
 import UbuntuLink from "./UbuntuLink";
 
-function PillarSections({ groups, showServiceLines }) {
+function PillarSections({ groups, showSubservices }) {
   return (
     <div className="space-y-12 lg:space-y-16">
       {groups.map((group) => (
@@ -23,12 +23,12 @@ function PillarSections({ groups, showServiceLines }) {
             <p className="ubuntu-lead mt-3">{group.shortDesc}</p>
           </div>
 
-          {showServiceLines && group.serviceLines.length > 0 ? (
+          {showSubservices && group.subservices.length > 0 ? (
             <div className="mt-6 lg:mt-8">
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.12em] text-[#7d8597]">
-                Service lines
+                Services
               </p>
-              <ServiceOfferingCards items={group.serviceLines} cardVariant="line" />
+              <ServiceOfferingCards items={group.subservices} cardVariant="subservice" />
             </div>
           ) : null}
         </section>
@@ -38,10 +38,10 @@ function PillarSections({ groups, showServiceLines }) {
 }
 
 /**
- * Main services (three pillars) with optional service-line cards per discipline.
+ * Main services with optional subservice cards per discipline.
  */
 export default function ServicesPillarCatalog({
-  groups = groupServicesByPillar(services),
+  groups = groupServicesByPillar(),
   id = "services-catalog",
   eyebrow,
   title = "Service offerings",
@@ -49,7 +49,7 @@ export default function ServicesPillarCatalog({
   viewAllHref,
   viewAllLabel,
   variant = "sections",
-  showServiceLines = true,
+  showSubservices = true,
   className = "",
 }) {
   if (!groups.length) return null;
@@ -79,21 +79,19 @@ export default function ServicesPillarCatalog({
         </div>
 
         {isCards ? (
-          <ServiceOfferingCards
+          <ServicePillarCarousel
             items={groups.map((group) => ({
               key: group.id,
               id: group.id,
               href: group.href,
               label: group.label,
-              shortDesc: group.shortDesc,
+              tagline: group.tagline ?? group.shortDesc,
               cardImage: group.cardImage,
-              flagship: group.flagship,
               testId: `main-service-card-${group.id}`,
             }))}
-            cardVariant="pillar"
           />
         ) : (
-          <PillarSections groups={groups} showServiceLines={showServiceLines} />
+          <PillarSections groups={groups} showSubservices={showSubservices} />
         )}
       </div>
     </section>

@@ -5,7 +5,6 @@ import UbuntuSplitLayout from "./UbuntuSplitLayout";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import SiteNavLink from "./SiteNavLink";
-import MockupFrame from "./MockupFrame";
 import { submitLead } from "../../lib/submitLead";
 import { captureEvent } from "../../lib/analytics";
 import { env } from "../../lib/env";
@@ -326,12 +325,8 @@ export default function UbuntuContactFormSection({
     </form>
   );
 
-  const mockupPanel = (
-    <div className="ubuntu-contact-mockup relative w-full overflow-hidden">
-      <MockupFrame screenClassName="ubuntu-contact-mockup__screen">
-        <div className="ubuntu-contact-mockup__inner ubuntu-contact-form">{formBody}</div>
-      </MockupFrame>
-    </div>
+  const formPanel = (
+    <div className="ubuntu-contact-card ubuntu-contact-form">{formBody}</div>
   );
 
   return (
@@ -341,8 +336,8 @@ export default function UbuntuContactFormSection({
       pattern="cta"
       imagePosition="right"
       className="ubuntu-contact-section scroll-mt-[88px]"
-      mediaClassName="ubuntu-contact-mockup__media"
-      mediaSlot={mockupPanel}
+      mediaClassName="ubuntu-contact-card__media"
+      mediaSlot={formPanel}
     >
       {copy.eyebrow && <SectionEyebrow>{copy.eyebrow}</SectionEyebrow>}
       <SectionTitle

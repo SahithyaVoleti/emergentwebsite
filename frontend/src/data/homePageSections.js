@@ -9,12 +9,13 @@ export const HOME_PAGE_LAYOUT = [
   "features",
   "solutions",
   "industries",
-  "validation",
-  "workflow",
-  "stats",
   "next-step",
+  "validation",
+  "startup-stats",
+  "tech-stack",
   "blogs",
   "contact",
+  "faq",
 ];
 
 export const HOME_HERO = {
@@ -35,10 +36,10 @@ export const HOME_HERO = {
 };
 
 export const HOME_STARTUP_STATS = [
-  { value: "4–6", label: "Weeks to scoped pilot" },
-  { value: "10+", label: "Regulated industries" },
-  { value: "12+", label: "Production test cases" },
-  { value: "100%", label: "Senior engineers on delivery" },
+  { value: "7+", label: "AI agents deployed" },
+  { value: "6+", label: "Years of AI experience" },
+  { value: "7+", label: "Products transformed" },
+  { value: "12+", label: "Models fine-tuned" },
 ];
 
 export const HOME_ALERT = {
@@ -48,8 +49,8 @@ export const HOME_ALERT = {
   primaryCta: { label: "How we work", href: "/about#engagement" },
   secondaryCta: { label: "View services →", href: "/#services-grid" },
   media: {
-    src: "/media/home/ai-transformation-products.png",
-    alt: "AI transformation workflow for software products already in market",
+    src: "/media/home/what-we-do.png",
+    alt: "Analyst working on a laptop with data visualizations and AI analytics overlays",
   },
 };
 
@@ -88,7 +89,8 @@ export const HOME_FEATURES = {
   lead: "Each engagement targets measurable product impact—incremental AI in live systems, validated models, and governed rollout paths.",
   items: HOME_DELIVERY_OUTCOMES,
   media: {
-    src: "/media/operating-system-upgrade.gif",
+    src: "/media/home/what-we-deliver.png",
+    alt: "Professional working on a laptop with database and document management interfaces",
   },
 };
 
@@ -105,8 +107,8 @@ export const HOME_BLOG = {
 export const HOME_SERVICES_GRID = {
   id: "services-grid",
   eyebrow: "Services",
-  title: "Three core |service disciplines|",
-  lead: "Product transformation, model engineering, and platform delivery—each with defined service lines you can scope independently.",
+  title: "Four core |enterprise AI| disciplines",
+  lead: "Generative AI, machine intelligence, data platform engineering, and cloud platform engineering—each with defined subservices you can scope independently.",
   viewAllHref: "/services",
   viewAllLabel: "View all services",
 };
@@ -336,3 +338,35 @@ export const HOME_NEXT_STEP = {
   secondaryCta: { label: "View portfolio", href: "/solutions" },
   tertiaryCta: { label: "View industries", href: "/industries" },
 };
+
+/** Homepage FAQs — placed before the contact section. */
+export const HOME_FAQS = [
+  {
+    q: "What does NeuralTrix AI do?",
+    a: "We embed AI into software products already in market—assessing product architecture, fine-tuning models on your domain data, and integrating agents and copilots into existing workflows. Where scope requires it, we also design and build new AI-native SaaS applications.",
+  },
+  {
+    q: "Which industries do you work in?",
+    a: "We focus on regulated and data-sensitive sectors, including healthcare, finance, education, commerce, and manufacturing. Each engagement is structured around that sector's compliance, auditability, and data-handling requirements.",
+  },
+  {
+    q: "How does an engagement start?",
+    a: "Most engagements begin with a scoped discovery session to confirm fit, followed by a focused pilot with agreed acceptance metrics. We typically move from initial scoping to a working pilot in four to six weeks, depending on data access and integration complexity.",
+  },
+  {
+    q: "Do you build custom models or use existing foundation models?",
+    a: "We select the approach against your latency, cost, and data-handling requirements. That may mean using managed foundation models, fine-tuning open models on your data, or combining both with retrieval and governed orchestration.",
+  },
+  {
+    q: "Can you integrate with our existing systems?",
+    a: "Yes. We work within your current application, data, and cloud stack—integrating through your existing APIs, data pipelines, and deployment platforms rather than requiring a rebuild.",
+  },
+  {
+    q: "How do you handle data security and compliance?",
+    a: "We align data handling to your governance and regulatory obligations, keep sensitive data within your controlled environments where required, apply human review on high-risk actions, and log model behavior for audit. Specific controls are confirmed during scoping.",
+  },
+  {
+    q: "What happens after delivery?",
+    a: "We hand over documented, maintainable systems with runbooks and observability, and can provide ongoing support for monitoring, evaluation, and iteration. Ownership of models, code, and release decisions stays with your team.",
+  },
+];

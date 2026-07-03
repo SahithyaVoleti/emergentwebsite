@@ -9,8 +9,8 @@ export default function ServicesPage() {
   return (
     <SitePageMain>
       <PageHero
-        title="AI product transformation, fine-tuning, and |platform engineering|"
-        description="Three main service disciplines—each with its own scope, service lines, and delivery model."
+        title="Enterprise generative AI, machine intelligence, data platforms, and |cloud engineering|"
+        description="Four enterprise AI disciplines—each with defined subservices, delivery scope, and integration model."
         primaryCTA={{ text: "Browse disciplines", href: "#services-catalog" }}
         image={LISTING_PAGE_HERO_IMAGES.services}
       />
@@ -20,7 +20,7 @@ export default function ServicesPage() {
         variant="cards"
         eyebrow={SECTION_LABEL.serviceCatalog}
         title="Main |services|"
-        lead="Open a discipline to review its service lines, deliverables, and integration assumptions—without mixing offerings from other areas."
+        lead="Open a discipline to review its services, deliverables, and integration assumptions—without mixing offerings from other areas."
         className="!border-t-0"
       />
 

@@ -1,3 +1,5 @@
+import CountUpValue from "./CountUpValue";
+
 /**
  * Light stats band — same visual as homepage startup stats strip.
  */
@@ -6,6 +8,7 @@ export default function UbuntuStatsStrip({
   id = "page-stats",
   className = "",
   testId,
+  animate = false,
 }) {
   if (!stats.length) return null;
 
@@ -32,7 +35,9 @@ export default function UbuntuStatsStrip({
               key={`${stat.value}-${stat.label}`}
               className="ubuntu-stats-cta-strip__item flex min-h-[5.5rem] w-full flex-col items-center justify-start text-center"
             >
-              <p className="ubuntu-stats-cta-strip__value">{stat.value}</p>
+              <p className="ubuntu-stats-cta-strip__value">
+                {animate ? <CountUpValue value={stat.value} /> : stat.value}
+              </p>
               <p className="ubuntu-stats-cta-strip__label">{stat.label}</p>
             </li>
           ))}

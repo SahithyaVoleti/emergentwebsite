@@ -565,20 +565,76 @@
   }
 }
 
-/* Homepage banner hero — gradient band + grey logo watermark */
+/* Homepage banner hero — grey band + optional photo backdrop + symbol watermark */
 .ubuntu-site .ubuntu-site-page-chrome--home-banner {
   position: relative;
   overflow: hidden;
+  background: var(--site-bg-alt);
+  min-height: min(72vh, 40rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.ubuntu-site .ubuntu-home-hero-banner__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.ubuntu-site .ubuntu-home-hero-banner__slide {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  background-size: cover;
+  background-position: 72% center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.6s ease-in-out, transform 8s ease-out;
+}
+
+.ubuntu-site .ubuntu-home-hero-banner__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ubuntu-site .ubuntu-home-hero-banner__slide {
+    transition: none;
+    transform: none;
+  }
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    rgba(47, 47, 47, 0.94) 0%,
+    rgba(58, 58, 58, 0.84) 36%,
+    rgba(58, 58, 58, 0.58) 58%,
+    rgba(61, 61, 61, 0.22) 100%
+  );
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner:not(.ubuntu-site-page-chrome--home-banner-has-photo)::after {
   background: linear-gradient(
     105deg,
     #2f2f2f 0%,
     #3a3a3a 42%,
     #454545 72%,
     #3d3d3d 100%
-  ) !important;
-  min-height: min(72vh, 40rem);
-  display: flex;
-  flex-direction: column;
+  );
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner .ubuntu-site-page-chrome__inner {
+  position: relative;
+  z-index: 2;
 }
 
 .ubuntu-site .ubuntu-site-page-chrome--home-banner .ubuntu-site-page-chrome__inner {
@@ -707,6 +763,11 @@
   .ubuntu-site .ubuntu-home-hero-banner__symbol-img {
     width: min(100%, 30rem);
     opacity: 0.78;
+  }
+
+  .ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__symbol img,
+  .ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__symbol-img {
+    opacity: 0.38;
   }
 }
 
@@ -1152,6 +1213,68 @@
 
 .ubuntu-site .ubuntu-hero-stack .ubuntu-pattern-section--cta {
   box-shadow: none;
+}
+
+/* Scroll reveal: pin the homepage hero so the "What we do" band slides up over it. */
+.ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+}
+
+/* Every band after the hero rides above the pinned hero and covers it on scroll. */
+.ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner ~ * {
+  position: relative;
+  z-index: 1;
+}
+
+/* The "What we do" band reads as a panel gliding over the hero. */
+.ubuntu-site .ubuntu-home-page > .ubuntu-hero-stack {
+  position: relative;
+  z-index: 2;
+  background: var(--site-bg);
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
+  overflow: hidden;
+  /* No transparent gap below: otherwise the pinned hero shows through it. */
+  margin-bottom: 0;
+}
+
+/* Extend the reveal to a few more bands: pin them so the next band glides over.
+   Services stays out of this — its auto-sliding carousel misbehaves when pinned. */
+.ubuntu-site .ubuntu-home-page > #home-features,
+.ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
+.ubuntu-site .ubuntu-home-page > #from-the-blogs {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Bands that glide over a pinned band read as a panel with a soft leading edge. */
+.ubuntu-site .ubuntu-home-page > #solutions-slider,
+.ubuntu-site .ubuntu-home-page > #next-step,
+.ubuntu-site .ubuntu-home-page > #page-contact {
+  position: relative;
+  z-index: 2;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
+}
+
+/* Bands without a horizontal carousel can safely clip to the rounded edge. */
+.ubuntu-site .ubuntu-home-page > #next-step,
+.ubuntu-site .ubuntu-home-page > #page-contact {
+  overflow: hidden;
+}
+
+/* Respect reduced-motion: fall back to normal document flow (no pinned reveal). */
+@media (prefers-reduced-motion: reduce) {
+  .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner,
+  .ubuntu-site .ubuntu-home-page > #home-features,
+  .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
+  .ubuntu-site .ubuntu-home-page > #from-the-blogs {
+    position: relative;
+    top: auto;
+  }
 }
 
 /* —— Section pattern backgrounds (hero / CTA / services) —— */
@@ -1818,6 +1941,44 @@
   outline-offset: 2px;
 }
 
+/* Solutions carousel — mockup removed; sliding images fill the paired text height */
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap {
+  line-height: 0;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__carousel {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__carousel > div {
+  height: 100%;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__carousel [role="group"] {
+  height: 100%;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__slide,
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__media {
+  height: 100%;
+  min-height: 0;
+}
+
+.ubuntu-site .ubuntu-solutions-carousel__media-wrap .ubuntu-solutions-carousel__indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 0.4rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(17, 17, 17, 0.45);
+  line-height: normal;
+}
+
 /* Services 4×4 grid */
 .ubuntu-site .ubuntu-services-grid__card {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
@@ -1855,6 +2016,26 @@
   transition: transform 500ms ease;
 }
 
+.ubuntu-site .ubuntu-services-grid__card-media--subservice {
+  background: var(--site-bg-elevated);
+}
+
+.ubuntu-site .ubuntu-services-grid__card-media--subservice img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms ease;
+}
+
+.ubuntu-site .ubuntu-services-grid__card--subservice:hover .ubuntu-services-grid__card-media--subservice img {
+  transform: scale(1.03);
+}
+
+.ubuntu-site .ubuntu-services-grid__card--subservice:hover {
+  border-color: color-mix(in srgb, var(--item-accent, #d1511f) 45%, #d9d9d9);
+}
+
 .ubuntu-site .ubuntu-services-grid__card--pillar:hover .ubuntu-services-grid__card-media--pillar img {
   transform: scale(1.03);
 }
@@ -1878,6 +2059,133 @@
 
   .ubuntu-site .ubuntu-services-grid__card-media--line img {
     transform: none;
+  }
+}
+
+/* Services — auto-advancing pillar carousel */
+.ubuntu-site .ubuntu-pillar-carousel {
+  position: relative;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__track {
+  align-items: stretch;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__cell {
+  display: flex;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .ubuntu-site .ubuntu-pillar-carousel__cell {
+    padding-right: 1.5rem;
+  }
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__card:hover {
+  border-color: color-mix(in srgb, var(--item-accent, #d1511f) 45%, #d9d9d9);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__card:focus-visible {
+  outline: 2px solid #d1511f;
+  outline-offset: 2px;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--site-bg-elevated);
+  aspect-ratio: 5 / 4;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__media img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms ease;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__card:hover .ubuntu-pillar-carousel__media img {
+  transform: scale(1.04);
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-top: 1px solid #e5e5e5;
+  padding: 1.3rem 1.35rem 1.6rem;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #2d2d2d;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #5c5c5c;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background: #d0d0d0;
+  cursor: pointer;
+  transition: width 200ms ease, background-color 200ms ease;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__dot:hover {
+  background: #b0b0b0;
+}
+
+.ubuntu-site .ubuntu-pillar-carousel__dot.is-active {
+  width: 1.5rem;
+  background: #d1511f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ubuntu-site .ubuntu-pillar-carousel__card,
+  .ubuntu-site .ubuntu-pillar-carousel__media img {
+    transition: none;
   }
 }
 
@@ -3309,6 +3617,24 @@
   }
 }
 
+/* Homepage stats band — compact height (drop the duplicated section padding) */
+.ubuntu-site #startup-stats.ubuntu-stats-cta-strip {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ubuntu-site #startup-stats.ubuntu-stats-cta-strip > .ubuntu-container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ubuntu-site #startup-stats.ubuntu-stats-cta-strip > .ubuntu-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 /* Homepage: full spacing between bands (no collapsed top padding) */
 .ubuntu-site main.ubuntu-home-page > section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--hero) + section {
   padding-top: var(--section-space-y);
@@ -4081,8 +4407,56 @@
   }
 }
 
+/* Fill variant — right image height equals the paired text column height */
+.ubuntu-site .ubuntu-split__media--fill {
+  position: relative;
+  overflow: hidden;
+  background: var(--site-bg-elevated);
+  min-height: 20rem;
+}
+
+.ubuntu-site .ubuntu-split__img--fill {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 992px) {
+  .ubuntu-site .ubuntu-split--structured .ubuntu-split__media--fill {
+    align-self: stretch;
+    min-height: 0;
+  }
+}
+
 .ubuntu-site .ubuntu-section--dark .ubuntu-split__media {
   background: rgba(255, 255, 255, 0.08);
+}
+
+/* Next Step — call-to-action band with a faded full-bleed background image */
+.ubuntu-site .ubuntu-next-step-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ubuntu-site .ubuntu-next-step-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.ubuntu-site .ubuntu-next-step-cta__content {
+  position: relative;
+  z-index: 1;
 }
 
 .ubuntu-site .ubuntu-section--dark .ubuntu-split__img {
@@ -4239,6 +4613,54 @@
   }
 }
 
+/* Homepage technology band — auto-scrolling logo ribbon.
+   Left edge is flush with the section title; only the trailing edge fades. */
+.ubuntu-site .ubuntu-tech-ribbon__viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #000 0, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0, #000 86%, transparent 100%);
+}
+
+.ubuntu-site .ubuntu-tech-ribbon__track {
+  gap: 2.75rem;
+  align-items: center;
+  padding-block: 0.5rem;
+  padding-inline: 0;
+}
+
+.ubuntu-site .ubuntu-tech-ribbon__item {
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: none;
+  opacity: 0.92;
+  transition: opacity var(--section-transition, 0.2s ease);
+}
+
+.ubuntu-site .ubuntu-tech-ribbon__item:hover {
+  opacity: 1;
+}
+
+.ubuntu-site .ubuntu-tech-ribbon__item .ubuntu-tech-brand-mark__label {
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .ubuntu-site .ubuntu-tech-ribbon__track {
+    gap: 3.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ubuntu-site .ubuntu-tech-ribbon__track.animate-marquee {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.5rem;
+  }
+}
+
 .ubuntu-site .ubuntu-tech-category-groups {
   margin-top: 0;
 }
@@ -4268,36 +4690,18 @@
   align-self: center;
 }
 
-.ubuntu-site .ubuntu-contact-mockup__media {
+.ubuntu-site .ubuntu-contact-card__media {
   background: transparent;
   overflow: visible;
+  align-self: stretch;
 }
 
-.ubuntu-site .ubuntu-contact-mockup {
+/* Clean form panel — replaces the browser mockup for a flush enterprise look */
+.ubuntu-site .ubuntu-contact-card {
   width: 100%;
-}
-
-.ubuntu-site .ubuntu-contact-mockup .ubuntu-mockup {
-  width: 100%;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-}
-
-.ubuntu-site .ubuntu-contact-mockup__screen {
-  display: block;
-  width: 100%;
-  background: var(--site-bg-elevated);
-  overflow: hidden;
-}
-
-.ubuntu-site .ubuntu-contact-mockup__inner {
-  max-height: 32rem;
-  overflow-y: auto;
-}
-
-@media (min-width: 992px) {
-  .ubuntu-site .ubuntu-contact-mockup__inner {
-    max-height: 34rem;
-  }
+  background: var(--site-bg-elevated, #ffffff);
+  border: 1px solid var(--site-border, #d9d9d9);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
 }
 
 
@@ -4515,7 +4919,7 @@
 
 /* Legacy section shells → ubuntu rhythm */
 .ubuntu-site section:not(.ubuntu-pattern-section):not(.ubuntu-chrome-header) h2,
-.ubuntu-site section:not(.ubuntu-pattern-section) h3:not(.ubuntu-solutions-carousel__title) {
+.ubuntu-site section:not(.ubuntu-pattern-section) h3:not(.ubuntu-solutions-carousel__title):not(.ubuntu-pillar-carousel__title) {
   color: var(--site-text);
   font-family: var(--site-heading-font);
   font-weight: var(--site-heading-weight);

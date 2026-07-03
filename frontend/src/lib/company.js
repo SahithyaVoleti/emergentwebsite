@@ -2,7 +2,7 @@
 export const COMPANY_FOUNDED_LABEL = "January 12, 2026";
 export const COMPANY_FOUNDED_SHORT = "Jan 12, 2026";
 
-export const DEFAULT_PAGE_TITLE = "NeuralTrix AI | AI Product Transformation & SaaS Engineering";
+export const DEFAULT_PAGE_TITLE = "NeuralTrix AI | Enterprise AI & Platform Engineering";
 export const DEFAULT_META_DESCRIPTION =
   "NeuralTrix AI transforms existing products into AI-enabled software, fine-tunes models for production, and builds AI-native SaaS across interdisciplinary industries.";
 

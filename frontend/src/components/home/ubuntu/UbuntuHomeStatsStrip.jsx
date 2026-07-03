@@ -10,6 +10,7 @@ export default function UbuntuHomeStatsStrip({ stats = HOME_STARTUP_STATS, id = 
       stats={stats}
       id={id}
       testId="home-startup-stats"
+      animate
     />
   );
 }

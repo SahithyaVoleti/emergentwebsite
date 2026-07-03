@@ -88,7 +88,7 @@ export default function IndustryDetail() {
           variant="cards"
           eyebrow={SECTION_LABEL.services}
           title={`Services for ${industry.title}`}
-          lead="Three main disciplines—open each area to review service lines scoped for sector-specific systems and governance requirements."
+          lead="Four main disciplines—open each area to review services scoped for sector-specific systems and governance requirements."
           viewAllHref="/services"
           viewAllLabel="View all services"
         />

@@ -1,7 +1,7 @@
 /**
  * Enterprise site navigation — single source of truth for header and footer.
  */
-import services, { servicesForDisplay } from "./services";
+import { SERVICE_CATALOG } from "./serviceCatalog";
 import { SERVICE_PILLARS } from "./servicePillars";
 import solutions from "./solutions";
 import industries from "./industries";
@@ -39,27 +39,14 @@ export const TOP_NAV_ORDER = [
   "company",
 ];
 
-/** Group services by practice-area pillar for header mega-menu. */
-export function buildServicesNavGroups(list = services) {
-  const ordered = servicesForDisplay(list);
-  const pillarOrder = [];
-  const byPillar = new Map();
-
-  for (const service of ordered) {
-    const pillar = service.pillar || "Services";
-    if (!byPillar.has(pillar)) {
-      byPillar.set(pillar, []);
-      pillarOrder.push(pillar);
-    }
-    byPillar.get(pillar).push({
-      label: service.catalogTitle ?? service.title,
-      href: `/services/${service.slug}`,
-    });
-  }
-
-  return pillarOrder.map((pillar) => ({
-    pillar,
-    items: byPillar.get(pillar),
+/** Group subservices by main service for header mega-menu. */
+export function buildServicesNavGroups() {
+  return SERVICE_CATALOG.map((pillar) => ({
+    pillar: pillar.label,
+    items: pillar.subservices.map((sub) => ({
+      label: sub.title,
+      href: `/services/${pillar.id}#${sub.id}`,
+    })),
   }));
 }
 
