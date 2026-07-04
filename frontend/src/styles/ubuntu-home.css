@@ -1240,24 +1240,33 @@
   margin-bottom: 0;
 }
 
-/* Extend the reveal to a few more bands: pin them so the next band glides over.
-   Services stays out of this — its auto-sliding carousel misbehaves when pinned. */
+/* Pinned bands stay at z-1 so any later band covers them by DOM order (no bleed).
+   Services stays out of this — its auto-sliding carousel misbehaves when pinned.
+   Next Step is pinned as well, so the Validation band slides up over it. */
 .ubuntu-site .ubuntu-home-page > #home-features,
 .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
+.ubuntu-site .ubuntu-home-page > #next-step,
 .ubuntu-site .ubuntu-home-page > #from-the-blogs {
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-/* Bands that glide over a pinned band read as a panel with a soft leading edge.
-   The top gap keeps the pinned band beneath visible longer, so the slide-over
-   reveal is more pronounced. The gap only ever exposes the (opaque) pinned band. */
+/* Pure slide-over bands ride one layer above the pinned band they rise over. */
 .ubuntu-site .ubuntu-home-page > #solutions-slider,
-.ubuntu-site .ubuntu-home-page > #next-step,
+.ubuntu-site .ubuntu-home-page > #product-validation,
 .ubuntu-site .ubuntu-home-page > #page-contact {
   position: relative;
   z-index: 2;
+}
+
+/* Panel appearance for every band that glides over another: soft leading edge
+   plus a top gap that keeps the band beneath visible longer during the reveal.
+   The gap only ever exposes the (opaque) band it slides over. */
+.ubuntu-site .ubuntu-home-page > #solutions-slider,
+.ubuntu-site .ubuntu-home-page > #next-step,
+.ubuntu-site .ubuntu-home-page > #product-validation,
+.ubuntu-site .ubuntu-home-page > #page-contact {
   margin-top: clamp(3rem, 6vw, 6rem);
   border-radius: 1.5rem 1.5rem 0 0;
   box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
@@ -1280,6 +1289,7 @@
   .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner,
   .ubuntu-site .ubuntu-home-page > #home-features,
   .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
+  .ubuntu-site .ubuntu-home-page > #next-step,
   .ubuntu-site .ubuntu-home-page > #from-the-blogs {
     position: relative;
     top: auto;
