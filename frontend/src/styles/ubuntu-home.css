@@ -3035,34 +3035,19 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--ubuntu-brand-heading);
+  color: var(--site-text);
   text-align: center;
   width: 100%;
   min-height: 1.1em;
 }
 
-.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 1) .ubuntu-stats-cta-strip__value {
-  color: var(--smart-blue);
-}
-
-.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 2) .ubuntu-stats-cta-strip__value {
-  color: var(--sapphire);
-}
-
-.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 3) .ubuntu-stats-cta-strip__value {
-  color: var(--regal-navy);
-}
-
-.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 4) .ubuntu-stats-cta-strip__value {
-  color: var(--prussian-blue);
-}
-
-.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 5) .ubuntu-stats-cta-strip__value {
-  color: var(--twilight-indigo);
-}
-
+.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 1) .ubuntu-stats-cta-strip__value,
+.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 2) .ubuntu-stats-cta-strip__value,
+.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 3) .ubuntu-stats-cta-strip__value,
+.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 4) .ubuntu-stats-cta-strip__value,
+.ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 5) .ubuntu-stats-cta-strip__value,
 .ubuntu-site .ubuntu-stats-cta-strip__item:nth-child(6n + 6) .ubuntu-stats-cta-strip__value {
-  color: var(--blue-slate);
+  color: var(--site-text);
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__label {
@@ -3072,7 +3057,7 @@
   line-height: 1.35;
   letter-spacing: 0.04em;
   text-transform: none;
-  color: #5c677d;
+  color: var(--site-text);
   text-align: center;
   width: 100%;
   max-width: 11rem;
@@ -5385,4 +5370,146 @@
   overflow: hidden;
   background-color: var(--site-bg-elevated);
   color: var(--site-text);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Featured portfolio case study — screenshot + overlapping card
+   ────────────────────────────────────────────────────────────── */
+.ubuntu-site .portfolio-feature {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.ubuntu-site .portfolio-feature__media {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--site-border);
+  box-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.6);
+}
+
+.ubuntu-site .portfolio-feature__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ubuntu-site .portfolio-feature__card {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 2rem);
+  max-width: 34rem;
+  margin: -2.5rem auto 0;
+  padding: 1.75rem;
+  background: #1b1b1b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.65);
+}
+
+.ubuntu-site .portfolio-feature__badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--site-highlight);
+  border-radius: 4px;
+}
+
+.ubuntu-site .portfolio-feature__title {
+  margin: 1rem 0 0;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.ubuntu-site .portfolio-feature__desc {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  hyphens: none;
+}
+
+.ubuntu-site .portfolio-feature__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ubuntu-site .portfolio-feature__metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.ubuntu-site .portfolio-feature__metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.ubuntu-site .portfolio-feature__metric-label {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ubuntu-site .portfolio-feature__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--site-highlight);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.ubuntu-site .portfolio-feature__link:hover {
+  color: var(--site-highlight-hover);
+}
+
+@media (min-width: 1024px) {
+  .ubuntu-site .portfolio-feature {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+    min-height: 26rem;
+  }
+
+  .ubuntu-site .portfolio-feature__media {
+    grid-column: 4 / -1;
+    grid-row: 1;
+  }
+
+  .ubuntu-site .portfolio-feature__card {
+    grid-column: 1 / 6;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .ubuntu-site .portfolio-feature--media-left .portfolio-feature__media {
+    grid-column: 1 / 10;
+  }
+
+  .ubuntu-site .portfolio-feature--media-left .portfolio-feature__card {
+    grid-column: 8 / -1;
+  }
 }
