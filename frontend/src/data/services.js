@@ -167,9 +167,9 @@ export const LEGACY_SERVICE_SLUGS = {
 
 export function servicesForDisplay(list = services) {
   return list.map((service) => ({
-    ...service,
+      ...service,
     catalogCapabilities: (service.subservices ?? []).slice(0, 4).map((sub) => sub.title),
-  }));
+    }));
 }
 
 export default services;

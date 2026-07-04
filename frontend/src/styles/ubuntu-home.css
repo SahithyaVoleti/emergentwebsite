@@ -1215,65 +1215,26 @@
   box-shadow: none;
 }
 
-/* Scroll reveal: pin the homepage hero so the "What we do" band slides up over it. */
-.ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner {
-  position: sticky;
-  top: 0;
-  z-index: 0;
+/* Homepage bands flow normally — no overlapping scroll reveal — so every
+   section's content stays fully visible. A slim gap separates each band; the
+   container sits a shade darker than the bands so the gap reads clearly. */
+.ubuntu-site .ubuntu-home-page {
+  background: var(--site-bg-alt);
 }
 
-/* Every band after the hero rides above the pinned hero and covers it on scroll. */
-.ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner ~ * {
-  position: relative;
-  z-index: 1;
+.ubuntu-site .ubuntu-home-page > * + * {
+  margin-top: 1rem;
 }
 
-/* The "What we do" band reads as a panel gliding over the hero. */
+/* Keep the hero and the "What we do" band visually connected (no gap between). */
 .ubuntu-site .ubuntu-home-page > .ubuntu-hero-stack {
-  position: relative;
-  z-index: 2;
-  background: var(--site-bg);
-  border-radius: 1.5rem 1.5rem 0 0;
-  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
-  overflow: hidden;
-  /* No transparent gap below: otherwise the pinned hero shows through it. */
+  margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Extend the reveal to a few more bands: pin them so the next band glides over.
-   Services stays out of this — its auto-sliding carousel misbehaves when pinned. */
-.ubuntu-site .ubuntu-home-page > #home-features,
-.ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
-.ubuntu-site .ubuntu-home-page > #from-the-blogs {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-/* Bands that glide over a pinned band read as a panel with a soft leading edge. */
-.ubuntu-site .ubuntu-home-page > #solutions-slider,
-.ubuntu-site .ubuntu-home-page > #next-step,
-.ubuntu-site .ubuntu-home-page > #page-contact {
-  position: relative;
-  z-index: 2;
-  border-radius: 1.5rem 1.5rem 0 0;
-  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
-}
-
-/* Bands without a horizontal carousel can safely clip to the rounded edge. */
-.ubuntu-site .ubuntu-home-page > #next-step,
-.ubuntu-site .ubuntu-home-page > #page-contact {
-  overflow: hidden;
-}
-
-/* Respect reduced-motion: fall back to normal document flow (no pinned reveal). */
-@media (prefers-reduced-motion: reduce) {
-  .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner,
-  .ubuntu-site .ubuntu-home-page > #home-features,
-  .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
-  .ubuntu-site .ubuntu-home-page > #from-the-blogs {
-    position: relative;
-    top: auto;
+@media (min-width: 768px) {
+  .ubuntu-site .ubuntu-home-page > * + * {
+    margin-top: 1.5rem;
   }
 }
 

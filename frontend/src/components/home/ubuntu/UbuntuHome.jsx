@@ -4,7 +4,6 @@ import UbuntuHomeHeroChrome from "./UbuntuHomeHeroChrome";
 import UbuntuHomeHeroStack from "./UbuntuHomeHeroStack";
 import UbuntuHomeStatsStrip from "./UbuntuHomeStatsStrip";
 import UbuntuHomeTechStack from "./UbuntuHomeTechStack";
-import UbuntuHomeLink from "../../ubuntu/UbuntuLink";
 import UbuntuSplitLayout from "../../ubuntu/UbuntuSplitLayout";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
@@ -63,9 +62,6 @@ export default function UbuntuHome() {
               <SiteNavLink href={HOME_ALERT.primaryCta.href} primary showArrow={false}>
                 {HOME_ALERT.primaryCta.label}
               </SiteNavLink>
-              <UbuntuHomeLink to={HOME_ALERT.secondaryCta.href}>
-                {HOME_ALERT.secondaryCta.label}
-              </UbuntuHomeLink>
             </div>
           </UbuntuSplitLayout>
         }
@@ -113,14 +109,6 @@ export default function UbuntuHome() {
               >
                 {HOME_NEXT_STEP.primaryCta.label}
               </SiteNavLink>
-              <UbuntuHomeLink to={HOME_NEXT_STEP.secondaryCta.href}>
-                {HOME_NEXT_STEP.secondaryCta.label}
-              </UbuntuHomeLink>
-              {HOME_NEXT_STEP.tertiaryCta && (
-                <UbuntuHomeLink to={HOME_NEXT_STEP.tertiaryCta.href}>
-                  {HOME_NEXT_STEP.tertiaryCta.label}
-                </UbuntuHomeLink>
-              )}
             </div>
           </div>
         </div>
