@@ -336,7 +336,6 @@ export const HOME_NEXT_STEP = {
   lead: "Share your product landscape, model requirements, or SaaS concept. We will outline transformation scope, fine-tuning approach, and delivery milestones.",
   primaryCta: { label: "Request consultation", href: "/#page-contact", contactIntent: "consultation" },
   secondaryCta: { label: "View portfolio", href: "/solutions" },
-  tertiaryCta: { label: "View industries", href: "/industries" },
 };
 
 /** Homepage FAQs — placed before the contact section. */
