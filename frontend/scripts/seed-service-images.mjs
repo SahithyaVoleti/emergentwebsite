@@ -1,4 +1,5 @@
 import { getServiceImageDownloadMap } from "../src/data/serviceImages.js";
+import { SERVICE_IMAGE_SPECS } from "../src/data/serviceImageSpecs.js";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -19,7 +20,13 @@ async function download(url, destPath) {
 
 async function main() {
   const entries = Object.entries(downloadMap);
-  console.log(`Seeding ${entries.length} remote service images...`);
+  console.log(`Seeding ${entries.length} title-matched service images...`);
+
+  for (const spec of SERVICE_IMAGE_SPECS) {
+    process.stdout.write(`  ${spec.kind.padEnd(11)} ${spec.title}\n`);
+  }
+
+  console.log("");
 
   for (const [relativePath, url] of entries) {
     const destPath = path.join(publicRoot, relativePath.replace(/^\//, ""));
