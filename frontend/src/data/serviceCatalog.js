@@ -1,177 +1,214 @@
 /**
- * Canonical service catalog — four main disciplines with four to six subservices each.
+ * Canonical service catalog — five main disciplines with subservices aligned to
+ * applied AI, data, generative AI, DevOps, and product engineering offerings.
  */
 import { getSubserviceCardImage } from "./serviceSubserviceImages";
+import { getPillarCardImage } from "./serviceImages";
+
 export const SERVICE_CATALOG = [
   {
-    id: "generative-ai",
-    label: "Enterprise Generative AI",
-    cardImage: "/media/service-ai-product-transformation.png",
-    tagline: "Copilots and agents built into enterprise workflows.",
+    id: "artificial-intelligence",
+    label: "Applied AI Engineering",
+    cardImage: getPillarCardImage("artificial-intelligence"),
+    tagline: "Strategy, models, and intelligent software integrated into enterprise systems.",
     shortDesc:
-      "Embed copilots, agents, and generative capabilities in enterprise workflows with retrieval, safety controls, and operational governance.",
+      "Applied AI programs spanning advisory, retrieval systems, language-model engineering, intelligent applications, and enterprise integration—with measurable delivery gates.",
     subservices: [
       {
-        id: "enterprise-copilots",
-        title: "Enterprise AI Copilots",
-        desc: "Role-scoped assistants embedded in CRM, ERP, and internal tools with citation policies, tool permissions, and audit logging.",
-        items: ["Knowledge copilots", "Workflow assistants", "Role-based access", "Conversation audit trails"],
+        id: "applied-ai-advisory",
+        title: "AI Strategy & Advisory",
+        desc: "Use-case prioritization, feasibility assessment, and roadmap design tied to integration constraints and governance requirements.",
+        items: ["Opportunity mapping", "ROI modeling", "Risk assessment", "Phased rollout planning"],
       },
       {
-        id: "retrieval-augmented-generation",
-        title: "Enterprise Knowledge Intelligence",
-        desc: "Permission-aware document retrieval, hybrid search, and grounded responses measured against fixed evaluation sets.",
-        items: ["Document ingestion", "Vector search", "Source attribution", "Index lifecycle management"],
+        id: "context-retrieval-systems",
+        title: "Retrieval-Augmented System Engineering",
+        desc: "Permission-aware retrieval pipelines, hybrid search, and grounded response layers for enterprise knowledge workloads.",
+        items: ["Corpus design", "Vector indexing", "Source attribution", "Evaluation harnesses"],
       },
       {
-        id: "intelligent-document-processing",
-        title: "Intelligent Document Processing",
-        desc: "Layout-aware extraction, confidence routing, and human review queues for regulated document workflows.",
-        items: ["OCR and layout parsing", "Field validation", "Review queues", "ECM integration"],
+        id: "language-model-engineering",
+        title: "Large Language Model Engineering",
+        desc: "Design, build, and operate language-model capabilities with secure inference paths, routing, and product interfaces.",
+        items: ["Model selection", "Inference APIs", "Latency tuning", "Cost controls"],
       },
       {
-        id: "agent-orchestration",
-        title: "Agentic Workflow Automation",
-        desc: "Multi-step agents with scoped tools, durable execution, escalation paths, and operational kill switches.",
-        items: ["Tool integration", "Workflow automation", "Human handoff", "Run records and tracing"],
+        id: "intelligent-application-delivery",
+        title: "Intelligent Application Development",
+        desc: "Applications with embedded scoring, classification, and decision support designed for production monitoring and rollback.",
+        items: ["Feature design", "Model serving", "UI integration", "Quality monitoring"],
       },
       {
-        id: "prompt-engineering",
-        title: "AI Prompt Systems Engineering",
-        desc: "Versioned prompts, regression suites, and controlled rollout when model or policy changes affect production quality.",
-        items: ["Prompt libraries", "Evaluation harnesses", "Canary releases", "Failure-mode testing"],
+        id: "ai-enabled-software-delivery",
+        title: "AI-Enabled Software Engineering",
+        desc: "Software delivery that combines conventional engineering with AI components under shared release and test discipline.",
+        items: ["Solution architecture", "Component integration", "Regression testing", "Release governance"],
       },
       {
-        id: "generative-ai-governance",
-        title: "Generative AI Assurance",
-        desc: "Policy filters, access reviews, model documentation, and incident procedures for enterprise AI programs.",
-        items: ["Content filtering", "Bias and safety testing", "Model cards", "Compliance alignment"],
-      },
-    ],
-  },
-  {
-    id: "machine-learning",
-    label: "Machine Intelligence",
-    cardImage: "/media/service-model-fine-tuning-ml.png",
-    tagline: "Production machine learning, from models to live monitoring.",
-    shortDesc:
-      "Deliver production machine learning programs—from model development and fine-tuning through MLOps, monitoring, and enterprise integration.",
-    subservices: [
-      {
-        id: "predictive-analytics",
-        title: "Predictive Intelligence",
-        desc: "Forecasting and classification models with calibrated scoring, backtesting, and integration into operational systems.",
-        items: ["Demand forecasting", "Risk scoring", "Churn prediction", "Batch and online inference"],
-      },
-      {
-        id: "natural-language-processing",
-        title: "Language Intelligence",
-        desc: "Text classification, entity extraction, and summarization with regression testing and domain-specific evaluation.",
-        items: ["Entity recognition", "Intent classification", "Summarization", "Multilingual support"],
-      },
-      {
-        id: "computer-vision",
-        title: "Visual Intelligence",
-        desc: "Detection, classification, and inspection models with label governance, drift monitoring, and edge deployment options.",
-        items: ["Object detection", "Quality inspection", "Video analytics", "Edge inference"],
-      },
-      {
-        id: "model-fine-tuning",
-        title: "Domain Model Adaptation",
-        desc: "Domain adaptation with supervised training, preference alignment, and rollback when held-out metrics regress.",
-        items: ["Supervised fine-tuning", "LoRA and QLoRA", "Evaluation benchmarks", "Version control"],
-      },
-      {
-        id: "mlops",
-        title: "Production ML Operations",
-        desc: "Reproducible training pipelines, staged promotions, drift alerts, and retraining runbooks for production ML.",
-        items: ["Model registry", "CI/CD for models", "Drift monitoring", "Canary deployments"],
-      },
-      {
-        id: "llm-engineering",
-        title: "LLM Production Engineering",
-        desc: "Secure inference endpoints, multi-model routing, cost controls, and integration layers for language-model workloads.",
-        items: ["Inference APIs", "Model routing", "Token budgeting", "Latency optimization"],
+        id: "enterprise-ai-integration",
+        title: "Enterprise AI Integration",
+        desc: "Connect AI services to CRM, ERP, data platforms, and internal tools with identity, audit, and policy boundaries.",
+        items: ["API orchestration", "Event-driven hooks", "Access controls", "Audit logging"],
       },
     ],
   },
   {
     id: "data-engineering",
-    label: "Data Platform Engineering",
-    cardImage: "/media/service-data-engineering.png",
-    tagline: "Governed data platforms for analytics and AI features.",
+    label: "Enterprise Data Engineering",
+    cardImage: getPillarCardImage("data-engineering"),
+    tagline: "Analytics platforms, repositories, and training data pipelines.",
     shortDesc:
-      "Engineer governed data platforms that supply reliable features, retrieval corpora, and analytics for AI and enterprise applications.",
+      "Engineer governed data platforms for analytics, warehousing, and labeling workflows that AI and decision systems depend on.",
     subservices: [
       {
-        id: "data-pipeline-engineering",
-        title: "Data Pipeline Engineering",
-        desc: "Orchestrated ETL and ELT workflows with data contracts, quality checks, and lineage for downstream consumers.",
-        items: ["Batch pipelines", "Incremental loads", "Error handling", "Pipeline observability"],
+        id: "decision-analytics-engineering",
+        title: "Decision Analytics Engineering",
+        desc: "Metric definitions, semantic layers, and dashboards that connect operational data to business decisions with documented ownership.",
+        items: ["Metric modeling", "BI integration", "Self-service views", "Performance tuning"],
       },
       {
-        id: "data-warehouse-lakehouse",
-        title: "Analytics Platform Engineering",
-        desc: "Dimensional modeling, workload isolation, and cost-managed storage for analytics and AI feature generation.",
-        items: ["Schema design", "Materialized views", "Access controls", "Query optimization"],
+        id: "enterprise-data-repository-design",
+        title: "Enterprise Data Warehouse Design",
+        desc: "Warehouse and lakehouse architectures with workload isolation, cost management, and access patterns for analytics and AI features.",
+        items: ["Schema design", "Storage tiers", "Query optimization", "Access policies"],
       },
       {
-        id: "real-time-streaming",
-        title: "Real-Time Intelligence Pipelines",
-        desc: "Event-driven architectures with schema governance, lag monitoring, and recovery procedures for stream consumers.",
-        items: ["Kafka and Flink", "Stream processing", "Schema registry", "Consumer lag alerts"],
-      },
-      {
-        id: "data-governance",
-        title: "Data Trust & Governance",
-        desc: "Cataloging, stewardship workflows, PII classification, and automated quality tests across critical datasets.",
-        items: ["Data catalog", "Lineage tracking", "Quality SLAs", "Retention policies"],
+        id: "training-data-preparation",
+        title: "Training Data Preparation & Labeling",
+        desc: "Labeling workflows, quality sampling, and dataset versioning for supervised learning and evaluation programs.",
+        items: ["Annotation pipelines", "Inter-annotator review", "Dataset versioning", "Bias sampling checks"],
       },
     ],
   },
   {
-    id: "cloud-infrastructure",
-    label: "Cloud Platform Engineering",
-    cardImage: "/media/service-cloud-infrastructure.png",
-    tagline: "Cloud platforms and delivery pipelines for AI workloads.",
+    id: "generative-ai",
+    label: "Generative AI Solutions",
+    cardImage: getPillarCardImage("generative-ai"),
+    tagline: "Agents, copilots, and generative capabilities for enterprise workflows.",
     shortDesc:
-      "Establish CI/CD, cloud platforms, and application delivery capabilities that support AI workloads and mission-critical software at scale.",
+      "Deliver generative AI capabilities—autonomous agents, conversational experiences, model adaptation, foundation-model integration, adaptive systems, and copilots—with enterprise controls.",
     subservices: [
       {
-        id: "cloud-platform-engineering",
-        title: "AI Cloud Platform Engineering",
-        desc: "Landing zones, self-service environments, and guardrails for teams deploying AI and enterprise applications.",
-        items: ["Multi-account setup", "Identity integration", "Network design", "Cost allocation"],
+        id: "autonomous-agent-engineering",
+        title: "Autonomous Agent Engineering",
+        desc: "Multi-step agents with scoped tools, durable execution, escalation paths, and operational kill switches.",
+        items: ["Tool integration", "Workflow automation", "Human handoff", "Run records and tracing"],
       },
       {
-        id: "cicd-release-automation",
-        title: "Continuous Delivery Automation",
+        id: "conversational-experience-engineering",
+        title: "Conversational Interface Engineering",
+        desc: "Channel-aware assistants with policy filters, session memory, and reviewer workflows for regulated interactions.",
+        items: ["Dialog design", "Channel adapters", "Content filtering", "Escalation routing"],
+      },
+      {
+        id: "model-adaptation-alignment",
+        title: "Domain Model Fine-Tuning",
+        desc: "Domain tuning with supervised training, preference alignment, and rollback when held-out metrics regress.",
+        items: ["Supervised fine-tuning", "LoRA and QLoRA", "Evaluation benchmarks", "Version control"],
+      },
+      {
+        id: "foundation-model-integration",
+        title: "Commercial LLM Integration",
+        desc: "Connect commercial foundation models to enterprise applications with routing, residency, and cost policies.",
+        items: ["Provider selection", "Private networking", "Multi-model routing", "Usage metering"],
+      },
+      {
+        id: "generative-capability-integration",
+        title: "Generative Feature Integration",
+        desc: "Embed text, image, and structured generation into existing products with schema-constrained outputs and audit trails.",
+        items: ["Output schemas", "Template libraries", "Safety filters", "Change management"],
+      },
+      {
+        id: "adaptive-intelligence-systems",
+        title: "Adaptive Intelligence Systems",
+        desc: "Systems that adjust prompts, retrieval, or routing based on feedback signals while preserving governance boundaries.",
+        items: ["Feedback loops", "Policy guardrails", "Canary releases", "Regression monitoring"],
+      },
+      {
+        id: "role-based-copilot-engineering",
+        title: "Enterprise Copilot Engineering",
+        desc: "Assistants scoped to job functions inside CRM, ERP, and internal tools with citation policies and tool permissions.",
+        items: ["Role scoping", "Knowledge copilots", "Tool permissions", "Conversation audit trails"],
+      },
+    ],
+  },
+  {
+    id: "devops",
+    label: "Platform Reliability & DevOps",
+    cardImage: getPillarCardImage("devops"),
+    tagline: "Delivery automation, reliability engineering, and model observability.",
+    shortDesc:
+      "Establish CI/CD, platform automation, reliability engineering, and observability—including model performance monitoring—for AI and enterprise workloads.",
+    subservices: [
+      {
+        id: "intelligent-operations-automation",
+        title: "Intelligent Operations (AIOps)",
+        desc: "Automated remediation, anomaly correlation, and AI-assisted incident triage integrated with existing on-call workflows.",
+        items: ["Event correlation", "Runbook automation", "Alert tuning", "Capacity signals"],
+      },
+      {
+        id: "delivery-pipeline-advisory",
+        title: "DevOps Strategy & Advisory",
+        desc: "Assess release maturity, toil, and operational risk; define a prioritized roadmap for pipeline and platform improvements.",
+        items: ["Maturity assessment", "Risk prioritization", "Standards definition", "Team enablement plans"],
+      },
+      {
+        id: "continuous-delivery-engineering",
+        title: "Pipeline Automation Engineering",
         desc: "Pipeline-as-code with signed artifacts, environment promotion, and rollback procedures tied to release policy.",
         items: ["Build pipelines", "Automated testing", "Deployment gates", "Rollback automation"],
       },
       {
-        id: "kubernetes-operations",
-        title: "Container Platform Operations",
-        desc: "Cluster hardening, autoscaling, GitOps workflows, and upgrade cadences for containerized production workloads.",
-        items: ["Cluster setup", "Helm releases", "Autoscaling", "Network policies"],
+        id: "reliability-resilience-engineering",
+        title: "Site Reliability Engineering",
+        desc: "SLO design, error budgets, chaos testing, and incident runbooks for mission-critical services and model endpoints.",
+        items: ["SLO tracking", "Incident runbooks", "Chaos exercises", "Capacity planning"],
       },
       {
-        id: "infrastructure-as-code",
-        title: "Programmable Infrastructure",
-        desc: "Versioned modules, policy checks, and drift detection for repeatable cloud and platform provisioning.",
-        items: ["Terraform modules", "State management", "Policy as code", "Environment parity"],
+        id: "model-performance-observability",
+        title: "LLM & Model Observability",
+        desc: "Monitor latency, drift, quality regressions, and cost for language-model and ML endpoints in production.",
+        items: ["Drift alerts", "Quality dashboards", "Token budgeting", "Trace correlation"],
+      },
+    ],
+  },
+  {
+    id: "development-services",
+    label: "Software Product Engineering",
+    cardImage: getPillarCardImage("development-services"),
+    tagline: "Mobile, software, product, and API engineering for enterprise delivery.",
+    shortDesc:
+      "Engineering services for mobile applications, custom software, embedded teams, product development, and API platforms—with defined acceptance criteria and handover.",
+    subservices: [
+      {
+        id: "mobile-engineering",
+        title: "Mobile Application Engineering",
+        desc: "iOS, Android, and cross-platform mobile applications with offline resilience, secure sync, and store-ready release paths.",
+        items: ["React Native and Flutter", "Offline sync", "Push notifications", "Store deployment"],
       },
       {
-        id: "observability-sre",
-        title: "Operational Intelligence Engineering",
-        desc: "Metrics, traces, and SLO-based alerting with runbooks linked to on-call response for critical services.",
-        items: ["Distributed tracing", "SLO tracking", "Incident runbooks", "Capacity planning"],
+        id: "custom-software-engineering",
+        title: "Custom Software Engineering",
+        desc: "Web and backend systems built to enterprise standards with test coverage, documentation, and operational handover.",
+        items: ["Full-stack delivery", "Code review gates", "Automated testing", "Technical documentation"],
       },
       {
-        id: "application-modernization",
-        title: "AI-Ready Application Engineering",
-        desc: "Phased migration of legacy systems to cloud-native architectures with API layers ready for AI integration.",
-        items: ["Legacy assessment", "API modernization", "Incremental migration", "Parallel run validation"],
+        id: "embedded-engineering-teams",
+        title: "Embedded Engineering Teams",
+        desc: "Senior practitioners embedded with your product organization under NeuralTrix delivery standards and reporting cadence.",
+        items: ["Team composition", "Sprint alignment", "Knowledge transfer", "Quality checkpoints"],
+      },
+      {
+        id: "end-to-end-product-development",
+        title: "End-to-End Product Engineering",
+        desc: "Discovery through launch for a defined product slice—architecture, build, test, and release with stakeholder sign-off.",
+        items: ["Product discovery", "UX and engineering", "Launch checklist", "Post-launch support window"],
+      },
+      {
+        id: "api-platform-engineering",
+        title: "API Platform Engineering",
+        desc: "REST, GraphQL, and event APIs with versioning, developer portals, and integration patterns for partners and internal systems.",
+        items: ["API design", "Authentication layers", "Rate limiting", "Developer documentation"],
       },
     ],
   },
@@ -189,8 +226,26 @@ export function getSubserviceCards(pillarId) {
     key: sub.id,
     id: sub.id,
     title: sub.title,
-    href: `/services/${pillar.id}#${sub.id}`,
+    href: `/services/${sub.id}`,
     testId: `subservice-card-${sub.id}`,
     cardImage: sub.cardImage ?? getSubserviceCardImage(sub.id),
   }));
+}
+
+/** Resolve a subservice slug to its pillar and catalog entry. */
+export function findSubserviceById(subserviceId) {
+  if (!subserviceId) return null;
+
+  for (const pillar of SERVICE_CATALOG) {
+    const subservice = pillar.subservices.find((sub) => sub.id === subserviceId);
+    if (subservice) {
+      return { pillar, subservice };
+    }
+  }
+
+  return null;
+}
+
+export function isSubserviceSlug(slug) {
+  return Boolean(findSubserviceById(slug));
 }

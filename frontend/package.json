@@ -23,6 +23,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
+    "seed:service-images": "node scripts/seed-service-images.mjs",
     "prebuild": "node scripts/generate-legal-pdfs.js && node scripts/generate-sitemap.js",
     "build": "vite build",
     "preview": "vite preview",
