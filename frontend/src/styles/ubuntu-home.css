@@ -3233,9 +3233,17 @@
 }
 
 @media (max-width: 767px) {
+  .ubuntu-site .ubuntu-process-stepper__nav {
+    display: flex;
+    justify-content: center;
+  }
+
   .ubuntu-site .ubuntu-process-stepper__track-wrap {
     --stepper-node-size: 3rem;
     --stepper-line-x: calc(var(--stepper-node-size) / 2);
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
     padding: 0;
   }
 
@@ -3262,26 +3270,27 @@
   .ubuntu-site .ubuntu-process-stepper__rail {
     position: relative;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1.25rem;
     overflow: visible;
     padding: 0;
     scroll-snap-type: none;
+    width: fit-content;
   }
 
   .ubuntu-site .ubuntu-process-stepper__step {
     flex: none;
     min-width: 0;
-    width: 100%;
+    width: auto;
     scroll-snap-align: unset;
   }
 
   .ubuntu-site .ubuntu-process-stepper__control {
     display: grid;
-    grid-template-columns: var(--stepper-node-size) minmax(0, 1fr);
+    grid-template-columns: var(--stepper-node-size) max-content;
     column-gap: 0.875rem;
     align-items: center;
-    width: 100%;
+    width: auto;
     padding: 0.25rem 0;
     text-align: left;
     border: none;
@@ -3306,8 +3315,8 @@
     line-height: 1.4;
     letter-spacing: 0.06em;
     text-align: left;
+    white-space: nowrap;
     color: var(--site-text-muted);
-    word-break: break-word;
   }
 
   .ubuntu-site .ubuntu-process-stepper__step.is-active .ubuntu-process-stepper__control {
