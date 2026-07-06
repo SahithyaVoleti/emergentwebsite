@@ -1,34 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Heart,
-  GraduationCap,
-  ShoppingCart,
-  Gamepad2,
-  Landmark,
-  Factory,
-  Building2,
-  BarChart3,
-} from "lucide-react";
 import blogArticles from "../../../data/blog";
 import { BRAND_LOGO_SYMBOL } from "../../../data/brandAssets";
 import { HOME_BLOGS_BAND, HOME_DOMAINS } from "../../../data/homePageSections";
+import ModuleIconGrid from "../../service/ModuleIconGrid";
 import UbuntuLink from "../../ubuntu/UbuntuLink";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
-import { paletteAccentIndex } from "../../../lib/brandPalette";
-
-const INDUSTRY_ICONS = {
-  healthcare: Heart,
-  education: GraduationCap,
-  commerce: ShoppingCart,
-  media: Gamepad2,
-  fintech: Landmark,
-  operations: Factory,
-  proptech: Building2,
-  analytics: BarChart3,
-};
 
 const articleBySlug = Object.fromEntries(blogArticles.map((a) => [a.slug, a]));
 
@@ -114,31 +93,7 @@ export function UbuntuHomeIndustries() {
         {HOME_DOMAINS.lead && (
           <p className="ubuntu-lead mt-4 max-w-3xl text-[#2d2d2d]">{HOME_DOMAINS.lead}</p>
         )}
-        <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
-          {HOME_DOMAINS.items.map((item, index) => {
-            const Icon = INDUSTRY_ICONS[item.icon] ?? BarChart3;
-            return (
-              <li key={item.title}>
-                <Link
-                  to={item.href}
-                  data-palette-accent={paletteAccentIndex(index)}
-                  className="ubuntu-industry-icon-card group flex flex-col items-center text-center"
-                >
-                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-white sm:h-20 sm:w-20">
-                    <Icon
-                      className="ubuntu-palette-icon-fill h-8 w-8 transition-colors sm:h-9 sm:w-9"
-                      strokeWidth={1.5}
-                      aria-hidden
-                    />
-                  </span>
-                  <span className="mt-4 text-sm font-medium leading-snug text-[#2d2d2d] transition-colors sm:text-base">
-                    {item.title}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ModuleIconGrid items={HOME_DOMAINS.items} listClassName="mt-8" />
       </div>
     </section>
   );

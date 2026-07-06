@@ -19,7 +19,10 @@ export const HOME_SECTION_IMAGES = {
   "generative-ai": { src: SERVICES_HERO_IMAGES[1], alt: DECORATIVE_ALT },
   "custom-software": { src: SERVICES_HERO_IMAGES[2], alt: DECORATIVE_ALT },
   devops: { src: SERVICES_HERO_IMAGES[6], alt: DECORATIVE_ALT },
-  "data-engineering": { src: SERVICES_HERO_IMAGES[7], alt: DECORATIVE_ALT },
+  "data-engineering": {
+    src: "/media/services/data-engineering/pipeline-engineering.jpg",
+    alt: DECORATIVE_ALT,
+  },
   assurance: { src: SERVICES_HERO_IMAGES[5], alt: DECORATIVE_ALT },
   "enterprise-efficiency": { src: LISTING_PAGE_HERO_IMAGES.caseStudies, alt: DECORATIVE_ALT },
   "agent-kavacha": { src: SOLUTION_HERO_IMAGES["agent-kavacha"], alt: "Agent Kavacha — real-time transaction monitoring" },

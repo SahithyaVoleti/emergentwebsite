@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { getNavDropdownIcon } from "../data/navDropdownIcons";
 import { useSiteNavScroll } from "../hooks/useSiteNavScroll";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
   BRAND_LOGO_ALT,
@@ -46,7 +47,9 @@ export default function Header({ embedded = false, shell = false }) {
   const [openMobileSections, setOpenMobileSections] = useState({});
   const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
-  const isNavCentered = useSiteNavScroll(shell);
+  const isScrolled = useSiteNavScroll(shell);
+  const isDesktopNav = useMediaQuery("(min-width: 1280px)");
+  const isNavCentered = isScrolled && isDesktopNav;
 
   const demoHref = contactFormTo(
     location.pathname,
@@ -240,8 +243,9 @@ export default function Header({ embedded = false, shell = false }) {
     isSiteNav && "ubuntu-chrome-header--site-nav",
     shell && "ubuntu-chrome-header--fixed",
     shell && !isNavCentered && "ubuntu-chrome-header--at-top",
+    shell && !isNavCentered && isScrolled && "ubuntu-chrome-header--scrolled",
     shell && isNavCentered && "ubuntu-chrome-header--centered",
-    shell && mobileOpen && isNavCentered && "ubuntu-chrome-header--menu-open",
+    shell && mobileOpen && "ubuntu-chrome-header--menu-open",
     embedded && !shell && "sticky top-0 z-[100]",
     !isSiteNav && "sticky top-0 z-[100]",
   ]

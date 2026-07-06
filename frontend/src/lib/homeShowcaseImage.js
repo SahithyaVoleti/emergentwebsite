@@ -12,8 +12,8 @@ export function getHomeShowcaseImage(imageKey) {
   }
   if (imageKey === "data-engineering") {
     return {
-      src: SERVICES_HERO_IMAGES[7],
-      alt: "Data platform and real-time intelligence architecture",
+      src: "/media/services/data-engineering/data-network-architecture.jpg",
+      alt: "Cloud data platform and enterprise analytics architecture",
     };
   }
   return { src: SERVICES_HERO_IMAGES[0], alt: "Enterprise AI engineering preview" };

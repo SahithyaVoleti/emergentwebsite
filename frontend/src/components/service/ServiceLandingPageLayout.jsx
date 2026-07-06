@@ -6,8 +6,9 @@ import TestimonialsSection from "../TestimonialsSection";
 import TechStackRibbonSection from "../ubuntu/TechStackRibbonSection";
 import UbuntuMetricGrid from "../ubuntu/UbuntuMetricGrid";
 import ScopeOfDeliveryGrid from "./ScopeOfDeliveryGrid";
+import ModuleIconGrid from "./ModuleIconGrid";
+import { toWorkstreamGridItems } from "../../lib/workstreamGridItems";
 import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
-import ServiceOfferingCards from "../ubuntu/ServiceOfferingCards";
 import UbuntuHomeFeatures from "../home/ubuntu/UbuntuHomeFeatures";
 import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
 import UbuntuHomeVisionCta from "../home/ubuntu/UbuntuHomeVisionCta";
@@ -159,19 +160,9 @@ export default function ServiceLandingPageLayout({
           </div>
 
           {sections.offerings.capabilityItems?.length ? (
-            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {sections.offerings.capabilityItems.map((item) => (
-                <li
-                  key={item.name}
-                  className="border border-[#e5e5e5] bg-white p-5 text-sm leading-relaxed text-[#555]"
-                >
-                  <p className="font-medium text-[#2d2d2d]">{item.name}</p>
-                  <p className="mt-2 text-[#7d8597]">{item.description}</p>
-                </li>
-              ))}
-            </ul>
+            <ModuleIconGrid items={sections.offerings.capabilityItems} />
           ) : (
-            <ServiceOfferingCards items={offeringItems} cardVariant="subservice" />
+            <ModuleIconGrid items={toWorkstreamGridItems(offeringItems)} />
           )}
         </div>
       </section>
@@ -189,7 +180,7 @@ export default function ServiceLandingPageLayout({
               <SectionTitle id="related-workstreams-heading" title={sections.relatedOfferings.title} />
               <p className="ubuntu-lead mt-3">{sections.relatedOfferings.lead}</p>
             </div>
-            <ServiceOfferingCards items={relatedOfferingItems} cardVariant="subservice" />
+            <ModuleIconGrid items={toWorkstreamGridItems(relatedOfferingItems)} />
           </div>
         </section>
       ) : null}
@@ -222,7 +213,10 @@ export default function ServiceLandingPageLayout({
       />
 
       <UbuntuHomeVisionCta
-        mockup={getSiteMockup(sections.outcomes.mockupKey)}
+        mockup={
+          sections.outcomes.media ?? getSiteMockup(sections.outcomes.mockupKey)
+        }
+        mockupVariant={sections.outcomes.media ? "plain" : "browser"}
         imagePosition={nextPosition()}
         config={{
           id: sections.outcomes.id,

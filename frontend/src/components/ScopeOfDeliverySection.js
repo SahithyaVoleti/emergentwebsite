@@ -8,7 +8,7 @@ export default function ScopeOfDeliverySection({ service }) {
   const subs = service?.subservices ?? [];
   if (!subs.length) return null;
 
-  const modules = subs.slice(0, 9).map((sub) => ({
+  const modules = subs.slice(0, 8).map((sub) => ({
     title: sub.title,
     desc: sub.desc,
   }));

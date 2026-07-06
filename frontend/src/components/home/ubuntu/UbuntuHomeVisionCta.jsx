@@ -8,6 +8,7 @@ import SectionTitle from "../../ubuntu/SectionTitle";
 
 export default function UbuntuHomeVisionCta({
   mockup = getSiteMockup(HOME_VISION_CTA_2.mockupKey),
+  mockupVariant = "browser",
   imagePosition = "left",
   config,
   bullets = [],
@@ -35,6 +36,7 @@ export default function UbuntuHomeVisionCta({
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
+      mockupVariant={mockupVariant}
     >
       {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
       <SectionTitle as="h2" title={section.title} />

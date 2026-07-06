@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import { SECTION_LABEL } from "../../data/sectionLabels";
+import ModuleIconGrid from "../service/ModuleIconGrid";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
-import { paletteAccentIndex } from "../../lib/brandPalette";
 
 /**
- * Industry catalog — same circular icon grid as homepage domains band.
+ * Industry catalog — compact 2×4 icon grid (label only, no circles).
  */
 export default function UbuntuIndustriesIconGrid({
   industries = [],
@@ -16,6 +15,12 @@ export default function UbuntuIndustriesIconGrid({
   className = "!border-t-0",
 }) {
   if (!industries.length) return null;
+
+  const items = industries.map((industry) => ({
+    title: industry.title,
+    slug: industry.slug,
+    icon: industry.icon,
+  }));
 
   return (
     <section
@@ -30,34 +35,7 @@ export default function UbuntuIndustriesIconGrid({
           {lead && <p className="ubuntu-lead mt-4 max-w-3xl">{lead}</p>}
         </div>
 
-        <ul className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-          {industries.map((ind, index) => {
-            const Icon = ind.icon;
-            return (
-              <li key={ind.slug}>
-                <Link
-                  to={`/industries/${ind.slug}`}
-                  data-testid={`industry-link-${ind.slug}`}
-                  data-palette-accent={paletteAccentIndex(index)}
-                  className="ubuntu-industry-icon-card group flex flex-col items-center text-center"
-                >
-                  <span className="ubuntu-palette-icon-ring flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 bg-white transition-colors group-hover:bg-white sm:h-20 sm:w-20">
-                    {Icon && (
-                      <Icon
-                        className="ubuntu-palette-icon-fill h-8 w-8 transition-colors sm:h-9 sm:w-9"
-                        strokeWidth={1.5}
-                        aria-hidden
-                      />
-                    )}
-                  </span>
-                  <span className="mt-4 text-sm font-medium leading-snug text-[#2d2d2d] transition-colors sm:text-base">
-                    {ind.title}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ModuleIconGrid items={items} listClassName="mt-8" />
       </div>
     </section>
   );

@@ -44,16 +44,29 @@ export function getSubserviceIntroMedia(subserviceId, title) {
 
 const PILLAR_CAPABILITY_IMAGE = {
   "artificial-intelligence": "/media/home/what-we-deliver.png",
-  "data-engineering": "/media/service-data-engineering.png",
+  "data-engineering": "/media/services/data-engineering/executive-dashboards.jpg",
   "generative-ai": "/media/service-ai-product-transformation.png",
   devops: "/media/service-cloud-infrastructure.png",
   "development-services": "/media/home/what-we-do.png",
 };
 
+const DATA_ENGINEERING_CAPABILITY_IMAGES = {
+  "decision-analytics-engineering":
+    "/media/services/data-engineering/analytics-strategy.jpg",
+  "enterprise-data-repository-design":
+    "/media/services/data-engineering/cloud-data-platforms.jpg",
+  "training-data-preparation": "/media/services/data-engineering/operations-monitoring.jpg",
+};
+
 /** Capabilities split-band image for a subservice landing page. */
 export function getSubserviceCapabilityMedia(subserviceId, pillarId, title) {
+  const src =
+    DATA_ENGINEERING_CAPABILITY_IMAGES[subserviceId] ??
+    PILLAR_CAPABILITY_IMAGE[pillarId] ??
+    "/media/home/what-we-deliver.png";
+
   return {
-    src: PILLAR_CAPABILITY_IMAGE[pillarId] ?? "/media/home/what-we-deliver.png",
+    src,
     alt: `${title} capability review on a workstation`,
   };
 }

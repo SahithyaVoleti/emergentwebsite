@@ -163,11 +163,13 @@
 
 .ubuntu-site .text-\[\#4a4a4a\],
 .ubuntu-site .text-\[\#5c5c5c\],
+.ubuntu-site .text-\[\#555\],
+.ubuntu-site .text-\[\#444\],
 .ubuntu-site .text-\[\#666\],
 .ubuntu-site .text-\[\#6b6b6b\],
 .ubuntu-site .text-\[\#7d8597\],
 .ubuntu-site .text-\[\#888\] {
-  color: var(--site-text-muted) !important;
+  color: var(--site-text) !important;
 }
 
 .ubuntu-site .text-\[\#8b4c6e\],
@@ -187,7 +189,17 @@
 }
 
 .ubuntu-site .ubuntu-product-card__heading-desc {
-  color: var(--site-text-muted) !important;
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site .ubuntu-scope-grid__card-title,
+.ubuntu-site .ubuntu-scope-grid__card-desc {
+  color: var(--site-text) !important;
+}
+
+.ubuntu-site .ubuntu-scope-grid__card:hover .ubuntu-scope-grid__card-title,
+.ubuntu-site .ubuntu-scope-grid__card[data-palette-accent]:hover .ubuntu-scope-grid__card-title {
+  color: var(--item-accent-hover, var(--site-highlight)) !important;
 }
 
 .ubuntu-site .ubuntu-split__chip {

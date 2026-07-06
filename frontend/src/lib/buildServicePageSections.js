@@ -336,6 +336,11 @@ function itemsToCapabilities(items, contextLabel) {
   }));
 }
 
+const DATA_ENGINEERING_OUTCOMES_MEDIA = {
+  src: "/media/services/data-engineering/outcomes.jpg",
+  alt: "Professional presenting governed data platforms with database and analytics workflow symbols",
+};
+
 function buildSharedSections({
   idPrefix,
   label,
@@ -495,26 +500,44 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
       title: `Core |foundations| for ${pillar.label.toLowerCase()}`,
       lead: `Technical foundations we implement during ${pillar.label.toLowerCase()} engagements—scoped to your domain tasks, data boundaries, and operational constraints.`,
       items: PILLAR_CORE_CAPABILITIES[pillar.id] ?? [],
-      media: {
-        src: "/media/home/what-we-deliver.png",
-        alt: `${pillar.label} engineer reviewing delivery outcomes on a laptop`,
-      },
+      media:
+        pillar.id === "data-engineering"
+          ? {
+              src: "/media/services/data-engineering/executive-dashboards.jpg",
+              alt: `${pillar.label} engineer reviewing governed data platforms and analytics outcomes`,
+            }
+          : {
+              src: "/media/home/what-we-deliver.png",
+              alt: `${pillar.label} engineer reviewing delivery outcomes on a laptop`,
+            },
     },
-    ...buildSharedSections({
-      idPrefix,
-      label: pillar.label,
-      techNames,
-      methodologyProcess: buildMethodologyProcess(service),
-      outcomesBullets: buildOutcomeBullets(service),
-      caseStudyLead: `Representative ${pillar.label.toLowerCase()} deployments across education, workforce operations, and healthcare—each scoped to measurable operational outcomes.`,
-      industriesLead: `We scope ${pillar.label.toLowerCase()} programs around sector data boundaries, review cycles, and operational workflows—healthcare, education, finance, commerce, and more.`,
-      engagementTitle: `Engagement principles for ${pillar.label.toLowerCase()} pilots`,
-      blogTitle: `Engineering notes on |${pillar.label}|`,
-      nextStepTitle: `Next Step for your |${pillar.label.toLowerCase()} scope|`,
-      faqs: buildPillarFaqs(pillar, service),
-      faqTitle: `Frequently asked questions about ${pillar.label}`,
-      caseStudyId,
-    }),
+    ...(() => {
+      const shared = buildSharedSections({
+        idPrefix,
+        label: pillar.label,
+        techNames,
+        methodologyProcess: buildMethodologyProcess(service),
+        outcomesBullets: buildOutcomeBullets(service),
+        caseStudyLead: `Representative ${pillar.label.toLowerCase()} deployments across education, workforce operations, and healthcare—each scoped to measurable operational outcomes.`,
+        industriesLead: `We scope ${pillar.label.toLowerCase()} programs around sector data boundaries, review cycles, and operational workflows—healthcare, education, finance, commerce, and more.`,
+        engagementTitle: `Engagement principles for ${pillar.label.toLowerCase()} pilots`,
+        blogTitle: `Engineering notes on |${pillar.label}|`,
+        nextStepTitle: `Next Step for your |${pillar.label.toLowerCase()} scope|`,
+        faqs: buildPillarFaqs(pillar, service),
+        faqTitle: `Frequently asked questions about ${pillar.label}`,
+        caseStudyId,
+      });
+
+      if (pillar.id !== "data-engineering") return shared;
+
+      return {
+        ...shared,
+        outcomes: {
+          ...shared.outcomes,
+          media: DATA_ENGINEERING_OUTCOMES_MEDIA,
+        },
+      };
+    })(),
   };
 }
 
