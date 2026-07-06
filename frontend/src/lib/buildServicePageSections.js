@@ -1,10 +1,5 @@
 import services from "../data/services";
-import {
-  getPillarCapabilityMedia,
-  getPillarIntroMedia,
-  getSubserviceCapabilityMedia,
-  getSubserviceIntroMedia,
-} from "../data/serviceSubserviceImages";
+import { getSubserviceCardImage } from "../data/serviceSubserviceImages";
 import { applySubservicePageOverride } from "../data/subservicePageOverrides";
 import { dedupeTechNamesByIcon, extractTechNamesFromService } from "./serviceTechStackSlugs";
 
@@ -483,7 +478,10 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
       body: `${service?.overview ?? pillar.shortDesc} We work as a senior-led startup studio: one workflow per pilot, direct access to engineers, and handover artifacts your team can extend.`,
       primaryCta: { label: "View offerings", href: "#service-offerings" },
       secondaryCta: { label: "View our work", href: "/our-work/case-studies" },
-      media: getPillarIntroMedia(pillar.id, pillar.label),
+      media: {
+        src: pillar.cardImage,
+        alt: `${pillar.label} delivery overview`,
+      },
     },
     offerings: {
       id: "service-offerings",
@@ -497,7 +495,10 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
       title: `Core |foundations| for ${pillar.label.toLowerCase()}`,
       lead: `Technical foundations we implement during ${pillar.label.toLowerCase()} engagements—scoped to your domain tasks, data boundaries, and operational constraints.`,
       items: PILLAR_CORE_CAPABILITIES[pillar.id] ?? [],
-      media: getPillarCapabilityMedia(pillar.id),
+      media: {
+        src: "/media/home/what-we-deliver.png",
+        alt: `${pillar.label} engineer reviewing delivery outcomes on a laptop`,
+      },
     },
     ...buildSharedSections({
       idPrefix,
@@ -526,8 +527,7 @@ export function buildSubservicePageSections(
   const idPrefix = subservice.id;
   const techNames = dedupeTechNamesByIcon(extractTechNamesFromService(service));
   const caseStudyId = `${slugify(subservice.id)}-case-studies`;
-  const introMedia = getSubserviceIntroMedia(subservice.id, subservice.title);
-  const capabilityMedia = getSubserviceCapabilityMedia(subservice.id, pillar.id, subservice.title);
+  const cardImage = subservice.cardImage ?? getSubserviceCardImage(subservice.id);
 
   const sections = {
     hero: {
@@ -554,7 +554,10 @@ export function buildSubservicePageSections(
       body: `This workstream sits within ${pillar.label}. We scope one workflow per pilot with direct access to senior engineers, defined acceptance criteria, and handover artifacts your team can extend in-house.`,
       primaryCta: { label: "View delivery scope", href: "#service-offerings" },
       secondaryCta: { label: `All ${pillar.label}`, href: `/services/${pillar.id}` },
-      media: introMedia,
+      media: {
+        src: cardImage,
+        alt: `${subservice.title} delivery overview`,
+      },
     },
     offerings: {
       id: "service-offerings",
@@ -575,7 +578,10 @@ export function buildSubservicePageSections(
       title: `Foundations for |${subservice.title}|`,
       lead: `Technical and operational foundations applied during ${subservice.title.toLowerCase()} pilots.`,
       items: itemsToCapabilities(subservice.items ?? [], subservice.title),
-      media: capabilityMedia,
+      media: {
+        src: "/media/home/what-we-deliver.png",
+        alt: `${subservice.title} delivery review on a laptop`,
+      },
     },
     ...buildSharedSections({
       idPrefix,

@@ -47,6 +47,52 @@ export const PAGE_STANDARD_SECTIONS = {
       mockupKey: "chat",
     },
   },
+  ourWork: {
+    methodology: {
+      eyebrow: "Methodology",
+      title: "Methodology for |platform delivery|",
+      lead: "This methodology maps operational requirements, deploys platform modules, and validates outcomes on production workflows before scale-up.",
+      bullets: [
+        "Discovery on workflow constraints, integrations, and governance requirements",
+        "Phased module deployment with defined acceptance criteria",
+        "Validation on live operations with measurable success metrics",
+        "Handover with runbooks and training for client teams",
+      ],
+      mockupKey: "pipeline",
+    },
+    outcomes: {
+      eyebrow: "Outcomes",
+      title: "Outcomes for |our work|",
+      lead: "Production platform capabilities with documented client outcomes and operational controls.",
+      bullets: [
+        "Platform modules running in client environments with adoption metrics",
+        "Integration paths documented for client engineering and security review",
+        "Governed permissions for data, roles, and automated actions",
+        "Case studies with measured results from live deployments",
+      ],
+      mockupKey: "data",
+      variant: "alt",
+    },
+    assurance: {
+      eyebrow: "Assurance",
+      title: "Assurance for |product rollouts|",
+      lead: "Safety, logging, and rollback are part of the build—not a checklist at the end.",
+      bullets: [
+        "Scoped access and audit trails for platform actions",
+        "Tests on critical workflows before go-live",
+        "Rollback procedures for configuration and permission changes",
+        "Artifacts ready for security and procurement review",
+      ],
+      mockupKey: "security",
+    },
+    cta: {
+      eyebrow: "Contact",
+      title: "Next Step for |your deployment|",
+      description:
+        "Share your operational context and timeline. We will outline product fit, integration scope, and a governed rollout plan.",
+      mockupKey: "chat",
+    },
+  },
   services: {
     methodology: {
       eyebrow: "Methodology",

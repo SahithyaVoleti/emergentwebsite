@@ -3,8 +3,11 @@ import { SERVICE_CATALOG, getSubserviceCards } from "./serviceCatalog";
 /** Legacy pillar URLs from prior layouts. */
 const PILLAR_ID_ALIASES = {
   "ai-product-transformation": "generative-ai",
-  "model-fine-tuning-ml": "machine-learning",
-  "saas-platform-engineering": "cloud-infrastructure",
+  "model-fine-tuning-ml": "artificial-intelligence",
+  "saas-platform-engineering": "devops",
+  "machine-learning": "artificial-intelligence",
+  "cloud-infrastructure": "devops",
+  "application-engineering": "development-services",
 };
 
 const PILLAR_BY_LABEL = Object.fromEntries(SERVICE_CATALOG.map((pillar) => [pillar.label, pillar]));

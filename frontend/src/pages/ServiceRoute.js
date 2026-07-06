@@ -1,8 +1,10 @@
 import { Navigate, useParams, Link } from "react-router-dom";
 import SitePageMain from "../components/ubuntu/SitePageMain";
+import { findSubserviceById } from "../data/serviceCatalog";
 import { LEGACY_SERVICE_SLUGS } from "../data/services";
 import { getPillarById } from "../data/servicePillars";
 import ServicePillarPage from "./ServicePillarPage";
+import ServiceSubservicePage from "./ServiceSubservicePage";
 
 export default function ServiceRoute() {
   const { slug } = useParams();
@@ -14,6 +16,16 @@ export default function ServiceRoute() {
   const pillar = getPillarById(slug);
   if (pillar) {
     return <ServicePillarPage pillar={pillar} />;
+  }
+
+  const subserviceMatch = findSubserviceById(slug);
+  if (subserviceMatch) {
+    return (
+      <ServiceSubservicePage
+        pillar={subserviceMatch.pillar}
+        subservice={subserviceMatch.subservice}
+      />
+    );
   }
 
   return (

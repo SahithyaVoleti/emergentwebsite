@@ -4,7 +4,7 @@ const blogArticles = [
   {
     slug: "augment-code-vs-cursor",
     category: "AI Tools",
-    serviceSlugs: ["cloud-infrastructure", "machine-learning", "generative-ai"],
+    serviceSlugs: ["devops", "artificial-intelligence", "generative-ai"],
     title: "Augment Code vs Cursor: Best AI Tool for Developers?",
     date: "March 2, 2026",
     readTime: "8 min read",
@@ -29,7 +29,7 @@ const blogArticles = [
   {
     slug: "claude-vs-chatgpt-coding",
     category: "AI Comparison",
-    serviceSlugs: ["generative-ai", "machine-learning"],
+    serviceSlugs: ["generative-ai", "artificial-intelligence"],
     title: "Claude vs ChatGPT for Coding: Features & Use Cases",
     date: "March 2, 2026",
     readTime: "10 min read",
@@ -54,7 +54,7 @@ const blogArticles = [
   {
     slug: "top-vibe-coding-tools",
     category: "Development",
-    serviceSlugs: ["cloud-infrastructure", "generative-ai"],
+    serviceSlugs: ["devops", "generative-ai"],
     title: "Top 10 Vibe Coding Tools for Faster AI App Development",
     date: "February 23, 2026",
     readTime: "12 min read",

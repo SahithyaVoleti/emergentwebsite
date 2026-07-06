@@ -2,15 +2,6 @@
  * Custom landing-page sections for AI Strategy & Advisory (`applied-ai-advisory`).
  * Structure aligned to advisory consulting flows; copy is original and startup-focused.
  */
-import { getSubserviceCapabilityMedia, getSubserviceIntroMedia } from "../serviceSubserviceImages";
-
-const advisoryIntroMedia = getSubserviceIntroMedia("applied-ai-advisory", "AI Strategy & Advisory");
-const advisoryCapabilityMedia = getSubserviceCapabilityMedia(
-  "applied-ai-advisory",
-  "artificial-intelligence",
-  "AI Strategy & Advisory"
-);
-
 export const APPLIED_AI_ADVISORY_SECTIONS = {
   hero: {
     title: "AI Strategy & Advisory for |product-led teams|",
@@ -38,7 +29,10 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
       "We assess where AI creates measurable impact in your product and operations, map integration and data constraints, and define pilot boundaries your engineering team can execute. Strategy outputs include documented roadmaps, risk registers, and success criteria—not generic recommendations without ownership.",
     primaryCta: { label: "View advisory modules", href: "#advisory-modules" },
     secondaryCta: { label: "Applied AI Engineering", href: "/services/artificial-intelligence" },
-    media: advisoryIntroMedia,
+    media: {
+      src: "/media/subservices/applied-ai-advisory.jpg",
+      alt: "Product leader reviewing AI strategy and advisory deliverables with an engineer",
+    },
   },
   serviceBlocks: {
     id: "advisory-modules",
@@ -135,7 +129,10 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
         icon: "devops",
       },
     ],
-    media: advisoryCapabilityMedia,
+    media: {
+      src: "/media/home/what-we-deliver.png",
+      alt: "Advisory workshop reviewing AI roadmap and pilot scope",
+    },
   },
   methodology: {
     id: "applied-ai-advisory-methodology",

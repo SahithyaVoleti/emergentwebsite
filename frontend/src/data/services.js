@@ -1,11 +1,11 @@
 import { Brain, BarChart3, Cloud, Code, Sparkles } from "lucide-react";
-import { getPillarHeroImage } from "./serviceImages";
+import { SERVICES_HERO_IMAGES as heroImages } from "../lib/heroImageThemes";
 import { SERVICE_CATALOG } from "./serviceCatalog";
 
 const SERVICE_META = {
   "artificial-intelligence": {
     icon: Brain,
-    heroImage: getPillarHeroImage("artificial-intelligence"),
+    heroImage: heroImages[0],
     heroTitle: "Applied AI Engineering",
     heroDesc:
       "Retrieval systems, language-model capabilities, and intelligent application features integrated into products already in market—scoped for governed pilots with measurable acceptance criteria.",
@@ -37,7 +37,7 @@ const SERVICE_META = {
   },
   "data-engineering": {
     icon: BarChart3,
-    heroImage: getPillarHeroImage("data-engineering"),
+    heroImage: heroImages[7],
     heroTitle: "Enterprise Data Engineering",
     heroDesc:
       "Analytics platforms, enterprise repositories, labeling workflows, and streaming pipelines that keep AI and decision systems supplied with trusted data.",
@@ -69,7 +69,7 @@ const SERVICE_META = {
   },
   "generative-ai": {
     icon: Sparkles,
-    heroImage: getPillarHeroImage("generative-ai"),
+    heroImage: heroImages[1],
     heroTitle: "Generative AI Solutions",
     heroDesc:
       "Agents, copilots, conversational experiences, and generative capabilities embedded in enterprise workflows—with governance built in from the start.",
@@ -101,7 +101,7 @@ const SERVICE_META = {
   },
   devops: {
     icon: Cloud,
-    heroImage: getPillarHeroImage("devops"),
+    heroImage: heroImages[6],
     heroTitle: "Platform Reliability & DevOps",
     heroDesc:
       "Delivery automation, reliability engineering, intelligent operations, and model observability for AI workloads and enterprise applications.",
@@ -133,7 +133,7 @@ const SERVICE_META = {
   },
   "development-services": {
     icon: Code,
-    heroImage: getPillarHeroImage("development-services"),
+    heroImage: heroImages[6],
     heroTitle: "Software Product Engineering",
     heroDesc:
       "Mobile, custom software, embedded engineering teams, product development, and API platforms delivered with defined acceptance criteria.",

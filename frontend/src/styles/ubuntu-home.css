@@ -1912,7 +1912,7 @@
   margin: 0.65rem 0 0;
   font-size: 0.875rem;
   line-height: 1.55;
-  color: #444;
+  color: var(--site-text-muted);
 }
 
 .ubuntu-site .ubuntu-solutions-carousel__cta {
@@ -5373,143 +5373,275 @@
 }
 
 /* ──────────────────────────────────────────────────────────────
-   Featured portfolio case study — screenshot + overlapping card
+   Portfolio case studies — catalog-style split band (dark surface)
    ────────────────────────────────────────────────────────────── */
-.ubuntu-site .portfolio-feature {
-  position: relative;
+.ubuntu-site .portfolio-spotlight {
+  background: var(--site-bg) !important;
+}
+
+.ubuntu-site .portfolio-spotlight .ubuntu-lead {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .portfolio-spotlight__media-wrap {
+  line-height: 0;
+  background: transparent;
+}
+
+.ubuntu-site .portfolio-spotlight__frame {
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 28px 70px -24px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.ubuntu-site .portfolio-spotlight__frame--carousel {
   display: flex;
   flex-direction: column;
 }
 
-.ubuntu-site .portfolio-feature__media {
+.ubuntu-site .portfolio-spotlight__slide {
   position: relative;
-  z-index: 1;
+  width: 100%;
   overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid var(--site-border);
-  box-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.6);
+  background: #fff;
 }
 
-.ubuntu-site .portfolio-feature__media img {
+.ubuntu-site .portfolio-spotlight__slide-label {
+  position: absolute;
+  left: 0.875rem;
+  bottom: 0.875rem;
+  z-index: 1;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 0, 0, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel > div {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel > div > .flex {
+  margin-left: 0 !important;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel [role="group"] {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  padding-left: 0 !important;
+  box-sizing: border-box;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel-content {
+  height: 100%;
+}
+
+.ubuntu-site .portfolio-spotlight__carousel-item {
+  min-width: 0;
+  height: 100%;
+}
+
+.ubuntu-site .portfolio-spotlight__frame--carousel .portfolio-spotlight__slide,
+.ubuntu-site .portfolio-spotlight__frame--carousel .portfolio-spotlight__image {
+  height: 100%;
+}
+
+.ubuntu-site .portfolio-spotlight__image {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: top center;
 }
 
-.ubuntu-site .portfolio-feature__card {
-  position: relative;
-  z-index: 2;
-  width: calc(100% - 2rem);
-  max-width: 34rem;
-  margin: -2.5rem auto 0;
-  padding: 1.75rem;
-  background: #1b1b1b;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  box-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.65);
+.ubuntu-site .portfolio-spotlight__detail {
+  margin-top: 1.5rem;
 }
 
-.ubuntu-site .portfolio-feature__badge {
-  display: inline-block;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--site-highlight);
-  border-radius: 4px;
-}
-
-.ubuntu-site .portfolio-feature__title {
-  margin: 1rem 0 0;
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-  font-weight: 600;
-  line-height: 1.2;
-  color: #fff;
-}
-
-.ubuntu-site .portfolio-feature__desc {
-  margin: 0.9rem 0 0;
-  font-size: 0.95rem;
+.ubuntu-site .portfolio-spotlight__text {
+  margin: 0.65rem 0 0;
+  font-size: 0.9375rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--site-text-muted);
   text-align: left;
   hyphens: none;
 }
 
-.ubuntu-site .portfolio-feature__metrics {
+.ubuntu-site .portfolio-spotlight__metrics {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem 1.75rem;
-  margin: 1.5rem 0 0;
+  gap: 1.25rem 2rem;
+  margin: 1.1rem 0 0;
   padding: 0;
   list-style: none;
 }
 
-.ubuntu-site .portfolio-feature__metric {
+.ubuntu-site .portfolio-spotlight__metric {
   display: flex;
   flex-direction: column;
+  gap: 0.2rem;
 }
 
-.ubuntu-site .portfolio-feature__metric-value {
-  font-size: 1.5rem;
-  font-weight: 700;
+.ubuntu-site .portfolio-spotlight__metric-value {
+  font-size: 1.25rem;
+  font-weight: 600;
   line-height: 1;
-  color: #fff;
+  color: var(--site-text);
 }
 
-.ubuntu-site .portfolio-feature__metric-label {
-  margin-top: 0.35rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.6);
+.ubuntu-site .portfolio-spotlight__metric-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--site-text-subtle);
 }
 
-.ubuntu-site .portfolio-feature__link {
+@media (min-width: 992px) {
+  .ubuntu-site .portfolio-spotlight .ubuntu-split--structured.ubuntu-split--image-left .ubuntu-split__media {
+    align-self: stretch;
+  }
+
+  .ubuntu-site .portfolio-spotlight .ubuntu-split--structured.ubuntu-split--image-left .ubuntu-split__frame {
+    height: 100%;
+  }
+
+  .ubuntu-site .portfolio-spotlight__frame {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .ubuntu-site .portfolio-spotlight__image {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Our Work — hub sub-navigation and overview cards
+   ────────────────────────────────────────────────────────────── */
+.ubuntu-site .our-work-subnav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--site-bg);
+}
+
+.ubuntu-site .our-work-subnav--band {
+  position: sticky;
+  top: var(--site-header-height, 4rem);
+  z-index: 20;
+}
+
+.ubuntu-site .our-work-subnav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0.875rem var(--site-container-padding, 1.25rem);
+  list-style: none;
+  max-width: var(--site-container-max);
+  margin-inline: auto;
+}
+
+.ubuntu-site .our-work-subnav__link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-top: 1.6rem;
-  font-size: 0.9rem;
+  padding: 0.35rem 0;
+  font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--site-highlight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: color 0.15s ease;
+  color: var(--site-text-subtle);
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.ubuntu-site .portfolio-feature__link:hover {
-  color: var(--site-highlight-hover);
+.ubuntu-site .our-work-subnav__link:hover {
+  color: var(--site-text);
 }
 
-@media (min-width: 1024px) {
-  .ubuntu-site .portfolio-feature {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    align-items: center;
-    min-height: 26rem;
-  }
+.ubuntu-site .our-work-subnav__link--active {
+  color: var(--site-text);
+  border-bottom-color: var(--site-accent, #d1511f);
+}
 
-  .ubuntu-site .portfolio-feature__media {
-    grid-column: 4 / -1;
-    grid-row: 1;
-  }
+.ubuntu-site .our-work-hub__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
 
-  .ubuntu-site .portfolio-feature__card {
-    grid-column: 1 / 6;
-    grid-row: 1;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 2.25rem 2.5rem;
+@media (min-width: 768px) {
+  .ubuntu-site .our-work-hub__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
 
-  .ubuntu-site .portfolio-feature--media-left .portfolio-feature__media {
-    grid-column: 1 / 10;
-  }
+.ubuntu-site .our-work-hub__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--site-bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
 
-  .ubuntu-site .portfolio-feature--media-left .portfolio-feature__card {
-    grid-column: 8 / -1;
-  }
+.ubuntu-site .our-work-hub__card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.ubuntu-site .our-work-hub__eyebrow {
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--site-text-subtle);
+}
+
+.ubuntu-site .our-work-hub__title {
+  margin: 0;
+  font-family: var(--site-heading-font);
+  font-size: 1.25rem;
+  font-weight: var(--site-heading-weight);
+  color: var(--site-text);
+}
+
+.ubuntu-site .our-work-hub__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--site-text-muted);
+  flex: 1 1 auto;
+}
+
+.ubuntu-site .our-work-hub__cta {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--site-accent, #d1511f);
 }

@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { SERVICE_PILLARS } from "./servicePillars";
-import solutions from "./solutions";
 import industries from "./industries";
 import {
   buildServicesNavGroups,
@@ -14,7 +13,6 @@ import {
   LEGAL_LINKS,
 } from "./siteNav";
 
-const solutionSlugs = new Set(solutions.map((s) => s.slug));
 const industrySlugs = new Set(industries.map((i) => i.slug));
 
 function collectHrefs(items) {
@@ -26,31 +24,33 @@ function collectHrefs(items) {
 }
 
 describe("siteNav", () => {
-  it("maps service nav links to valid main service routes", () => {
+  it("maps service nav links to valid subservice routes", () => {
     for (const { href } of SERVICES_NAV) {
-      expect(href).toMatch(/^\/services\/[a-z0-9-]+#[a-z0-9-]+$/);
+      expect(href).toMatch(/^\/services\/[a-z0-9-]+$/);
     }
   });
 
-  it("orders services by four pillars in nav groups", () => {
+  it("orders services by five pillars in nav groups", () => {
     const groups = buildServicesNavGroups();
     expect(groups.map((group) => group.pillar)).toEqual([
-      "Enterprise Generative AI",
-      "Machine Intelligence",
-      "Data Platform Engineering",
-      "Cloud Platform Engineering",
+      "Applied AI Engineering",
+      "Enterprise Data Engineering",
+      "Generative AI Solutions",
+      "Platform Reliability & DevOps",
+      "Software Product Engineering",
     ]);
     expect(groups[0].items.map((item) => item.label)).toEqual([
-      "Enterprise AI Copilots",
-      "Enterprise Knowledge Intelligence",
-      "Intelligent Document Processing",
-      "Agentic Workflow Automation",
-      "AI Prompt Systems Engineering",
-      "Generative AI Assurance",
+      "AI Strategy & Advisory",
+      "Retrieval-Augmented System Engineering",
+      "Large Language Model Engineering",
+      "Intelligent Application Development",
+      "AI-Enabled Software Engineering",
+      "Enterprise AI Integration",
     ]);
-    expect(groups[1].items).toHaveLength(6);
-    expect(groups[2].items).toHaveLength(4);
-    expect(groups[3].items).toHaveLength(6);
+    expect(groups[1].items).toHaveLength(3);
+    expect(groups[2].items).toHaveLength(7);
+    expect(groups[3].items).toHaveLength(5);
+    expect(groups[4].items).toHaveLength(5);
   });
 
   it("groups subservices by pillar with professional titles", () => {
@@ -59,8 +59,8 @@ describe("siteNav", () => {
     expect(new Set(groupedHrefs).size).toBe(groupedHrefs.length);
     for (const group of SERVICES_NAV_GROUPS) {
       expect(group.pillar).toBeTruthy();
-      expect(group.items.length).toBeGreaterThanOrEqual(4);
-      expect(group.items.length).toBeLessThanOrEqual(6);
+      expect(group.items.length).toBeGreaterThanOrEqual(3);
+      expect(group.items.length).toBeLessThanOrEqual(7);
       for (const item of group.items) {
         expect(item.label).toBeTruthy();
         expect(item.label).not.toBe(group.pillar);
@@ -85,12 +85,11 @@ describe("siteNav", () => {
     }
   });
 
-  it("maps portfolio nav links to valid solution slugs or known hubs", () => {
-    for (const { href } of PORTFOLIO_NAV) {
-      if (href === "/solutions") continue;
-      const slug = href.replace("/solutions/", "");
-      expect(solutionSlugs.has(slug)).toBe(true);
-    }
+  it("maps our work nav links to known hub routes", () => {
+    const hrefs = PORTFOLIO_NAV.map((item) => item.href);
+    expect(hrefs).toContain("/our-work");
+    expect(hrefs).toContain("/our-work/products");
+    expect(hrefs).toContain("/our-work/case-studies");
   });
 
   it("includes governance and security in company nav", () => {
@@ -109,7 +108,7 @@ describe("siteNav", () => {
   it("footer includes primary offering hub links", () => {
     const hrefs = collectHrefs(FOOTER_COLUMNS);
     expect(hrefs).toContain("/services");
-    expect(hrefs).toContain("/solutions");
+    expect(hrefs).toContain("/our-work");
     expect(hrefs).toContain("/industries");
     expect(hrefs).toContain("/research-innovation");
   });
@@ -127,7 +126,9 @@ describe("siteNav", () => {
       "/security",
       "/blog",
       "/services",
-      "/solutions",
+      "/our-work",
+      "/our-work/products",
+      "/our-work/case-studies",
       "/industries",
       "/research-innovation",
       "/privacy-policy",
@@ -149,8 +150,11 @@ describe("siteNav", () => {
         expect(href.replace(/#.*$/, "").match(/^\/services\/[a-z0-9-]+$/)).toBeTruthy();
         continue;
       }
+      if (href.startsWith("/our-work")) {
+        expect(href.match(/^\/our-work(\/[a-z-]+)?$/)).toBeTruthy();
+        continue;
+      }
       if (href.startsWith("/solutions/")) {
-        expect(solutionSlugs.has(href.replace("/solutions/", ""))).toBe(true);
         continue;
       }
       if (href.startsWith("/industries/")) {

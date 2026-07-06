@@ -15,6 +15,9 @@ const lastmod = new Date().toISOString().slice(0, 10);
 const staticRoutes = [
   "/",
   "/services",
+  "/our-work",
+  "/our-work/products",
+  "/our-work/case-studies",
   "/solutions",
   "/industries",
   "/about",
@@ -38,6 +41,7 @@ const serviceSlugs = loadSlugs(path.join(dataDir, "services.js"));
 const solutionSlugs = loadSlugs(path.join(dataDir, "solutions.js"));
 const industrySlugs = loadSlugs(path.join(dataDir, "industries.js"));
 const caseStudySlugs = loadSlugs(path.join(dataDir, "caseStudies.js"));
+const clientCaseStudySlugs = loadSlugs(path.join(dataDir, "clientCaseStudies.js"));
 const blogSlugs = loadSlugs(path.join(dataDir, "blog.js"));
 
 const urls = [
@@ -46,6 +50,7 @@ const urls = [
   ...solutionSlugs.map((s) => `/solutions/${s}`),
   ...industrySlugs.map((s) => `/industries/${s}`),
   ...caseStudySlugs.map((s) => `/case-studies/${s}`),
+  ...clientCaseStudySlugs.map((s) => `/our-work/case-studies/${s}`),
   ...blogSlugs.map((s) => `/blog/${s}`),
 ];
 

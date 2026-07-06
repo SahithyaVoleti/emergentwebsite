@@ -20,8 +20,8 @@ export default function NotFoundPage() {
             <Link to="/services" className="text-sm font-medium text-[#5c5c5c] hover:underline">
               Services
             </Link>
-            <Link to="/solutions" className="text-sm font-medium text-[#5c5c5c] hover:underline">
-              Platforms
+            <Link to="/our-work" className="text-sm font-medium text-[#5c5c5c] hover:underline">
+              Our Work
             </Link>
             <Link to="/#page-contact" className="text-sm font-medium text-[#5c5c5c] hover:underline">
               Contact

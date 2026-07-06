@@ -3,13 +3,12 @@
  * applied AI, data, generative AI, DevOps, and product engineering offerings.
  */
 import { getSubserviceCardImage } from "./serviceSubserviceImages";
-import { getPillarCardImage } from "./serviceImages";
 
 export const SERVICE_CATALOG = [
   {
     id: "artificial-intelligence",
     label: "Applied AI Engineering",
-    cardImage: getPillarCardImage("artificial-intelligence"),
+    cardImage: "/media/service-model-fine-tuning-ml.png",
     tagline: "Strategy, models, and intelligent software integrated into enterprise systems.",
     shortDesc:
       "Applied AI programs spanning advisory, retrieval systems, language-model engineering, intelligent applications, and enterprise integration—with measurable delivery gates.",
@@ -55,7 +54,7 @@ export const SERVICE_CATALOG = [
   {
     id: "data-engineering",
     label: "Enterprise Data Engineering",
-    cardImage: getPillarCardImage("data-engineering"),
+    cardImage: "/media/service-data-engineering.png",
     tagline: "Analytics platforms, repositories, and training data pipelines.",
     shortDesc:
       "Engineer governed data platforms for analytics, warehousing, and labeling workflows that AI and decision systems depend on.",
@@ -83,7 +82,7 @@ export const SERVICE_CATALOG = [
   {
     id: "generative-ai",
     label: "Generative AI Solutions",
-    cardImage: getPillarCardImage("generative-ai"),
+    cardImage: "/media/service-ai-product-transformation.png",
     tagline: "Agents, copilots, and generative capabilities for enterprise workflows.",
     shortDesc:
       "Deliver generative AI capabilities—autonomous agents, conversational experiences, model adaptation, foundation-model integration, adaptive systems, and copilots—with enterprise controls.",
@@ -135,7 +134,7 @@ export const SERVICE_CATALOG = [
   {
     id: "devops",
     label: "Platform Reliability & DevOps",
-    cardImage: getPillarCardImage("devops"),
+    cardImage: "/media/service-cloud-infrastructure.png",
     tagline: "Delivery automation, reliability engineering, and model observability.",
     shortDesc:
       "Establish CI/CD, platform automation, reliability engineering, and observability—including model performance monitoring—for AI and enterprise workloads.",
@@ -175,7 +174,7 @@ export const SERVICE_CATALOG = [
   {
     id: "development-services",
     label: "Software Product Engineering",
-    cardImage: getPillarCardImage("development-services"),
+    cardImage: "/media/service-cloud-infrastructure.png",
     tagline: "Mobile, software, product, and API engineering for enterprise delivery.",
     shortDesc:
       "Engineering services for mobile applications, custom software, embedded teams, product development, and API platforms—with defined acceptance criteria and handover.",

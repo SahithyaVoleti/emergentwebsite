@@ -1,9 +1,11 @@
 import services from "../data/services";
 import { getPillarById } from "../data/servicePillars";
+import { findSubserviceById } from "../data/serviceCatalog";
 import solutions from "../data/solutions";
 import industries from "../data/industries";
 import blogArticles from "../data/blog";
 import caseStudies from "../data/caseStudies";
+import { getClientCaseStudyBySlug } from "../data/clientCaseStudies";
 import { getSolutionNavLabel } from "./solutionDisplay";
 import { DEFAULT_META_DESCRIPTION, DEFAULT_PAGE_TITLE } from "./company";
 
@@ -22,10 +24,25 @@ export const STATIC_PAGE_META = {
     description:
       "Meet the senior practitioners at NeuralTrix AI responsible for scoped delivery and accountable outcomes.",
   },
-  "/solutions": {
-    title: `Portfolio | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+  "/our-work": {
+    title: `Our Work | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
-      "Explore NeuralTrix AI agentic solutions for transaction security, public inquiry resolution, research, clinical documentation, travel operations, legal research, and financial analysis.",
+      "Explore NeuralTrix AI platform products and client case studies documenting measured outcomes across education, healthcare, and enterprise operations.",
+  },
+  "/our-work/products": {
+    title: `Products | Our Work | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    description:
+      "Production-ready platform products for admissions, workforce monitoring, proctoring, institution management, recruitment, hospital operations, and IVR outreach.",
+  },
+  "/our-work/case-studies": {
+    title: `Case Studies | Our Work | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    description:
+      "Client delivery case studies documenting how platform products resolved operational challenges with measured outcomes.",
+  },
+  "/solutions": {
+    title: `Products | Our Work | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    description:
+      "Production-ready platform products for admissions, workforce monitoring, proctoring, institution management, recruitment, hospital operations, and IVR outreach.",
   },
   "/industries": {
     title: `Industries | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
@@ -33,9 +50,9 @@ export const STATIC_PAGE_META = {
       "Industry-specific AI engineering for commerce, healthcare, finance, education, manufacturing, sports, and property technology.",
   },
   "/case-studies": {
-    title: `Production Test Cases | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
+    title: `Case Studies | Our Work | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
     description:
-      "Production test cases catalog — now on Research & Innovation.",
+      "Client delivery case studies documenting how platform products resolved operational challenges with measured outcomes.",
   },
   "/research-innovation": {
     title: `Research & Innovation | ${DEFAULT_PAGE_TITLE.split(" | ")[0]}`,
@@ -94,6 +111,14 @@ function matchDynamicMeta(pathname) {
       };
     }
 
+    const subserviceMatch = findSubserviceById(slug);
+    if (subserviceMatch) {
+      return {
+        title: `${subserviceMatch.subservice.title} | Services | NeuralTrix AI`,
+        description: subserviceMatch.subservice.desc || DEFAULT_META_DESCRIPTION,
+      };
+    }
+
     const service = services.find((item) => item.slug === slug);
     if (service) {
       return {
@@ -108,7 +133,7 @@ function matchDynamicMeta(pathname) {
     const solution = solutions.find((item) => item.slug === solutionMatch[1]);
     if (solution) {
       return {
-        title: `${getSolutionNavLabel(solution)} | Portfolio | NeuralTrix AI`,
+        title: `${getSolutionNavLabel(solution)} | Our Work | NeuralTrix AI`,
         description: solution.shortDesc || solution.heroDesc || DEFAULT_META_DESCRIPTION,
       };
     }
@@ -121,6 +146,17 @@ function matchDynamicMeta(pathname) {
       return {
         title: `${industry.title} | Industries | NeuralTrix AI`,
         description: industry.shortDesc || industry.heroDesc || DEFAULT_META_DESCRIPTION,
+      };
+    }
+  }
+
+  const clientCaseStudyMatch = pathname.match(/^\/our-work\/case-studies\/([^/]+)$/);
+  if (clientCaseStudyMatch) {
+    const study = getClientCaseStudyBySlug(clientCaseStudyMatch[1]);
+    if (study) {
+      return {
+        title: `${study.title} | Case Studies | NeuralTrix AI`,
+        description: study.description || study.heroDesc || DEFAULT_META_DESCRIPTION,
       };
     }
   }

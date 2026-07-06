@@ -3,9 +3,8 @@
  */
 import { SERVICE_CATALOG } from "./serviceCatalog";
 import { SERVICE_PILLARS } from "./servicePillars";
-import solutions from "./solutions";
 import industries from "./industries";
-import { getSolutionNavLabel } from "../lib/solutionDisplay";
+import { OUR_WORK_NAV } from "./ourWorkNav";
 import { env } from "../lib/env";
 
 export const TOP_NAV = {
@@ -16,9 +15,9 @@ export const TOP_NAV = {
     dropdownVariant: "pillar",
   },
   portfolio: {
-    label: "Portfolio",
-    basePath: "/solutions",
-    testId: "portfolio",
+    label: "Our Work",
+    basePath: "/our-work",
+    testId: "our-work",
   },
   industries: {
     label: "Industries",
@@ -45,7 +44,7 @@ export function buildServicesNavGroups() {
     pillar: pillar.label,
     items: pillar.subservices.map((sub) => ({
       label: sub.title,
-      href: `/services/${pillar.id}#${sub.id}`,
+      href: `/services/${sub.id}`,
     })),
   }));
 }
@@ -70,14 +69,8 @@ export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
 /** Flat service links — used for active-state checks and tests. */
 export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
-/** Agentic solutions portfolio */
-export const PORTFOLIO_NAV = [
-  { label: "Portfolio overview", href: "/solutions" },
-  ...solutions.map((solution) => ({
-    label: getSolutionNavLabel(solution),
-    href: `/solutions/${solution.slug}`,
-  })),
-];
+/** Our Work — products and client case studies */
+export const PORTFOLIO_NAV = OUR_WORK_NAV.map(({ label, href }) => ({ label, href }));
 
 /** Company pages */
 export const COMPANY_NAV = [
@@ -110,7 +103,7 @@ export const FOOTER_COLUMNS = [
     title: "Offerings",
     links: [
       { label: "Services", href: "/services" },
-      { label: "Portfolio", href: "/solutions" },
+      { label: "Our Work", href: "/our-work" },
       { label: "Industries", href: "/industries" },
     ],
   },
@@ -167,7 +160,7 @@ export function isPathActive(pathname, href) {
 }
 
 function isExactHubPath(basePath) {
-  return basePath === "/industries" || basePath === "/services" || basePath === "/solutions";
+  return basePath === "/industries" || basePath === "/services" || basePath === "/solutions" || basePath === "/our-work";
 }
 
 export function isNavSectionActive(pathname, basePath, links = []) {
@@ -183,7 +176,8 @@ export function isNavSectionActive(pathname, basePath, links = []) {
 /** Secondary CTA labels for PageStandardSections by page key */
 export const SECONDARY_CTA_BY_PAGE = {
   services: { label: "View services", href: "/services" },
-  solutions: { label: "View portfolio", href: "/solutions" },
+  solutions: { label: "View products", href: "/our-work/products" },
+  ourWork: { label: "View case studies", href: "/our-work/case-studies" },
   industries: { label: "View industries", href: "/industries" },
   about: { label: "Open positions", href: "/about#careers" },
   team: { label: "View company", href: "/about" },
@@ -192,7 +186,7 @@ export const SECONDARY_CTA_BY_PAGE = {
   caseStudies: { label: "View services", href: "/services" },
   detail: { label: "View services", href: "/services" },
   legal: { label: "Contact us", href: "#page-contact" },
-  security: { label: "View portfolio", href: "/solutions" },
+  security: { label: "View products", href: "/our-work/products" },
   testimonials: { label: "View company", href: "/about" },
   partners: { label: "View company", href: "/about" },
   research: { label: "View test cases", href: "#test-cases" },

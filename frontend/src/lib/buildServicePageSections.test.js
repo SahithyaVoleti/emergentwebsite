@@ -30,12 +30,13 @@ describe("buildServicePageSections", () => {
         const sections = buildSubservicePageSections(pillar, subservice, service);
 
         expect(sections.hero.title).toContain(subservice.title);
-        if (!sections.offerings?.hide) {
-          expect(sections.offerings.capabilityItems?.length).toBe(subservice.items.length);
-        }
-        expect(sections.relatedOfferings).toBeTruthy();
+        expect(sections.serviceBlocks?.modules?.length).toBe(8);
         expect(sections.techStack.techNames.length).toBeGreaterThan(0);
         expect(sections.faqs.length).toBeGreaterThanOrEqual(4);
+        expect(sections.offerings.hide).toBe(true);
+        expect(sections.relatedOfferings.hide).toBe(true);
+        expect(sections.engagement.hide).toBe(true);
+        expect(sections.blog.hide).toBe(true);
       }
     }
   });

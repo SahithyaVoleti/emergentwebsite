@@ -32,7 +32,7 @@ export const HOME_HERO = {
     { icon: "box", label: "Sustainable architecture" },
   ],
   title: "AI product transformation and AI-native SaaS engineering",
-  secondaryCta: { label: "View agentic solutions", href: "/solutions" },
+  secondaryCta: { label: "View our work", href: "/our-work" },
 };
 
 export const HOME_STARTUP_STATS = [
@@ -107,8 +107,8 @@ export const HOME_BLOG = {
 export const HOME_SERVICES_GRID = {
   id: "services-grid",
   eyebrow: "Services",
-  title: "Four core |enterprise AI| disciplines",
-  lead: "Generative AI, machine intelligence, data platform engineering, and cloud platform engineering—each with defined subservices you can scope independently.",
+  title: "Five core |enterprise AI| disciplines",
+  lead: "Applied AI engineering, enterprise data engineering, generative AI solutions, platform reliability, and software product engineering—each with defined subservices you can scope independently.",
   viewAllHref: "/services",
   viewAllLabel: "View all services",
 };
@@ -239,10 +239,10 @@ export const HOME_BLOGS_BAND = {
 
 export const HOME_VISION_CTA_2 = {
   id: "vision-cta-2",
-  eyebrow: "Portfolio",
+  eyebrow: "Our Work",
   title: "Agentic solutions for |enterprise workflows|",
   body: "Purpose-built AI agents that monitor transactions, resolve public inquiries, accelerate research, and support regulated operations—with governed integration and human oversight.",
-  primaryCta: { label: "View portfolio", href: "/solutions" },
+  primaryCta: { label: "View products", href: "/our-work/products" },
   secondaryCta: { label: "Contact us", href: "/#page-contact" },
   mockupKey: "code",
 };
@@ -273,10 +273,10 @@ export const HOME_PHILOSOPHY = {
 
 export const HOME_SOLUTIONS_SLIDER = {
   id: "solutions-slider",
-  eyebrow: "Portfolio",
+  eyebrow: "Our Work",
   title: "Agentic solutions for |enterprise workflows|",
   lead: "Production-ready AI agents for transaction security, public services, research, clinical documentation, travel operations, legal research, financial analysis, education, real estate, and agriculture.",
-  viewAllHref: "/solutions",
+  viewAllHref: "/our-work/products",
   viewAllLabel: "View all agents",
 };
 
@@ -335,7 +335,7 @@ export const HOME_NEXT_STEP = {
   title: "Next Step for your |AI product program|",
   lead: "Share your product landscape, model requirements, or SaaS concept. We will outline transformation scope, fine-tuning approach, and delivery milestones.",
   primaryCta: { label: "Request consultation", href: "/#page-contact", contactIntent: "consultation" },
-  secondaryCta: { label: "View portfolio", href: "/solutions" },
+  secondaryCta: { label: "View our work", href: "/our-work" },
 };
 
 /** Homepage FAQs — placed before the contact section. */

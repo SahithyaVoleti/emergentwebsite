@@ -9,8 +9,8 @@ export default function ServicesPage() {
   return (
     <SitePageMain>
       <PageHero
-        title="Enterprise generative AI, machine intelligence, data platforms, and |cloud engineering|"
-        description="Four enterprise AI disciplines—each with defined subservices, delivery scope, and integration model."
+        title="Applied AI, data platforms, generative AI, platform reliability, and |software engineering|"
+        description="Five enterprise disciplines—each with defined subservices, delivery scope, and integration model."
         primaryCTA={{ text: "Browse disciplines", href: "#services-catalog" }}
         image={LISTING_PAGE_HERO_IMAGES.services}
       />

@@ -2,6 +2,15 @@ import { describe, expect, it } from "vitest";
 import { SERVICE_CATALOG } from "./serviceCatalog";
 import { SERVICE_PILLARS, groupServicesByPillar, getPillarGroup } from "./servicePillars";
 
+/** Subservice counts aligned to the reference service catalog layout. */
+const EXPECTED_SUBSERVICE_COUNTS = {
+  "artificial-intelligence": 6,
+  "data-engineering": 3,
+  "generative-ai": 7,
+  devops: 5,
+  "development-services": 5,
+};
+
 describe("servicePillars", () => {
   it("groups every subservice under a main service pillar", () => {
     const groups = groupServicesByPillar();
@@ -15,64 +24,74 @@ describe("servicePillars", () => {
     expect(subserviceCount).toBe(catalogCount);
   });
 
-  it("keeps four to six subservices per main service", () => {
+  it("matches reference subservice counts per main service", () => {
     for (const pillar of SERVICE_CATALOG) {
-      expect(pillar.subservices.length).toBeGreaterThanOrEqual(4);
-      expect(pillar.subservices.length).toBeLessThanOrEqual(6);
+      expect(pillar.subservices.length).toBe(EXPECTED_SUBSERVICE_COUNTS[pillar.id]);
     }
   });
 
   it("exposes dedicated pages for main services in nav", () => {
     const groups = groupServicesByPillar();
     expect(groups.map((group) => group.href)).toEqual([
-      "/services/generative-ai",
-      "/services/machine-learning",
+      "/services/artificial-intelligence",
       "/services/data-engineering",
-      "/services/cloud-infrastructure",
+      "/services/generative-ai",
+      "/services/devops",
+      "/services/development-services",
     ]);
   });
 
   it("isolates subservices per main service page", () => {
-    const generativeAi = getPillarGroup("generative-ai");
-    const machineLearning = getPillarGroup("machine-learning");
+    const appliedAi = getPillarGroup("artificial-intelligence");
     const dataEngineering = getPillarGroup("data-engineering");
-    const cloudInfrastructure = getPillarGroup("cloud-infrastructure");
+    const generativeAi = getPillarGroup("generative-ai");
+    const devops = getPillarGroup("devops");
+    const developmentServices = getPillarGroup("development-services");
 
-    expect(generativeAi.subservices.map((line) => line.key)).toEqual([
-      "enterprise-copilots",
-      "retrieval-augmented-generation",
-      "intelligent-document-processing",
-      "agent-orchestration",
-      "prompt-engineering",
-      "generative-ai-governance",
-    ]);
-    expect(machineLearning.subservices.map((line) => line.key)).toEqual([
-      "predictive-analytics",
-      "natural-language-processing",
-      "computer-vision",
-      "model-fine-tuning",
-      "mlops",
-      "llm-engineering",
+    expect(appliedAi.subservices.map((line) => line.key)).toEqual([
+      "applied-ai-advisory",
+      "context-retrieval-systems",
+      "language-model-engineering",
+      "intelligent-application-delivery",
+      "ai-enabled-software-delivery",
+      "enterprise-ai-integration",
     ]);
     expect(dataEngineering.subservices.map((line) => line.key)).toEqual([
-      "data-pipeline-engineering",
-      "data-warehouse-lakehouse",
-      "real-time-streaming",
-      "data-governance",
+      "decision-analytics-engineering",
+      "enterprise-data-repository-design",
+      "training-data-preparation",
     ]);
-    expect(cloudInfrastructure.subservices.map((line) => line.key)).toEqual([
-      "cloud-platform-engineering",
-      "cicd-release-automation",
-      "kubernetes-operations",
-      "infrastructure-as-code",
-      "observability-sre",
-      "application-modernization",
+    expect(generativeAi.subservices.map((line) => line.key)).toEqual([
+      "autonomous-agent-engineering",
+      "conversational-experience-engineering",
+      "model-adaptation-alignment",
+      "foundation-model-integration",
+      "generative-capability-integration",
+      "adaptive-intelligence-systems",
+      "role-based-copilot-engineering",
+    ]);
+    expect(devops.subservices.map((line) => line.key)).toEqual([
+      "intelligent-operations-automation",
+      "delivery-pipeline-advisory",
+      "continuous-delivery-engineering",
+      "reliability-resilience-engineering",
+      "model-performance-observability",
+    ]);
+    expect(developmentServices.subservices.map((line) => line.key)).toEqual([
+      "mobile-engineering",
+      "custom-software-engineering",
+      "embedded-engineering-teams",
+      "end-to-end-product-development",
+      "api-platform-engineering",
     ]);
   });
 
   it("resolves legacy pillar URLs to the current layout", () => {
     expect(getPillarGroup("ai-product-transformation")?.id).toBe("generative-ai");
-    expect(getPillarGroup("model-fine-tuning-ml")?.id).toBe("machine-learning");
-    expect(getPillarGroup("saas-platform-engineering")?.id).toBe("cloud-infrastructure");
+    expect(getPillarGroup("model-fine-tuning-ml")?.id).toBe("artificial-intelligence");
+    expect(getPillarGroup("saas-platform-engineering")?.id).toBe("devops");
+    expect(getPillarGroup("machine-learning")?.id).toBe("artificial-intelligence");
+    expect(getPillarGroup("cloud-infrastructure")?.id).toBe("devops");
+    expect(getPillarGroup("application-engineering")?.id).toBe("development-services");
   });
 });

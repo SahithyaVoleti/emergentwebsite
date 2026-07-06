@@ -10,6 +10,10 @@ import UbuntuPageShell from "@/components/ubuntu/UbuntuPageShell";
 const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const ServiceRoute = lazy(() => import("@/pages/ServiceRoute"));
 const SolutionsPage = lazy(() => import("@/pages/SolutionsPage"));
+const OurWorkPage = lazy(() => import("@/pages/OurWorkPage"));
+const ProductsPage = lazy(() => import("@/pages/ProductsPage"));
+const ClientCaseStudiesPage = lazy(() => import("@/pages/ClientCaseStudiesPage"));
+const ClientCaseStudyDetail = lazy(() => import("@/pages/ClientCaseStudyDetail"));
 const SolutionDetail = lazy(() => import("@/pages/SolutionDetail"));
 const CaseStudiesPage = lazy(() => import("@/pages/CaseStudiesPage"));
 const CaseStudyDetail = lazy(() => import("@/pages/CaseStudyDetail"));
@@ -61,6 +65,46 @@ function App() {
               <PublicLayout>
                 <LazyPage>
                   <ServiceRoute />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/our-work"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <OurWorkPage />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/our-work/products"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <ProductsPage />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/our-work/case-studies"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <ClientCaseStudiesPage />
+                </LazyPage>
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/our-work/case-studies/:slug"
+            element={
+              <PublicLayout>
+                <LazyPage>
+                  <ClientCaseStudyDetail />
                 </LazyPage>
               </PublicLayout>
             }

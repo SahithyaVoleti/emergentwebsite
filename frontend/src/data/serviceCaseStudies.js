@@ -2,36 +2,7 @@
  * Production validation cases linked to each main service discipline.
  */
 const serviceCaseStudies = {
-  "generative-ai": [
-    {
-      title: "Educator platform transformation — education",
-      archetype: "LMS and district tools",
-      industry: "Education",
-      desc: "Lesson planning and assessment copilots inside educator tools—with FERPA-aligned controls and teacher review.",
-      tech: ["GPT-4o", "LangChain", "React", "PostgreSQL"],
-      highlight: "Live classroom pilot",
-      caseStudySlug: "smart-teaching-platform",
-    },
-    {
-      title: "Public inquiry product — government",
-      archetype: "Government portals",
-      industry: "Government",
-      desc: "Inquiry routing and policy answers inside public portals—with caseworker approval on every response.",
-      tech: ["React", "Python", "PostgreSQL", "Vector DB"],
-      highlight: "Portal sandbox tested",
-      caseStudySlug: "citizen-serve-government",
-    },
-    {
-      title: "AML investigation product — finance",
-      archetype: "Fraud operations",
-      industry: "Finance",
-      desc: "Transaction scoring, explainable alerts, and analyst queue routing—tested on live payment streams.",
-      tech: ["LangGraph", "GPT-4o", "Kafka"],
-      highlight: "Live stream tested",
-      caseStudySlug: "fraud-guard-transactions",
-    },
-  ],
-  "machine-learning": [
+  "artificial-intelligence": [
     {
       title: "Transaction monitoring product — finance",
       archetype: "Payments and AML operations",
@@ -89,7 +60,36 @@ const serviceCaseStudies = {
       caseStudySlug: "yield-plan-agriculture",
     },
   ],
-  "cloud-infrastructure": [
+  "generative-ai": [
+    {
+      title: "Educator platform transformation — education",
+      archetype: "LMS and district tools",
+      industry: "Education",
+      desc: "Lesson planning and assessment copilots inside educator tools—with FERPA-aligned controls and teacher review.",
+      tech: ["GPT-4o", "LangChain", "React", "PostgreSQL"],
+      highlight: "Live classroom pilot",
+      caseStudySlug: "smart-teaching-platform",
+    },
+    {
+      title: "Public inquiry product — government",
+      archetype: "Government portals",
+      industry: "Government",
+      desc: "Inquiry routing and policy answers inside public portals—with caseworker approval on every response.",
+      tech: ["React", "Python", "PostgreSQL", "Vector DB"],
+      highlight: "Portal sandbox tested",
+      caseStudySlug: "citizen-serve-government",
+    },
+    {
+      title: "AML investigation product — finance",
+      archetype: "Fraud operations",
+      industry: "Finance",
+      desc: "Transaction scoring, explainable alerts, and analyst queue routing—tested on live payment streams.",
+      tech: ["LangGraph", "GPT-4o", "Kafka"],
+      highlight: "Live stream tested",
+      caseStudySlug: "fraud-guard-transactions",
+    },
+  ],
+  devops: [
     {
       title: "Render pipeline operations — media",
       archetype: "Media production infrastructure",
@@ -100,6 +100,26 @@ const serviceCaseStudies = {
       caseStudySlug: "ai-video-creation",
     },
     {
+      title: "IoT ingestion operations — manufacturing",
+      archetype: "Plant telemetry platforms",
+      industry: "Manufacturing",
+      desc: "IoT ingestion, alerting, and deployment pipelines for predictive maintenance—tested on live sensor feeds.",
+      tech: ["Azure IoT", "Prometheus", "Grafana"],
+      highlight: "IoT ops tested",
+      caseStudySlug: "maint-predict-operations",
+    },
+    {
+      title: "Model observability baseline — finance",
+      archetype: "ML platform operations",
+      industry: "Finance",
+      desc: "SLO dashboards and drift alerts for scoring endpoints—validated against production-like transaction volumes.",
+      tech: ["Prometheus", "Grafana", "OpenTelemetry"],
+      highlight: "SLO baseline live",
+      caseStudySlug: "fraud-guard-transactions",
+    },
+  ],
+  "development-services": [
+    {
       title: "PropTech CRM product — real estate",
       archetype: "Brokerage CRM tools",
       industry: "Real Estate",
@@ -109,13 +129,22 @@ const serviceCaseStudies = {
       caseStudySlug: "lead-score-proptech",
     },
     {
-      title: "IoT ingestion operations — manufacturing",
-      archetype: "Plant telemetry platforms",
-      industry: "Manufacturing",
-      desc: "IoT ingestion, alerting, and deployment pipelines for predictive maintenance—tested on live sensor feeds.",
-      tech: ["Azure IoT", "Prometheus", "Grafana"],
-      highlight: "IoT ops tested",
-      caseStudySlug: "maint-predict-operations",
+      title: "Educator mobile companion — education",
+      archetype: "District mobile apps",
+      industry: "Education",
+      desc: "Parent and teacher mobile workflows synced to district systems—tested in staged rollout with offline resilience.",
+      tech: ["React Native", "Node.js", "PostgreSQL"],
+      highlight: "Staged mobile rollout",
+      caseStudySlug: "smart-teaching-platform",
+    },
+    {
+      title: "Citizen portal front end — government",
+      archetype: "Public service portals",
+      industry: "Government",
+      desc: "Accessible web portal with inquiry tracking and document upload—validated against accessibility and load criteria.",
+      tech: ["React", "Node.js", "PostgreSQL"],
+      highlight: "Accessibility validated",
+      caseStudySlug: "citizen-serve-government",
     },
   ],
 };
