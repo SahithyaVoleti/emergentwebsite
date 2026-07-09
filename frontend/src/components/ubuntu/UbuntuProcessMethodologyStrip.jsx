@@ -89,11 +89,18 @@ export default function UbuntuProcessMethodologyStrip({
             <ol className="ubuntu-process-stepper__rail">
               {steps.map((step, index) => {
                 const isActive = activeIndex === index;
+                const isComplete = index < activeIndex;
 
                 return (
                   <li
                     key={`${step.label}-${index}`}
-                    className={`ubuntu-process-stepper__step${isActive ? " is-active" : ""}`}
+                    className={[
+                      "ubuntu-process-stepper__step",
+                      isActive ? "is-active" : "",
+                      isComplete ? "is-complete" : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
                   >
                     <button
                       type="button"

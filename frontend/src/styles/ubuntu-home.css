@@ -3270,27 +3270,27 @@
   .ubuntu-site .ubuntu-process-stepper__rail {
     position: relative;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 1.25rem;
     overflow: visible;
     padding: 0;
     scroll-snap-type: none;
-    width: fit-content;
+    width: 100%;
   }
 
   .ubuntu-site .ubuntu-process-stepper__step {
     flex: none;
     min-width: 0;
-    width: auto;
+    width: 100%;
     scroll-snap-align: unset;
   }
 
   .ubuntu-site .ubuntu-process-stepper__control {
     display: grid;
-    grid-template-columns: var(--stepper-node-size) max-content;
+    grid-template-columns: var(--stepper-node-size) minmax(0, 1fr);
     column-gap: 0.875rem;
     align-items: center;
-    width: auto;
+    width: 100%;
     padding: 0.25rem 0;
     text-align: left;
     border: none;
@@ -3302,7 +3302,7 @@
     flex-shrink: 0;
     width: var(--stepper-node-size);
     height: var(--stepper-node-size);
-    justify-self: center;
+    justify-self: start;
     position: relative;
     z-index: 1;
     background: var(--site-bg);
@@ -3316,7 +3316,31 @@
     letter-spacing: 0.06em;
     text-align: left;
     white-space: nowrap;
-    color: var(--site-text-muted);
+    color: var(--site-text);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__node {
+    border-color: rgba(209, 81, 31, 0.4);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__value {
+    color: rgba(209, 81, 31, 0.55);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__label {
+    color: rgba(209, 81, 31, 0.65);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__node {
+    border-color: rgba(209, 81, 31, 0.2);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__value {
+    color: rgba(209, 81, 31, 0.3);
+  }
+
+  .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__label {
+    color: rgba(255, 255, 255, 0.45);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step.is-active .ubuntu-process-stepper__control {
