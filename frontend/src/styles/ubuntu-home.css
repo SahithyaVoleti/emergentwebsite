@@ -17,16 +17,17 @@
   --font-hero-body: "Samsung Sharp Sans", "Ubuntu", var(--font-sans);
   font-family: var(--font-hero-body);
   font-feature-settings: "kern" 1;
-  /* Grey surface theme */
-  --site-bg: #3a3a3a;
-  --site-bg-alt: #333333;
-  --site-bg-elevated: #454545;
-  --site-bg-input: #4a4a4a;
+  /* Black / white alternating band theme — defaults for chrome and dark bands */
+  --site-bg: #000000;
+  --site-bg-alt: #0a0a0a;
+  --site-bg-elevated: #141414;
+  --site-bg-input: #1a1a1a;
   --site-text: #ffffff;
   --site-text-muted: #cccccc;
   --site-text-subtle: #aaaaaa;
-  --site-highlight: #d1511f;
-  --site-highlight-hover: #e06830;
+  --site-highlight: #1a365d;
+  --site-highlight-hover: #0f2744;
+  --site-accent-on-dark: #7eb0e8;
   /* Display headings — match homepage hero title */
   --site-heading-font: var(--font-hero-display);
   --site-heading-size: clamp(2.125rem, 4.8vw, 3.75rem);
@@ -37,17 +38,17 @@
   --site-border-strong: rgba(255, 255, 255, 0.22);
   color: var(--site-text);
   background: var(--site-bg);
-  /* Site palette — hero-aligned terracotta + charcoal */
-  --smart-blue: #d1511f;
-  --sapphire: #b8451a;
-  --regal-navy: #8b4c6e;
-  --prussian-blue: #ffffff;
-  --prussian-blue-2: #333333;
-  --prussian-blue-3: #2a2a2a;
-  --twilight-indigo: #cccccc;
-  --blue-slate: #aaaaaa;
-  --slate-grey: #bbbbbb;
-  --lavender-grey: #cccccc;
+  /* Site palette — monochrome copy with dark blue accents */
+  --smart-blue: #1a365d;
+  --sapphire: #254770;
+  --regal-navy: #173d5e;
+  --prussian-blue: #0f2744;
+  --prussian-blue-2: #1e3a5f;
+  --prussian-blue-3: #2d4a6f;
+  --twilight-indigo: #3d5a80;
+  --blue-slate: #4a6fa5;
+  --slate-grey: #5c7a9e;
+  --lavender-grey: #6b8caf;
   /* Semantic tokens */
   --ubuntu-brand: var(--site-highlight);
   --ubuntu-brand-hover: var(--sapphire);
@@ -59,13 +60,13 @@
   --ubuntu-brand-subtle: var(--site-text-subtle);
   --ubuntu-brand-bg: var(--site-bg);
   --ubuntu-brand-bg-strong: var(--site-bg-alt);
-  --ubuntu-brand-ring: rgba(209, 81, 31, 0.4);
-  --ubuntu-brand-shadow: rgba(209, 81, 31, 0.12);
+  --ubuntu-brand-ring: rgba(26, 54, 93, 0.4);
+  --ubuntu-brand-shadow: rgba(26, 54, 93, 0.18);
   --ubuntu-hero-orange: var(--site-highlight);
   --ubuntu-hero-aubergine: var(--site-text);
   --ubuntu-hero-magenta: var(--site-highlight);
   --ubuntu-btn-bg: var(--site-highlight);
-  --ubuntu-btn-bg-hover: #b8451a;
+  --ubuntu-btn-bg-hover: #0f2744;
   --ubuntu-chrome-header-h: 4rem;
   --ubuntu-chrome-ribbon-h: 2.25rem;
   --ubuntu-hero-surface: var(--site-bg);
@@ -563,11 +564,11 @@
   }
 }
 
-/* Homepage banner hero — grey band + optional photo backdrop + symbol watermark */
+/* Homepage banner hero — black band + optional photo backdrop + symbol watermark */
 .ubuntu-site .ubuntu-site-page-chrome--home-banner {
   position: relative;
   overflow: hidden;
-  background: var(--site-bg-alt);
+  background: #000000;
   min-height: min(72vh, 40rem);
   display: flex;
   flex-direction: column;
@@ -1213,85 +1214,45 @@
   box-shadow: none;
 }
 
-/* Scroll reveal: pin the homepage hero so the "What we do" band slides up over it. */
+/* Homepage bands — flush stack (no sticky reveal gaps between sections) */
 .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
 }
 
-/* Every band after the hero rides above the pinned hero and covers it on scroll. */
 .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner ~ * {
   position: relative;
   z-index: 1;
 }
 
-/* The "What we do" band reads as a panel gliding over the hero. */
 .ubuntu-site .ubuntu-home-page > .ubuntu-hero-stack {
   position: relative;
   z-index: 2;
-  background: var(--site-bg);
-  border-radius: 1.5rem 1.5rem 0 0;
-  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
-  overflow: hidden;
-  /* No transparent gap below: otherwise the pinned hero shows through it. */
   margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  background: transparent;
 }
 
-/* Pinned bands stay at z-1 so any later band covers them by DOM order (no bleed).
-   Services stays out of this — its auto-sliding carousel misbehaves when pinned.
-   Next Step is pinned as well, so the Validation band slides up over it. */
 .ubuntu-site .ubuntu-home-page > #home-features,
 .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
 .ubuntu-site .ubuntu-home-page > #next-step,
-.ubuntu-site .ubuntu-home-page > #from-the-blogs {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-/* Pure slide-over bands ride one layer above the pinned band they rise over. */
+.ubuntu-site .ubuntu-home-page > #from-the-blogs,
 .ubuntu-site .ubuntu-home-page > #solutions-slider,
 .ubuntu-site .ubuntu-home-page > #product-validation,
 .ubuntu-site .ubuntu-home-page > #page-contact {
   position: relative;
-  z-index: 2;
+  top: auto;
+  z-index: auto;
+  margin-top: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
-/* Panel appearance for every band that glides over another: soft leading edge
-   plus a top gap that keeps the band beneath visible longer during the reveal.
-   The gap only ever exposes the (opaque) band it slides over. */
-.ubuntu-site .ubuntu-home-page > #solutions-slider,
-.ubuntu-site .ubuntu-home-page > #next-step,
-.ubuntu-site .ubuntu-home-page > #product-validation,
-.ubuntu-site .ubuntu-home-page > #page-contact {
-  margin-top: clamp(3rem, 6vw, 6rem);
-  border-radius: 1.5rem 1.5rem 0 0;
-  box-shadow: 0 -20px 45px -18px rgba(15, 23, 42, 0.3);
-}
-
-/* Opaque page backdrop so any inter-band gap shows the site surface, never the
-   pinned hero bleeding through from behind. */
 .ubuntu-site .ubuntu-home-page {
   background: var(--site-bg);
-}
-
-/* Bands without a horizontal carousel can safely clip to the rounded edge. */
-.ubuntu-site .ubuntu-home-page > #next-step,
-.ubuntu-site .ubuntu-home-page > #page-contact {
-  overflow: hidden;
-}
-
-/* Respect reduced-motion: fall back to normal document flow (no pinned reveal). */
-@media (prefers-reduced-motion: reduce) {
-  .ubuntu-site .ubuntu-home-page > .ubuntu-site-page-chrome--home-banner,
-  .ubuntu-site .ubuntu-home-page > #home-features,
-  .ubuntu-site .ubuntu-home-page > #interdisciplinary-domains,
-  .ubuntu-site .ubuntu-home-page > #next-step,
-  .ubuntu-site .ubuntu-home-page > #from-the-blogs {
-    position: relative;
-    top: auto;
-  }
 }
 
 /* —— Section pattern backgrounds (hero / CTA / services) —— */
@@ -1402,15 +1363,15 @@
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgba(209, 81, 31, 0.05) 0,
-      rgba(209, 81, 31, 0.05) 1px,
+      rgba(26, 54, 93, 0.05) 0,
+      rgba(26, 54, 93, 0.05) 1px,
       transparent 1px,
       transparent 24px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgba(209, 81, 31, 0.03) 0,
-      rgba(209, 81, 31, 0.03) 1px,
+      rgba(26, 54, 93, 0.03) 0,
+      rgba(26, 54, 93, 0.03) 1px,
       transparent 1px,
       transparent 20px
     );
@@ -1426,8 +1387,8 @@
   inset: -20%;
   background: radial-gradient(
     ellipse 80% 60% at 50% 50%,
-    rgba(209, 81, 31, 0.06) 0%,
-    rgba(209, 81, 31, 0.02) 45%,
+    rgba(26, 54, 93, 0.06) 0%,
+    rgba(26, 54, 93, 0.02) 45%,
     transparent 70%
   );
   transition: opacity 0.45s ease, animation-duration 0.45s ease;
@@ -1437,8 +1398,8 @@
 .ubuntu-site .ubuntu-pattern-section--cta::before {
   background: radial-gradient(
     ellipse 50% 42% at var(--pattern-hover-x, 50%) var(--pattern-hover-y, 50%),
-    rgba(209, 81, 31, 0.08) 0%,
-    rgba(209, 81, 31, 0.03) 40%,
+    rgba(26, 54, 93, 0.08) 0%,
+    rgba(26, 54, 93, 0.03) 40%,
     transparent 72%
   );
 }
@@ -1476,7 +1437,7 @@
 
 .ubuntu-site .ubuntu-pattern-section--cta:hover,
 .ubuntu-site .ubuntu-pattern-section--cta.ubuntu-pattern-section--is-hovered {
-  box-shadow: inset 0 0 60px rgba(209, 81, 31, 0.04);
+  box-shadow: inset 0 0 60px rgba(26, 54, 93, 0.04);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1666,7 +1627,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ubuntu-hero-magenta, #8b4c6e);
+  color: var(--ubuntu-hero-magenta, #7eb0e8);
 }
 
 .ubuntu-site .ubuntu-lead {
@@ -1775,8 +1736,8 @@
 }
 
 .ubuntu-site .ubuntu-services-slider__nav:hover {
-  border-color: #d1511f;
-  color: #d1511f;
+  border-color: var(--site-highlight);
+  color: var(--site-highlight);
   background: var(--site-bg-elevated);
 }
 
@@ -1795,7 +1756,7 @@
 }
 
 .ubuntu-site .ubuntu-services-slider__card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -1918,7 +1879,7 @@
   margin-top: 0.85rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #d1511f;
+  color: var(--site-highlight);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1946,7 +1907,7 @@
 
 .ubuntu-site .ubuntu-solutions-carousel__indicator--active {
   width: 2rem;
-  background: #d1511f;
+  background: var(--site-highlight);
 }
 
 .ubuntu-site .ubuntu-solutions-carousel__footer {
@@ -1954,7 +1915,7 @@
 }
 
 .ubuntu-site .ubuntu-solutions-carousel__slide:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -2004,7 +1965,7 @@
 }
 
 .ubuntu-site .ubuntu-services-grid__card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -2050,7 +2011,7 @@
 }
 
 .ubuntu-site .ubuntu-services-grid__card--subservice:hover {
-  border-color: color-mix(in srgb, var(--item-accent, #d1511f) 45%, #d9d9d9);
+  border-color: color-mix(in srgb, var(--item-accent, var(--site-highlight)) 45%, #d9d9d9);
 }
 
 .ubuntu-site .ubuntu-services-grid__card--pillar:hover .ubuntu-services-grid__card-media--pillar img {
@@ -2113,13 +2074,13 @@
 }
 
 .ubuntu-site .ubuntu-pillar-carousel__card:hover {
-  border-color: color-mix(in srgb, var(--item-accent, #d1511f) 45%, #d9d9d9);
+  border-color: color-mix(in srgb, var(--item-accent, var(--site-highlight)) 45%, #d9d9d9);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
 .ubuntu-site .ubuntu-pillar-carousel__card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -2196,7 +2157,7 @@
 
 .ubuntu-site .ubuntu-pillar-carousel__dot.is-active {
   width: 1.5rem;
-  background: #d1511f;
+  background: var(--site-highlight);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2255,7 +2216,7 @@
 }
 
 .ubuntu-site .ubuntu-scope-carousel__slide:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -2622,7 +2583,7 @@
 }
 
 .ubuntu-site .ubuntu-services-offering:focus-visible {
-  outline: 2px solid var(--ubuntu-accent, #d1511f);
+  outline: 2px solid var(--ubuntu-accent, var(--site-highlight));
   outline-offset: -2px;
   z-index: 1;
 }
@@ -2839,7 +2800,7 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 55% 40%, rgba(209, 81, 31, 0.35), transparent 55%),
+    radial-gradient(ellipse at 55% 40%, rgba(26, 54, 93, 0.35), transparent 55%),
     radial-gradient(ellipse at 70% 65%, rgba(232, 180, 184, 0.22), transparent 50%);
   filter: blur(4px);
 }
@@ -2961,7 +2922,7 @@
   z-index: 0;
   pointer-events: none;
   background-color: transparent;
-  background-image: radial-gradient(circle at 1px 1px, rgba(209, 81, 31, 0.08) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(26, 54, 93, 0.08) 1px, transparent 0);
   background-size: 18px 18px;
   will-change: background-position, opacity;
   animation:
@@ -3114,7 +3075,7 @@
 }
 
 .ubuntu-site .ubuntu-process-stepper__track-bg {
-  background: rgba(209, 81, 31, 0.12);
+  background: rgba(26, 54, 93, 0.12);
 }
 
 .ubuntu-site .ubuntu-process-stepper__track-fill {
@@ -3142,7 +3103,7 @@
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba(209, 81, 31, 0.25) transparent;
+  scrollbar-color: rgba(26, 54, 93, 0.25) transparent;
 }
 
 .ubuntu-site .ubuntu-process-stepper__step {
@@ -3175,7 +3136,7 @@
   justify-content: center;
   width: 3.25rem;
   height: 3.25rem;
-  border: 2px solid rgba(209, 81, 31, 0.15);
+  border: 2px solid rgba(26, 54, 93, 0.15);
   border-radius: 50%;
   background: var(--site-bg-elevated);
   transition:
@@ -3189,7 +3150,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.02em;
-  color: rgba(209, 81, 31, 0.35);
+  color: rgba(26, 54, 93, 0.35);
   transition: color 0.35s ease;
 }
 
@@ -3201,7 +3162,7 @@
   line-height: 1.35;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(209, 81, 31, 0.45);
+  color: rgba(26, 54, 93, 0.45);
   transition:
     color 0.35s ease,
     opacity 0.35s ease;
@@ -3210,8 +3171,8 @@
 .ubuntu-site .ubuntu-process-stepper__step.is-active .ubuntu-process-stepper__node {
   border-color: var(--ubuntu-brand);
   box-shadow:
-    0 0 0 3px rgba(209, 81, 31, 0.12),
-    0 0 16px rgba(209, 81, 31, 0.08);
+    0 0 0 3px rgba(26, 54, 93, 0.12),
+    0 0 16px rgba(26, 54, 93, 0.08);
   transform: scale(1.06);
 }
 
@@ -3225,11 +3186,11 @@
 }
 
 .ubuntu-site .ubuntu-process-stepper__control:hover .ubuntu-process-stepper__node {
-  border-color: rgba(209, 81, 31, 0.35);
+  border-color: rgba(26, 54, 93, 0.35);
 }
 
 .ubuntu-site .ubuntu-process-stepper__control:hover .ubuntu-process-stepper__value {
-  color: rgba(209, 81, 31, 0.65);
+  color: rgba(26, 54, 93, 0.65);
 }
 
 @media (max-width: 767px) {
@@ -3320,23 +3281,23 @@
   }
 
   .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__node {
-    border-color: rgba(209, 81, 31, 0.4);
+    border-color: rgba(26, 54, 93, 0.4);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__value {
-    color: rgba(209, 81, 31, 0.55);
+    color: rgba(26, 54, 93, 0.55);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step.is-complete .ubuntu-process-stepper__label {
-    color: rgba(209, 81, 31, 0.65);
+    color: rgba(26, 54, 93, 0.65);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__node {
-    border-color: rgba(209, 81, 31, 0.2);
+    border-color: rgba(26, 54, 93, 0.2);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__value {
-    color: rgba(209, 81, 31, 0.3);
+    color: rgba(26, 54, 93, 0.3);
   }
 
   .ubuntu-site .ubuntu-process-stepper__step:not(.is-active):not(.is-complete) .ubuntu-process-stepper__label {
@@ -3498,8 +3459,8 @@
 }
 
 .ubuntu-site .ubuntu-case-studies-scroll__nav-btn:hover:not(:disabled) {
-  border-color: #d1511f;
-  color: #d1511f;
+  border-color: var(--site-highlight);
+  color: var(--site-highlight);
 }
 
 .ubuntu-site .ubuntu-case-studies-scroll__nav-btn:disabled {
@@ -3527,7 +3488,7 @@
 }
 
 .ubuntu-site .ubuntu-section--alt {
-  background: var(--site-bg-alt);
+  background: #000000;
 }
 
 .ubuntu-site .ubuntu-section--dark {
@@ -3684,15 +3645,17 @@
   }
 }
 
-/* Homepage: full spacing between bands (no collapsed top padding) */
-.ubuntu-site main.ubuntu-home-page > section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--hero) + section {
-  padding-top: var(--section-space-y);
-}
-
-@media (min-width: 768px) {
-  .ubuntu-site main.ubuntu-home-page > section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--hero) + section {
-    padding-top: var(--section-space-y-md);
-  }
+/* Homepage: flush adjacent bands — no extra top padding between sections */
+.ubuntu-site main.ubuntu-home-page > section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--hero) + section,
+.ubuntu-site main.ubuntu-home-page > .ubuntu-hero-stack + section,
+.ubuntu-site main.ubuntu-home-page > .ubuntu-hero-stack + .ubuntu-section-block,
+.ubuntu-site main.ubuntu-home-page > .ubuntu-stats-cta-strip + section,
+.ubuntu-site main.ubuntu-home-page > section + .ubuntu-stats-cta-strip,
+.ubuntu-site main.ubuntu-home-page > .ubuntu-section-block + .ubuntu-section-block,
+.ubuntu-site main.ubuntu-home-page > section + .ubuntu-section-block,
+.ubuntu-site main.ubuntu-home-page > .ubuntu-section-block + section {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 /* Content spacing inside sections & split layouts */
@@ -3882,8 +3845,8 @@
 
 .ubuntu-chrome-header .ubuntu-nav-link:hover,
 .ubuntu-chrome-header .ubuntu-nav-link--active {
-  color: #d1511f;
-  background: rgba(209, 81, 31, 0.12);
+  color: var(--site-highlight);
+  background: rgba(26, 54, 93, 0.12);
 }
 
 .ubuntu-site .ubuntu-chrome-header__cta-desktop {
@@ -3923,21 +3886,21 @@
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:hover > .ubuntu-nav-dropdown-group__trigger,
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:focus-within > .ubuntu-nav-dropdown-group__trigger,
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group__trigger.ubuntu-nav-link--active {
-  background: rgba(209, 81, 31, 0.12);
+  background: rgba(26, 54, 93, 0.12);
   border-color: transparent;
-  color: #d1511f;
+  color: var(--site-highlight);
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:hover > .ubuntu-nav-dropdown-group__trigger .ubuntu-nav-dropdown-group__chevron,
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group:focus-within > .ubuntu-nav-dropdown-group__trigger .ubuntu-nav-dropdown-group__chevron {
   opacity: 1;
-  color: #d1511f;
+  color: var(--site-highlight);
   transform: rotate(180deg);
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group__trigger.ubuntu-nav-link--active .ubuntu-nav-dropdown-group__chevron {
   opacity: 1;
-  color: #d1511f;
+  color: var(--site-highlight);
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown-group {
@@ -4094,8 +4057,8 @@
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link:hover,
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link:focus-visible,
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link--active {
-  background: rgba(209, 81, 31, 0.18);
-  border-color: #d1511f;
+  background: rgba(26, 54, 93, 0.18);
+  border-color: var(--site-highlight);
   color: var(--site-text);
 }
 
@@ -4245,7 +4208,7 @@
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-top:hover {
-  color: #b8451a;
+  color: var(--ubuntu-btn-bg-hover);
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-rule {
@@ -4826,7 +4789,7 @@
 }
 
 .ubuntu-mockup__dot:first-child {
-  background: #d1511f;
+  background: var(--site-highlight);
 }
 
 .ubuntu-mockup__bar {
@@ -5018,7 +4981,7 @@
 /* Industries icon grid */
 
 .ubuntu-site .ubuntu-industry-icon-card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -5026,12 +4989,12 @@
 /* Blog — featured split + compact carousel */
 
 .ubuntu-site .ubuntu-blog-featured:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
 .ubuntu-site .ubuntu-blog-compact-card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -5159,7 +5122,7 @@
 }
 
 .ubuntu-site .ubuntu-arch-timeline__step:nth-of-type(4) .ubuntu-arch-timeline__hex-svg {
-  filter: drop-shadow(0 10px 22px rgba(209, 81, 31, 0.18));
+  filter: drop-shadow(0 10px 22px rgba(26, 54, 93, 0.18));
 }
 
 .ubuntu-site .ubuntu-arch-timeline__marker {
@@ -5206,10 +5169,10 @@
     border-radius: 2px;
     background: linear-gradient(
       90deg,
-      #173d5e 0%,
-      #2f6fad 33%,
-      #c9a227 66%,
-      #d1511f 100%
+      #0f2744 0%,
+      #1a365d 33%,
+      #2f6fad 66%,
+      #4a6fa5 100%
     );
   }
 
@@ -5271,7 +5234,7 @@
 /* Engineering showcase cards */
 
 .ubuntu-site .ubuntu-showcase-card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -5289,7 +5252,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #fff;
-  background: #d1511f;
+  background: var(--site-highlight);
 }
 
 .ubuntu-site .ubuntu-showcase-card__media::after {
@@ -5349,8 +5312,8 @@
 }
 
 .ubuntu-site .ubuntu-showcase-bento__card:hover {
-  border-color: rgba(209, 81, 31, 0.5);
-  box-shadow: 0 10px 28px rgba(209, 81, 31, 0.08);
+  border-color: rgba(26, 54, 93, 0.5);
+  box-shadow: 0 10px 28px rgba(26, 54, 93, 0.08);
 }
 
 .ubuntu-site .ubuntu-showcase-bento__card--featured {
@@ -5397,14 +5360,14 @@
 /* Domain cards */
 
 .ubuntu-site .ubuntu-domain-card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
 /* Insights editorial cards */
 
 .ubuntu-site .ubuntu-insight-card:focus-visible {
-  outline: 2px solid #d1511f;
+  outline: 2px solid var(--site-highlight);
   outline-offset: 2px;
 }
 
@@ -5626,7 +5589,7 @@
 
 .ubuntu-site .our-work-subnav__link--active {
   color: var(--site-text);
-  border-bottom-color: var(--site-accent, #d1511f);
+  border-bottom-color: var(--site-accent, var(--site-highlight));
 }
 
 .ubuntu-site .our-work-hub__grid {
@@ -5688,5 +5651,5 @@
   margin-top: 0.35rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--site-accent, #d1511f);
+  color: var(--site-accent, var(--site-highlight));
 }

@@ -113,7 +113,7 @@ export default function SolutionsAcceleratorCarousel({
     <UbuntuSplitLayout
       id={id}
       testId="solutions-accelerator-carousel"
-      className={`ubuntu-solutions-carousel border-y border-[#d9d9d9] bg-white ${className}`}
+      className={`ubuntu-solutions-carousel border-y border-[#d9d9d9] ${className}`}
       imagePosition="left"
       mediaClassName="ubuntu-split__media--fill ubuntu-solutions-carousel__media-wrap"
       mediaSlot={

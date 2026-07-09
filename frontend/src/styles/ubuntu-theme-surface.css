@@ -1,5 +1,5 @@
 /**
- * Grey surface theme — white copy, orange highlights.
+ * Monochrome surface theme — black/white copy, dark blue accents.
  * Loaded after ubuntu-home.css; overrides Tailwind utilities inside .ubuntu-site.
  */
 
@@ -74,7 +74,7 @@
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link:hover,
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link:focus-visible,
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link--active {
-  background: rgba(209, 81, 31, 0.18);
+  background: rgba(26, 54, 93, 0.22);
   border-color: var(--site-highlight);
   color: var(--site-text);
 }
@@ -134,18 +134,19 @@
   box-shadow: 0 0 0 1px var(--site-highlight);
 }
 
-/* Cards & elevated panels — flat page surface (no layered strips behind content) */
-.ubuntu-site .bg-white {
-  background-color: var(--site-bg) !important;
+/* Cards & elevated panels inside dark chrome */
+.ubuntu-site .ubuntu-section--dark .bg-white,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark .bg-white {
+  background-color: var(--site-bg-elevated) !important;
 }
 
 .ubuntu-site .bg-\[\#eee\],
 .ubuntu-site .bg-\[\#f7f7f7\] {
-  background-color: var(--site-bg) !important;
+  background-color: var(--site-bg-elevated) !important;
 }
 
 .ubuntu-site .bg-white\/95 {
-  background-color: var(--site-bg) !important;
+  background-color: color-mix(in srgb, var(--site-bg) 95%, transparent) !important;
 }
 
 .ubuntu-site .border-\[\#d9d9d9\],
@@ -154,46 +155,86 @@
   border-color: var(--site-border) !important;
 }
 
-.ubuntu-site .text-\[\#2d2d2d\],
-.ubuntu-site .text-\[\#333\],
-.ubuntu-site .text-\[\#1e1e1e\],
-.ubuntu-site .text-\[\#111\] {
+.ubuntu-site .ubuntu-section--dark .text-\[\#2d2d2d\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#333\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#1e1e1e\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#111\] {
   color: var(--site-text) !important;
 }
 
-.ubuntu-site .text-\[\#4a4a4a\],
-.ubuntu-site .text-\[\#5c5c5c\],
-.ubuntu-site .text-\[\#555\],
-.ubuntu-site .text-\[\#444\],
-.ubuntu-site .text-\[\#666\],
-.ubuntu-site .text-\[\#6b6b6b\],
-.ubuntu-site .text-\[\#7d8597\],
-.ubuntu-site .text-\[\#888\] {
-  color: var(--site-text) !important;
+.ubuntu-site .ubuntu-section--dark .text-\[\#4a4a4a\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#5c5c5c\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#555\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#444\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#666\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#6b6b6b\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#7d8597\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#888\] {
+  color: var(--site-text-muted) !important;
 }
 
 .ubuntu-site .text-\[\#8b4c6e\],
 .ubuntu-site .text-\[\#8b1538\],
-.ubuntu-site .text-\[\#d1511f\] {
+.ubuntu-site .text-\[\#d1511f\],
+.ubuntu-site .text-\[\#b8451a\] {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .ubuntu-section--dark .text-\[\#8b4c6e\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#8b1538\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#d1511f\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#b8451a\] {
+  color: var(--site-accent-on-dark) !important;
+}
+
+.ubuntu-site .border-\[\#d1511f\],
+.ubuntu-site .border-\[\#d1511f\]\/30,
+.ubuntu-site .border-\[\#d1511f\]\/40 {
+  border-color: color-mix(in srgb, var(--site-highlight) 40%, transparent) !important;
+}
+
+.ubuntu-site .bg-\[\#d1511f\] {
+  background-color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .hover\:border-\[\#d1511f\]:hover,
+.ubuntu-site .hover\:border-\[\#b8451a\]\/40:hover {
+  border-color: color-mix(in srgb, var(--site-highlight) 55%, transparent) !important;
+}
+
+.ubuntu-site .hover\:border-l-\[\#d1511f\]:hover {
+  border-left-color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .before\:bg-\[\#d1511f\]::before {
+  background-color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .bg-\[\#8b1538\] {
+  background-color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .hover\:text-\[\#8b1538\]:hover {
   color: var(--site-highlight) !important;
 }
 
 .ubuntu-site .hover\:text-\[\#b8451a\]:hover,
+.ubuntu-site .hover\:text-\[\#d1511f\]:hover,
 .ubuntu-site .group:hover .group-hover\:text-\[\#b8451a\],
 .ubuntu-site .group:hover .group-hover\:text-\[\#4a4a4a\] {
   color: var(--site-highlight) !important;
 }
 
-.ubuntu-site .ubuntu-product-card__heading-text {
+.ubuntu-site .ubuntu-section--dark .ubuntu-product-card__heading-text {
   color: var(--site-text) !important;
 }
 
-.ubuntu-site .ubuntu-product-card__heading-desc {
-  color: var(--site-text) !important;
+.ubuntu-site .ubuntu-section--dark .ubuntu-product-card__heading-desc {
+  color: var(--site-text-muted) !important;
 }
 
-.ubuntu-site .ubuntu-scope-grid__card-title,
-.ubuntu-site .ubuntu-scope-grid__card-desc {
+.ubuntu-site .ubuntu-section--dark .ubuntu-scope-grid__card-title,
+.ubuntu-site .ubuntu-section--dark .ubuntu-scope-grid__card-desc {
   color: var(--site-text) !important;
 }
 
@@ -219,7 +260,7 @@
 }
 
 .ubuntu-site .corp-heading-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, var(--site-highlight) 55%, #e8946f 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--site-accent-on-dark) 55%, #c5d9f2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -246,13 +287,29 @@
   background: #fff;
 }
 
-/* No black or near-black text anywhere on site */
-.ubuntu-site .text-black {
+/* No black text on dark bands */
+.ubuntu-site .ubuntu-section--dark .text-black {
   color: var(--site-text) !important;
 }
 
-.ubuntu-site :where(h1, h2, h3, h4, h5, h6) {
+.ubuntu-site .ubuntu-section--dark :where(h1, h2, h3, h4, h5, h6) {
   color: var(--site-text);
+}
+
+.ubuntu-site .ubuntu-section--light :where(h1, h2, h3, h4, h5, h6) {
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-section-title__accent,
+.ubuntu-site .ubuntu-section--light .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section--light .ubuntu-page-eyebrow {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .ubuntu-section--dark .ubuntu-section-title__accent,
+.ubuntu-site .ubuntu-section--dark .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section--dark .ubuntu-page-eyebrow {
+  color: var(--site-accent-on-dark) !important;
 }
 
 .ubuntu-site .group:hover .group-hover\:text-\[\#4a4a4a\] {
@@ -266,27 +323,24 @@
   box-shadow: none;
 }
 
-/* Flat page — no decorative layers, patterns, or glows behind content */
+/* Flat chrome — decorative layers removed; band sections keep their own surfaces */
 .ubuntu-site,
 .ubuntu-site .ubuntu-site__body,
 .ubuntu-site .ubuntu-home-page,
 .ubuntu-site .page-surface,
-.ubuntu-site .ubuntu-section-block,
-.ubuntu-site .ubuntu-section--alt,
 .ubuntu-site .ubuntu-site-page-chrome,
 .ubuntu-site .ubuntu-pattern-section,
 .ubuntu-site .ubuntu-pattern-section--hero,
 .ubuntu-site .ubuntu-pattern-section--cta,
 .ubuntu-site .ubuntu-chrome-footer,
-.ubuntu-site .ubuntu-arch-timeline-section,
-.ubuntu-site .ubuntu-stats-cta-strip {
+.ubuntu-site .ubuntu-arch-timeline-section {
   background: var(--site-bg) !important;
   background-image: none !important;
   box-shadow: none !important;
 }
 
 .ubuntu-site .ubuntu-site-page-chrome--home-banner {
-  background: var(--site-bg-alt) !important;
+  background: #000000 !important;
   background-image: none !important;
   box-shadow: none !important;
 }

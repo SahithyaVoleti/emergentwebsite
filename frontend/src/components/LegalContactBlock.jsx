@@ -1,14 +1,15 @@
 import { COMPANY_CONTACT, COMPANY_NAME } from "../lib/company";
+import { sectionBlockClass } from "../lib/sectionBands";
 
 /** Canonical contact block for legal and compliance pages. */
 export default function LegalContactBlock() {
   return (
     <section
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby="legal-contact-heading"
     >
       <div className="ubuntu-container py-10">
-        <h2 id="legal-contact-heading" className="text-lg font-medium text-white">
+        <h2 id="legal-contact-heading" className="text-lg font-medium text-[#2d2d2d]">
           Contact {COMPANY_NAME}
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-[#555]">

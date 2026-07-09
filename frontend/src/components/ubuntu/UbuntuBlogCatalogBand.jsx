@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function BlogFeaturedCard({ post }) {
   return (
@@ -78,7 +79,7 @@ export default function UbuntuBlogCatalogBand({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block border-b border-[#d9d9d9] bg-white ${className}`}
+      className={sectionBlockClass("border-b border-[#d9d9d9]", className)}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

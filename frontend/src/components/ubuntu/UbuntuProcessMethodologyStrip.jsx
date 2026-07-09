@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { nextSectionBandClass } from "../../lib/sectionBands";
 
 const STEP_INTERVAL_MS = 4000;
 
@@ -60,7 +61,7 @@ export default function UbuntuProcessMethodologyStrip({
     <section
       id={id}
       data-testid="process-methodology-stepper"
-      className="ubuntu-stats-cta-strip ubuntu-process-stepper border-y border-[#dce8f5]"
+      className={`ubuntu-stats-cta-strip ubuntu-process-stepper ${nextSectionBandClass()} border-y border-[#dce8f5]`}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container relative z-10 py-8 sm:py-10 md:py-12">

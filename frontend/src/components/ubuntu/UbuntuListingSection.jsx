@@ -1,6 +1,7 @@
 import UbuntuLink from "./UbuntuLink";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Homepage-style section shell for listing/catalog content (Coverage bands).
@@ -17,13 +18,7 @@ export default function UbuntuListingSection({
   viewAllHref,
   viewAllLabel = "View all",
 }) {
-  const sectionClass = [
-    "ubuntu-section-block border-b border-[#d9d9d9]",
-    variant === "alt" ? "ubuntu-section--alt" : "bg-white",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const sectionClass = sectionBlockClass("border-b border-[#d9d9d9]", className);
 
   const action =
     headerAction ??

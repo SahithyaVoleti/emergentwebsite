@@ -3,6 +3,7 @@ import UbuntuSplitLayout from "./UbuntuSplitLayout";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { useSectionMediaPosition } from "./SectionMediaContext";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function SectionCopy({
   eyebrow,
@@ -87,12 +88,7 @@ export default function UbuntuPageSection({
   );
 
   if (!image) {
-    const sectionClass =
-      variant === "alt"
-        ? "ubuntu-section-block ubuntu-section--alt border-b border-[#d9d9d9]"
-        : variant === "dark"
-          ? "ubuntu-section-block ubuntu-section--dark border-b border-[#d9d9d9]"
-          : "ubuntu-section-block border-b border-[#d9d9d9] bg-white";
+    const sectionClass = sectionBlockClass("border-b border-[#d9d9d9]", className);
 
     return (
       <section

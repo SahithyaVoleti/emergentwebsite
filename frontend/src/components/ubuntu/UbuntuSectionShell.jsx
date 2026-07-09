@@ -1,6 +1,7 @@
 import UbuntuLink from "./UbuntuLink";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Standard homepage section container — ubuntu-section-block + ubuntu-container.
@@ -18,15 +19,10 @@ export default function UbuntuSectionShell({
   children,
   "data-testid": testId,
 }) {
-  const sectionClass = [
-    "ubuntu-section-block border-b border-[#d9d9d9]",
-    variant === "alt" && "ubuntu-section--alt",
-    variant === "dark" && "ubuntu-section--dark",
-    variant === "default" && "bg-white",
+  const sectionClass = sectionBlockClass(
+    "border-b border-[#d9d9d9]",
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
 
   const hasHeader = eyebrow || title || lead || headerAction;
 

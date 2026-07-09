@@ -3,6 +3,7 @@
  * On small screens: eyebrow + title, then image, then remaining copy.
  */
 import { splitLayoutContentForMedia } from "../../../lib/splitLayoutContent";
+import { sectionBlockClass } from "../../../lib/sectionBands";
 
 export default function UbuntuHomeSplitLayout({
   image,
@@ -14,12 +15,7 @@ export default function UbuntuHomeSplitLayout({
   children,
   belowContent,
 }) {
-  const sectionClass =
-    variant === "alt"
-      ? "ubuntu-section-block ubuntu-section--alt"
-      : variant === "dark"
-        ? "ubuntu-section-block ubuntu-section--dark"
-        : "ubuntu-section-block";
+  const sectionClass = sectionBlockClass();
 
   const imageFirst = imagePosition === "left";
   const hasMedia = Boolean(image);

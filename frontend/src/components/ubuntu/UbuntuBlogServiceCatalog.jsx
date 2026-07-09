@@ -4,6 +4,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { getBlogCatalogByService, serviceArticlesSectionId } from "../../lib/blogByService";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function ServiceArticleCard({ article }) {
   return (
@@ -57,7 +58,7 @@ export default function UbuntuBlogServiceCatalog({
   return (
     <div id={id} className={className}>
       <section
-        className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+        className={sectionBlockClass("border-b border-[#d9d9d9]")}
         aria-labelledby={`${id}-heading`}
       >
         <div className="ubuntu-container">
@@ -73,9 +74,10 @@ export default function UbuntuBlogServiceCatalog({
         <section
           key={section.slug}
           id={serviceArticlesSectionId(section.slug)}
-          className={`ubuntu-section-block border-b border-[#d9d9d9] bg-white scroll-mt-24 ${
-            index === 0 ? "!border-t-0" : ""
-          }`}
+          className={sectionBlockClass(
+            "border-b border-[#d9d9d9] scroll-mt-24",
+            index === 0 ? "!border-t-0" : "",
+          )}
           aria-labelledby={`${id}-${section.slug}-heading`}
         >
           <div className="ubuntu-container">

@@ -6,6 +6,7 @@ import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuListingSection from "../components/ubuntu/UbuntuListingSection";
 import blogArticles from "../data/blog";
 import { getServiceLabelsForArticle } from "../lib/blogByService";
+import { sectionBlockClass } from "../lib/sectionBands";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -42,7 +43,7 @@ export default function BlogDetail() {
         secondaryCTA={{ text: "Back to blog", href: "/blog" }}
       />
 
-      <section className="ubuntu-section-block border-b border-[#d9d9d9] bg-white">
+      <section className={sectionBlockClass("border-b border-[#d9d9d9]")}>
         <div className="ubuntu-container">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
             <aside className="hidden lg:block">

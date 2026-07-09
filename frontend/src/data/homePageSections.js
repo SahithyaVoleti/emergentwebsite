@@ -8,7 +8,6 @@ export const HOME_PAGE_LAYOUT = [
   "services",
   "startup-stats",
   "features",
-  "solutions",
   "industries",
   "next-step",
   "validation",
@@ -335,7 +334,6 @@ export const HOME_NEXT_STEP = {
   title: "Next Step for your |AI product program|",
   lead: "Share your product landscape, model requirements, or SaaS concept. We will outline transformation scope, fine-tuning approach, and delivery milestones.",
   primaryCta: { label: "Request consultation", href: "/#page-contact", contactIntent: "consultation" },
-  secondaryCta: { label: "View our work", href: "/our-work" },
 };
 
 /** Homepage FAQs — placed before the contact section. */

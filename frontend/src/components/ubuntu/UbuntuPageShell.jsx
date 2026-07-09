@@ -2,6 +2,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import DevelopmentRibbon from "../DevelopmentRibbon";
 import { SectionMediaProvider } from "./SectionMediaContext";
+import SectionBandReset from "./SectionBandReset";
 import { env } from "@/lib/env";
 
 const showDevRibbon = env("SHOW_DEV_RIBBON") === "true";
@@ -18,7 +19,9 @@ export default function UbuntuPageShell({ children, mediaStartIndex = 1 }) {
       {showDevRibbon ? <DevelopmentRibbon /> : null}
       <Header shell />
       <div id="main-content" className="ubuntu-site__body" role="main">
-        <SectionMediaProvider startIndex={mediaStartIndex}>{children}</SectionMediaProvider>
+        <SectionBandReset>
+          <SectionMediaProvider startIndex={mediaStartIndex}>{children}</SectionMediaProvider>
+        </SectionBandReset>
       </div>
       <Footer />
     </div>

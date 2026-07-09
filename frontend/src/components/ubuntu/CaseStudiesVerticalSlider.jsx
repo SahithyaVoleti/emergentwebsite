@@ -6,6 +6,7 @@ import UbuntuLink from "./UbuntuLink";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 const SLIDE_VH = 85;
 
@@ -98,7 +99,7 @@ export default function CaseStudiesVerticalSlider({
       id={id}
       ref={sectionRef}
       data-testid="case-studies-section"
-      className={`ubuntu-case-studies-scroll ubuntu-section-block relative border-y border-[#d9d9d9] bg-white ${className}`}
+      className={sectionBlockClass("ubuntu-case-studies-scroll relative border-y border-[#d9d9d9]", className)}
       style={{ height: `${sectionHeightVh}vh` }}
       aria-label="Production test cases"
     >

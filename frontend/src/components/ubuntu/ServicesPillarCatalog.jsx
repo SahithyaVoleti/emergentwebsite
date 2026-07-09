@@ -4,6 +4,7 @@ import SectionTitle from "./SectionTitle";
 import ServiceOfferingCards from "./ServiceOfferingCards";
 import ServicePillarCarousel from "./ServicePillarCarousel";
 import UbuntuLink from "./UbuntuLink";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function PillarSections({ groups, showSubservices }) {
   return (
@@ -59,9 +60,11 @@ export default function ServicesPillarCatalog({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block border-y border-[#d9d9d9] bg-white ${
-        isCards ? "ubuntu-services-grid-section" : ""
-      } ${className}`}
+      className={sectionBlockClass(
+        "border-y border-[#d9d9d9]",
+        isCards ? "ubuntu-services-grid-section" : "",
+        className,
+      )}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

@@ -2,6 +2,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import ModuleIconGrid from "../service/ModuleIconGrid";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Industry catalog — compact 2×4 icon grid (label only, no circles).
@@ -25,7 +26,7 @@ export default function UbuntuIndustriesIconGrid({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block border-b border-[#d9d9d9] bg-white ${className}`}
+      className={sectionBlockClass("border-b border-[#d9d9d9]", className)}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

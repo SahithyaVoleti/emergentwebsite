@@ -38,7 +38,7 @@ export default function UbuntuHomeFeatures({ config, items }) {
     <UbuntuSplitLayout
       id={sectionId}
       testId="home-features-section"
-      className="border-b border-[#d9d9d9] bg-white"
+      className="border-b border-[#d9d9d9]"
       imagePosition="right"
       mediaClassName="ubuntu-split__media--fill"
       mediaSlot={

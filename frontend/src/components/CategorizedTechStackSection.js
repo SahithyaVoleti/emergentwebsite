@@ -4,6 +4,7 @@ import { SECTION_LABEL } from "../data/sectionLabels";
 import TechStackLogoGrid from "./TechStackLogoGrid";
 import SectionEyebrow from "./ubuntu/SectionEyebrow";
 import SectionTitle from "./ubuntu/SectionTitle";
+import { sectionBlockClass } from "../lib/sectionBands";
 
 const DEFAULT_CATEGORY_DESC =
   "Representative tools for scoping and integration planning; selection follows your standards and procurement rules.";
@@ -98,7 +99,7 @@ export default function CategorizedTechStackSection({
   return (
     <section
       data-testid={dataTestId}
-      className={cn("ubuntu-section-block ubuntu-section--alt border-y border-[#d9d9d9]", className)}
+      className={cn(sectionBlockClass("border-y border-[#d9d9d9]"), className)}
     >
       <div className="ubuntu-container">
         <div className="mb-10 max-w-3xl">

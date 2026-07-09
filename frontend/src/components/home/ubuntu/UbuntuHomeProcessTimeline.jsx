@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-const STEP_COLORS = ["#173d5e", "#2f6fad", "#c9a227", "#8b1538"];
+const STEP_COLORS = ["#0f2744", "#1a365d", "#2f6fad", "#4a6fa5"];
 const PHASE_MS = 3200;
 
 function usePrefersReducedMotion() {
@@ -54,7 +54,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
           <motion.div
             className="h-full rounded-full"
             style={{
-              background: "linear-gradient(90deg, #173d5e 0%, #2f6fad 33%, #c9a227 66%, #8b1538 100%)",
+              background: "linear-gradient(90deg, #0f2744 0%, #1a365d 33%, #2f6fad 66%, #4a6fa5 100%)",
             }}
             initial={false}
             animate={{ width: `${Math.max(progress * 100, 8)}%` }}
@@ -90,7 +90,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                 <motion.button
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className="relative mb-5 flex h-[4.5rem] w-[4.5rem] items-center justify-center border bg-white/95 outline-none focus-visible:ring-2 focus-visible:ring-[#8b1538] focus-visible:ring-offset-2"
+                  className="relative mb-5 flex h-[4.5rem] w-[4.5rem] items-center justify-center border bg-white/95 outline-none focus-visible:ring-2 focus-visible:ring-[#1a365d] focus-visible:ring-offset-2"
                   animate={{
                     borderColor: isActive ? color : isReached ? color : "#d9d9d9",
                     scale: isActive && !prefersReducedMotion ? 1.06 : 1,
@@ -129,7 +129,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                   {step.title}
                 </motion.h3>
                 {step.duration && (
-                  <p className="ubuntu-arch-timeline__duration mt-1 text-xs font-semibold uppercase tracking-wide text-[#8b1538]">
+                  <p className="ubuntu-arch-timeline__duration mt-1 text-xs font-semibold uppercase tracking-wide text-[#1a365d]">
                     {step.duration}
                   </p>
                 )}
@@ -156,7 +156,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
             <motion.div
               className="w-full rounded-full"
               style={{
-                background: "linear-gradient(180deg, #173d5e 0%, #2f6fad 33%, #c9a227 66%, #8b1538 100%)",
+                background: "linear-gradient(180deg, #0f2744 0%, #1a365d 33%, #2f6fad 66%, #4a6fa5 100%)",
               }}
               initial={false}
               animate={{
@@ -176,7 +176,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                 <motion.button
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className="flex w-full gap-4 border border-[#e5e5e5] bg-white/95 p-5 text-left shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-[#8b1538]"
+                  className="flex w-full gap-4 border border-[#e5e5e5] bg-white/95 p-5 text-left shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-[#1a365d]"
                   animate={{
                     borderColor: isActive ? color : "#e5e5e5",
                     opacity: isReached ? 1 : 0.6,
@@ -188,7 +188,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                   <motion.div
                     className="flex h-12 w-12 shrink-0 items-center justify-center border bg-white"
                     animate={{
-                      borderColor: isActive ? color : "#8b1538",
+                      borderColor: isActive ? color : "#1a365d",
                       scale: isActive && !prefersReducedMotion ? 1.05 : 1,
                     }}
                   >
@@ -199,7 +199,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                   <div className="min-w-0">
                     <h3 className="text-base font-medium text-white">{step.title}</h3>
                     {step.duration && (
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#8b1538]">
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#1a365d]">
                         {step.duration}
                       </p>
                     )}

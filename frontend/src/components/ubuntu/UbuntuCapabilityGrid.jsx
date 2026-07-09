@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function splitItems(items = []) {
   const mid = Math.ceil(items.length / 2);
@@ -58,13 +59,7 @@ export default function UbuntuCapabilityGrid({
   const itemIndex = String(active + 1).padStart(2, "0");
   const itemTotal = String(capabilities.length).padStart(2, "0");
 
-  const sectionClass = [
-    "ubuntu-section-block border-b border-[#d9d9d9]",
-    variant === "alt" ? "ubuntu-section--alt" : "bg-white",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const sectionClass = sectionBlockClass("border-b border-[#d9d9d9]", className);
 
   return (
     <section id={id} className={sectionClass} aria-labelledby={`${id}-heading`}>

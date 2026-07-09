@@ -1,4 +1,5 @@
 import CountUpValue from "./CountUpValue";
+import { nextSectionBandClass } from "../../lib/sectionBands";
 
 /**
  * Light stats band — same visual as homepage startup stats strip.
@@ -23,7 +24,7 @@ export default function UbuntuStatsStrip({
     <section
       id={id}
       data-testid={testId}
-      className={`ubuntu-stats-cta-strip border-y border-[#dce8f5] ${className}`}
+      className={`ubuntu-stats-cta-strip ${nextSectionBandClass()} border-y border-[#dce8f5] ${className}`}
       aria-label="Program statistics"
     >
       <div className="ubuntu-container relative z-10">

@@ -8,6 +8,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import { paletteAccent, paletteAccentIndex } from "../../lib/brandPalette";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Shared horizontal carousel for services, solutions, or similar catalog items.
@@ -51,7 +52,7 @@ export default function ProductHorizontalSlider({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block ubuntu-services-slider border-y border-[#d9d9d9] bg-white ${className}`}
+      className={sectionBlockClass("ubuntu-services-slider border-y border-[#d9d9d9]", className)}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

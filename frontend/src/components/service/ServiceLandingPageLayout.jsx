@@ -8,6 +8,7 @@ import UbuntuMetricGrid from "../ubuntu/UbuntuMetricGrid";
 import ScopeOfDeliveryGrid from "./ScopeOfDeliveryGrid";
 import ModuleIconGrid from "./ModuleIconGrid";
 import { toWorkstreamGridItems } from "../../lib/workstreamGridItems";
+import { sectionBlockClass } from "../../lib/sectionBands";
 import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
 import UbuntuHomeFeatures from "../home/ubuntu/UbuntuHomeFeatures";
 import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
@@ -32,7 +33,7 @@ const UbuntuHomeBlogs = lazy(() =>
 );
 
 function SectionFallback({ minHeight = "12rem" }) {
-  return <div className="ubuntu-section-block" style={{ minHeight }} aria-hidden />;
+  return <div style={{ minHeight }} aria-hidden />;
 }
 
 /**
@@ -107,7 +108,7 @@ export default function ServiceLandingPageLayout({
           imageAlt={servicesIntro.media.alt}
           imagePosition={nextPosition()}
           mockupVariant="plain"
-          className="border-b border-[#d9d9d9] bg-[#fafafa]"
+          className="border-b border-[#d9d9d9]"
         >
           <SectionEyebrow>{servicesIntro.eyebrow}</SectionEyebrow>
           <SectionTitle as="h2" title={servicesIntro.title} />
@@ -149,7 +150,7 @@ export default function ServiceLandingPageLayout({
       {showOfferings ? (
       <section
         id={sections.offerings.id}
-        className="ubuntu-section-block scroll-mt-24 border-y border-[#d9d9d9] bg-white"
+        className={sectionBlockClass("scroll-mt-24 border-y border-[#d9d9d9]")}
         aria-labelledby="service-offerings-heading"
       >
         <div className="ubuntu-container">
@@ -171,7 +172,7 @@ export default function ServiceLandingPageLayout({
       {showRelated ? (
         <section
           id={sections.relatedOfferings.id}
-          className="ubuntu-section-block scroll-mt-24 border-b border-[#d9d9d9] bg-[#fafafa]"
+          className={sectionBlockClass("scroll-mt-24 border-b border-[#d9d9d9]")}
           aria-labelledby="related-workstreams-heading"
         >
           <div className="ubuntu-container">

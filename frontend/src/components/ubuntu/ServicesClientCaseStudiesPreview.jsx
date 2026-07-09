@@ -5,6 +5,7 @@ import { SERVICES_CASE_STUDIES } from "../../data/servicesPageSections";
 /** @typedef {typeof SERVICES_CASE_STUDIES} CaseStudiesPreviewConfig */
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 const studiesBySlug = Object.fromEntries(CLIENT_CASE_STUDIES.map((study) => [study.slug, study]));
 
@@ -17,7 +18,7 @@ export default function ServicesClientCaseStudiesPreview({ config = SERVICES_CAS
     <section
       id={config.id}
       data-testid="services-case-studies"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-[#fafafa]"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby={`${config.id}-heading`}
     >
       <div className="ubuntu-container">

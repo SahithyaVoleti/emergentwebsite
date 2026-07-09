@@ -2,7 +2,7 @@
 export default function RouteFallback() {
   return (
     <div
-      className="ubuntu-section-block min-h-[40vh] bg-white"
+      className="ubuntu-section-block ubuntu-section--dark min-h-[40vh]"
       aria-busy="true"
       aria-label="Loading page"
     />

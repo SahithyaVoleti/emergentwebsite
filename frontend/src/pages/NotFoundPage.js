@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import SectionEyebrow from "../components/ubuntu/SectionEyebrow";
 import SectionTitle from "../components/ubuntu/SectionTitle";
 import SitePageMain from "../components/ubuntu/SitePageMain";
+import { sectionBlockClass } from "../lib/sectionBands";
 
 export default function NotFoundPage() {
   return (
     <SitePageMain>
-      <section className="ubuntu-section-block border-b border-[#d9d9d9] bg-white">
+      <section className={sectionBlockClass("border-b border-[#d9d9d9]")}>
         <div className="ubuntu-container flex min-h-[50vh] flex-col items-start justify-center py-16">
           <SectionEyebrow>Not found</SectionEyebrow>
           <SectionTitle as="h1" title="Page not found" />

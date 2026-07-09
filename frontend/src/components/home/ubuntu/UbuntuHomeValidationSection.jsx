@@ -3,6 +3,7 @@ import caseStudies from "../../../data/caseStudies";
 import { HOME_VALIDATION } from "../../../data/homePageSections";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
+import { sectionBlockClass } from "../../../lib/sectionBands";
 
 const studiesBySlug = Object.fromEntries(caseStudies.map((cs) => [cs.slug, cs]));
 
@@ -17,7 +18,7 @@ export default function UbuntuHomeValidationSection() {
     <section
       id={HOME_VALIDATION.id}
       data-testid="home-validation-section"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-[#fafafa]"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby={`${HOME_VALIDATION.id}-heading`}
     >
       <div className="ubuntu-container">

@@ -6,6 +6,7 @@ import TechStackLogoGrid from "../TechStackLogoGrid";
 import MethodologyFlowchart from "../MethodologyFlowchart";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function useReveal() {
   const ref = useRef(null);
@@ -50,7 +51,7 @@ export function SolutionOverviewSection({ solution }) {
     <section
       id="solution-overview"
       data-testid="solution-overview"
-      className="ubuntu-section-block ubuntu-section--alt border-b border-[#d9d9d9]"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby="solution-overview-heading"
     >
       <div ref={ref} className="ubuntu-container">
@@ -173,7 +174,7 @@ export function SolutionPilotTimeline({ weeks }) {
     <section
       id="pilot-package"
       data-testid="solution-pilot-timeline"
-      className="ubuntu-section-block ubuntu-section--alt border-b border-[#d9d9d9]"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby="pilot-package-heading"
     >
       <div ref={ref} className="ubuntu-container">
@@ -204,7 +205,7 @@ export function SolutionMethodologySection({ steps }) {
     <section
       id="solution-methodology"
       data-testid="solution-methodology"
-      className="ubuntu-section-block border-b border-[var(--site-border)]"
+      className={sectionBlockClass("border-b border-[var(--site-border)]")}
       aria-labelledby="solution-methodology-heading"
     >
       <div ref={ref} className="ubuntu-container relative z-10">

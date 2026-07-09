@@ -3,6 +3,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
 import { paletteAccentIndex } from "../../lib/brandPalette";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Homepage Features band — brand icon squares + two-column definition list.
@@ -18,13 +19,7 @@ export default function UbuntuFeaturesBand({
 }) {
   if (!items.length) return null;
 
-  const sectionClass = [
-    "ubuntu-section-block border-b border-[#d9d9d9]",
-    variant === "alt" ? "ubuntu-section--alt" : "bg-white",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const sectionClass = sectionBlockClass("border-b border-[#d9d9d9]", className);
 
   return (
     <section

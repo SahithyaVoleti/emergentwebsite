@@ -1,15 +1,15 @@
-/** Site palette — hero-aligned terracotta, charcoal, and burgundy accents. */
+/** Site palette — monochrome surfaces with dark blue accents. */
 export const PALETTE = {
-  smartBlue: "#d1511f",
-  sapphire: "#b8451a",
-  regalNavy: "#8b4c6e",
-  prussianBlue: "#2d2d2d",
-  prussianBlue2: "#252525",
-  prussianBlue3: "#1a1a1a",
-  twilightIndigo: "#4a4a4a",
-  blueSlate: "#6b5564",
-  slateGrey: "#7d6b75",
-  lavenderGrey: "#9a8490",
+  smartBlue: "#1a365d",
+  sapphire: "#254770",
+  regalNavy: "#173d5e",
+  prussianBlue: "#0f2744",
+  prussianBlue2: "#1e3a5f",
+  prussianBlue3: "#2d4a6f",
+  twilightIndigo: "#3d5a80",
+  blueSlate: "#4a6fa5",
+  slateGrey: "#5c7a9e",
+  lavenderGrey: "#6b8caf",
   surface: "#ffffff",
   surfaceStrong: "#e5e5e5",
 };

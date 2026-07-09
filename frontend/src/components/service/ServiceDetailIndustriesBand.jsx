@@ -3,6 +3,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import ModuleIconGrid from "./ModuleIconGrid";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Industries served band — compact icon grid aligned to service landing pages.
@@ -23,7 +24,7 @@ export default function ServiceDetailIndustriesBand({
     <section
       id={id}
       data-testid="service-industries-band"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

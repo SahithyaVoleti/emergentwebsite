@@ -15,13 +15,12 @@ import { homeImagePosition } from "../../../lib/homeImagePosition";
 import {
   HOME_ALERT,
   HOME_SERVICES_GRID,
-  HOME_SOLUTIONS_SLIDER,
   HOME_NEXT_STEP,
   HOME_FAQS,
 } from "../../../data/homePageSections";
+import { sectionBlockClass } from "../../../lib/sectionBands";
 
 const UbuntuHomeFeatures = lazy(() => import("./UbuntuHomeFeatures"));
-const SolutionsHorizontalSlider = lazy(() => import("../../ubuntu/SolutionsHorizontalSlider"));
 const UbuntuHomeValidationSection = lazy(() => import("./UbuntuHomeValidationSection"));
 const UbuntuHomeIndustries = lazy(() =>
   import("./UbuntuHomeIndustriesBlogs").then((mod) => ({ default: mod.UbuntuHomeIndustries }))
@@ -32,7 +31,7 @@ const UbuntuHomeBlogs = lazy(() =>
 const ContactForm = lazy(() => import("../../ContactForm"));
 
 function HomeSectionFallback({ minHeight = "12rem" }) {
-  return <div className="ubuntu-section-block" style={{ minHeight }} aria-hidden />;
+  return <div style={{ minHeight }} aria-hidden />;
 }
 
 export default function UbuntuHome() {
@@ -76,10 +75,6 @@ export default function UbuntuHome() {
         <UbuntuHomeFeatures />
       </Suspense>
 
-      <Suspense fallback={<HomeSectionFallback minHeight="20rem" />}>
-        <SolutionsHorizontalSlider useHomeSlides {...HOME_SOLUTIONS_SLIDER} />
-      </Suspense>
-
       <Suspense fallback={<HomeSectionFallback />}>
         <UbuntuHomeIndustries />
       </Suspense>
@@ -87,7 +82,7 @@ export default function UbuntuHome() {
       <section
         id="next-step"
         data-testid="next-step-cta"
-        className="ubuntu-section-block ubuntu-next-step-cta"
+        className={sectionBlockClass("ubuntu-next-step-cta")}
       >
         {nextStepImage?.src ? (
           <div
@@ -110,9 +105,6 @@ export default function UbuntuHome() {
               >
                 {HOME_NEXT_STEP.primaryCta.label}
               </SiteNavLink>
-              <UbuntuHomeLink to={HOME_NEXT_STEP.secondaryCta.href}>
-                {HOME_NEXT_STEP.secondaryCta.label}
-              </UbuntuHomeLink>
               {HOME_NEXT_STEP.tertiaryCta && (
                 <UbuntuHomeLink to={HOME_NEXT_STEP.tertiaryCta.href}>
                   {HOME_NEXT_STEP.tertiaryCta.label}

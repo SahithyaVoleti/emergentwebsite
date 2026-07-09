@@ -1,5 +1,6 @@
 import MockupFrame from "./MockupFrame";
 import { splitLayoutContentForMedia } from "../../lib/splitLayoutContent";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 export default function UbuntuSplitLayout({
   image,
@@ -17,13 +18,7 @@ export default function UbuntuSplitLayout({
   mediaSlot,
   mediaClassName = "",
 }) {
-  const sectionClass = [
-    "ubuntu-section-block",
-    variant === "alt" && "ubuntu-section--alt",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const sectionClass = sectionBlockClass(className);
 
   const imageFirst = imagePosition === "left";
   const hasMedia = Boolean(mediaSlot || image);

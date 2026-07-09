@@ -3,6 +3,7 @@ import { getServiceDeliveryOutcomes } from "../../lib/serviceOutcomes";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import ServiceOfferingsList from "../ubuntu/ServiceOfferingsList";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Service detail capability modules — same row catalog layout as the homepage offerings grid.
@@ -23,7 +24,7 @@ export default function ServiceSubservicesGrid({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block ubuntu-capability-grid-section border-y border-[#d9d9d9] bg-white ${className}`}
+      className={sectionBlockClass("ubuntu-capability-grid-section border-y border-[#d9d9d9]", className)}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

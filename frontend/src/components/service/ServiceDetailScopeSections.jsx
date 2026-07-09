@@ -3,6 +3,7 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import { FileText, Minus, Plus } from "lucide-react";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function useReveal() {
   const ref = useRef(null);
@@ -57,7 +58,7 @@ export default function ServicePilotOverviewSection({ pilot }) {
     <section
       id="pilot-overview"
       data-testid="service-pilot-overview"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby="pilot-overview-heading"
     >
       <div ref={ref} className="ubuntu-container">

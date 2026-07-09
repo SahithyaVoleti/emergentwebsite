@@ -3,6 +3,7 @@ import { SECTION_LABEL } from "../../data/sectionLabels";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import ModuleIconGrid from "./ModuleIconGrid";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 export { assignUniqueScopeIcons, resolveScopeDeliveryIcon } from "../../lib/scopeDeliveryIcons";
 
@@ -19,7 +20,7 @@ export default function ScopeOfDeliveryGrid({
   return (
     <section
       id={id}
-      className="ubuntu-section-block ubuntu-section--alt ubuntu-scope-grid-section border-y border-[#d9d9d9]"
+      className={sectionBlockClass("ubuntu-scope-grid-section border-y border-[#d9d9d9]")}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

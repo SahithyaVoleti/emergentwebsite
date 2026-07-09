@@ -1,0 +1,212 @@
+/**
+ * Alternating black / white section bands.
+ * Each band sets local --site-* tokens so nested components inherit correct contrast.
+ */
+
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light),
+.ubuntu-site .ubuntu-section--dark,
+.ubuntu-site .ubuntu-stats-cta-strip:not(.ubuntu-section--light),
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark {
+  --site-bg: #000000;
+  --site-bg-alt: #0a0a0a;
+  --site-bg-elevated: #141414;
+  --site-bg-input: #1a1a1a;
+  --site-text: #ffffff;
+  --site-text-muted: #cccccc;
+  --site-text-subtle: #aaaaaa;
+  --site-border: rgba(255, 255, 255, 0.14);
+  --site-border-strong: rgba(255, 255, 255, 0.22);
+  background: #000000 !important;
+  background-image: none !important;
+  color: #ffffff;
+  border-color: var(--site-border) !important;
+}
+
+.ubuntu-site .ubuntu-section--light,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--light {
+  --site-bg: #ffffff;
+  --site-bg-alt: #f7f7f7;
+  --site-bg-elevated: #f5f5f5;
+  --site-bg-input: #ffffff;
+  --site-text: #000000;
+  --site-text-muted: #333333;
+  --site-text-subtle: #555555;
+  --site-border: #d9d9d9;
+  --site-border-strong: #c9c9c9;
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #000000;
+  border-color: var(--site-border) !important;
+}
+
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section--dark :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section--dark .ubuntu-section-title,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-section-title,
+.ubuntu-site .ubuntu-section--dark .ubuntu-lead,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-lead,
+.ubuntu-site .ubuntu-section--dark .ubuntu-body,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-body,
+.ubuntu-site .ubuntu-section--dark p,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) p,
+.ubuntu-site .ubuntu-section--dark li,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) li,
+.ubuntu-site .ubuntu-section--dark label,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) label,
+.ubuntu-site .ubuntu-section--dark .ubuntu-link,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-link,
+.ubuntu-site .ubuntu-section--dark .ubuntu-link-muted,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-link-muted,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-stats-cta-strip:not(.ubuntu-section--light) :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark p,
+.ubuntu-site .ubuntu-stats-cta-strip:not(.ubuntu-section--light) p {
+  color: inherit;
+}
+
+.ubuntu-site .ubuntu-section--light :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section--light .ubuntu-section-title,
+.ubuntu-site .ubuntu-section--light .ubuntu-lead,
+.ubuntu-site .ubuntu-section--light .ubuntu-body,
+.ubuntu-site .ubuntu-section--light p,
+.ubuntu-site .ubuntu-section--light li,
+.ubuntu-site .ubuntu-section--light label,
+.ubuntu-site .ubuntu-section--light .ubuntu-link-muted,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--light :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--light p {
+  color: inherit;
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-link {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-link:hover {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site .ubuntu-section--dark .bg-white,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark .bg-white {
+  background-color: var(--site-bg-elevated) !important;
+  border-color: var(--site-border) !important;
+}
+
+.ubuntu-site .ubuntu-section--light .bg-white {
+  background-color: #ffffff !important;
+}
+
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .text-\[\#2d2d2d\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#2d2d2d\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#333\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#1e1e1e\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#111\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#4a4a4a\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#5c5c5c\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#555\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#444\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#666\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#6b6b6b\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#7d8597\],
+.ubuntu-site .ubuntu-section--dark .text-\[\#888\] {
+  color: var(--site-text-muted) !important;
+}
+
+.ubuntu-site .ubuntu-section--light .text-\[\#2d2d2d\],
+.ubuntu-site .ubuntu-section--light .text-\[\#333\],
+.ubuntu-site .ubuntu-section--light .text-\[\#1e1e1e\],
+.ubuntu-site .ubuntu-section--light .text-\[\#111\] {
+  color: #000000 !important;
+}
+
+.ubuntu-site .ubuntu-section--light .text-\[\#4a4a4a\],
+.ubuntu-site .ubuntu-section--light .text-\[\#5c5c5c\],
+.ubuntu-site .ubuntu-section--light .text-\[\#555\],
+.ubuntu-site .ubuntu-section--light .text-\[\#444\],
+.ubuntu-site .ubuntu-section--light .text-\[\#666\],
+.ubuntu-site .ubuntu-section--light .text-\[\#6b6b6b\] {
+  color: #444444 !important;
+}
+
+.ubuntu-site .ubuntu-section--light .text-\[\#7d8597\],
+.ubuntu-site .ubuntu-section--light .text-\[\#888\] {
+  color: #666666 !important;
+}
+
+.ubuntu-site .ubuntu-section--dark .ubuntu-process-stepper__node {
+  background: var(--site-bg);
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-process-stepper__node {
+  background: var(--site-bg);
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-scope-grid__card-title {
+  color: var(--site-text);
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section--light .ubuntu-page-eyebrow,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--light .ubuntu-section-eyebrow {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site .ubuntu-section--dark [data-testid="faq-section"] [data-state] button,
+.ubuntu-site .ubuntu-section--dark [data-testid="faq-section"] [data-state] > div p {
+  color: var(--site-text-muted);
+}
+
+.ubuntu-site .ubuntu-section--light [data-testid="faq-section"] [data-state] button {
+  color: #000000 !important;
+}
+
+.ubuntu-site .ubuntu-section--light [data-testid="faq-section"] [data-state] > div p {
+  color: #666666 !important;
+}
+
+.ubuntu-site .ubuntu-section--dark .ubuntu-next-step-cta__content,
+.ubuntu-site .ubuntu-section--light .ubuntu-next-step-cta__content {
+  color: inherit;
+}
+
+/* Accent copy — dark blue on light bands, readable blue on dark bands */
+.ubuntu-site .ubuntu-section--dark .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section--dark .ubuntu-page-eyebrow,
+.ubuntu-site .ubuntu-section--dark .ubuntu-section-title__accent,
+.ubuntu-site .ubuntu-section--dark .hero-heading-accent,
+.ubuntu-site .ubuntu-section--dark .ubuntu-palette-text,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--dark .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-section-title__accent {
+  color: var(--site-accent-on-dark) !important;
+}
+
+.ubuntu-site .ubuntu-section--light .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-section--light .ubuntu-page-eyebrow,
+.ubuntu-site .ubuntu-section--light .ubuntu-section-title__accent,
+.ubuntu-site .ubuntu-section--light .hero-heading-accent,
+.ubuntu-site .ubuntu-stats-cta-strip.ubuntu-section--light .ubuntu-section-eyebrow {
+  color: var(--site-highlight) !important;
+}
+
+.ubuntu-site .ubuntu-section--light :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section--light .ubuntu-section-title {
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-section--dark .ubuntu-process-stepper__step.is-active .ubuntu-process-stepper__label,
+.ubuntu-site .ubuntu-section-block:not(.ubuntu-section--light) .ubuntu-process-stepper__step.is-active .ubuntu-process-stepper__label {
+  color: var(--site-accent-on-dark) !important;
+}
+
+/* Site-wide flush bands — no scroll-reveal gaps (all pages use .ubuntu-home-page) */
+.ubuntu-site .ubuntu-home-page > section + section,
+.ubuntu-site .ubuntu-home-page > .ubuntu-hero-stack + section,
+.ubuntu-site .ubuntu-home-page > .ubuntu-hero-stack + .ubuntu-section-block,
+.ubuntu-site .ubuntu-home-page > .ubuntu-stats-cta-strip + section,
+.ubuntu-site .ubuntu-home-page > section + .ubuntu-stats-cta-strip,
+.ubuntu-site .ubuntu-home-page > .ubuntu-section-block + .ubuntu-section-block,
+.ubuntu-site .ubuntu-home-page > section + .ubuntu-section-block,
+.ubuntu-site .ubuntu-home-page > .ubuntu-section-block + section {
+  padding-top: 0;
+  margin-top: 0;
+}

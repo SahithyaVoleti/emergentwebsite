@@ -7,6 +7,7 @@ import ModuleIconGrid from "../../service/ModuleIconGrid";
 import UbuntuLink from "../../ubuntu/UbuntuLink";
 import SectionEyebrow from "../../ubuntu/SectionEyebrow";
 import SectionTitle from "../../ubuntu/SectionTitle";
+import { sectionBlockClass } from "../../../lib/sectionBands";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 
 const articleBySlug = Object.fromEntries(blogArticles.map((a) => [a.slug, a]));
@@ -84,7 +85,7 @@ export function UbuntuHomeIndustries() {
     <section
       id={HOME_DOMAINS.id}
       data-testid="home-industries"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby={`${HOME_DOMAINS.id}-heading`}
     >
       <div className="ubuntu-container">
@@ -131,7 +132,7 @@ export function UbuntuHomeBlogs({ config }) {
     <section
       id={band.id}
       data-testid="home-blogs-band"
-      className="ubuntu-section-block border-b border-[#d9d9d9] bg-white"
+      className={sectionBlockClass("border-b border-[#d9d9d9]")}
       aria-labelledby={`${band.id}-heading`}
     >
       <div className="ubuntu-container">

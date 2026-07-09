@@ -3,6 +3,7 @@ import PageHero from "../components/PageHero";
 import OurWorkSubNav from "../components/ubuntu/OurWorkSubNav";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
+import { sectionBlockClass } from "../lib/sectionBands";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 export default function OurWorkPage() {
@@ -18,7 +19,7 @@ export default function OurWorkPage() {
 
       <OurWorkSubNav className="our-work-subnav--band" />
 
-      <section className="ubuntu-section-block" aria-labelledby="our-work-paths-heading">
+      <section className={sectionBlockClass()} aria-labelledby="our-work-paths-heading">
         <div className="ubuntu-container">
           <h2 id="our-work-paths-heading" className="ubuntu-section-title">
             Products and validated client outcomes

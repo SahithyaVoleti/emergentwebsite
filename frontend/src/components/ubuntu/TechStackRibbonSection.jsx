@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { TechBrandMark } from "../TechBrandIcon";
 import SectionEyebrow from "./SectionEyebrow";
 import SectionTitle from "./SectionTitle";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 /**
  * Auto-scrolling technology ribbon — heading aligned inside the container;
@@ -29,7 +30,7 @@ export default function TechStackRibbonSection({
     <section
       id={id}
       data-testid={testId}
-      className={`ubuntu-section-block ubuntu-tech-ribbon border-y border-[#d9d9d9] bg-white ${className}`.trim()}
+      className={sectionBlockClass("ubuntu-tech-ribbon border-y border-[#d9d9d9]", className)}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">

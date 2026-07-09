@@ -5,6 +5,7 @@ import SectionTitle from "./SectionTitle";
 import ServiceOfferingsList from "./ServiceOfferingsList";
 import { SECTION_LABEL } from "../../data/sectionLabels";
 import { paletteAccentIndex } from "../../lib/brandPalette";
+import { sectionBlockClass } from "../../lib/sectionBands";
 
 function ServiceOfferingCards({ services }) {
   return (
@@ -81,7 +82,11 @@ export default function ServicesGrid4x4({
   return (
     <section
       id={id}
-      className={`ubuntu-section-block border-y border-[#d9d9d9] bg-white ${isCards ? "ubuntu-services-grid-section" : ""} ${className}`}
+      className={sectionBlockClass(
+        "border-y border-[#d9d9d9]",
+        isCards ? "ubuntu-services-grid-section" : "",
+        className,
+      )}
       aria-labelledby={`${id}-heading`}
     >
       <div className="ubuntu-container">
