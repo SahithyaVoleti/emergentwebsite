@@ -582,12 +582,57 @@
   opacity: 0.3;
 }
 
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo {
+  background: #ffffff;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__backdrop {
+  opacity: 1;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo::after {
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.78) 34%,
+    rgba(255, 255, 255, 0.35) 58%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__title {
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__lead {
+  color: #333333;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--home-banner-has-photo .ubuntu-home-hero-banner__title-accent {
+  color: var(--site-highlight);
+}
+
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner-has-photo)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-link,
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner-has-photo)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-dropdown-group__trigger {
+  color: #111111;
+}
+
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner-has-photo)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  [data-testid="mobile-menu-toggle"] {
+  color: #111111;
+}
+
 .ubuntu-site .ubuntu-home-hero-banner__slide {
   position: absolute;
   inset: 0;
   background-color: transparent;
   background-size: cover;
-  background-position: 72% center;
+  background-position: center right;
   background-repeat: no-repeat;
   opacity: 0;
   transform: scale(1.02);

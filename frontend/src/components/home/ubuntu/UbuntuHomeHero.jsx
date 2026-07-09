@@ -1,7 +1,7 @@
 import UbuntuPageHeroBanner from "../../ubuntu/UbuntuPageHeroBanner";
 import { HOME_HERO } from "../../../data/homePageSections";
 
-/** Homepage hero — headline left over an auto-rotating photographic backdrop. */
+/** Homepage hero — headline left over the branded backdrop image. */
 export default function UbuntuHomeHero({ embedded = false }) {
   const { titleBefore, titleAccent, titleAfter, lead, primaryCta } = HOME_HERO;
 

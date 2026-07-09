@@ -2,7 +2,7 @@ import SitePageChrome from "../../ubuntu/SitePageChrome";
 import UbuntuHomeHero from "./UbuntuHomeHero";
 import { BRAND_HERO_BACKGROUNDS } from "../../../data/brandAssets";
 
-/** Homepage hero — banner layout with auto-rotating photographic backdrop. */
+/** Homepage hero — banner layout with branded backdrop image. */
 export default function UbuntuHomeHeroChrome() {
   return (
     <SitePageChrome

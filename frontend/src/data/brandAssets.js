@@ -4,14 +4,9 @@ export const BRAND_LOGO_FULL = "/neuraltrix-header-logo.png";
 export const BRAND_LOGO_SYMBOL = "/neuraltrix-logo-symbol.png";
 /** Homepage hero watermark — circular flame mark (grey-treated in CSS). */
 export const BRAND_HERO_SYMBOL = "/media/hero-symbol.png";
-/** Homepage hero photographic backdrop (shown at reduced opacity). */
-export const BRAND_HERO_BACKGROUND = "/media/home/hero-background.png";
-/** Homepage hero auto-rotating backdrop slides (shown at reduced opacity). */
-export const BRAND_HERO_BACKGROUNDS = [
-  "/media/home/hero-slides/hero-slide-1.png",
-  "/media/home/hero-slides/hero-slide-2.png",
-  "/media/home/hero-slides/hero-slide-3.png",
-  "/media/home/hero-slides/hero-slide-4.png",
-];
+/** Homepage hero photographic backdrop. */
+export const BRAND_HERO_BACKGROUND = "/media/home/hero-homepage-background.jpg";
+/** Homepage hero backdrop (single static image). */
+export const BRAND_HERO_BACKGROUNDS = [BRAND_HERO_BACKGROUND];
 
 export const BRAND_LOGO_ALT = "NeuralTrix AI";
