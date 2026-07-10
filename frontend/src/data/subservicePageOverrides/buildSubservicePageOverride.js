@@ -4,6 +4,7 @@ import {
   getSubserviceIntroMedia,
 } from "../serviceSubserviceImages";
 import services from "../services";
+import { buildStatsSectionMeta, buildSubserviceStatsItems } from "../../lib/buildServiceStatsStrip";
 
 const CAPABILITY_ICONS = ["ml", "data", "governance", "platform", "llm", "devops", "agents"];
 
@@ -12,14 +13,6 @@ const DEFAULT_CASE_STUDY_SLUGS = [
   "schooltrix-multi-campus-school",
   "medclues-regional-hospital",
 ];
-
-const PILLAR_WORKSTREAM_LABEL = {
-  "artificial-intelligence": "Applied AI workstreams",
-  "data-engineering": "Data engineering workstreams",
-  "generative-ai": "Generative AI workstreams",
-  devops: "Platform reliability workstreams",
-  "development-services": "Product engineering workstreams",
-};
 
 const INTRO_TITLE_BY_PILLAR = {
   "artificial-intelligence": "Intelligent capabilities inside |systems you operate|",
@@ -184,7 +177,6 @@ export function buildSubservicePageOverride(pillar, subservice, service) {
   const caseStudyId = `${slugify(subservice.id)}-case-studies`;
   const introMedia = getSubserviceIntroMedia(subservice.id, subservice.title);
   const capabilityMedia = getSubserviceCapabilityMedia(subservice.id, pillar.id, subservice.title);
-  const workstreamLabel = PILLAR_WORKSTREAM_LABEL[pillar.id] ?? "Related workstreams";
   const advisory = isAdvisorySubservice(subservice);
   const scopeEyebrow = advisory ? "Advisory scope" : "Delivery scope";
   const pilotLabel = advisory ? "Typical advisory sprint" : "Typical pilot window";
@@ -198,14 +190,8 @@ export function buildSubservicePageOverride(pillar, subservice, service) {
       secondaryCTA: { text: "Request consultation", href: "#page-contact", contactIntent: "consultation" },
     },
     stats: {
-      id: `${idPrefix}-stats`,
-      testId: `${idPrefix}-startup-stats`,
-      items: [
-        { value: String(subservice.items?.length ?? 4), label: "Core delivery areas" },
-        { value: "4–6 wks", label: pilotLabel },
-        { value: String(pillar.subservices?.length ?? 0), label: workstreamLabel },
-        { value: "Senior-led", label: "Practitioner access" },
-      ],
+      ...buildStatsSectionMeta(idPrefix),
+      items: buildSubserviceStatsItems(pillar, subservice, service),
     },
     intro: {
       id: `${idPrefix}-intro`,

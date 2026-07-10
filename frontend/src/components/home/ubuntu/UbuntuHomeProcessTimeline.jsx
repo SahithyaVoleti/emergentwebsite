@@ -123,7 +123,7 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
 
                 <motion.h3
                   className="ubuntu-arch-timeline__title"
-                  animate={{ color: isActive ? "#ffffff" : isReached ? "#cccccc" : "#888888" }}
+                  animate={{ color: isActive ? "#000000" : isReached ? "#1a365d" : "#000000" }}
                   transition={{ duration: 0.4 }}
                 >
                   {step.title}
@@ -197,13 +197,13 @@ export default function UbuntuHomeProcessTimeline({ steps }) {
                     </span>
                   </motion.div>
                   <div className="min-w-0">
-                    <h3 className="text-base font-medium text-white">{step.title}</h3>
+                    <h3 className="text-base font-medium text-black">{step.title}</h3>
                     {step.duration && (
                       <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#1a365d]">
                         {step.duration}
                       </p>
                     )}
-                    <p className="mt-2 text-sm leading-relaxed text-[#555]">{step.desc}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-black">{step.desc}</p>
                   </div>
                 </motion.button>
               </li>

@@ -1,6 +1,11 @@
 import services from "../data/services";
 import { getSubserviceCardImage } from "../data/serviceSubserviceImages";
 import { applySubservicePageOverride } from "../data/subservicePageOverrides";
+import {
+  buildPillarStatsItems,
+  buildStatsSectionMeta,
+  buildSubserviceStatsItems,
+} from "./buildServiceStatsStrip";
 import { dedupeTechNamesByIcon, extractTechNamesFromService } from "./serviceTechStackSlugs";
 
 const DEFAULT_CASE_STUDY_SLUGS = [
@@ -357,16 +362,6 @@ function buildSharedSections({
   caseStudyId,
 }) {
   return {
-    stats: {
-      id: `${idPrefix}-stats`,
-      testId: `${idPrefix}-startup-stats`,
-      items: [
-        { value: "4–6 wks", label: "Typical pilot window" },
-        { value: "Senior-led", label: "Engineering model" },
-        { value: String(techNames.length), label: "Platforms in scope" },
-        { value: "Fixed scope", label: "Pilot delivery" },
-      ],
-    },
     techStack: {
       id: `${idPrefix}-tech-stack`,
       testId: `${idPrefix}-tech-stack`,
@@ -466,14 +461,8 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
       secondaryCTA: { text: "Discuss a pilot", href: "#page-contact", contactIntent: "consultation" },
     },
     stats: {
-      id: `${idPrefix}-stats`,
-      testId: `${idPrefix}-startup-stats`,
-      items: [
-        { value: String(workstreamCount), label: `${pillar.label} workstreams` },
-        { value: "12+", label: "Models fine-tuned" },
-        { value: "7+", label: "Features in production" },
-        { value: "4–6 wks", label: "Typical pilot window" },
-      ],
+      ...buildStatsSectionMeta(idPrefix),
+      items: buildPillarStatsItems(pillar, service),
     },
     intro: {
       id: `${idPrefix}-intro`,
@@ -560,14 +549,8 @@ export function buildSubservicePageSections(
       secondaryCTA: { text: "Discuss a pilot", href: "#page-contact", contactIntent: "consultation" },
     },
     stats: {
-      id: `${idPrefix}-stats`,
-      testId: `${idPrefix}-startup-stats`,
-      items: [
-        { value: String(subservice.items?.length ?? 4), label: "Delivery areas" },
-        { value: String(pillar.subservices?.length ?? 0), label: `${pillar.label} workstreams` },
-        { value: "4–6 wks", label: "Typical pilot window" },
-        { value: "Senior-led", label: "Engineering model" },
-      ],
+      ...buildStatsSectionMeta(idPrefix),
+      items: buildSubserviceStatsItems(pillar, subservice, service),
     },
     intro: {
       id: `${idPrefix}-intro`,

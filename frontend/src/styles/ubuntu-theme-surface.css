@@ -1,5 +1,5 @@
 /**
- * Monochrome surface theme — black/white copy, dark blue accents.
+ * White surface theme — black copy and dark blue accents.
  * Loaded after ubuntu-home.css; overrides Tailwind utilities inside .ubuntu-site.
  */
 
@@ -49,18 +49,42 @@
   color: var(--site-text-subtle);
 }
 
-/* Header chrome */
+/* Header chrome — white links over hero bands; dark links elsewhere at page top */
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top .ubuntu-nav-link,
 .ubuntu-site .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top .ubuntu-nav-dropdown-group__trigger {
-  color: #fff;
+  color: #000000;
+}
+
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-link,
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-dropdown-group__trigger,
+.ubuntu-site:has(.ubuntu-site-page-chrome--fullbleed)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-link,
+.ubuntu-site:has(.ubuntu-site-page-chrome--fullbleed)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  .ubuntu-nav-dropdown-group__trigger {
+  color: #ffffff;
+}
+
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  [data-testid="mobile-menu-toggle"],
+.ubuntu-site:has(.ubuntu-site-page-chrome--fullbleed)
+  .ubuntu-chrome-header--site-nav.ubuntu-chrome-header--at-top
+  [data-testid="mobile-menu-toggle"] {
+  color: #ffffff;
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown__panel {
   background: var(--site-bg-elevated);
   border-color: var(--site-border-strong);
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.35),
-    0 16px 40px rgba(0, 0, 0, 0.25);
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 .ubuntu-chrome-header .ubuntu-nav-dropdown__link {
@@ -92,27 +116,28 @@
 
 /* Footer */
 .ubuntu-chrome-footer {
-  background: var(--site-bg-alt);
-  color: var(--site-text-muted);
+  background: #ffffff;
+  color: #000000;
   border-top-color: var(--site-border-strong);
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-heading,
+.ubuntu-chrome-footer .ubuntu-footer-link,
+.ubuntu-chrome-footer .ubuntu-footer-meta,
 .ubuntu-chrome-footer .ubuntu-footer-social,
 .ubuntu-chrome-footer .ubuntu-footer-top {
-  color: var(--site-text);
+  color: #000000;
 }
 
-.ubuntu-chrome-footer .ubuntu-footer-link {
-  color: var(--site-text-muted);
-}
-
-.ubuntu-chrome-footer .ubuntu-footer-link:hover,
-.ubuntu-chrome-footer .ubuntu-footer-top:hover,
-.ubuntu-chrome-footer .ubuntu-footer-social:hover {
+.ubuntu-chrome-footer .ubuntu-footer-heading {
   color: var(--site-highlight);
 }
 
+.ubuntu-chrome-footer .ubuntu-footer-link:hover,
+.ubuntu-chrome-footer .ubuntu-footer-social:hover,
+.ubuntu-chrome-footer .ubuntu-footer-top:hover {
+  color: var(--site-highlight);
+}
 .ubuntu-chrome-footer .ubuntu-footer-rule {
   border-top-color: var(--site-border);
 }
@@ -184,7 +209,7 @@
 .ubuntu-site .ubuntu-section--dark .text-\[\#8b1538\],
 .ubuntu-site .ubuntu-section--dark .text-\[\#d1511f\],
 .ubuntu-site .ubuntu-section--dark .text-\[\#b8451a\] {
-  color: var(--site-accent-on-dark) !important;
+  color: var(--site-highlight) !important;
 }
 
 .ubuntu-site .border-\[\#d1511f\],
@@ -260,7 +285,7 @@
 }
 
 .ubuntu-site .corp-heading-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, var(--site-accent-on-dark) 55%, #c5d9f2 100%);
+  background: linear-gradient(135deg, #000000 0%, var(--site-highlight) 55%, #2f6fad 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -287,29 +312,21 @@
   background: #fff;
 }
 
-/* No black text on dark bands */
-.ubuntu-site .ubuntu-section--dark .text-black {
-  color: var(--site-text) !important;
-}
-
-.ubuntu-site .ubuntu-section--dark :where(h1, h2, h3, h4, h5, h6) {
-  color: var(--site-text);
-}
-
-.ubuntu-site .ubuntu-section--light :where(h1, h2, h3, h4, h5, h6) {
+/* Content typography — black with dark blue accents */
+.ubuntu-site .ubuntu-section--dark .text-black,
+.ubuntu-site .ubuntu-section--dark :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section--light :where(h1, h2, h3, h4, h5, h6),
+.ubuntu-site .ubuntu-section-block :where(h1, h2, h3, h4, h5, h6) {
   color: #000000;
 }
 
 .ubuntu-site .ubuntu-section--light .ubuntu-section-title__accent,
 .ubuntu-site .ubuntu-section--light .ubuntu-section-eyebrow,
-.ubuntu-site .ubuntu-section--light .ubuntu-page-eyebrow {
-  color: var(--site-highlight) !important;
-}
-
+.ubuntu-site .ubuntu-section--light .ubuntu-page-eyebrow,
 .ubuntu-site .ubuntu-section--dark .ubuntu-section-title__accent,
 .ubuntu-site .ubuntu-section--dark .ubuntu-section-eyebrow,
 .ubuntu-site .ubuntu-section--dark .ubuntu-page-eyebrow {
-  color: var(--site-accent-on-dark) !important;
+  color: var(--site-highlight) !important;
 }
 
 .ubuntu-site .group:hover .group-hover\:text-\[\#4a4a4a\] {
@@ -339,8 +356,15 @@
   box-shadow: none !important;
 }
 
-.ubuntu-site .ubuntu-site-page-chrome--home-banner {
-  background: #000000 !important;
+.ubuntu-site .ubuntu-site-page-chrome--home-banner,
+.ubuntu-site .ubuntu-site-page-chrome--home-banner.ubuntu-site-page-chrome--home-banner-has-photo {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome--fullbleed {
+  background: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
 }
@@ -482,4 +506,66 @@
   text-align: center;
   text-justify: auto;
   hyphens: none;
+}
+
+/* White content surface — exclude hero chrome */
+.ubuntu-site .ubuntu-site__body,
+.ubuntu-site .ubuntu-home-page,
+.ubuntu-site .ubuntu-chrome-footer {
+  background: #ffffff !important;
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-section-block,
+.ubuntu-site .ubuntu-pattern-section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--cta),
+.ubuntu-site .ubuntu-arch-timeline-section {
+  background: #ffffff !important;
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-section-block :where(p, li, dd, dt, label, span, div),
+.ubuntu-site .ubuntu-arch-timeline__desc,
+.ubuntu-site .ubuntu-arch-timeline__duration {
+  color: inherit;
+}
+
+.ubuntu-site .ubuntu-section-block .text-white:not(.ubuntu-btn-primary):not(.ubuntu-chrome-header *),
+.ubuntu-site .ubuntu-arch-timeline-section .text-white {
+  color: #000000 !important;
+}
+
+.ubuntu-site .ubuntu-site-page-chrome .ubuntu-home-hero-banner__title,
+.ubuntu-site .ubuntu-site-page-chrome .ubuntu-home-hero-banner__lead,
+.ubuntu-site .ubuntu-site-page-chrome .ubuntu-home-hero-banner__title-accent,
+.ubuntu-site .ubuntu-site-page-chrome .ubuntu-section-eyebrow,
+.ubuntu-site .ubuntu-site-page-chrome .ubuntu-page-eyebrow {
+  color: #ffffff !important;
+}
+
+.ubuntu-site .ubuntu-chrome-header--at-top [data-testid="mobile-menu-toggle"] {
+  color: #000000;
+}
+
+.ubuntu-site:has(.ubuntu-site-page-chrome--home-banner)
+  .ubuntu-chrome-header--at-top
+  [data-testid="mobile-menu-toggle"] {
+  color: #ffffff;
+}
+
+.ubuntu-site .ubuntu-chrome-header__mobile-menu,
+.ubuntu-site .ubuntu-chrome-header__mobile-menu .text-white {
+  color: #000000 !important;
+}
+
+.ubuntu-site .ubuntu-btn-primary,
+.ubuntu-site .ubuntu-chrome-header .ubuntu-btn-primary {
+  color: #ffffff;
+}
+
+.ubuntu-site .ubuntu-arch-timeline__title {
+  color: #000000;
+}
+
+.ubuntu-site .ubuntu-arch-timeline__duration {
+  color: var(--site-highlight);
 }

@@ -6,8 +6,43 @@ import {
   buildPillarPageSections,
   buildSubservicePageSections,
 } from "./buildServicePageSections";
+import { buildPillarStatsItems, buildSubserviceStatsItems } from "./buildServiceStatsStrip";
 
 describe("buildServicePageSections", () => {
+  it("builds pillar-specific stats for each main service pillar", () => {
+    const statsByPillar = SERVICE_CATALOG.map((pillar) => {
+      const service = services.find((entry) => entry.slug === pillar.id);
+      const sections = buildPillarPageSections(pillar, service);
+      return { pillarId: pillar.id, items: sections.stats.items };
+    });
+
+    for (const { items } of statsByPillar) {
+      expect(items).toHaveLength(4);
+    }
+
+    const serialized = statsByPillar.map((entry) => JSON.stringify(entry.items));
+    expect(new Set(serialized).size).toBe(SERVICE_CATALOG.length);
+  });
+
+  it("builds subservice-specific stats labels from delivery scope items", () => {
+    const advisory = findSubserviceById("applied-ai-advisory");
+    const retrieval = findSubserviceById("context-retrieval-systems");
+    const advisoryStats = buildSubserviceStatsItems(
+      advisory.pillar,
+      advisory.subservice,
+      services.find((entry) => entry.slug === advisory.pillar.id)
+    );
+    const retrievalStats = buildSubserviceStatsItems(
+      retrieval.pillar,
+      retrieval.subservice,
+      services.find((entry) => entry.slug === retrieval.pillar.id)
+    );
+
+    expect(advisoryStats[0].label).toBe("Opportunity mapping");
+    expect(retrievalStats[0].label).toBe("Corpus design");
+    expect(JSON.stringify(advisoryStats)).not.toBe(JSON.stringify(retrievalStats));
+  });
+
   it("builds full landing sections for every main service pillar", () => {
     for (const pillar of SERVICE_CATALOG) {
       const service = services.find((entry) => entry.slug === pillar.id);

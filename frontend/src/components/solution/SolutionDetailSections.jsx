@@ -35,7 +35,7 @@ function FactTile({ icon: Icon, label, value, delay, reveal }) {
         <Icon size={16} strokeWidth={2} aria-hidden />
         <span className="text-[10px] font-semibold uppercase tracking-[0.12em]">{label}</span>
       </div>
-      <p className="text-sm font-medium leading-snug text-white sm:text-base">{value}</p>
+      <p className="text-sm font-medium leading-snug text-black sm:text-base">{value}</p>
     </motion.div>
   );
 }
@@ -152,13 +152,13 @@ function SolutionPilotSchedule({ weeks, reveal }) {
               <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[#999] sm:sr-only">
                 Phase
               </span>
-              <p className="text-base font-medium text-white">{week.label}</p>
+              <p className="text-base font-medium text-black">{week.label}</p>
             </div>
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[#999] sm:sr-only">
                 Focus
               </span>
-              <p className="text-sm leading-relaxed text-[#555] sm:text-[0.9375rem]">{week.desc}</p>
+              <p className="text-sm leading-relaxed text-black sm:text-[0.9375rem]">{week.desc}</p>
             </div>
           </motion.li>
         ))}

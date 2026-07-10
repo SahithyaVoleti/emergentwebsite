@@ -5,11 +5,10 @@ export function resetSectionBands() {
   bandIndex = 0;
 }
 
-/** Next alternating band class — mostly black with periodic white bands. */
+/** All content sections use the light (white) band. */
 export function nextSectionBandClass() {
-  const tone = bandIndex % 3 === 2 ? "ubuntu-section--light" : "ubuntu-section--dark";
   bandIndex += 1;
-  return tone;
+  return "ubuntu-section--light";
 }
 
 /** Standard section wrapper classes with the next band tone. */
