@@ -134,7 +134,7 @@ export const SERVICE_CATALOG = [
   {
     id: "devops",
     label: "Platform Reliability & DevOps",
-    cardImage: "/media/service-cloud-infrastructure.png",
+    cardImage: "/media/services/devops.jpg",
     tagline: "Delivery automation, reliability engineering, and model observability.",
     shortDesc:
       "Establish CI/CD, platform automation, reliability engineering, and observability—including model performance monitoring—for AI and enterprise workloads.",
@@ -174,7 +174,7 @@ export const SERVICE_CATALOG = [
   {
     id: "development-services",
     label: "Software Product Engineering",
-    cardImage: "/media/service-cloud-infrastructure.png",
+    cardImage: "/media/services/development-services.jpg",
     tagline: "Mobile, software, product, and API engineering for enterprise delivery.",
     shortDesc:
       "Engineering services for mobile applications, custom software, embedded teams, product development, and API platforms—with defined acceptance criteria and handover.",

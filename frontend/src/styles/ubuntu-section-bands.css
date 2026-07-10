@@ -98,13 +98,11 @@
 .ubuntu-site section.ubuntu-section--cta,
 .ubuntu-site #page-cta,
 .ubuntu-site #next-step,
-.ubuntu-site #engagement-cta,
 .ubuntu-site #page-contact,
 .ubuntu-site .ubuntu-contact-section,
 .ubuntu-site [data-testid="next-step-cta"],
 .ubuntu-site [data-testid="cta-section"],
-.ubuntu-site [data-testid="service-next-step-cta"],
-.ubuntu-site [data-testid="engagement-alert-cta"] {
+.ubuntu-site [data-testid="service-next-step-cta"] {
   --site-bg: #000000;
   --site-bg-alt: #0a0a0a;
   --site-bg-elevated: #141414;
@@ -136,9 +134,6 @@
 .ubuntu-site #next-step :where(h1, h2, h3, h4, h5, h6),
 .ubuntu-site #next-step p,
 .ubuntu-site #next-step li,
-.ubuntu-site #engagement-cta :where(h1, h2, h3, h4, h5, h6),
-.ubuntu-site #engagement-cta p,
-.ubuntu-site #engagement-cta li,
 .ubuntu-site #page-contact :where(h1, h2, h3, h4, h5, h6),
 .ubuntu-site #page-contact p,
 .ubuntu-site #page-contact li,
@@ -159,8 +154,6 @@
 .ubuntu-site #page-cta .ubuntu-section-title__accent,
 .ubuntu-site #next-step .ubuntu-section-eyebrow,
 .ubuntu-site #next-step .ubuntu-section-title__accent,
-.ubuntu-site #engagement-cta .ubuntu-section-eyebrow,
-.ubuntu-site #engagement-cta .ubuntu-section-title__accent,
 .ubuntu-site #page-contact .ubuntu-section-eyebrow,
 .ubuntu-site #page-contact .ubuntu-section-title__accent,
 .ubuntu-site .ubuntu-contact-section .ubuntu-section-eyebrow,
@@ -176,8 +169,6 @@
 .ubuntu-site #page-cta .ubuntu-link-muted,
 .ubuntu-site #next-step .ubuntu-link,
 .ubuntu-site #next-step .ubuntu-link-muted,
-.ubuntu-site #engagement-cta .ubuntu-link,
-.ubuntu-site #engagement-cta .ubuntu-link-muted,
 .ubuntu-site .ubuntu-contact-section .ubuntu-link,
 .ubuntu-site .ubuntu-contact-section .ubuntu-link-muted {
   color: #ffffff !important;
@@ -187,7 +178,6 @@
 .ubuntu-site .ubuntu-pattern-section--cta .ubuntu-link:hover,
 .ubuntu-site #page-cta .ubuntu-link:hover,
 .ubuntu-site #next-step .ubuntu-link:hover,
-.ubuntu-site #engagement-cta .ubuntu-link:hover,
 .ubuntu-site .ubuntu-contact-section .ubuntu-link:hover {
   color: #7eb0e8 !important;
 }

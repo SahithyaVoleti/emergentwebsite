@@ -46,8 +46,8 @@ const PILLAR_CAPABILITY_IMAGE = {
   "artificial-intelligence": "/media/home/what-we-deliver.png",
   "data-engineering": "/media/services/data-engineering/executive-dashboards.jpg",
   "generative-ai": "/media/service-ai-product-transformation.png",
-  devops: "/media/service-cloud-infrastructure.png",
-  "development-services": "/media/home/what-we-do.png",
+  devops: "/media/services/devops.jpg",
+  "development-services": "/media/services/development-services.jpg",
 };
 
 const DATA_ENGINEERING_CAPABILITY_IMAGES = {

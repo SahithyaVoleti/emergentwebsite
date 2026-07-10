@@ -3,6 +3,7 @@ import PageHero from "../components/PageHero";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import ServiceLandingPageLayout from "../components/service/ServiceLandingPageLayout";
 import { buildPillarPageSections } from "../lib/buildServicePageSections";
+import { SERVICE_PILLAR_HERO_BACKGROUNDS } from "../data/brandAssets";
 import services from "../data/services";
 import { getPillarGroup } from "../data/servicePillars";
 
@@ -24,6 +25,7 @@ export default function ServicePillarPage({ pillar }) {
   }
 
   const sections = buildPillarPageSections(pillar, service);
+  const heroBackgroundImage = SERVICE_PILLAR_HERO_BACKGROUNDS[pillar.id];
 
   return (
     <SitePageMain>
@@ -33,6 +35,8 @@ export default function ServicePillarPage({ pillar }) {
         description={sections.hero.description}
         primaryCTA={sections.hero.primaryCTA}
         secondaryCTA={sections.hero.secondaryCTA}
+        homeBackgroundImage={heroBackgroundImage}
+        showSymbol={!heroBackgroundImage}
         image={group.cardImage}
         imageVariant="service-pillar"
       />
