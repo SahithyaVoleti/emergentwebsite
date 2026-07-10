@@ -3004,7 +3004,7 @@
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__grid {
-  gap: 2rem 1.25rem;
+  gap: 1.25rem 1rem;
   align-items: start;
 }
 
@@ -3037,7 +3037,7 @@
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip__label {
-  margin-top: 0.5rem;
+  margin-top: 0.35rem;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.35;
@@ -3047,14 +3047,14 @@
   text-align: center;
   width: 100%;
   max-width: 11rem;
-  min-height: 2.75em;
+  min-height: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (min-width: 768px) {
   .ubuntu-site .ubuntu-stats-cta-strip__grid {
-    gap: 2rem 1.5rem;
+    gap: 1.25rem 1.25rem;
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__grid--cols-4 {
@@ -3062,11 +3062,11 @@
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__value {
-    font-size: clamp(2.25rem, 2.75vw, 3rem);
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__label {
-    margin-top: 0.625rem;
+    margin-top: 0.4rem;
     font-size: 0.875rem;
     max-width: 12rem;
   }
@@ -3074,12 +3074,12 @@
 
 @media (min-width: 1024px) {
   .ubuntu-site .ubuntu-stats-cta-strip__grid--cols-4 {
-    gap: 2rem 2.5rem;
+    gap: 1.25rem 2rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__value {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .ubuntu-site .ubuntu-stats-cta-strip__label {
@@ -3648,10 +3648,10 @@
   padding-bottom: 0;
 }
 
-/* Stat / metric bands */
+/* Stat / metric bands — compact height (avoid stacked section + container padding) */
 .ubuntu-site .ubuntu-stats-cta-strip {
-  padding-top: var(--section-space-y);
-  padding-bottom: var(--section-space-y);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Inner containers — corporate inset inside each section band */
@@ -3662,8 +3662,8 @@
 }
 
 .ubuntu-site .ubuntu-stats-cta-strip > .ubuntu-container {
-  padding-top: var(--container-space-y);
-  padding-bottom: var(--container-space-y);
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .ubuntu-site .ubuntu-pattern-section--cta > .ubuntu-container,
@@ -3675,28 +3675,32 @@
 @media (min-width: 768px) {
   .ubuntu-site section > .ubuntu-container,
   .ubuntu-site section > div[class*="w-full"][class*="px-"],
-  .ubuntu-site .ubuntu-stats-cta-strip > .ubuntu-container,
   .ubuntu-site .ubuntu-pattern-section--cta > .ubuntu-container {
     padding-top: var(--container-space-y-md);
     padding-bottom: var(--container-space-y-md);
   }
+
+  .ubuntu-site .ubuntu-stats-cta-strip > .ubuntu-container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
-/* Homepage stats band — compact height (drop the duplicated section padding) */
+/* Homepage stats band — keep same compact height as other stats strips */
 .ubuntu-site #startup-stats.ubuntu-stats-cta-strip {
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .ubuntu-site #startup-stats.ubuntu-stats-cta-strip > .ubuntu-container {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .ubuntu-site #startup-stats.ubuntu-stats-cta-strip > .ubuntu-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -3744,10 +3748,14 @@
   .ubuntu-site main section:not(.ubuntu-site-page-chrome):not(.ubuntu-pattern-section--hero),
   .ubuntu-site .page-surface section,
   .ubuntu-site .page-surface > section,
-  .ubuntu-site .ubuntu-section-block,
-  .ubuntu-site .ubuntu-stats-cta-strip {
+  .ubuntu-site .ubuntu-section-block {
     padding-top: var(--section-space-y-md);
     padding-bottom: var(--section-space-y-md);
+  }
+
+  .ubuntu-site .ubuntu-stats-cta-strip {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .ubuntu-site .ubuntu-section-inset {
@@ -4392,6 +4400,38 @@
   object-fit: cover;
 }
 
+/* Homepage What we do — slightly smaller illustration */
+.ubuntu-site #engagement-cta .ubuntu-split__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.ubuntu-site #engagement-cta .ubuntu-split__img {
+  width: 82%;
+  max-width: 26rem;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+/* Applied AI Engineering intro — slightly smaller illustration */
+.ubuntu-site #artificial-intelligence-intro .ubuntu-split__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.ubuntu-site #artificial-intelligence-intro .ubuntu-split__img {
+  width: 82%;
+  max-width: 26rem;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
 .ubuntu-site .ubuntu-split__media--gif {
   background: var(--site-bg-elevated);
 }
@@ -4491,6 +4531,74 @@
   aspect-ratio: auto;
   object-fit: cover;
   object-position: center;
+}
+
+/* Homepage What we deliver — show full illustration without cropping */
+.ubuntu-site #home-features .ubuntu-split__media--fill {
+  background: #ffffff;
+}
+
+.ubuntu-site #home-features .ubuntu-split__img--fill {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+}
+
+/* Outcomes sections site-wide — full illustration, no crop */
+.ubuntu-site [id$="-outcomes"] .ubuntu-split__media,
+.ubuntu-site #services-outcomes .ubuntu-split__media,
+.ubuntu-site #service-outcomes .ubuntu-split__media,
+.ubuntu-site .ubuntu-outcomes-section .ubuntu-split__media {
+  background: #ffffff;
+}
+
+.ubuntu-site [id$="-outcomes"] .ubuntu-split__img,
+.ubuntu-site #services-outcomes .ubuntu-split__img,
+.ubuntu-site #service-outcomes .ubuntu-split__img,
+.ubuntu-site .ubuntu-outcomes-section .ubuntu-split__img {
+  object-fit: contain;
+  object-position: center;
+  aspect-ratio: auto;
+  background: #ffffff;
+}
+
+/* Assurance sections site-wide — full illustration, no crop */
+.ubuntu-site [id$="-assurance"] .ubuntu-split__media,
+.ubuntu-site #services-assurance .ubuntu-split__media,
+.ubuntu-site #service-assurance .ubuntu-split__media,
+.ubuntu-site #solution-assurance .ubuntu-split__media,
+.ubuntu-site #industry-assurance .ubuntu-split__media,
+.ubuntu-site #governance-controls .ubuntu-split__media,
+.ubuntu-site .ubuntu-assurance-section .ubuntu-split__media {
+  background: #ffffff;
+}
+
+.ubuntu-site [id$="-assurance"] .ubuntu-split__img,
+.ubuntu-site #services-assurance .ubuntu-split__img,
+.ubuntu-site #service-assurance .ubuntu-split__img,
+.ubuntu-site #solution-assurance .ubuntu-split__img,
+.ubuntu-site #industry-assurance .ubuntu-split__img,
+.ubuntu-site #governance-controls .ubuntu-split__img,
+.ubuntu-site .ubuntu-assurance-section .ubuntu-split__img {
+  object-fit: contain;
+  object-position: center;
+  aspect-ratio: auto;
+  background: #ffffff;
+}
+
+/* Capabilities sections site-wide — full illustration, no crop */
+.ubuntu-site [id$="-capabilities"] .ubuntu-split__media--fill,
+.ubuntu-site #core-capabilities .ubuntu-split__media--fill,
+.ubuntu-site #applied-ai-advisory-capabilities .ubuntu-split__media--fill {
+  background: #ffffff;
+}
+
+.ubuntu-site [id$="-capabilities"] .ubuntu-split__img--fill,
+.ubuntu-site #core-capabilities .ubuntu-split__img--fill,
+.ubuntu-site #applied-ai-advisory-capabilities .ubuntu-split__img--fill {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
 }
 
 @media (min-width: 992px) {

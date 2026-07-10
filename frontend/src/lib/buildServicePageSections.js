@@ -1,6 +1,7 @@
 import services from "../data/services";
 import { getSubserviceCardImage } from "../data/serviceSubserviceImages";
 import { applySubservicePageOverride } from "../data/subservicePageOverrides";
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA, SITE_CAPABILITIES_MEDIA } from "../data/brandAssets";
 import {
   buildPillarStatsItems,
   buildStatsSectionMeta,
@@ -341,11 +342,6 @@ function itemsToCapabilities(items, contextLabel) {
   }));
 }
 
-const DATA_ENGINEERING_OUTCOMES_MEDIA = {
-  src: "/media/services/data-engineering/outcomes.jpg",
-  alt: "Professional presenting governed data platforms with database and analytics workflow symbols",
-};
-
 function buildSharedSections({
   idPrefix,
   label,
@@ -391,7 +387,7 @@ function buildSharedSections({
         label: "View case studies",
         href: `#${caseStudyId}`,
       },
-      mockupKey: "data",
+      media: SITE_OUTCOMES_MEDIA,
     },
     assurance: {
       id: `${idPrefix}-assurance`,
@@ -399,7 +395,7 @@ function buildSharedSections({
       title: `Assurance for |${label} programs|`,
       lead: "This assurance model embeds guardrails, logging, and rollback from the initial delivery phase—not after launch.",
       bullets: buildAssuranceBullets(),
-      mockupKey: "security",
+      media: SITE_ASSURANCE_MEDIA,
     },
     caseStudies: {
       id: caseStudyId,
@@ -489,16 +485,7 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
       title: `Core |foundations| for ${pillar.label.toLowerCase()}`,
       lead: `Technical foundations we implement during ${pillar.label.toLowerCase()} engagements—scoped to your domain tasks, data boundaries, and operational constraints.`,
       items: PILLAR_CORE_CAPABILITIES[pillar.id] ?? [],
-      media:
-        pillar.id === "data-engineering"
-          ? {
-              src: "/media/services/data-engineering/executive-dashboards.jpg",
-              alt: `${pillar.label} engineer reviewing governed data platforms and analytics outcomes`,
-            }
-          : {
-              src: "/media/home/what-we-deliver.png",
-              alt: `${pillar.label} engineer reviewing delivery outcomes on a laptop`,
-            },
+      media: SITE_CAPABILITIES_MEDIA,
     },
     ...(() => {
       const shared = buildSharedSections({
@@ -517,15 +504,7 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
         caseStudyId,
       });
 
-      if (pillar.id !== "data-engineering") return shared;
-
-      return {
-        ...shared,
-        outcomes: {
-          ...shared.outcomes,
-          media: DATA_ENGINEERING_OUTCOMES_MEDIA,
-        },
-      };
+      return shared;
     })(),
   };
 }
@@ -584,10 +563,7 @@ export function buildSubservicePageSections(
       title: `Foundations for |${subservice.title}|`,
       lead: `Technical and operational foundations applied during ${subservice.title.toLowerCase()} pilots.`,
       items: itemsToCapabilities(subservice.items ?? [], subservice.title),
-      media: {
-        src: "/media/home/what-we-deliver.png",
-        alt: `${subservice.title} delivery review on a laptop`,
-      },
+      media: SITE_CAPABILITIES_MEDIA,
     },
     ...buildSharedSections({
       idPrefix,

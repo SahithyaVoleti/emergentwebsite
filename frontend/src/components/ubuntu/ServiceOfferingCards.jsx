@@ -59,30 +59,47 @@ export default function ServiceOfferingCards({
         const title = item.title ?? item.label;
         const testId = item.testId ?? `offering-card-${item.key ?? item.id}`;
         const showMedia = item.showMedia !== false && Boolean(image);
+        const href = item.href;
+        const cardBody = (
+          <>
+            {showMedia ? (
+              <div
+                className={`ubuntu-services-grid__card-media ${mediaClass} aspect-[4/3] overflow-hidden bg-white`}
+              >
+                <img src={image} alt="" className="h-full w-full" loading="lazy" decoding="async" />
+              </div>
+            ) : null}
+            <div
+              className={`flex flex-1 flex-col justify-center border-[#e5e5e5] px-4 py-5 sm:px-5 sm:py-6 ${showMedia ? "border-t" : ""}`}
+            >
+              <h3 className="text-sm font-medium leading-snug text-[#2d2d2d] sm:text-[0.9375rem]">
+                {title}
+              </h3>
+            </div>
+          </>
+        );
+        const cardClassName = `ubuntu-services-grid__card ${cardClass} group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[color-mix(in_srgb,var(--item-accent)_45%,#d9d9d9)]`;
 
         return (
           <li key={item.key ?? item.id} id={item.id} className="ubuntu-services-grid__item scroll-mt-28">
-            <Link
-              to={resolveCardTo(item.href)}
-              data-testid={testId}
-              data-palette-accent={paletteAccentIndex(index)}
-              className={`ubuntu-services-grid__card ${cardClass} group flex h-full flex-col overflow-hidden border border-[#d9d9d9] bg-white transition-colors hover:border-[color-mix(in_srgb,var(--item-accent)_45%,#d9d9d9)]`}
-            >
-              {showMedia ? (
-                <div
-                  className={`ubuntu-services-grid__card-media ${mediaClass} aspect-[4/3] overflow-hidden bg-white`}
-                >
-                  <img src={image} alt="" className="h-full w-full" loading="lazy" decoding="async" />
-                </div>
-              ) : null}
-              <div
-                className={`flex flex-1 flex-col justify-center border-[#e5e5e5] px-4 py-5 sm:px-5 sm:py-6 ${showMedia ? "border-t" : ""}`}
+            {href ? (
+              <Link
+                to={resolveCardTo(href)}
+                data-testid={testId}
+                data-palette-accent={paletteAccentIndex(index)}
+                className={cardClassName}
               >
-                <h3 className="text-sm font-medium leading-snug text-[#2d2d2d] sm:text-[0.9375rem]">
-                  {title}
-                </h3>
+                {cardBody}
+              </Link>
+            ) : (
+              <div
+                data-testid={testId}
+                data-palette-accent={paletteAccentIndex(index)}
+                className={cardClassName}
+              >
+                {cardBody}
               </div>
-            </Link>
+            )}
           </li>
         );
       })}

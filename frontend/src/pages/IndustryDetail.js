@@ -13,6 +13,7 @@ import industries from "../data/industries";
 import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
 import { toMethodologyStripSteps } from "../lib/processSteps";
 import { SECTION_LABEL } from "../data/sectionLabels";
+import { SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
@@ -94,6 +95,7 @@ export default function IndustryDetail() {
         />
 
         <UbuntuPageSection
+          id="industry-assurance"
           eyebrow={SECTION_LABEL.controls}
           title={`Assurance for ${industry.title} applications`}
           lead="This assurance model defines permissions, audit logging, and human oversight from the initial pilot phase in regulated and operational environments."
@@ -104,6 +106,9 @@ export default function IndustryDetail() {
             "Audit logs suitable for sector security and compliance review",
             "Staging and rollback before changes hit production users",
           ]}
+          image={SITE_ASSURANCE_MEDIA.src}
+          imageAlt={SITE_ASSURANCE_MEDIA.alt}
+          mockupVariant="plain"
         />
 
         <CategorizedTechStackSection

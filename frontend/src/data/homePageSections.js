@@ -48,8 +48,8 @@ export const HOME_ALERT = {
   primaryCta: { label: "How we work", href: "/about#engagement" },
   secondaryCta: { label: "View services →", href: "/#services-grid" },
   media: {
-    src: "/media/home/what-we-do.png",
-    alt: "Analyst working on a laptop with data visualizations and AI analytics overlays",
+    src: "/media/home/what-we-do.jpg",
+    alt: "AI assistant analyzing digital trends and performance dashboards",
   },
 };
 
@@ -88,8 +88,8 @@ export const HOME_FEATURES = {
   lead: "Each engagement targets measurable product impact—incremental AI in live systems, validated models, and governed rollout paths.",
   items: HOME_DELIVERY_OUTCOMES,
   media: {
-    src: "/media/home/what-we-deliver.png",
-    alt: "Professional working on a laptop with database and document management interfaces",
+    src: "/media/home/what-we-deliver.jpg",
+    alt: "Professional overseeing an integrated network of digital services and delivery capabilities",
   },
 };
 

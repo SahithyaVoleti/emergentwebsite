@@ -1,8 +1,6 @@
 import { SERVICE_CATALOG } from "../serviceCatalog";
-import {
-  getSubserviceCapabilityMedia,
-  getSubserviceIntroMedia,
-} from "../serviceSubserviceImages";
+import { getSubserviceIntroMedia } from "../serviceSubserviceImages";
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA, SITE_CAPABILITIES_MEDIA } from "../brandAssets";
 import services from "../services";
 import { buildStatsSectionMeta, buildSubserviceStatsItems } from "../../lib/buildServiceStatsStrip";
 
@@ -176,7 +174,7 @@ export function buildSubservicePageOverride(pillar, subservice, service) {
   const modulesId = `${slugify(subservice.id)}-modules`;
   const caseStudyId = `${slugify(subservice.id)}-case-studies`;
   const introMedia = getSubserviceIntroMedia(subservice.id, subservice.title);
-  const capabilityMedia = getSubserviceCapabilityMedia(subservice.id, pillar.id, subservice.title);
+  const capabilityMedia = SITE_CAPABILITIES_MEDIA;
   const advisory = isAdvisorySubservice(subservice);
   const scopeEyebrow = advisory ? "Advisory scope" : "Delivery scope";
   const pilotLabel = advisory ? "Typical advisory sprint" : "Typical pilot window";
@@ -252,7 +250,7 @@ export function buildSubservicePageOverride(pillar, subservice, service) {
         contactIntent: "consultation",
       },
       secondaryCta: { label: "View case studies", href: `#${caseStudyId}` },
-      mockupKey: "data",
+      media: SITE_OUTCOMES_MEDIA,
     },
     trustMetrics: {
       id: `${idPrefix}-trust`,
@@ -278,7 +276,7 @@ export function buildSubservicePageOverride(pillar, subservice, service) {
         "Rollback paths for prompts, models, and tool permissions",
         "Documentation structured for security and procurement review",
       ],
-      mockupKey: "security",
+      media: SITE_ASSURANCE_MEDIA,
     },
     caseStudies: {
       id: caseStudyId,

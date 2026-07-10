@@ -11,7 +11,7 @@ import UbuntuHomePhilosophy from "../home/ubuntu/UbuntuHomePhilosophy";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import { getHomeSectionImage } from "../../data/homePageImages";
-import { getSiteMockup } from "../../data/siteMockups";
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA } from "../../data/brandAssets";
 import { homeImagePosition } from "../../lib/homeImagePosition";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
 
@@ -34,8 +34,8 @@ export default function ServiceDetailHomeLayout({
   let mediaIndex = 1;
   const nextPosition = () => homeImagePosition(mediaIndex++);
 
-  const visionMockup = getSiteMockup("data");
-  const philosophyMockup = getSiteMockup("code");
+  const visionMockup = SITE_OUTCOMES_MEDIA;
+  const philosophyMockup = SITE_ASSURANCE_MEDIA;
   const nextStepImage = getHomeSectionImage("next-step");
 
   const processStats = toMethodologyStripSteps(service.process);
@@ -65,6 +65,7 @@ export default function ServiceDetailHomeLayout({
 
       <UbuntuHomeVisionCta
         mockup={visionMockup}
+        mockupVariant="plain"
         imagePosition={nextPosition()}
         config={{
           id: "service-outcomes",
@@ -89,6 +90,7 @@ export default function ServiceDetailHomeLayout({
           title: `Assurance for ${displayTitle} programs`,
           lead: "Controls and review artifacts we build into each delivery milestone—not added after launch.",
           bullets: SERVICE_ASSURANCE_BULLETS,
+          media: SITE_ASSURANCE_MEDIA,
         }}
       />
 

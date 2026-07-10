@@ -1,5 +1,6 @@
 import blogArticles from "./blog";
 import { HOME_STARTUP_STATS } from "./homePageSections";
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA, SITE_CAPABILITIES_MEDIA } from "./brandAssets";
 
 /** Canonical section order for the services hub page. */
 export const SERVICES_PAGE_LAYOUT = [
@@ -99,10 +100,7 @@ export const SERVICES_CORE_CAPABILITIES = {
       icon: "devops",
     },
   ],
-  media: {
-    src: "/media/home/what-we-deliver.png",
-    alt: "Engineer reviewing AI product integration on a laptop with data interfaces",
-  },
+  media: SITE_CAPABILITIES_MEDIA,
 };
 
 export const SERVICES_METHODOLOGY = {
@@ -147,7 +145,7 @@ export const SERVICES_OUTCOMES = {
   ],
   primaryCta: { label: "Request consultation", href: "#page-contact", contactIntent: "consultation" },
   secondaryCta: { label: "View case studies", href: "#services-case-studies" },
-  mockupKey: "data",
+  media: SITE_OUTCOMES_MEDIA,
 };
 
 export const SERVICES_ASSURANCE = {
@@ -161,7 +159,7 @@ export const SERVICES_ASSURANCE = {
     "Rollback paths for prompts, models, and tool permissions",
     "Documentation structured for security and procurement review",
   ],
-  mockupKey: "security",
+  media: SITE_ASSURANCE_MEDIA,
 };
 
 export const SERVICES_CASE_STUDIES = {

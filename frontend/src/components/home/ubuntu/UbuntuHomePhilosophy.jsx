@@ -10,7 +10,9 @@ export default function UbuntuHomePhilosophy({
   imagePosition = "right",
 }) {
   const section = { ...HOME_PHILOSOPHY, ...config };
-  const mockup = mockupProp ?? getSiteMockup(section.mockupKey ?? HOME_PHILOSOPHY.mockupKey);
+  const mockup =
+    section.media ?? mockupProp ?? getSiteMockup(section.mockupKey ?? HOME_PHILOSOPHY.mockupKey);
+  const hasPhoto = Boolean(section.media);
 
   return (
     <UbuntuSplitLayout
@@ -20,6 +22,7 @@ export default function UbuntuHomePhilosophy({
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
+      mockupVariant={hasPhoto ? "plain" : "browser"}
     >
       {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
       <SectionTitle as="h2" title={section.title} />

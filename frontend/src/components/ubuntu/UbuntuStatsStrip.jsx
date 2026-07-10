@@ -29,12 +29,12 @@ export default function UbuntuStatsStrip({
     >
       <div className="ubuntu-container relative z-10">
         <ul
-          className={`ubuntu-stats-cta-strip__grid grid grid-cols-2 justify-items-stretch gap-y-8 ${colClass}`}
+          className={`ubuntu-stats-cta-strip__grid grid grid-cols-2 justify-items-stretch gap-y-6 ${colClass}`}
         >
           {stats.map((stat) => (
             <li
               key={`${stat.value}-${stat.label}`}
-              className="ubuntu-stats-cta-strip__item flex min-h-[5.5rem] w-full flex-col items-center justify-start text-center"
+              className="ubuntu-stats-cta-strip__item flex min-h-0 w-full flex-col items-center justify-center text-center"
             >
               <p className="ubuntu-stats-cta-strip__value">
                 {animate ? <CountUpValue value={stat.value} /> : stat.value}

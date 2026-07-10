@@ -1,4 +1,5 @@
 import { hq } from "../lib/heroImageThemes";
+import { SITE_CAPABILITIES_MEDIA } from "./brandAssets";
 
 /** Remote sources used to seed local subservice card assets. */
 export const SUBSERVICE_IMAGE_SOURCES = {
@@ -42,31 +43,12 @@ export function getSubserviceIntroMedia(subserviceId, title) {
   };
 }
 
-const PILLAR_CAPABILITY_IMAGE = {
-  "artificial-intelligence": "/media/home/what-we-deliver.png",
-  "data-engineering": "/media/services/data-engineering/executive-dashboards.jpg",
-  "generative-ai": "/media/service-ai-product-transformation.png",
-  devops: "/media/services/devops.jpg",
-  "development-services": "/media/services/development-services.jpg",
-};
-
-const DATA_ENGINEERING_CAPABILITY_IMAGES = {
-  "decision-analytics-engineering":
-    "/media/services/data-engineering/analytics-strategy.jpg",
-  "enterprise-data-repository-design":
-    "/media/services/data-engineering/cloud-data-platforms.jpg",
-  "training-data-preparation": "/media/services/data-engineering/operations-monitoring.jpg",
-};
-
 /** Capabilities split-band image for a subservice landing page. */
-export function getSubserviceCapabilityMedia(subserviceId, pillarId, title) {
-  const src =
-    DATA_ENGINEERING_CAPABILITY_IMAGES[subserviceId] ??
-    PILLAR_CAPABILITY_IMAGE[pillarId] ??
-    "/media/home/what-we-deliver.png";
-
+export function getSubserviceCapabilityMedia(_subserviceId, _pillarId, title) {
   return {
-    src,
-    alt: `${title} capability review on a workstation`,
+    src: SITE_CAPABILITIES_MEDIA.src,
+    alt: title
+      ? `${title} capability foundations`
+      : SITE_CAPABILITIES_MEDIA.alt,
   };
 }

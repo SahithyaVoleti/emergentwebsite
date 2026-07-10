@@ -3,21 +3,34 @@ import CTASection from "../CTASection";
 import PageContactForm from "../PageContactForm";
 import { PAGE_STANDARD_SECTIONS } from "../../data/pageStandardSections";
 import { SECONDARY_CTA_BY_PAGE } from "../../data/siteNav";
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA } from "../../data/brandAssets";
 import { getSiteMockup } from "../../data/siteMockups";
 import { isContactHref } from "../../lib/siteNavigation";
 
 function sectionFromConfig(config) {
   if (!config) return null;
-  const mockup = getSiteMockup(config.mockupKey ?? "collaboration");
+  const isOutcomes = config.eyebrow === "Outcomes";
+  const isAssurance = config.eyebrow === "Assurance";
+  const media =
+    config.media ??
+    (isOutcomes
+      ? SITE_OUTCOMES_MEDIA
+      : isAssurance
+        ? SITE_ASSURANCE_MEDIA
+        : getSiteMockup(config.mockupKey ?? "collaboration"));
   return (
     <UbuntuPageSection
       eyebrow={config.eyebrow}
       title={config.title}
       lead={config.lead}
       bullets={config.bullets}
-      image={mockup.src}
-      imageAlt={mockup.alt}
+      image={media.src}
+      imageAlt={media.alt}
       variant={config.variant}
+      mockupVariant={isOutcomes || isAssurance || config.media ? "plain" : "browser"}
+      className={
+        isOutcomes ? "ubuntu-outcomes-section" : isAssurance ? "ubuntu-assurance-section" : undefined
+      }
     />
   );
 }

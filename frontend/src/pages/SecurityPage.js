@@ -9,6 +9,7 @@ import {
   GOVERNANCE_SECURITY_PILLARS,
 } from "../data/governanceSecurity";
 import { SECTION_LABEL } from "../data/sectionLabels";
+import { SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
 
 export default function SecurityPage() {
   return (
@@ -37,6 +38,9 @@ export default function SecurityPage() {
         title="Assurance for governed delivery"
         lead="This assurance model defines permissions, audit logging, and human oversight from discovery through production rollout."
         bullets={GOVERNANCE_ASSURANCE_BULLETS}
+        image={SITE_ASSURANCE_MEDIA.src}
+        imageAlt={SITE_ASSURANCE_MEDIA.alt}
+        mockupVariant="plain"
       />
 
       <PageContactForm context="Governance & Security" />

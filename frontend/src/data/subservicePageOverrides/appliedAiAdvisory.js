@@ -2,6 +2,8 @@
  * Custom landing-page sections for AI Strategy & Advisory (`applied-ai-advisory`).
  * Structure aligned to advisory consulting flows; copy is original and startup-focused.
  */
+import { SITE_OUTCOMES_MEDIA, SITE_ASSURANCE_MEDIA, SITE_CAPABILITIES_MEDIA } from "../brandAssets";
+
 export const APPLIED_AI_ADVISORY_SECTIONS = {
   hero: {
     title: "AI Strategy & Advisory for |product-led teams|",
@@ -31,7 +33,7 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
     secondaryCta: { label: "Applied AI Engineering", href: "/services/artificial-intelligence" },
     media: {
       src: "/media/subservices/applied-ai-advisory.jpg",
-      alt: "Product leader reviewing AI strategy and advisory deliverables with an engineer",
+      alt: "Advisory team reviewing strategy documents and approval criteria together",
     },
   },
   serviceBlocks: {
@@ -129,10 +131,7 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
         icon: "devops",
       },
     ],
-    media: {
-      src: "/media/home/what-we-deliver.png",
-      alt: "Advisory workshop reviewing AI roadmap and pilot scope",
-    },
+    media: SITE_CAPABILITIES_MEDIA,
   },
   methodology: {
     id: "applied-ai-advisory-methodology",
@@ -183,7 +182,7 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
       contactIntent: "consultation",
     },
     secondaryCta: { label: "View case studies", href: "#applied-ai-advisory-case-studies" },
-    mockupKey: "data",
+    media: SITE_OUTCOMES_MEDIA,
   },
   trustMetrics: {
     id: "applied-ai-advisory-trust",
@@ -209,7 +208,7 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
       "Pilot recommendations include rollback and escalation criteria",
       "Documentation formatted for security and procurement review",
     ],
-    mockupKey: "security",
+    media: SITE_ASSURANCE_MEDIA,
   },
   caseStudies: {
     id: "applied-ai-advisory-case-studies",
@@ -247,6 +246,10 @@ export const APPLIED_AI_ADVISORY_SECTIONS = {
       contactIntent: "consultation",
     },
     secondaryCta: { label: "View advisory modules", href: "#advisory-modules" },
+    media: {
+      src: "/media/subservices/applied-ai-advisory-next-step.jpg",
+      alt: "Guided path toward an idea, representing the next step in an AI strategy engagement",
+    },
   },
   faqTitle: "Questions about AI strategy and advisory",
   faqs: [

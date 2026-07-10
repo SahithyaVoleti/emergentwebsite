@@ -6,8 +6,6 @@ import TestimonialsSection from "../TestimonialsSection";
 import TechStackRibbonSection from "../ubuntu/TechStackRibbonSection";
 import UbuntuMetricGrid from "../ubuntu/UbuntuMetricGrid";
 import ScopeOfDeliveryGrid from "./ScopeOfDeliveryGrid";
-import ModuleIconGrid from "./ModuleIconGrid";
-import { toWorkstreamGridItems } from "../../lib/workstreamGridItems";
 import { sectionBlockClass } from "../../lib/sectionBands";
 import ServiceDetailIndustriesBand from "./ServiceDetailIndustriesBand";
 import UbuntuHomeFeatures from "../home/ubuntu/UbuntuHomeFeatures";
@@ -19,12 +17,14 @@ import UbuntuStatsStrip from "../ubuntu/UbuntuStatsStrip";
 import SectionEyebrow from "../ubuntu/SectionEyebrow";
 import SectionTitle from "../ubuntu/SectionTitle";
 import SiteNavLink from "../ubuntu/SiteNavLink";
+import ServiceOfferingCards from "../ubuntu/ServiceOfferingCards";
 import ServicesClientCaseStudiesPreview from "../ubuntu/ServicesClientCaseStudiesPreview";
 import { getHomeSectionImage } from "../../data/homePageImages";
 import { getSiteMockup } from "../../data/siteMockups";
 import { homeImagePosition } from "../../lib/homeImagePosition";
 import { toMethodologyStripSteps } from "../../lib/processSteps";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
+import { getSubserviceCardImage } from "../../data/serviceSubserviceImages";
 
 const UbuntuHomeBlogs = lazy(() =>
   import("../home/ubuntu/UbuntuHomeIndustriesBlogs").then((mod) => ({
@@ -34,6 +34,27 @@ const UbuntuHomeBlogs = lazy(() =>
 
 function SectionFallback({ minHeight = "12rem" }) {
   return <div style={{ minHeight }} aria-hidden />;
+}
+
+/** Normalize workstream/capability rows for homepage-style offering cards. */
+function toOfferingCards(items = []) {
+  return items.map((item, index) => {
+    const id = item.id ?? item.key ?? `offering-${index}`;
+    const title = item.title ?? item.name ?? item.label;
+    const hasServiceId = Boolean(item.id) && !String(item.id).startsWith("offering-");
+    const href = item.href ?? (hasServiceId ? `/services/${item.id}` : undefined);
+    const cardImage = item.cardImage ?? (hasServiceId ? getSubserviceCardImage(item.id) : undefined);
+
+    return {
+      key: item.key ?? id,
+      id,
+      title,
+      href,
+      testId: item.testId ?? `offering-card-${id}`,
+      cardImage,
+      showMedia: Boolean(cardImage),
+    };
+  });
 }
 
 /**
@@ -50,7 +71,8 @@ export default function ServiceLandingPageLayout({
   const nextPosition = () => homeImagePosition(mediaIndex++);
 
   const processSteps = toMethodologyStripSteps(sections.methodology.process);
-  const nextStepImage = getHomeSectionImage("next-step");
+  const nextStepImage = sections.nextStep.media ?? getHomeSectionImage("next-step");
+  const nextStepHasCustomMedia = Boolean(sections.nextStep.media);
   const intro = sections.intro;
   const servicesIntro = sections.servicesIntro?.hide ? null : sections.servicesIntro;
   const showOfferings = !sections.offerings?.hide && !sections.serviceBlocks;
@@ -161,9 +183,12 @@ export default function ServiceLandingPageLayout({
           </div>
 
           {sections.offerings.capabilityItems?.length ? (
-            <ModuleIconGrid items={sections.offerings.capabilityItems} />
+            <ServiceOfferingCards
+              items={toOfferingCards(sections.offerings.capabilityItems)}
+              cardVariant="subservice"
+            />
           ) : (
-            <ModuleIconGrid items={toWorkstreamGridItems(offeringItems)} />
+            <ServiceOfferingCards items={toOfferingCards(offeringItems)} cardVariant="subservice" />
           )}
         </div>
       </section>
@@ -181,7 +206,10 @@ export default function ServiceLandingPageLayout({
               <SectionTitle id="related-workstreams-heading" title={sections.relatedOfferings.title} />
               <p className="ubuntu-lead mt-3">{sections.relatedOfferings.lead}</p>
             </div>
-            <ModuleIconGrid items={toWorkstreamGridItems(relatedOfferingItems)} />
+            <ServiceOfferingCards
+              items={toOfferingCards(relatedOfferingItems)}
+              cardVariant="subservice"
+            />
           </div>
         </section>
       ) : null}
@@ -275,6 +303,7 @@ export default function ServiceLandingPageLayout({
         image={nextStepImage?.src ?? intro.media.src}
         imageAlt={nextStepImage?.alt ?? intro.media.alt}
         imagePosition={nextPosition()}
+        mockupVariant={nextStepHasCustomMedia ? "plain" : "browser"}
       >
         <SectionEyebrow>{sections.nextStep.eyebrow}</SectionEyebrow>
         <SectionTitle as="h2" title={sections.nextStep.title} />

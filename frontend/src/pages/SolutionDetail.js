@@ -12,6 +12,7 @@ import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import solutions from "../data/solutions";
 import { getSolutionProductName } from "../lib/solutionDisplay";
 import { SECTION_LABEL } from "../data/sectionLabels";
+import { SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
 
 const AGENT_DEPLOYMENT_STEPS = [
   { value: "01", label: "Discovery & scoping" },
@@ -99,6 +100,9 @@ export default function SolutionDetail() {
         lead="This assurance model defines permissions, audit logging, and human oversight from the initial pilot phase."
         variant="default"
         bullets={ASSURANCE_BULLETS}
+        image={SITE_ASSURANCE_MEDIA.src}
+        imageAlt={SITE_ASSURANCE_MEDIA.alt}
+        mockupVariant="plain"
       />
 
       <PageStandardSections

@@ -8,7 +8,7 @@ export const SERVICE_CATALOG = [
   {
     id: "artificial-intelligence",
     label: "Applied AI Engineering",
-    cardImage: "/media/service-model-fine-tuning-ml.png",
+    cardImage: "/media/services/artificial-intelligence.png",
     tagline: "Strategy, models, and intelligent software integrated into enterprise systems.",
     shortDesc:
       "Applied AI programs spanning advisory, retrieval systems, language-model engineering, intelligent applications, and enterprise integration—with measurable delivery gates.",
@@ -54,7 +54,7 @@ export const SERVICE_CATALOG = [
   {
     id: "data-engineering",
     label: "Enterprise Data Engineering",
-    cardImage: "/media/service-data-engineering.png",
+    cardImage: "/media/services/data-engineering.png",
     tagline: "Analytics platforms, repositories, and training data pipelines.",
     shortDesc:
       "Engineer governed data platforms for analytics, warehousing, and labeling workflows that AI and decision systems depend on.",
