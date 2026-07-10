@@ -114,11 +114,11 @@
   border-top-color: var(--site-border) !important;
 }
 
-/* Footer */
+/* Footer — black band site-wide */
 .ubuntu-chrome-footer {
-  background: #ffffff;
-  color: #000000;
-  border-top-color: var(--site-border-strong);
+  background: #000000 !important;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-heading,
@@ -126,20 +126,40 @@
 .ubuntu-chrome-footer .ubuntu-footer-meta,
 .ubuntu-chrome-footer .ubuntu-footer-social,
 .ubuntu-chrome-footer .ubuntu-footer-top {
-  color: #000000;
+  color: #ffffff;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-heading {
-  color: var(--site-highlight);
+  color: #7eb0e8;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-link:hover,
 .ubuntu-chrome-footer .ubuntu-footer-social:hover,
 .ubuntu-chrome-footer .ubuntu-footer-top:hover {
-  color: var(--site-highlight);
+  color: #7eb0e8;
 }
+
 .ubuntu-chrome-footer .ubuntu-footer-rule {
-  border-top-color: var(--site-border);
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.ubuntu-site .ubuntu-chrome-footer a,
+.ubuntu-site .ubuntu-chrome-footer button,
+.ubuntu-site .ubuntu-chrome-footer .ubuntu-link,
+.ubuntu-site .ubuntu-chrome-footer .ubuntu-link-muted {
+  color: #ffffff !important;
+}
+
+.ubuntu-site .ubuntu-chrome-footer a:hover,
+.ubuntu-site .ubuntu-chrome-footer button:hover,
+.ubuntu-site .ubuntu-chrome-footer .ubuntu-link:hover,
+.ubuntu-site .ubuntu-chrome-footer .ubuntu-link-muted:hover {
+  color: #7eb0e8 !important;
+}
+
+.ubuntu-site .ubuntu-chrome-footer img {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 /* Forms */
@@ -349,9 +369,14 @@
 .ubuntu-site .ubuntu-pattern-section,
 .ubuntu-site .ubuntu-pattern-section--hero,
 .ubuntu-site .ubuntu-pattern-section--cta,
-.ubuntu-site .ubuntu-chrome-footer,
 .ubuntu-site .ubuntu-arch-timeline-section {
   background: var(--site-bg) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.ubuntu-site .ubuntu-chrome-footer {
+  background: #000000 !important;
   background-image: none !important;
   box-shadow: none !important;
 }
@@ -508,10 +533,9 @@
   hyphens: none;
 }
 
-/* White content surface — exclude hero chrome */
+/* White content surface — exclude hero chrome and footer */
 .ubuntu-site .ubuntu-site__body,
-.ubuntu-site .ubuntu-home-page,
-.ubuntu-site .ubuntu-chrome-footer {
+.ubuntu-site .ubuntu-home-page {
   background: #ffffff !important;
   color: #000000;
 }

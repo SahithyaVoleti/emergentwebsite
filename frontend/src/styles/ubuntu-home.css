@@ -4193,8 +4193,9 @@
 .ubuntu-chrome-footer {
   position: relative;
   overflow: hidden;
-  color: var(--twilight-indigo);
-  border-top: 2px solid var(--regal-navy);
+  background: #000000;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .ubuntu-chrome-footer__inner {
@@ -4210,7 +4211,7 @@
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--regal-navy);
+  color: #7eb0e8;
   text-transform: uppercase;
   margin-bottom: 0.35rem;
 }
@@ -4228,33 +4229,33 @@
 .ubuntu-chrome-footer .ubuntu-footer-link {
   font-size: 0.75rem;
   line-height: 1.3;
-  color: var(--blue-slate);
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-link:hover {
-  color: var(--sapphire);
+  color: #7eb0e8;
   text-decoration: none;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-meta {
   font-size: 0.75rem;
-  color: var(--slate-grey);
+  color: #cccccc;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-social {
   display: inline-flex;
-  color: var(--regal-navy);
+  color: #ffffff;
   transition: color 0.15s ease;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-social:hover {
-  color: var(--smart-blue);
+  color: #7eb0e8;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-top {
-  color: var(--regal-navy);
+  color: #ffffff;
   background: none;
   border: none;
   padding: 0;
@@ -4263,12 +4264,12 @@
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-top:hover {
-  color: var(--ubuntu-btn-bg-hover);
+  color: #7eb0e8;
 }
 
 .ubuntu-chrome-footer .ubuntu-footer-rule {
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 /* Long-form page content inside listing sections */
