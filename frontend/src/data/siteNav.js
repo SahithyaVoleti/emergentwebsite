@@ -69,8 +69,10 @@ export const SERVICES_PILLAR_NAV = buildServicesPillarNav();
 /** Flat service links — used for active-state checks and tests. */
 export const SERVICES_NAV = SERVICES_NAV_GROUPS.flatMap((group) => group.items);
 
-/** Our Work — products and client case studies */
-export const PORTFOLIO_NAV = OUR_WORK_NAV.map(({ label, href }) => ({ label, href }));
+/** Our Work — products and client case studies (Overview hub link hidden from dropdown) */
+export const PORTFOLIO_NAV = OUR_WORK_NAV.filter(
+  (item) => item.href !== "/our-work",
+).map(({ label, href }) => ({ label, href }));
 
 /** Company pages */
 export const COMPANY_NAV = [

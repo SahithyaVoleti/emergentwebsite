@@ -87,7 +87,7 @@ describe("siteNav", () => {
 
   it("maps our work nav links to known hub routes", () => {
     const hrefs = PORTFOLIO_NAV.map((item) => item.href);
-    expect(hrefs).toContain("/our-work");
+    expect(hrefs).not.toContain("/our-work");
     expect(hrefs).toContain("/our-work/products");
     expect(hrefs).toContain("/our-work/case-studies");
   });

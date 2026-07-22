@@ -27,7 +27,7 @@ function sectionFromConfig(config) {
       image={media.src}
       imageAlt={media.alt}
       variant={config.variant}
-      mockupVariant={isOutcomes || isAssurance || config.media ? "plain" : "browser"}
+      mockupVariant="plain"
       className={
         isOutcomes ? "ubuntu-outcomes-section" : isAssurance ? "ubuntu-assurance-section" : undefined
       }

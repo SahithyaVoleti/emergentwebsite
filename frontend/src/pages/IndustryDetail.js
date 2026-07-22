@@ -13,7 +13,7 @@ import industries from "../data/industries";
 import { INDUSTRY_ARCHITECTURE_IMAGE } from "../lib/heroImageThemes";
 import { toMethodologyStripSteps } from "../lib/processSteps";
 import { SECTION_LABEL } from "../data/sectionLabels";
-import { SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
+import { INDUSTRY_HERO_BACKGROUNDS, INDUSTRY_SECTOR_IMAGES, SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
@@ -52,6 +52,8 @@ export default function IndustryDetail() {
           contactIntent: "consultation",
         }}
         secondaryCTA={{ text: "View industry product modules", href: "#industry-product-modules" }}
+        homeBackgroundImage={INDUSTRY_HERO_BACKGROUNDS[industry.slug]}
+        showSymbol={!INDUSTRY_HERO_BACKGROUNDS[industry.slug]}
         image={industry.heroImage}
       />
 
@@ -60,9 +62,10 @@ export default function IndustryDetail() {
           eyebrow={SECTION_LABEL.sectorContext}
           title={`Coverage for ${industry.title} applications`}
           lead={industry.overview}
-          image={INDUSTRY_ARCHITECTURE_IMAGE}
+          image={INDUSTRY_SECTOR_IMAGES[industry.slug] ?? INDUSTRY_ARCHITECTURE_IMAGE}
           imageAlt=""
           bullets={overviewBullets}
+          mockupVariant="plain"
         />
 
         <ArchitecturalShowcase

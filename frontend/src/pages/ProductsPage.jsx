@@ -4,7 +4,7 @@ import PortfolioFeatureShowcase from "../components/ubuntu/PortfolioFeatureShowc
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import { getPortfolioProducts } from "../data/portfolioProducts";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+import { PRODUCTS_HERO_BACKGROUND } from "../data/brandAssets";
 
 export default function ProductsPage() {
   const products = getPortfolioProducts();
@@ -16,7 +16,8 @@ export default function ProductsPage() {
         description="Production-ready dashboards and mobile modules for admissions, workforce monitoring, proctoring, institution management, recruitment, hospital operations, and IVR outreach."
         primaryCTA={{ text: "Browse products", href: "#featured-product-leadcliques" }}
         secondaryCTA={{ text: "View case studies", href: "/our-work/case-studies" }}
-        image={LISTING_PAGE_HERO_IMAGES.solutions}
+        homeBackgroundImage={PRODUCTS_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <OurWorkSubNav className="our-work-subnav--band" />

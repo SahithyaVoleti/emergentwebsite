@@ -504,6 +504,16 @@ export function buildPillarPageSections(pillar, service = getServiceByPillarId(p
         caseStudyId,
       });
 
+      if (pillar.id === "data-engineering") {
+        shared.nextStep = {
+          ...shared.nextStep,
+          media: {
+            src: "/media/services/data-engineering-next-step.jpg",
+            alt: "Engineer reviewing analytics dashboards and data visualizations on a workstation",
+          },
+        };
+      }
+
       return shared;
     })(),
   };

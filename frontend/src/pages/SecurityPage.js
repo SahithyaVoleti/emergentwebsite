@@ -3,13 +3,12 @@ import PageContactForm from "../components/PageContactForm";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import UbuntuFeaturesBand from "../components/ubuntu/UbuntuFeaturesBand";
 import UbuntuPageSection from "../components/ubuntu/UbuntuPageSection";
-import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import {
   GOVERNANCE_ASSURANCE_BULLETS,
   GOVERNANCE_SECURITY_PILLARS,
 } from "../data/governanceSecurity";
 import { SECTION_LABEL } from "../data/sectionLabels";
-import { SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
+import { SECURITY_HERO_BACKGROUND, SITE_ASSURANCE_MEDIA } from "../data/brandAssets";
 
 export default function SecurityPage() {
   return (
@@ -20,7 +19,8 @@ export default function SecurityPage() {
         description="Control areas we address during architecture, build, and operations for agentic solutions and AI product programs—not certification claims unless separately contracted."
         primaryCTA={{ text: "Discuss your requirements", href: "#page-contact" }}
         secondaryCTA={{ text: "View assurance controls", href: "#governance-controls" }}
-        image={ABOUT_HERO_IMAGE}
+        homeBackgroundImage={SECURITY_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <UbuntuFeaturesBand

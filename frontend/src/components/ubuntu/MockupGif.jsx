@@ -4,7 +4,7 @@ import HeroPlayOnceGif from "./HeroPlayOnceGif";
 /** Play-once GIF inside mockup frames — fill viewport edge-to-edge. */
 export default function MockupGif({
   src,
-  variant = "browser",
+  variant = "plain",
   screenClassName = "ubuntu-mockup__screen--gif",
   wrapClassName = "ubuntu-mockup__gif-wrap",
   imgClassName = "ubuntu-mockup__gif-img",

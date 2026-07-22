@@ -4,7 +4,7 @@ import PortfolioFeatureShowcase from "../components/ubuntu/PortfolioFeatureShowc
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import { getClientCaseStudies } from "../data/clientCaseStudies";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+import { CASE_STUDIES_HERO_BACKGROUND } from "../data/brandAssets";
 
 export default function ClientCaseStudiesPage() {
   const caseStudies = getClientCaseStudies();
@@ -16,7 +16,8 @@ export default function ClientCaseStudiesPage() {
         description="Documented deployments showing how platform products resolved operational challenges for education groups, hospitals, BPO centers, and statewide outreach programs."
         primaryCTA={{ text: "Browse case studies", href: "#case-study-leadcliques-education-enrollment" }}
         secondaryCTA={{ text: "View products", href: "/our-work/products" }}
-        image={LISTING_PAGE_HERO_IMAGES.solutions}
+        homeBackgroundImage={CASE_STUDIES_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <OurWorkSubNav className="our-work-subnav--band" />

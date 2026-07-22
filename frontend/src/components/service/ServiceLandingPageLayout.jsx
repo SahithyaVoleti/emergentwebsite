@@ -72,7 +72,6 @@ export default function ServiceLandingPageLayout({
 
   const processSteps = toMethodologyStripSteps(sections.methodology.process);
   const nextStepImage = sections.nextStep.media ?? getHomeSectionImage("next-step");
-  const nextStepHasCustomMedia = Boolean(sections.nextStep.media);
   const intro = sections.intro;
   const servicesIntro = sections.servicesIntro?.hide ? null : sections.servicesIntro;
   const showOfferings = !sections.offerings?.hide && !sections.serviceBlocks;
@@ -245,7 +244,7 @@ export default function ServiceLandingPageLayout({
         mockup={
           sections.outcomes.media ?? getSiteMockup(sections.outcomes.mockupKey)
         }
-        mockupVariant={sections.outcomes.media ? "plain" : "browser"}
+        mockupVariant="plain"
         imagePosition={nextPosition()}
         config={{
           id: sections.outcomes.id,
@@ -303,7 +302,7 @@ export default function ServiceLandingPageLayout({
         image={nextStepImage?.src ?? intro.media.src}
         imageAlt={nextStepImage?.alt ?? intro.media.alt}
         imagePosition={nextPosition()}
-        mockupVariant={nextStepHasCustomMedia ? "plain" : "browser"}
+        mockupVariant="plain"
       >
         <SectionEyebrow>{sections.nextStep.eyebrow}</SectionEyebrow>
         <SectionTitle as="h2" title={sections.nextStep.title} />

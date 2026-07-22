@@ -4,6 +4,7 @@ import PageHero from "../components/PageHero";
 import UbuntuBlogServiceCatalog from "../components/ubuntu/UbuntuBlogServiceCatalog";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
+import { BLOG_HERO_BACKGROUND } from "../data/brandAssets";
 
 export default function BlogPage() {
   const { hash } = useLocation();
@@ -22,7 +23,8 @@ export default function BlogPage() {
         title="Technical and operational notes from |enterprise AI delivery|"
         description="Practical articles on tools, models, and delivery discipline—organized by service line for program and engineering stakeholders."
         primaryCTA={{ text: "Browse by service line", href: "#blog-service-catalog" }}
-        illustrationKey="blog"
+        homeBackgroundImage={BLOG_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <UbuntuBlogServiceCatalog

@@ -7,7 +7,7 @@ import { isGifSrc } from "../../lib/isGifSrc";
 export default function MockupFrame({
   src,
   alt = "",
-  variant = "browser",
+  variant = "plain",
   children,
   screenClassName = "",
 }) {
@@ -15,13 +15,11 @@ export default function MockupFrame({
     if (!src) return null;
     if (isGifSrc(src)) {
       return (
-        <MockupFrame variant="browser" screenClassName="ubuntu-mockup__screen--gif">
-          <HeroPlayOnceGif
-            src={src}
-            wrapClassName="ubuntu-mockup__gif-wrap"
-            className="ubuntu-mockup__gif-img"
-          />
-        </MockupFrame>
+        <HeroPlayOnceGif
+          src={src}
+          wrapClassName="ubuntu-mockup__gif-wrap"
+          className="ubuntu-mockup__gif-img"
+        />
       );
     }
     return (

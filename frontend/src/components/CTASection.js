@@ -27,6 +27,7 @@ export default function CTASection({
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition="right"
+      mockupVariant="plain"
     >
       {!hideLabel && <SectionEyebrow>{SECTION_LABEL.contact}</SectionEyebrow>}
       <SectionTitle

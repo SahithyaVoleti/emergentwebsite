@@ -6,7 +6,7 @@ export default function UbuntuSplitLayout({
   image,
   imageAlt,
   imagePosition = "right",
-  mockupVariant = "browser",
+  mockupVariant = "plain",
   variant = "default",
   /** @deprecated Pattern backgrounds removed — prop retained for call-site compatibility */
   pattern: _pattern,

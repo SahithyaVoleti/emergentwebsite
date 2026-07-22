@@ -8,7 +8,7 @@ import SectionTitle from "../../ubuntu/SectionTitle";
 
 export default function UbuntuHomeVisionCta({
   mockup = getSiteMockup(HOME_VISION_CTA_2.mockupKey),
-  mockupVariant = "browser",
+  mockupVariant = "plain",
   imagePosition = "left",
   config,
   bullets = [],

@@ -4,7 +4,7 @@ import OurWorkSubNav from "../components/ubuntu/OurWorkSubNav";
 import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import { sectionBlockClass } from "../lib/sectionBands";
-import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+import { OUR_WORK_HERO_BACKGROUND } from "../data/brandAssets";
 
 export default function OurWorkPage() {
   return (
@@ -14,7 +14,8 @@ export default function OurWorkPage() {
         description="Explore production-ready platform products and client case studies that document measurable outcomes across education, healthcare, workforce operations, and regulated outreach programs."
         primaryCTA={{ text: "View products", href: "/our-work/products" }}
         secondaryCTA={{ text: "View case studies", href: "/our-work/case-studies" }}
-        image={LISTING_PAGE_HERO_IMAGES.solutions}
+        homeBackgroundImage={OUR_WORK_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <OurWorkSubNav className="our-work-subnav--band" />

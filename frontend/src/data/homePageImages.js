@@ -31,8 +31,8 @@ export const HOME_SECTION_IMAGES = {
   methodology: { src: CASE_STUDY_HERO_IMAGES[0], alt: DECORATIVE_ALT },
   coverage: { src: LISTING_PAGE_HERO_IMAGES.industries, alt: DECORATIVE_ALT },
   "next-step": {
-    src: "/media/home/next-step-cta.png",
-    alt: "Advisor engaging a virtual consulting and support network",
+    src: "/media/home/next-step-cta.jpg",
+    alt: "Professional looking toward growth and the next delivery milestone",
   },
 };
 

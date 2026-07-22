@@ -22,7 +22,7 @@ export default function SolutionAgentOverview({ solution }) {
       imagePosition="right"
       mediaSlot={
         <div className="ubuntu-split__media ubuntu-split__media--product">
-          <MockupFrame src={solution.heroImage} alt={`${brandName} — ${productName}`} />
+          <MockupFrame src={solution.heroImage} alt={`${brandName} — ${productName}`} variant="plain" />
         </div>
       }
       belowContent={

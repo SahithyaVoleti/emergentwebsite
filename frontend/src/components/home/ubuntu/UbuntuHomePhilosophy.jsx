@@ -22,7 +22,7 @@ export default function UbuntuHomePhilosophy({
       image={mockup.src}
       imageAlt={mockup.alt}
       imagePosition={imagePosition}
-      mockupVariant={hasPhoto ? "plain" : "browser"}
+      mockupVariant="plain"
     >
       {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
       <SectionTitle as="h2" title={section.title} />

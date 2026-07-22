@@ -82,9 +82,9 @@ export const CASE_STUDY_HERO_IMAGES = [
 
 /** Blog listing cards + article heroes */
 export const BLOG_ARTICLE_HERO_IMAGES = {
-  "augment-code-vs-cursor": hq("photo-1555949963-aa79dcee981c"),
-  "claude-vs-chatgpt-coding": hq("photo-1677442136019-21780ecad995"),
-  "top-vibe-coding-tools": hq("photo-1461749280684-dccba630e2f6"),
+  "augment-code-vs-cursor": "/media/blog/augment-code-vs-cursor.jpg",
+  "claude-vs-chatgpt-coding": "/media/blog/claude-vs-chatgpt-coding.jpg",
+  "top-vibe-coding-tools": "/media/blog/top-vibe-coding-tools.jpg",
 };
 
 /**

@@ -38,6 +38,8 @@ export default function BlogDetail() {
         significance="detail"
         title={article.title}
         description={meta}
+        homeBackgroundImage={article.image}
+        showSymbol={!article.image}
         image={article.image}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Back to blog", href: "/blog" }}

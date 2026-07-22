@@ -66,7 +66,7 @@ export default function UbuntuPageSection({
   image,
   imageAlt,
   imagePosition,
-  mockupVariant = "browser",
+  mockupVariant = "plain",
   belowContent,
   children,
   className = "",

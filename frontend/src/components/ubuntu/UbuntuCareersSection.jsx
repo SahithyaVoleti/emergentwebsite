@@ -10,7 +10,6 @@ import {
   Coffee,
   Globe,
   Heart,
-  MapPin,
   Users,
 } from "lucide-react";
 import { CONTACT_TOPIC, contactFormTo } from "../../lib/contactIntent";
@@ -47,13 +46,10 @@ function JobCard({ job }) {
           <p className="mt-1 text-sm text-[#6b6b6b]">{job.department}</p>
           <div className="mt-3 flex flex-wrap gap-4 text-xs text-[#6b6b6b]">
             <span className="inline-flex items-center gap-1">
-              <MapPin size={12} aria-hidden /> {job.location}
-            </span>
-            <span className="inline-flex items-center gap-1">
               <Clock size={12} aria-hidden /> {job.type}
             </span>
             <span className="inline-flex items-center gap-1">
-              <Briefcase size={12} aria-hidden /> {job.experience}
+              <Briefcase size={12} aria-hidden /> {job.duration}
             </span>
           </div>
         </div>

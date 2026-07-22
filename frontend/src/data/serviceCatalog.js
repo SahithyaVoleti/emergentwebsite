@@ -8,7 +8,7 @@ export const SERVICE_CATALOG = [
   {
     id: "artificial-intelligence",
     label: "Applied AI Engineering",
-    cardImage: "/media/services/artificial-intelligence.png",
+    cardImage: "/media/services/artificial-intelligence.jpg",
     tagline: "Strategy, models, and intelligent software integrated into enterprise systems.",
     shortDesc:
       "Applied AI programs spanning advisory, retrieval systems, language-model engineering, intelligent applications, and enterprise integration—with measurable delivery gates.",
@@ -54,7 +54,7 @@ export const SERVICE_CATALOG = [
   {
     id: "data-engineering",
     label: "Enterprise Data Engineering",
-    cardImage: "/media/services/data-engineering.png",
+    cardImage: "/media/services/data-engineering-intro.jpg",
     tagline: "Analytics platforms, repositories, and training data pipelines.",
     shortDesc:
       "Engineer governed data platforms for analytics, warehousing, and labeling workflows that AI and decision systems depend on.",
@@ -134,7 +134,7 @@ export const SERVICE_CATALOG = [
   {
     id: "devops",
     label: "Platform Reliability & DevOps",
-    cardImage: "/media/services/devops.jpg",
+    cardImage: "/media/services/devops-intro.jpg",
     tagline: "Delivery automation, reliability engineering, and model observability.",
     shortDesc:
       "Establish CI/CD, platform automation, reliability engineering, and observability—including model performance monitoring—for AI and enterprise workloads.",

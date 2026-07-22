@@ -10,9 +10,9 @@ const industries = [
     slug: "retail",
     icon: ShoppingCart,
     title: "Commerce",
-    shortDesc: "AI product modules inside POS, ERP, and e-commerce applications—for inventory, pricing, and customer operations.",
+    shortDesc: "AI product modules inside POS and ERP applications—for inventory, pricing, and customer operations.",
     heroTitle: "Enterprise AI programs for retail and commerce applications",
-    heroDesc: "We transform POS, ERP, WMS, and e-commerce admin tools with embedded intelligence—automating inventory checks, pricing decisions, and support workflows your store teams already use.",
+    heroDesc: "We transform POS, ERP, and WMS admin tools with embedded intelligence—automating inventory checks, pricing decisions, and support workflows your store teams already use.",
     heroImage: industryImages[0],
     overview:
       "Retail teams run on a mix of POS, ERP, marketplace admin panels, and CRM tools. We embed AI capabilities in those applications so staff get answers and actions without switching systems—or we modernize legacy commerce products with built-in copilots and automation.",
@@ -35,7 +35,7 @@ const industries = [
       {
         title: "Catalog discovery · Suchi",
         desc: "Helps merchandisers find and tag catalog items by image or description inside product management applications. Reduces manual search time across large SKU catalogs.",
-        deploysIn: "PIM, OMS, and e-commerce admin tools",
+        deploysIn: "PIM and OMS admin tools",
       },
       {
         title: "Demand forecasting · Maang",
@@ -54,7 +54,7 @@ const industries = [
       },
     ],
     process: [
-      { step: "Map your retail apps", desc: "List POS, ERP, WMS, e-commerce, and CRM systems—and the workflows where AI modules would save the most time." },
+      { step: "Map your retail apps", desc: "List POS, ERP, WMS, and CRM systems—and the workflows where AI modules would save the most time." },
       { step: "Design product modules", desc: "Define what each module can access, which actions need approval, and how it appears inside your existing UI." },
       { step: "Connect to your data", desc: "Wire modules to product, inventory, and customer data with the permissions your security team approves." },
       { step: "Pilot in one channel", desc: "Launch for one store, region, or brand—measure stock accuracy, response time, or margin impact." },

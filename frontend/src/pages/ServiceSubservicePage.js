@@ -3,6 +3,7 @@ import PageHero from "../components/PageHero";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import ServiceLandingPageLayout from "../components/service/ServiceLandingPageLayout";
 import { buildSubservicePageSections } from "../lib/buildServicePageSections";
+import { SUBSERVICE_HERO_BACKGROUNDS } from "../data/brandAssets";
 import services from "../data/services";
 import { getSubserviceCards } from "../data/serviceCatalog";
 import { getSubserviceCardImage } from "../data/serviceSubserviceImages";
@@ -12,6 +13,7 @@ export default function ServiceSubservicePage({ pillar, subservice }) {
   const sections = buildSubservicePageSections(pillar, subservice, service);
   const siblingCards = getSubserviceCards(pillar.id).filter((card) => card.id !== subservice.id);
   const heroImage = subservice.cardImage ?? getSubserviceCardImage(subservice.id);
+  const heroBackgroundImage = SUBSERVICE_HERO_BACKGROUNDS[subservice.id];
 
   return (
     <SitePageMain>
@@ -21,6 +23,8 @@ export default function ServiceSubservicePage({ pillar, subservice }) {
         description={sections.hero.description}
         primaryCTA={sections.hero.primaryCTA}
         secondaryCTA={sections.hero.secondaryCTA}
+        homeBackgroundImage={heroBackgroundImage}
+        showSymbol={!heroBackgroundImage}
         image={heroImage}
         imageVariant="service-pillar"
       />

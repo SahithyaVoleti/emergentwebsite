@@ -6,6 +6,7 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import CaseStudiesVerticalSlider from "../components/ubuntu/CaseStudiesVerticalSlider";
 import caseStudies from "../data/caseStudies";
 import { SECTION_LABEL } from "../data/sectionLabels";
+import { RESEARCH_HERO_BACKGROUND } from "../data/brandAssets";
 
 const RESEARCH_TOPICS = [
   {
@@ -46,7 +47,8 @@ export default function ResearchInnovationPage() {
           contactIntent: "consultation",
         }}
         secondaryCTA={{ text: "View test cases", href: "#test-cases" }}
-        illustrationKey="research"
+        homeBackgroundImage={RESEARCH_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <UbuntuPageSection

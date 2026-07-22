@@ -1,7 +1,7 @@
 import UbuntuPageHeroBanner from "../../ubuntu/UbuntuPageHeroBanner";
 import { HOME_HERO } from "../../../data/homePageSections";
 
-/** Homepage hero — headline left over the branded backdrop image. */
+/** Homepage hero — headline and CTA on the banner band. */
 export default function UbuntuHomeHero({ embedded = false }) {
   const { titleBefore, titleAccent, titleAfter, lead, primaryCta } = HOME_HERO;
 
