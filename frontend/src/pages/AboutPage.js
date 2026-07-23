@@ -13,7 +13,7 @@ import PageContactForm from "../components/PageContactForm";
 import team from "../data/team";
 import technologyPartners from "../data/partners";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
-import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
+import { ABOUT_HERO_BACKGROUND } from "../data/brandAssets";
 import { getSiteMockup } from "../data/siteMockups";
 import { SECTION_LABEL } from "../data/sectionLabels";
 
@@ -54,7 +54,8 @@ export default function AboutPage() {
         description={`NeuralTrix AI was founded in ${COMPANY_FOUNDED_LABEL}. We transform existing products into AI-enabled software, fine-tune models for production, and design interdisciplinary AI SaaS applications.`}
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "How we work", href: "#engagement" }}
-        image={ABOUT_HERO_IMAGE}
+        homeBackgroundImage={ABOUT_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <UbuntuPageSection

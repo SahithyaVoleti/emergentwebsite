@@ -9,6 +9,10 @@ export const BRAND_HERO_BACKGROUND = "/media/home/hero-homepage-background.jpg";
 /** Homepage hero backdrop (single static image). */
 export const BRAND_HERO_BACKGROUNDS = [BRAND_HERO_BACKGROUND];
 
+/** Services hub (/services) hero backdrop. */
+export const SERVICES_LANDING_HERO_BACKGROUND =
+  "/media/services/services-landing-hero.jpg";
+
 /** Service pillar page hero backdrops (full-bleed photo behind banner chrome). */
 export const SERVICE_PILLAR_HERO_BACKGROUNDS = {
   "artificial-intelligence": "/media/services/artificial-intelligence-hero.jpg",
@@ -51,6 +55,9 @@ export const SUBSERVICE_HERO_BACKGROUNDS = {
 /** Company / trust page hero backdrops. */
 export const SECURITY_HERO_BACKGROUND = "/media/company/security-hero.png";
 
+/** About page hero backdrop. */
+export const ABOUT_HERO_BACKGROUND = "/media/company/about-hero.jpg";
+
 /** Our Work hub page hero backdrop. */
 export const OUR_WORK_HERO_BACKGROUND =
   "/media/portfolio/our-work-hero.jpg";
@@ -67,6 +74,10 @@ export const BLOG_HERO_BACKGROUND = "/media/blog/blog-hero.jpg";
 
 /** Research & Innovation page hero backdrop. */
 export const RESEARCH_HERO_BACKGROUND = "/media/research/research-hero.jpg";
+
+/** Industry hub (/industries) hero backdrop. */
+export const INDUSTRIES_LANDING_HERO_BACKGROUND =
+  "/media/industries/industries-landing-hero.jpg";
 
 /** Industry detail page hero backdrops (full-bleed photo behind banner chrome). */
 export const INDUSTRY_HERO_BACKGROUNDS = {

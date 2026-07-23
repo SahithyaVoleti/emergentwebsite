@@ -4,6 +4,7 @@ import PageStandardSections from "../components/ubuntu/PageStandardSections";
 import SitePageMain from "../components/ubuntu/SitePageMain";
 import industries from "../data/industries";
 import { SECTION_LABEL } from "../data/sectionLabels";
+import { INDUSTRIES_LANDING_HERO_BACKGROUND } from "../data/brandAssets";
 
 export default function IndustriesPage() {
   return (
@@ -13,7 +14,8 @@ export default function IndustriesPage() {
         description="We transform and build AI-enabled software across healthcare, finance, education, manufacturing, and other sectors—aligned to each industry's application estate and governance requirements."
         primaryCTA={{ text: "Contact us", href: "#page-contact" }}
         secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
-        illustrationKey="industries"
+        homeBackgroundImage={INDUSTRIES_LANDING_HERO_BACKGROUND}
+        showSymbol={false}
       />
 
       <UbuntuIndustriesIconGrid
